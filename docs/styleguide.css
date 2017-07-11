@@ -1349,6 +1349,24 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   text-align: center;
   vertical-align: top; }
 
+body {
+  overflow-x: initial; }
+
+:host {
+  color: #363d4e;
+  font-family: 'Proxima Nova';
+  font-size: 16px;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0; }
+  :host .section-markup-wrapper {
+    overflow: hidden;
+    box-sizing: border-box; }
+
 * + p,
 * + pre,
 * + ul,
@@ -1524,21 +1542,3 @@ a.button {
     font-size: 5rem; }
   .feature-quote.large cite {
     font-size: 2.5rem; }
-
-body {
-  overflow-x: initial; }
-
-:host {
-  color: #363d4e;
-  font-family: 'Proxima Nova';
-  font-size: 16px;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  font-weight: 400;
-  line-height: 1.5;
-  margin: 0;
-  padding: 0; }
-  :host .section-markup-wrapper {
-    overflow: hidden;
-    box-sizing: border-box; }

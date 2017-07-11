@@ -5,26 +5,6 @@ $text: #363d4e;
 @import '../node_modules/bulma/sass/base/_all';
 @import '../node_modules/bulma/sass/grid/_all';
 @import '../node_modules/bulma/sass/elements/other';
-// Layout
-// 
-// Styleguide 1.0
-@import 'layout';
-// Fonts
-// 
-// Styleguide 2.0
-@import "fonts";
-// Typography
-// 
-// Styleguide 3.0
-@import 'typography';
-// Buttons
-//
-// Styleguide 4.0
-@import 'buttons';
-// Components
-//
-// Styleguide 5.0
-@import 'components';
 body {
     overflow-x: initial;
 }
@@ -46,3 +26,24 @@ body {
         box-sizing: border-box;
     }
 }
+
+// Layout
+// 
+// Styleguide 1.0
+@import 'layout';
+// Fonts
+// 
+// Styleguide 2.0
+@import "fonts";
+// Typography
+// 
+// Styleguide 3.0
+@import 'typography';
+// Buttons
+//
+// Styleguide 4.0
+@import 'buttons';
+// Components
+//
+// Styleguide 5.0
+@import 'components';
