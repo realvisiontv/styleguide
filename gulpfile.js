@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var styleguide = require('sc5-styleguide');
 var sass = require('gulp-sass');
-var outputPath = 'output';
+var outputPath = 'docs';
 
 gulp.task('styleguide:generate', function() {
     gulp.src(['fonts/**'])
