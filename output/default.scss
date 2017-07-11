@@ -1,0 +1,47 @@
+$baseline: 1.5rem;
+$text: #363d4e;
+@import '../node_modules/bulma/sass/utilities/_all';
+@import '../node_modules/bulma/sass/base/_all';
+@import '../node_modules/bulma/sass/grid/_all';
+@import '../node_modules/bulma/sass/elements/other';
+// Layout
+// 
+// Styleguide 1.0
+@import 'layout';
+// Fonts
+// 
+// Styleguide 2.0
+@import "fonts";
+// Typography
+// 
+// Styleguide 3.0
+@import 'typography';
+// Buttons
+//
+// Styleguide 4.0
+@import 'buttons';
+// Components
+//
+// Styleguide 5.0
+@import 'components';
+body {
+    overflow-x: initial;
+}
+
+// For styleguide
+:host {
+    color: $text;
+    font-family: 'Proxima Nova';
+    font-size: 16px;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    .section-markup-wrapper {
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+}

@@ -1,0 +1,54 @@
+// Interaction button
+// 
+// Button for performing a non-navigation action.
+// 
+// .button  - Default button
+// :hover   - Hover state
+// :focus   - Focus state
+// 
+// markup:
+// <button class="button {$modifiers}">The quick brown fox</button>
+//
+// Styleguide 4.1
+.button {
+    background: #fe1135;
+    border: 2px solid transparent;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Function Pro', sans-serif;
+    font-size: $size-5;
+    font-weight: 700;
+    line-height: 1;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    &:hover {
+        background: transparent;
+        border-color: #fe1135;
+        color: #fe1135;
+    }
+    &:focus {
+        background: transparent;
+        border-color: #fe1135;
+        color: #fe1135;
+        text-decoration: underline;
+        text-decoration-color: rgba(#fe1135, 0.25);
+    }
+}
+
+// CTA button
+// 
+// Inherits from interaction button (4.1), but uses an anchor element to signify this
+// button is used for navigation.
+// 
+// .button  - Default button
+// :hover   - Hover state
+// :focus   - Focus state
+// 
+// markup:
+// <a href="#" class="button {$modifiers}">The quick brown fox</a>
+//
+// Styleguide 4.2
+a.button {
+    display: inline-block;
+    text-decoration: none;
+}

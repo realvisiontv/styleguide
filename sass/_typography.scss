@@ -1,0 +1,158 @@
+body {
+    font-family: 'Proxima Nova';
+}
+
+// Headings
+//
+// markup:
+// <h1>Heading 1</h1>
+// <h2>Heading 2</h2>
+// <h3>Heading 3</h3>
+// <h4>Heading 4</h4>
+// <h5>Heading 5</h5>
+// <h6>Heading 6</h6>
+//
+// Styleguide 3.1
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Function Pro';
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: $size-1;
+}
+
+h2 {
+    font-size: $size-2;
+}
+
+h3 {
+    font-size: $size-3;
+}
+
+h4 {
+    font-size: $size-4;
+}
+
+h5 {
+    font-size: $size-5;
+}
+
+h6 {
+    font-size: $size-6;
+}
+
+// Paragraphs
+//
+// markup:
+// <p>Murenam te accusante defenderem. Si enim ad populum me vocas, eum. Eorum enim est haec querela, qui sibi cari sunt seseque diligunt. Primum in nostrane potestate est, quid meminerimus? Immo alio genere; Nunc omni virtuti vitium contrario nomine opponitur. Quorum sine causa fieri nihil putandum est. Quod mihi quidem visus est, cum sciret, velle tamen confitentem audire Torquatum. Comprehensum, quod cognitum non habet?</p>
+// <p>Murenam te accusante defenderem. Si enim ad populum me vocas, eum. Eorum enim est haec querela, qui sibi cari sunt seseque diligunt. Primum in nostrane potestate est, quid meminerimus? Immo alio genere; Nunc omni virtuti vitium contrario nomine opponitur. Quorum sine causa fieri nihil putandum est. Quod mihi quidem visus est, cum sciret, velle tamen confitentem audire Torquatum. Comprehensum, quod cognitum non habet?</p>
+//
+// Styleguide 3.2
+p {
+    line-height: $baseline;
+}
+
+// Lists
+//
+// markup:
+// <ol>
+//     <li>Cur tantas regiones barbarorum pedibus obiit, tot maria transmisit?</li>
+//     <li>Hoc loco tenere se Triarius non potuit.</li>
+//     <li>Qui enim voluptatem ipsam contemnunt, iis licet dicere se acupenserem maenae non anteponere.</li>
+//     <li>Itaque rursus eadem ratione, qua sum paulo ante usus, haerebitis.</li>
+//     <li>Nam aliquando posse recte fieri dicunt nulla expectata nec quaesita voluptate.</li>
+// </ol>
+// <ul>
+//     <li>Bonum valitudo: miser morbus.</li>
+//     <li>Numquam hoc ita defendit Epicurus neque Metrodorus aut quisquam eorum, qui aut saperet aliquid aut ista didicisset.</li>
+//     <li>Non quaeritur autem quid naturae tuae consentaneum sit, sed quid disciplinae.</li>
+// </ul>
+// <dl>
+//     <dt><dfn>Stoicos roga.</dfn></dt>
+//     <dd>At tu eadem ista dic in iudicio aut, si coronam times, dic in senatu.</dd>
+//     <dt><dfn>Ita prorsus, inquam;</dfn></dt>
+//     <dd>Quid tanto concursu honestissimorum studiorum, tanto virtutum comitatu, si ea nullam ad aliam rem nisi ad voluptatem conquiruntur?</dd>
+//     <dt><dfn>Iam contemni non poteris.</dfn></dt>
+//     <dd>Pudebit te, inquam, illius tabulae, quam Cleanthes sane commode verbis depingere solebat.</dd>
+//     <dt><dfn>Quis hoc dicit?</dfn></dt>
+//     <dd>Nam his libris eum malo quam reliquo ornatu villae delectari.</dd>
+// </dl>
+//
+// Styleguide 3.3
+ul,
+ol {
+    list-style-position: outside;
+    margin-left: $baseline * 1.5;
+}
+
+ul {
+    list-style-type: disc;
+}
+
+li+li {
+    margin-top: $baseline * 0.25;
+}
+
+dd+dt {
+    margin-top: $baseline * 0.25;
+}
+
+// Pre blocks
+//
+// markup:
+// <pre>
+//     Hunc igitur finem illi tenuerunt, quodque ego pluribus
+//     verbis, illi brevius secundum naturam vivere, hoc iis
+//     bonorum videbatur extremum.
+//     Sit ista in Graecorum levitate perversitas, qui maledictis
+//     insectantur eos, a quibus de veritate dissentiunt.
+// </pre>
+//
+// Styleguide 3.4
+pre {
+    padding: $baseline 0;
+    line-height: $baseline;
+}
+
+// Blockquote
+// 
+// markup:
+// <blockquote>The quick brown fox jumps over the lazy dog</blockquote>
+//
+// Styleguide 3.5
+blockquote {}
+
+// Anchors
+// 
+// :link    - Unvisited Link
+// :visited - Visited link
+// :hover   - Hover state
+// :focus   - Focus state
+// :active  - Active state
+// 
+// markup:
+// <a href="#" class="{$modifiers}">Quo modo autem philosophus loquitur?</a>
+// 
+// Styleguide 3.6
+a {
+    text-decoration: underline;
+    text-decoration-skip: ink;
+    text-decoration-color: rgba($link, 0.25);
+    &:hover {
+        text-decoration-color: rgba($link-hover, 0.25);
+    }
+    &:focus {
+        text-decoration-color: rgba($link-focus, 0.25);
+    }
+    &:active {
+        text-decoration-color: rgba($link-active, 0.25);
+    }
+}

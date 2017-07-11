@@ -1,0 +1,95 @@
+a.pseudo-class-hover {
+  color: #363636;
+}
+
+a.has-text-white.pseudo-class-hover,
+a.has-text-white.pseudo-class-focus {
+  color: #e6e6e6;
+}
+
+a.has-text-black.pseudo-class-hover,
+a.has-text-black.pseudo-class-focus {
+  color: black;
+}
+
+a.has-text-light.pseudo-class-hover,
+a.has-text-light.pseudo-class-focus {
+  color: #dbdbdb;
+}
+
+a.has-text-dark.pseudo-class-hover,
+a.has-text-dark.pseudo-class-focus {
+  color: #1c1c1c;
+}
+
+a.has-text-primary.pseudo-class-hover,
+a.has-text-primary.pseudo-class-focus {
+  color: #009e86;
+}
+
+a.has-text-info.pseudo-class-hover,
+a.has-text-info.pseudo-class-focus {
+  color: #205bbc;
+}
+
+a.has-text-success.pseudo-class-hover,
+a.has-text-success.pseudo-class-focus {
+  color: #1ca64c;
+}
+
+a.has-text-warning.pseudo-class-hover,
+a.has-text-warning.pseudo-class-focus {
+  color: #ffd324;
+}
+
+a.has-text-danger.pseudo-class-hover,
+a.has-text-danger.pseudo-class-focus {
+  color: #ff0537;
+}
+
+.columns.pseudo-class-last-child {
+  margin-bottom: -0.75rem;
+}
+
+.columns.is-gapless.pseudo-class-last-child {
+  margin-bottom: 0;
+}
+
+.tile.is-ancestor.pseudo-class-last-child {
+  margin-bottom: -0.75rem;
+}
+
+.delete.pseudo-class-hover,
+.delete.pseudo-class-focus {
+  background-color: rgba(10, 10, 10, 0.3);
+}
+
+.delete.pseudo-class-active {
+  background-color: rgba(10, 10, 10, 0.4);
+}
+
+a.pseudo-class-hover {
+  text-decoration-color: rgba(54, 54, 54, 0.25);
+}
+
+a.pseudo-class-focus {
+  text-decoration-color: rgba(54, 54, 54, 0.25);
+}
+
+a.pseudo-class-active {
+  text-decoration-color: rgba(54, 54, 54, 0.25);
+}
+
+.button.pseudo-class-hover {
+  background: transparent;
+  border-color: #fe1135;
+  color: #fe1135;
+}
+
+.button.pseudo-class-focus {
+  background: transparent;
+  border-color: #fe1135;
+  color: #fe1135;
+  text-decoration: underline;
+  text-decoration-color: rgba(254, 17, 53, 0.25);
+}
