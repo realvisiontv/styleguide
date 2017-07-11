@@ -12,7 +12,6 @@ gulp.task('styleguide:generate', function() {
     return gulp.src('sass/*.scss')
         .pipe(styleguide.generate({
             title: 'Real Vision Styleguide',
-            server: true,
             rootPath: outputPath,
             appRoot: '/styleguide',
             overviewPath: 'README.md',

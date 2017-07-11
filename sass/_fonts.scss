@@ -11,32 +11,48 @@
 // Styleguide 2.1 
 @font-face {
     font-family: 'Function Pro';
-    src: url('../fonts/function-pro/FunctionPro-Book-webfont.eot');
-    src: url('../fonts/function-pro/FunctionPro-Book-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/function-pro/FunctionPro-Book-webfont.woff2') format('woff2'), url('../fonts/function-pro/FunctionPro-Book-webfont.woff') format('woff'), url('../fonts/function-pro/FunctionPro-Book-webfont.ttf') format('truetype'), url('../fonts/function-pro/FunctionPro-Book-webfont.svg#function_probook') format('svg');
+    src: url('#{$root}/fonts/function-pro/FunctionPro-Book-webfont.eot');
+    src: url('#{$root}/fonts/function-pro/FunctionPro-Book-webfont.eot?#iefix') format('embedded-opentype'),
+    url('#{$root}/fonts/function-pro/FunctionPro-Book-webfont.woff2') format('woff2'),
+    url('#{$root}/fonts/function-pro/FunctionPro-Book-webfont.woff') format('woff'),
+    url('#{$root}/fonts/function-pro/FunctionPro-Book-webfont.ttf') format('truetype'),
+    url('#{$root}/fonts/function-pro/FunctionPro-Book-webfont.svg#function_probook') format('svg');
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Function Pro';
-    src: url('../fonts/function-pro/FunctionPro-Demi-webfont.eot');
-    src: url('../fonts/function-pro/FunctionPro-Demi-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/function-pro/FunctionPro-Demi-webfont.woff2') format('woff2'), url('../fonts/function-pro/FunctionPro-Demi-webfont.woff') format('woff'), url('../fonts/function-pro/FunctionPro-Demi-webfont.ttf') format('truetype'), url('../fonts/function-pro/FunctionPro-Demi-webfont.svg#FunctionPro-Demi-webfont') format('svg');
+    src: url('#{$root}/fonts/function-pro/FunctionPro-Demi-webfont.eot');
+    src: url('#{$root}/fonts/function-pro/FunctionPro-Demi-webfont.eot?#iefix') format('embedded-opentype'),
+    url('#{$root}/fonts/function-pro/FunctionPro-Demi-webfont.woff2') format('woff2'),
+    url('#{$root}/fonts/function-pro/FunctionPro-Demi-webfont.woff') format('woff'),
+    url('#{$root}/fonts/function-pro/FunctionPro-Demi-webfont.ttf') format('truetype'),
+    url('#{$root}/fonts/function-pro/FunctionPro-Demi-webfont.svg#FunctionPro-Demi-webfont') format('svg');
     font-weight: 700;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Function Pro';
-    src: url('../fonts/function-pro/FunctionPro-Bold-webfont.eot');
-    src: url('../fonts/function-pro/FunctionPro-Bold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/function-pro/FunctionPro-Bold-webfont.woff2') format('woff2'), url('../fonts/function-pro/FunctionPro-Bold-webfont.woff') format('woff'), url('../fonts/function-pro/FunctionPro-Bold-webfont.ttf') format('truetype'), url('../fonts/function-pro/FunctionPro-Bold-webfont.svg#FunctionPro-Bold-webfont') format('svg');
+    src: url('#{$root}/fonts/function-pro/FunctionPro-Bold-webfont.eot');
+    src: url('#{$root}/fonts/function-pro/FunctionPro-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('#{$root}/fonts/function-pro/FunctionPro-Bold-webfont.woff2') format('woff2'),
+    url('#{$root}/fonts/function-pro/FunctionPro-Bold-webfont.woff') format('woff'),
+    url('#{$root}/fonts/function-pro/FunctionPro-Bold-webfont.ttf') format('truetype'),
+    url('#{$root}/fonts/function-pro/FunctionPro-Bold-webfont.svg#FunctionPro-Bold-webfont') format('svg');
     font-weight: 800;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Function Pro';
-    src: url('../fonts/function-pro/FunctionPro-CondensedExtraBd.eot');
-    src: url('../fonts/function-pro/FunctionPro-CondensedExtraBd.eot?#iefix') format('embedded-opentype'), url('../fonts/function-pro/FunctionPro-CondensedExtraBd.woff2') format('woff2'), url('../fonts/function-pro/FunctionPro-CondensedExtraBd.woff') format('woff'), url('../fonts/function-pro/FunctionPro-CondensedExtraBd.ttf') format('truetype'), url('../fonts/function-pro/FunctionPro-CondensedExtraBd.svg#FunctionPro-CondensedExtraBd') format('svg');
+    src: url('#{$root}/fonts/function-pro/FunctionPro-CondensedExtraBd.eot');
+    src: url('#{$root}/fonts/function-pro/FunctionPro-CondensedExtraBd.eot?#iefix') format('embedded-opentype'),
+    url('#{$root}/fonts/function-pro/FunctionPro-CondensedExtraBd.woff2') format('woff2'),
+    url('#{$root}/fonts/function-pro/FunctionPro-CondensedExtraBd.woff') format('woff'),
+    url('#{$root}/fonts/function-pro/FunctionPro-CondensedExtraBd.ttf') format('truetype'),
+    url('#{$root}/fonts/function-pro/FunctionPro-CondensedExtraBd.svg#FunctionPro-CondensedExtraBd') format('svg');
     font-weight: 900;
     font-style: normal;
 }
@@ -52,16 +68,23 @@
 // Styleguide 2.2 
 @font-face {
     font-family: 'Proxima Nova';
-    src: url('../fonts/proxima-nova/proximanova-regular-webfont.eot');
-    src: url('../fonts/proxima-nova/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/proxima-nova/proximanova-regular-webfont.woff2') format('woff2'), url('../fonts/proxima-nova/proximanova-regular-webfont.woff') format('woff'), url('../fonts/proxima-nova/proximanova-regular-webfont.ttf') format('truetype'), url('../fonts/proxima-nova/proximanova-regular-webfont.svg#function_probook') format('svg');
+    src: url('#{$root}/fonts/proxima-nova/proximanova-regular-webfont.eot');
+    src: url('#{$root}/fonts/proxima-nova/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('#{$root}/fonts/proxima-nova/proximanova-regular-webfont.woff2') format('woff2'),
+    url('#{$root}/fonts/proxima-nova/proximanova-regular-webfont.woff') format('woff'),
+    url('#{$root}/fonts/proxima-nova/proximanova-regular-webfont.ttf') format('truetype'),
+    url('#{$root}/fonts/proxima-nova/proximanova-regular-webfont.svg#function_probook') format('svg');
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Proxima Nova';
-    src: url('../fonts/proxima-nova/proximanova-bold-webfont.eot');
-    src: url('../fonts/proxima-nova/proximanova-bold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/proxima-nova/proximanova-bold-webfont.woff2') format('woff2'), url('../fonts/proxima-nova/proximanova-bold-webfont.woff') format('woff'), url('../fonts/proxima-nova/proximanova-bold-webfont.svg#proxima-nova-bold-webfont') format('svg');
+    src: url('#{$root}/fonts/proxima-nova/proximanova-bold-webfont.eot');
+    src: url('#{$root}/fonts/proxima-nova/proximanova-bold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('#{$root}/fonts/proxima-nova/proximanova-bold-webfont.woff2') format('woff2'),
+    url('#{$root}/fonts/proxima-nova/proximanova-bold-webfont.woff') format('woff'),
+    url('#{$root}/fonts/proxima-nova/proximanova-bold-webfont.svg#proxima-nova-bold-webfont') format('svg');
     font-weight: 700;
     font-style: normal;
 }
