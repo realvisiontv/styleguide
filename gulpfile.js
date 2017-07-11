@@ -14,7 +14,10 @@ gulp.task('styleguide:generate', function() {
             title: 'Real Vision Styleguide',
             server: true,
             rootPath: outputPath,
-            overviewPath: 'README.md'
+            appRoot: '/styleguide',
+            overviewPath: 'README.md',
+            server: false,
+            disableHtml5Mode: true
         }))
         .pipe(gulp.dest(outputPath));
 });
