@@ -82,14 +82,14 @@ a.pseudo-class-active {
 
 .button.pseudo-class-hover {
   background: transparent;
-  border-color: #fe1135;
-  color: #fe1135;
+  border-color: #FE1135;
+  color: #FE1135;
 }
 
 .button.pseudo-class-focus {
   background: transparent;
-  border-color: #fe1135;
-  color: #fe1135;
+  border-color: #FE1135;
+  color: #FE1135;
   text-decoration: underline;
   text-decoration-color: rgba(254, 17, 53, 0.25);
 }

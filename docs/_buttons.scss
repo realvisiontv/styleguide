@@ -11,9 +11,9 @@
 //
 // Styleguide 4.1
 .button {
-    background: #fe1135;
+    background: #FE1135;
     border: 2px solid transparent;
-    color: #fff;
+    color: #FFF;
     cursor: pointer;
     font-family: 'Function Pro', sans-serif;
     font-size: $size-5;
@@ -21,17 +21,20 @@
     line-height: 1;
     padding: 1rem 2rem;
     text-transform: uppercase;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+
     &:hover {
         background: transparent;
-        border-color: #fe1135;
-        color: #fe1135;
+        border-color: #FE1135;
+        color: #FE1135;
     }
+
     &:focus {
         background: transparent;
-        border-color: #fe1135;
-        color: #fe1135;
+        border-color: #FE1135;
+        color: #FE1135;
         text-decoration: underline;
-        text-decoration-color: rgba(#fe1135, 0.25);
+        text-decoration-color: rgba(#FE1135, 0.25);
     }
 }
 

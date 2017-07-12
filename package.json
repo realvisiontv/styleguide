@@ -1,13 +1,16 @@
 {
-    "scripts": {
-        "start": "gulp watch"
-    },
-    "dependencies": {
-        "bulma": "^0.4.3"
-    },
-    "devDependencies": {
-        "gulp": "^3.9.1",
-        "gulp-sass": "^3.1.0",
-        "sc5-styleguide": "^2.0.1"
-    }
+  "name": "realvision-styles",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "gulp watch"
+  },
+  "dependencies": {
+    "bulma": "^0.4.3",
+    "sass-lint": "^1.10.2"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
+    "sc5-styleguide": "^2.0.1"
+  }
 }

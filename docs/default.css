@@ -1498,24 +1498,25 @@ a {
     text-decoration-color: rgba(54, 54, 54, 0.25); }
 
 .button {
-  background: #fe1135;
+  background: #FE1135;
   border: 2px solid transparent;
-  color: #fff;
+  color: #FFF;
   cursor: pointer;
   font-family: 'Function Pro', sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 1;
   padding: 1rem 2rem;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  transition: background 0.2s, border-color 0.2s, color 0.2s; }
   .button:hover {
     background: transparent;
-    border-color: #fe1135;
-    color: #fe1135; }
+    border-color: #FE1135;
+    color: #FE1135; }
   .button:focus {
     background: transparent;
-    border-color: #fe1135;
-    color: #fe1135;
+    border-color: #FE1135;
+    color: #FE1135;
     text-decoration: underline;
     text-decoration-color: rgba(254, 17, 53, 0.25); }
 
