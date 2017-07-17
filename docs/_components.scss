@@ -40,3 +40,209 @@
         }
     }
 }
+
+// Content Tile
+//
+// markup:
+// <div class="columns">
+//     <article class="column content-tile">
+//         <a href="#">
+//             <div class="image">
+//                 <img src="https://unsplash.it/320/180/?random"  />
+//             </div>
+//             <div class="content">
+//                 <div class="title">
+//                     <div class="subheading">
+//                         <div class="is-pulled-left">Think Piece</div>
+//                         <div class="is-pulled-right">36:00</div>
+//                     </div>
+//                     <h1>Looking Under the Hood Australia</h1>
+//                     <button>Info</button>
+//                     <button>Add</button>
+//                 </div>
+//                 <div class="theme">Insight</div>
+//                 <blockquote>
+//                     Go you good thing Thats the best rant I've heard for a short while.
+//                     <cite>Mark M.</cite>
+//                 </blockquote>
+//                 <div class="icon"></div>
+//             </div>
+//         </a>
+//     </article>
+//     <article class="column content-tile">
+//         <a href="#">
+//             <div class="image">
+//                 <img src="https://unsplash.it/320/180/?random"  />
+//             </div>
+//             <div class="content">
+//                 <div class="title">
+//                     <div class="subheading">
+//                         <div class="is-pulled-left">Think Piece</div>
+//                         <div class="is-pulled-right">36:00</div>
+//                     </div>
+//                     <h1>Looking Under the Hood Australia</h1>
+//                     <button>Info</button>
+//                     <button>Add</button>
+//                 </div>
+//                 <div class="theme">Insight</div>
+//                 <blockquote>
+//                     Go you good thing Thats the best rant I've heard for a short while.
+//                     <cite>Mark M.</cite>
+//                 </blockquote>
+//                 <div class="icon"></div>
+//             </div>
+//         </a>
+//     </article>
+//     <article class="column content-tile">
+//         <a href="#">
+//             <div class="image">
+//                 <img src="https://unsplash.it/320/180/?random"  />
+//             </div>
+//             <div class="content">
+//                 <div class="title">
+//                     <div class="subheading">
+//                         <div class="is-pulled-left">Think Piece</div>
+//                         <div class="is-pulled-right">36:00</div>
+//                     </div>
+//                     <h1>Looking Under the Hood Australia</h1>
+//                     <button>Info</button>
+//                     <button>Add</button>
+//                 </div>
+//                 <div class="theme">Insight</div>
+//                 <blockquote>
+//                     Go you good thing Thats the best rant I've heard for a short while.
+//                     <cite>Mark M.</cite>
+//                 </blockquote>
+//                 <div class="icon"></div>
+//             </div>
+//         </a>
+//     </article>
+// </div>
+//
+// Styleguide 5.2
+.content-tile {
+    position: relative;
+
+    &:before {
+        display: block;
+        content: '';
+        width: 100%;
+    }
+
+    .content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 0.75rem;
+    }
+
+    .image {
+        height: 0;
+        padding-bottom: 2 / 3 * 100%;
+    }
+    img {
+        width: 100%;
+    }
+
+    .title {
+        background: #fff;
+        position: absolute;
+        bottom: 0.75rem;
+        left: 0.75rem;
+        padding-top: 3px;
+        padding-right: 6px;
+        width: calc(70% - 0.75rem);
+    }
+    h1 {
+        font-size: $size-5;
+        font-weight: 800;
+        margin: 0;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        display: -webkit-box;
+    }
+    .subheading {
+        overflow: hidden;
+        text-transform: uppercase;
+        font-size: $size-7;
+    }
+
+    .theme {
+        background: grey;
+        color: #fff;
+        text-transform: uppercase;
+        position: absolute;
+        bottom: 0.75rem;
+        right: 0.75rem;
+        width: calc(30% - 0.75rem);
+        text-align: center;
+        font-family: 'Function Pro';
+        height: 15%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    blockquote {
+        color: #fff;
+        font-size: $size-7;
+        margin: 0.75rem;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        display: -webkit-box;
+        opacity: 0;
+        transition: opacity 0.2s;
+        cite {
+            display: block;
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            font-style: normal;
+            text-transform: uppercase;
+            margin-top: 5px;
+            padding-top: 5px;
+        }
+    }
+
+    button {
+        background: gray;
+        border: 0;
+        color: #fff;
+        width: 32px;
+        height: 32px;
+        margin-right: 1ex;
+    }
+
+    .icon {
+        position: absolute;
+        right: 0;
+        bottom: calc(15% + 1.75rem);
+        width: 30%;
+        opacity: 0;
+        transition: opacity 0.2s;
+
+        &:after {
+            border-top: 20px solid transparent;
+            border-left: 30px solid #fff;
+            border-bottom: 20px solid transparent;
+            content: "";
+            display: block;
+            width: 0;
+            height: 0;
+            margin: 0 auto;
+        }
+    }
+
+    a {
+        color: $text;
+        &:hover,
+        &:focus {
+            blockquote,
+            .icon {
+                opacity: 1;
+            }
+        }
+    }
+}

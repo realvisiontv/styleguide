@@ -1,13 +1,3 @@
-@keyframes spinAround {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(359deg);
-  }
-}
-
 @font-face {
   font-family: 'Function Pro';
   src: url("/styleguide/fonts/function-pro/FunctionPro-Book-webfont.eot");
@@ -54,4 +44,14 @@
   src: url("/styleguide/fonts/proxima-nova/proximanova-bold-webfont.eot?#iefix") format("embedded-opentype"), url("/styleguide/fonts/proxima-nova/proximanova-bold-webfont.woff2") format("woff2"), url("/styleguide/fonts/proxima-nova/proximanova-bold-webfont.woff") format("woff"), url("/styleguide/fonts/proxima-nova/proximanova-bold-webfont.svg#proxima-nova-bold-webfont") format("svg");
   font-weight: 700;
   font-style: normal;
+}
+
+@keyframes spinAround {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
 }

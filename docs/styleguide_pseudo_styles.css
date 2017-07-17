@@ -93,3 +93,10 @@ a.pseudo-class-active {
   text-decoration: underline;
   text-decoration-color: rgba(254, 17, 53, 0.25);
 }
+
+.content-tile a.pseudo-class-hover blockquote,
+.content-tile a.pseudo-class-hover .icon,
+.content-tile a.pseudo-class-focus blockquote,
+.content-tile a.pseudo-class-focus .icon {
+  opacity: 1;
+}

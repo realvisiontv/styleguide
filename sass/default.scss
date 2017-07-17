@@ -1,10 +1,14 @@
-$root: '/styleguide';
-$baseline: 1.5rem;
-$text: #363d4e;
+// Colors and fonts
+// 
+// Styleguide 1.0
+@import 'variables';
+
+// styleguide:ignore:start
 @import '../node_modules/bulma/sass/utilities/_all';
 @import '../node_modules/bulma/sass/base/_all';
 @import '../node_modules/bulma/sass/grid/_all';
 @import '../node_modules/bulma/sass/elements/other';
+
 body {
     overflow-x: initial;
 }
@@ -26,23 +30,23 @@ body {
         box-sizing: border-box;
     }
 }
+// styleguide:ignore:end
 
 // Layout
 // 
-// Styleguide 1.0
-@import 'layout';
-// Fonts
-// 
 // Styleguide 2.0
-@import "fonts";
+@import 'layout';
+
 // Typography
 // 
 // Styleguide 3.0
 @import 'typography';
+
 // Buttons
 //
 // Styleguide 4.0
 @import 'buttons';
+
 // Components
 //
 // Styleguide 5.0
