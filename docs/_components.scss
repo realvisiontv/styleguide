@@ -102,11 +102,10 @@
 //                 <div class="title">
 //                     <div class="subheading">
 //                         <div class="is-pulled-left">Think Piece</div>
-//                         <div class="is-pulled-right">36:00</div>
+//                         <div class="is-pulled-right">1:15:00</div>
 //                     </div>
-//                     <h1>Looking Under the Hood Australia</h1>
+//                     <h1>Quantitative Insight with a Discretionary Edge - Richard Excell</h1>
 //                     <button>Info</button>
-//                     <button>Add</button>
 //                 </div>
 //                 <div class="theme">Insight</div>
 //                 <blockquote>
@@ -121,6 +120,8 @@
 //
 // Styleguide 5.2
 .content-tile {
+    $padding: 0.75rem;
+
     position: relative;
 
     &:before {
@@ -135,12 +136,24 @@
         left: 0;
         right: 0;
         bottom: 0;
-        padding: 0.75rem;
+        padding: $padding;
     }
 
     .image {
         height: 0;
         padding-bottom: 2 / 3 * 100%;
+        &:after {
+            background: rgba(0, 0, 0, 0.5);
+            content: "";
+            display: block;
+            position: absolute;
+            top: $padding;
+            bottom: $padding;
+            left: $padding;
+            right: $padding;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
     }
     img {
         width: 100%;
@@ -149,11 +162,11 @@
     .title {
         background: #fff;
         position: absolute;
-        bottom: 0.75rem;
-        left: 0.75rem;
+        bottom: $padding;
+        left: $padding;
         padding-top: 3px;
         padding-right: 6px;
-        width: calc(70% - 0.75rem);
+        width: calc(70% - #{$padding});
     }
     h1 {
         font-size: $size-5;
@@ -175,9 +188,9 @@
         color: #fff;
         text-transform: uppercase;
         position: absolute;
-        bottom: 0.75rem;
-        right: 0.75rem;
-        width: calc(30% - 0.75rem);
+        bottom: $padding;
+        right: $padding;
+        width: calc(30% - #{$padding});
         text-align: center;
         font-family: 'Function Pro';
         height: 15%;
@@ -189,7 +202,7 @@
     blockquote {
         color: #fff;
         font-size: $size-7;
-        margin: 0.75rem;
+        margin: $padding;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
@@ -240,7 +253,8 @@
         &:hover,
         &:focus {
             blockquote,
-            .icon {
+            .icon,
+            .image:after {
                 opacity: 1;
             }
         }

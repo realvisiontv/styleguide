@@ -1560,6 +1560,17 @@ a.button {
   .content-tile .image {
     height: 0;
     padding-bottom: 66.66667%; }
+    .content-tile .image:after {
+      background: rgba(0, 0, 0, 0.5);
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0.75rem;
+      bottom: 0.75rem;
+      left: 0.75rem;
+      right: 0.75rem;
+      opacity: 0;
+      transition: opacity 0.2s; }
   .content-tile img {
     width: 100%; }
   .content-tile .title {
@@ -1639,6 +1650,8 @@ a.button {
   .content-tile a {
     color: #363D4E; }
     .content-tile a:hover blockquote,
-    .content-tile a:hover .icon, .content-tile a:focus blockquote,
-    .content-tile a:focus .icon {
+    .content-tile a:hover .icon,
+    .content-tile a:hover .image:after, .content-tile a:focus blockquote,
+    .content-tile a:focus .icon,
+    .content-tile a:focus .image:after {
       opacity: 1; }

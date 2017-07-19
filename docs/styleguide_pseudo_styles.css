@@ -96,7 +96,9 @@ a.pseudo-class-active {
 
 .content-tile a.pseudo-class-hover blockquote,
 .content-tile a.pseudo-class-hover .icon,
+.content-tile a.pseudo-class-hover .image:after,
 .content-tile a.pseudo-class-focus blockquote,
-.content-tile a.pseudo-class-focus .icon {
+.content-tile a.pseudo-class-focus .icon,
+.content-tile a.pseudo-class-focus .image:after {
   opacity: 1;
 }
