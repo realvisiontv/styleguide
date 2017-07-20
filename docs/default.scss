@@ -4,10 +4,10 @@
 @import 'variables';
 
 // styleguide:ignore:start
-@import '../node_modules/bulma/sass/utilities/_all';
-@import '../node_modules/bulma/sass/base/_all';
-@import '../node_modules/bulma/sass/grid/_all';
-@import '../node_modules/bulma/sass/elements/other';
+@import 'node_modules/bulma/sass/utilities/_all';
+@import 'node_modules/bulma/sass/base/_all';
+@import 'node_modules/bulma/sass/grid/_all';
+@import 'node_modules/bulma/sass/elements/other';
 
 body {
     overflow-x: initial;
