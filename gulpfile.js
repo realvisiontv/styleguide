@@ -17,6 +17,9 @@ gulp.task('styleguide:generate', function() {
         // Do image sprites, optimizations etc.
         .pipe(gulp.dest('./fonts'))
         .pipe(gulp.dest(outputPath + '/fonts'));
+    gulp.src(['images/**'])
+        .pipe(gulp.dest('./images'))
+        .pipe(gulp.dest(outputPath + '/images'));
 
     return gulp.src('sass/*.scss')
         .pipe(styleguide.generate(options))
