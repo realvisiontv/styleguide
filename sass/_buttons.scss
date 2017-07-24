@@ -59,46 +59,98 @@ a.button {
 // Product button
 // 
 // Inherits from cta button (4.2), but inverts the color and hover states
-// and adds a 'splatter' image overlay and rotates by 1 degree
+// and adds a 'splatter' image overlay and adds a slight rotation
 // 
-// .product-button  - Default button
+// .product-button-1  - Variant 1
+// .product-button-2 - Variant 2
+// .product-button-3 - Variant 3
+// .product-button-4 - Variant 4
 // :hover   - Hover state
 // :focus   - Focus state
 // 
 // markup:
-// <a href="#" class="button product-button {$modifiers}">
-//      Television
-//      <img src="../images/buttons/splatter-effect.png" />
-// </a>
+// <div class="product-button-1 {$modifiers}">
+//      <a href="#" class="button">
+//          The quick brown fox
+//      </a>
+// </div>
 //
 // Styleguide 4.3
-a.button.product-button {
-    -webkit-transform: rotate(0deg); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
-    -ms-transform: rotate(0deg); /* IE 9 */
-    transform: rotate(0deg); /* IE 10, Fx 16+, Op 12.1+ */
+.product-button-1 {
     position: relative;
-    background: transparent;
-    color: $color-torch-red;
-    border: 2px solid $color-torch-red;
-    font-weight: 800;
-    padding: .5rem 1rem;
+    display: inline-block;
     overflow: hidden;
+    -webkit-transform: rotate(1deg); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+    -ms-transform: rotate(1deg); /* IE 9 */
+    transform: rotate(1deg); /* IE 10, Fx 16+, Op 12.1+ */
 
-    img {
+    a.button {
+        background: transparent;
+        color: $color-torch-red;
+        border: 4px solid $color-torch-red;
+        font-weight: 800;
+        padding: .5rem 1rem;
+    }
+
+    &:after {
+        content: "";
         position: absolute;
-        top: -2px;
-        left: -2px;
-        max-width: 150%;
+        top: 0;
+        left: 0;
+        width: 200%;
+        height: 200%;
+        background: url('../images/buttons/splatter-effect.png');
+        background-repeat: no-repeat;
+        background-size: cover; 
     }
 
     &:hover {
-        background: $color-torch-red;
-        color: #FFF;
+        cursor: pointer;
+        a.button {
+            background: $color-torch-red;
+            color: #FFF;
+        }
     }
 
     &:focus {
-        background: $color-torch-red;
-        color: #FFF;
-        text-decoration-color: rgba(#FFF, 1);
+        a.button {
+            background: $color-torch-red;
+            color: #FFF;
+            text-decoration: underline;
+            text-decoration-color: rgba(#FFF, 1);
+        }
+    }
+
+    &.product-button-2 {
+        -webkit-transform: rotate(-1deg); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+        -ms-transform: rotate(-1deg); /* IE 9 */
+        transform: rotate(-1deg); /* IE 10, Fx 16+, Op 12.1+ */
+
+        &:after {
+            top: auto;
+            bottom: -15px;
+            left: 0;
+        }
+    }
+
+    &.product-button-3 {
+        &:after {
+            top: 0;
+            left: auto;
+            right: 0;
+        }
+    }
+
+    &.product-button-4 {
+        -webkit-transform: rotate(-1deg); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+        -ms-transform: rotate(-1deg); /* IE 9 */
+        transform: rotate(-1deg); /* IE 10, Fx 16+, Op 12.1+ */
+
+        &:after {
+            top: auto;
+            left: auto;
+            bottom: 0;
+            right: 0;
+        }
     }
 }
