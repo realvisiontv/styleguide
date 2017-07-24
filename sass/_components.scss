@@ -282,3 +282,21 @@
         }
     }
 }
+
+// Hero Image
+// 
+// A large (optional) clickable hero image.
+// 
+// markup:
+// <div class="hero-image">
+//     <a>
+//         <img src="https://unsplash.it/1600/900/?random" alt="" />
+//     </a>
+// </div>
+//
+// Styleguide 5.3
+.hero {
+    img {
+        display: block;
+    }
+}
