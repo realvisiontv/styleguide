@@ -1663,3 +1663,6 @@ a.button {
     .content-tile a:focus .icon,
     .content-tile a:focus .image:after {
       opacity: 1; }
+
+.hero img {
+  display: block; }
