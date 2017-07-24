@@ -80,9 +80,7 @@ a.button {
     position: relative;
     display: inline-block;
     overflow: hidden;
-    -webkit-transform: rotate(1deg); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
-    -ms-transform: rotate(1deg); /* IE 9 */
-    transform: rotate(1deg); /* IE 10, Fx 16+, Op 12.1+ */
+    @include transform(rotate(1deg));
 
     a.button {
         background: transparent;
@@ -122,9 +120,7 @@ a.button {
     }
 
     &.product-button-2 {
-        -webkit-transform: rotate(-1deg); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
-        -ms-transform: rotate(-1deg); /* IE 9 */
-        transform: rotate(-1deg); /* IE 10, Fx 16+, Op 12.1+ */
+        @include transform(rotate(-1deg));
 
         &:after {
             top: auto;
@@ -142,9 +138,7 @@ a.button {
     }
 
     &.product-button-4 {
-        -webkit-transform: rotate(-1deg); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
-        -ms-transform: rotate(-1deg); /* IE 9 */
-        transform: rotate(-1deg); /* IE 10, Fx 16+, Op 12.1+ */
+        @include transform(rotate(-1deg));
 
         &:after {
             top: auto;
