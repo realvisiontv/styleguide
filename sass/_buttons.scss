@@ -69,14 +69,14 @@ a.button {
 // :focus   - Focus state
 // 
 // markup:
-// <div class="product-button-1 {$modifiers}">
+// <div class="product-button {$modifiers}">
 //      <a href="#" class="button">
 //          The quick brown fox
 //      </a>
 // </div>
 //
 // Styleguide 4.3
-.product-button-1 {
+.product-button {
     position: relative;
     display: inline-block;
     overflow: hidden;
