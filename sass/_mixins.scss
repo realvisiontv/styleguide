@@ -1,0 +1,18 @@
+/*
+  Mixins
+  Author - Chris Clark | @cclark07
+  Edited on - July 24, 2017
+*/
+
+@mixin transition($value) {
+  -webkit-transition: $value;
+  -moz-transition: $value;
+  -o-transition: $value;
+  transition: $value;
+}
+@mixin transform($value) {
+  -webkit-transform: $value;
+  -moz-transform: $value;
+  -o-transform: $value;
+  transform: $value;
+}
