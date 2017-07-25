@@ -1527,6 +1527,12 @@ a.button {
 .feature-quote {
   display: inline-block;
   text-align: center; }
+  .feature-quote .icons * {
+    display: inline-block; }
+  .feature-quote .icon-star {
+    width: 1rem; }
+    .feature-quote .icon-star path {
+      fill: #FE1135; }
   .feature-quote p {
     font-family: 'Function Pro', sans-serif;
     font-size: 2.5rem;
@@ -1543,6 +1549,8 @@ a.button {
     font-size: 5rem; }
   .feature-quote.large cite {
     font-size: 2.5rem; }
+  .feature-quote.large .icon-star {
+    width: 2rem; }
 
 .content-tile {
   position: relative; }
@@ -1655,3 +1663,36 @@ a.button {
     .content-tile a:focus .icon,
     .content-tile a:focus .image:after {
       opacity: 1; }
+
+.hero img {
+  display: block; }
+
+.navigation {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 0.75rem; }
+  .navigation svg {
+    display: block;
+    height: 44px; }
+    .navigation svg path {
+      fill: #fff; }
+  .navigation ul {
+    list-style: none;
+    margin: 0; }
+  .navigation li {
+    display: inline-block;
+    margin: 0 1.5rem;
+    font-size: 1rem; }
+  .navigation a {
+    color: #fff;
+    font-family: 'Function Pro', sans-serif;
+    line-height: 44px;
+    text-decoration: none;
+    text-transform: uppercase; }
+  .navigation .user {
+    background: #FE1135;
+    display: block;
+    height: 44px;
+    width: 44px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-align: center; }
