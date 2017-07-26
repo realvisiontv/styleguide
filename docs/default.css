@@ -29,7 +29,7 @@
 @font-face {
   font-family: 'Proxima Nova';
   src: url("/styleguide/fonts/proxima-nova/proximanova-regular-webfont.eot");
-  src: url("/styleguide/fonts/proxima-nova/proximanova-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/styleguide/fonts/proxima-nova/proximanova-regular-webfont.woff2") format("woff2"), url("/styleguide/fonts/proxima-nova/proximanova-regular-webfont.woff") format("woff"), url("/styleguide/fonts/proxima-nova/proximanova-regular-webfont.ttf") format("truetype"), url("/styleguide/fonts/proxima-nova/proximanova-regular-webfont.svg#function_probook") format("svg");
+  src: url("/styleguide/fonts/proxima-nova/proximanova-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/styleguide/fonts/proxima-nova/proximanova-regular-webfont.woff2") format("woff2"), url("/styleguide/fonts/proxima-nova/proximanova-regular-webfont.woff") format("woff"), url("/styleguide/fonts/proxima-nova/proximanova-regular-webfont.ttf") format("truetype"), url("/styleguide/fonts/proxima-nova/proximanova-regular-webfont.svg#proxima-nova-regular-webfont") format("svg");
   font-weight: 400;
   font-style: normal; }
 
@@ -38,6 +38,13 @@
   src: url("/styleguide/fonts/proxima-nova/proximanova-bold-webfont.eot");
   src: url("/styleguide/fonts/proxima-nova/proximanova-bold-webfont.eot?#iefix") format("embedded-opentype"), url("/styleguide/fonts/proxima-nova/proximanova-bold-webfont.woff2") format("woff2"), url("/styleguide/fonts/proxima-nova/proximanova-bold-webfont.woff") format("woff"), url("/styleguide/fonts/proxima-nova/proximanova-bold-webfont.svg#proxima-nova-bold-webfont") format("svg");
   font-weight: 700;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Stampete';
+  src: url("/styleguide/fonts/stampete/stampete.eot");
+  src: url("/styleguide/fonts/stampete/stampete.eot?#iefix") format("embedded-opentype"), url("/styleguide/fonts/stampete/stampete.woff2") format("woff2"), url("/styleguide/fonts/stampete/stampete.woff") format("woff"), url("/styleguide/fonts/stampete/stampete.ttf") format("truetype"), url("/styleguide/fonts/stampete/stampete.svg#stampete") format("svg");
+  font-weight: 400;
   font-style: normal; }
 
 @keyframes spinAround {
@@ -1722,8 +1729,33 @@ a.button {
     .content-tile a:focus .image:after {
       opacity: 1; }
 
-.hero img {
+.hero-image img {
   display: block; }
+
+.hero-image-w-cta {
+  position: relative; }
+  .hero-image-w-cta .image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-position: 50%; }
+  .hero-image-w-cta .container {
+    padding-top: 8rem;
+    padding-bottom: 4rem; }
+  .hero-image-w-cta p {
+    color: #fff;
+    font-family: Stampete;
+    font-size: 3rem;
+    line-height: 3rem;
+    margin-bottom: 6rem;
+    padding: 0;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    display: -webkit-box; }
 
 .navigation {
   background: rgba(0, 0, 0, 0.5);

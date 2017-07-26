@@ -70,7 +70,7 @@
 //     <article class="column content-tile">
 //         <a href="#">
 //             <div class="image">
-//                 <img src="https://unsplash.it/320/180/?random"  />
+//                 <img src="http://via.placeholder.com/320x180"  />
 //             </div>
 //             <div class="content">
 //                 <div class="title">
@@ -94,7 +94,7 @@
 //     <article class="column content-tile">
 //         <a href="#">
 //             <div class="image">
-//                 <img src="https://unsplash.it/320/180/?random"  />
+//                 <img src="http://via.placeholder.com/320x180"  />
 //             </div>
 //             <div class="content">
 //                 <div class="title">
@@ -118,7 +118,7 @@
 //     <article class="column content-tile">
 //         <a href="#">
 //             <div class="image">
-//                 <img src="https://unsplash.it/320/180/?random"  />
+//                 <img src="http://via.placeholder.com/320x180"  />
 //             </div>
 //             <div class="content">
 //                 <div class="title">
@@ -290,14 +290,60 @@
 // markup:
 // <div class="hero-image">
 //     <a>
-//         <img src="https://unsplash.it/1600/900/?random" alt="" />
+//         <img src="http://via.placeholder.com/1600x900" alt="" />
 //     </a>
 // </div>
 //
 // Styleguide 5.3
-.hero {
+.hero-image {
     img {
         display: block;
+    }
+}
+
+// Hero Image with CTA
+// 
+// A large hero image with text and a CTA button. Full page width.
+// 
+// markup:
+// <div class="hero-image-w-cta">
+//     <div class="image" style="background-image: url('http://via.placeholder.com/1600x900')"></div>
+//     <div class="container">
+//         <p class="column is-half">Vestibulum sed varius urna, ut tempus arcu. Aenean vel velit neque. Phasellus convallis placerat purus vitae tempus. Donec cursus magna non euismod aliquet.</p>
+//         <a class="button" href="#">Click here</a>
+//     </div>
+// </div>
+//
+// Styleguide 5.4
+.hero-image-w-cta {
+    position: relative;
+
+    .image {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-size: cover;
+        background-position: 50%;
+    }
+
+    .container {
+        padding-top: 8rem;
+        padding-bottom: 4rem;
+    }
+
+    p {
+        color: #fff;
+        font-family: Stampete;
+        font-size: $size-1;
+        line-height: $size-1;
+        margin-bottom: $size-1 * 2;
+        padding: 0;
+        -webkit-line-clamp: 6;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        display: -webkit-box;
     }
 }
 
@@ -318,7 +364,7 @@
 //     </div>
 // </div>
 // 
-// Styleguide 5.4
+// Styleguide 5.5
 .navigation {
     background: rgba(0, 0, 0, 0.5);
     padding: 0.75rem;
