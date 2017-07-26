@@ -50,15 +50,15 @@
 
     &.large {
         p {
-            font-size: $size-2 * 2;
+            font-size: $size-2 * 1.5;
         }
 
         cite {
-            font-size: $size-5 * 2;
+            font-size: $size-6 * 1.5;
         }
 
         .icon-star {
-            width: 2rem;
+            width: 1.5rem;
         }
     }
 }
