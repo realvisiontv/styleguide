@@ -94,6 +94,22 @@ a.pseudo-class-active {
   text-decoration-color: rgba(254, 17, 53, 0.25);
 }
 
+.product-button.pseudo-class-hover {
+  cursor: pointer;
+}
+
+.product-button.pseudo-class-hover a.button {
+  background: #FE1135;
+  color: #FFF;
+}
+
+.product-button.pseudo-class-focus a.button {
+  background: #FE1135;
+  color: #FFF;
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+
 .content-tile a.pseudo-class-hover blockquote,
 .content-tile a.pseudo-class-hover .icon,
 .content-tile a.pseudo-class-hover .image:after,

@@ -97,7 +97,7 @@ a.button {
         left: 0;
         width: 200%;
         height: 200%;
-        background: url('../images/buttons/splatter-effect.png');
+        background: url('#{$root}/images/buttons/splatter-effect.png');
         background-repeat: no-repeat;
         background-size: cover; 
     }

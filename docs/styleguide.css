@@ -40,6 +40,11 @@
   font-weight: 700;
   font-style: normal; }
 
+/*
+  Mixins
+  Author - Chris Clark | @cclark07
+  Edited on - July 24, 2017
+*/
 @keyframes spinAround {
   from {
     transform: rotate(0deg); }
@@ -1523,6 +1528,64 @@ a {
 a.button {
   display: inline-block;
   text-decoration: none; }
+
+.product-button {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  -webkit-transform: rotate(1deg);
+  -moz-transform: rotate(1deg);
+  -o-transform: rotate(1deg);
+  transform: rotate(1deg); }
+  .product-button a.button {
+    background: transparent;
+    color: #FE1135;
+    border: 4px solid #FE1135;
+    font-weight: 800;
+    padding: .5rem 1rem; }
+  .product-button:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: url("/styleguide/images/buttons/splatter-effect.png");
+    background-repeat: no-repeat;
+    background-size: cover; }
+  .product-button:hover {
+    cursor: pointer; }
+    .product-button:hover a.button {
+      background: #FE1135;
+      color: #FFF; }
+  .product-button:focus a.button {
+    background: #FE1135;
+    color: #FFF;
+    text-decoration: underline;
+    text-decoration-color: white; }
+  .product-button.product-button-2 {
+    -webkit-transform: rotate(-1deg);
+    -moz-transform: rotate(-1deg);
+    -o-transform: rotate(-1deg);
+    transform: rotate(-1deg); }
+    .product-button.product-button-2:after {
+      top: auto;
+      bottom: -15px;
+      left: 0; }
+  .product-button.product-button-3:after {
+    top: 0;
+    left: auto;
+    right: 0; }
+  .product-button.product-button-4 {
+    -webkit-transform: rotate(-1deg);
+    -moz-transform: rotate(-1deg);
+    -o-transform: rotate(-1deg);
+    transform: rotate(-1deg); }
+    .product-button.product-button-4:after {
+      top: auto;
+      left: auto;
+      bottom: 0;
+      right: 0; }
 
 .feature-quote {
   display: inline-block;
