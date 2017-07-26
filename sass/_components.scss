@@ -26,7 +26,7 @@
     }
 
     .icon-star {
-        width: 1rem;
+        width: 0.5rem;
         path {
             fill: $color-torch-red;
         }
@@ -34,15 +34,16 @@
 
     p {
         font-family: 'Function Pro', sans-serif;
-        font-size: $size-2;
+        font-size: 1.5rem;
         font-style: italic;
         font-weight: 700;
         line-height: 1;
+        margin: 0.25rem 0;
     }
 
     cite {
         font-family: 'Function Pro', sans-serif;
-        font-size: $size-6;
+        font-size: 0.75rem;
         font-style: normal;
         line-height: 1;
         opacity: 0.75;
@@ -50,11 +51,11 @@
 
     &.large {
         p {
-            font-size: $size-2 * 1.5;
+            font-size: 3rem;
         }
 
         cite {
-            font-size: $size-6 * 1.5;
+            font-size: 1.75rem;
         }
 
         .icon-star {
