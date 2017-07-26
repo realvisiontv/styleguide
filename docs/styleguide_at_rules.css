@@ -33,7 +33,7 @@
 @font-face {
   font-family: 'Proxima Nova';
   src: url("/styleguide/fonts/proxima-nova/proximanova-regular-webfont.eot");
-  src: url("/styleguide/fonts/proxima-nova/proximanova-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/styleguide/fonts/proxima-nova/proximanova-regular-webfont.woff2") format("woff2"), url("/styleguide/fonts/proxima-nova/proximanova-regular-webfont.woff") format("woff"), url("/styleguide/fonts/proxima-nova/proximanova-regular-webfont.ttf") format("truetype"), url("/styleguide/fonts/proxima-nova/proximanova-regular-webfont.svg#function_probook") format("svg");
+  src: url("/styleguide/fonts/proxima-nova/proximanova-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/styleguide/fonts/proxima-nova/proximanova-regular-webfont.woff2") format("woff2"), url("/styleguide/fonts/proxima-nova/proximanova-regular-webfont.woff") format("woff"), url("/styleguide/fonts/proxima-nova/proximanova-regular-webfont.ttf") format("truetype"), url("/styleguide/fonts/proxima-nova/proximanova-regular-webfont.svg#proxima-nova-regular-webfont") format("svg");
   font-weight: 400;
   font-style: normal;
 }
@@ -43,6 +43,14 @@
   src: url("/styleguide/fonts/proxima-nova/proximanova-bold-webfont.eot");
   src: url("/styleguide/fonts/proxima-nova/proximanova-bold-webfont.eot?#iefix") format("embedded-opentype"), url("/styleguide/fonts/proxima-nova/proximanova-bold-webfont.woff2") format("woff2"), url("/styleguide/fonts/proxima-nova/proximanova-bold-webfont.woff") format("woff"), url("/styleguide/fonts/proxima-nova/proximanova-bold-webfont.svg#proxima-nova-bold-webfont") format("svg");
   font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Stampete';
+  src: url("/styleguide/fonts/stampete/stampete.eot");
+  src: url("/styleguide/fonts/stampete/stampete.eot?#iefix") format("embedded-opentype"), url("/styleguide/fonts/stampete/stampete.woff2") format("woff2"), url("/styleguide/fonts/stampete/stampete.woff") format("woff"), url("/styleguide/fonts/stampete/stampete.ttf") format("truetype"), url("/styleguide/fonts/stampete/stampete.svg#stampete") format("svg");
+  font-weight: 400;
   font-style: normal;
 }
 
