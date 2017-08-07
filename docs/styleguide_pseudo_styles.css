@@ -114,3 +114,7 @@ a.pseudo-class-active {
 .content-tile a.pseudo-class-focus .image:after {
   opacity: 1;
 }
+
+.navigation .navigation-mobile.pseudo-class-hover .menuButton span {
+  transform: scale(1.2);
+}

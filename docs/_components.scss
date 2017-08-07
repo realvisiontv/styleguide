@@ -350,6 +350,12 @@
 
 // Navigation
 //
+// Pre-paywall navigation component with mobile 'hamburger' menu. Current breakpoint for mobile view is 800px
+//
+// .normal - Default navigation
+// :hover   - Hover state for <strong>mobile</strong> 'hamburger' button
+// .open   - Open state for <strong>mobile</strong> 'hamburger' button
+//
 // markup:
 // <div class="navigation">
 //     <div class="columns">
@@ -359,22 +365,26 @@
 //              <li><a href="#">Desktop 2</a></li>
 //              <li><a href="#">Desktop 3</a></li>
 //         </ul>
-//         <div class="navigation-mobile">
+//         <div class="navigation-mobile {$modifiers}">
 //              <a class="menuButton hover-grow">
 //                  <span></span>
 //              </a>
 //              <div class="navigation-mobile--dropdown">
-//                  DROPDOWN CONTENTS
+//                  <a href="#">Mobile 1</a>
+//                  <a href="#">Mobile 2</a>
+//                  <a href="#">Mobile 3</a>
 //              </div>
 //         </div>
-//              <a class="user" href="#">Login</a>
+//         <a class="user" href="#">Login</a>
 //     </div>
 // </div>
 // 
 // Styleguide 5.5
+
 .navigation {
     background: rgba(0, 0, 0, 0.5);
     padding: 0.75rem;
+    position: relative;
 
     svg {
         display: block;
@@ -436,8 +446,43 @@
         }
     }
 
+    .navigation-mobile {
+        &.open {
+            .navigation-mobile--dropdown {
+                display: block;
+                z-index: 1;
+            }
+
+            .menuButton span {
+                background: transparent;
+                &:before,
+                &:after {
+                    @include transition(top .2s 0s);
+                    @include transition(bottom .2s 0s);
+                    @include transition(transform .2s .2s);
+                }
+                &:before {
+                    top: 0;
+                    @include transform(rotate(45deg));
+                }
+                &:after {
+                    bottom: 0;
+                    @include transform(rotate(-45deg));
+                }
+            }
+        }
+        &:hover {
+            .menuButton {
+                span {
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+
     .menuButton {
         position: absolute;
+        cursor: pointer;
         width: 30px;
         height: 30px;
         min-width: 10mm;
@@ -446,7 +491,7 @@
         left: 165px;
         top: 50%;
         @include transform(translateY(-50%));
-        cursor: pointer;
+        
         span {
             display: block;
             position: absolute;
@@ -455,9 +500,7 @@
             right: 0;
             height: 4px;
             background: #fff;
-            transition-property: background;
-            transition-delay: .2s;
-            transition-duration: 0;
+            @include transition(transform .2s ease-in-out);
             &:before,
             &:after {
                 content: "";
@@ -467,9 +510,6 @@
                 right: 0;
                 height: 4px;
                 background: #fff;
-                transition-property: top, bottom, transform;
-                transition-duration: .2s, .2s, .2s;
-                transition-delay: .2s, .2s, 0s;
             }
             &:before {
                 top: -10px;
@@ -482,32 +522,27 @@
 
     .navigation-mobile--dropdown {
         position: absolute;
-        left: 100px;
-        top: 100px;
         border: none;
         border-radius: 5px;
         border-top-left-radius: 0;
         border-top-right-radius: 0;
         margin-top: 0px;
         width: 200px;
-        background-color: rgba(30, 40, 51, 0.8);
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: .75rem;
+        width: auto;
         a {
             display: block;
         }
         hr {
             border-top: 1px solid #353f4a;
-            width: 100%;
         }
         @media (max-width: 800px) {
-            top: 0;
-            left: 0;
+            top: 68px;
+            left: 150px;
             z-index: -1;
-            width: 100%;
-            padding-top: 100px;
-            padding-bottom: 30px;
-            background: url(../../../images/homepage/stripe_clear.png), rgb(18, 23, 29);
             a {
-                font-size: 30px;
+                font-size: 20px;
             }
         }
     }

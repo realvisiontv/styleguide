@@ -1759,7 +1759,8 @@ a.button {
 
 .navigation {
   background: rgba(0, 0, 0, 0.5);
-  padding: 0.75rem; }
+  padding: 0.75rem;
+  position: relative; }
   .navigation svg {
     display: block;
     height: 44px; }
@@ -1803,8 +1804,41 @@ a.button {
       display: block; }
     .navigation .navigation-mobile {
       display: none; } }
+  .navigation .navigation-mobile.open .navigation-mobile--dropdown {
+    display: block;
+    z-index: 1; }
+  .navigation .navigation-mobile.open .menuButton span {
+    background: transparent; }
+    .navigation .navigation-mobile.open .menuButton span:before, .navigation .navigation-mobile.open .menuButton span:after {
+      -webkit-transition: top 0.2s 0s;
+      -moz-transition: top 0.2s 0s;
+      -o-transition: top 0.2s 0s;
+      transition: top 0.2s 0s;
+      -webkit-transition: bottom 0.2s 0s;
+      -moz-transition: bottom 0.2s 0s;
+      -o-transition: bottom 0.2s 0s;
+      transition: bottom 0.2s 0s;
+      -webkit-transition: transform 0.2s 0.2s;
+      -moz-transition: transform 0.2s 0.2s;
+      -o-transition: transform 0.2s 0.2s;
+      transition: transform 0.2s 0.2s; }
+    .navigation .navigation-mobile.open .menuButton span:before {
+      top: 0;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg); }
+    .navigation .navigation-mobile.open .menuButton span:after {
+      bottom: 0;
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      transform: rotate(-45deg); }
+  .navigation .navigation-mobile:hover .menuButton span {
+    transform: scale(1.2); }
   .navigation .menuButton {
     position: absolute;
+    cursor: pointer;
     width: 30px;
     height: 30px;
     min-width: 10mm;
@@ -1815,8 +1849,7 @@ a.button {
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
     -o-transform: translateY(-50%);
-    transform: translateY(-50%);
-    cursor: pointer; }
+    transform: translateY(-50%); }
     .navigation .menuButton span {
       display: block;
       position: absolute;
@@ -1825,9 +1858,10 @@ a.button {
       right: 0;
       height: 4px;
       background: #fff;
-      transition-property: background;
-      transition-delay: .2s;
-      transition-duration: 0; }
+      -webkit-transition: transform 0.2s ease-in-out;
+      -moz-transition: transform 0.2s ease-in-out;
+      -o-transition: transform 0.2s ease-in-out;
+      transition: transform 0.2s ease-in-out; }
       .navigation .menuButton span:before, .navigation .menuButton span:after {
         content: "";
         position: absolute;
@@ -1835,38 +1869,30 @@ a.button {
         left: 0;
         right: 0;
         height: 4px;
-        background: #fff;
-        transition-property: top, bottom, transform;
-        transition-duration: .2s, .2s, .2s;
-        transition-delay: .2s, .2s, 0s; }
+        background: #fff; }
       .navigation .menuButton span:before {
         top: -10px; }
       .navigation .menuButton span:after {
         bottom: -10px; }
   .navigation .navigation-mobile--dropdown {
     position: absolute;
-    left: 100px;
-    top: 100px;
     border: none;
     border-radius: 5px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     margin-top: 0px;
     width: 200px;
-    background-color: rgba(30, 40, 51, 0.8); }
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: .75rem;
+    width: auto; }
     .navigation .navigation-mobile--dropdown a {
       display: block; }
     .navigation .navigation-mobile--dropdown hr {
-      border-top: 1px solid #353f4a;
-      width: 100%; }
+      border-top: 1px solid #353f4a; }
     @media (max-width: 800px) {
       .navigation .navigation-mobile--dropdown {
-        top: 0;
-        left: 0;
-        z-index: -1;
-        width: 100%;
-        padding-top: 100px;
-        padding-bottom: 30px;
-        background: url(../../../images/homepage/stripe_clear.png), #12171d; }
+        top: 68px;
+        left: 150px;
+        z-index: -1; }
         .navigation .navigation-mobile--dropdown a {
-          font-size: 30px; } }
+          font-size: 20px; } }
