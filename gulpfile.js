@@ -14,9 +14,10 @@ var options = {
 
 gulp.task('styleguide:generate', function() {
     gulp.src(['fonts/**'])
-        // Do image sprites, optimizations etc.
-        .pipe(gulp.dest('./fonts'))
         .pipe(gulp.dest(outputPath + '/fonts'));
+    gulp.src(['node_modules/font-awesome/fonts/**'])
+        .pipe(gulp.dest(outputPath + '/fonts/font-awesome'));
+
     gulp.src(['images/**'])
         .pipe(gulp.dest('./images'))
         .pipe(gulp.dest(outputPath + '/images'));

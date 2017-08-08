@@ -1,3 +1,13 @@
+.sr-only-focusable.pseudo-class-active,
+.sr-only-focusable.pseudo-class-focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
+
 a.pseudo-class-hover {
   color: #363636;
 }
@@ -106,6 +116,17 @@ a.pseudo-class-active {
   text-decoration-color: white;
 }
 
+.icon-button.pseudo-class-hover,
+.icon-button.pseudo-class-focus {
+  text-decoration: underline;
+}
+
+.icon-button.pseudo-class-hover:before,
+.icon-button.pseudo-class-focus:before {
+  background: white;
+  color: grey;
+}
+
 .content-tile a.pseudo-class-hover blockquote,
 .content-tile a.pseudo-class-hover .icon,
 .content-tile a.pseudo-class-hover .image:after,
@@ -113,4 +134,10 @@ a.pseudo-class-active {
 .content-tile a.pseudo-class-focus .icon,
 .content-tile a.pseudo-class-focus .image:after {
   opacity: 1;
+}
+
+.content-tile a.pseudo-class-hover .buttons,
+.content-tile a.pseudo-class-focus .buttons {
+  margin-top: 0.75rem;
+  max-height: 50px;
 }

@@ -80,8 +80,10 @@
 //                         <div class="is-pulled-right">36:00</div>
 //                     </div>
 //                     <h1>Looking Under the Hood Australia</h1>
-//                     <button>Info</button>
-//                     <button>Add</button>
+//                     <div class="buttons">
+//                         <button class="icon-button fa-info hide-text">More Information</button>
+//                         <button class="icon-button fa-plus hide-text">Add to My List</button>
+//                     </div>
 //                 </div>
 //                 <div class="theme">Insight</div>
 //                 <blockquote>
@@ -104,8 +106,10 @@
 //                         <div class="is-pulled-right">36:00</div>
 //                     </div>
 //                     <h1>Looking Under the Hood Australia</h1>
-//                     <button>Info</button>
-//                     <button>Add</button>
+//                     <div class="buttons">
+//                         <button class="icon-button fa-info hide-text">More Information</button>
+//                         <button class="icon-button fa-plus hide-text">Add to My List</button>
+//                     </div>
 //                 </div>
 //                 <div class="theme">Insight</div>
 //                 <blockquote>
@@ -128,7 +132,9 @@
 //                         <div class="is-pulled-right">1:15:00</div>
 //                     </div>
 //                     <h1>Quantitative Insight with a Discretionary Edge - Richard Excell</h1>
-//                     <button>Info</button>
+//                     <div class="buttons">
+//                         <button class="icon-button fa-info hide-text">More Information</button>
+//                     </div>
 //                 </div>
 //                 <div class="theme">Insight</div>
 //                 <blockquote>
@@ -151,6 +157,12 @@
         display: block;
         content: '';
         width: 100%;
+    }
+
+    .buttons {
+        margin-top: 0;
+        max-height: 0;
+        transition: max-height 0.2s, margin-top 0.2s;
     }
 
     .content {
@@ -242,15 +254,6 @@
         }
     }
 
-    button {
-        background: gray;
-        border: 0;
-        color: #fff;
-        width: 32px;
-        height: 32px;
-        margin-right: 1ex;
-    }
-
     .icon {
         position: absolute;
         right: 0;
@@ -279,6 +282,10 @@
             .icon,
             .image:after {
                 opacity: 1;
+            }
+            .buttons {
+                margin-top: 0.75rem;
+                max-height: 50px;
             }
         }
     }

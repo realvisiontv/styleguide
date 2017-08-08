@@ -148,3 +148,73 @@ a.button {
         }
     }
 }
+
+// Icon button
+// 
+// .fa-info - More information
+// .fa-plus - Add
+// .hide-text - Hidden label
+// :hover - Hover state
+// :focus - Focus state
+// 
+// markup:
+// <button class="icon-button {$modifiers}">Some text</button>
+//
+// Styleguide 4.4
+.icon-button {
+    $size: 26px;
+
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    font-family: 'Proxima Nova', sans-serif;
+    position: relative;
+    padding-left: $size+10px;
+    line-height: $size;
+
+    &.hide-text {
+        padding-left: 0;
+        font-size: 0;
+        width: $size;
+        margin-right: 1ex;
+    }
+
+    &:before {
+        background: grey;
+        border: 2px solid grey;
+        color: white;
+        content: '';
+        display: flex;
+        height: $size;
+        width: $size;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        transition: background 0.2s, color 0.2s;
+        text-indent: 0;
+        @extend .fa;
+    }
+
+    &.fa-info:before {
+        @extend .fa-info;
+    }
+
+    &.fa-plus:before {
+        @extend .fa-plus;
+    }
+
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+
+        &:before {
+            background: white;
+            // border-color: grey;
+            color: grey;
+        }
+    }
+}
