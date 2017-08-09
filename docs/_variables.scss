@@ -1,6 +1,7 @@
 // styleguide:ignore:start
 $baseline: 1.5rem !default;
 $root: '/styleguide' !default;
+$fa-font-path:   "#{$root}/fonts/font-awesome" !default;
 // styleguide:ignore:end
 
 // Colors
@@ -91,7 +92,7 @@ $text: $color-bright-gray;
     url('#{$root}/fonts/proxima-nova/proximanova-regular-webfont.woff2') format('woff2'),
     url('#{$root}/fonts/proxima-nova/proximanova-regular-webfont.woff') format('woff'),
     url('#{$root}/fonts/proxima-nova/proximanova-regular-webfont.ttf') format('truetype'),
-    url('#{$root}/fonts/proxima-nova/proximanova-regular-webfont.svg#function_probook') format('svg');
+    url('#{$root}/fonts/proxima-nova/proximanova-regular-webfont.svg#proxima-nova-regular-webfont') format('svg');
     font-weight: 400;
     font-style: normal;
 }
@@ -104,5 +105,25 @@ $text: $color-bright-gray;
     url('#{$root}/fonts/proxima-nova/proximanova-bold-webfont.woff') format('woff'),
     url('#{$root}/fonts/proxima-nova/proximanova-bold-webfont.svg#proxima-nova-bold-webfont') format('svg');
     font-weight: 700;
+    font-style: normal;
+}
+
+// Grafitti Font 
+// 
+// Stampete
+// 
+// Markup:
+// <div style="font-size: 2rem; line-height:1.5; font-family: monospace">(400) <span style="font-family: Stampete;">The quick brown fox jumps over the lazy dog.</span></div>
+// 
+// Styleguide 1.5
+@font-face {
+    font-family: 'Stampete';
+    src: url('#{$root}/fonts/stampete/stampete.eot');
+    src: url('#{$root}/fonts/stampete/stampete.eot?#iefix') format('embedded-opentype'),
+    url('#{$root}/fonts/stampete/stampete.woff2') format('woff2'),
+    url('#{$root}/fonts/stampete/stampete.woff') format('woff'),
+    url('#{$root}/fonts/stampete/stampete.ttf') format('truetype'),
+    url('#{$root}/fonts/stampete/stampete.svg#stampete') format('svg');
+    font-weight: 400;
     font-style: normal;
 }

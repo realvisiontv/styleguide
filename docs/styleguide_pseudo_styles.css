@@ -1,3 +1,13 @@
+.sr-only-focusable.pseudo-class-active,
+.sr-only-focusable.pseudo-class-focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
+
 a.pseudo-class-hover {
   color: #363636;
 }
@@ -94,6 +104,29 @@ a.pseudo-class-active {
   text-decoration-color: rgba(254, 17, 53, 0.25);
 }
 
+.product-button.pseudo-class-hover .button {
+  background: #FE1135;
+  color: #FFF;
+}
+
+.product-button.pseudo-class-focus .button {
+  background: #FE1135;
+  color: #FFF;
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+
+.icon-button.pseudo-class-hover,
+.icon-button.pseudo-class-focus {
+  text-decoration: underline;
+}
+
+.icon-button.pseudo-class-hover:before,
+.icon-button.pseudo-class-focus:before {
+  background: white;
+  color: grey;
+}
+
 .content-tile a.pseudo-class-hover blockquote,
 .content-tile a.pseudo-class-hover .icon,
 .content-tile a.pseudo-class-hover .image:after,
@@ -101,4 +134,35 @@ a.pseudo-class-active {
 .content-tile a.pseudo-class-focus .icon,
 .content-tile a.pseudo-class-focus .image:after {
   opacity: 1;
+  transition-duration: 0.2s;
+  transition-delay: 0s;
+}
+
+.content-tile a.pseudo-class-hover .buttons,
+.content-tile a.pseudo-class-focus .buttons {
+  margin-top: 0.75rem;
+  max-height: 50px;
+  transition-duration: 0.2s;
+  transition-delay: 0s;
+}
+
+.content-tile.double .content li a.pseudo-class-hover {
+  text-decoration: underline;
+  text-decoration-skip: ink;
+  text-decoration-color: rgba(255, 255, 255, 0.5);
+}
+
+.content-tile.double .content .button.pseudo-class-hover {
+  color: #FE1135;
+}
+
+.content-tile.double .content .button.pseudo-class-focus {
+  color: #FE1135;
+}
+
+.content-tile.double.pseudo-class-hover .content,
+.content-tile.double.pseudo-class-focus .content {
+  transform: translateY(0);
+  transition: transform 0.2s;
+  transition-delay: 0s;
 }

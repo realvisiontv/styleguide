@@ -69,20 +69,21 @@ a.button {
 // :focus   - Focus state
 // 
 // markup:
-// <div class="product-button {$modifiers}">
-//      <a href="#" class="button">
+// <a href="#" class="product-button {$modifiers}">
+//      <div class="button">
 //          The quick brown fox
-//      </a>
-// </div>
+//      </div>
+// </a>
 //
 // Styleguide 4.3
 .product-button {
     position: relative;
     display: inline-block;
     overflow: hidden;
+    text-decoration: none;
     @include transform(rotate(1deg));
 
-    a.button {
+    .button {
         background: transparent;
         color: $color-torch-red;
         border: 4px solid $color-torch-red;
@@ -97,21 +98,20 @@ a.button {
         left: 0;
         width: 200%;
         height: 200%;
-        background: url('../images/buttons/splatter-effect.png');
+        background: url('#{$root}/images/buttons/splatter-effect.png');
         background-repeat: no-repeat;
         background-size: cover; 
     }
 
     &:hover {
-        cursor: pointer;
-        a.button {
+        .button {
             background: $color-torch-red;
             color: #FFF;
         }
     }
 
     &:focus {
-        a.button {
+        .button {
             background: $color-torch-red;
             color: #FFF;
             text-decoration: underline;
@@ -145,6 +145,76 @@ a.button {
             left: auto;
             bottom: 0;
             right: 0;
+        }
+    }
+}
+
+// Icon button
+// 
+// .fa-info - More information
+// .fa-plus - Add
+// .hide-text - Hidden label
+// :hover - Hover state
+// :focus - Focus state
+// 
+// markup:
+// <button class="icon-button {$modifiers}">Some text</button>
+//
+// Styleguide 4.4
+.icon-button {
+    $size: 26px;
+
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    font-family: 'Proxima Nova', sans-serif;
+    position: relative;
+    padding-left: $size+10px;
+    line-height: $size;
+
+    &.hide-text {
+        padding-left: 0;
+        font-size: 0;
+        width: $size;
+        margin-right: 1ex;
+    }
+
+    &:before {
+        background: grey;
+        border: 2px solid grey;
+        color: white;
+        content: '';
+        display: flex;
+        height: $size;
+        width: $size;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        transition: background 0.2s, color 0.2s;
+        text-indent: 0;
+        @extend .fa;
+    }
+
+    &.fa-info:before {
+        @extend .fa-info;
+    }
+
+    &.fa-plus:before {
+        @extend .fa-plus;
+    }
+
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+
+        &:before {
+            background: white;
+            // border-color: grey;
+            color: grey;
         }
     }
 }
