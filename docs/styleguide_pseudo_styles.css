@@ -134,10 +134,35 @@ a.pseudo-class-active {
 .content-tile a.pseudo-class-focus .icon,
 .content-tile a.pseudo-class-focus .image:after {
   opacity: 1;
+  transition-duration: 0.2s;
+  transition-delay: 0s;
 }
 
 .content-tile a.pseudo-class-hover .buttons,
 .content-tile a.pseudo-class-focus .buttons {
   margin-top: 0.75rem;
   max-height: 50px;
+  transition-duration: 0.2s;
+  transition-delay: 0s;
+}
+
+.content-tile.double .content li a.pseudo-class-hover {
+  text-decoration: underline;
+  text-decoration-skip: ink;
+  text-decoration-color: rgba(255, 255, 255, 0.5);
+}
+
+.content-tile.double .content .button.pseudo-class-hover {
+  color: #FE1135;
+}
+
+.content-tile.double .content .button.pseudo-class-focus {
+  color: #FE1135;
+}
+
+.content-tile.double.pseudo-class-hover .content,
+.content-tile.double.pseudo-class-focus .content {
+  transform: translateY(0);
+  transition: transform 0.2s;
+  transition-delay: 0s;
 }

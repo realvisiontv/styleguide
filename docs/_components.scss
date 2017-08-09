@@ -71,7 +71,7 @@
 //     <article class="column content-tile">
 //         <a href="#">
 //             <div class="image">
-//                 <img src="http://via.placeholder.com/320x180"  />
+//                 <img src="http://lorempixel.com/320/180/people"  />
 //             </div>
 //             <div class="content">
 //                 <div class="title">
@@ -97,7 +97,7 @@
 //     <article class="column content-tile">
 //         <a href="#">
 //             <div class="image">
-//                 <img src="http://via.placeholder.com/320x180"  />
+//                 <img src="http://lorempixel.com/320/180/city"  />
 //             </div>
 //             <div class="content">
 //                 <div class="title">
@@ -123,7 +123,7 @@
 //     <article class="column content-tile">
 //         <a href="#">
 //             <div class="image">
-//                 <img src="http://via.placeholder.com/320x180"  />
+//                 <img src="http://lorempixel.com/320/180/abstract"  />
 //             </div>
 //             <div class="content">
 //                 <div class="title">
@@ -150,7 +150,11 @@
 // Styleguide 5.2
 .content-tile {
     $padding: 0.75rem;
+    $transition-in-speed: 0.2s;
+    $transition-out-speed: 0.5s;
+    $transition-out-delay: 0.5s;
 
+    overflow: hidden;
     position: relative;
 
     &:before {
@@ -162,7 +166,8 @@
     .buttons {
         margin-top: 0;
         max-height: 0;
-        transition: max-height 0.2s, margin-top 0.2s;
+        transition: max-height $transition-out-speed, margin-top $transition-out-speed;
+        transition-delay: $transition-out-delay;
     }
 
     .content {
@@ -187,7 +192,8 @@
             left: $padding;
             right: $padding;
             opacity: 0;
-            transition: opacity 0.2s;
+            transition: opacity 0.52s;
+            transition-delay: $transition-out-delay;
         }
     }
     img {
@@ -243,7 +249,8 @@
         overflow: hidden;
         display: -webkit-box;
         opacity: 0;
-        transition: opacity 0.2s;
+        transition: opacity $transition-out-speed;
+        transition-delay: $transition-out-delay;
         cite {
             display: block;
             border-top: 1px solid rgba(255, 255, 255, 0.5);
@@ -260,7 +267,8 @@
         bottom: calc(15% + 1.75rem);
         width: 30%;
         opacity: 0;
-        transition: opacity 0.2s;
+        transition: opacity $transition-out-speed;
+        transition-delay: $transition-out-delay;
 
         &:after {
             border-top: 20px solid transparent;
@@ -282,11 +290,194 @@
             .icon,
             .image:after {
                 opacity: 1;
+                transition-duration: $transition-in-speed;
+                transition-delay: 0s;
             }
             .buttons {
-                margin-top: 0.75rem;
+                margin-top: $padding;
                 max-height: 50px;
+                transition-duration: $transition-in-speed;
+                transition-delay: 0s;
             }
+        }
+    }
+}
+
+// Content Tile - Double Height
+// 
+// A content tile at double height. Contains a list of up to 4 things. Each item
+// in the list is cropped to 2 lines of text.
+// 
+// :hover - hover state
+// 
+// markup:
+// <div class="columns">
+//     <article class="column content-tile double {$modifiers}">
+//         <div class="image">
+//             <img src="http://lorempixel.com/332/455/people"  />
+//         </div>
+//         <div class="content">
+//             <ol>
+//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec Suspendisse in arcu mattis, porta mi nec</div></a></li>
+//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec</div></a></li>
+//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec</div></a></li>
+//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec</div></a></li>
+//                 </ol>
+//             <a class="button" href="#">See all 40 videos</a>
+//         </div>
+//     </article>
+//     <article class="column content-tile double">
+//         <div class="image">
+//             <img src="http://lorempixel.com/332/455/city"  />
+//         </div>
+//         <div class="content">
+//             <ol>
+//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec Suspendisse in arcu mattis, porta mi nec</div></a></li>
+//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec</div></a></li>
+//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec</div></a></li>
+//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec</div></a></li>
+//                 </ol>
+//             <a class="button" href="#">See all 40 videos</a>
+//         </div>
+//     </article>
+//     <article class="column content-tile double">
+//         <div class="image">
+//             <img src="http://lorempixel.com/332/455/abstract"  />
+//         </div>
+//         <div class="content">
+//             <ol>
+//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec Suspendisse in arcu mattis, porta mi nec</div></a></li>
+//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec</div></a></li>
+//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec</div></a></li>
+//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec</div></a></li>
+//                 </ol>
+//             <a class="button" href="#">See all 40 videos</a>
+//         </div>
+//     </article>
+// </div>
+// 
+// Styleguide 5.3
+.content-tile.double {
+    $transition-in-speed: 0.2s;
+    $transition-out-speed: 0.5s;
+    $transition-out-delay: 0.5s;
+
+    margin: 0;
+
+    .image {
+        height: auto;
+        padding-bottom: 0;
+        img {
+            display: block;
+            height: 100%;
+            width: auto;
+        }
+    }
+
+    .badge {
+        background: grey;
+        color: white;
+        display: inline-block;
+        margin: 0 2ex;
+        padding: 4px 10px 2px;
+        text-transform: uppercase;
+        font-size: 0.5rem;
+        font-family: 'Function Pro', sans-serif;
+        vertical-align: text-top;
+    }
+
+    .content {
+        background: rgba(0,0,0,0.5);
+        margin: 0.75rem;
+        line-height: 1.2;
+        display: flex;
+        flex-direction: column;
+        transform: translateY(100%);
+        transition: transform $transition-out-speed;
+        transition-delay: $transition-out-delay;
+
+        ol {
+            counter-reset: content-tile-counter;
+            list-style: none;
+            margin-left: 0;
+            flex-grow: 1;
+        }
+
+        li {
+            position: relative;
+
+            &:before {
+                content: counter(content-tile-counter);
+                counter-increment: content-tile-counter;
+                background: grey;
+                color: white;
+                display: inline-block;
+                width: 24px;
+                height: 24px;
+                text-align: center;
+                line-height: 24px;
+                font-family: 'Function Pro', sans-serif;
+                font-weight: 700;
+                left: 0;
+                top: 4px;
+                position: absolute;
+            }
+        }
+
+        li+li {
+            margin-top: $baseline;
+        }
+
+        li a {
+            color: white;
+            display: block;
+            margin-left: calc(0.75rem + 24px);
+            font-size: $size-5;
+            font-weight: 700;
+            text-decoration: none;
+
+            .meta {
+                font-size: $size-7;
+                font-weight: 400;
+                text-transform: uppercase;
+            }
+
+            .item {
+                height: 2.4em;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                display: -webkit-box;
+            }
+
+            &:hover {
+                text-decoration: underline;
+                text-decoration-skip: ink;
+                text-decoration-color: rgba(white, 0.5);
+            }
+        }
+
+        .button {
+            color: white;
+            text-align: center;
+            width: 100%;
+
+            &:hover {
+                color: $color-torch-red;
+            }
+
+            &:focus {
+                color: $color-torch-red;
+            }
+        }
+    }
+
+    &:hover,
+    &:focus {
+        .content {
+            transform: translateY(0);
+            transition: transform $transition-in-speed;
+            transition-delay: 0s;
         }
     }
 }
@@ -302,7 +493,7 @@
 //     </a>
 // </div>
 //
-// Styleguide 5.3
+// Styleguide 5.4
 .hero-image {
     img {
         display: block;
@@ -322,7 +513,7 @@
 //     </div>
 // </div>
 //
-// Styleguide 5.4
+// Styleguide 5.5
 .hero-image-w-cta {
     position: relative;
 
@@ -372,7 +563,7 @@
 //     </div>
 // </div>
 // 
-// Styleguide 5.5
+// Styleguide 5.6
 .navigation {
     background: rgba(0, 0, 0, 0.5);
     padding: 0.75rem;

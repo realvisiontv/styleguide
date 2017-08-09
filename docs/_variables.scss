@@ -1,7 +1,7 @@
 // styleguide:ignore:start
 $baseline: 1.5rem !default;
 $root: '/styleguide' !default;
-$fa-font-path:   "'#{$root}/fonts/font-awesome";
+$fa-font-path:   "#{$root}/fonts/font-awesome" !default;
 // styleguide:ignore:end
 
 // Colors
