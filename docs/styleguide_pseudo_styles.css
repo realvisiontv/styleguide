@@ -127,6 +127,14 @@ a.pseudo-class-active {
   color: grey;
 }
 
+.play-button.pseudo-class-hover {
+  background: #38444C;
+}
+
+.play-button.pseudo-class-hover .play-button__icon svg {
+  max-height: 30px;
+}
+
 .content-tile a.pseudo-class-hover blockquote,
 .content-tile a.pseudo-class-hover .icon,
 .content-tile a.pseudo-class-hover .image:after,
