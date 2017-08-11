@@ -160,6 +160,14 @@ a.pseudo-class-active {
   color: #FE1135;
 }
 
+.content-tile.double.pseudo-class-hover img,
+.content-tile.double.pseudo-class-focus img {
+  filter: blur(10px);
+  transform: scale(1.05);
+  transition: filter 0.2s, transform 0.2s;
+  transition-delay: 0s;
+}
+
 .content-tile.double.pseudo-class-hover .content,
 .content-tile.double.pseudo-class-focus .content {
   transform: translateY(0);
