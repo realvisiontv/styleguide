@@ -4368,7 +4368,8 @@ a.button {
     transition-delay: 0s; }
 
 .hero-image img {
-  display: block; }
+  display: block;
+  width: 100%; }
 
 .hero-image-w-cta {
   position: relative; }
