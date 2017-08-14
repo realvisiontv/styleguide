@@ -123,8 +123,8 @@ a.pseudo-class-active {
 
 .icon-button.pseudo-class-hover:before,
 .icon-button.pseudo-class-focus:before {
-  background: white;
-  color: grey;
+  background: transparent;
+  border-color: white;
 }
 
 .content-tile a.pseudo-class-hover blockquote,
@@ -177,4 +177,12 @@ a.pseudo-class-active {
 
 .navigation .navigation-mobile.pseudo-class-hover .menuButton span {
   transform: scale(1.2);
+}
+
+.tri-hero .images article.pseudo-class-last-child {
+  transform: translateX(40%) rotate(25deg) scale(1.73);
+}
+
+.tri-hero .images article.pseudo-class-hover img {
+  opacity: 0;
 }
