@@ -186,3 +186,7 @@ a.pseudo-class-active {
 .tri-hero .images article.pseudo-class-hover img {
   opacity: 0;
 }
+
+footer ul li a.pseudo-class-hover {
+  color: #FE1135;
+}
