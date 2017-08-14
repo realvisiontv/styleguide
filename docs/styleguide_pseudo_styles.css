@@ -174,3 +174,7 @@ a.pseudo-class-active {
   transition: transform 0.2s;
   transition-delay: 0s;
 }
+
+.navigation .navigation-mobile.pseudo-class-hover .menuButton span {
+  transform: scale(1.2);
+}
