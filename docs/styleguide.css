@@ -4729,3 +4729,65 @@ footer {
     footer .footer-links li {
       padding-left: 0;
       padding-right: 0; } }
+
+.product-quote {
+  padding: 2rem;
+  position: relative; }
+  @media screen and (max-width: 768px) {
+    .product-quote {
+      padding: 0; }
+      .product-quote:before {
+        position: absolute;
+        content: '';
+        z-index: 10;
+        height: 0;
+        width: 0;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%);
+        border-top: 2rem solid transparent;
+        border-bottom: 2rem solid transparent;
+        border-left: 1.5rem solid #363D4E; } }
+  .product-quote .product-quote__content {
+    background: url("/styleguide/images/components/grey-brush-effect.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 2rem 3rem; }
+    .product-quote .product-quote__content .product-quote__content-heading {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 2rem; }
+      @media screen and (max-width: 768px) {
+        .product-quote .product-quote__content .product-quote__content-heading {
+          margin-bottom: 0; } }
+    .product-quote .product-quote__content .icons {
+      text-align: center;
+      margin-bottom: 1rem; }
+    .product-quote .product-quote__content .icons * {
+      display: inline-block; }
+    .product-quote .product-quote__content .icon-star {
+      width: 1rem; }
+      .product-quote .product-quote__content .icon-star path {
+        fill: #FE1135; }
+    .product-quote .product-quote__content blockquote {
+      margin-left: 20px; }
+      .product-quote .product-quote__content blockquote svg {
+        fill: #6e7789;
+        width: 20px; }
+        .product-quote .product-quote__content blockquote svg.icon-quote--open {
+          margin-left: -20px; }
+      .product-quote .product-quote__content blockquote p {
+        display: inline;
+        font-weight: bold;
+        color: #6e7789; }
+    .product-quote .product-quote__content cite {
+      margin-left: 20px;
+      font-style: normal;
+      font-weight: bold;
+      color: #6e7789; }
+    .product-quote .product-quote__content hr {
+      width: 50%;
+      margin-left: 20px;
+      background: #6e7789; }
