@@ -4167,6 +4167,12 @@ a.button {
     display: block;
     content: '';
     width: 100%; }
+  .content-tile .spinner-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0; }
   .content-tile .buttons {
     margin-top: 0;
     max-height: 0;
@@ -4178,8 +4184,10 @@ a.button {
     left: 0;
     right: 0;
     bottom: 0;
-    padding: 0.75rem; }
+    padding: 0.75rem;
+    z-index: 1; }
   .content-tile .image {
+    background: lightgrey;
     height: 0;
     padding-bottom: 66.66667%; }
     .content-tile .image:after {
@@ -4193,9 +4201,15 @@ a.button {
       right: 0.75rem;
       opacity: 0;
       transition: opacity 0.52s;
-      transition-delay: 0.5s; }
+      transition-delay: 0.5s;
+      z-index: 1; }
   .content-tile img {
-    width: 100%; }
+    position: relative;
+    transition: opacity 0.2s;
+    width: 100%;
+    z-index: 1; }
+  .content-tile img[data-src] {
+    opacity: 0; }
   .content-tile .title {
     background: #fff;
     position: absolute;
@@ -4204,6 +4218,13 @@ a.button {
     padding-top: 3px;
     padding-right: 6px;
     width: calc(70% - 0.75rem); }
+  .content-tile .progress {
+    background-color: #FE1135;
+    font-size: 0;
+    height: 2px;
+    position: absolute;
+    top: 0;
+    left: 0; }
   .content-tile h1 {
     font-size: 1.25rem;
     font-weight: 800;
@@ -4285,11 +4306,14 @@ a.button {
   margin: 0; }
   .content-tile.double .image {
     height: auto;
-    padding-bottom: 0; }
+    padding-bottom: 0;
+    overflow: hidden; }
     .content-tile.double .image img {
       display: block;
       height: 100%;
-      width: auto; }
+      width: auto;
+      transition: filter 0.5s, transform 0.5s;
+      transition-delay: 0.5s; }
   .content-tile.double .badge {
     background: grey;
     color: white;
@@ -4362,6 +4386,11 @@ a.button {
         color: #FE1135; }
       .content-tile.double .content .button:focus {
         color: #FE1135; }
+  .content-tile.double:hover img, .content-tile.double:focus img {
+    filter: blur(10px);
+    transform: scale(1.05);
+    transition: filter 0.2s, transform 0.2s;
+    transition-delay: 0s; }
   .content-tile.double:hover .content, .content-tile.double:focus .content {
     transform: translateY(0);
     transition: transform 0.2s;
@@ -4424,3 +4453,27 @@ a.button {
     font-size: 0.75rem;
     font-weight: 700;
     text-align: center; }
+
+.spinner {
+  border: 1px solid grey;
+  border-top-color: transparent;
+  border-radius: 50%;
+  position: relative;
+  animation: spinner-rotate 1s linear infinite;
+  margin: 0 auto;
+  top: 50%;
+  width: 3rem;
+  height: 3rem;
+  border-width: 0.5rem; }
+
+@keyframes spinner-rotate {
+  0% {
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    transform: rotate(0); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg); } }
