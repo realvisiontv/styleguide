@@ -213,8 +213,82 @@ a.button {
 
         &:before {
             background: white;
-            // border-color: grey;
             color: grey;
+        }
+    }
+}
+
+// Play Button
+//
+// Button with a play icon and duration text - used in the dashboard Tri-Hero (5.6)
+// 
+// .play-button  - Default button
+// :hover   - Hover state
+//
+// markup:
+// <div class="play-button {$modifiers}">
+//      <a href="">
+//          <div class="play-button__icon">
+//              <svg xmlns="http://www.w3.org/200/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 40 50">
+//                  <polygon points='0 0, 0 50, 40 25'/>
+//              </svg>
+//          </div>
+//          <div class="play-button__text">
+//              <p>24:45</p>
+//          </div>
+//      </a>
+// </div>
+// 
+// Styleguide 4.5
+
+.play-button {
+    max-width: 130px;
+
+    &:hover {
+        background: #38444C;
+
+        .play-button__icon {
+            svg {
+                max-height: 30px;
+            }
+        }
+    }
+    .play-button__icon {
+        width: 34%;
+        height: 35px;
+        background: white;
+        display: inline-block;
+        float: left;
+        position: relative;
+
+        svg {
+            max-height: 25px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            @include transform(translate(-50%, -50%));
+            @include transition(max-height 150ms ease-in);
+
+            polygon {
+                fill: #38444C;
+            }
+        }
+    }
+    .play-button__text {
+        color: white;
+        width: 66%;
+        height: 35px;
+        background: #38444C;
+        display: inline-block;
+        float: right;
+        position: relative;
+
+        p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            @include transform(translate(-50%, -50%));
+            font-weight: 700;
         }
     }
 }
