@@ -154,6 +154,7 @@ a.button {
 // .fa-info - More information
 // .fa-plus - Add
 // .fa-play - Play
+// .fa-close - Close
 // .hide-text - Hidden label
 // .large - Larger version
 // .invert - Inverted colour
@@ -240,6 +241,10 @@ a.button {
 
     &.fa-play:before {
         @extend .fa-play;
+    }
+
+    &.fa-close:before {
+        @extend .fa-window-close;
     }
 
     &:hover,
