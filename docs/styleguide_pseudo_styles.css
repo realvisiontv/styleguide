@@ -131,6 +131,10 @@ a.pseudo-class-active {
   transform: scale(1.2);
 }
 
+footer ul li a.pseudo-class-hover {
+  color: #FE1135;
+}
+
 .content-tile a.pseudo-class-hover blockquote,
 .content-tile a.pseudo-class-hover .icon,
 .content-tile a.pseudo-class-hover .image:after,
@@ -185,8 +189,4 @@ a.pseudo-class-active {
 
 .tri-hero .images article.pseudo-class-hover img {
   opacity: 0;
-}
-
-footer ul li a.pseudo-class-hover {
-  color: #FE1135;
 }

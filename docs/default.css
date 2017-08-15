@@ -4403,6 +4403,103 @@ a.button {
     -o-transform: rotate(360deg);
     transform: rotate(360deg); } }
 
+footer {
+  background: #1C293B;
+  padding: 1.5rem; }
+  footer ul {
+    list-style: none;
+    text-align: center; }
+    footer ul li {
+      display: inline-block;
+      margin: 0; }
+      footer ul li .fa, footer ul li .icon-button:before {
+        font-size: 2.5rem; }
+      footer ul li a {
+        text-decoration: none;
+        color: grey;
+        text-transform: uppercase;
+        -webkit-transition: color 200ms ease-in;
+        -moz-transition: color 200ms ease-in;
+        -o-transition: color 200ms ease-in;
+        transition: color 200ms ease-in; }
+        footer ul li a:hover {
+          color: #FE1135; }
+  footer .footer-social li {
+    margin: 0 1.5rem; }
+    @media screen and (max-width: 768px) {
+      footer .footer-social li {
+        margin: 0 0.75rem; } }
+  footer .footer-social__heading {
+    color: grey;
+    text-align: center;
+    margin: 0.75rem 0 1.5rem 0; }
+  @media screen and (max-width: 768px) {
+    footer .footer-links li {
+      padding-left: 0;
+      padding-right: 0; } }
+
+.product-quote {
+  padding: 1.5rem;
+  position: relative; }
+  @media screen and (max-width: 768px) {
+    .product-quote {
+      padding: 0; }
+      .product-quote:before {
+        position: absolute;
+        content: '';
+        z-index: 10;
+        height: 0;
+        width: 0;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%);
+        border-top: 2rem solid transparent;
+        border-bottom: 2rem solid transparent;
+        border-left: 1.5rem solid #363D4E; } }
+  .product-quote .product-quote__content {
+    background: url("/styleguide/images/components/crinkled-paper-effect.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 1.5rem 3rem; }
+    .product-quote .product-quote__content .product-quote__content-heading {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 1.5rem; }
+      @media screen and (max-width: 768px) {
+        .product-quote .product-quote__content .product-quote__content-heading {
+          margin-bottom: 0; } }
+    .product-quote .product-quote__content .icons {
+      text-align: center;
+      margin-bottom: 1.5rem; }
+    .product-quote .product-quote__content .icons * {
+      display: inline-block; }
+    .product-quote .product-quote__content .icon-star {
+      width: 1rem; }
+      .product-quote .product-quote__content .icon-star path {
+        fill: #FE1135; }
+    .product-quote .product-quote__content blockquote {
+      margin-left: 20px; }
+      .product-quote .product-quote__content blockquote svg {
+        fill: #6e7789;
+        width: 20px; }
+        .product-quote .product-quote__content blockquote svg.icon-quote--open {
+          margin-left: -20px; }
+      .product-quote .product-quote__content blockquote p {
+        display: inline;
+        font-weight: bold;
+        color: #6e7789; }
+    .product-quote .product-quote__content cite {
+      margin-left: 20px;
+      font-style: normal;
+      font-weight: bold;
+      color: #6e7789; }
+    .product-quote .product-quote__content hr {
+      width: 50%;
+      margin-left: 20px;
+      background: #6e7789; }
+
 .content-tile {
   overflow: hidden;
   position: relative; }
@@ -4724,104 +4821,6 @@ a.button {
     overflow: hidden;
     display: -webkit-box; }
 
-<<<<<<< HEAD
-footer {
-  background: #1C293B;
-  padding: 1.5rem; }
-  footer ul {
-    list-style: none;
-    text-align: center; }
-    footer ul li {
-      display: inline-block;
-      margin: 0; }
-      footer ul li .fa, footer ul li .icon-button:before {
-        font-size: 2.5rem; }
-      footer ul li a {
-        text-decoration: none;
-        color: grey;
-        text-transform: uppercase;
-        -webkit-transition: color 200ms ease-in;
-        -moz-transition: color 200ms ease-in;
-        -o-transition: color 200ms ease-in;
-        transition: color 200ms ease-in; }
-        footer ul li a:hover {
-          color: #FE1135; }
-  footer .footer-social li {
-    margin: 0 1.5rem; }
-    @media screen and (max-width: 768px) {
-      footer .footer-social li {
-        margin: 0 0.75rem; } }
-  footer .footer-social__heading {
-    color: grey;
-    text-align: center;
-    margin: 0.75rem 0 1.5rem 0; }
-  @media screen and (max-width: 768px) {
-    footer .footer-links li {
-      padding-left: 0;
-      padding-right: 0; } }
-
-.product-quote {
-  padding: 1.5rem;
-  position: relative; }
-  @media screen and (max-width: 768px) {
-    .product-quote {
-      padding: 0; }
-      .product-quote:before {
-        position: absolute;
-        content: '';
-        z-index: 10;
-        height: 0;
-        width: 0;
-        top: 50%;
-        -webkit-transform: translateY(-50%);
-        -moz-transform: translateY(-50%);
-        -o-transform: translateY(-50%);
-        transform: translateY(-50%);
-        border-top: 2rem solid transparent;
-        border-bottom: 2rem solid transparent;
-        border-left: 1.5rem solid #363D4E; } }
-  .product-quote .product-quote__content {
-    background: url("/styleguide/images/components/crinkled-paper-effect.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding: 1.5rem 3rem; }
-    .product-quote .product-quote__content .product-quote__content-heading {
-      font-size: 1.5rem;
-      font-weight: bold;
-      margin-bottom: 1.5rem; }
-      @media screen and (max-width: 768px) {
-        .product-quote .product-quote__content .product-quote__content-heading {
-          margin-bottom: 0; } }
-    .product-quote .product-quote__content .icons {
-      text-align: center;
-      margin-bottom: 1.5rem; }
-    .product-quote .product-quote__content .icons * {
-      display: inline-block; }
-    .product-quote .product-quote__content .icon-star {
-      width: 1rem; }
-      .product-quote .product-quote__content .icon-star path {
-        fill: #FE1135; }
-    .product-quote .product-quote__content blockquote {
-      margin-left: 20px; }
-      .product-quote .product-quote__content blockquote svg {
-        fill: #6e7789;
-        width: 20px; }
-        .product-quote .product-quote__content blockquote svg.icon-quote--open {
-          margin-left: -20px; }
-      .product-quote .product-quote__content blockquote p {
-        display: inline;
-        font-weight: bold;
-        color: #6e7789; }
-    .product-quote .product-quote__content cite {
-      margin-left: 20px;
-      font-style: normal;
-      font-weight: bold;
-      color: #6e7789; }
-    .product-quote .product-quote__content hr {
-      width: 50%;
-      margin-left: 20px;
-      background: #6e7789; }
-=======
 .more-info {
   position: relative;
   overflow: hidden; }
@@ -4892,10 +4891,6 @@ footer {
       left: 0;
       bottom: 0;
       right: 0; }
-<<<<<<< HEAD
->>>>>>> Add the more info hero for content tiles
-=======
       @media screen and (min-width: 769px), print {
         .more-info .image:after {
           background: linear-gradient(to right, black 33%, transparent 65%); } }
->>>>>>> Improve mobile support
