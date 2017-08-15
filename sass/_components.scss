@@ -973,3 +973,77 @@
         }
     }
 }
+
+// Page Footer
+//
+// markup:
+// <footer>
+//      <ul class="footer-links columns is-mobile">
+//          <li class="column"><a href="#">About</a></li>
+//          <li class="column"><a href="#">FAQ</a></li>
+//          <li class="column"><a href="#">Contact</a></li>
+//          <li class="column"><a href="#">Privacy</a></li>
+//      </ul>
+//      <h4 class='footer-social__heading'>Follow us</h4>
+//      <ul class="footer-social columns is-mobile">
+//          <div class="column">
+//              <li><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+//              <li><a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+//              <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+//          </div>
+//      </ul>
+// </footer>
+// 
+// Styleguide 5.9
+footer {
+    background: #1C293B;
+    padding: $baseline;
+    ul {
+        list-style: none;
+        text-align: center;
+
+        li {
+            display: inline-block;
+            margin: 0;
+
+            .fa {
+                font-size: $size-2;
+            }
+
+            a {
+                text-decoration: none;
+                color: grey;
+                text-transform: uppercase;
+                @include transition(color 200ms ease-in);
+
+                &:hover {
+                    color: $color-torch-red;
+                }
+            }
+        }
+    }
+
+    .footer-social {
+        li {
+            margin: 0 $baseline;
+
+            @include mobile {
+                margin: 0 ($baseline / 2);
+            }
+        }
+    }
+    .footer-social__heading {
+        color: grey;
+        text-align: center;
+        margin: ($baseline / 2) 0 $baseline 0;
+    }
+
+    .footer-links {
+        li {
+            @include mobile {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+    }
+}

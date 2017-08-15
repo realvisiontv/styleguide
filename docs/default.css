@@ -4694,3 +4694,38 @@ a.button {
     -webkit-box-orient: vertical;
     overflow: hidden;
     display: -webkit-box; }
+
+footer {
+  background: #1C293B;
+  padding: 1.5rem; }
+  footer ul {
+    list-style: none;
+    text-align: center; }
+    footer ul li {
+      display: inline-block;
+      margin: 0; }
+      footer ul li .fa, footer ul li .icon-button:before {
+        font-size: 2.5rem; }
+      footer ul li a {
+        text-decoration: none;
+        color: grey;
+        text-transform: uppercase;
+        -webkit-transition: color 200ms ease-in;
+        -moz-transition: color 200ms ease-in;
+        -o-transition: color 200ms ease-in;
+        transition: color 200ms ease-in; }
+        footer ul li a:hover {
+          color: #FE1135; }
+  footer .footer-social li {
+    margin: 0 1.5rem; }
+    @media screen and (max-width: 768px) {
+      footer .footer-social li {
+        margin: 0 0.75rem; } }
+  footer .footer-social__heading {
+    color: grey;
+    text-align: center;
+    margin: 0.75rem 0 1.5rem 0; }
+  @media screen and (max-width: 768px) {
+    footer .footer-links li {
+      padding-left: 0;
+      padding-right: 0; } }
