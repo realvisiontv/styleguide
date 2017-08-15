@@ -974,6 +974,7 @@
     }
 }
 
+<<<<<<< HEAD
 // Page Footer
 //
 // markup:
@@ -1157,6 +1158,138 @@ footer {
             width: 50%;
             margin-left: 20px;
             background: #6e7789;
+=======
+
+// Content tile more info
+// 
+// This component is dependent on specific container dimensions, see fullscreen.
+//
+// markup:
+// <section class="more-info container">
+//     <div class="columns">
+//         <div class="content column is-7">
+//             <div class="badge">Analysis</div>
+//             <h1>Looking under the hood gold</h1>
+//             <div class="columns is-8">
+//                 <div class="column is-8 child-full-height">
+//                     <div class="synopsis">
+//                         <p>Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
+//                     </div>
+//                 </div>
+//                 <div class="column is-3">
+//                     <dl>
+//                         <dt>Published date:</dt>
+//                         <dd>27th March 2017</dd>
+//                         <dt>Featuring:</dt>
+//                         <dd>Shane Oliver - Economist</dd>
+//                         <dt>Interviewer:</dt>
+//                         <dd>Grant Williams</dd>
+//                         <dt>Topics:</dt>
+//                         <dd>Australia, New Zealand, Macro, Housing Market</dd>
+//                         <dt>Asset Classes:</dt>
+//                         <dd>Real Estate, Equities, Currencies</dd>
+//                     </dl>
+//                 </div>
+//             </div>
+//             <p class="strap"><i class="fa fa-info"></i>Shane Oliver is one of Australia's most highly rated economists</p>
+//             <button class="icon-button invert large fa-plus">Watch Later</button>
+//         </div>
+//     </div>
+//     <div class="image child-full-height">
+//         <div class="column is-8 is-offset-4">
+//             <img src="https://lorempixel.com/1600/900/city" />
+//         </div>
+//     </div>
+//     <button class="icon-button invert large fa-play">01:24:45</button>
+//     <button class="icon-button fa-close hide-text large">Close more information</button>
+// </section>
+// 
+// Styleguide 5.9
+.more-info {
+    position: relative;
+    overflow: hidden;
+
+    .columns {
+        margin: 0;
+    }
+
+    .icon-button.fa-close {
+        position: absolute;
+        top: $baseline;
+        right: $baseline;
+
+        &:before {
+            background: transparent;
+            border: 0;
+            color: rgba(255,255,255,0.75);
+            font-size: 32px;
+        }
+    }
+
+    .icon-button.fa-play {
+        position: absolute;
+        bottom: $baseline;
+        right: $baseline;
+    }
+    
+    .content {
+        color: #fff;
+        padding: $baseline;
+        position: relative;
+        z-index: 1;
+
+        h1 {
+            font-weight: 800;
+            margin-bottom: $baseline / 2;
+            margin-top: 0;
+        }
+
+        dt {
+            opacity: 0.75;
+        }
+
+        p {
+            text-align: justify;
+        }
+    }
+
+    .badge {
+        margin-bottom: $baseline / 2;
+    }
+
+    .synopsis {
+        background: #39434b;
+        padding: $baseline / 2;
+    }
+
+    .image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 0;
+
+        .column {
+            padding: 0;
+        }
+
+        img {
+            height: 100%;
+            max-width: none;
+            float: right;
+        }
+
+        &:after {
+            background: linear-gradient(to right, black 33%, transparent 65%);
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+>>>>>>> Add the more info hero for content tiles
         }
     }
 }

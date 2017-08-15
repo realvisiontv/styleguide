@@ -2319,7 +2319,8 @@
   content: ""; }
 
 .fa-times-rectangle:before,
-.fa-window-close:before {
+.fa-window-close:before,
+.icon-button.fa-close:before {
   content: ""; }
 
 .fa-times-rectangle-o:before,
@@ -3929,6 +3930,11 @@ body {
 .is-offset-0-5 {
   margin-left: 4.125%; }
 
+.child-full-height {
+  display: flex; }
+  .child-full-height > * {
+    flex-grow: 1; }
+
 * + p,
 * + pre,
 * + ul,
@@ -4016,6 +4022,27 @@ a {
     text-decoration-color: rgba(54, 54, 54, 0.25); }
   a:active {
     text-decoration-color: rgba(54, 54, 54, 0.25); }
+
+.badge {
+  background: grey;
+  color: white;
+  display: inline-block;
+  font-size: 1rem;
+  padding: 0 5px;
+  text-transform: uppercase; }
+
+.strap {
+  color: cyan;
+  line-iheght: 26px; }
+  .strap .fa, .strap .icon-button:before {
+    background: cyan;
+    color: black;
+    margin-right: 1ex;
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    font-size: 1rem; }
 
 .button {
   background: #FE1135;
@@ -4139,6 +4166,8 @@ a.button {
     font-size: 0;
     width: 26px;
     margin-right: 1ex; }
+    .icon-button.hide-text.large {
+      width: 40px; }
   .icon-button.invert {
     background: grey;
     color: white; }
@@ -4695,6 +4724,7 @@ a.button {
     overflow: hidden;
     display: -webkit-box; }
 
+<<<<<<< HEAD
 footer {
   background: #1C293B;
   padding: 1.5rem; }
@@ -4791,3 +4821,63 @@ footer {
       width: 50%;
       margin-left: 20px;
       background: #6e7789; }
+=======
+.more-info {
+  position: relative;
+  overflow: hidden; }
+  .more-info .columns {
+    margin: 0; }
+  .more-info .icon-button.fa-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem; }
+    .more-info .icon-button.fa-close:before {
+      background: transparent;
+      border: 0;
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 32px; }
+  .more-info .icon-button.fa-play, .more-info .icon-button.fa-play:before {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem; }
+  .more-info .content {
+    color: #fff;
+    padding: 1.5rem;
+    position: relative;
+    z-index: 1; }
+    .more-info .content h1 {
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+      margin-top: 0; }
+    .more-info .content dt {
+      opacity: 0.75; }
+    .more-info .content p {
+      text-align: justify; }
+  .more-info .badge {
+    margin-bottom: 0.75rem; }
+  .more-info .synopsis {
+    background: #39434b;
+    padding: 0.75rem; }
+  .more-info .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 0; }
+    .more-info .image .column {
+      padding: 0; }
+    .more-info .image img {
+      height: 100%;
+      max-width: none;
+      float: right; }
+    .more-info .image:after {
+      background: linear-gradient(to right, black 33%, transparent 65%);
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0; }
+>>>>>>> Add the more info hero for content tiles
