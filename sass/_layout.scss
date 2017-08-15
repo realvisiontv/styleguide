@@ -43,6 +43,12 @@
 .is-offset-0-5 {
     margin-left: 4.125%;
 }
+.child-full-height {
+    display: flex;
+    > * {
+        flex-grow: 1;
+    }
+}
 
 // Vertical Rhythm
 //
