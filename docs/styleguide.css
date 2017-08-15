@@ -4845,14 +4845,25 @@ footer {
     padding: 1.5rem;
     position: relative;
     z-index: 1; }
-    .more-info .content h1 {
-      font-weight: 800;
-      margin-bottom: 0.75rem;
-      margin-top: 0; }
-    .more-info .content dt {
-      opacity: 0.75; }
     .more-info .content p {
       text-align: justify; }
+    @media screen and (max-width: 768px) {
+      .more-info .content .column {
+        padding-left: 0;
+        padding-right: 0; } }
+  .more-info h1 {
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+    margin-top: 0; }
+  .more-info dl {
+    background: rgba(0, 0, 0, 0.75);
+    padding: 0.75rem; }
+    @media screen and (min-width: 769px), print {
+      .more-info dl {
+        background: transparent;
+        padding: 0; } }
+  .more-info dt {
+    opacity: 0.75; }
   .more-info .badge {
     margin-bottom: 0.75rem; }
   .more-info .synopsis {
@@ -4869,10 +4880,12 @@ footer {
       padding: 0; }
     .more-info .image img {
       height: 100%;
-      max-width: none;
-      float: right; }
+      max-width: none; }
+      @media screen and (min-width: 769px), print {
+        .more-info .image img {
+          float: right; } }
     .more-info .image:after {
-      background: linear-gradient(to right, black 33%, transparent 65%);
+      background: linear-gradient(to bottom, black 5rem, transparent 15rem, transparent 75%, black 90%);
       content: "";
       display: block;
       position: absolute;
@@ -4880,4 +4893,10 @@ footer {
       left: 0;
       bottom: 0;
       right: 0; }
+<<<<<<< HEAD
 >>>>>>> Add the more info hero for content tiles
+=======
+      @media screen and (min-width: 769px), print {
+        .more-info .image:after {
+          background: linear-gradient(to right, black 33%, transparent 65%); } }
+>>>>>>> Improve mobile support

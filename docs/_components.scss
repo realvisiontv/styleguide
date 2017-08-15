@@ -1238,19 +1238,35 @@ footer {
         position: relative;
         z-index: 1;
 
-        h1 {
-            font-weight: 800;
-            margin-bottom: $baseline / 2;
-            margin-top: 0;
-        }
-
-        dt {
-            opacity: 0.75;
-        }
-
         p {
             text-align: justify;
         }
+
+        @include until($tablet) {
+            .column {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+    }
+
+    h1 {
+        font-weight: 800;
+        margin-bottom: $baseline / 2;
+        margin-top: 0;
+    }
+
+    dl {
+        background: rgba(0,0,0,0.75);
+        padding: $baseline / 2;
+        @include tablet {
+            background: transparent;
+            padding: 0;
+        }
+    }
+
+    dt {
+        opacity: 0.75;
     }
 
     .badge {
@@ -1277,11 +1293,13 @@ footer {
         img {
             height: 100%;
             max-width: none;
-            float: right;
+            @include tablet {
+                float: right;
+            }
         }
 
         &:after {
-            background: linear-gradient(to right, black 33%, transparent 65%);
+            background: linear-gradient(to bottom, black 5rem, transparent 15rem, transparent 75%, black 90%);
             content: "";
             display: block;
             position: absolute;
@@ -1289,7 +1307,14 @@ footer {
             left: 0;
             bottom: 0;
             right: 0;
+<<<<<<< HEAD
 >>>>>>> Add the more info hero for content tiles
+=======
+
+            @include tablet {
+                background: linear-gradient(to right, black 33%, transparent 65%);
+            }
+>>>>>>> Improve mobile support
         }
     }
 }
