@@ -4731,7 +4731,7 @@ footer {
       padding-right: 0; } }
 
 .product-quote {
-  padding: 2rem;
+  padding: 1.5rem;
   position: relative; }
   @media screen and (max-width: 768px) {
     .product-quote {
@@ -4751,20 +4751,20 @@ footer {
         border-bottom: 2rem solid transparent;
         border-left: 1.5rem solid #363D4E; } }
   .product-quote .product-quote__content {
-    background: url("/styleguide/images/components/grey-brush-effect.png");
+    background: url("/styleguide/images/components/crinkled-paper-effect.png");
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 2rem 3rem; }
+    padding: 1.5rem 3rem; }
     .product-quote .product-quote__content .product-quote__content-heading {
       font-size: 1.5rem;
       font-weight: bold;
-      margin-bottom: 2rem; }
+      margin-bottom: 1.5rem; }
       @media screen and (max-width: 768px) {
         .product-quote .product-quote__content .product-quote__content-heading {
           margin-bottom: 0; } }
     .product-quote .product-quote__content .icons {
       text-align: center;
-      margin-bottom: 1rem; }
+      margin-bottom: 1.5rem; }
     .product-quote .product-quote__content .icons * {
       display: inline-block; }
     .product-quote .product-quote__content .icon-star {

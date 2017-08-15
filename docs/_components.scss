@@ -1075,7 +1075,7 @@ footer {
 // 
 // Styleguide 5.10
 .product-quote {
-    padding: 2rem;
+    padding: $baseline;
     position: relative;
 
     @include mobile {
@@ -1096,15 +1096,15 @@ footer {
     }
 
     .product-quote__content {
-        background: url('#{$root}/images/components/grey-brush-effect.png');
+        background: url('#{$root}/images/components/crinkled-paper-effect.png');
         background-size: cover;
         background-repeat: no-repeat;
-        padding: 2rem 3rem;
+        padding: $baseline ($baseline * 2);
 
         .product-quote__content-heading {
-            font-size: 1.5rem;
+            font-size: $size-4;
             font-weight: bold;
-            margin-bottom: 2rem;
+            margin-bottom: $baseline;
 
             @include mobile {
                 margin-bottom: 0;
@@ -1113,7 +1113,7 @@ footer {
 
         .icons {
             text-align: center;
-            margin-bottom: 1rem;
+            margin-bottom: $baseline;
         }
 
         .icons * {
