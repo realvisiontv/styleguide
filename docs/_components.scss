@@ -804,3 +804,172 @@
         @include transform(rotate(360deg));
     }
 }
+
+// Tri-hero
+// 
+// This component is dependent on specific container dimensions, see fullscreen.
+//
+// markup:
+// <section class="container tri-hero">
+//     <div class="columns images">
+//         <article class="test column is-7">
+//             <img src="https://lorempixel.com/1600/1600/people" />
+//         </article>
+//         <article class="test column is-2-5">
+//             <img src="https://lorempixel.com/1600/1600/city" />
+//         </article>
+//         <article class="test column is-2-5">
+//             <img src="https://lorempixel.com/1600/1600/abstract" />
+//         </article>
+//     </div>
+//     <div class="columns content">
+//         <article class="test2 column is-5">
+//             <h2>Latest Video</h2>
+//             <h1>Looking under the hood gold</h1>
+//             <p>Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
+//             <button class="icon-button large hide-text fa-info">More information</button>
+//             <button class="icon-button invert large fa-play">24:45</button>
+//         </article>
+//         <article class="test2 column is-3 is-offset-0-5">
+//             <h2>Latest Video</h2>
+//             <h1>Looking under the hood gold</h1>
+//             <p>Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
+//             <button class="icon-button large hide-text fa-info">More information</button>
+//         </article>
+//         <article class="test2 column is-3 is-offset-0-5">
+//             <h2>Latest Video</h2>
+//             <h1>Looking under the hood gold</h1>
+//             <p>Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
+//             <button class="icon-button large hide-text fa-info">More information</button>
+//         </article>
+//     </div>
+// </section>
+// 
+// Styleguide 5.8
+.tri-hero {
+    $rotation: 25deg;
+    $scaleFactorNarrowColumn: 1.73;
+    $scaleFactorWideColumn: 1.52;
+    // Scale calculation - cos(θ) + max{(W/H),(H/W)} * sin(θ)
+
+    .images {
+        overflow: hidden;
+        height: 548px;
+        margin-bottom: 0;
+
+        article {
+            transform: rotate($rotation);
+            overflow: hidden;
+            position: relative;
+            transform: rotate($rotation) scale($scaleFactorNarrowColumn);
+
+            &:after {
+                content: "";
+                background: linear-gradient(to top, black 17%, rgba(0, 0, 255, 0) 45%);
+                display: block;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                transform: translate(-31%, 4%) rotate(-$rotation) scaleX(2);
+            }
+
+            &.is-7 {
+                transform: rotate($rotation) scale($scaleFactorWideColumn);
+                &:after {
+                    background: linear-gradient(to bottom, black 23%, rgba(0, 0, 255, 0) 77%);
+                    transform: translate(-3%, -13%) rotate(-$rotation);
+                }
+            }
+
+            &:last-child {
+                transform: translateX(40%) rotate($rotation) scale($scaleFactorNarrowColumn);
+            }
+
+            &:hover {
+                img {
+                    opacity: 0;
+                }
+            }
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translate(-31%, 4%) rotate(-$rotation);
+        }
+
+        .is-2-5 img {
+            height: 100%;
+            max-width: none;
+        }
+            
+        .is-7 img {
+            transform: translate(-3%, -13%) rotate(-$rotation);
+        }
+    }
+
+    .content {
+        color: white;
+        overflow: hidden;
+        height:548px;
+        margin-top: -548px;
+        margin-bottom: 0;
+        position: relative;
+ 
+        .icon-button.fa-play {
+            position: absolute;
+            bottom: $baseline;
+            left: $baseline;
+
+            &:before {
+                bottom: 0;
+                left: 0;
+            }
+        }
+
+        .is-5 {
+            padding: $baseline;
+        }
+
+        .is-3 {
+            padding-bottom: $baseline;
+            padding-left: 1.25rem;
+            padding-right: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            
+            h1 {
+                font-size: 2rem;
+            }
+            p {
+                -webkit-line-clamp: 1;
+                margin: 0 0 $baseline/2;
+            }
+        }
+
+        h1 {
+            font-weight: 800;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            display: -webkit-box;
+        }
+        h2 {
+            text-transform: none;
+            font-weight: 400;
+            font-family: 'Proxima Nova';
+            text-decoration: underline;
+            font-size: 1.5rem
+        }
+        p {
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            display: -webkit-box;
+        }
+    }
+}
