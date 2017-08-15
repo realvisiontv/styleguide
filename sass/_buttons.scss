@@ -213,6 +213,10 @@ a.button {
         font-size: 0;
         width: $size;
         margin-right: 1ex;
+
+        &.large {
+            width: $large;
+        }
     }
 
     &.invert {
