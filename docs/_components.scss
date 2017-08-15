@@ -1047,3 +1047,116 @@ footer {
         }
     }
 }
+
+// Product Quote
+//
+// markup:
+// <div class="product-quote">
+//      <div class="product-quote__content">
+//          <p class="product-quote__content-heading">Get exposed to investment ideas and financial insights that you can't get anywhere else.</p>
+//          <div class="is-hidden-mobile">
+//              <div class="icons">
+//                  <svg class="icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.62292 316.34321" class="icon-star"><path d="M166.31 0l51.395 104.134 114.918 16.698-83.156 81.057 19.63 114.452-102.786-54.038-102.784 54.038 19.63-114.454L0 120.83l114.918-16.698z" /></svg>
+//                  <svg class="icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.62292 316.34321" class="icon-star"><path d="M166.31 0l51.395 104.134 114.918 16.698-83.156 81.057 19.63 114.452-102.786-54.038-102.784 54.038 19.63-114.454L0 120.83l114.918-16.698z" /></svg>
+//                  <svg class="icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.62292 316.34321" class="icon-star"><path d="M166.31 0l51.395 104.134 114.918 16.698-83.156 81.057 19.63 114.452-102.786-54.038-102.784 54.038 19.63-114.454L0 120.83l114.918-16.698z" /></svg>
+//                  <svg class="icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.62292 316.34321" class="icon-star"><path d="M166.31 0l51.395 104.134 114.918 16.698-83.156 81.057 19.63 114.452-102.786-54.038-102.784 54.038 19.63-114.454L0 120.83l114.918-16.698z" /></svg>
+//                  <svg class="icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.62292 316.34321" class="icon-star"><path d="M166.31 0l51.395 104.134 114.918 16.698-83.156 81.057 19.63 114.452-102.786-54.038-102.784 54.038 19.63-114.454L0 120.83l114.918-16.698z" /></svg>
+//              </div>
+//              <blockquote>
+//                  <svg class="icon-quote icon-quote--open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><path class="icon-quote-fill" d="M68.2 163.1c-5.4-88 32-104 32-104s-.1-33 0-33.3C5.1 51.2 9.6 167.1 9.6 167.1v98.7h102.7V163.1s-30-.5-44.1 0zm173.4 0c-5.4-88 32-104 32-104s-.1-33 0-33.3C178.5 51.2 183 167.1 183 167.1v98.7h102.7V163.1s-30-.5-44.1 0z"/></svg>
+//                  <p>I have gone through the rabbit hole with Real Vision and found some great leaders and thinkers that have expanded my investment horizons. I am grateful for the introduction to these great minds that I would never have heard about as an individual investor.</p>
+//                  <svg class="icon-quote icon-quote--close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><path class="icon-quote-fill" d="M227.1 128.5c5.4 88-32 104-32 104s.1 33 0 33.3c95.1-25.4 90.6-141.3 90.6-141.3V25.8H183v102.7s30 .5 44.1 0zm-173.4 0c5.4 88-32 104-32 104s.1 33 0 33.3c95.1-25.4 90.6-141.3 90.6-141.3V25.8H9.6v102.7s30 .5 44.1 0z"></path></svg>
+//              </blockquote>
+//              <hr/>
+//              <cite>Alain B.</cite>
+//          </div>
+//      </div>
+// </div>
+// 
+// Styleguide 5.10
+.product-quote {
+    padding: $baseline;
+    position: relative;
+
+    @include mobile {
+        padding: 0;
+
+        &:before {
+            position: absolute;
+            content: '';
+            z-index: 10;
+            height: 0;
+            width: 0;
+            top: 50%;
+            @include transform(translateY(-50%));
+            border-top: 2rem solid transparent;
+            border-bottom: 2rem solid transparent;
+            border-left: 1.5rem solid #363D4E;
+        }
+    }
+
+    .product-quote__content {
+        background: url('#{$root}/images/components/crinkled-paper-effect.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: $baseline ($baseline * 2);
+
+        .product-quote__content-heading {
+            font-size: $size-4;
+            font-weight: bold;
+            margin-bottom: $baseline;
+
+            @include mobile {
+                margin-bottom: 0;
+            }
+        }
+
+        .icons {
+            text-align: center;
+            margin-bottom: $baseline;
+        }
+
+        .icons * {
+            display: inline-block;
+        }
+
+        .icon-star {
+            width: 1rem;
+            path {
+                fill: $color-torch-red;
+            }
+        }
+
+        blockquote {
+            margin-left: 20px;
+
+            svg {
+                fill: #6e7789;
+                width: 20px;
+
+                &.icon-quote--open {
+                    margin-left: -20px;
+                }
+            }
+
+            p {
+                display: inline;
+                font-weight: bold;
+                color: #6e7789;
+            }
+        }
+
+        cite {
+            margin-left: 20px;
+            font-style: normal;
+            font-weight: bold;
+            color: #6e7789;
+        }
+        
+        hr {
+            width: 50%;
+            margin-left: 20px;
+            background: #6e7789;
+        }
+    }
+}
