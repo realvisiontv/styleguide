@@ -64,453 +64,6 @@
     }
 }
 
-// Content Tile
-//
-// :hover - hover state
-// 
-// markup:
-// <div class="columns">
-//     <article class="column content-tile">
-//         <a href="#" class="{$modifiers}">
-//             <div class="image">
-//                 <img src="http://lorempixel.com/320/180/people"  />
-//                 <div class="spinner-container">
-//                     <div class="spinner"></div>
-//                 </div>
-//             </div>
-//             <div class="content">
-//                 <div class="title">
-//                     <div class="subheading">
-//                         <div class="is-pulled-left">Think Piece</div>
-//                         <div class="is-pulled-right">36:00</div>
-//                     </div>
-//                     <h1>Looking Under the Hood Australia</h1>
-//                     <div class="buttons">
-//                         <button class="icon-button fa-info hide-text">More Information</button>
-//                         <button class="icon-button fa-plus hide-text">Add to My List</button>
-//                     </div>
-//                 </div>
-//                 <div class="theme">Insight</div>
-//                 <blockquote>
-//                     Go you good thing Thats the best rant I've heard for a short while.
-//                     <cite>Mark M.</cite>
-//                 </blockquote>
-//                 <div class="icon"></div>
-//             </div>
-//         </a>
-//     </article>
-//     <article class="column content-tile loading">
-//         <div class="image">
-//             <div class="spinner-container">
-//                 <div class="spinner"></div>
-//             </div>
-//         </div>
-//     </article>
-//     <article class="column content-tile">
-//         <a href="#">
-//             <div class="image">
-//                 <img src="http://lorempixel.com/320/180/abstract"  />
-//                 <div class="spinner-container">
-//                     <div class="spinner"></div>
-//                 </div>
-//             </div>
-//             <div class="content">
-//                 <div class="title">
-//                     <div class="progress" style="width: 75%">You've watched 75%</div>
-//                     <div class="subheading">
-//                         <div class="is-pulled-left">Think Piece</div>
-//                         <div class="is-pulled-right">1:15:00</div>
-//                     </div>
-//                     <h1>Quantitative Insight with a Discretionary Edge - Richard Excell</h1>
-//                     <div class="buttons">
-//                         <button class="icon-button fa-info hide-text">More Information</button>
-//                     </div>
-//                 </div>
-//                 <div class="theme">Insight</div>
-//                 <blockquote>
-//                     Go you good thing Thats the best rant I've heard for a short while.
-//                     <cite>Mark M.</cite>
-//                 </blockquote>
-//                 <div class="icon"></div>
-//             </div>
-//         </a>
-//     </article>
-// </div>
-//
-// Styleguide 5.2
-.content-tile {
-    $padding: 0.75rem;
-    $transition-in-speed: 0.2s;
-    $transition-out-speed: 0.5s;
-    $transition-out-delay: 0.5s;
-
-    overflow: hidden;
-    position: relative;
-
-    &:before {
-        display: block;
-        content: '';
-        width: 100%;
-    }
-
-    .spinner-container {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 0;
-    }
-
-    .buttons {
-        margin-top: 0;
-        max-height: 0;
-        transition: max-height $transition-out-speed, margin-top $transition-out-speed;
-        transition-delay: $transition-out-delay;
-    }
-
-    .content {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        padding: $padding;
-        z-index: 1;
-    }
-
-    .image {
-        background: lightgrey;
-        height: 0;
-        padding-bottom: 2 / 3 * 100%;
-        &:after {
-            background: rgba(0, 0, 0, 0.5);
-            content: "";
-            display: block;
-            position: absolute;
-            top: $padding;
-            bottom: $padding;
-            left: $padding;
-            right: $padding;
-            opacity: 0;
-            transition: opacity 0.52s;
-            transition-delay: $transition-out-delay;
-            z-index: 1;
-        }
-    }
-
-    img {
-        position: relative;
-        transition: opacity 0.2s;
-        width: 100%;
-        z-index: 1;
-    }
-
-    img[data-src] {
-        opacity: 0;
-    }
-
-    .title {
-        background: #fff;
-        position: absolute;
-        bottom: $padding;
-        left: $padding;
-        padding-top: 3px;
-        padding-right: 6px;
-        width: calc(70% - #{$padding});
-    }
-
-    .progress {
-        background-color: $color-torch-red;
-        font-size: 0;
-        height: 2px;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-
-    h1 {
-        font-size: $size-5;
-        font-weight: 800;
-        margin: 0;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        display: -webkit-box;
-    }
-    .subheading {
-        overflow: hidden;
-        text-transform: uppercase;
-        font-size: $size-7;
-    }
-
-    .theme {
-        background: grey;
-        color: #fff;
-        text-transform: uppercase;
-        position: absolute;
-        bottom: $padding;
-        right: $padding;
-        width: calc(30% - #{$padding});
-        text-align: center;
-        font-family: 'Function Pro';
-        height: 15%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    blockquote {
-        color: #fff;
-        font-size: $size-7;
-        margin: $padding;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        display: -webkit-box;
-        opacity: 0;
-        transition: opacity $transition-out-speed;
-        transition-delay: $transition-out-delay;
-        cite {
-            display: block;
-            border-top: 1px solid rgba(255, 255, 255, 0.5);
-            font-style: normal;
-            text-transform: uppercase;
-            margin-top: 5px;
-            padding-top: 5px;
-        }
-    }
-
-    .icon {
-        position: absolute;
-        right: 0;
-        bottom: calc(15% + 1.75rem);
-        width: 30%;
-        opacity: 0;
-        transition: opacity $transition-out-speed;
-        transition-delay: $transition-out-delay;
-
-        &:after {
-            border-top: 20px solid transparent;
-            border-left: 30px solid #fff;
-            border-bottom: 20px solid transparent;
-            content: "";
-            display: block;
-            width: 0;
-            height: 0;
-            margin: 0 auto;
-        }
-    }
-
-    a {
-        color: $text;
-        &:hover,
-        &:focus {
-            blockquote,
-            .icon,
-            .image:after {
-                opacity: 1;
-                transition-duration: $transition-in-speed;
-                transition-delay: 0s;
-            }
-            .buttons {
-                margin-top: $padding;
-                max-height: 50px;
-                transition-duration: $transition-in-speed;
-                transition-delay: 0s;
-            }
-        }
-    }
-}
-
-// Content Tile - Double Height List
-// 
-// A content tile at double height. Contains a list of up to 4 things. Each item
-// in the list is cropped to 2 lines of text.
-// 
-// :hover - hover state
-// 
-// markup:
-// <div class="columns">
-//     <article class="column content-tile double {$modifiers}">
-//         <div class="image">
-//             <img src="http://lorempixel.com/332/455/people"  />
-//         </div>
-//         <div class="content">
-//             <ol>
-//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec Suspendisse in arcu mattis, porta mi nec</div></a></li>
-//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec</div></a></li>
-//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec</div></a></li>
-//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec</div></a></li>
-//                 </ol>
-//             <a class="button" href="#">See all 40 videos</a>
-//         </div>
-//     </article>
-//     <article class="column content-tile double">
-//         <div class="image">
-//             <img src="http://lorempixel.com/332/455/city"  />
-//         </div>
-//         <div class="content">
-//             <ol>
-//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec Suspendisse in arcu mattis, porta mi nec</div></a></li>
-//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec</div></a></li>
-//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec</div></a></li>
-//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec</div></a></li>
-//                 </ol>
-//             <a class="button" href="#">See all 40 videos</a>
-//         </div>
-//     </article>
-//     <article class="column content-tile double">
-//         <div class="image">
-//             <img src="http://lorempixel.com/332/455/abstract"  />
-//         </div>
-//         <div class="content">
-//             <ol>
-//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec Suspendisse in arcu mattis, porta mi nec</div></a></li>
-//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec</div></a></li>
-//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec</div></a></li>
-//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec</div></a></li>
-//                 </ol>
-//             <a class="button" href="#">See all 40 videos</a>
-//         </div>
-//     </article>
-// </div>
-// 
-// Styleguide 5.3
-.content-tile.double {
-    $transition-in-speed: 0.2s;
-    $transition-out-speed: 0.5s;
-    $transition-out-delay: 0.5s;
-
-    margin: 0;
-
-    .image {
-        height: auto;
-        padding-bottom: 0;
-        overflow: hidden;
-
-        img {
-            display: block;
-            height: 100%;
-            width: auto;
-            transition: filter $transition-out-speed, transform $transition-out-speed;
-            transition-delay: $transition-out-delay;
-        }
-    }
-
-    .badge {
-        background: grey;
-        color: white;
-        display: inline-block;
-        margin: 0 2ex;
-        padding: 4px 10px 2px;
-        text-transform: uppercase;
-        font-size: 0.5rem;
-        font-family: 'Function Pro', sans-serif;
-        vertical-align: text-top;
-    }
-
-    .content {
-        background: rgba(0,0,0,0.5);
-        margin: 0.75rem;
-        line-height: 1.2;
-        display: flex;
-        flex-direction: column;
-        transform: translateY(100%);
-        transition: transform $transition-out-speed;
-        transition-delay: $transition-out-delay;
-
-        ol {
-            counter-reset: content-tile-counter;
-            list-style: none;
-            margin-left: 0;
-            flex-grow: 1;
-        }
-
-        li {
-            position: relative;
-
-            &:before {
-                content: counter(content-tile-counter);
-                counter-increment: content-tile-counter;
-                background: grey;
-                color: white;
-                display: inline-block;
-                width: 24px;
-                height: 24px;
-                text-align: center;
-                line-height: 24px;
-                font-family: 'Function Pro', sans-serif;
-                font-weight: 700;
-                left: 0;
-                top: 4px;
-                position: absolute;
-            }
-        }
-
-        li+li {
-            margin-top: $baseline;
-        }
-
-        li a {
-            color: white;
-            display: block;
-            margin-left: calc(0.75rem + 24px);
-            font-size: $size-5;
-            font-weight: 700;
-            text-decoration: none;
-
-            .meta {
-                font-size: $size-7;
-                font-weight: 400;
-                text-transform: uppercase;
-            }
-
-            .item {
-                height: 2.4em;
-                -webkit-line-clamp: 2;
-                -webkit-box-orient: vertical;
-                overflow: hidden;
-                display: -webkit-box;
-            }
-
-            &:hover {
-                text-decoration: underline;
-                text-decoration-skip: ink;
-                text-decoration-color: rgba(white, 0.5);
-            }
-        }
-
-        .button {
-            color: white;
-            text-align: center;
-            width: 100%;
-
-            &:hover {
-                color: $color-torch-red;
-            }
-
-            &:focus {
-                color: $color-torch-red;
-            }
-        }
-    }
-
-    &:hover,
-    &:focus {
-        img {
-            filter: blur(10px);
-            transform: scale(1.05);
-            transition: filter $transition-in-speed, transform $transition-in-speed;
-            transition-delay: 0s;
-        }
-        .content {
-            transform: translateY(0);
-            transition: transform $transition-in-speed;
-            transition-delay: 0s;
-        }
-    }
-}
-
 // Hero Image
 // 
 // A large (optional) clickable hero image.
@@ -522,7 +75,7 @@
 //     </a>
 // </div>
 //
-// Styleguide 5.4
+// Styleguide 5.2
 .hero-image {
     img {
         display: block;
@@ -543,7 +96,7 @@
 //     </div>
 // </div>
 //
-// Styleguide 5.5
+// Styleguide 5.3
 .hero-image-w-cta {
     position: relative;
 
@@ -607,8 +160,7 @@
 //     </div>
 // </div>
 // 
-// Styleguide 5.6
-
+// Styleguide 5.4
 .navigation {
     background: rgba(0, 0, 0, 0.5);
     padding: 0.75rem;
@@ -781,7 +333,7 @@
 // markup:
 // <div class="spinner"></div>
 // 
-// Styleguide 5.7
+// Styleguide 5.5
 .spinner {
     border: 1px solid grey;
     border-top-color: transparent;
@@ -803,6 +355,7 @@
     100% {
         @include transform(rotate(360deg));
     }
+<<<<<<< HEAD
 }
 
 // Tri-hero
@@ -1317,4 +870,6 @@ footer {
 >>>>>>> Improve mobile support
         }
     }
+=======
+>>>>>>> Move content tile components into own styleguide section
 }

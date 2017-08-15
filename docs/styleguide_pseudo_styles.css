@@ -127,6 +127,10 @@ a.pseudo-class-active {
   border-color: white;
 }
 
+.navigation .navigation-mobile.pseudo-class-hover .menuButton span {
+  transform: scale(1.2);
+}
+
 .content-tile a.pseudo-class-hover blockquote,
 .content-tile a.pseudo-class-hover .icon,
 .content-tile a.pseudo-class-hover .image:after,
@@ -173,10 +177,6 @@ a.pseudo-class-active {
   transform: translateY(0);
   transition: transform 0.2s;
   transition-delay: 0s;
-}
-
-.navigation .navigation-mobile.pseudo-class-hover .menuButton span {
-  transform: scale(1.2);
 }
 
 .tri-hero .images article.pseudo-class-last-child {
