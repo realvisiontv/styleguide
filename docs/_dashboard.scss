@@ -1,0 +1,769 @@
+// Content Tile
+//
+// :hover - hover state
+// 
+// markup:
+// <div class="columns">
+//     <article class="column content-tile">
+//         <a href="#" class="{$modifiers}">
+//             <div class="image">
+//                 <img src="http://lorempixel.com/320/180/people"  />
+//                 <div class="spinner-container">
+//                     <div class="spinner"></div>
+//                 </div>
+//             </div>
+//             <div class="content">
+//                 <div class="title">
+//                     <div class="subheading">
+//                         <div class="is-pulled-left">Think Piece</div>
+//                         <div class="is-pulled-right">36:00</div>
+//                     </div>
+//                     <h1>Looking Under the Hood Australia</h1>
+//                     <div class="buttons">
+//                         <button class="icon-button fa-info hide-text">More Information</button>
+//                         <button class="icon-button fa-plus hide-text">Add to My List</button>
+//                     </div>
+//                 </div>
+//                 <div class="theme">Insight</div>
+//                 <blockquote>
+//                     Go you good thing Thats the best rant I've heard for a short while.
+//                     <cite>Mark M.</cite>
+//                 </blockquote>
+//                 <div class="icon"></div>
+//             </div>
+//         </a>
+//     </article>
+//     <article class="column content-tile loading">
+//         <div class="image">
+//             <div class="spinner-container">
+//                 <div class="spinner"></div>
+//             </div>
+//         </div>
+//     </article>
+//     <article class="column content-tile">
+//         <a href="#">
+//             <div class="image">
+//                 <img src="http://lorempixel.com/320/180/abstract"  />
+//                 <div class="spinner-container">
+//                     <div class="spinner"></div>
+//                 </div>
+//             </div>
+//             <div class="content">
+//                 <div class="title">
+//                     <div class="progress" style="width: 75%">You've watched 75%</div>
+//                     <div class="subheading">
+//                         <div class="is-pulled-left">Think Piece</div>
+//                         <div class="is-pulled-right">1:15:00</div>
+//                     </div>
+//                     <h1>Quantitative Insight with a Discretionary Edge - Richard Excell</h1>
+//                     <div class="buttons">
+//                         <button class="icon-button fa-info hide-text">More Information</button>
+//                     </div>
+//                 </div>
+//                 <div class="theme">Insight</div>
+//                 <blockquote>
+//                     Go you good thing Thats the best rant I've heard for a short while.
+//                     <cite>Mark M.</cite>
+//                 </blockquote>
+//                 <div class="icon"></div>
+//             </div>
+//         </a>
+//     </article>
+// </div>
+//
+// Styleguide 6.1
+.content-tile {
+    $padding: 0.75rem;
+    $transition-in-speed: 0.2s;
+    $transition-out-speed: 0.5s;
+    $transition-out-delay: 0.5s;
+
+    overflow: hidden;
+    position: relative;
+
+    &:before {
+        display: block;
+        content: '';
+        width: 100%;
+    }
+
+    .spinner-container {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 0;
+    }
+
+    .buttons {
+        margin-top: 0;
+        max-height: 0;
+        transition: max-height $transition-out-speed, margin-top $transition-out-speed;
+        transition-delay: $transition-out-delay;
+    }
+
+    .content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: $padding;
+        z-index: 1;
+    }
+
+    .image {
+        background: lightgrey;
+        height: 0;
+        padding-bottom: 2 / 3 * 100%;
+        &:after {
+            background: rgba(0, 0, 0, 0.5);
+            content: "";
+            display: block;
+            position: absolute;
+            top: $padding;
+            bottom: $padding;
+            left: $padding;
+            right: $padding;
+            opacity: 0;
+            transition: opacity 0.52s;
+            transition-delay: $transition-out-delay;
+            z-index: 1;
+        }
+    }
+
+    img {
+        position: relative;
+        transition: opacity 0.2s;
+        width: 100%;
+        z-index: 1;
+    }
+
+    img[data-src] {
+        opacity: 0;
+    }
+
+    .title {
+        background: #fff;
+        position: absolute;
+        bottom: $padding;
+        left: $padding;
+        padding-top: 3px;
+        padding-right: 6px;
+        width: calc(70% - #{$padding});
+    }
+
+    .progress {
+        background-color: $color-torch-red;
+        font-size: 0;
+        height: 2px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    h1 {
+        font-size: $size-5;
+        font-weight: 800;
+        margin: 0;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        display: -webkit-box;
+    }
+    .subheading {
+        overflow: hidden;
+        text-transform: uppercase;
+        font-size: $size-7;
+    }
+
+    .theme {
+        background: grey;
+        color: #fff;
+        text-transform: uppercase;
+        position: absolute;
+        bottom: $padding;
+        right: $padding;
+        width: calc(30% - #{$padding});
+        text-align: center;
+        font-family: 'Function Pro';
+        height: 15%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    blockquote {
+        color: #fff;
+        font-size: $size-7;
+        margin: $padding;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        display: -webkit-box;
+        opacity: 0;
+        transition: opacity $transition-out-speed;
+        transition-delay: $transition-out-delay;
+        cite {
+            display: block;
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            font-style: normal;
+            text-transform: uppercase;
+            margin-top: 5px;
+            padding-top: 5px;
+        }
+    }
+
+    .icon {
+        position: absolute;
+        right: 0;
+        bottom: calc(15% + 1.75rem);
+        width: 30%;
+        opacity: 0;
+        transition: opacity $transition-out-speed;
+        transition-delay: $transition-out-delay;
+
+        &:after {
+            border-top: 20px solid transparent;
+            border-left: 30px solid #fff;
+            border-bottom: 20px solid transparent;
+            content: "";
+            display: block;
+            width: 0;
+            height: 0;
+            margin: 0 auto;
+        }
+    }
+
+    a {
+        color: $text;
+        &:hover,
+        &:focus {
+            blockquote,
+            .icon,
+            .image:after {
+                opacity: 1;
+                transition-duration: $transition-in-speed;
+                transition-delay: 0s;
+            }
+            .buttons {
+                margin-top: $padding;
+                max-height: 50px;
+                transition-duration: $transition-in-speed;
+                transition-delay: 0s;
+            }
+        }
+    }
+}
+
+// Content Tile - Double Height List
+// 
+// A content tile at double height. Contains a list of up to 4 things. Each item
+// in the list is cropped to 2 lines of text.
+// 
+// :hover - hover state
+// 
+// markup:
+// <div class="columns">
+//     <article class="column content-tile double {$modifiers}">
+//         <div class="image">
+//             <img src="http://lorempixel.com/332/455/people"  />
+//         </div>
+//         <div class="content">
+//             <ol>
+//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec Suspendisse in arcu mattis, porta mi nec</div></a></li>
+//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec</div></a></li>
+//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec</div></a></li>
+//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec</div></a></li>
+//                 </ol>
+//             <a class="button" href="#">See all 40 videos</a>
+//         </div>
+//     </article>
+//     <article class="column content-tile double">
+//         <div class="image">
+//             <img src="http://lorempixel.com/332/455/city"  />
+//         </div>
+//         <div class="content">
+//             <ol>
+//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec Suspendisse in arcu mattis, porta mi nec</div></a></li>
+//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec</div></a></li>
+//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec</div></a></li>
+//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec</div></a></li>
+//                 </ol>
+//             <a class="button" href="#">See all 40 videos</a>
+//         </div>
+//     </article>
+//     <article class="column content-tile double">
+//         <div class="image">
+//             <img src="http://lorempixel.com/332/455/abstract"  />
+//         </div>
+//         <div class="content">
+//             <ol>
+//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec Suspendisse in arcu mattis, porta mi nec</div></a></li>
+//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec</div></a></li>
+//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec</div></a></li>
+//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec</div></a></li>
+//                 </ol>
+//             <a class="button" href="#">See all 40 videos</a>
+//         </div>
+//     </article>
+// </div>
+// 
+// Styleguide 6.2
+.content-tile.double {
+    $transition-in-speed: 0.2s;
+    $transition-out-speed: 0.5s;
+    $transition-out-delay: 0.5s;
+
+    margin: 0;
+
+    .image {
+        height: auto;
+        padding-bottom: 0;
+        overflow: hidden;
+
+        img {
+            display: block;
+            height: 100%;
+            width: auto;
+            transition: filter $transition-out-speed, transform $transition-out-speed;
+            transition-delay: $transition-out-delay;
+        }
+    }
+
+    .badge {
+        background: grey;
+        color: white;
+        display: inline-block;
+        margin: 0 2ex;
+        padding: 4px 10px 2px;
+        text-transform: uppercase;
+        font-size: 0.5rem;
+        font-family: 'Function Pro', sans-serif;
+        vertical-align: text-top;
+    }
+
+    .content {
+        background: rgba(0,0,0,0.5);
+        margin: 0.75rem;
+        line-height: 1.2;
+        display: flex;
+        flex-direction: column;
+        transform: translateY(100%);
+        transition: transform $transition-out-speed;
+        transition-delay: $transition-out-delay;
+
+        ol {
+            counter-reset: content-tile-counter;
+            list-style: none;
+            margin-left: 0;
+            flex-grow: 1;
+        }
+
+        li {
+            position: relative;
+
+            &:before {
+                content: counter(content-tile-counter);
+                counter-increment: content-tile-counter;
+                background: grey;
+                color: white;
+                display: inline-block;
+                width: 24px;
+                height: 24px;
+                text-align: center;
+                line-height: 24px;
+                font-family: 'Function Pro', sans-serif;
+                font-weight: 700;
+                left: 0;
+                top: 4px;
+                position: absolute;
+            }
+        }
+
+        li+li {
+            margin-top: $baseline;
+        }
+
+        li a {
+            color: white;
+            display: block;
+            margin-left: calc(0.75rem + 24px);
+            font-size: $size-5;
+            font-weight: 700;
+            text-decoration: none;
+
+            .meta {
+                font-size: $size-7;
+                font-weight: 400;
+                text-transform: uppercase;
+            }
+
+            .item {
+                height: 2.4em;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                display: -webkit-box;
+            }
+
+            &:hover {
+                text-decoration: underline;
+                text-decoration-skip: ink;
+                text-decoration-color: rgba(white, 0.5);
+            }
+        }
+
+        .button {
+            color: white;
+            text-align: center;
+            width: 100%;
+
+            &:hover {
+                color: $color-torch-red;
+            }
+
+            &:focus {
+                color: $color-torch-red;
+            }
+        }
+    }
+
+    &:hover,
+    &:focus {
+        img {
+            filter: blur(10px);
+            transform: scale(1.05);
+            transition: filter $transition-in-speed, transform $transition-in-speed;
+            transition-delay: 0s;
+        }
+        .content {
+            transform: translateY(0);
+            transition: transform $transition-in-speed;
+            transition-delay: 0s;
+        }
+    }
+}
+
+// Tri-hero
+// 
+// This component is dependent on specific container dimensions, see fullscreen.
+//
+// markup:
+// <section class="container tri-hero">
+//     <div class="columns images">
+//         <article class="test column is-7">
+//             <img src="https://lorempixel.com/1600/1600/people" />
+//         </article>
+//         <article class="test column is-2-5">
+//             <img src="https://lorempixel.com/1600/1600/city" />
+//         </article>
+//         <article class="test column is-2-5">
+//             <img src="https://lorempixel.com/1600/1600/abstract" />
+//         </article>
+//     </div>
+//     <div class="columns content">
+//         <article class="test2 column is-5">
+//             <h2>Latest Video</h2>
+//             <h1>Looking under the hood gold</h1>
+//             <p>Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
+//             <button class="icon-button large hide-text fa-info">More information</button>
+//             <button class="icon-button invert large fa-play">24:45</button>
+//         </article>
+//         <article class="test2 column is-3 is-offset-0-5">
+//             <h2>Latest Video</h2>
+//             <h1>Looking under the hood gold</h1>
+//             <p>Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
+//             <button class="icon-button large hide-text fa-info">More information</button>
+//         </article>
+//         <article class="test2 column is-3 is-offset-0-5">
+//             <h2>Latest Video</h2>
+//             <h1>Looking under the hood gold</h1>
+//             <p>Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
+//             <button class="icon-button large hide-text fa-info">More information</button>
+//         </article>
+//     </div>
+// </section>
+// 
+// Styleguide 6.3
+.tri-hero {
+    $rotation: 25deg;
+    $scaleFactorNarrowColumn: 1.73;
+    $scaleFactorWideColumn: 1.52;
+    // Scale calculation - cos(θ) + max{(W/H),(H/W)} * sin(θ)
+
+    .images {
+        overflow: hidden;
+        height: 548px;
+        margin-bottom: 0;
+
+        article {
+            transform: rotate($rotation);
+            overflow: hidden;
+            position: relative;
+            transform: rotate($rotation) scale($scaleFactorNarrowColumn);
+
+            &:after {
+                content: "";
+                background: linear-gradient(to top, black 17%, rgba(0, 0, 255, 0) 45%);
+                display: block;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                transform: translate(-31%, 4%) rotate(-$rotation) scaleX(2);
+            }
+
+            &.is-7 {
+                transform: rotate($rotation) scale($scaleFactorWideColumn);
+                &:after {
+                    background: linear-gradient(to bottom, black 23%, rgba(0, 0, 255, 0) 77%);
+                    transform: translate(-3%, -13%) rotate(-$rotation);
+                }
+            }
+
+            &:last-child {
+                transform: translateX(40%) rotate($rotation) scale($scaleFactorNarrowColumn);
+            }
+
+            &:hover {
+                img {
+                    opacity: 0;
+                }
+            }
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translate(-31%, 4%) rotate(-$rotation);
+        }
+
+        .is-2-5 img {
+            height: 100%;
+            max-width: none;
+        }
+            
+        .is-7 img {
+            transform: translate(-3%, -13%) rotate(-$rotation);
+        }
+    }
+
+    .content {
+        color: white;
+        overflow: hidden;
+        height:548px;
+        margin-top: -548px;
+        margin-bottom: 0;
+        position: relative;
+ 
+        .icon-button.fa-play {
+            position: absolute;
+            bottom: $baseline;
+            left: $baseline;
+
+            &:before {
+                bottom: 0;
+                left: 0;
+            }
+        }
+
+        .is-5 {
+            padding: $baseline;
+        }
+
+        .is-3 {
+            padding-bottom: $baseline;
+            padding-left: 1.25rem;
+            padding-right: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            
+            h1 {
+                font-size: 2rem;
+            }
+            p {
+                -webkit-line-clamp: 1;
+                margin: 0 0 $baseline/2;
+            }
+        }
+
+        h1 {
+            font-weight: 800;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            display: -webkit-box;
+        }
+        h2 {
+            text-transform: none;
+            font-weight: 400;
+            font-family: 'Proxima Nova';
+            text-decoration: underline;
+            font-size: 1.5rem
+        }
+        p {
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            display: -webkit-box;
+        }
+    }
+}
+
+// Content tile more info
+// 
+// This component is dependent on specific container dimensions, see fullscreen.
+//
+// markup:
+// <section class="more-info container">
+//     <div class="columns">
+//         <div class="content column is-7">
+//             <div class="badge">Analysis</div>
+//             <h1>Looking under the hood gold</h1>
+//             <div class="columns is-8">
+//                 <div class="column is-8 child-full-height">
+//                     <div class="synopsis">
+//                         <p>Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
+//                     </div>
+//                 </div>
+//                 <div class="column is-3">
+//                     <dl>
+//                         <dt>Published date:</dt>
+//                         <dd>27th March 2017</dd>
+//                         <dt>Featuring:</dt>
+//                         <dd>Shane Oliver - Economist</dd>
+//                         <dt>Interviewer:</dt>
+//                         <dd>Grant Williams</dd>
+//                         <dt>Topics:</dt>
+//                         <dd>Australia, New Zealand, Macro, Housing Market</dd>
+//                         <dt>Asset Classes:</dt>
+//                         <dd>Real Estate, Equities, Currencies</dd>
+//                     </dl>
+//                 </div>
+//             </div>
+//             <p class="strap"><i class="fa fa-info"></i>Shane Oliver is one of Australia's most highly rated economists</p>
+//             <button class="icon-button invert large fa-plus">Watch Later</button>
+//         </div>
+//     </div>
+//     <div class="image child-full-height">
+//         <div class="column is-8 is-offset-4" style="background-image: url(https://lorempixel.com/1600/900/city)"></div>
+//     </div>
+//     <button class="icon-button invert large fa-play">01:24:45</button>
+//     <button class="icon-button fa-close hide-text large">Close more information</button>
+// </section>
+// 
+// Styleguide 6.4
+.more-info {
+    position: relative;
+    overflow: hidden;
+
+    .columns {
+        margin: 0;
+    }
+
+    .icon-button.fa-close {
+        position: absolute;
+        top: $baseline;
+        right: $baseline;
+
+        &:before {
+            background: transparent;
+            border: 0;
+            color: rgba(255,255,255,0.75);
+            font-size: 32px;
+        }
+    }
+
+    .icon-button.fa-play {
+        position: absolute;
+        bottom: $baseline;
+        right: $baseline;
+    }
+    
+    .content {
+        color: #fff;
+        padding: $baseline;
+        position: relative;
+        z-index: 1;
+
+        .columns {
+            margin-bottom: $baseline / 2;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        @include until($tablet) {
+            .column {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+    }
+
+    h1 {
+        font-weight: 800;
+        margin-bottom: $baseline / 2;
+        margin-top: 0;
+    }
+
+    dl {
+        background: rgba(0,0,0,0.75);
+        padding: $baseline / 2;
+        @include tablet {
+            background: transparent;
+            padding: 0;
+        }
+    }
+
+    dt {
+        opacity: 0.75;
+    }
+
+    .badge {
+        margin-bottom: $baseline / 2;
+    }
+
+    .synopsis {
+        background: #39434b;
+        padding: $baseline / 2;
+    }
+
+    .strap {
+        margin-top: 0;
+    }
+
+    .image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 0;
+
+        .column {
+            padding: 0;
+            background: no-repeat cover;
+        }
+
+        &:after {
+            background: linear-gradient(to bottom, black 5rem, transparent 15rem, transparent 75%, black 90%);
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+
+            @include tablet {
+                background: linear-gradient(to right, black 33%, transparent 65%);
+            }
+        }
+    }
+}

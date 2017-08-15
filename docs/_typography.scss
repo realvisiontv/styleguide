@@ -156,3 +156,40 @@ a {
         text-decoration-color: rgba($link-active, 0.25);
     }
 }
+
+// Badge
+// 
+// markup:
+// <div class="badge">Analysis</div>
+// 
+// Styleguide 3.7
+.badge {
+    background: grey;
+    color: white;
+    display: inline-block;
+    font-size: $size-6;
+    padding: 0 5px;
+    text-transform: uppercase;
+}
+
+// Strap
+// 
+// markup:
+// <p class="strap"><i class="fa fa-info"></i>Shane Oliver is one of Australia's most highly rated economists</p>
+// 
+// Styleguide 3.8
+.strap {
+    color: cyan;
+    line-height: 26px;
+
+    .fa {
+        background: cyan;
+        color: black;
+        margin-right: 1ex;
+        border-radius: 50%;
+        width: 26px;
+        height: 26px;
+        line-height: 26px;
+        font-size: $size-6;
+    }
+}

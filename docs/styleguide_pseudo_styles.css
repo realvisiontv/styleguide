@@ -127,6 +127,14 @@ a.pseudo-class-active {
   border-color: white;
 }
 
+.navigation .navigation-mobile.pseudo-class-hover .menuButton span {
+  transform: scale(1.2);
+}
+
+footer ul li a.pseudo-class-hover {
+  color: #FE1135;
+}
+
 .content-tile a.pseudo-class-hover blockquote,
 .content-tile a.pseudo-class-hover .icon,
 .content-tile a.pseudo-class-hover .image:after,
@@ -175,18 +183,10 @@ a.pseudo-class-active {
   transition-delay: 0s;
 }
 
-.navigation .navigation-mobile.pseudo-class-hover .menuButton span {
-  transform: scale(1.2);
-}
-
 .tri-hero .images article.pseudo-class-last-child {
   transform: translateX(40%) rotate(25deg) scale(1.73);
 }
 
 .tri-hero .images article.pseudo-class-hover img {
   opacity: 0;
-}
-
-footer ul li a.pseudo-class-hover {
-  color: #FE1135;
 }
