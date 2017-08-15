@@ -153,7 +153,10 @@ a.button {
 // 
 // .fa-info - More information
 // .fa-plus - Add
+// .fa-play - Play
 // .hide-text - Hidden label
+// .large - Larger version
+// .invert - Inverted colour
 // :hover - Hover state
 // :focus - Focus state
 // 
@@ -163,27 +166,21 @@ a.button {
 // Styleguide 4.4
 .icon-button {
     $size: 26px;
+    $large: 40px;
 
     background: transparent;
     border: 0;
     cursor: pointer;
-    font-family: 'Proxima Nova', sans-serif;
+    font-family: 'Function Pro', sans-serif;
     position: relative;
-    padding-left: $size+10px;
+    padding: 0 10px 0 $size+10px;
     line-height: $size;
-
-    &.hide-text {
-        padding-left: 0;
-        font-size: 0;
-        width: $size;
-        margin-right: 1ex;
-    }
 
     &:before {
         background: grey;
         border: 2px solid grey;
         color: white;
-        content: '';
+        content: 'v';
         display: flex;
         height: $size;
         width: $size;
@@ -199,6 +196,36 @@ a.button {
         @extend .fa;
     }
 
+    &.large {
+        font-size: $size-5;
+        padding-left: $large+10px;
+        line-height: $large;
+
+        &:before {
+            height: $large;
+            width: $large;
+            font-size: 24px;
+        }
+    }
+
+    &.hide-text {
+        padding-left: 0;
+        font-size: 0;
+        width: $size;
+        margin-right: 1ex;
+    }
+
+    &.invert {
+        background: grey;
+        color: white;
+
+        &:before {
+            background: white;
+            border: 2px solid white;
+            color: grey;
+        }
+    }
+
     &.fa-info:before {
         @extend .fa-info;
     }
@@ -207,14 +234,17 @@ a.button {
         @extend .fa-plus;
     }
 
+    &.fa-play:before {
+        @extend .fa-play;
+    }
+
     &:hover,
     &:focus {
         text-decoration: underline;
 
         &:before {
-            background: white;
-            // border-color: grey;
-            color: grey;
+            background: transparent;
+            border-color: white;
         }
     }
 }

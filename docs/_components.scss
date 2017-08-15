@@ -66,12 +66,17 @@
 
 // Content Tile
 //
+// :hover - hover state
+// 
 // markup:
 // <div class="columns">
 //     <article class="column content-tile">
-//         <a href="#">
+//         <a href="#" class="{$modifiers}">
 //             <div class="image">
 //                 <img src="http://lorempixel.com/320/180/people"  />
+//                 <div class="spinner-container">
+//                     <div class="spinner"></div>
+//                 </div>
 //             </div>
 //             <div class="content">
 //                 <div class="title">
@@ -94,39 +99,24 @@
 //             </div>
 //         </a>
 //     </article>
-//     <article class="column content-tile">
-//         <a href="#">
-//             <div class="image">
-//                 <img src="http://lorempixel.com/320/180/city"  />
+//     <article class="column content-tile loading">
+//         <div class="image">
+//             <div class="spinner-container">
+//                 <div class="spinner"></div>
 //             </div>
-//             <div class="content">
-//                 <div class="title">
-//                     <div class="subheading">
-//                         <div class="is-pulled-left">Think Piece</div>
-//                         <div class="is-pulled-right">36:00</div>
-//                     </div>
-//                     <h1>Looking Under the Hood Australia</h1>
-//                     <div class="buttons">
-//                         <button class="icon-button fa-info hide-text">More Information</button>
-//                         <button class="icon-button fa-plus hide-text">Add to My List</button>
-//                     </div>
-//                 </div>
-//                 <div class="theme">Insight</div>
-//                 <blockquote>
-//                     Go you good thing Thats the best rant I've heard for a short while.
-//                     <cite>Mark M.</cite>
-//                 </blockquote>
-//                 <div class="icon"></div>
-//             </div>
-//         </a>
+//         </div>
 //     </article>
 //     <article class="column content-tile">
 //         <a href="#">
 //             <div class="image">
 //                 <img src="http://lorempixel.com/320/180/abstract"  />
+//                 <div class="spinner-container">
+//                     <div class="spinner"></div>
+//                 </div>
 //             </div>
 //             <div class="content">
 //                 <div class="title">
+//                     <div class="progress" style="width: 75%">You've watched 75%</div>
 //                     <div class="subheading">
 //                         <div class="is-pulled-left">Think Piece</div>
 //                         <div class="is-pulled-right">1:15:00</div>
@@ -163,6 +153,14 @@
         width: 100%;
     }
 
+    .spinner-container {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 0;
+    }
+
     .buttons {
         margin-top: 0;
         max-height: 0;
@@ -177,9 +175,11 @@
         right: 0;
         bottom: 0;
         padding: $padding;
+        z-index: 1;
     }
 
     .image {
+        background: lightgrey;
         height: 0;
         padding-bottom: 2 / 3 * 100%;
         &:after {
@@ -194,10 +194,19 @@
             opacity: 0;
             transition: opacity 0.52s;
             transition-delay: $transition-out-delay;
+            z-index: 1;
         }
     }
+
     img {
+        position: relative;
+        transition: opacity 0.2s;
         width: 100%;
+        z-index: 1;
+    }
+
+    img[data-src] {
+        opacity: 0;
     }
 
     .title {
@@ -209,6 +218,16 @@
         padding-right: 6px;
         width: calc(70% - #{$padding});
     }
+
+    .progress {
+        background-color: $color-torch-red;
+        font-size: 0;
+        height: 2px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
     h1 {
         font-size: $size-5;
         font-weight: 800;
@@ -303,7 +322,7 @@
     }
 }
 
-// Content Tile - Double Height
+// Content Tile - Double Height List
 // 
 // A content tile at double height. Contains a list of up to 4 things. Each item
 // in the list is cropped to 2 lines of text.
@@ -367,10 +386,14 @@
     .image {
         height: auto;
         padding-bottom: 0;
+        overflow: hidden;
+
         img {
             display: block;
             height: 100%;
             width: auto;
+            transition: filter $transition-out-speed, transform $transition-out-speed;
+            transition-delay: $transition-out-delay;
         }
     }
 
@@ -474,6 +497,12 @@
 
     &:hover,
     &:focus {
+        img {
+            filter: blur(10px);
+            transform: scale(1.05);
+            transition: filter $transition-in-speed, transform $transition-in-speed;
+            transition-delay: 0s;
+        }
         .content {
             transform: translateY(0);
             transition: transform $transition-in-speed;
@@ -497,6 +526,7 @@
 .hero-image {
     img {
         display: block;
+        width:100%;
     }
 }
 
@@ -548,25 +578,41 @@
 
 // Navigation
 //
+// Pre-paywall navigation component with mobile 'hamburger' menu. Current breakpoint for mobile view is 800px
+//
+// .normal - Default navigation
+// :hover   - Hover state for <strong>mobile</strong> 'hamburger' button
+// .open   - Open state for <strong>mobile</strong> 'hamburger' button
+//
 // markup:
 // <div class="navigation">
 //     <div class="columns">
 //         <h1 class="column is-narrow"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" class="logo_generic" viewBox="30 0 444 170.3"><path class="logo_generic--text" d="M320.7 0c-1.5 3.1-3 6.2-4.5 9.2-5.4 11.1-73.2 150.3-78.1 160.3l-.4.8-.4-.7L155.5 0h41.3s41.1 89.1 41.3 89.2C238.2 89.1 279.2.3 279 0h41.7zm153.1 101.1h-1l-26.4-28.4v27.5h-4.6V62.5h1.2l.4.4 25.5 27.3s.2.2.4.2h.1s.1 0 .1-.1v-27h4.5l-.2 37.8zM30 63.1s7.2 0 10.4.1c1.6 0 3.2.2 4.7.8 3.2 1.2 5 3.6 5.5 6.9.3 1.8.2 3.6-.4 5.4-1.1 3.3-3.3 5.4-6.7 6.2-.3.1-.9.3-1.8.5-.1 0 10.2 17.2 10.2 17.2h-5.4l-9.7-16.9h-2v17H30V63.1zm4.8 16.1c2.5 0 4.9 0 7.2-.5 1.7-.4 2.9-1.4 3.5-3 .6-1.3.6-2.7.4-4.1-.4-2-1.6-3.3-3.5-3.9-.6-.2-1.2-.3-1.8-.3-1.7-.1-3.4-.1-5.2-.1h-.6v11.9zm95.5 21h-.7L125 89.6h-13.8c-1.5 3.5-3 7.1-4.5 10.6h-5c3.8-8.8 15.6-36.4 16.4-37.9 0 0 .1-.1.2-.1h.1c.2.2.3.5.5.8l15.8 37.2m-11.4-14.7c-1.8-4.3-3.3-8.5-5.1-12.8-1.8 4.4-3.5 8.6-5.3 12.8h10.4zM72.5 78h14.4v4.1H72.6l-.1 13.7h14.7v4.2l-19.4.1-.1-36.8H87v4.3H72.6L72.5 78zm81.7 17.9H166v4.3h-16.5V63.3h4.6l.1 32.6zm252.2 4.9c-5 0-9.5-1.6-13.2-5.1-2.5-2.4-4.2-5.2-5.1-8.6-1.3-4.9-1-9.7 1.2-14.2 2.5-5.1 6.6-8.4 12.1-9.8 4.1-1.1 8.2-1 12.1.4 6 2.1 10 6.3 11.7 12.4 1.9 6.9.5 13.2-4.3 18.6-3 3.4-6.9 5.3-11.4 6-1 .3-2.1.4-3.1.3zm-.1-4.4c.7 0 1.4-.1 2.1-.1.4 0 .9-.1 1.3-.2 4.9-1.1 8.4-3.9 10.3-8.6 1.2-3 1.4-6.1.8-9.2-.5-2.5-1.5-4.8-3.2-6.7-3.1-3.3-6.9-4.8-11.4-4.6-5.7.2-9.9 2.9-12.4 8.1-1.9 3.9-1.9 8-.5 12.1 1.9 5.6 7 9.3 13 9.2zM330.6 93l4.1-1.9s.2.5.4.8c.4.9.8 1.9 1.5 2.7 1.5 2 3.8 2.5 5.9 1.9 2.1-.5 3.6-2.4 3.9-4.7.4-2.7-.5-4.9-2.8-6.4-1.1-.7-2.1-1.4-3.3-2-1.6-.8-3.2-1.8-4.6-2.9-2.6-2-3.9-4.6-3.9-7.9 0-2.4.5-4.6 2-6.6 2.1-2.7 5-3.7 8.3-3.4 4 .3 6.7 2.5 8.5 6l.1.2-3.7 2.1s-.6-.8-.8-1.2c-.9-1.3-1.9-2.4-3.5-2.8-2.7-.7-5.4.8-6.2 3.5-.7 2.7 0 4.7 2.1 6.4 1.3 1 2.7 1.7 4.1 2.5 1.4.8 2.7 1.5 4 2.5 5.8 4.2 5.4 13.1.2 17-4.9 3.8-12.4 2.1-15.3-3.3-.4-.7-.6-1.4-.9-2.1.1-.1-.1-.4-.1-.4zm-19.8-29.8h4.6v37h-4.6zm56.2 0h4.6v37H367z"/></svg></a></h1>
-//         <ul class="column">
-//             <li><a href="#">Link 1</a></li>
-//             <li><a href="#">Link 2</a></li>
-//             <li><a href="#">Link 3</a></li>
+//         <ul class="column navigation-desktop">
+//              <li><a href="#">Desktop 1</a></li>
+//              <li><a href="#">Desktop 2</a></li>
+//              <li><a href="#">Desktop 3</a></li>
 //         </ul>
-//         <div class="column is-narrow">
-//             <a class="user" href="#">Login</a>
+//         <div class="navigation-mobile {$modifiers}">
+//              <a class="menuButton hover-grow">
+//                  <span></span>
+//              </a>
+//              <div class="navigation-mobile--dropdown">
+//                  <a href="#">Mobile 1</a>
+//                  <a href="#">Mobile 2</a>
+//                  <a href="#">Mobile 3</a>
+//              </div>
 //         </div>
+//         <a class="user" href="#">Login</a>
 //     </div>
 // </div>
 // 
 // Styleguide 5.6
+
 .navigation {
     background: rgba(0, 0, 0, 0.5);
     padding: 0.75rem;
+    position: relative;
 
     svg {
         display: block;
@@ -604,5 +650,513 @@
         font-size: $size-7;
         font-weight: 700;
         text-align: center;
+        position: absolute;
+        top: 50%;
+        right: 25px;
+        @include transform(translateY(-50%));
+    }
+
+    @include touch {
+        .navigation-desktop {
+            display: none;
+        }
+        .navigation-mobile {
+            display: block;
+        }
+    }
+
+    @include desktop {
+        .navigation-desktop {
+            display: block;
+        }
+        .navigation-mobile {
+            display: none;
+        }
+    }
+
+    .navigation-mobile {
+        &.open {
+            .navigation-mobile--dropdown {
+                display: block;
+                z-index: 1;
+            }
+
+            .menuButton span {
+                background: transparent;
+                &:before,
+                &:after {
+                    @include transition(top .2s 0s);
+                    @include transition(bottom .2s 0s);
+                    @include transition(transform .2s .2s);
+                }
+                &:before {
+                    top: 0;
+                    @include transform(rotate(45deg));
+                }
+                &:after {
+                    bottom: 0;
+                    @include transform(rotate(-45deg));
+                }
+            }
+        }
+        &:hover {
+            .menuButton {
+                span {
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+
+    .menuButton {
+        position: absolute;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        min-width: 10mm;
+        min-height: 10mm;
+        display: block;
+        left: 165px;
+        top: 50%;
+        @include transform(translateY(-50%));
+        
+        span {
+            display: block;
+            position: absolute;
+            top: 18px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #fff;
+            @include transition(transform .2s ease-in-out);
+            &:before,
+            &:after {
+                content: "";
+                position: absolute;
+                display: block;
+                left: 0;
+                right: 0;
+                height: 4px;
+                background: #fff;
+            }
+            &:before {
+                top: -10px;
+            }
+            &:after {
+                bottom: -10px;
+            }
+        }
+    }
+
+    .navigation-mobile--dropdown {
+        position: absolute;
+        border: none;
+        border-radius: 5px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        margin-top: 0px;
+        width: 200px;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: .75rem;
+        width: auto;
+        a {
+            display: block;
+        }
+        hr {
+            border-top: 1px solid #353f4a;
+        }
+        @include touch {
+            top: 68px;
+            left: 150px;
+            z-index: -1;
+            a {
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+// Spinner
+//
+// markup:
+// <div class="spinner"></div>
+// 
+// Styleguide 5.7
+.spinner {
+    border: 1px solid grey;
+    border-top-color: transparent;
+    border-radius: 50%;
+    position: relative;
+    animation: spinner-rotate 1s linear infinite;
+    margin: 0 auto;
+    top: 50%;
+
+    width: $baseline * 2;
+    height: $baseline * 2;
+    border-width: $baseline / 3;
+}
+
+@keyframes spinner-rotate {
+    0% {
+        @include transform(rotate(0));
+    }
+    100% {
+        @include transform(rotate(360deg));
+    }
+}
+
+// Tri-hero
+// 
+// This component is dependent on specific container dimensions, see fullscreen.
+//
+// markup:
+// <section class="container tri-hero">
+//     <div class="columns images">
+//         <article class="test column is-7">
+//             <img src="https://lorempixel.com/1600/1600/people" />
+//         </article>
+//         <article class="test column is-2-5">
+//             <img src="https://lorempixel.com/1600/1600/city" />
+//         </article>
+//         <article class="test column is-2-5">
+//             <img src="https://lorempixel.com/1600/1600/abstract" />
+//         </article>
+//     </div>
+//     <div class="columns content">
+//         <article class="test2 column is-5">
+//             <h2>Latest Video</h2>
+//             <h1>Looking under the hood gold</h1>
+//             <p>Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
+//             <button class="icon-button large hide-text fa-info">More information</button>
+//             <button class="icon-button invert large fa-play">24:45</button>
+//         </article>
+//         <article class="test2 column is-3 is-offset-0-5">
+//             <h2>Latest Video</h2>
+//             <h1>Looking under the hood gold</h1>
+//             <p>Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
+//             <button class="icon-button large hide-text fa-info">More information</button>
+//         </article>
+//         <article class="test2 column is-3 is-offset-0-5">
+//             <h2>Latest Video</h2>
+//             <h1>Looking under the hood gold</h1>
+//             <p>Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
+//             <button class="icon-button large hide-text fa-info">More information</button>
+//         </article>
+//     </div>
+// </section>
+// 
+// Styleguide 5.8
+.tri-hero {
+    $rotation: 25deg;
+    $scaleFactorNarrowColumn: 1.73;
+    $scaleFactorWideColumn: 1.52;
+    // Scale calculation - cos(θ) + max{(W/H),(H/W)} * sin(θ)
+
+    .images {
+        overflow: hidden;
+        height: 548px;
+        margin-bottom: 0;
+
+        article {
+            transform: rotate($rotation);
+            overflow: hidden;
+            position: relative;
+            transform: rotate($rotation) scale($scaleFactorNarrowColumn);
+
+            &:after {
+                content: "";
+                background: linear-gradient(to top, black 17%, rgba(0, 0, 255, 0) 45%);
+                display: block;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                transform: translate(-31%, 4%) rotate(-$rotation) scaleX(2);
+            }
+
+            &.is-7 {
+                transform: rotate($rotation) scale($scaleFactorWideColumn);
+                &:after {
+                    background: linear-gradient(to bottom, black 23%, rgba(0, 0, 255, 0) 77%);
+                    transform: translate(-3%, -13%) rotate(-$rotation);
+                }
+            }
+
+            &:last-child {
+                transform: translateX(40%) rotate($rotation) scale($scaleFactorNarrowColumn);
+            }
+
+            &:hover {
+                img {
+                    opacity: 0;
+                }
+            }
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translate(-31%, 4%) rotate(-$rotation);
+        }
+
+        .is-2-5 img {
+            height: 100%;
+            max-width: none;
+        }
+            
+        .is-7 img {
+            transform: translate(-3%, -13%) rotate(-$rotation);
+        }
+    }
+
+    .content {
+        color: white;
+        overflow: hidden;
+        height:548px;
+        margin-top: -548px;
+        margin-bottom: 0;
+        position: relative;
+ 
+        .icon-button.fa-play {
+            position: absolute;
+            bottom: $baseline;
+            left: $baseline;
+
+            &:before {
+                bottom: 0;
+                left: 0;
+            }
+        }
+
+        .is-5 {
+            padding: $baseline;
+        }
+
+        .is-3 {
+            padding-bottom: $baseline;
+            padding-left: 1.25rem;
+            padding-right: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            
+            h1 {
+                font-size: 2rem;
+            }
+            p {
+                -webkit-line-clamp: 1;
+                margin: 0 0 $baseline/2;
+            }
+        }
+
+        h1 {
+            font-weight: 800;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            display: -webkit-box;
+        }
+        h2 {
+            text-transform: none;
+            font-weight: 400;
+            font-family: 'Proxima Nova';
+            text-decoration: underline;
+            font-size: 1.5rem
+        }
+        p {
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            display: -webkit-box;
+        }
+    }
+}
+
+// Page Footer
+//
+// markup:
+// <footer>
+//      <ul class="footer-links columns is-mobile">
+//          <li class="column"><a href="#">About</a></li>
+//          <li class="column"><a href="#">FAQ</a></li>
+//          <li class="column"><a href="#">Contact</a></li>
+//          <li class="column"><a href="#">Privacy</a></li>
+//      </ul>
+//      <h4 class='footer-social__heading'>Follow us</h4>
+//      <ul class="footer-social columns is-mobile">
+//          <div class="column">
+//              <li><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+//              <li><a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+//              <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+//          </div>
+//      </ul>
+// </footer>
+// 
+// Styleguide 5.9
+footer {
+    background: #1C293B;
+    padding: $baseline;
+    ul {
+        list-style: none;
+        text-align: center;
+
+        li {
+            display: inline-block;
+            margin: 0;
+
+            .fa {
+                font-size: $size-2;
+            }
+
+            a {
+                text-decoration: none;
+                color: grey;
+                text-transform: uppercase;
+                @include transition(color 200ms ease-in);
+
+                &:hover {
+                    color: $color-torch-red;
+                }
+            }
+        }
+    }
+
+    .footer-social {
+        li {
+            margin: 0 $baseline;
+
+            @include mobile {
+                margin: 0 ($baseline / 2);
+            }
+        }
+    }
+    .footer-social__heading {
+        color: grey;
+        text-align: center;
+        margin: ($baseline / 2) 0 $baseline 0;
+    }
+
+    .footer-links {
+        li {
+            @include mobile {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+    }
+}
+
+// Product Quote
+//
+// markup:
+// <div class="product-quote">
+//      <div class="product-quote__content">
+//          <p class="product-quote__content-heading">Get exposed to investment ideas and financial insights that you can't get anywhere else.</p>
+//          <div class="is-hidden-mobile">
+//              <div class="icons">
+//                  <svg class="icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.62292 316.34321" class="icon-star"><path d="M166.31 0l51.395 104.134 114.918 16.698-83.156 81.057 19.63 114.452-102.786-54.038-102.784 54.038 19.63-114.454L0 120.83l114.918-16.698z" /></svg>
+//                  <svg class="icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.62292 316.34321" class="icon-star"><path d="M166.31 0l51.395 104.134 114.918 16.698-83.156 81.057 19.63 114.452-102.786-54.038-102.784 54.038 19.63-114.454L0 120.83l114.918-16.698z" /></svg>
+//                  <svg class="icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.62292 316.34321" class="icon-star"><path d="M166.31 0l51.395 104.134 114.918 16.698-83.156 81.057 19.63 114.452-102.786-54.038-102.784 54.038 19.63-114.454L0 120.83l114.918-16.698z" /></svg>
+//                  <svg class="icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.62292 316.34321" class="icon-star"><path d="M166.31 0l51.395 104.134 114.918 16.698-83.156 81.057 19.63 114.452-102.786-54.038-102.784 54.038 19.63-114.454L0 120.83l114.918-16.698z" /></svg>
+//                  <svg class="icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.62292 316.34321" class="icon-star"><path d="M166.31 0l51.395 104.134 114.918 16.698-83.156 81.057 19.63 114.452-102.786-54.038-102.784 54.038 19.63-114.454L0 120.83l114.918-16.698z" /></svg>
+//              </div>
+//              <blockquote>
+//                  <svg class="icon-quote icon-quote--open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><path class="icon-quote-fill" d="M68.2 163.1c-5.4-88 32-104 32-104s-.1-33 0-33.3C5.1 51.2 9.6 167.1 9.6 167.1v98.7h102.7V163.1s-30-.5-44.1 0zm173.4 0c-5.4-88 32-104 32-104s-.1-33 0-33.3C178.5 51.2 183 167.1 183 167.1v98.7h102.7V163.1s-30-.5-44.1 0z"/></svg>
+//                  <p>I have gone through the rabbit hole with Real Vision and found some great leaders and thinkers that have expanded my investment horizons. I am grateful for the introduction to these great minds that I would never have heard about as an individual investor.</p>
+//                  <svg class="icon-quote icon-quote--close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><path class="icon-quote-fill" d="M227.1 128.5c5.4 88-32 104-32 104s.1 33 0 33.3c95.1-25.4 90.6-141.3 90.6-141.3V25.8H183v102.7s30 .5 44.1 0zm-173.4 0c5.4 88-32 104-32 104s.1 33 0 33.3c95.1-25.4 90.6-141.3 90.6-141.3V25.8H9.6v102.7s30 .5 44.1 0z"></path></svg>
+//              </blockquote>
+//              <hr/>
+//              <cite>Alain B.</cite>
+//          </div>
+//      </div>
+// </div>
+// 
+// Styleguide 5.10
+.product-quote {
+    padding: $baseline;
+    position: relative;
+
+    @include mobile {
+        padding: 0;
+
+        &:before {
+            position: absolute;
+            content: '';
+            z-index: 10;
+            height: 0;
+            width: 0;
+            top: 50%;
+            @include transform(translateY(-50%));
+            border-top: 2rem solid transparent;
+            border-bottom: 2rem solid transparent;
+            border-left: 1.5rem solid #363D4E;
+        }
+    }
+
+    .product-quote__content {
+        background: url('#{$root}/images/components/crinkled-paper-effect.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: $baseline ($baseline * 2);
+
+        .product-quote__content-heading {
+            font-size: $size-4;
+            font-weight: bold;
+            margin-bottom: $baseline;
+
+            @include mobile {
+                margin-bottom: 0;
+            }
+        }
+
+        .icons {
+            text-align: center;
+            margin-bottom: $baseline;
+        }
+
+        .icons * {
+            display: inline-block;
+        }
+
+        .icon-star {
+            width: 1rem;
+            path {
+                fill: $color-torch-red;
+            }
+        }
+
+        blockquote {
+            margin-left: 20px;
+
+            svg {
+                fill: #6e7789;
+                width: 20px;
+
+                &.icon-quote--open {
+                    margin-left: -20px;
+                }
+            }
+
+            p {
+                display: inline;
+                font-weight: bold;
+                color: #6e7789;
+            }
+        }
+
+        cite {
+            margin-left: 20px;
+            font-style: normal;
+            font-weight: bold;
+            color: #6e7789;
+        }
+        
+        hr {
+            width: 50%;
+            margin-left: 20px;
+            background: #6e7789;
+        }
     }
 }

@@ -123,8 +123,8 @@ a.pseudo-class-active {
 
 .icon-button.pseudo-class-hover:before,
 .icon-button.pseudo-class-focus:before {
-  background: white;
-  color: grey;
+  background: transparent;
+  border-color: white;
 }
 
 .content-tile a.pseudo-class-hover blockquote,
@@ -160,9 +160,33 @@ a.pseudo-class-active {
   color: #FE1135;
 }
 
+.content-tile.double.pseudo-class-hover img,
+.content-tile.double.pseudo-class-focus img {
+  filter: blur(10px);
+  transform: scale(1.05);
+  transition: filter 0.2s, transform 0.2s;
+  transition-delay: 0s;
+}
+
 .content-tile.double.pseudo-class-hover .content,
 .content-tile.double.pseudo-class-focus .content {
   transform: translateY(0);
   transition: transform 0.2s;
   transition-delay: 0s;
+}
+
+.navigation .navigation-mobile.pseudo-class-hover .menuButton span {
+  transform: scale(1.2);
+}
+
+.tri-hero .images article.pseudo-class-last-child {
+  transform: translateX(40%) rotate(25deg) scale(1.73);
+}
+
+.tri-hero .images article.pseudo-class-hover img {
+  opacity: 0;
+}
+
+footer ul li a.pseudo-class-hover {
+  color: #FE1135;
 }
