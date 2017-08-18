@@ -1,3 +1,4 @@
+var http = require('http');
 var gulp = require('gulp');
 var styleguide = require('sc5-styleguide');
 var sass = require('gulp-sass');
@@ -45,6 +46,11 @@ gulp.task('watch', ['styleguide'], function() {
     app.listen(port, function() {
         console.log('Express server listening on port 3000. http://localhost:' + port);
     });
+    
+    // Keep Heroku dyno awake
+    setInterval(function() {
+        http.get("http://localhost:" + port);
+    }, 300000);
 });
 
 gulp.task('styleguide', ['styleguide:generate', 'styleguide:applystyles']);
