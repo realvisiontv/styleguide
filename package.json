@@ -2,7 +2,8 @@
   "name": "realvision-styles",
   "version": "0.1.0",
   "scripts": {
-    "start": "gulp watch"
+    "start": "gulp watch",
+    "build": "gulp"
   },
   "dependencies": {
     "bulma": "^0.5.0",
