@@ -14,47 +14,47 @@ a.pseudo-class-hover {
 
 a.has-text-white.pseudo-class-hover,
 a.has-text-white.pseudo-class-focus {
-  color: #e6e6e6;
+  color: #e6e6e6 !important;
 }
 
 a.has-text-black.pseudo-class-hover,
 a.has-text-black.pseudo-class-focus {
-  color: black;
+  color: black !important;
 }
 
 a.has-text-light.pseudo-class-hover,
 a.has-text-light.pseudo-class-focus {
-  color: #dbdbdb;
+  color: #dbdbdb !important;
 }
 
 a.has-text-dark.pseudo-class-hover,
 a.has-text-dark.pseudo-class-focus {
-  color: #1c1c1c;
+  color: #1c1c1c !important;
 }
 
 a.has-text-primary.pseudo-class-hover,
 a.has-text-primary.pseudo-class-focus {
-  color: #009e86;
+  color: #009e86 !important;
 }
 
 a.has-text-info.pseudo-class-hover,
 a.has-text-info.pseudo-class-focus {
-  color: #205bbc;
+  color: #205bbc !important;
 }
 
 a.has-text-success.pseudo-class-hover,
 a.has-text-success.pseudo-class-focus {
-  color: #1ca64c;
+  color: #1ca64c !important;
 }
 
 a.has-text-warning.pseudo-class-hover,
 a.has-text-warning.pseudo-class-focus {
-  color: #ffd324;
+  color: #ffd324 !important;
 }
 
 a.has-text-danger.pseudo-class-hover,
 a.has-text-danger.pseudo-class-focus {
-  color: #ff0537;
+  color: #ff0537 !important;
 }
 
 .columns.pseudo-class-last-child {
@@ -76,6 +76,19 @@ a.has-text-danger.pseudo-class-focus {
 
 .delete.pseudo-class-active {
   background-color: rgba(10, 10, 10, 0.4);
+}
+
+.navigation li a.pseudo-class-hover {
+  color: cyan;
+}
+
+.navigation li.open a.pseudo-class-hover {
+  color: white;
+  text-decoration-color: rgba(255, 255, 255, 0.5);
+}
+
+footer ul li a.pseudo-class-hover {
+  color: #FE1135;
 }
 
 a.pseudo-class-hover {
@@ -125,14 +138,6 @@ a.pseudo-class-active {
 .icon-button.pseudo-class-focus:before {
   background: transparent;
   border-color: white;
-}
-
-.navigation .navigation-mobile.pseudo-class-hover .menuButton span {
-  transform: scale(1.2);
-}
-
-footer ul li a.pseudo-class-hover {
-  color: #FE1135;
 }
 
 .content-tile a.pseudo-class-hover blockquote,
