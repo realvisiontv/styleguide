@@ -12,7 +12,7 @@ git clone git@github.com:realvisiontv/styleguide.git
 cd styleguide
 npm install
 npm start
-sensible-browser http://localhost:3000
+sensible-browser https://rv-styleguide.herokuapp.com/
 ```
 
 Requirements:
