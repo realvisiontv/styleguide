@@ -2,7 +2,7 @@ Real Vision Styleguide
 ===
 
 ## Online
-Visit https://realvisiontv.github.io/styleguide/
+Visit https://rv-styleguide.herokuapp.com/
 
 
 ## Locally
@@ -12,7 +12,7 @@ git clone git@github.com:realvisiontv/styleguide.git
 cd styleguide
 npm install
 npm start
-sensible-browser https://rv-styleguide.herokuapp.com/
+sensible-browser http://localhost:3000
 ```
 
 Requirements:
