@@ -7,9 +7,7 @@ var options = {
     title: 'Real Vision Styleguide',
     rootPath: outputPath,
     appRoot: '/styleguide',
-    overviewPath: 'README.md',
-    server: false,
-    disableHtml5Mode: true
+    overviewPath: 'README.md'
 };
 
 gulp.task('styleguide:generate', function() {
@@ -41,10 +39,11 @@ gulp.task('watch', ['styleguide'], function() {
     // Styleguide automatically detects existing server instance
     gulp.watch(['sass/*.scss'], ['styleguide']);
 
-    var app = server(options);
+    var app = server(options),
+        port = process.env.PORT || 3000;
 
-    app.listen(3000, function() {
-        console.log('Express server listening on port 3000. http://localhost:3000');
+    app.listen(port, function() {
+        console.log('Express server listening on port 3000. http://localhost:' + port);
     });
 });
 
