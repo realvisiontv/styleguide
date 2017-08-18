@@ -2,7 +2,7 @@ Real Vision Styleguide
 ===
 
 ## Online
-Visit https://rv-styleguide.herokuapp.com/
+The styleguide **develop** branch is automatically deployed to Heroku using Heroku-Github integration. Visit https://rv-styleguide.herokuapp.com/
 
 
 ## Locally
