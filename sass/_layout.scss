@@ -169,7 +169,7 @@ h6 {
 //             <li><a href="#">Link 3</a></li>
 //         </ul>
 //     </div>
-//     <div class="page-navigation-container is-hidden-tablet expanded">
+//     <div class="page-navigation-container is-hidden-tablet show">
 //         <div class="column">
 //             <form method="GET" action="" class="search-form">
 //                 <input type="text" value="" placeholder="Assets, topics..." />
@@ -365,7 +365,7 @@ h6 {
     .page-navigation-container {
         display: none;
         
-        &.expanded {
+        &.show {
             display: flex;
             flex-direction: column;
         }
