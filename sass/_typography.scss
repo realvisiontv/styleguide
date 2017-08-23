@@ -77,13 +77,13 @@ p {
 //     <li>Non quaeritur autem quid naturae tuae consentaneum sit, sed quid disciplinae.</li>
 // </ul>
 // <dl>
-//     <dt><dfn>Stoicos roga.</dfn></dt>
+//     <dt>Stoicos roga.</dt>
 //     <dd>At tu eadem ista dic in iudicio aut, si coronam times, dic in senatu.</dd>
-//     <dt><dfn>Ita prorsus, inquam;</dfn></dt>
+//     <dt>Ita prorsus, inquam;</dt>
 //     <dd>Quid tanto concursu honestissimorum studiorum, tanto virtutum comitatu, si ea nullam ad aliam rem nisi ad voluptatem conquiruntur?</dd>
-//     <dt><dfn>Iam contemni non poteris.</dfn></dt>
+//     <dt>Iam contemni non poteris.</dt>
 //     <dd>Pudebit te, inquam, illius tabulae, quam Cleanthes sane commode verbis depingere solebat.</dd>
-//     <dt><dfn>Quis hoc dicit?</dfn></dt>
+//     <dt>Quis hoc dicit?</dt>
 //     <dd>Nam his libris eum malo quam reliquo ornatu villae delectari.</dd>
 // </dl>
 //
@@ -100,6 +100,11 @@ ul {
 
 li+li {
     margin-top: $baseline * 0.25;
+}
+
+dt {
+    opacity: 0.75;
+    font-weight: 700;
 }
 
 dd+dt {
