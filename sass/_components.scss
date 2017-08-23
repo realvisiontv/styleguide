@@ -358,4 +358,242 @@
         }
     }
 }
+
+// Comments
+//
+// markup:
+// <div class="comments">
+//     <ul>
+//         <li class="comment">
+//             <div class="columns">
+//                 <div class="column is-narrow is-hidden-mobile">
+//                     <span class="avatar">RV</span>
+//                 </div>
+//                 <div class="column comment--content">
+//                     <div class="meta">
+//                         <div class="details">
+//                             <p class="name">John Smith</p>
+//                             <p class="date">12 July 2017 @ 04:10</p>
+//                             <div class="buttons">
+//                                 <a class="active" href=""><i class="fa fa-thumbs-up"></i> <span>75</span></a>
+//                                 <a class="active" href=""><i class="fa fa-thumbs-down"></i> <span>25</span></a>
+//                             </div>
+//                         </div>
+//                     </div>
+//                     <div class="content">
+//                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sollicitudin viverra pellentesque. Morbi sed orci et turpis consectetur sodales id eget lectus. Curabitur ante arcu, ornare nec iaculis quis, luctus quis magna. Etiam lobortis placerat justo consequat bibendum. Nunc velit magna, ultrices vel mauris vitae, sollicitudin pulvinar turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed libero metus, ornare sit amet tincidunt eu, accumsan at purus.
+//                         <div>
+//                             <button class="button--reply is-link">Reply <i class="fa fa-reply" aria-hidden="true"></i></a>
+//                         </div>
+//                     </div>
+//                 </div>
+//             </div>
+//             <form method="POST" class="add-reply">
+//                 <div class="field">
+//                     <div class="control">
+//                         <textarea type="text" name="reply" class="textarea" rows="2" required placeholder="Reply..."></textarea>
+//                     </div>
+//                 </div>
+//                 <div class="field is-grouped">
+//                     <div class="control">
+//                         <input type="submit" name="submit" value="Reply" class="button" />
+//                     </div>
+//                     <div class="control">
+//                         <button class="button--cancel is-link">Cancel</button>
+//                     </div>
+//                 </div>
+//             </form>
+//             <div class="replies-view expanded">
+//                 <ul>
+//                     <li class="comment comment--reply">
+//                         <div class="columns">
+//                             <div class="column is-narrow is-hidden-mobile">
+//                                 <span class="avatar">RV</span>
+//                             </div>
+//                             <div class="column comment--content">
+//                                 <div class="meta">
+//                                     <div class="details">
+//                                         <p class="name">Real Vision</p>
+//                                         <p class="date">12 July 2017 @ 04:10</p>
+//                                         <div class="buttons">
+//                                             <a class="active" href=""><i class="fa fa-thumbs-up"></i> <span>75</span></a>
+//                                             <a class="active" href=""><i class="fa fa-thumbs-down"></i> <span>25</span></a>
+//                                         </div>
+//                                     </div>
+//                                 </div>
+//                                 <div class="content">
+//                                 Ut fringilla scelerisque eros. Nulla ac malesuada augue. Nullam nec rhoncus justo. Fusce pellentesque dapibus libero. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum erat urna, euismod vel risus in, vulputate auctor massa. Duis dignissim blandit porttitor. Duis tincidunt quis justo sed condimentum. Nulla vulputate posuere neque, nec posuere quam fermentum eu. Proin ut risus tortor.
+//                                 </div>
+//                             </div>
+//                         </div>
+//                     </li>
+//                 </ul>
+//             </div>
+//         </li>
+//         <li class="comment">
+//             <div class="columns">
+//                 <div class="column is-narrow is-hidden-mobile">
+//                     <span class="avatar">RV</span>
+//                 </div>
+//                 <div class="column comment--content">
+//                     <div class="meta">
+//                         <div class="details">
+//                             <p class="name">John Smith</p>
+//                             <p class="date">12 July 2017 @ 04:10</p>
+//                             <div class="buttons">
+//                                 <a class="active" href=""><i class="fa fa-thumbs-up"></i> <span>75</span></a>
+//                                 <a class="active" href=""><i class="fa fa-thumbs-down"></i> <span>25</span></a>
+//                             </div>
+//                         </div>
+//                     </div>
+//                     <div class="content">
+//                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sollicitudin viverra pellentesque. Morbi sed orci et turpis consectetur sodales id eget lectus. Curabitur ante arcu, ornare nec iaculis quis, luctus quis magna. Etiam lobortis placerat justo consequat bibendum. Nunc velit magna, ultrices vel mauris vitae, sollicitudin pulvinar turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed libero metus, ornare sit amet tincidunt eu, accumsan at purus.
+//                         <div>
+//                             <button class="button--reply is-link">Reply <i class="fa fa-reply" aria-hidden="true"></i></a>
+//                         </div>
+//                     </div>
+//                 </div>
+//             </div>
+//             <form method="POST" class="add-reply is-hidden">
+//                 <div class="field">
+//                     <div class="control">
+//                         <textarea type="text" name="reply" class="textarea" rows="2" required placeholder="Reply..."></textarea>
+//                     </div>
+//                 </div>
+//                 <div class="field is-grouped">
+//                     <div class="control">
+//                         <input type="submit" name="submit" value="Reply" class="button" />
+//                     </div>
+//                     <div class="control">
+//                         <button class="button--cancel is-link">Cancel</button>
+//                     </div>
+//                 </div>
+//             </form>
+//             <div class="replies-view">
+//                 <ul>
+//                     <li class="comment comment--reply">
+//                         <div class="columns">
+//                             <div class="column is-narrow is-hidden-mobile">
+//                                 <span class="avatar">RV}</span>
+//                             </div>
+//                             <div class="column comment--content">
+//                                 <div class="meta">
+//                                     <div class="details">
+//                                         <p class="name">Real Vision}</p>
+//                                         <p class="date">12 July 2017 @ 04:10</p>
+//                                         <div class="buttons">
+//                                             <a class="active" href=""><i class="fa fa-thumbs-up"></i> <span>75</span></a>
+//                                             <a class="active" href=""><i class="fa fa-thumbs-down"></i> <span>25</span></a>
+//                                         </div>
+//                                     </div>
+//                                 </div>
+//                                 <div class="content">
+//                                 Ut fringilla scelerisque eros. Nulla ac malesuada augue. Nullam nec rhoncus justo. Fusce pellentesque dapibus libero. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum erat urna, euismod vel risus in, vulputate auctor massa. Duis dignissim blandit porttitor. Duis tincidunt quis justo sed condimentum. Nulla vulputate posuere neque, nec posuere quam fermentum eu. Proin ut risus tortor.
+//                                 </div>
+//                             </div>
+//                         </div>
+//                     </li>
+//                 </ul>
+//             </div>
+//         </li>
+//     </ul>
+// </div>
+// 
+// Styleguide 5.9
+.comments {
+    ul {
+        list-style: none;
+        padding: 0;
+        margin-left: 0;
+
+        ul {
+            list-style: none;
+        }
+    }
+
+    .comment {
+        margin-bottom: $baseline / 2;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+
+        &:last-child {
+            border-bottom: 0;
+        }
+    }
+    .avatar {
+        line-height: 44px;
+    }
+    .name {
+        font-weight: 700;
+        margin-bottom: 0;
+    }
+    .date {
+        font-size: $size-7;
+        margin-top: 0;
+    }
+    .comment--reply {
+        margin-bottom: 0;
+        padding-bottom: $baseline;
+        border-bottom: 0;
+
+        .avatar {
+            width: 32px;
+            height: 32px;
+            line-height: 30px;
+            font-size: 13px;
+        }
+    }
+    .details {
+        position: relative;
+    }
+    .meta .buttons {
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin-top: 15px;
+        a {
+            margin-left: 1ex;
+        }
+    }
+    .replies-view {
+        height: 0;
+        overflow: hidden;
+        margin-top: 10px;
+        background: rgba(0,0,0,0.05);
+        position: relative;
+
+        &.expanded {
+            padding: $baseline $baseline 0 $baseline;
+            height: auto;
+        }
+
+        &:before {
+            content: "";
+            display: block;
+            width: 100%;
+            height: $baseline * 2;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: linear-gradient(to top, transparent, white);
+        }
+    }
+
+    .like i {
+        margin-right: 1ex;
+    }
+    .dislike i {
+        margin-left: 1ex;
+    }
+
+    @include tablet {
+        .add-reply {
+            margin-left: $baseline * 3;
+        }
+        .comment--reply {
+            margin-left: $baseline * 3;
+        }
+        .replies-view.expanded {
+            padding: $baseline $baseline 0 0;
+        }
+    }
 }
