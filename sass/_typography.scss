@@ -199,3 +199,16 @@ a {
         font-size: $size-6;
     }
 }
+
+// Justify align text in mobile
+// 
+// markup:
+// <p class="has-text-justified-mobile">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sollicitudin viverra pellentesque. Morbi sed orci et turpis consectetur sodales id eget lectus. Curabitur ante arcu, ornare nec iaculis quis, luctus quis magna. Etiam lobortis placerat justo consequat bibendum. Nunc velit magna, ultrices vel mauris vitae, sollicitudin pulvinar turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed libero metus, ornare sit amet tincidunt eu, accumsan at purus.</p>
+// 
+// Styleguide 3.9
+@include mobile {
+    .has-text-justified-mobile {
+        text-align: justify !important;
+    }
+}
+}
