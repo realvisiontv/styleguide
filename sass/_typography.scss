@@ -211,4 +211,91 @@ a {
         text-align: justify !important;
     }
 }
+
+// Featured numbered list
+// 
+// markup:
+// <ol class="featured">
+//     <li>
+//         <a>
+//             <div class="columns">
+//                 <div class="column">
+//                     <div class="meta">Meta info</div>
+//                     <div class="item">Main text</div>
+//                 </div>
+//             </div>
+//         </a>
+//     </li>
+//     <li>
+//         <a>
+//             <div class="columns">
+//                 <div class="column">
+//                     <div class="meta">Meta info</div>
+//                     <div class="item">Main text</div>
+//                 </div>
+//             </div>
+//         </a>
+//     </li>
+//     <li>
+//         <a>
+//             <div class="columns">
+//                 <div class="column">
+//                     <div class="item">Main text</div>
+//                 </div>
+//             </div>
+//         </a>
+//     </li>
+// </ol>
+// 
+// Styleguide 3.10
+ol.featured {
+    counter-reset: featured-counter;
+    list-style: none;
+    margin-left: 0;
+
+    li {
+        position: relative;
+
+        &:before {
+            content: counter(featured-counter);
+            counter-increment: featured-counter;
+            background: grey;
+            color: white;
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            text-align: center;
+            line-height: 24px;
+            font-family: 'Function Pro', sans-serif;
+            font-weight: 700;
+            left: 0;
+            top: 4px;
+            position: absolute;
+        }
+
+        a {
+            display: block;
+            margin-left: calc(0.75rem + 24px);
+            font-size: $size-6;
+            font-weight: 700;
+            text-decoration: none;
+            min-height: 24px;
+        }
+
+        .meta {
+            font-size: $size-7;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+
+        .columns {
+            margin-top: 0;
+            margin-bottom: 0;
+            align-items: flex-end;
+        }
+
+        .column {
+            padding-top: 0;
+        }
+    }
 }
