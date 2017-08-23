@@ -1,4 +1,4 @@
-var http = require('http');
+var https = require('http');
 var gulp = require('gulp');
 var styleguide = require('sc5-styleguide');
 var sass = require('gulp-sass');
@@ -49,7 +49,7 @@ gulp.task('watch', ['styleguide'], function() {
     
     // Keep Heroku dyno awake
     setInterval(function() {
-        http.get("https://rv-styleguide.herokuapp.com");
+        https.get("https://rv-styleguide.herokuapp.com");
     }, 300000);
 });
 
