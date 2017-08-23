@@ -22,11 +22,12 @@ h6 {
     font-family: 'Function Pro';
     font-weight: 700;
     line-height: 1;
-    text-transform: uppercase;
 }
 
 h1 {
     font-size: $size-1;
+    font-weight: 800;
+    text-transform: uppercase;
 }
 
 h2 {
@@ -76,13 +77,13 @@ p {
 //     <li>Non quaeritur autem quid naturae tuae consentaneum sit, sed quid disciplinae.</li>
 // </ul>
 // <dl>
-//     <dt><dfn>Stoicos roga.</dfn></dt>
+//     <dt>Stoicos roga.</dt>
 //     <dd>At tu eadem ista dic in iudicio aut, si coronam times, dic in senatu.</dd>
-//     <dt><dfn>Ita prorsus, inquam;</dfn></dt>
+//     <dt>Ita prorsus, inquam;</dt>
 //     <dd>Quid tanto concursu honestissimorum studiorum, tanto virtutum comitatu, si ea nullam ad aliam rem nisi ad voluptatem conquiruntur?</dd>
-//     <dt><dfn>Iam contemni non poteris.</dfn></dt>
+//     <dt>Iam contemni non poteris.</dt>
 //     <dd>Pudebit te, inquam, illius tabulae, quam Cleanthes sane commode verbis depingere solebat.</dd>
-//     <dt><dfn>Quis hoc dicit?</dfn></dt>
+//     <dt>Quis hoc dicit?</dt>
 //     <dd>Nam his libris eum malo quam reliquo ornatu villae delectari.</dd>
 // </dl>
 //
@@ -99,6 +100,11 @@ ul {
 
 li+li {
     margin-top: $baseline * 0.25;
+}
+
+dt {
+    opacity: 0.75;
+    font-weight: 700;
 }
 
 dd+dt {
@@ -191,5 +197,105 @@ a {
         height: 26px;
         line-height: 26px;
         font-size: $size-6;
+    }
+}
+
+// Justify align text in mobile
+// 
+// markup:
+// <p class="has-text-justified-mobile">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sollicitudin viverra pellentesque. Morbi sed orci et turpis consectetur sodales id eget lectus. Curabitur ante arcu, ornare nec iaculis quis, luctus quis magna. Etiam lobortis placerat justo consequat bibendum. Nunc velit magna, ultrices vel mauris vitae, sollicitudin pulvinar turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed libero metus, ornare sit amet tincidunt eu, accumsan at purus.</p>
+// 
+// Styleguide 3.9
+@include mobile {
+    .has-text-justified-mobile {
+        text-align: justify !important;
+    }
+}
+
+// Featured numbered list
+// 
+// markup:
+// <ol class="featured">
+//     <li>
+//         <a>
+//             <div class="columns">
+//                 <div class="column">
+//                     <div class="meta">Meta info</div>
+//                     <div class="item">Main text</div>
+//                 </div>
+//             </div>
+//         </a>
+//     </li>
+//     <li>
+//         <a>
+//             <div class="columns">
+//                 <div class="column">
+//                     <div class="meta">Meta info</div>
+//                     <div class="item">Main text</div>
+//                 </div>
+//             </div>
+//         </a>
+//     </li>
+//     <li>
+//         <a>
+//             <div class="columns">
+//                 <div class="column">
+//                     <div class="item">Main text</div>
+//                 </div>
+//             </div>
+//         </a>
+//     </li>
+// </ol>
+// 
+// Styleguide 3.10
+ol.featured {
+    counter-reset: featured-counter;
+    list-style: none;
+    margin-left: 0;
+
+    li {
+        position: relative;
+
+        &:before {
+            content: counter(featured-counter);
+            counter-increment: featured-counter;
+            background: grey;
+            color: white;
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            text-align: center;
+            line-height: 24px;
+            font-family: 'Function Pro', sans-serif;
+            font-weight: 700;
+            left: 0;
+            top: 4px;
+            position: absolute;
+        }
+
+        a {
+            display: block;
+            margin-left: calc(0.75rem + 24px);
+            font-size: $size-6;
+            font-weight: 700;
+            text-decoration: none;
+            min-height: 24px;
+        }
+
+        .meta {
+            font-size: $size-7;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+
+        .columns {
+            margin-top: 0;
+            margin-bottom: 0;
+            align-items: flex-end;
+        }
+
+        .column {
+            padding-top: 0;
+        }
     }
 }
