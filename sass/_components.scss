@@ -325,3 +325,37 @@
         }
     }
 }
+
+// Rating
+//
+// markup:
+// <div class="rating">
+//     <div class="columns is-mobile">
+//         <div class="column">
+//             <a class="like" href=""><i class="fa fa-thumbs-up"></i> <span>75</span></a>
+//         </div>
+//         <div class="column has-text-right">
+//             <a class="dislike" href=""><span>25</span> <i class="fa fa-thumbs-down"></i></a>
+//         </div>
+//     </div>
+//     <div class="progress"><div style="width: calc(75 / (75 + 25) * 100%)"></div></div>
+// </div>
+// 
+// Styleguide 5.8
+.rating {
+    .columns {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .progress {
+        background: #dbdbdb;
+        height: 3px;
+
+        div {
+            width: 0;
+            background: #23d160;
+            height: 3px;
+        }
+    }
+}
+}
