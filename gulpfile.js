@@ -49,7 +49,7 @@ gulp.task('watch', ['styleguide'], function() {
     
     // Keep Heroku dyno awake
     setInterval(function() {
-        http.get("http://localhost:" + port);
+        http.get("https://rv-styleguide.herokuapp.com");
     }, 300000);
 });
 
