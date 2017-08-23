@@ -1,4 +1,4 @@
-var https = require('http');
+var https = require('https');
 var gulp = require('gulp');
 var styleguide = require('sc5-styleguide');
 var sass = require('gulp-sass');
