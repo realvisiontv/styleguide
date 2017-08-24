@@ -935,6 +935,7 @@
 //
 // .default - Default Hero
 // .hide-cta - Hero without CTA Button
+// .content-center - Hero with center aligned content and CTA
 //
 // markup:
 // <div class="product-hero product-hero--2x2 {$modifiers}">
@@ -972,7 +973,7 @@
 // 
 // Styleguide 5.13
 .product-hero--2x2 {
-    background: url('#{$root}/images/components/product-hero-bg-2.jpg');
+    background: url('#{$root}/images/components/product-hero-bg-3.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     
@@ -992,6 +993,21 @@
 
     &.hide-cta {
         padding-bottom: $baseline / 2;
+    }
+
+    &.content-center {
+        text-align: center;
+        a {
+            right: auto;
+            left: 50%;
+            transform: translateX(-50%);
+
+            @include mobile {
+                right: auto;
+                left: auto;
+                transform: translateX(0);
+            }
+        }
     }
 }
 
@@ -1022,7 +1038,7 @@
 // 
 // Styleguide 5.14
 .product-hero--descriptive {
-    background: url('#{$root}/images/components/product-hero-bg-3.jpg');
+    background: url('#{$root}/images/components/product-hero-bg-4.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     padding-bottom: ($baseline * 4);
