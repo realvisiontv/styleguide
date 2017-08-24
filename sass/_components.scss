@@ -680,7 +680,7 @@
 //      </div>
 // </div>
 // 
-// Styleguide 5.10
+// Styleguide 5.11
 .product-hero {
     &.product-hero--3x1 {
         background: url('#{$root}/images/components/product-hero-bg.png');
@@ -771,7 +771,6 @@
         }
     }
     &.hide-cta {
-        padding-bottom: $baseline / 2;
         .hero-cta__container {
             display: none;
         }
@@ -815,7 +814,7 @@
 //      </div>
 // </div>
 // 
-// Styleguide 5.11
+// Styleguide 5.12
 .product-hero--3x2 {
     background: url('#{$root}/images/components/product-hero-bg-2.jpg');
     background-size: cover;
@@ -828,6 +827,10 @@
 
     h3 {
         margin-bottom: $baseline;
+    }
+
+    &.hide-cta {
+        padding-bottom: $baseline / 2;
     }
 }
 
@@ -856,7 +859,7 @@
 //      </div>
 // </div>
 // 
-// Styleguide 5.12
+// Styleguide 5.13
 .product-hero--descriptive {
     background: url('#{$root}/images/components/product-hero-bg-3.jpg');
     background-size: cover;
@@ -899,6 +902,10 @@
         .product-hero--heading {
             display: none;
         }
+    }
+
+    &.hide-cta {
+        padding-bottom: $baseline / 2;
     }
 
     &.content-left {

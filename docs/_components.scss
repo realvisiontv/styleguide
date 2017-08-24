@@ -192,7 +192,7 @@
 // Styleguide 5.6
 .spinner {
     border: 1px solid grey;
-    border-top-color: transparent;
+    border-top-color: transparent !important;
     border-radius: 50%;
     position: relative;
     animation: spinner-rotate 1s linear infinite;
@@ -335,7 +335,7 @@
 //             <a class="like" href=""><i class="fa fa-thumbs-up"></i> <span>75</span></a>
 //         </div>
 //         <div class="column has-text-right">
-//             <a class="dislike" href=""><span>25</span> <i class="fa fa-thumbs-down"></i></a>
+//             <a class="dislike inactive" href=""><span>25</span> <i class="fa fa-thumbs-down"></i></a>
 //         </div>
 //     </div>
 //     <div class="progress"><div style="width: calc(75 / (75 + 25) * 100%)"></div></div>
@@ -355,6 +355,16 @@
             width: 0;
             background: #23d160;
             height: 3px;
+        }
+    }
+    a {
+        &.inactive {
+            color: $color-torch-red;
+        }
+
+        i {
+            font-size: $size-6;
+            line-height: $size-4;
         }
     }
 }
@@ -441,6 +451,7 @@
 //                             <p class="name">John Smith</p>
 //                             <p class="date">12 July 2017 @ 04:10</p>
 //                             <div class="buttons">
+//                                 <span class="badge">Hotly Debated</span>
 //                                 <a class="active" href=""><i class="fa fa-thumbs-up"></i> <span>75</span></a>
 //                                 <a class="active" href=""><i class="fa fa-thumbs-down"></i> <span>25</span></a>
 //                             </div>
@@ -551,7 +562,19 @@
         top: 0;
         margin-top: 15px;
         a {
-            margin-left: 1ex;
+            margin-left: 1em;
+
+            &.inactive {
+                color: $color-torch-red;
+            }
+
+            i {
+                font-size: $size-7;
+                line-height: $size-5;
+            }
+        }
+        .badge {
+            font-weight: 700;
         }
     }
     .replies-view {
@@ -598,6 +621,41 @@
     }
 }
 
+// Endorsements Block
+//
+// markup:
+// <div class="endorsements">
+//      <div class="columns is-mobile is-vcentered">
+//          <div class="column is-6">
+//              <img src="/images/logos/logo-cfa.png"/>
+//          </div>
+//          <div class="column is-4 is-offset-2">
+//              <img src="/images/logos/logo-cisi.png"/>
+//          </div>
+//      </div>
+//      <div class="columns is-mobile is-vcentered">
+//          <div class="column is-3">
+//              <img src="/images/logos/logo-cfp.png"/>
+//          </div>
+//          <div class="column is-4 is-offset-1">
+//              <img src="/images/logos/logo-cambridge.png"/>
+//          </div>
+//          <div class="column is-3 is-offset-1">
+//              <img src="/images/logos/logo-ciipa.png"/>
+//          </div>
+//      </div>
+// </div>
+// 
+// Styleguide 5.10
+.endorsements {
+    background: white;
+    padding: $baseline ($baseline * 2);
+    @include mobile {
+        padding: $baseline;
+        background: #363e4e;
+    }
+}
+
 // Product Hero - 3x1
 //
 // .default - Default Hero
@@ -622,7 +680,7 @@
 //      </div>
 // </div>
 // 
-// Styleguide 5.10
+// Styleguide 5.11
 .product-hero {
     &.product-hero--3x1 {
         background: url('#{$root}/images/components/product-hero-bg.png');
@@ -713,7 +771,6 @@
         }
     }
     &.hide-cta {
-        padding-bottom: $baseline / 2;
         .hero-cta__container {
             display: none;
         }
@@ -757,7 +814,7 @@
 //      </div>
 // </div>
 // 
-// Styleguide 5.11
+// Styleguide 5.12
 .product-hero--3x2 {
     background: url('#{$root}/images/components/product-hero-bg-2.jpg');
     background-size: cover;
@@ -770,6 +827,10 @@
 
     h3 {
         margin-bottom: $baseline;
+    }
+
+    &.hide-cta {
+        padding-bottom: $baseline / 2;
     }
 }
 
@@ -798,7 +859,7 @@
 //      </div>
 // </div>
 // 
-// Styleguide 5.12
+// Styleguide 5.13
 .product-hero--descriptive {
     background: url('#{$root}/images/components/product-hero-bg-3.jpg');
     background-size: cover;
@@ -841,6 +902,10 @@
         .product-hero--heading {
             display: none;
         }
+    }
+
+    &.hide-cta {
+        padding-bottom: $baseline / 2;
     }
 
     &.content-left {
