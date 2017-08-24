@@ -620,3 +620,38 @@
         }
     }
 }
+
+// Endorsements Block
+//
+// markup:
+// <div class="endorsements">
+//      <div class="columns is-mobile is-vcentered">
+//          <div class="column is-6">
+//              <img src="/images/logos/logo-cfa.png"/>
+//          </div>
+//          <div class="column is-4 is-offset-2">
+//              <img src="/images/logos/logo-cisi.png"/>
+//          </div>
+//      </div>
+//      <div class="columns is-mobile is-vcentered">
+//          <div class="column is-3">
+//              <img src="/images/logos/logo-cfp.png"/>
+//          </div>
+//          <div class="column is-4 is-offset-1">
+//              <img src="/images/logos/logo-cambridge.png"/>
+//          </div>
+//          <div class="column is-3 is-offset-1">
+//              <img src="/images/logos/logo-ciipa.png"/>
+//          </div>
+//      </div>
+// </div>
+// 
+// Styleguide 5.10
+.endorsements {
+    background: white;
+    padding: $baseline ($baseline * 2);
+    @include mobile {
+        padding: $baseline;
+        background: #363e4e;
+    }
+}
