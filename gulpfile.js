@@ -2,6 +2,7 @@ var https = require('https');
 var gulp = require('gulp');
 var styleguide = require('sc5-styleguide');
 var sass = require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
 var outputPath = 'docs';
 var server = require('./server');
 var options = {
@@ -32,6 +33,9 @@ gulp.task('styleguide:applystyles', function() {
             errLogToConsole: true
         }))
         .pipe(styleguide.applyStyles())
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions', 'ie >= 9', '> 1%']
+        }))
         .pipe(gulp.dest(outputPath));
 });
 
