@@ -452,7 +452,7 @@ h6 {
 //
 // markup:
 // <footer>
-//      <div class="columns">
+//      <div class="columns is-vcentered">
 //          <div class="column is-one-quarter has-text-centered">
 //              <ul class="footer-links column">
 //                  <div class="columns is-mobile">
@@ -466,7 +466,7 @@ h6 {
 //              </ul>
 //          </div>
 //          <div class="column has-text-centered">
-//              <p class="footer-copyright">&copy; Copyright 2017 Real Vision</p>
+//              <p>&copy; Copyright 2017 Real Vision</p>
 //          </div>
 //          <div class="column is-one-quarter has-text-centered">
 //              <ul class="footer-social">
@@ -487,10 +487,7 @@ footer {
     ul {
         list-style: none;
         margin: 0;
-        position: relative;
-        top: 50%;
-        @include transform(translateY(-50%));
-
+       
         li {
             display: inline;
             margin: auto;
@@ -507,34 +504,22 @@ footer {
                 color: #e3e3e3;
                 text-decoration: none;
                 text-transform: uppercase;
-                @include transition(color 200ms ease-in);
+                transition: color 200ms ease-in;
 
                 &:hover {
                     color: $color-torch-red;
                 }
             }
         }
-
-        @include mobile {
-            top: auto;
-            @include transform(translateY(0));
-        }
-    }
-
-    .footer-copyright {
-        position: relative;
-        top: 50%;
-        @include transform(translateY(-50%));
-
-        @include mobile {
-            top: auto;
-            @include transform(translateY(0));
-        }
     }
 
     .footer-social {
         li {
-            margin: 0 .5vw;
+            margin: 0 10px;
+
+            @include tablet-only {
+                margin: 0 4px;
+            }
 
             @include mobile {
                 margin: 0 ($baseline / 2);
