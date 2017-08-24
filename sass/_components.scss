@@ -451,6 +451,7 @@
 //                             <p class="name">John Smith</p>
 //                             <p class="date">12 July 2017 @ 04:10</p>
 //                             <div class="buttons">
+//                                 <span class="badge">Hotly Debated</span>
 //                                 <a class="active" href=""><i class="fa fa-thumbs-up"></i> <span>75</span></a>
 //                                 <a class="active" href=""><i class="fa fa-thumbs-down"></i> <span>25</span></a>
 //                             </div>
@@ -571,6 +572,9 @@
                 font-size: $size-7;
                 line-height: $size-5;
             }
+        }
+        .badge {
+            font-weight: 700;
         }
     }
     .replies-view {
