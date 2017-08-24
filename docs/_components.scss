@@ -695,6 +695,11 @@
         padding: $baseline;
     }
 
+    em {
+        font-style: normal;
+        color: $color-torch-red;
+    }
+
     h2, h3 {
         margin-bottom: $baseline * 2;
         span {
@@ -734,6 +739,28 @@
             line-height: 26px;
             span {
                 font-size: $size-4;
+            }
+        }
+    }
+    p {
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 28px;
+        span {
+            font-weight: 800;
+            font-size: $size-5;
+            color: white;
+            background-color: black;
+            box-shadow: 10px 0 0 black, -10px 0 0 black;
+        }
+
+        @include mobile {
+            line-height: 23px;
+            span {
+                font-size: $size-6;
+            }
+            br {
+                display: none;
             }
         }
     }
@@ -834,6 +861,89 @@
     }
 }
 
+// Product Hero - 2x2
+//
+// .default - Default Hero
+// .hide-cta - Hero without CTA Button
+//
+// markup:
+// <div class="product-hero product-hero--2x2 {$modifiers}">
+//      <div class="columns is-mobile">
+//          <div class="column">
+//              <h2><span>With Real Vision Television, You Get...</span></h2>
+//          </div>
+//      </div>
+//      <div class="columns">
+//          <div class="column is-6-tablet product-hero__cell-container">
+//              <div class="product-hero__cell">
+//                  <h3><span>One Hundred</span></h3>
+//                  <p><span>Research reports per year covering<br/> all aspects of financial markets</span></p>
+//              </div>
+//              <div class="product-hero__cell">
+//                  <h3><span>Thirty</span></h3>
+//                  <p><span>Independent investment<br/> research experts</span></p>
+//              </div>
+//          </div>
+//          <div class="column is-6-tablet product-hero__cell-container">
+//              <div class="product-hero__cell">
+//                  <h3><span>Two</span></h3>
+//                  <p><span>Research reports<br/> per week</span></p>
+//              </div>
+//              <div class="product-hero__cell">
+//                  <h3><span>One</span></h3>
+//                  <p><span>Weekly Newsletter, <em>The hack</em>,<br/> delivered straight to your inbox</span></p>
+//              </div>
+//          </div>
+//      </div>
+//      <div class="columns has-text-centered hero-cta__container">
+//          <a href="#" class="button">Read More</a>
+//      </div>
+// </div>
+// 
+// Styleguide 5.13
+.product-hero--2x2 {
+    background: url('#{$root}/images/components/product-hero-bg-2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    padding-bottom: ($baseline * 4);
+
+    @include mobile {
+        padding: $baseline;
+
+        a {
+            margin-top: $baseline / 2;
+        }
+    }
+
+    h2 {
+        margin-bottom: $baseline / 2;
+    }
+
+    h3 {
+        margin-bottom: 0;
+    }
+
+    .product-hero__cell-container {
+        padding-bottom: 0;
+        .product-hero__cell {
+            margin-bottom: $baseline * 2;
+
+            @include mobile {
+                margin-bottom: $baseline;
+            }
+        }
+
+        .product-hero__cell:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &.hide-cta {
+        padding-bottom: $baseline / 2;
+    }
+}
+
 // Product Hero - Descriptive
 //
 // .default - Default Hero
@@ -859,7 +969,7 @@
 //      </div>
 // </div>
 // 
-// Styleguide 5.13
+// Styleguide 5.14
 .product-hero--descriptive {
     background: url('#{$root}/images/components/product-hero-bg-3.jpg');
     background-size: cover;

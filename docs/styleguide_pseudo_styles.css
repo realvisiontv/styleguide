@@ -474,6 +474,10 @@ a.pseudo-class-active {
   border: solid 2px #31FEE8;
 }
 
+.product-hero--2x2 .product-hero__cell-container .product-hero__cell.pseudo-class-last-child {
+  margin-bottom: 0;
+}
+
 .content-tile a.pseudo-class-hover blockquote,
 .content-tile a.pseudo-class-hover .icon,
 .content-tile a.pseudo-class-hover .image:after,
