@@ -504,7 +504,7 @@ footer {
                 color: #e3e3e3;
                 text-decoration: none;
                 text-transform: uppercase;
-                @include transition(color 200ms ease-in);
+                transition: color 200ms ease-in;
 
                 &:hover {
                     color: $color-torch-red;
@@ -514,10 +514,10 @@ footer {
     }
 
     .footer-copyright {
-        @include transform(translateY(150%));
+        transform: translateY(150%);
 
         @include mobile {
-            @include transform(translateY(0));            
+            transform: translateY(0);
         }
     }
 
