@@ -192,7 +192,7 @@
 // Styleguide 5.6
 .spinner {
     border: 1px solid grey;
-    border-top-color: transparent;
+    border-top-color: transparent !important;
     border-radius: 50%;
     position: relative;
     animation: spinner-rotate 1s linear infinite;
