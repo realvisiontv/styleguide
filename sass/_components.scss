@@ -1011,13 +1011,13 @@
     }
 }
 
-// Product Hero - 3x2
+// Product Hero - 2x3
 //
 // .default - Default Hero
 // .hide-cta - Hero without CTA Button
 //
 // markup:
-// <div class="product-hero product-hero--3x2 {$modifiers}">
+// <div class="product-hero product-hero--2x3 {$modifiers}">
 //      <div class="columns is-mobile">
 //          <div class="column">
 //              <h2><span>With Real Vision Television, You Get...</span></h2>
@@ -1061,7 +1061,7 @@
 // </div>
 // 
 // Styleguide 5.14
-.product-hero--3x2 {
+.product-hero--2x3 {
     background: url('#{$root}/images/components/product-hero-bg-4.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -1077,11 +1077,21 @@
         }
     }
 
+    .product-hero__cell-container {
+        .product-hero__cell:first_child {
+            margin-bottom: $baseline * 3;
+        }
+    }
+
     p {
         line-height: 16px;
         span {
             font-size: $size-7;
         }
+    }
+
+    &.hide-cta {
+        padding-bottom: $baseline / 2;
     }
 }
 
