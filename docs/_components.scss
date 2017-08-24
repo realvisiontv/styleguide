@@ -1011,6 +1011,80 @@
     }
 }
 
+// Product Hero - 3x2
+//
+// .default - Default Hero
+// .hide-cta - Hero without CTA Button
+//
+// markup:
+// <div class="product-hero product-hero--3x2 {$modifiers}">
+//      <div class="columns is-mobile">
+//          <div class="column">
+//              <h2><span>With Real Vision Television, You Get...</span></h2>
+//          </div>
+//      </div>
+//      <div class="columns">
+//          <div class="column is-4-tablet product-hero__cell-container">
+//              <div class="product-hero__cell">
+//                  <h3><span>Accessible</span></h3>
+//                  <p><span>Via Desktop, Mobile and iOS app<br/> so you can watch it where you are</span></p>
+//              </div>
+//              <div class="product-hero__cell">
+//                  <h3><span>Organized</span></h3>
+//                  <p><span>Weekly content schedules<br/> categorized videos, bookmarks<br/> and watch-later buttons so you don't miss<br/> a thing during busy times</span></p>
+//              </div>
+//          </div>
+//          <div class="column is-4-tablet product-hero__cell-container">
+//              <div class="product-hero__cell">
+//                  <h3><span>Convenient</span></h3>
+//                  <p><span>Audio and video transcript downloads<br/> for when you're offline</span></p>
+//              </div>
+//              <div class="product-hero__cell">
+//                  <h3><span>Sharable</span></h3>
+//                  <p><span>Share your thoughts and opinions<br/> with our community space on every<br/> piece of content</span></p>
+//              </div>
+//          </div>
+//          <div class="column is-4-tablet is-hidden-mobile product-hero__cell-container">
+//              <div class="product-hero__cell">
+//                  <h3><span>Time-Saving</span></h3>
+//                  <p><span>Multiple playback speeds &amp; chapter so you<br/> can quickly access the sections you want</span></p>
+//              </div>
+//              <div class="product-hero__cell">
+//                  <h3><span>Immediate</span></h3>
+//                  <p><span>A one-step login, process &amp; update,<br/> content daily</span></p>
+//              </div>
+//          </div>
+//      </div>
+//      <div class="columns has-text-centered hero-cta__container">
+//          <a href="#" class="button">Read More</a>
+//      </div>
+// </div>
+// 
+// Styleguide 5.14
+.product-hero--3x2 {
+    background: url('#{$root}/images/components/product-hero-bg-4.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding-bottom: ($baseline * 4);
+
+    @include mobile {
+        padding: $baseline;
+        text-align: left;
+
+        .hero-cta__container {
+            margin-top: $baseline / 3;
+        }
+    }
+
+    p {
+        line-height: 16px;
+        span {
+            font-size: $size-7;
+        }
+    }
+}
+
 // Product Hero - Descriptive
 //
 // .default - Default Hero
@@ -1036,9 +1110,9 @@
 //      </div>
 // </div>
 // 
-// Styleguide 5.14
+// Styleguide 5.15
 .product-hero--descriptive {
-    background: url('#{$root}/images/components/product-hero-bg-4.jpg');
+    background: url('#{$root}/images/components/product-hero-bg-5.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     padding-bottom: ($baseline * 4);

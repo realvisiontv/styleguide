@@ -6507,8 +6507,25 @@ a.button {
               -ms-transform: translateX(0);
                   transform: translateX(0); } }
 
-.product-hero--descriptive {
+.product-hero--3x2 {
   background: url("/styleguide/images/components/product-hero-bg-4.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  padding-bottom: 6rem; }
+  @media screen and (max-width: 768px) {
+    .product-hero--3x2 {
+      padding: 1.5rem;
+      text-align: left; }
+      .product-hero--3x2 .hero-cta__container {
+        margin-top: 0.5rem; } }
+  .product-hero--3x2 p {
+    line-height: 16px; }
+    .product-hero--3x2 p span {
+      font-size: 0.75rem; }
+
+.product-hero--descriptive {
+  background: url("/styleguide/images/components/product-hero-bg-5.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   padding-bottom: 6rem; }
