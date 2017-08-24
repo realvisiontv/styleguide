@@ -464,6 +464,10 @@ a.pseudo-class-active {
   border-bottom: 0;
 }
 
+.product-hero .product-hero__cell-container .product-hero__cell.pseudo-class-last-child {
+  margin-bottom: 0;
+}
+
 .product-hero h3.pseudo-class-last-child {
   margin-bottom: 0;
 }
@@ -472,10 +476,6 @@ a.pseudo-class-active {
   background: black;
   color: #31FEE8;
   border: solid 2px #31FEE8;
-}
-
-.product-hero--2x2 .product-hero__cell-container .product-hero__cell.pseudo-class-last-child {
-  margin-bottom: 0;
 }
 
 .content-tile a.pseudo-class-hover blockquote,
