@@ -335,7 +335,7 @@
 //             <a class="like" href=""><i class="fa fa-thumbs-up"></i> <span>75</span></a>
 //         </div>
 //         <div class="column has-text-right">
-//             <a class="dislike" href=""><span>25</span> <i class="fa fa-thumbs-down"></i></a>
+//             <a class="dislike inactive" href=""><span>25</span> <i class="fa fa-thumbs-down"></i></a>
 //         </div>
 //     </div>
 //     <div class="progress"><div style="width: calc(75 / (75 + 25) * 100%)"></div></div>
@@ -355,6 +355,16 @@
             width: 0;
             background: #23d160;
             height: 3px;
+        }
+    }
+    a {
+        &.inactive {
+            color: $color-torch-red;
+        }
+
+        i {
+            font-size: $size-6;
+            line-height: $size-4;
         }
     }
 }
@@ -552,6 +562,15 @@
         margin-top: 15px;
         a {
             margin-left: 1ex;
+
+            &.inactive {
+                color: $color-torch-red;
+            }
+
+            i {
+                font-size: $size-7;
+                line-height: $size-5;
+            }
         }
     }
     .replies-view {
