@@ -625,7 +625,7 @@
 //
 // markup:
 // <div class="endorsements">
-//      <div class="columns is-mobile">
+//      <div class="columns is-mobile is-vcentered">
 //          <div class="column is-6">
 //              <img src="/images/logos/logo-cfa.png"/>
 //          </div>
@@ -633,7 +633,7 @@
 //              <img src="/images/logos/logo-cisi.png"/>
 //          </div>
 //      </div>
-//      <div class="columns is-mobile">
+//      <div class="columns is-mobile is-vcentered">
 //          <div class="column is-3">
 //              <img src="/images/logos/logo-cfp.png"/>
 //          </div>
@@ -648,17 +648,10 @@
 // 
 // Styleguide 5.10
 .endorsements {
-    position: relative;
     background: white;
     padding: $baseline ($baseline * 2);
     @include mobile {
         padding: $baseline;
         background: #363e4e;
-    }
-
-    img {
-        position: relative;
-        top: 50%;
-        @include transform(translateY(-50%));
     }
 }
