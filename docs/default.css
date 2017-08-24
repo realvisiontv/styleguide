@@ -6354,6 +6354,13 @@ a.button {
     background: url("/styleguide/images/components/product-hero-bg.png"); }
     .product-hero.product-hero--3x1 h2 {
       margin-bottom: 1.5rem; }
+    .product-hero.product-hero--3x1 .product-hero__cell-container {
+      padding-bottom: 0.75rem; }
+      @media screen and (max-width: 768px) {
+        .product-hero.product-hero--3x1 .product-hero__cell-container {
+          padding-bottom: 0; } }
+      .product-hero.product-hero--3x1 .product-hero__cell-container .product-hero__cell {
+        margin-bottom: 1.5rem; }
   @media screen and (max-width: 768px) {
     .product-hero {
       padding: 1.5rem; } }

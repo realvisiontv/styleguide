@@ -669,10 +669,19 @@
 //          </div>
 //      </div>
 //      <div class="columns">
-//          <div class="column">
-//              <h3><span>Unbiased<br/>Financial Insight</span></h3>
-//              <h3><span>Unfiltered<br/>Actionable Ideas</span></h3>
-//              <h3><span>Unapologetic<br/>Smart Opinions</span></h3>
+//          <div class="column product-hero__cell-container">
+//              <div class="product-hero__cell">
+//                  <h3><span>Unbiased</span></h3>
+//                  <p><span>Financial Insight</span></p>
+//              </div>
+//              <div class="product-hero__cell">
+//                  <h3><span>Unfiltered</span></h3>
+//                  <p><span>Actionable Ideas</span></p>
+//              </div>
+//              <div class="product-hero__cell">
+//                  <h3><span>Unapologetic</span></h3>
+//                  <p><span>Smart Opinions</span></p>
+//              </div>
 //          </div>
 //          <div class="column has-text-centered hero-cta__container">
 //              <a href="#" class="button">Read More</a>
@@ -687,6 +696,17 @@
 
         h2 {
             margin-bottom: $baseline;
+        }
+
+        .product-hero__cell-container {
+            padding-bottom: $baseline / 2;
+
+            @include mobile {
+                padding-bottom: 0;
+            }
+            .product-hero__cell {
+                margin-bottom: $baseline;
+            }
         }
     }
     position: relative;
