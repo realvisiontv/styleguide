@@ -1,8 +1,8 @@
 // Feature Quote
-// 
+//
 // default  - Default button
 // .large    - Large
-// 
+//
 // markup:
 // <blockquote class="feature-quote {$modifiers}">
 //     <div class="icons">
@@ -43,7 +43,7 @@
 
     cite {
         font-family: 'Function Pro', sans-serif;
-        font-size: 0.75rem;
+        font-size: $size-6;
         font-style: normal;
         line-height: 1;
         opacity: 0.75;
@@ -65,9 +65,9 @@
 }
 
 // Hero Image
-// 
+//
 // A large (optional) clickable hero image.
-// 
+//
 // markup:
 // <div class="hero-image">
 //     <a>
@@ -84,9 +84,9 @@
 }
 
 // Hero Image with CTA
-// 
+//
 // A large hero image with text and a CTA button. Full page width.
-// 
+//
 // markup:
 // <div class="hero-image-w-cta">
 //     <div class="image" style="background-image: url('http://via.placeholder.com/1600x900')"></div>
@@ -130,10 +130,10 @@
 }
 
 // Avatar badge
-// 
+//
 // markup:
 // <a class="avatar">RV</a>
-// 
+//
 // Styleguide 5.4
 .avatar {
     background: cyan;
@@ -153,13 +153,13 @@
 }
 
 // Search form
-// 
+//
 // markup:
 // <form method="GET" action="" class="search-form">
 //     <input type="text" name="parameters_query" value="" placeholder="Assets, topics..." />
 //     <button type="submit" name="search"></button>
 // </form>
-// 
+//
 // Styleguide 5.5
 .search-form {
     display: flex;
@@ -188,7 +188,7 @@
 //
 // markup:
 // <div class="spinner"></div>
-// 
+//
 // Styleguide 5.6
 .spinner {
     border: 1px solid grey;
@@ -237,7 +237,7 @@
 //          </div>
 //      </div>
 // </div>
-// 
+//
 // Styleguide 5.7
 .product-quote {
     padding: $baseline;
@@ -317,7 +317,7 @@
             font-weight: bold;
             color: #6e7789;
         }
-        
+
         hr {
             width: 50%;
             margin-left: 20px;
@@ -340,7 +340,7 @@
 //     </div>
 //     <div class="progress"><div style="width: calc(75 / (75 + 25) * 100%)"></div></div>
 // </div>
-// 
+//
 // Styleguide 5.8
 .rating {
     .columns {
@@ -509,7 +509,7 @@
 //         </li>
 //     </ul>
 // </div>
-// 
+//
 // Styleguide 5.9
 .comments {
     ul {
@@ -645,7 +645,7 @@
 //          </div>
 //      </div>
 // </div>
-// 
+//
 // Styleguide 5.10
 .endorsements {
     background: white;
@@ -688,7 +688,7 @@
 //          </div>
 //      </div>
 // </div>
-// 
+//
 // Styleguide 5.11
 .product-hero {
     &.product-hero--3x1 {
@@ -909,7 +909,7 @@
 //          <a href="#" class="button">Read More</a>
 //      </div>
 // </div>
-// 
+//
 // Styleguide 5.12
 .product-hero--3x2 {
     background: url('#{$root}/images/components/product-hero-bg-2.jpg');
@@ -980,7 +980,7 @@
 //          <a href="#" class="button">Read More</a>
 //      </div>
 // </div>
-// 
+//
 // Styleguide 5.13
 .product-hero--2x2 {
     background: url('#{$root}/images/components/product-hero-bg-3.jpg');
@@ -1073,7 +1073,7 @@
 //          <a href="#" class="button">Read More</a>
 //      </div>
 // </div>
-// 
+//
 // Styleguide 5.14
 .product-hero--2x3 {
     background: url('#{$root}/images/components/product-hero-bg-4.jpg');
@@ -1134,7 +1134,7 @@
 //          <a href="#" class="button">Read More</a>
 //      </div>
 // </div>
-// 
+//
 // Styleguide 5.15
 .product-hero--descriptive {
     background: url('#{$root}/images/components/product-hero-bg-5.jpg');
