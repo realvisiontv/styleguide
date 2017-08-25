@@ -699,24 +699,24 @@
         }
 
         .product-hero__cell-container {
-            padding-bottom: $baseline / 2;
+            padding-bottom: 0;
 
-            @include mobile {
-                padding-bottom: 0;
-            }
-            .product-hero__cell {
-                margin-bottom: $baseline;
+            @include tablet {
+                padding-bottom: $baseline / 2;
+                .product-hero__cell {
+                    margin-bottom: $baseline;
+                }
             }
         }
     }
     position: relative;
     background-size: cover;
     background-repeat: no-repeat;
-    padding: $baseline ($baseline * 2);
+    padding: $baseline;
     text-transform: uppercase;
 
-    @include mobile {
-        padding: $baseline;
+    @include tablet {
+        padding: $baseline ($baseline * 2);
     }
 
     em {
@@ -725,66 +725,72 @@
     }
 
     h2, h3 {
-        margin-bottom: $baseline * 2;
+        margin-bottom: $baseline;
         span {
             margin: 0;
             font-weight: 800;
         }
-        @include mobile {
-            margin-bottom: $baseline;
+        @include tablet {
+            margin-bottom: $baseline * 2;
         }
     }
     h2 {
-        line-height: 3.1rem;
+        
+        line-height: 1.5rem;
         span {
-            font-size: $size-2;
+            
+            font-size: $size-4;
             color: black;
             background-color: white;
             box-shadow: 10px 0 0 white, -10px 0 0 white;
         }
 
-        @include mobile {
-            line-height: 1.5rem;
+        @include tablet {
+            line-height: 3.1rem;
             span {
-                font-size: $size-4;
+                font-size: $size-2;
             }
         }
     }
     h3 {
-        line-height: 2.3rem;
+        line-height: 1.65rem;
         span {
-            font-size: $size-3;
+            font-size: $size-4;
             color: white;
             background-color: black;
             box-shadow: 10px 0 0 black, -10px 0 0 black;
         }
 
-        @include mobile {
-            line-height: 1.65rem;
+        @include tablet {
+            line-height: 2.3rem;
             span {
-                font-size: $size-4;
+                font-size: $size-3;
             }
         }
     }
     p {
         margin-top: 0;
         margin-bottom: 0;
-        line-height: 1.75rem;
+        
+        line-height: 1.45rem;
         span {
             font-weight: 800;
-            font-size: $size-5;
+            font-size: $size-6;
             color: white;
             background-color: black;
             box-shadow: 10px 0 0 black, -10px 0 0 black;
         }
+        br {
+            display: none;
+        }
 
-        @include mobile {
-            line-height: 1.45rem;
+        @include tablet {
+            line-height: 1.75rem;
             span {
-                font-size: $size-6;
+                font-size: $size-5;
             }
             br {
-                display: none;
+                display: block;
             }
         }
     }
@@ -797,19 +803,18 @@
     }
     .product-hero__cell-container {
         padding-bottom: 0;
+        margin-bottom: $baseline / 2;
 
-        @include mobile {
-            margin-bottom: $baseline / 2;
+        @include tablet {
+            margin-bottom: 0;
         }
         .product-hero__cell {
-            margin-bottom: $baseline * 2;
-
+            margin-bottom: $baseline;
             h3 {
                 margin-bottom: 0;
             }
-
-            @include mobile {
-                margin-bottom: $baseline;
+            @include tablet {
+                margin-bottom: $baseline * 2;
             }
         }
 
@@ -821,14 +826,14 @@
         margin-bottom: 0;
     }
     a {
-        position: absolute;
-        right: ($baseline * 2);
-        bottom: $baseline;
+        position: relative;
+        right: auto;
+        bottom: auto;
+        font-size: $size-6;
         background: $color-cyan;
         color: black;
         font-weight: 800;
         padding: ($baseline / 3);
-        font-size: $size-4;
 
         &:hover {
             background: black;
@@ -836,11 +841,11 @@
             border: solid 2px $color-cyan;
         }
 
-        @include mobile {
-            position: relative;
-            right: auto;
-            bottom: auto;
-            font-size: $size-6;
+        @include tablet {
+            position: absolute;
+            right: ($baseline * 2);
+            bottom: $baseline;
+            font-size: $size-4;
         }
     }
     &.hide-cta {
@@ -910,13 +915,18 @@
     background: url('#{$root}/images/components/product-hero-bg-2.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    padding-bottom: ($baseline * 4);
+    padding: $baseline;
 
-    @include mobile {
-        padding: $baseline;
+    .hero-cta__container {
+        margin-top: $baseline / 3;
+    }
+
+    @include tablet {
+        padding: $baseline ($baseline * 2);
+        padding-bottom: ($baseline * 4);
 
         .hero-cta__container {
-            margin-top: $baseline / 3;
+            margin-top: 0;
         }
     }
 
@@ -976,14 +986,18 @@
     background: url('#{$root}/images/components/product-hero-bg-3.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    padding: $baseline;
     
-    padding-bottom: ($baseline * 4);
+    .hero-cta__container {
+        margin-top: $baseline / 3;
+    }
 
-    @include mobile {
-        padding: $baseline;
+    @include tablet {
+        padding: $baseline ($baseline * 2);
+        padding-bottom: ($baseline * 4);
 
         .hero-cta__container {
-            margin-top: $baseline / 3;
+            margin-top: 0;
         }
     }
 
@@ -999,13 +1013,13 @@
         text-align: center;
         a {
             right: auto;
-            left: 50%;
-            transform: translateX(-50%);
+            left: auto;
+            transform: translateX(0);
 
-            @include mobile {
+            @include tablet {
                 right: auto;
-                left: auto;
-                transform: translateX(0);
+                left: 50%;
+                transform: translateX(-50%);
             }
         }
     }
@@ -1065,16 +1079,17 @@
     background: url('#{$root}/images/components/product-hero-bg-4.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    text-align: center;
-    padding-bottom: ($baseline * 4);
+    text-align: left;
+    padding: $baseline;
 
-    @include mobile {
-        padding: $baseline;
-        text-align: left;
+    .hero-cta__container {
+        margin-top: $baseline / 3;
+    }
 
-        .hero-cta__container {
-            margin-top: $baseline / 3;
-        }
+    @include tablet {
+        padding: $baseline ($baseline * 2);
+        padding-bottom: ($size-2 * 2);
+        text-align: center;        
     }
 
     .product-hero__cell-container {
@@ -1125,10 +1140,11 @@
     background: url('#{$root}/images/components/product-hero-bg-5.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    padding-bottom: ($baseline * 4);
+    padding: $baseline;
 
-    @include mobile {
-        padding: $baseline;
+    @include tablet {
+        padding: $baseline ($baseline * 2);
+        padding-bottom: ($baseline * 4);
     }
 
     h2 {
@@ -1136,22 +1152,24 @@
     }
 
     p {
-        line-height: 2rem;
+        line-height: 1.45rem;
         span {
-            font-size: $size-4;
+            
+            font-size: $size-6;
         }
 
-        @include mobile {
-            line-height: 1.45rem;
+        @include tablet {
+            line-height: 2rem;
+            
             span {
-                font-size: $size-6;
+                font-size: $size-4;
             }
         }
     }
     a {
-        margin-right: -10px;
-        @include mobile {
-            margin-right: auto;
+        margin-right: auto;
+        @include tablet {
+            margin-right: -10px;
         }
     }
 
@@ -1170,11 +1188,11 @@
         a {
             margin-left: -10px;
             margin-right: auto;
-            left: ($baseline * 2);
+            left: auto;
             right: auto;
 
-            @include mobile {
-                left: auto;
+            @include tablet {
+                left: ($baseline * 2);
             }
         }
     }
