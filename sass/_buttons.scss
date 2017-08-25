@@ -248,7 +248,7 @@ a.button {
 
     &.hide-text {
         padding-left: 0;
-        font-size: 0;
+        text-indent: -1000em;
         width: $size;
         margin-right: 1ex;
 
