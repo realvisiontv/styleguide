@@ -213,6 +213,10 @@ h6 {
     }
     .column {
         padding-bottom: 0;
+        flex-basis: auto;
+    }
+    .search {
+        flex-basis: auto;
     }
     .product-navigation {
         display: none;
@@ -364,6 +368,7 @@ h6 {
     }
     .page-navigation-container {
         display: none;
+        height: 100%;
         
         &.show {
             display: flex;
@@ -377,6 +382,11 @@ h6 {
     }
     .page-navigation {
         white-space: nowrap;
+    }
+    .desktop-navigation .page-navigation {
+        display: flex;
+        align-items: flex-end;
+        height: 100%;
     }
 }
 

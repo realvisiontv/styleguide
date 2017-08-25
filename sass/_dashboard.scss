@@ -166,10 +166,33 @@
         font-size: $size-5;
         font-weight: 800;
         margin: 0;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
+        position: relative;
+        max-height: 3em; 
         overflow: hidden;
-        display: -webkit-box;
+
+        &:after {
+            content: "";
+            text-align: right;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50%;
+            height: 1.2em;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 80%);
+        }
+    }
+    @supports (-webkit-line-clamp: 3) {
+        h1 {
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            display: -webkit-box;
+            max-height: none;
+            
+            &:after {
+                display: none;
+            }
+        }
     }
     .subheading {
         overflow: hidden;
@@ -197,13 +220,13 @@
         color: #fff;
         font-size: $size-7;
         margin: $padding;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        display: -webkit-box;
         opacity: 0;
         transition: opacity $transition-out-speed;
         transition-delay: $transition-out-delay;
+        position: relative;
+        max-height: 3em; 
+        overflow: hidden;
+
         cite {
             display: block;
             border-top: 1px solid rgba(255, 255, 255, 0.5);
@@ -211,6 +234,14 @@
             text-transform: uppercase;
             margin-top: 5px;
             padding-top: 5px;
+        }
+    
+        @supports (-webkit-line-clamp: 2) {
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            display: -webkit-box;
+            max-height: none;
         }
     }
 
