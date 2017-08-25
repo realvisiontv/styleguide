@@ -1,6 +1,6 @@
 // Feature Quote
 // 
-// .default  - Default button
+// default  - Default button
 // .large    - Large
 // 
 // markup:
@@ -658,7 +658,7 @@
 
 // Product Hero - 3x1
 //
-// .default - Default Hero
+// default - Default Hero
 // .hide-cta - Hero without CTA Button
 //
 // markup:
@@ -735,7 +735,7 @@
         }
     }
     h2 {
-        line-height: 49px;
+        line-height: 3.1rem;
         span {
             font-size: $size-2;
             color: black;
@@ -744,14 +744,14 @@
         }
 
         @include mobile {
-            line-height: 24px;
+            line-height: 1.5rem;
             span {
                 font-size: $size-4;
             }
         }
     }
     h3 {
-        line-height: 36px;
+        line-height: 2.3rem;
         span {
             font-size: $size-3;
             color: white;
@@ -760,7 +760,7 @@
         }
 
         @include mobile {
-            line-height: 26px;
+            line-height: 1.65rem;
             span {
                 font-size: $size-4;
             }
@@ -769,7 +769,7 @@
     p {
         margin-top: 0;
         margin-bottom: 0;
-        line-height: 28px;
+        line-height: 1.75rem;
         span {
             font-weight: 800;
             font-size: $size-5;
@@ -779,7 +779,7 @@
         }
 
         @include mobile {
-            line-height: 23px;
+            line-height: 1.45rem;
             span {
                 font-size: $size-6;
             }
@@ -852,7 +852,7 @@
 
 // Product Hero - 3x2
 //
-// .default - Default Hero
+// default - Default Hero
 // .hide-cta - Hero without CTA Button
 //
 // markup:
@@ -933,7 +933,7 @@
 
 // Product Hero - 2x2
 //
-// .default - Default Hero
+// default - Default Hero
 // .hide-cta - Hero without CTA Button
 // .content-center - Hero with center aligned content and CTA
 //
@@ -1013,7 +1013,7 @@
 
 // Product Hero - 2x3
 //
-// .default - Default Hero
+// default - Default Hero
 // .hide-cta - Hero without CTA Button
 //
 // markup:
@@ -1084,7 +1084,7 @@
     }
 
     p {
-        line-height: 16px;
+        line-height: 1rem;
         span {
             font-size: $size-7;
         }
@@ -1097,7 +1097,7 @@
 
 // Product Hero - Descriptive
 //
-// .default - Default Hero
+// default - Default Hero
 // .hide-cta - Hero without CTA Button
 // .hide-heading - Hero without main block heading
 // .content-left - Hero with left aligned content and CTA
@@ -1136,13 +1136,13 @@
     }
 
     p {
-        line-height: 32px;
+        line-height: 2rem;
         span {
             font-size: $size-4;
         }
 
         @include mobile {
-            line-height: 23px;
+            line-height: 1.45rem;
             span {
                 font-size: $size-6;
             }
