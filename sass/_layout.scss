@@ -299,7 +299,7 @@ h6 {
 
         &.active {
             border-bottom-color: cyan;
-            a {
+            > a {
                 color: cyan;
             }
         }
