@@ -20,6 +20,7 @@
 .feature-quote {
     display: inline-block;
     text-align: center;
+    width: 100%;
 
     .icons * {
         display: inline-block;
@@ -39,6 +40,7 @@
         font-weight: 700;
         line-height: 1;
         margin: 0.25rem 0;
+        word-wrap: break-word;
     }
 
     cite {
