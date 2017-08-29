@@ -1,6 +1,6 @@
 // Feature Quote
 //
-// .default  - Default button
+// default  - Default button
 // .large    - Large
 //
 // markup:
@@ -653,5 +653,551 @@
     @include mobile {
         padding: $baseline;
         background: #363e4e;
+    }
+}
+
+// Product Hero - 3x1
+//
+// default - Default Hero
+// .hide-cta - Hero without CTA Button
+//
+// markup:
+// <div class="product-hero product-hero--3x1 {$modifiers}">
+//      <div class="columns is-mobile">
+//          <div class="column">
+//              <h2><span>What the hell is real vision television?</span></h2>
+//          </div>
+//      </div>
+//      <div class="columns">
+//          <div class="column product-hero__cell-container">
+//              <div class="product-hero__cell">
+//                  <h3><span>Unbiased</span></h3>
+//                  <p><span>Financial Insight</span></p>
+//              </div>
+//              <div class="product-hero__cell">
+//                  <h3><span>Unfiltered</span></h3>
+//                  <p><span>Actionable Ideas</span></p>
+//              </div>
+//              <div class="product-hero__cell">
+//                  <h3><span>Unapologetic</span></h3>
+//                  <p><span>Smart Opinions</span></p>
+//              </div>
+//          </div>
+//          <div class="column has-text-centered hero-cta__container">
+//              <a href="#" class="button">Read More</a>
+//          </div>
+//      </div>
+// </div>
+//
+// Styleguide 5.11
+.product-hero {
+    &.product-hero--3x1 {
+        background: url('#{$root}/images/components/product-hero-bg.png');
+
+        h2 {
+            margin-bottom: $baseline;
+        }
+
+        .product-hero__cell-container {
+            padding-bottom: 0;
+
+            @include tablet {
+                padding-bottom: $baseline / 2;
+                .product-hero__cell {
+                    margin-bottom: $baseline;
+                }
+            }
+        }
+    }
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: $baseline;
+    text-transform: uppercase;
+
+    @include tablet {
+        padding: $baseline ($baseline * 2);
+    }
+
+    em {
+        font-style: normal;
+        color: $color-torch-red;
+    }
+
+    h2, h3 {
+        margin-bottom: $baseline;
+        span {
+            margin: 0;
+            font-weight: 800;
+        }
+        @include tablet {
+            margin-bottom: $baseline * 2;
+        }
+    }
+    h2 {
+        
+        line-height: 1.5rem;
+        span {
+            
+            font-size: $size-4;
+            color: black;
+            background-color: white;
+            box-shadow: 10px 0 0 white, -10px 0 0 white;
+        }
+
+        @include tablet {
+            line-height: 3.1rem;
+            span {
+                font-size: $size-2;
+            }
+        }
+    }
+    h3 {
+        line-height: 1.65rem;
+        span {
+            font-size: $size-4;
+            color: white;
+            background-color: black;
+            box-shadow: 10px 0 0 black, -10px 0 0 black;
+        }
+
+        @include tablet {
+            line-height: 2.3rem;
+            span {
+                font-size: $size-3;
+            }
+        }
+    }
+    p {
+        margin-top: 0;
+        margin-bottom: 0;
+        
+        line-height: 1.45rem;
+        span {
+            font-weight: 800;
+            font-size: $size-6;
+            color: white;
+            background-color: black;
+            box-shadow: 10px 0 0 black, -10px 0 0 black;
+        }
+        br {
+            display: none;
+        }
+
+        @include tablet {
+            line-height: 1.75rem;
+            span {
+                font-size: $size-5;
+            }
+            br {
+                display: block;
+            }
+        }
+    }
+    .product-hero__sub-head {
+        span {
+            color: black;
+            background-color: white;
+            box-shadow: 10px 0 0 white, -10px 0 0 white;
+        }
+    }
+    .product-hero__cell-container {
+        padding-bottom: 0;
+        margin-bottom: $baseline / 2;
+
+        @include tablet {
+            margin-bottom: 0;
+        }
+        .product-hero__cell {
+            margin-bottom: $baseline;
+            h3 {
+                margin-bottom: 0;
+            }
+            @include tablet {
+                margin-bottom: $baseline * 2;
+            }
+        }
+
+        .product-hero__cell:last-child {
+            margin-bottom: 0;
+        }
+    }
+    h3:last-child {
+        margin-bottom: 0;
+    }
+    a {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        font-size: $size-6;
+        background: $color-cyan;
+        color: black;
+        font-weight: 800;
+        padding: ($baseline / 3);
+
+        &:hover {
+            background: black;
+            color: $color-cyan;
+            border: solid 2px $color-cyan;
+        }
+
+        @include tablet {
+            position: absolute;
+            right: ($baseline * 2);
+            bottom: $baseline;
+            font-size: $size-4;
+        }
+    }
+    &.hide-cta {
+        .hero-cta__container {
+            display: none;
+        }
+    }
+}
+
+// Product Hero - 3x2
+//
+// default - Default Hero
+// .hide-cta - Hero without CTA Button
+//
+// markup:
+// <div class="product-hero product-hero--3x2 {$modifiers}">
+//      <div class="columns is-mobile">
+//          <div class="column">
+//              <h2><span>With Real Vision Television, You Get...</span></h2>
+//          </div>
+//      </div>
+//      <div class="columns is-hidden-mobile">
+//          <div class="column is-5">
+//              <h3 class="product-hero__sub-head"><span>Let's Start with what you don't get:</span></h3>
+//          </div>
+//          <div class="column is-5 is-offset-2">
+//              <h3 class="product-hero__sub-head"><span>So, what do you get with us?</span></h3>
+//          </div>
+//      </div>
+//      <div class="columns">
+//          <div class="column is-hidden-mobile is-5-tablet product-hero__cell-container">
+//              <div class="product-hero__cell">
+//                  <h3><span>No ads</span></h3>
+//                  <p><span>To interrupt you</span></p>
+//              </div>
+//              <div class="product-hero__cell">
+//                  <h3><span>No bias</span></h3>
+//                  <p><span>To sway you</span></p>
+//              </div>
+//              <div class="product-hero__cell">
+//                  <h3><span>No hype</span></h3>
+//                  <p><span>To distract you</span></p>
+//              </div>
+//          </div>
+//          <div class="column is-5-tablet is-offset-2-tablet product-hero__cell-container">
+//              <div class="product-hero__cell">
+//                  <h3><span>Reliable</span></h3>
+//                  <p><span>Insight</span></p>
+//              </div>
+//              <div class="product-hero__cell">
+//                  <h3><span>Intelligent</span></h3>
+//                  <p><span>Opinions</span></p>
+//              </div>
+//              <div class="product-hero__cell">
+//                  <h3><span>Actionable</span></h3>
+//                  <p><span>Ideas</span></p>
+//              </div>
+//          </div>
+//      </div>
+//      <div class="columns has-text-centered hero-cta__container">
+//          <a href="#" class="button">Read More</a>
+//      </div>
+// </div>
+//
+// Styleguide 5.12
+.product-hero--3x2 {
+    background: url('#{$root}/images/components/product-hero-bg-2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: $baseline;
+
+    .hero-cta__container {
+        margin-top: $baseline / 3;
+    }
+
+    @include tablet {
+        padding: $baseline ($baseline * 2);
+        padding-bottom: ($baseline * 4);
+
+        .hero-cta__container {
+            margin-top: 0;
+        }
+    }
+
+    .product-hero__cell-container {
+        .product-hero__cell {
+            margin-bottom: $baseline;
+        }
+    }
+
+    &.hide-cta {
+        padding-bottom: $baseline / 2;
+    }
+}
+
+// Product Hero - 2x2
+//
+// default - Default Hero
+// .hide-cta - Hero without CTA Button
+// .content-center - Hero with center aligned content and CTA
+//
+// markup:
+// <div class="product-hero product-hero--2x2 {$modifiers}">
+//      <div class="columns is-mobile">
+//          <div class="column">
+//              <h2><span>With Real Vision Television, You Get...</span></h2>
+//          </div>
+//      </div>
+//      <div class="columns">
+//          <div class="column is-6-tablet product-hero__cell-container">
+//              <div class="product-hero__cell">
+//                  <h3><span>One Hundred</span></h3>
+//                  <p><span>Research reports per year covering<br/> all aspects of financial markets</span></p>
+//              </div>
+//              <div class="product-hero__cell">
+//                  <h3><span>Thirty</span></h3>
+//                  <p><span>Independent investment<br/> research experts</span></p>
+//              </div>
+//          </div>
+//          <div class="column is-6-tablet product-hero__cell-container">
+//              <div class="product-hero__cell">
+//                  <h3><span>Two</span></h3>
+//                  <p><span>Research reports<br/> per week</span></p>
+//              </div>
+//              <div class="product-hero__cell">
+//                  <h3><span>One</span></h3>
+//                  <p><span>Weekly Newsletter, <em>The hack</em>,<br/> delivered straight to your inbox</span></p>
+//              </div>
+//          </div>
+//      </div>
+//      <div class="columns has-text-centered hero-cta__container">
+//          <a href="#" class="button">Read More</a>
+//      </div>
+// </div>
+//
+// Styleguide 5.13
+.product-hero--2x2 {
+    background: url('#{$root}/images/components/product-hero-bg-3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: $baseline;
+    
+    .hero-cta__container {
+        margin-top: $baseline / 3;
+    }
+
+    @include tablet {
+        padding: $baseline ($baseline * 2);
+        padding-bottom: ($baseline * 4);
+
+        .hero-cta__container {
+            margin-top: 0;
+        }
+    }
+
+    h2 {
+        margin-bottom: $baseline / 2;
+    }
+
+    &.hide-cta {
+        padding-bottom: $baseline / 2;
+    }
+
+    &.content-center {
+        text-align: center;
+        a {
+            right: auto;
+            left: auto;
+            transform: translateX(0);
+
+            @include tablet {
+                right: auto;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+}
+
+// Product Hero - 2x3
+//
+// default - Default Hero
+// .hide-cta - Hero without CTA Button
+//
+// markup:
+// <div class="product-hero product-hero--2x3 {$modifiers}">
+//      <div class="columns is-mobile">
+//          <div class="column">
+//              <h2><span>With Real Vision Television, You Get...</span></h2>
+//          </div>
+//      </div>
+//      <div class="columns">
+//          <div class="column is-10-mobile is-4-tablet product-hero__cell-container">
+//              <div class="product-hero__cell">
+//                  <h3><span>Accessible</span></h3>
+//                  <p><span>Via Desktop, Mobile and iOS app so you can watch it where you are</span></p>
+//              </div>
+//              <div class="product-hero__cell">
+//                  <h3><span>Organized</span></h3>
+//                  <p><span>Weekly content schedules categorized videos, bookmarks and watch-later buttons so you don't miss a thing during busy times</span></p>
+//              </div>
+//          </div>
+//          <div class="column is-10-mobile is-4-tablet product-hero__cell-container">
+//              <div class="product-hero__cell">
+//                  <h3><span>Convenient</span></h3>
+//                  <p><span>Audio and video transcript downloads for when you're offline</span></p>
+//              </div>
+//              <div class="product-hero__cell">
+//                  <h3><span>Sharable</span></h3>
+//                  <p><span>Share your thoughts and opinions with our community space on every piece of content</span></p>
+//              </div>
+//          </div>
+//          <div class="column is-4-tablet is-hidden-mobile product-hero__cell-container">
+//              <div class="product-hero__cell">
+//                  <h3><span>Time-Saving</span></h3>
+//                  <p><span>Multiple playback speeds &amp; chapter so you can quickly access the sections you want</span></p>
+//              </div>
+//              <div class="product-hero__cell">
+//                  <h3><span>Immediate</span></h3>
+//                  <p><span>A one-step login, process &amp; update, content daily</span></p>
+//              </div>
+//          </div>
+//      </div>
+//      <div class="columns has-text-centered hero-cta__container">
+//          <a href="#" class="button">Read More</a>
+//      </div>
+// </div>
+//
+// Styleguide 5.14
+.product-hero--2x3 {
+    background: url('#{$root}/images/components/product-hero-bg-4.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: left;
+    padding: $baseline;
+
+    .hero-cta__container {
+        margin-top: $baseline / 3;
+    }
+
+    @include tablet {
+        padding: $baseline ($baseline * 2);
+        padding-bottom: ($size-2 * 2);
+        text-align: center;        
+    }
+
+    .product-hero__cell-container {
+        .product-hero__cell:first_child {
+            margin-bottom: $baseline * 3;
+        }
+    }
+
+    p {
+        line-height: 1rem;
+        span {
+            font-size: $size-7;
+        }
+    }
+
+    &.hide-cta {
+        padding-bottom: $baseline / 2;
+    }
+}
+
+// Product Hero - Descriptive
+//
+// default - Default Hero
+// .hide-cta - Hero without CTA Button
+// .hide-heading - Hero without main block heading
+// .content-left - Hero with left aligned content and CTA
+// .content-right - Hero with right aligned content and CTA
+//
+// markup:
+// <div class="product-hero product-hero--descriptive {$modifiers}">
+//      <div class="columns is-mobile">
+//          <div class="column product-hero--heading">
+//              <h2><span>Leading Institutions give us the thumbs up too...</span></h2>
+//          </div>
+//      </div>
+//      <div class="columns">
+//          <div class="column">
+//              <p><span>Real Vision Television is accredited by some of the most respected financial and educational institutions across the globe, including:</span></p>
+//          </div>
+//      </div>
+//      <div class="columns has-text-centered hero-cta__container">
+//          <a href="#" class="button">Read More</a>
+//      </div>
+// </div>
+//
+// Styleguide 5.15
+.product-hero--descriptive {
+    background: url('#{$root}/images/components/product-hero-bg-5.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: $baseline;
+
+    @include tablet {
+        padding: $baseline ($baseline * 2);
+        padding-bottom: ($baseline * 4);
+    }
+
+    h2 {
+        margin-bottom: $baseline;
+    }
+
+    p {
+        line-height: 1.45rem;
+        span {
+            
+            font-size: $size-6;
+        }
+
+        @include tablet {
+            line-height: 2rem;
+            
+            span {
+                font-size: $size-4;
+            }
+        }
+    }
+    a {
+        margin-right: auto;
+        @include tablet {
+            margin-right: -10px;
+        }
+    }
+
+    &.hide-heading {
+        .product-hero--heading {
+            display: none;
+        }
+    }
+
+    &.hide-cta {
+        padding-bottom: $baseline / 2;
+    }
+
+    &.content-left {
+        text-align: left;
+        a {
+            margin-left: -10px;
+            margin-right: auto;
+            left: auto;
+            right: auto;
+
+            @include tablet {
+                left: ($baseline * 2);
+            }
+        }
+    }
+
+    &.content-right {
+        text-align: right;
     }
 }
