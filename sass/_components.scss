@@ -216,12 +216,12 @@
     }
 }
 
-// Product Quote
+// Pullout Block - Quote
 //
 // markup:
-// <div class="product-quote">
-//      <div class="product-quote__content">
-//          <p class="product-quote__content-heading">Get exposed to investment ideas and financial insights that you can't get anywhere else.</p>
+// <div class="pullout-block pullout-block__product-quote">
+//      <div class="pullout-block__content">
+//          <p class="pullout-block__content-heading">Get exposed to investment ideas and financial insights that you can't get anywhere else.</p>
 //          <div class="is-hidden-mobile">
 //              <div class="icons">
 //                  <svg class="icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.62292 316.34321" class="icon-star"><path d="M166.31 0l51.395 104.134 114.918 16.698-83.156 81.057 19.63 114.452-102.786-54.038-102.784 54.038 19.63-114.454L0 120.83l114.918-16.698z" /></svg>
@@ -240,9 +240,9 @@
 //          </div>
 //      </div>
 // </div>
-//
+// 
 // Styleguide 5.7
-.product-quote {
+.pullout-block {
     padding: $baseline;
     position: relative;
 
@@ -256,20 +256,20 @@
             height: 0;
             width: 0;
             top: 50%;
-            @include transform(translateY(-50%));
+            transform: translateY(-50%);
             border-top: 2rem solid transparent;
             border-bottom: 2rem solid transparent;
-            border-left: 1.5rem solid #363D4E;
+            border-left: 1.5rem solid $text;
         }
     }
 
-    .product-quote__content {
+    .pullout-block__content {
         background: url('#{$root}/images/components/crinkled-paper-effect.png');
         background-size: cover;
         background-repeat: no-repeat;
         padding: $baseline ($baseline * 2);
 
-        .product-quote__content-heading {
+        .pullout-block__content-heading {
             font-size: $size-4;
             font-weight: bold;
             margin-bottom: $baseline;
@@ -279,6 +279,13 @@
             }
         }
 
+        em {
+            font-style: normal;
+            color: $color-torch-red;
+        }
+    }
+
+    &.pullout-block__product-quote {
         .icons {
             text-align: center;
             margin-bottom: $baseline;
@@ -320,13 +327,94 @@
             font-weight: bold;
             color: #6e7789;
         }
-
+        
         hr {
             width: 50%;
             margin-left: 20px;
             background: #6e7789;
         }
     }
+}
+
+// Pullout Block - List
+//
+// markup:
+// <div class="pullout-block pullout-block__list">
+//      <div class="pullout-block__content">
+//          <p class="pullout-block__content-heading">Think long, win big&hellip;</p>
+//          <p class="pullout-block__content-subheading">A good macro idea can be worth millions of dollars&hellip;</p>
+//          <ul>
+//              <li>In 1992, legendary traders George Soros and Stanley Druckenmiller made more than $1 billion by betting on a decline in the British Pound.</li>
+//              <li>In 2007 and 2008, hedge fund manager John Paulson personally made over $3 billion by betting on the U.S. mortgage market meltdown.</li>
+//              <li>In 2009, hedge fund manager David Tepper believed the worst of the 2008 financial crisis was over for the U.S. banks, taking a huge position in bank stocks and made over $5 billion as banks recovered.</li>
+//          </ul>
+//      </div>
+// </div>
+// 
+// Styleguide 5.8
+.pullout-block__list {
+    font-weight: 800;
+
+    @include mobile {
+        &:before {
+            content: none;
+        }
+    }
+
+    .pullout-block__content-subheading {
+        margin-bottom: $baseline;
+    }
+
+    ul {
+        margin-left: 0;
+        list-style: none;
+
+        li {
+            position: relative;
+            &:before {
+                margin-top: 0;
+                left: -($baseline * 2);
+                margin-left: 0;
+                position: absolute;
+                content: '';
+                top: 0;
+                border-top: 1rem solid transparent;
+                border-bottom: 1rem solid transparent;
+                border-left: 1rem solid $text;
+            }
+
+            & + li {
+                margin-top: $baseline / 2;
+            }
+
+            @include tablet {
+                
+                &:before {
+                    content: '';
+                    background: $color-torch-red;
+                    height: .65rem;
+                    width: .65rem;
+                    margin-top: 7px;
+                    margin-left: 1.4rem;
+                    border: none;
+                }
+            }
+        }
+    }
+}
+
+// Pullout Block - Text
+//
+// markup:
+// <div class="pullout-block pullout-block__text">
+//      <div class="pullout-block__content">
+//          <p>With Macro Insiders, two of the world's top macro-researchers, <em>Raoul Pal</em> and <em>Julian Brigden</em>, bring you a lever of elite macro analysis that was previously only available to large banks, hedge funds and wealthy families.</p>
+//      </div>
+// </div>
+// 
+// Styleguide 5.9
+.pullout-block__text {
+    font-weight: 800;
 }
 
 // Rating
@@ -344,7 +432,7 @@
 //     <div class="progress"><div style="width: calc(75 / (75 + 25) * 100%)"></div></div>
 // </div>
 //
-// Styleguide 5.8
+// Styleguide 5.10
 .rating {
     .columns {
         margin-top: 0;
@@ -513,7 +601,7 @@
 //     </ul>
 // </div>
 //
-// Styleguide 5.9
+// Styleguide 5.11
 .comments {
     ul {
         list-style: none;
@@ -649,7 +737,7 @@
 //      </div>
 // </div>
 //
-// Styleguide 5.10
+// Styleguide 5.12
 .endorsements {
     background: white;
     padding: $baseline ($baseline * 2);
