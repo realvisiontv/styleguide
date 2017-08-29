@@ -248,7 +248,7 @@ a.button {
 
     &.hide-text {
         padding-left: 0;
-        font-size: 0;
+        text-indent: -1000em;
         width: $size;
         margin-right: 1ex;
 
@@ -292,5 +292,32 @@ a.button {
             background: transparent;
             border-color: white;
         }
+    }
+}
+
+// Intercom launcher
+// 
+// markup:
+// <a class="contact-launcher">
+//     <i class="fa fa-question" aria-hidden="true"></i>
+// </a>
+//
+// Styleguide 4.6
+.contact-launcher {
+    $size: 46px;
+    $border: 2px;
+    display: block;
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    background: $color-bright-gray;
+    border: 2px solid white;
+    cursor: pointer;
+    box-shadow: 0 1px 6px rgba(0,0,0,.06),0 2px 32px rgba(0,0,0,.16);
+    text-align: center;
+    i {
+        line-height: $size - ($border * 2);
+        color: white;
+        font-size: $size / 2;
     }
 }
