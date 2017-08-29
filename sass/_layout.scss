@@ -493,10 +493,10 @@ footer {
             margin: auto;
 
             .fa {
-                font-size: $size-2;
+                font-size: $size-3;
 
-                @include mobile {
-                    font-size: $size-3;
+                @include tablet {
+                    font-size: $size-2;
                 }
             }
 
@@ -515,14 +515,14 @@ footer {
 
     .footer-social {
         li {
-            margin: 0 10px;
+            margin: 0 ($baseline / 2);
 
-            @include tablet-only {
+            @include tablet {
                 margin: 0 4px;
             }
 
-            @include mobile {
-                margin: 0 ($baseline / 2);
+            @include desktop {
+                margin: 0 10px;
             }
         }
     }
