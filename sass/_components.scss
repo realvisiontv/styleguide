@@ -369,31 +369,35 @@
         li {
             position: relative;
             &:before {
-                font-family: AppleGothic, "Lucida Sans", Impact, Verdana, sans-serif;
-                content: '■';
-                color: $color-torch-red;
-                float: left;
-                width: 1em;
-                margin-top: 2px;
-                margin-left: -1.2rem;
-                font-size: 1rem;
+                margin-top: 0;
+                left: -($baseline * 2);
+                margin-left: 0;
+                position: absolute;
+                content: '';
+                top: 0;
+                border-top: 1rem solid transparent;
+                border-bottom: 1rem solid transparent;
+                border-left: 1rem solid $text;
             }
 
-            @include mobile {
-                &:before {
-                    margin-top: 0;
-                    left: -($baseline * 2);
-                    margin-left: 0;
-                    position: absolute;
-                    content: '';
-                    top: 0;
-                    border-top: 1rem solid transparent;
-                    border-bottom: 1rem solid transparent;
-                    border-left: 1rem solid $text;
-                }
+            & + li {
+                margin-top: $baseline / 2;
+            }
 
-                & + li {
-                    margin-top: $baseline / 2;
+            @include tablet {
+                
+                &:before {
+                    font-family: AppleGothic, "Lucida Sans", Impact, Verdana, sans-serif;
+                    content: '■';
+                    color: $color-torch-red;
+                    float: left;
+                    width: 1em;
+                    margin-top: 2px;
+                    margin-left: -1.2rem;
+                    font-size: 1rem;
+                    left: auto;
+                    top: auto;
+                    border: none;
                 }
             }
         }
