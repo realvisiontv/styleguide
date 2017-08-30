@@ -86,10 +86,8 @@ button.is-link {
 
     &.is-large {
         font-size: $size-3;
-        .icon {
-            .fa {
-                font-size: 28px;
-            }
+        .icon .fa {
+            font-size: 28px;
         }
         .icon:first-child:not(:last-child) {
             margin-left: 0;
@@ -117,6 +115,9 @@ button.is-link {
         padding: ($baseline / 4) ($baseline / 2);
         &.is-large {
             font-size: $size-4;
+            .icon .fa {
+                font-size: 21px;
+            }
             .icon:first-child:not(:last-child) {
                 margin-right: $baseline / 4;
             }
