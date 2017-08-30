@@ -1180,7 +1180,7 @@
     @include tablet {
         padding: $baseline ($baseline * 2);
         padding-bottom: ($size-2 * 2);
-        text-align: center;        
+        text-align: center;
     }
 
     .product-hero__cell-container {
@@ -1290,5 +1290,193 @@
 
     &.content-right {
         text-align: right;
+    }
+}
+
+// Testimonials Grid
+//
+// default - Default Hero
+//
+// markup:
+// <div class="testimonial-grid {$modifiers}">
+//      <h2><span>More Testimonials</span></h2>
+//      <div class="columns">
+//          <div class="card column">
+//              <div class="card-image">
+//                  <figure class="image is-16by9">
+//                      <img src="/images/components/testimonials/1.jpg" alt="Image">
+//                  </figure>
+//              </div>
+//              <div class="card-content">
+//                  <div class="content">
+//                      <h3 class="title">John Smith</h3>
+//                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.</p>
+//                      <a class="button" href="#">Read More</a>
+//                  </div>
+//              </div>
+//          </div>
+//          <div class="card column">
+//              <div class="card-image">
+//                  <figure class="image is-16by9">
+//                      <img src="/images/components/testimonials/2.jpg" alt="Image">
+//                  </figure>
+//              </div>
+//              <div class="card-content">
+//                  <div class="content">
+//                      <h3 class="title">John Smith</h3>
+//                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.</p>
+//                      <a class="button" href="#">Read More</a>
+//                  </div>
+//              </div>
+//          </div>
+//          <div class="card column">
+//              <div class="card-image">
+//                  <figure class="image is-16by9">
+//                      <img src="/images/components/testimonials/3.jpg" alt="Image">
+//                  </figure>
+//              </div>
+//              <div class="card-content">
+//                  <div class="content">
+//                      <h3 class="title">John Smith</h3>
+//                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.</p>
+//                      <a class="button" href="#">Read More</a>
+//                  </div>
+//              </div>
+//          </div>
+//          <div class="card column">
+//              <div class="card-image">
+//                  <figure class="image is-16by9">
+//                      <img src="/images/components/testimonials/4.jpg" alt="Image">
+//                  </figure>
+//              </div>
+//              <div class="card-content">
+//                  <div class="content">
+//                      <h3 class="title">John Smith</h3>
+//                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.</p>
+//                      <a class="button" href="#">Read More</a>
+//                  </div>
+//              </div>
+//          </div>
+//      </div>
+//      <div class="columns">
+//          <div class="card column">
+//              <div class="card-image">
+//                  <figure class="image is-16by9">
+//                      <img src="/images/components/testimonials/5.jpg" alt="Image">
+//                  </figure>
+//              </div>
+//              <div class="card-content">
+//                  <div class="content">
+//                      <h3 class="title">John Smith</h3>
+//                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.</p>
+//                      <a class="button" href="#">Read More</a>
+//                  </div>
+//              </div>
+//          </div>
+//          <div class="card column">
+//              <div class="card-image">
+//                  <figure class="image is-16by9">
+//                      <img src="/images/components/testimonials/6.jpg" alt="Image">
+//                  </figure>
+//              </div>
+//              <div class="card-content">
+//                  <div class="content">
+//                      <h3 class="title">John Smith</h3>
+//                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.</p>
+//                      <a class="button" href="#">Read More</a>
+//                  </div>
+//              </div>
+//          </div>
+//          <div class="card column">
+//              <div class="card-image">
+//                  <figure class="image is-16by9">
+//                      <img src="/images/components/testimonials/7.jpg" alt="Image">
+//                  </figure>
+//              </div>
+//              <div class="card-content">
+//                  <div class="content">
+//                      <h3 class="title">John Smith</h3>
+//                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.</p>
+//                      <a class="button" href="#">Read More</a>
+//                  </div>
+//              </div>
+//          </div>
+//          <div class="card column">
+//              <div class="card-image">
+//                  <figure class="image is-16by9">
+//                      <img src="/images/components/testimonials/8.jpg" alt="Image">
+//                  </figure>
+//              </div>
+//              <div class="card-content">
+//                  <div class="content">
+//                      <h3 class="title">John Smith</h3>
+//                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.</p>
+//                      <a class="button" href="#">Read More</a>
+//                  </div>
+//              </div>
+//          </div>
+//      </div>
+// </div>
+//
+// Styleguide 5.18
+.testimonial-grid {
+    padding: $baseline;
+    background: white;
+
+    h2 {
+        line-height: 1.5rem;
+        margin-bottom: $baseline;
+        margin-left: 10px;
+        text-transform: uppercase;
+        span {
+            
+            font-size: $size-4;
+            color: white;
+            background-color: black;
+            box-shadow: 10px 0 0 black, -10px 0 0 black;
+        }
+
+        @include tablet {
+            line-height: 2.3rem;
+            span {
+                font-size: $size-3;
+            }
+        }
+    }
+
+    .card {
+        margin-bottom: $baseline;
+        .card-content {
+            text-align: left;
+
+            p, a {
+                display: inline;
+            }
+            a {
+                font-size: 1rem;
+                float: right;
+                padding: 0 .25rem;
+                font-weight: 400;
+                background: black;
+                color: white;
+                border: solid 1px black;
+
+                &:hover {
+                    color: black;
+                    background: white;
+                }
+            }
+
+            h3 {
+                font-size: $size-5;
+                text-transform: uppercase;
+                margin-bottom: $baseline / 2;
+            }
+        }
+        .card-image {
+            img {
+                width: 100%;
+            }
+        }
     }
 }
