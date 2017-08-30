@@ -1,6 +1,7 @@
 // styleguide:ignore:start
 $baseline: 1.5rem !default;
 $root: '/styleguide' !default;
+$tablet: 768px;
 $fa-font-path:   "#{$root}/fonts/font-awesome" !default;
 // styleguide:ignore:end
 
@@ -16,6 +17,8 @@ $fa-font-path:   "#{$root}/fonts/font-awesome" !default;
 $color-torch-red: #FE1135;
 $color-bright-gray: #363D4E;
 $color-cyan: #31FEE8;
+$color-orange: #ffce4a;
+$color-purple: #a822ef;
 $text: $color-bright-gray;
 
 // Heading Font 
