@@ -8,10 +8,12 @@
 // <button class="is-link {$modifiers}">The quick brown fox <i class="fa fa-play" aria-hidden="true"></i></button>
 //
 // Styleguide 4.1
-button.is-link {
+button.is-link,
+a.is-link {
     background: transparent;
     border: 1px solid rgba(0,0,0,0.1);
     border-radius: 2px;
+    display: inline-block;
     text-decoration: underline;
     text-decoration-skip: ink;
     text-decoration-color: rgba(0,0,0,0.25);
