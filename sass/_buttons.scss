@@ -41,13 +41,13 @@ button.is-link {
 // .is-large - Large
 // 
 // markup:
-// <button class="button {$modifiers}">The quick brown fox</button>
+// <button class="button {$modifiers}">The quick brown fox</button><br />
 // <button class="button {$modifiers}">
 //     <span>The quick brown fox</span>
 //     <span class="icon">
 //         <i class="fa fa-arrow-right" aria-hidden="true"></i>
 //     </span>
-// </button>
+// </button><br />
 // <button class="button {$modifiers}">
 //     <span class="icon">
 //         <i class="fa fa-arrow-left" aria-hidden="true"></i>
@@ -83,26 +83,57 @@ button.is-link {
         text-decoration: underline;
         text-decoration-color: rgba($color-torch-red, 0.25);
     }
+
+    &.is-large {
+        font-size: $size-3;
+        .icon {
+            .fa {
+                font-size: 28px;
+            }
+        }
+        .icon:first-child:not(:last-child) {
+            margin-left: 0;
+            margin-right: $baseline / 2;
+        }
+    
+        .icon:last-child:not(:first-child) {
+            margin-right: 0;
+            margin-left: $baseline / 2;
+        }
+    }
+    
+    .icon:first-child:not(:last-child) {
+        margin-left: 0;
+        margin-right: $baseline / 4;
+    }
+
+    .icon:last-child:not(:first-child) {
+        margin-right: 0;
+        margin-left: $baseline / 4;
+    }
+
     form & {
         font-size: $size-6;
         padding: ($baseline / 4) ($baseline / 2);
         &.is-large {
             font-size: $size-4;
+            .icon:first-child:not(:last-child) {
+                margin-right: $baseline / 4;
+            }
+        
+            .icon:last-child:not(:first-child) {
+                margin-left: $baseline / 4;
+            }
         }
-    }
-
-    &.is-large {
-        font-size: $size-3;
-    }
+        .icon:first-child:not(:last-child) {
+            margin-left: calc((#{$baseline} / 4) - 1px);
+            margin-right: $baseline / 8;
+        }
     
-    .icon:first-child:not(:last-child) {
-        margin-left: calc((#{$baseline} / 4) - 1px);
-        margin-right: $baseline / 8;
-    }
-
-    .icon:last-child:not(:first-child) {
-        margin-right: calc((#{$baseline} / 4) - 1px);
-        margin-left: $baseline / 8;
+        .icon:last-child:not(:first-child) {
+            margin-right: calc((#{$baseline} / 4) - 1px);
+            margin-left: $baseline / 8;
+        }
     }
 }
 
