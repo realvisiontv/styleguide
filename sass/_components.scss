@@ -1293,12 +1293,12 @@
     }
 }
 
-// Testimonials Grid
+// Card Grid
 //
 // default - Default Hero
 //
 // markup:
-// <div class="testimonial-grid {$modifiers}">
+// <div class="card-grid {$modifiers}">
 //      <h2><span>More Testimonials</span></h2>
 //      <div class="columns">
 //          <div class="card column">
@@ -1419,7 +1419,7 @@
 // </div>
 //
 // Styleguide 5.18
-.testimonial-grid {
+.card-grid {
     padding: $baseline;
     background: white;
 
