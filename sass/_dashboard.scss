@@ -20,8 +20,8 @@
 //                     </div>
 //                     <h1>Looking Under the Hood Australia</h1>
 //                     <div class="buttons">
-//                         <button class="icon-button fa-info hide-text">More Information</button>
-//                         <button class="icon-button fa-plus hide-text">Add to My List</button>
+//                         <button class="icon-button hide-text"><i class="fa fa-info" aria-hidden="true"></i>More Information</button>
+//                         <button class="icon-button hide-text"><i class="fa fa-plus" aria-hidden="true"></i>Add to My List</button>
 //                     </div>
 //                 </div>
 //                 <div class="theme">Insight</div>
@@ -57,7 +57,7 @@
 //                     </div>
 //                     <h1>Quantitative Insight with a Discretionary Edge - Richard Excell</h1>
 //                     <div class="buttons">
-//                         <button class="icon-button fa-info hide-text">More Information</button>
+//                         <button class="icon-button hide-text"><i class="fa fa-info" aria-hidden="true"></i>More Information</button>
 //                     </div>
 //                 </div>
 //                 <div class="theme">Insight</div>
@@ -498,20 +498,20 @@
 //             <h2>Latest Video</h2>
 //             <h1>Looking under the hood gold</h1>
 //             <p>Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
-//             <button class="icon-button large hide-text fa-info">More information</button>
-//             <button class="icon-button invert large fa-play">24:45</button>
+//             <button class="icon-button large hide-text"><i class="fa fa-info" aria-hidden="true"></i>More information</button>
+//             <button class="icon-button invert large play"><i class="fa fa-play" aria-hidden="true"></i>24:45</button>
 //         </article>
 //         <article class="test2 column is-3 is-offset-0-5">
 //             <h2>Latest Video</h2>
 //             <h1>Looking under the hood gold</h1>
 //             <p>Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
-//             <button class="icon-button large hide-text fa-info">More information</button>
+//             <button class="icon-button large hide-text"><i class="fa fa-info" aria-hidden="true"></i>More information</button>
 //         </article>
 //         <article class="test2 column is-3 is-offset-0-5">
 //             <h2>Latest Video</h2>
 //             <h1>Looking under the hood gold</h1>
 //             <p>Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
-//             <button class="icon-button large hide-text fa-info">More information</button>
+//             <button class="icon-button large hide-text"><i class="fa fa-info" aria-hidden="true"></i>More information</button>
 //         </article>
 //     </div>
 // </section>
@@ -591,7 +591,7 @@
         margin-bottom: 0;
         position: relative;
  
-        .icon-button.fa-play {
+        .icon-button.play {
             position: absolute;
             bottom: $baseline;
             left: $baseline;
@@ -678,14 +678,14 @@
 //                 </div>
 //             </div>
 //             <p class="strap"><i class="fa fa-info"></i>Shane Oliver is one of Australia's most highly rated economists</p>
-//             <button class="icon-button invert large fa-plus">Watch Later</button>
+//             <button class="icon-button invert large plus"><i class="fa fa-plus" aria-hidden="true"></i>Watch Later</button>
 //         </div>
 //     </div>
 //     <div class="image child-full-height">
 //         <div class="column is-8 is-offset-4" style="background-image: url(https://lorempixel.com/1600/900/city)"></div>
 //     </div>
-//     <button class="icon-button invert large fa-play">01:24:45</button>
-//     <button class="icon-button fa-close hide-text large">Close more information</button>
+//     <button class="icon-button invert large play"><i class="fa fa-play" aria-hidden="true"></i>01:24:45</button>
+//     <button class="icon-button close hide-text large"><i class="fa fa-close" aria-hidden="true"></i>Close more information</button>
 // </section>
 // 
 // Styleguide 6.4
@@ -697,7 +697,7 @@
         margin: 0;
     }
 
-    .icon-button.fa-close {
+    .close {
         position: absolute;
         top: $baseline;
         right: $baseline;
@@ -710,7 +710,7 @@
         }
     }
 
-    .icon-button.fa-play {
+    .icon-button.play {
         position: absolute;
         bottom: $baseline;
         right: $baseline;

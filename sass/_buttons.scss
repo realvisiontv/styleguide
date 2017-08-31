@@ -266,10 +266,6 @@ a.button {
 
 // Icon button
 // 
-// .fa-info - More information
-// .fa-plus - Add
-// .fa-play - Play
-// .fa-close - Close
 // .hide-text - Hidden label
 // .large - Larger version
 // .invert - Inverted colour
@@ -277,7 +273,7 @@ a.button {
 // :focus - Focus state
 // 
 // markup:
-// <button class="icon-button {$modifiers}">Some text</button>
+// <button class="icon-button {$modifiers}"><i class="fa fa-close" aria-hidden="true"></i>Some text</button>
 //
 // Styleguide 4.5
 .icon-button {
@@ -292,11 +288,10 @@ a.button {
     padding: 0 10px 0 $size+10px;
     line-height: $size;
 
-    &:before {
+    .fa {
         background: grey;
         border: 2px solid grey;
         color: white;
-        content: 'v';
         display: flex;
         height: $size;
         width: $size;
@@ -309,7 +304,6 @@ a.button {
         font-size: 14px;
         transition: background 0.2s, color 0.2s;
         text-indent: 0;
-        @extend .fa;
     }
 
     &.large {
@@ -317,7 +311,7 @@ a.button {
         padding-left: $large+10px;
         line-height: $large;
 
-        &:before {
+        .fa {
             height: $large;
             width: $large;
             font-size: 24px;
@@ -339,36 +333,21 @@ a.button {
         background: grey;
         color: white;
 
-        &:before {
+        .fa {
             background: white;
             border: 2px solid white;
             color: grey;
         }
     }
 
-    &.fa-info:before {
-        @extend .fa-info;
-    }
-
-    &.fa-plus:before {
-        @extend .fa-plus;
-    }
-
-    &.fa-play:before {
-        @extend .fa-play;
-    }
-
-    &.fa-close:before {
-        @extend .fa-window-close;
-    }
-
     &:hover,
     &:focus {
         text-decoration: underline;
 
-        &:before {
+        .fa {
             background: transparent;
             border-color: white;
+            color: white;
         }
     }
 }
