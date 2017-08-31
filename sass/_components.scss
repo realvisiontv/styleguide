@@ -1639,7 +1639,6 @@
 //
 // default - Default
 // .full-width - Play block with the 'play' text full width in desktop view
-// .hide-heading - Play block with the main heading hidden
 //
 // markup:
 // <div class="play-block {$modifiers}">
@@ -1661,16 +1660,13 @@
     background: url('#{$root}/images/components/product-play-block-bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    position: relative;
+    padding: $baseline;
+    text-transform: uppercase;
     
     a {
         text-decoration: none;
     }
-    
-    position: relative;
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding: $baseline;
-    text-transform: uppercase;
     
     @include tablet {
         padding: $baseline ($baseline * 2);
@@ -1700,7 +1696,7 @@
     }
     .play-block__play {
         display: inline-flex;
-        color: $color-cyan;;
+        color: $color-cyan;
 
         button {
             margin-left: 10px;
@@ -1717,12 +1713,6 @@
                     background: transparent;
                 }
             }
-        }
-    }
-
-    &.hide-heading {
-        h2 {
-            display: none;
         }
     }
 
