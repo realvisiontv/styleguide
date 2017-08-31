@@ -130,6 +130,15 @@
             transition-delay: $transition-out-delay;
             z-index: 1;
         }
+
+        &.is-6by5 {
+            background: radial-gradient(circle at 50% 75%, lighten(#3b4249, 20%), #3b4249);
+            padding-bottom: 6 / 5 * 100%;
+            img {
+                bottom: 0;
+                position: absolute;
+            }
+        }
     }
 
     img {
