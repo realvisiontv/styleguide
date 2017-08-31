@@ -40,6 +40,7 @@ a.is-link {
 // default  - Default
 // :hover   - Hover state
 // :focus   - Focus state
+// .disabled - Disabled state
 // .is-large - Large
 // 
 // markup:
@@ -102,6 +103,18 @@ a.is-link {
         }
     }
     
+    &.disabled {
+        background: lightgrey;
+        cursor: default;
+        text-decoration: none;
+        &:hover, &:focus {
+            background: lightgrey;
+            border-color: transparent;
+            color: white;
+            text-decoration: none;
+        }
+    }
+
     .icon:first-child:not(:last-child) {
         margin-left: 0;
         margin-right: $baseline / 4;
