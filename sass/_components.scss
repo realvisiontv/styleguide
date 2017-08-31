@@ -1634,3 +1634,101 @@
         }
     }
 }
+
+// Product Play Block
+//
+// default - Default
+// .full-width - Play block with the 'play' text full width in desktop view
+// .hide-heading - Play block with the main heading hidden
+//
+// markup:
+// <div class="play-block {$modifiers}">
+//    <a href="#">
+//      <h2><span>They all used macro-analysis. That’s why you should care about this kind of research.</span></h2>
+//      <div class="columns is-mobile">
+//          <div class="column is-6-desktop is-12-mobile is-paddingless play-block_container">
+//              <div class="play-block_body">How to use Macro Analysis to Gain an Edge press
+//                  <span class="play-block__play">play <button class="icon-button fa-play hide-text">Play</button></span>
+//              </div>
+//          </div>
+//      </div>
+//    </a>
+// </div>
+//
+// Styleguide 5.20
+.play-block {
+    
+    background: url('#{$root}/images/components/product-play-block-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    a {
+        text-decoration: none;
+    }
+    
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: $baseline;
+    text-transform: uppercase;
+    
+    @include tablet {
+        padding: $baseline ($baseline * 2);
+    }
+    
+    h2, h3 {
+        span {
+            margin: 0;
+            font-weight: 800;
+        }
+    }
+    h2 {
+        margin-bottom: $baseline * 2;
+        line-height: 2.3rem;
+        span {   
+            font-size: $size-3;
+            color: black;
+            background-color: white;
+            box-shadow: 10px 0 0 white, -10px 0 0 white;
+        }
+    }
+    .play-block_body {
+        font-size: $size-2;
+        font-weight: 800;
+        color: #fff;
+        line-height: 3rem;
+    }
+    .play-block__play {
+        display: inline-flex;
+        color: $color-cyan;;
+
+        button {
+            margin-left: 10px;
+
+            &:before {
+                color: black;
+                background: $color-cyan;
+                border-color: $color-cyan;
+            }
+
+            &:hover {
+                &:before {
+                    color: white;
+                    background: transparent;
+                }
+            }
+        }
+    }
+
+    &.hide-heading {
+        h2 {
+            display: none;
+        }
+    }
+
+    &.full-width {
+        .play-block_container {
+            width: 100%;
+        }
+    }
+}
