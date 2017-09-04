@@ -560,7 +560,7 @@
                 transform: rotate($rotation) scale($scaleFactorWideColumn);
                 &:after {
                     background: linear-gradient(to bottom, black 23%, rgba(0, 0, 255, 0) 77%);
-                    transform: translate(-3%, -13%) rotate(-$rotation);
+                    transform: rotate(-$rotation) translate(-4%, 13%) ;
                 }
             }
 
@@ -579,16 +579,14 @@
             position: absolute;
             top: 0;
             left: 0;
-            transform: translate(-31%, 4%) rotate(-$rotation);
-        }
-
-        .is-2-5 img {
+            transform: rotate(-$rotation) scale(#{1/$scaleFactorNarrowColumn}) translate(-62%, -46.3%);
             height: 100%;
             max-width: none;
+            width: auto;
         }
             
         .is-7 img {
-            transform: translate(-3%, -13%) rotate(-$rotation);
+            transform: rotate(-$rotation) scale(#{1/$scaleFactorWideColumn}) translate(-16%, -11.2%) ;
         }
     }
 
