@@ -264,7 +264,7 @@
     }
 
     .pullout-block__content {
-        background: url('#{$root}/images/components/crinkled-paper-effect.jpg');
+        background: url('#{$root}/images/components/crinkled-paper-effect.jpg') no-repeat center;
         background-size: cover;
         background-repeat: no-repeat;
         padding: $baseline ($baseline * 2);
@@ -275,6 +275,8 @@
             margin-bottom: $baseline;
 
             @include mobile {
+                font-size: $size-5;
+                font-weight: normal;
                 margin-bottom: 0;
             }
         }
@@ -353,7 +355,6 @@
 // 
 // Styleguide 5.8
 .pullout-block__list {
-    font-weight: 800;
 
     @include mobile {
         &:before {
@@ -414,7 +415,7 @@
 // 
 // Styleguide 5.9
 .pullout-block__text {
-    font-weight: 800;
+    
 }
 
 // Rating
@@ -1539,7 +1540,7 @@
 //
 // Styleguide 5.19
 .product-links-block {
-    background: url('#{$root}/images/components/product-links-block_bg_mobile.jpg');
+    background: url('#{$root}/images/components/product-links-block_bg_mobile.jpg') no-repeat center;
     background-size: cover;
     padding: $baseline;
     text-transform: uppercase;
@@ -1547,7 +1548,7 @@
     text-align: center;
 
     @include tablet {
-        background: url('#{$root}/images/components/product-links-block_bg.jpg');
+        background: url('#{$root}/images/components/product-links-block_bg.jpg') no-repeat center;
     }
 
     .product-link {
@@ -1666,7 +1667,7 @@
 // Styleguide 5.20
 .play-block {
     
-    background: url('#{$root}/images/components/product-play-block-bg.jpg');
+    background: url('#{$root}/images/components/product-play-block-bg.jpg') no-repeat center;
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
