@@ -783,7 +783,7 @@
 // Styleguide 5.13
 .product-hero {
     &.product-hero--3x1 {
-        background: url('#{$root}/images/components/product-hero-bg.png');
+        background: url('#{$root}/images/components/product-hero-bg.png') no-repeat center;
 
         h2 {
             margin-bottom: $baseline;
@@ -795,7 +795,7 @@
             @include tablet {
                 padding-bottom: $baseline / 2;
                 .product-hero__cell {
-                    margin-bottom: $baseline;
+                    margin-bottom: $baseline * 2;
                 }
             }
         }
@@ -803,6 +803,7 @@
     position: relative;
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
     padding: $baseline;
     text-transform: uppercase;
 
@@ -827,35 +828,35 @@
     }
     h2 {
         
-        line-height: 1.5rem;
+        line-height: 3.1rem;
         span {
             
-            font-size: $size-4;
+            font-size: $size-2;
             color: black;
             background-color: white;
             box-shadow: 10px 0 0 white, -10px 0 0 white;
         }
 
         @include tablet {
-            line-height: 3.1rem;
+            line-height: 3.4rem;
             span {
-                font-size: $size-2;
+                font-size: $size-1;
             }
         }
     }
     h3 {
-        line-height: 1.65rem;
+        line-height: 2.9rem;
         span {
-            font-size: $size-4;
+            font-size: $size-3;
             color: white;
             background-color: black;
             box-shadow: 10px 0 0 black, -10px 0 0 black;
         }
 
         @include tablet {
-            line-height: 2.3rem;
+            line-height: 3.2rem;
             span {
-                font-size: $size-3;
+                font-size: $size-2;
             }
         }
     }
@@ -866,7 +867,7 @@
         line-height: 1.45rem;
         span {
             font-weight: 800;
-            font-size: $size-6;
+            font-size: $size-5;
             color: white;
             background-color: black;
             box-shadow: 10px 0 0 black, -10px 0 0 black;
@@ -878,7 +879,7 @@
         @include tablet {
             line-height: 1.75rem;
             span {
-                font-size: $size-5;
+                font-size: $size-4;
             }
             br {
                 display: block;
@@ -886,6 +887,7 @@
         }
     }
     .product-hero__sub-head {
+        line-height: 2.9rem;
         span {
             color: black;
             background-color: white;
@@ -1003,7 +1005,7 @@
 //
 // Styleguide 5.14
 .product-hero--3x2 {
-    background: url('#{$root}/images/components/product-hero-bg-2.jpg');
+    background: url('#{$root}/images/components/product-hero-bg-2.jpg') no-repeat center;
     background-size: cover;
     background-repeat: no-repeat;
     padding: $baseline;
@@ -1074,7 +1076,7 @@
 //
 // Styleguide 5.15
 .product-hero--2x2 {
-    background: url('#{$root}/images/components/product-hero-bg-3.jpg');
+    background: url('#{$root}/images/components/product-hero-bg-3.jpg') no-repeat center;
     background-size: cover;
     background-repeat: no-repeat;
     padding: $baseline;
@@ -1167,7 +1169,7 @@
 //
 // Styleguide 5.16
 .product-hero--2x3 {
-    background: url('#{$root}/images/components/product-hero-bg-4.jpg');
+    background: url('#{$root}/images/components/product-hero-bg-4.jpg') no-repeat center;
     background-size: cover;
     background-repeat: no-repeat;
     text-align: left;
@@ -1189,10 +1191,18 @@
         }
     }
 
+    h3 {
+        line-height: 2.6rem;
+
+        @include tablet {
+            line-height: 2.8rem;
+        }
+    }
+
     p {
-        line-height: 1rem;
+        line-height: 1.4rem;
         span {
-            font-size: $size-7;
+            font-size: $size-6;
         }
     }
 
@@ -1228,7 +1238,7 @@
 //
 // Styleguide 5.17
 .product-hero--descriptive {
-    background: url('#{$root}/images/components/product-hero-bg-5.jpg');
+    background: url('#{$root}/images/components/product-hero-bg-5.jpg') no-repeat center;
     background-size: cover;
     background-repeat: no-repeat;
     padding: $baseline;
