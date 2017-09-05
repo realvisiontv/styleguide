@@ -140,6 +140,15 @@
             }
         }
     }
+    
+    &.column {
+        .image:after {
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    }
 
     img {
         position: relative;
@@ -211,7 +220,7 @@
     }
 
     .theme {
-        background: grey;
+        background: $color-spruce;
         color: #fff;
         text-transform: uppercase;
         position: absolute;
@@ -246,8 +255,8 @@
             padding-top: 5px;
         }
     
-        @supports (-webkit-line-clamp: 2) {
-            -webkit-line-clamp: 2;
+        @supports (-webkit-line-clamp: 3) {
+            -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
             overflow: hidden;
             display: -webkit-box;
@@ -532,71 +541,85 @@
     $scaleFactorWideColumn: 1.52;
     // Scale calculation - cos(θ) + max{(W/H),(H/W)} * sin(θ)
 
-    .images {
-        overflow: hidden;
-        height: 548px;
-        margin-bottom: 0;
+    @include mobile {
+        width: 100%;
+        overflow: scroll;
+        padding: 0;
+        scroll-snap-type: mandatory;
+    }
 
-        article {
-            background: grey;
-            transform: rotate($rotation);
+    @include tablet {
+        .images {
             overflow: hidden;
-            position: relative;
-            transform: rotate($rotation) scale($scaleFactorNarrowColumn);
+            height: 548px;
+            margin-bottom: 0;
 
-            &:after {
-                content: "";
-                background: linear-gradient(to top, black 17%, rgba(0, 0, 255, 0) 45%);
-                display: block;
+            article {
+                background: grey;
+                overflow: hidden;
+                position: relative;
+                transform: rotate($rotation) scale($scaleFactorNarrowColumn);
+
+                &:after {
+                    content: "";
+                    background: linear-gradient(to top, black 17%, rgba(0, 0, 255, 0) 45%);
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    transform: translate(-31%, 4%) rotate(-$rotation) scaleX(2);
+                }
+
+                &.is-7 {
+                    transform: rotate($rotation) scale($scaleFactorWideColumn);
+                    &:after {
+                        background: linear-gradient(to bottom, black 23%, rgba(0, 0, 255, 0) 77%);
+                        transform: rotate(-$rotation) translate(-4%, 13%) ;
+                    }
+                }
+
+                &:last-child {
+                    transform: translateX(40%) rotate($rotation) scale($scaleFactorNarrowColumn);
+                }
+
+                &:hover {
+                    img {
+                        opacity: 0;
+                    }
+                }
+            }
+
+            img {
                 position: absolute;
                 top: 0;
-                bottom: 0;
                 left: 0;
-                right: 0;
-                transform: translate(-31%, 4%) rotate(-$rotation) scaleX(2);
+                transform: rotate(-$rotation) scale(#{1/$scaleFactorNarrowColumn}) translate(-62%, -46.3%);
+                height: 100%;
+                max-width: none;
+                width: auto;
             }
-
-            &.is-7 {
-                transform: rotate($rotation) scale($scaleFactorWideColumn);
-                &:after {
-                    background: linear-gradient(to bottom, black 23%, rgba(0, 0, 255, 0) 77%);
-                    transform: rotate(-$rotation) translate(-4%, 13%) ;
-                }
+                
+            .is-7 img {
+                transform: rotate(-$rotation) scale(#{1/$scaleFactorWideColumn}) translate(-16%, -11.2%) ;
             }
-
-            &:last-child {
-                transform: translateX(40%) rotate($rotation) scale($scaleFactorNarrowColumn);
-            }
-
-            &:hover {
-                img {
-                    opacity: 0;
-                }
-            }
-        }
-
-        img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            transform: rotate(-$rotation) scale(#{1/$scaleFactorNarrowColumn}) translate(-62%, -46.3%);
-            height: 100%;
-            max-width: none;
-            width: auto;
-        }
-            
-        .is-7 img {
-            transform: rotate(-$rotation) scale(#{1/$scaleFactorWideColumn}) translate(-16%, -11.2%) ;
         }
     }
 
     .content {
         color: white;
         overflow: hidden;
-        height:548px;
-        margin-top: -548px;
-        margin-bottom: 0;
+        margin: 0;
         position: relative;
+        @include tablet {
+            height: 548px;
+            margin-top: -548px;
+        }
+
+        a {
+            color: white;
+        }
  
         .icon-button.play {
             position: absolute;
@@ -611,6 +634,10 @@
 
         .is-5 {
             padding: $baseline;
+
+            h1 {
+                -webkit-line-clamp: 3;
+            }
         }
 
         .is-3 {
@@ -649,6 +676,78 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
             display: -webkit-box;
+        }
+        
+        @include mobile {
+            margin-top: 0;
+            width: 300%;
+            
+            article:after {
+                content: "";
+                background: linear-gradient(to top, black calc(40px + (2.5% * 16/9)), rgba(0, 0, 255, 0) calc(70px + (2.5% * 16/9))), linear-gradient(to right, black 0, rgba(0, 0, 255, 0) 50%);
+                background: linear-gradient(to top, #1f2732 calc(40px + (5% * 16/9)), #1f2732 calc(40px + (5% * 16/9)), transparent calc(41px + (5% * 16/9))), linear-gradient(to right, black 0, rgba(0, 0, 255, 0) 75%);
+                display: block;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+
+            .column {
+                float: left;
+                padding: 0;
+                position: relative;
+                width: (100% / 3);
+            }
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 0;
+            }
+
+            a {
+                display: block;
+                height: 0;
+                padding: ($baseline / 2) ($baseline / 2) calc(61.25% - (#{$baseline} / 2) + 40px);
+                position: relative;
+                z-index: 1;
+            }
+
+            h1,
+            .is-3 h1 {
+                font-size: $size-3;
+                -webkit-line-clamp: 4;
+            }
+
+            h2 {
+                font-size: $size-6;
+            }
+
+            p {
+                display: none;
+            }
+
+            .icon-button.info,
+            .icon-button.play {
+                position: absolute;
+                bottom: (2.5% * 16/9);
+                left: 2.5%;
+                width: 45%;
+            }
+            
+            .icon-button.info {
+                left: auto;
+                right: 2.5%;
+                margin-right: 0;
+                
+                i {
+                    width: 100%;
+                }
+            }
         }
     }
 }
