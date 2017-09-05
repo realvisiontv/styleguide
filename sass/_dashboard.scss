@@ -541,10 +541,15 @@
     $scaleFactorWideColumn: 1.52;
     // Scale calculation - cos(θ) + max{(W/H),(H/W)} * sin(θ)
 
+    padding: 0;
+
+    @include desktop {
+        padding: $baseline;
+    }
+
     @include mobile {
         width: 100%;
         overflow: scroll;
-        padding: 0;
         scroll-snap-type: mandatory;
     }
 
