@@ -264,9 +264,10 @@
     }
 
     .pullout-block__content {
-        background: url('#{$root}/images/components/crinkled-paper-effect.jpg') no-repeat center;
+        background-image: url('#{$root}/images/components/crinkled-paper-effect.jpg');
         background-size: cover;
         background-repeat: no-repeat;
+        background-position: center;
         padding: $baseline ($baseline * 2);
 
         .pullout-block__content-heading {
@@ -784,7 +785,7 @@
 // Styleguide 5.13
 .product-hero {
     &.product-hero--3x1 {
-        background: url('#{$root}/images/components/product-hero-bg.png') no-repeat center;
+        background-image: url('#{$root}/images/components/product-hero-bg.png');
 
         h2 {
             margin-bottom: $baseline;
@@ -1006,8 +1007,9 @@
 //
 // Styleguide 5.14
 .product-hero--3x2 {
-    background: url('#{$root}/images/components/product-hero-bg-2.jpg') no-repeat center;
+    background-image: url('#{$root}/images/components/product-hero-bg-2.jpg');
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     padding: $baseline;
 
@@ -1077,7 +1079,8 @@
 //
 // Styleguide 5.15
 .product-hero--2x2 {
-    background: url('#{$root}/images/components/product-hero-bg-3.jpg') no-repeat center;
+    background-image: url('#{$root}/images/components/product-hero-bg-3.jpg');
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     padding: $baseline;
@@ -1170,7 +1173,8 @@
 //
 // Styleguide 5.16
 .product-hero--2x3 {
-    background: url('#{$root}/images/components/product-hero-bg-4.jpg') no-repeat center;
+    background-image: url('#{$root}/images/components/product-hero-bg-4.jpg');
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     text-align: left;
@@ -1239,7 +1243,8 @@
 //
 // Styleguide 5.17
 .product-hero--descriptive {
-    background: url('#{$root}/images/components/product-hero-bg-5.jpg') no-repeat center;
+    background-image: url('#{$root}/images/components/product-hero-bg-5.jpg');
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     padding: $baseline;
@@ -1540,15 +1545,17 @@
 //
 // Styleguide 5.19
 .product-links-block {
-    background: url('#{$root}/images/components/product-links-block_bg_mobile.jpg') no-repeat center;
+    background-image: url('#{$root}/images/components/product-links-block_bg_mobile.jpg');
+    background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
     padding: $baseline;
     text-transform: uppercase;
     color: white;
     text-align: center;
 
     @include tablet {
-        background: url('#{$root}/images/components/product-links-block_bg.jpg') no-repeat center;
+        background-image: url('#{$root}/images/components/product-links-block_bg.jpg');
     }
 
     .product-link {
@@ -1667,7 +1674,8 @@
 // Styleguide 5.20
 .play-block {
     
-    background: url('#{$root}/images/components/product-play-block-bg.jpg') no-repeat center;
+    background-image: url('#{$root}/images/components/product-play-block-bg.jpg');
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
