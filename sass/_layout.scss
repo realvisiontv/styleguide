@@ -41,7 +41,9 @@
     width: 20.83%;
 }
 .is-offset-0-5 {
-    margin-left: 4.125%;
+    @include tablet {
+        margin-left: 4.125%;
+    }
 }
 .child-full-height {
     display: flex;
