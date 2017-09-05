@@ -1740,3 +1740,23 @@
         }
     }
 }
+
+// Spacer Row
+//
+// An empty colored block to separate components
+//
+// default - Default
+//
+// markup:
+// <div class="spacer-row">
+// </div>
+//
+// Styleguide 5.21
+.spacer-row {
+    padding: .5rem;
+    background-color: #363e4e;
+
+    @include tablet {
+        padding: 1rem;
+    }
+}
