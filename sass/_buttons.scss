@@ -289,8 +289,8 @@ a.button {
     line-height: $size;
 
     .fa {
-        background: grey;
-        border: 2px solid grey;
+        background: #363D4E;
+        border: 2px solid #363D4E;
         color: white;
         display: flex;
         height: $size;
@@ -330,13 +330,13 @@ a.button {
     }
 
     &.invert {
-        background: grey;
+        background: #363D4E;
         color: white;
 
         .fa {
             background: white;
             border: 2px solid white;
-            color: grey;
+            color: #363D4E;
         }
     }
 

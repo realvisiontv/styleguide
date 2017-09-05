@@ -686,6 +686,10 @@
         @include mobile {
             margin-top: 0;
             width: 300%;
+
+            .columns {
+                margin: 0;
+            }
             
             article:after {
                 content: "";
