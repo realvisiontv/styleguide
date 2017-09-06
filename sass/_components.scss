@@ -28,6 +28,7 @@
 
     .icon-star {
         width: 0.5rem;
+        height: 0.5rem;
         path {
             fill: $color-torch-red;
         }
@@ -62,6 +63,7 @@
 
         .icon-star {
             width: 1.5rem;
+            height: 1.5rem;
         }
     }
 }
@@ -240,7 +242,7 @@
 //          </div>
 //      </div>
 // </div>
-// 
+//
 // Styleguide 5.7
 .pullout-block {
     padding: $baseline;
@@ -331,7 +333,7 @@
             color: #6e7789;
             display: inline-block;
         }
-        
+
         hr {
             width: 50%;
             margin-left: 20px;
@@ -354,7 +356,7 @@
 //          </ul>
 //      </div>
 // </div>
-// 
+//
 // Styleguide 5.8
 .pullout-block__list {
 
@@ -391,7 +393,7 @@
             }
 
             @include tablet {
-                
+
                 &:before {
                     content: '';
                     background: $color-torch-red;
@@ -414,10 +416,10 @@
 //          <p>With Macro Insiders, two of the world's top macro-researchers, <em>Raoul Pal</em> and <em>Julian Brigden</em>, bring you a lever of elite macro analysis that was previously only available to large banks, hedge funds and wealthy families.</p>
 //      </div>
 // </div>
-// 
+//
 // Styleguide 5.9
 .pullout-block__text {
-    
+
 }
 
 // Rating
@@ -830,10 +832,10 @@
         }
     }
     h2 {
-        
+
         line-height: 3.1rem;
         span {
-            
+
             font-size: $size-2;
             color: black;
             background-color: white;
@@ -866,7 +868,7 @@
     p {
         margin-top: 0;
         margin-bottom: 0;
-        
+
         line-height: 1.45rem;
         span {
             font-weight: 800;
@@ -1085,7 +1087,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     padding: $baseline;
-    
+
     .hero-cta__container {
         margin-top: $baseline / 3;
     }
@@ -1262,13 +1264,13 @@
     p {
         line-height: 1.45rem;
         span {
-            
+
             font-size: $size-6;
         }
 
         @include tablet {
             line-height: 2rem;
-            
+
             span {
                 font-size: $size-4;
             }
@@ -1459,7 +1461,7 @@
         margin-left: 10px;
         text-transform: uppercase;
         span {
-            
+
             font-size: $size-4;
             color: white;
             background-color: black;
@@ -1674,7 +1676,7 @@
 //
 // Styleguide 5.20
 .play-block {
-    
+
     background-image: url('#{$root}/images/components/product-play-block-bg.jpg');
     background-position: center;
     background-size: cover;
@@ -1682,15 +1684,15 @@
     position: relative;
     padding: $baseline;
     text-transform: uppercase;
-    
+
     a {
         text-decoration: none;
     }
-    
+
     @include tablet {
         padding: $baseline ($baseline * 2);
     }
-    
+
     h2, h3 {
         span {
             margin: 0;
@@ -1700,7 +1702,7 @@
     h2 {
         margin-bottom: $baseline * 2;
         line-height: 2.3rem;
-        span {   
+        span {
             font-size: $size-3;
             color: black;
             background-color: white;
@@ -1775,11 +1777,11 @@
 //              <div class="product-listing--content">
 //                  <h2><span>Real Vision Television</span></h2>
 //                  <h3>Refreshingly Honest Insight</h3>
-//                  <p>Have a "holy shit" moment with daily videos covering thought-provoking 
+//                  <p>Have a "holy shit" moment with daily videos covering thought-provoking
 //                      investment ideas that will make you think differently and invest better.
 //                      Real Vision has been described as "TED Talks for Finance."
-//                      Watch and learn as the world's greatest investment pros discuss the 
-//                      financial topics that really matter. If you manage money and 
+//                      Watch and learn as the world's greatest investment pros discuss the
+//                      financial topics that really matter. If you manage money and
 //                      you're tired of the bias and clickbait that's out there...you need this.
 //                  </p>
 //              </div>
@@ -1797,7 +1799,7 @@
 
     h2, h3 {
         text-transform: uppercase;
-        
+
         span {
             margin: 0;
             font-weight: 800;
@@ -1808,7 +1810,7 @@
         line-height: 1.5rem;
         margin-bottom: $baseline;
         span {
-            
+
             font-size: $size-4;
             color: white;
             background-color: black;
