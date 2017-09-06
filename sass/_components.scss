@@ -1760,3 +1760,73 @@
         padding: 1rem;
     }
 }
+
+// Product Listing Item
+//
+// A single instance of a product listing item
+//
+// default - Default
+//
+// markup:
+// <div class="product-listing--item">
+//      <div class="columns is-tablet is-multiline">
+//          <div class="column is-7-desktop is-12-tablet">
+//              <div class="product-listing--content">
+//                  <h2><span>Real Vision Television</span></h2>
+//                  <h3>Refreshingly Honest Insight</h3>
+//                  <p>Have a "holy shit" moment with daily videos covering thought-provoking 
+//                      investment ideas that will make you think differently and invest better.
+//                      Real Vision has been described as "TED Talks for Finance."
+//                      Watch and learn as the world's greatest investment pros discuss the 
+//                      financial topics that really matter. If you manage money and 
+//                      you're tired of the bias and clickbait that's out there...you need this.
+//                  </p>
+//              </div>
+//              <a href="#" class="button">Try it free for 7 days</a>
+//          </div>
+//          <div class="column is-5-desktop is-12-tablet has-text-centered">
+//              <img src="/images/components/product-listing-img.jpg"/>
+//          </div>
+//      </div>
+// </div>
+//
+// Styleguide 5.22
+.product-listing--item {
+    padding: $baseline;
+
+    h2, h3 {
+        text-transform: uppercase;
+        
+        span {
+            margin: 0;
+            font-weight: 800;
+        }
+    }
+    h2 {
+        margin-left: 10px;
+        line-height: 1.5rem;
+        margin-bottom: $baseline;
+        span {
+            
+            font-size: $size-4;
+            color: white;
+            background-color: black;
+            box-shadow: 10px 0 0 black, -10px 0 0 black;
+        }
+
+        @include tablet {
+            line-height: 2.3rem;
+            span {
+                font-size: $size-3;
+            }
+        }
+    }
+    h3 {
+        font-size: $size-6;
+        margin-bottom: $baseline / 2;
+    }
+
+    .button {
+        padding: .25rem 1rem;
+    }
+}
