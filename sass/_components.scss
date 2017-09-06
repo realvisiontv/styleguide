@@ -1797,6 +1797,10 @@
 .product-listing--item {
     padding: $baseline;
 
+    @include tablet {
+        padding: $baseline $baseline * 2;
+    }
+
     h2, h3 {
         text-transform: uppercase;
 
@@ -1830,7 +1834,12 @@
     }
 
     .button {
+        font-size: $size-6;
         padding: .25rem 1rem;
+
+        @include tablet {
+            font-size: $size-5;
+        }
     }
 }
 
