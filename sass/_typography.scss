@@ -143,6 +143,7 @@ blockquote {}
 // :hover   - Hover state
 // :focus   - Focus state
 // :active  - Active state
+// .disabled - Disable state
 // 
 // markup:
 // <a href="#" class="{$modifiers}">Quo modo autem philosophus loquitur?</a>
@@ -160,6 +161,15 @@ a {
     }
     &:active {
         text-decoration-color: rgba($link-active, 0.25);
+    }
+    &.disabled {
+        color: $link;
+        cursor: default;
+        opacity: 0.5;
+        text-decoration: none;
+        &:hover, &:focus, &:active {
+            color: $link;
+        }
     }
 }
 

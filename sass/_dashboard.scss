@@ -20,8 +20,8 @@
 //                     </div>
 //                     <h1>Looking Under the Hood Australia</h1>
 //                     <div class="buttons">
-//                         <button class="icon-button fa-info hide-text">More Information</button>
-//                         <button class="icon-button fa-plus hide-text">Add to My List</button>
+//                         <button class="icon-button hide-text"><i class="fa fa-info" aria-hidden="true"></i>More Information</button>
+//                         <button class="icon-button hide-text"><i class="fa fa-plus" aria-hidden="true"></i>Add to My List</button>
 //                     </div>
 //                 </div>
 //                 <div class="theme">Insight</div>
@@ -34,11 +34,7 @@
 //         </a>
 //     </article>
 //     <article class="column content-tile loading">
-//         <div class="image">
-//             <div class="spinner-container">
-//                 <div class="spinner"></div>
-//             </div>
-//         </div>
+//         <div class="image"></div>
 //     </article>
 //     <article class="column content-tile">
 //         <a href="#">
@@ -57,7 +53,7 @@
 //                     </div>
 //                     <h1>Quantitative Insight with a Discretionary Edge - Richard Excell</h1>
 //                     <div class="buttons">
-//                         <button class="icon-button fa-info hide-text">More Information</button>
+//                         <button class="icon-button hide-text"><i class="fa fa-info" aria-hidden="true"></i>More Information</button>
 //                     </div>
 //                 </div>
 //                 <div class="theme">Insight</div>
@@ -78,6 +74,13 @@
     $transition-out-speed: 0.5s;
     $transition-out-delay: 0.5s;
 
+    
+    @keyframes loading {
+        to {
+            background-position: 200% 0, 0 0, 0 0, 0 0;
+        }
+    }
+
     overflow: hidden;
     position: relative;
 
@@ -85,6 +88,23 @@
         display: block;
         content: '';
         width: 100%;
+    }
+
+    &.loading {
+        background-image: 
+            linear-gradient(120deg, transparent 40%, rgba(lightgray, 0.5) 58%, rgba(lightgray, 0.5) 62%, transparent 82%),
+            linear-gradient(transparent 0, lightgray 0), 
+            linear-gradient(transparent 0, white 0), 
+            linear-gradient(lightgray 100%, transparent 0)
+        ;
+        background-repeat: no-repeat;
+        background-size: 200px 100%, 100% 60%, 66% 100%, 100% 100%;
+        background-position: -150% 0, 0 0, 0 0, 0 0;
+        animation: loading 1.5s infinite;
+
+        .image {
+            background: transparent;
+        }
     }
 
     .spinner-container {
@@ -113,7 +133,7 @@
     }
 
     .image {
-        background: lightgrey;
+        background: lightgray;
         height: 0;
         padding-bottom: 2 / 3 * 100%;
         &:after {
@@ -129,6 +149,24 @@
             transition: opacity 0.52s;
             transition-delay: $transition-out-delay;
             z-index: 1;
+        }
+
+        &.is-6by5 {
+            background: radial-gradient(circle at 50% 75%, lighten(#3b4249, 20%), #3b4249);
+            padding-bottom: 6 / 5 * 100%;
+            img {
+                bottom: 0;
+                position: absolute;
+            }
+        }
+    }
+    
+    &.column {
+        .image:after {
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
         }
     }
 
@@ -202,7 +240,7 @@
     }
 
     .theme {
-        background: grey;
+        background: $color-spruce;
         color: #fff;
         text-transform: uppercase;
         position: absolute;
@@ -237,8 +275,8 @@
             padding-top: 5px;
         }
     
-        @supports (-webkit-line-clamp: 2) {
-            -webkit-line-clamp: 2;
+        @supports (-webkit-line-clamp: 3) {
+            -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
             overflow: hidden;
             display: -webkit-box;
@@ -498,20 +536,20 @@
 //             <h2>Latest Video</h2>
 //             <h1>Looking under the hood gold</h1>
 //             <p>Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
-//             <button class="icon-button large hide-text fa-info">More information</button>
-//             <button class="icon-button invert large fa-play">24:45</button>
+//             <button class="icon-button large hide-text"><i class="fa fa-info" aria-hidden="true"></i>More information</button>
+//             <button class="icon-button invert large play"><i class="fa fa-play" aria-hidden="true"></i>24:45</button>
 //         </article>
 //         <article class="test2 column is-3 is-offset-0-5">
 //             <h2>Latest Video</h2>
 //             <h1>Looking under the hood gold</h1>
 //             <p>Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
-//             <button class="icon-button large hide-text fa-info">More information</button>
+//             <button class="icon-button large hide-text"><i class="fa fa-info" aria-hidden="true"></i>More information</button>
 //         </article>
 //         <article class="test2 column is-3 is-offset-0-5">
 //             <h2>Latest Video</h2>
 //             <h1>Looking under the hood gold</h1>
 //             <p>Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
-//             <button class="icon-button large hide-text fa-info">More information</button>
+//             <button class="icon-button large hide-text"><i class="fa fa-info" aria-hidden="true"></i>More information</button>
 //         </article>
 //     </div>
 // </section>
@@ -523,75 +561,92 @@
     $scaleFactorWideColumn: 1.52;
     // Scale calculation - cos(θ) + max{(W/H),(H/W)} * sin(θ)
 
-    .images {
-        overflow: hidden;
-        height: 548px;
-        margin-bottom: 0;
+    padding: 0;
 
-        article {
-            background: grey;
-            transform: rotate($rotation);
+    @include desktop {
+        padding: ($baseline / 2) ($baseline / 2) 0;
+    }
+
+    @include mobile {
+        width: 100%;
+        overflow: scroll;
+        scroll-snap-type: mandatory;
+    }
+
+    @include tablet {
+        .images {
             overflow: hidden;
-            position: relative;
-            transform: rotate($rotation) scale($scaleFactorNarrowColumn);
+            height: 548px;
+            margin-bottom: 0;
 
-            &:after {
-                content: "";
-                background: linear-gradient(to top, black 17%, rgba(0, 0, 255, 0) 45%);
-                display: block;
+            article {
+                background: grey;
+                overflow: hidden;
+                position: relative;
+                transform: rotate($rotation) scale($scaleFactorNarrowColumn);
+
+                &:after {
+                    content: "";
+                    background: linear-gradient(to top, black 17%, rgba(0, 0, 255, 0) 45%);
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    transform: translate(-31%, 4%) rotate(-$rotation) scaleX(2);
+                }
+
+                &.is-7 {
+                    transform: rotate($rotation) scale($scaleFactorWideColumn);
+                    &:after {
+                        background: linear-gradient(to bottom, black 23%, rgba(0, 0, 255, 0) 77%);
+                        transform: rotate(-$rotation) translate(-4%, 13%) ;
+                    }
+                }
+
+                &:last-child {
+                    transform: translateX(40%) rotate($rotation) scale($scaleFactorNarrowColumn);
+                }
+
+                &:hover {
+                    img {
+                        opacity: 0;
+                    }
+                }
+            }
+
+            img {
                 position: absolute;
                 top: 0;
-                bottom: 0;
                 left: 0;
-                right: 0;
-                transform: translate(-31%, 4%) rotate(-$rotation) scaleX(2);
+                transform: rotate(-$rotation) scale(#{1/$scaleFactorNarrowColumn}) translate(-62%, -46.3%);
+                height: 100%;
+                max-width: none;
+                width: auto;
             }
-
-            &.is-7 {
-                transform: rotate($rotation) scale($scaleFactorWideColumn);
-                &:after {
-                    background: linear-gradient(to bottom, black 23%, rgba(0, 0, 255, 0) 77%);
-                    transform: translate(-3%, -13%) rotate(-$rotation);
-                }
+                
+            .is-7 img {
+                transform: rotate(-$rotation) scale(#{1/$scaleFactorWideColumn}) translate(-16%, -11.2%) ;
             }
-
-            &:last-child {
-                transform: translateX(40%) rotate($rotation) scale($scaleFactorNarrowColumn);
-            }
-
-            &:hover {
-                img {
-                    opacity: 0;
-                }
-            }
-        }
-
-        img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            transform: translate(-31%, 4%) rotate(-$rotation);
-        }
-
-        .is-2-5 img {
-            height: 100%;
-            max-width: none;
-        }
-            
-        .is-7 img {
-            transform: translate(-3%, -13%) rotate(-$rotation);
         }
     }
 
     .content {
         color: white;
         overflow: hidden;
-        height:548px;
-        margin-top: -548px;
-        margin-bottom: 0;
+        margin: 0;
         position: relative;
+        @include tablet {
+            height: 548px;
+            margin-top: -548px;
+        }
+
+        a {
+            color: white;
+        }
  
-        .icon-button.fa-play {
+        .icon-button.play {
             position: absolute;
             bottom: $baseline;
             left: $baseline;
@@ -604,6 +659,10 @@
 
         .is-5 {
             padding: $baseline;
+
+            h1 {
+                -webkit-line-clamp: 3;
+            }
         }
 
         .is-3 {
@@ -643,6 +702,78 @@
             overflow: hidden;
             display: -webkit-box;
         }
+        
+        @include mobile {
+            margin: 0;
+            width: 300%;
+            
+            article:after {
+                content: "";
+                background: linear-gradient(to top, black calc(40px + (2.5% * 16/9)), rgba(0, 0, 255, 0) calc(70px + (2.5% * 16/9))), linear-gradient(to right, black 0, rgba(0, 0, 255, 0) 50%);
+                background: linear-gradient(to top, #1f2732 calc(40px + (5% * 16/9)), #1f2732 calc(40px + (5% * 16/9)), transparent calc(41px + (5% * 16/9))), linear-gradient(to right, black 0, rgba(0, 0, 255, 0) 75%);
+                display: block;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+
+            .column {
+                float: left;
+                padding: 0;
+                position: relative;
+                width: (100% / 3);
+            }
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 0;
+            }
+
+            a {
+                display: block;
+                height: 0;
+                padding: ($baseline / 2) ($baseline / 2) calc(61.25% - (#{$baseline} / 2) + 40px);
+                position: relative;
+                z-index: 1;
+            }
+
+            h1,
+            .is-3 h1 {
+                font-size: $size-3;
+                -webkit-line-clamp: 4;
+            }
+
+            h2 {
+                font-size: $size-6;
+            }
+
+            p {
+                display: none;
+            }
+
+            .icon-button.info,
+            .icon-button.play {
+                position: absolute;
+                bottom: (2.5% * 16/9);
+                left: 2.5%;
+                width: 45%;
+            }
+            
+            .icon-button.info {
+                left: auto;
+                right: 2.5%;
+                margin-right: 0;
+                
+                i {
+                    width: 100%;
+                }
+            }
+        }
     }
 }
 
@@ -678,14 +809,14 @@
 //                 </div>
 //             </div>
 //             <p class="strap"><i class="fa fa-info"></i>Shane Oliver is one of Australia's most highly rated economists</p>
-//             <button class="icon-button invert large fa-plus">Watch Later</button>
+//             <button class="icon-button invert large plus"><i class="fa fa-plus" aria-hidden="true"></i>Watch Later</button>
 //         </div>
 //     </div>
 //     <div class="image child-full-height">
 //         <div class="column is-8 is-offset-4" style="background-image: url(https://lorempixel.com/1600/900/city)"></div>
 //     </div>
-//     <button class="icon-button invert large fa-play">01:24:45</button>
-//     <button class="icon-button fa-close hide-text large">Close more information</button>
+//     <button class="icon-button invert large play"><i class="fa fa-play" aria-hidden="true"></i>01:24:45</button>
+//     <button class="icon-button close hide-text large"><i class="fa fa-close" aria-hidden="true"></i>Close more information</button>
 // </section>
 // 
 // Styleguide 6.4
@@ -697,7 +828,7 @@
         margin: 0;
     }
 
-    .icon-button.fa-close {
+    .close {
         position: absolute;
         top: $baseline;
         right: $baseline;
@@ -710,7 +841,7 @@
         }
     }
 
-    .icon-button.fa-play {
+    .icon-button.play {
         position: absolute;
         bottom: $baseline;
         right: $baseline;

@@ -8,10 +8,12 @@
 // <button class="is-link {$modifiers}">The quick brown fox <i class="fa fa-play" aria-hidden="true"></i></button>
 //
 // Styleguide 4.1
-button.is-link {
+button.is-link,
+a.is-link {
     background: transparent;
     border: 1px solid rgba(0,0,0,0.1);
     border-radius: 2px;
+    display: inline-block;
     text-decoration: underline;
     text-decoration-skip: ink;
     text-decoration-color: rgba(0,0,0,0.25);
@@ -38,9 +40,23 @@ button.is-link {
 // default  - Default
 // :hover   - Hover state
 // :focus   - Focus state
+// .disabled - Disabled state
+// .is-large - Large
 // 
 // markup:
-// <button class="button {$modifiers}">The quick brown fox</button>
+// <button class="button {$modifiers}">The quick brown fox</button><br />
+// <button class="button {$modifiers}">
+//     <span>The quick brown fox</span>
+//     <span class="icon">
+//         <i class="fa fa-arrow-right" aria-hidden="true"></i>
+//     </span>
+// </button><br />
+// <button class="button {$modifiers}">
+//     <span class="icon">
+//         <i class="fa fa-arrow-left" aria-hidden="true"></i>
+//     </span>
+//     <span>The quick brown fox</span>
+// </button>
 //
 // Styleguide 4.2
 .button {
@@ -51,10 +67,11 @@ button.is-link {
     font-family: 'Function Pro', sans-serif;
     font-size: $size-5;
     font-weight: 700;
-    line-height: 1;
     padding: 1rem 2rem;
     text-transform: uppercase;
     transition: background 0.2s, border-color 0.2s, color 0.2s;
+    display: flex;
+    align-items: center;
 
     &:hover {
         background: transparent;
@@ -69,9 +86,70 @@ button.is-link {
         text-decoration: underline;
         text-decoration-color: rgba($color-torch-red, 0.25);
     }
+
+    &.is-large {
+        font-size: $size-3;
+        .icon .fa {
+            font-size: 28px;
+        }
+        .icon:first-child:not(:last-child) {
+            margin-left: 0;
+            margin-right: $baseline / 2;
+        }
+    
+        .icon:last-child:not(:first-child) {
+            margin-right: 0;
+            margin-left: $baseline / 2;
+        }
+    }
+    
+    &.disabled {
+        background: lightgrey;
+        cursor: default;
+        text-decoration: none;
+        &:hover, &:focus {
+            background: lightgrey;
+            border-color: transparent;
+            color: white;
+            text-decoration: none;
+        }
+    }
+
+    .icon:first-child:not(:last-child) {
+        margin-left: 0;
+        margin-right: $baseline / 4;
+    }
+
+    .icon:last-child:not(:first-child) {
+        margin-right: 0;
+        margin-left: $baseline / 4;
+    }
+
     form & {
         font-size: $size-6;
         padding: ($baseline / 4) ($baseline / 2);
+        &.is-large {
+            font-size: $size-4;
+            .icon .fa {
+                font-size: 21px;
+            }
+            .icon:first-child:not(:last-child) {
+                margin-right: $baseline / 4;
+            }
+        
+            .icon:last-child:not(:first-child) {
+                margin-left: $baseline / 4;
+            }
+        }
+        .icon:first-child:not(:last-child) {
+            margin-left: calc((#{$baseline} / 4) - 1px);
+            margin-right: $baseline / 8;
+        }
+    
+        .icon:last-child:not(:first-child) {
+            margin-right: calc((#{$baseline} / 4) - 1px);
+            margin-left: $baseline / 8;
+        }
     }
 }
 
@@ -188,10 +266,6 @@ a.button {
 
 // Icon button
 // 
-// .fa-info - More information
-// .fa-plus - Add
-// .fa-play - Play
-// .fa-close - Close
 // .hide-text - Hidden label
 // .large - Larger version
 // .invert - Inverted colour
@@ -199,7 +273,7 @@ a.button {
 // :focus - Focus state
 // 
 // markup:
-// <button class="icon-button {$modifiers}">Some text</button>
+// <button class="icon-button {$modifiers}"><i class="fa fa-close" aria-hidden="true"></i>Some text</button>
 //
 // Styleguide 4.5
 .icon-button {
@@ -214,11 +288,10 @@ a.button {
     padding: 0 10px 0 $size+10px;
     line-height: $size;
 
-    &:before {
-        background: grey;
-        border: 2px solid grey;
+    .fa {
+        background: #363D4E;
+        border: 2px solid #363D4E;
         color: white;
-        content: 'v';
         display: flex;
         height: $size;
         width: $size;
@@ -231,7 +304,6 @@ a.button {
         font-size: 14px;
         transition: background 0.2s, color 0.2s;
         text-indent: 0;
-        @extend .fa;
     }
 
     &.large {
@@ -239,7 +311,7 @@ a.button {
         padding-left: $large+10px;
         line-height: $large;
 
-        &:before {
+        .fa {
             height: $large;
             width: $large;
             font-size: 24px;
@@ -258,39 +330,24 @@ a.button {
     }
 
     &.invert {
-        background: grey;
+        background: #363D4E;
         color: white;
 
-        &:before {
+        .fa {
             background: white;
             border: 2px solid white;
-            color: grey;
+            color: #363D4E;
         }
-    }
-
-    &.fa-info:before {
-        @extend .fa-info;
-    }
-
-    &.fa-plus:before {
-        @extend .fa-plus;
-    }
-
-    &.fa-play:before {
-        @extend .fa-play;
-    }
-
-    &.fa-close:before {
-        @extend .fa-window-close;
     }
 
     &:hover,
     &:focus {
         text-decoration: underline;
 
-        &:before {
+        .fa {
             background: transparent;
             border-color: white;
+            color: white;
         }
     }
 }
