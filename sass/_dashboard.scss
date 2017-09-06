@@ -92,7 +92,7 @@
 
     &.loading {
         background-image: 
-            linear-gradient(120deg, transparent 40%, rgba(lightgray, 0.5) 58%, rgba(lightgray, 0.5) 62%, transparent 82%),
+            linear-gradient(90deg, transparent 0%, rgba(lightgray, 0.5) 50%, transparent 100%),
             linear-gradient(transparent 0, lightgray 0), 
             linear-gradient(transparent 0, white 0), 
             linear-gradient(lightgray 100%, transparent 0)
@@ -105,14 +105,6 @@
         .image {
             background: transparent;
         }
-    }
-
-    .spinner-container {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 0;
     }
 
     .buttons {
@@ -519,40 +511,63 @@
 // This component is dependent on specific container dimensions, see fullscreen.
 //
 // markup:
-// <section class="container tri-hero">
-//     <div class="columns images">
-//         <article class="test column is-7">
-//             <img src="https://lorempixel.com/1600/1600/people" />
+// <div class="container tri-hero loading">
+//     <div class="columns images is-hidden-mobile">
+//         <article class="column is-7"></article>
+//         <article class="column is-2-5"></article>
+//         <article class="column is-2-5"></article>
+//     </div>
+//     <div class="columns content">
+//         <article class="column is-5"><a></a></article>
+//         <article class="column is-3 is-offset-0-5 is-hidden-mobile"><a></a></article>
+//         <article class="column is-3 is-offset-0-5 is-hidden-mobile"><a></a></article>
+//     </div>
+// </div>
+// <div class="container tri-hero">
+//     <div class="columns images is-hidden-mobile">
+//         <article class="column is-7">
+//             <img src="https://lorempixel.com/1600/900/people" />
 //         </article>
-//         <article class="test column is-2-5">
-//             <img src="https://lorempixel.com/1600/1600/city" />
+//         <article class="column is-2-5">
+//             <img src="https://lorempixel.com/1600/900/city" />
 //         </article>
-//         <article class="test column is-2-5">
-//             <img src="https://lorempixel.com/1600/1600/abstract" />
+//         <article class="column is-2-5">
+//             <img src="https://lorempixel.com/1600/900/abstract" />
 //         </article>
 //     </div>
 //     <div class="columns content">
-//         <article class="test2 column is-5">
-//             <h2>Latest Video</h2>
-//             <h1>Looking under the hood gold</h1>
-//             <p>Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
-//             <button class="icon-button large hide-text"><i class="fa fa-info" aria-hidden="true"></i>More information</button>
-//             <button class="icon-button invert large play"><i class="fa fa-play" aria-hidden="true"></i>24:45</button>
+//         <article class="column is-5">
+//             <img src="https://lorempixel.com/1600/900/people" class="is-hidden-tablet" />
+//             <a>
+//                 <h2>Latest Video</h2>
+//                 <h1>Looking under the hood gold</h1>
+//                 <p>Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
+//                 <button class="icon-button large hide-text info"><i class="fa fa-info" aria-hidden="true"></i>More information</button>
+//                 <button class="icon-button invert large play"><i class="fa fa-play" aria-hidden="true"></i>24:45</button>
+//             </a>
 //         </article>
-//         <article class="test2 column is-3 is-offset-0-5">
-//             <h2>Latest Video</h2>
-//             <h1>Looking under the hood gold</h1>
-//             <p>Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
-//             <button class="icon-button large hide-text"><i class="fa fa-info" aria-hidden="true"></i>More information</button>
+//         <article class="column is-3 is-offset-0-5">
+//             <img src="https://lorempixel.com/1600/900/city" class="is-hidden-tablet" />
+//             <a>
+//                 <h2>Latest Video</h2>
+//                 <h1>Looking under the hood gold</h1>
+//                 <p>Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
+//                 <button class="icon-button large hide-text info"><i class="fa fa-info" aria-hidden="true"></i>More information</button>
+//                 <button class="icon-button invert large play is-hidden-tablet"><i class="fa fa-play" aria-hidden="true"></i>24:45</button>
+//             </a>
 //         </article>
-//         <article class="test2 column is-3 is-offset-0-5">
-//             <h2>Latest Video</h2>
-//             <h1>Looking under the hood gold</h1>
-//             <p>Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
-//             <button class="icon-button large hide-text"><i class="fa fa-info" aria-hidden="true"></i>More information</button>
+//         <article class="column is-3 is-offset-0-5">
+//             <img src="https://lorempixel.com/1600/900/abstract" class="is-hidden-tablet" />
+//             <a>
+//                 <h2>Latest Video</h2>
+//                 <h1>Looking under the hood gold</h1>
+//                 <p>Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
+//                 <button class="icon-button large hide-text info"><i class="fa fa-info" aria-hidden="true"></i>More information</button>
+//                 <button class="icon-button invert large play is-hidden-tablet"><i class="fa fa-play" aria-hidden="true"></i>24:45</button>
+//             </a>
 //         </article>
 //     </div>
-// </section>
+// </div>
 // 
 // Styleguide 6.3
 .tri-hero {
@@ -562,74 +577,9 @@
     // Scale calculation - cos(θ) + max{(W/H),(H/W)} * sin(θ)
 
     padding: 0;
-
-    @include desktop {
-        padding: ($baseline / 2) ($baseline / 2) 0;
-    }
-
-    @include mobile {
-        width: 100%;
-        overflow: scroll;
-        scroll-snap-type: mandatory;
-    }
-
-    @include tablet {
-        .images {
-            overflow: hidden;
-            height: 548px;
-            margin-bottom: 0;
-
-            article {
-                background: grey;
-                overflow: hidden;
-                position: relative;
-                transform: rotate($rotation) scale($scaleFactorNarrowColumn);
-
-                &:after {
-                    content: "";
-                    background: linear-gradient(to top, black 17%, rgba(0, 0, 255, 0) 45%);
-                    display: block;
-                    position: absolute;
-                    top: 0;
-                    bottom: 0;
-                    left: 0;
-                    right: 0;
-                    transform: translate(-31%, 4%) rotate(-$rotation) scaleX(2);
-                }
-
-                &.is-7 {
-                    transform: rotate($rotation) scale($scaleFactorWideColumn);
-                    &:after {
-                        background: linear-gradient(to bottom, black 23%, rgba(0, 0, 255, 0) 77%);
-                        transform: rotate(-$rotation) translate(-4%, 13%) ;
-                    }
-                }
-
-                &:last-child {
-                    transform: translateX(40%) rotate($rotation) scale($scaleFactorNarrowColumn);
-                }
-
-                &:hover {
-                    img {
-                        opacity: 0;
-                    }
-                }
-            }
-
-            img {
-                position: absolute;
-                top: 0;
-                left: 0;
-                transform: rotate(-$rotation) scale(#{1/$scaleFactorNarrowColumn}) translate(-62%, -46.3%);
-                height: 100%;
-                max-width: none;
-                width: auto;
-            }
-                
-            .is-7 img {
-                transform: rotate(-$rotation) scale(#{1/$scaleFactorWideColumn}) translate(-16%, -11.2%) ;
-            }
-        }
+    
+    .images { 
+        margin-top: 0;
     }
 
     .content {
@@ -702,8 +652,150 @@
             overflow: hidden;
             display: -webkit-box;
         }
-        
-        @include mobile {
+    }
+
+    
+
+    @include desktop {
+        padding: 0 ($baseline / 2);
+    }
+
+    @include tablet {
+        .images {
+            overflow: hidden;
+            height: 548px;
+            margin-bottom: 0;
+
+            article {
+                background: grey;
+                overflow: hidden;
+                position: relative;
+                transform: rotate($rotation) scale($scaleFactorNarrowColumn);
+
+                &:after {
+                    content: "";
+                    background: linear-gradient(to top, black 17%, rgba(0, 0, 255, 0) 45%);
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    transform: translate(-31%, 4%) rotate(-$rotation) scaleX(2);
+                }
+
+                &.is-7 {
+                    transform: rotate($rotation) scale($scaleFactorWideColumn);
+                    &:after {
+                        background: linear-gradient(to bottom, black 23%, rgba(0, 0, 255, 0) 77%);
+                        transform: rotate(-$rotation) translate(-4%, 13%) ;
+                    }
+                }
+
+                &:last-child {
+                    transform: translateX(40%) rotate($rotation) scale($scaleFactorNarrowColumn);
+                }
+
+                &:hover {
+                    img {
+                        opacity: 0;
+                    }
+                }
+            }
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform: rotate(-$rotation) scale(#{1/$scaleFactorNarrowColumn}) translate(-62%, -46.3%);
+                height: 100%;
+                max-width: none;
+                width: auto;
+            }
+                
+            .is-7 img {
+                transform: rotate(-$rotation) scale(#{1/$scaleFactorWideColumn}) translate(-16%, -11.2%) ;
+            }
+        }
+
+        &.loading {
+            .images article {
+                background: lightgray;
+
+                &:after {
+                    display: none;
+                }
+            }
+
+            .content article.is-5 {
+                background-image: linear-gradient(transparent 0, lightgray 0), linear-gradient(transparent 0, white 0), linear-gradient(transparent 0, lightgray 0), linear-gradient(transparent 0, white 0), linear-gradient(transparent 0, lightgray 0), linear-gradient(transparent 0, white 0), linear-gradient(lightgray 100%, transparent 0);
+                background-repeat: no-repeat;
+                background-size: 100% 1.5rem, 50% 3.5rem, 100% 5rem, 100% 9rem, 100% 10.5rem, 80% 21rem, 100% 100%;
+                background-position: 0.75rem 0, 0.75rem 0, 0.75rem 0;
+            }
+            
+            .content article.is-3 {
+                background-image: linear-gradient(transparent 0, lightgray 0), linear-gradient(transparent 0, white 0), linear-gradient(transparent 0, lightgray 0), linear-gradient(transparent 0, white 0), linear-gradient(transparent 0, lightgray 0), linear-gradient(transparent 0, white 0), linear-gradient(lightgray 100%, transparent 0);
+                background-repeat: no-repeat;
+                background-size: 100% 62%, 50% 66%, 100% 69%, 90% 82%, 100% 85%, 69% 96%, 100% 100%;
+                background-position: 0 0, 0 0, 0 0;
+            }
+
+            &:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background-image: linear-gradient(90deg, transparent 0%, rgba(lightgray, 0.5) 50%, transparent 100%);
+                background-repeat: no-repeat;
+                background-size: 400px 100%;
+                background-position: -100% 0;
+                animation: tri-hero-loading 2.5s infinite;
+            }
+        }
+    }
+
+    @keyframes tri-hero-loading {
+        to {
+            background-position: 200% 0;
+        }
+    }
+    
+    @keyframes tri-hero-loading-mobile {
+        to {
+            background-position: 200% 0, 0 0, 0.75rem 0, 0 0, 0.75rem 0, 0 0;
+        }
+    }
+    
+    @include mobile {
+        width: 100%;
+        overflow: scroll;
+        scroll-snap-type: mandatory;
+        &.loading {
+            .content {
+                width: 100%;
+
+                article {
+                    background-image: linear-gradient(90deg, transparent 0%, rgba(lightgray, 0.5) 50%, transparent 100%), linear-gradient(transparent 0, lightgray 0), linear-gradient(transparent 0, white 0), linear-gradient(transparent 0, lightgray 0), linear-gradient(transparent 0, white 0), linear-gradient(lightgray 100%, transparent 0);
+                    background-repeat: no-repeat;
+                    background-size: 200px 100%, 100% 0.75rem, 47% 2.5rem, 100% 4rem, 80% 8rem, 100% 100%;
+                    background-position: -100% 0, 0 0, 0.75rem 0, 0 0, 0.75rem 0, 0 0;
+                    animation: tri-hero-loading-mobile 2.5s infinite;
+                }
+
+                article:after {
+                    display: none;
+                }
+
+                .column {
+                    width: 100%;
+                }
+            }
+        }
+
+        .content {
             margin: 0;
             width: 300%;
             
