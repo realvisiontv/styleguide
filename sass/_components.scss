@@ -1199,7 +1199,7 @@
         }
     }
 
-    
+
 
     p {
         line-height: 1.2rem;
@@ -1268,10 +1268,14 @@
     }
 
     p {
-        line-height: 1.45rem;
+        line-height: 1.3rem;
         span {
-
+            font-family: 'Function Pro';
+            font-weight: 400;
             font-size: $size-6;
+            line-height: 0.8rem;
+            padding: 5px 0;
+            text-transform: none;
         }
 
         @include tablet {
