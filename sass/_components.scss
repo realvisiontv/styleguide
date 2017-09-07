@@ -140,7 +140,7 @@
 //
 // Styleguide 5.4
 .avatar {
-    background: cyan;
+    background: $color-cyan;
     border-radius: 50%;
     border: 2px solid transparent;
     color: #000;
@@ -219,9 +219,12 @@
 }
 
 // Pullout Block - Quote
+// 
+// Default - default
+// .no-background - No background image
 //
 // markup:
-// <div class="pullout-block pullout-block__product-quote">
+// <div class="pullout-block pullout-block__product-quote {$modifiers}">
 //      <div class="pullout-block__content">
 //          <p class="pullout-block__content-heading">Get exposed to investment ideas and financial insights that you can't get anywhere else.</p>
 //          <div class="is-hidden-mobile">
@@ -288,6 +291,10 @@
             font-style: normal;
             color: $color-torch-red;
         }
+    }
+
+    &.no-background .pullout-block__content {
+        background: transparent;
     }
 
     &.pullout-block__product-quote {

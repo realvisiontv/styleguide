@@ -9,7 +9,8 @@ var options = {
     title: 'Real Vision Styleguide',
     rootPath: outputPath,
     appRoot: '/styleguide',
-    overviewPath: 'README.md'
+    overviewPath: 'README.md',
+    extraHead: ['<link rel="stylesheet" href="/css/custom_styleguide.css">']
 };
 
 gulp.task('styleguide:generate', function() {
@@ -21,6 +22,9 @@ gulp.task('styleguide:generate', function() {
     gulp.src(['images/**'])
         .pipe(gulp.dest('./images'))
         .pipe(gulp.dest(outputPath + '/images'));
+
+    gulp.src(['custom_styleguide.css'])
+        .pipe(gulp.dest(outputPath + '/css'));
 
     return gulp.src('sass/*.scss')
         .pipe(styleguide.generate(options))

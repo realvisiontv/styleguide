@@ -7,8 +7,13 @@ $fa-font-path:   "#{$root}/fonts/font-awesome" !default;
 
 // Colors
 // 
+// $color-cyan - Cyan (TV brand colour)
+// $color-poppy - Poppy (Publications brand colour)
 // $color-torch-red - Torch Red
+// $color-orange - Orange
+// $color-purple - Purple
 // $color-bright-gray - Bright Gray
+// $color-spruce - Spruce
 // 
 // markup:
 // <div style="background: {$modifiers};" class="styleguide-color">{$modifiers}</div>
@@ -20,6 +25,7 @@ $color-cyan: #31FEE8;
 $color-orange: #ffce4a;
 $color-purple: #a822ef;
 $color-spruce: #3a444c;
+$color-poppy: #f8931f;
 $text: $color-bright-gray;
 
 // Heading Font 
