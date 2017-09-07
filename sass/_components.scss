@@ -366,11 +366,8 @@
 //
 // Styleguide 5.8
 .pullout-block__list {
-
-    @include mobile {
-        &:before {
-            content: none;
-        }
+    &:not(.no-arrows):before {
+        content: none;
     }
 
     .pullout-block__content-subheading {
