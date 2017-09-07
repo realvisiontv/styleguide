@@ -1918,3 +1918,54 @@
         }
     }
 }
+
+// Email Capture
+//
+// A simple form to capture target users' first names and email addresses
+//
+// markup:
+// <div class="email-capture">
+//      <p class="email-capture--title">Can we interest you in checking out our recent blog post?</p>
+//      <form action="" method="get" class="validate" validate>
+//          <div class="field is-horizontal">
+//              <div class="field-body">
+//                  <div class="field">
+//                      <p class="control is-expanded has-icons-left">
+//                          <input class="input" type="text" name="FNAME" placeholder="First Name" required>
+//                          <span class="icon is-small is-left">
+//                              <i class="fa fa-user"></i>
+//                          </span>
+//                      </p>
+//                  </div>
+//                  <div class="field">
+//                      <p class="control is-expanded has-icons-left">
+//                          <input class="input" type="email" name="EMAIL" placeholder="Email Address" required>
+//                          <span class="icon is-small is-left">
+//                              <i class="fa fa-envelope"></i>
+//                          </span>
+//                      </p>
+//                  </div>
+//                  <div class="field">
+//                      <p class="control is-expanded">
+//                          <input type="submit" name="subscribe" class="button is-success" value="Sign up for free" />
+//                      </p>
+//                  </div>
+//              </div>
+//          </div>
+//      </form>
+// </div>
+//
+// Styleguide 5.24
+.email-capture {
+    padding: $baseline;
+
+    .email-capture--title {
+        font-weight: bold;
+        font-size: $size-5;
+        margin-bottom: $baseline;
+    }
+
+    .field .icon {
+        height: 100%;
+    }
+}
