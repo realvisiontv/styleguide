@@ -722,18 +722,18 @@
 // markup:
 // <div class="endorsements">
 //      <div class="columns is-mobile is-vcentered">
-//          <div class="column is-6">
+//          <div class="column is-7-mobile is-5-tablet">
 //              <img src="/images/logos/logo-cfa.png"/>
 //          </div>
-//          <div class="column is-4 is-offset-2">
+//          <div class="column is-3-tablet is-offset-2-mobile is-offset-3-tablet">
 //              <img src="/images/logos/logo-cisi.png"/>
 //          </div>
 //      </div>
 //      <div class="columns is-mobile is-vcentered">
-//          <div class="column is-3">
+//          <div class="column is-3-mobile is-2-tablet">
 //              <img src="/images/logos/logo-cfp.png"/>
 //          </div>
-//          <div class="column is-4 is-offset-1">
+//          <div class="column is-4 is-offset-2-tablet is-offset-1-mobile">
 //              <img src="/images/logos/logo-cambridge.png"/>
 //          </div>
 //          <div class="column is-3 is-offset-1">
@@ -1300,7 +1300,10 @@
     }
 
     &.hide-cta {
-        padding-bottom: $baseline / 2;
+        padding-bottom: $baseline * 1.5;
+        & .columns:nth-last-child(2) {
+            margin-bottom: -0.75rem; // Makes penultamate columns the same as last .columns incase there is an empty cta block
+        }
     }
 
     &.content-left {
