@@ -140,7 +140,7 @@
 //
 // Styleguide 5.4
 .avatar {
-    background: $color-cyan;
+    background: $brand;
     border-radius: 50%;
     border: 2px solid transparent;
     color: #000;
@@ -934,15 +934,15 @@
         right: auto;
         bottom: auto;
         font-size: $size-6;
-        background: $color-cyan;
+        background: $brand;
         color: black;
         font-weight: 800;
         padding: 0 ($baseline / 3);
 
         &:hover {
             background: black;
-            color: $color-cyan;
-            border: solid 2px $color-cyan;
+            color: $brand;
+            border: solid 2px $brand;
         }
 
         @include tablet {
@@ -1647,11 +1647,11 @@
 
     .product-link--tv {
         strong {
-            color: $color-cyan;
+            color: $brand;
         }
 
         .product-link__bottom-overlay {
-            background: url('#{$root}/images/overlays/stripe_clear.png'), $color-cyan;
+            background: url('#{$root}/images/overlays/stripe_clear.png'), $brand;
         }
     }
     .product-link--publishing {
@@ -1739,7 +1739,7 @@
     }
     .play-block__play {
         display: inline-flex;
-        color: $color-cyan;
+        color: $brand;
 
         button {
             margin-left: 25px;

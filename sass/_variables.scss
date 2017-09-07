@@ -1,8 +1,8 @@
 // styleguide:ignore:start
 $baseline: 1.5rem !default;
 $root: '/styleguide' !default;
-$tablet: 768px;
-$fa-font-path:   "#{$root}/fonts/font-awesome" !default;
+$tablet: 768px !default;
+$fa-font-path: "#{$root}/fonts/font-awesome" !default;
 // styleguide:ignore:end
 
 // Colors
@@ -26,7 +26,8 @@ $color-orange: #ffce4a;
 $color-purple: #a822ef;
 $color-spruce: #3a444c;
 $color-poppy: #f8931f;
-$text: $color-bright-gray;
+$text: $color-bright-gray !default;
+$brand: $color-cyan !default;
 
 // Heading Font 
 // 
@@ -164,5 +165,4 @@ $text: $color-bright-gray;
 }
 .font-weight-extrabold {
     font-weight: 800 !important;
-
 }
