@@ -611,7 +611,13 @@
             padding: $baseline;
 
             h1 {
-                -webkit-line-clamp: 3;
+                max-height: 3em;
+            }
+            
+            @supports (-webkit-line-clamp: 3) {
+                h1 {
+                    -webkit-line-clamp: 3;
+                }
             }
         }
 
@@ -627,34 +633,50 @@
                 font-size: 2rem;
             }
             p {
-                -webkit-line-clamp: 1;
+                max-height: 1.5em;
                 margin: 0 0 $baseline/2;
+            }
+            
+            @supports (-webkit-line-clamp: 1) {
+                p {
+                    -webkit-line-clamp: 1;
+                }
             }
         }
 
         h1 {
             font-weight: 800;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
+            max-height: 2em;
             overflow: hidden;
-            display: -webkit-box;
         }
         h2 {
             text-transform: none;
             font-weight: 400;
             font-family: 'Proxima Nova';
             text-decoration: underline;
-            font-size: 1.5rem
+            font-size: 1.5rem;
         }
         p {
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
+            max-height: 4.5em;
             overflow: hidden;
-            display: -webkit-box;
+        }
+
+        @supports (-webkit-line-clamp: 2) {
+            h1 {
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                display: -webkit-box;
+                max-height: none;
+            }
+
+            p {
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                display: -webkit-box;
+                max-height: none;
+            }
         }
     }
-
-    
 
     @include desktop {
         padding: 0 ($baseline / 2);
@@ -837,7 +859,14 @@
             h1,
             .is-3 h1 {
                 font-size: $size-3;
-                -webkit-line-clamp: 4;
+                max-height: 4em;
+            }
+    
+            @supports (-webkit-line-clamp: 4) {
+                h1,
+                .is-3 h1 {
+                    -webkit-line-clamp: 4;
+                }
             }
 
             h2 {
