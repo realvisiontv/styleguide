@@ -1923,9 +1923,14 @@
 //
 // A simple form to capture target users' first names and email addresses
 //
+// default - Default
+// .error - Error state shown after failed submission
+// .success - Success state shown after successful submission
+//
 // markup:
-// <div class="email-capture">
+// <div class="email-capture {$modifiers}">
 //      <p class="email-capture--title">Can we interest you in checking out our recent blog post?</p>
+//      <p class="email-capture--success">Thanks for signing up!</p>
 //      <form action="" method="get" class="validate" validate>
 //          <div class="field is-horizontal">
 //              <div class="field-body">
@@ -1953,19 +1958,48 @@
 //              </div>
 //          </div>
 //      </form>
+//      <p class="email-capture--error">Oops! It looks like something went wrong. Please try again.</p>
 // </div>
 //
 // Styleguide 5.24
 .email-capture {
     padding: $baseline;
 
-    .email-capture--title {
+    .email-capture--title, .email-capture--success {
         font-weight: bold;
         font-size: $size-5;
         margin-bottom: $baseline;
     }
 
+    .email-capture--success {
+        display: none;
+        text-align: center;
+    }
+
+    .email-capture--error {
+        display: none;
+        color: $color-torch-red;
+        margin-bottom: 0;
+    }
+
     .field .icon {
         height: 100%;
+    }
+
+    &.success {
+        .email-capture--success {
+            margin: 0;
+            display: block;
+        }
+
+        .email-capture--title, form {
+            display: none;
+        }
+    }
+
+    &.error {
+        .email-capture--error {
+            display: block;
+        }
     }
 }
