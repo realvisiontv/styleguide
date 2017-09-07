@@ -195,11 +195,11 @@ a {
 // 
 // Styleguide 3.8
 .strap {
-    color: cyan;
+    color: $color-cyan;
     line-height: 26px;
 
     .fa {
-        background: cyan;
+        background: $color-cyan;
         color: black;
         margin-right: 1ex;
         border-radius: 50%;

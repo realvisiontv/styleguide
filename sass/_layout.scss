@@ -211,7 +211,7 @@ h6 {
     > .columns {
         margin: 0;
         padding: 0 ($baseline/2);
-        border-bottom: 1px solid cyan;
+        border-bottom: 1px solid $color-cyan;
     }
     .column {
         padding-bottom: 0;
@@ -295,14 +295,14 @@ h6 {
             }
     
             &:hover {
-                color: cyan;
+                color: $color-cyan;
             }
         }
 
         &.active {
-            border-bottom-color: cyan;
+            border-bottom-color: $color-cyan;
             > a {
-                color: cyan;
+                color: $color-cyan;
             }
         }
 
