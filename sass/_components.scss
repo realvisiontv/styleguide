@@ -1931,7 +1931,7 @@
 //              <div class="field-body">
 //                  <div class="field">
 //                      <p class="control is-expanded has-icons-left">
-//                          <input class="input" type="text" placeholder="First Name" required>
+//                          <input class="input" type="text" name="FNAME" placeholder="First Name" required>
 //                          <span class="icon is-small is-left">
 //                              <i class="fa fa-user"></i>
 //                          </span>
@@ -1939,7 +1939,7 @@
 //                  </div>
 //                  <div class="field">
 //                      <p class="control is-expanded has-icons-left">
-//                          <input class="input" type="email" placeholder="Email Address" required>
+//                          <input class="input" type="email" name="EMAIL" placeholder="Email Address" required>
 //                          <span class="icon is-small is-left">
 //                              <i class="fa fa-envelope"></i>
 //                          </span>
@@ -1959,7 +1959,7 @@
 .email-capture {
     padding: $baseline;
 
-    p {
+    .email-capture--title {
         font-weight: bold;
         font-size: $size-5;
         margin-bottom: $baseline;
