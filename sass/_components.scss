@@ -140,7 +140,7 @@
 //
 // Styleguide 5.4
 .avatar {
-    background: cyan;
+    background: $color-cyan;
     border-radius: 50%;
     border: 2px solid transparent;
     color: #000;
@@ -219,9 +219,12 @@
 }
 
 // Pullout Block - Quote
+// 
+// Default - default
+// .no-background - No background image
 //
 // markup:
-// <div class="pullout-block pullout-block__product-quote">
+// <div class="pullout-block pullout-block__product-quote {$modifiers}">
 //      <div class="pullout-block__content">
 //          <p class="pullout-block__content-heading">Get exposed to investment ideas and financial insights that you can't get anywhere else.</p>
 //          <div class="is-hidden-mobile">
@@ -288,6 +291,10 @@
             font-style: normal;
             color: $color-torch-red;
         }
+    }
+
+    &.no-background .pullout-block__content {
+        background: transparent;
     }
 
     &.pullout-block__product-quote {
@@ -359,11 +366,8 @@
 //
 // Styleguide 5.8
 .pullout-block__list {
-
-    @include mobile {
-        &:before {
-            content: none;
-        }
+    &:not(.no-arrows):before {
+        content: none;
     }
 
     .pullout-block__content-subheading {
@@ -1920,6 +1924,91 @@
             &:after {
                 background-color: $color-torch-red;
             }
+        }
+    }
+}
+
+// Email Capture
+//
+// A simple form to capture target users' first names and email addresses
+//
+// default - Default
+// .error - Error state shown after failed submission
+// .success - Success state shown after successful submission
+//
+// markup:
+// <div class="email-capture {$modifiers}">
+//      <p class="email-capture--title">Can we interest you in checking out our recent blog post?</p>
+//      <p class="email-capture--success">Thanks for signing up!</p>
+//      <form action="" method="get" class="validate" validate>
+//          <div class="field is-horizontal">
+//              <div class="field-body">
+//                  <div class="field">
+//                      <p class="control is-expanded has-icons-left">
+//                          <input class="input" type="text" name="FNAME" placeholder="First Name" required>
+//                          <span class="icon is-small is-left">
+//                              <i class="fa fa-user"></i>
+//                          </span>
+//                      </p>
+//                  </div>
+//                  <div class="field">
+//                      <p class="control is-expanded has-icons-left">
+//                          <input class="input" type="email" name="EMAIL" placeholder="Email Address" required>
+//                          <span class="icon is-small is-left">
+//                              <i class="fa fa-envelope"></i>
+//                          </span>
+//                      </p>
+//                  </div>
+//                  <div class="field">
+//                      <p class="control is-expanded">
+//                          <input type="submit" name="subscribe" class="button is-success" value="Sign up for free" />
+//                      </p>
+//                  </div>
+//              </div>
+//          </div>
+//      </form>
+//      <p class="email-capture--error">Oops! It looks like something went wrong. Please try again.</p>
+// </div>
+//
+// Styleguide 5.24
+.email-capture {
+    padding: $baseline;
+
+    .email-capture--title, .email-capture--success {
+        font-weight: bold;
+        font-size: $size-5;
+        margin-bottom: $baseline;
+    }
+
+    .email-capture--success {
+        display: none;
+        text-align: center;
+    }
+
+    .email-capture--error {
+        display: none;
+        color: $color-torch-red;
+        margin-bottom: 0;
+    }
+
+    .field .icon {
+        height: 100%;
+    }
+
+    &.success {
+        .email-capture--success {
+            margin: 0;
+            display: block;
+        }
+
+        .email-capture--title, form {
+            display: none;
+        }
+    }
+
+    &.error {
+        .email-capture--error {
+            display: block;
         }
     }
 }
