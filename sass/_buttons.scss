@@ -6,8 +6,8 @@
 // .is-primary - Primary colours
 // 
 // markup:
-// <button class="is-link {$modifiers}">The quick brown fox <i class="fa fa-play" aria-hidden="true"></i></button>
-// <button class="is-link {$modifiers}"><i class="fa fa-play" aria-hidden="true"></i> The quick brown fox</button>
+// <button class="is-link {$modifiers}"><span>The quick brown fox</span><i class="fa fa-play" aria-hidden="true"></i></button>
+// <button class="is-link {$modifiers}"><i class="fa fa-play" aria-hidden="true"></i><span>The quick brown fox</span></button>
 //
 // Styleguide 4.1
 button.is-link,
@@ -92,13 +92,13 @@ a.is-link {
 
     &:hover {
         background: transparent;
-        border-color: $color-torch-red;
+        border-color: rgba($color-torch-red, 0.5);
         color: $color-torch-red;
     }
 
     &:focus {
         background: transparent;
-        border-color: $color-torch-red;
+        border-color: rgba($color-torch-red, 0.5);
         color: $color-torch-red;
         text-decoration: underline;
         text-decoration-color: rgba($color-torch-red, 0.25);
@@ -284,7 +284,7 @@ a.button {
 // Icon button
 // 
 // .hide-text - Hidden label
-// .large - Larger version
+// .is-large - Larger version (deprecated .large also works)
 // .invert - Inverted colour
 // :hover - Hover state
 // :focus - Focus state
@@ -300,7 +300,7 @@ a.button {
     background: transparent;
     border: 0;
     cursor: pointer;
-    font-family: 'Function Pro', sans-serif;
+    // font-family: 'Function Pro', sans-serif;
     position: relative;
     padding: 0 10px 0 $size+10px;
     line-height: $size;
@@ -323,7 +323,8 @@ a.button {
         text-indent: 0;
     }
 
-    &.large {
+    &.large, // Deprecated
+    &.is-large {
         font-size: $size-5;
         padding-left: $large+10px;
         line-height: $large;
@@ -352,8 +353,19 @@ a.button {
 
         .fa {
             background: white;
-            border: 2px solid white;
+            border: 2px solid #363D4E;
             color: #363D4E;
+        }
+        &:hover,
+        &:focus {
+            background: white;
+            color: #363D4E;
+
+            .fa {
+                background: #363D4E;
+                border-color: #363D4E;
+                color: white;
+            }
         }
     }
 
@@ -362,9 +374,9 @@ a.button {
         text-decoration: underline;
 
         .fa {
-            background: transparent;
-            border-color: white;
-            color: white;
+            background: white;
+            border-color: #363D4E;
+            color: #363D4E;
         }
     }
 }

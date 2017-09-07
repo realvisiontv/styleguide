@@ -648,6 +648,7 @@
             font-weight: 800;
             max-height: 2em;
             overflow: hidden;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
         }
         h2 {
             text-transform: none;
@@ -655,10 +656,12 @@
             font-family: 'Proxima Nova';
             text-decoration: underline;
             font-size: 1.5rem;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
         }
         p {
             max-height: 4.5em;
             overflow: hidden;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
         }
 
         @supports (-webkit-line-clamp: 2) {
@@ -994,6 +997,7 @@
         font-weight: 800;
         margin-bottom: $baseline / 2;
         margin-top: 0;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.2);
     }
 
     dl {
