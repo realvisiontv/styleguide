@@ -833,35 +833,35 @@
     }
     h2 {
 
-        line-height: 3.1rem;
+        line-height: $size-4;
         span {
 
-            font-size: $size-2;
+            font-size: $size-4;
             color: black;
             background-color: white;
             box-shadow: 10px 0 0 white, -10px 0 0 white;
         }
 
         @include tablet {
-            line-height: 3.4rem;
+            line-height: $size-2;
             span {
-                font-size: $size-1;
+                font-size: $size-2;
             }
         }
     }
     h3 {
-        line-height: 2.9rem;
+        line-height: $size-4;
         span {
-            font-size: $size-3;
+            font-size: $size-4;
             color: white;
             background-color: black;
             box-shadow: 10px 0 0 black, -10px 0 0 black;
         }
 
         @include tablet {
-            line-height: 3.2rem;
+            line-height: $size-3;
             span {
-                font-size: $size-2;
+                font-size: $size-3;
             }
         }
     }
@@ -869,10 +869,10 @@
         margin-top: 0;
         margin-bottom: 0;
 
-        line-height: 1.45rem;
+        line-height: 1.2rem;
         span {
             font-weight: 800;
-            font-size: $size-5;
+            font-size: $size-6;
             color: white;
             background-color: black;
             box-shadow: 10px 0 0 black, -10px 0 0 black;
@@ -882,9 +882,9 @@
         }
 
         @include tablet {
-            line-height: 1.75rem;
+            line-height: $size-5;
             span {
-                font-size: $size-4;
+                font-size: $size-5;
             }
             br {
                 display: block;
@@ -892,7 +892,7 @@
         }
     }
     .product-hero__sub-head {
-        line-height: 2.9rem;
+        line-height: 2rem;
         span {
             color: black;
             background-color: white;
@@ -931,7 +931,7 @@
         background: $color-cyan;
         color: black;
         font-weight: 800;
-        padding: ($baseline / 3);
+        padding: 0 ($baseline / 3);
 
         &:hover {
             background: black;
@@ -1199,16 +1199,10 @@
         }
     }
 
-    h3 {
-        line-height: 2.6rem;
-
-        @include tablet {
-            line-height: 2.8rem;
-        }
-    }
+    
 
     p {
-        line-height: 1.4rem;
+        line-height: 1.2rem;
         span {
             font-size: $size-6;
         }
@@ -1259,6 +1253,18 @@
 
     h2 {
         margin-bottom: $baseline;
+        line-height: $size-4;
+        span {
+            font-size: $size-4;
+        }
+
+        @include tablet {
+            line-height: $size-3;
+
+            span {
+                font-size: $size-3;
+            }
+        }
     }
 
     p {
