@@ -3,9 +3,11 @@
 // default - Default
 // :hover   - Hover state
 // :focus   - Focus state
+// .is-primary - Primary colours
 // 
 // markup:
 // <button class="is-link {$modifiers}">The quick brown fox <i class="fa fa-play" aria-hidden="true"></i></button>
+// <button class="is-link {$modifiers}"><i class="fa fa-play" aria-hidden="true"></i> The quick brown fox</button>
 //
 // Styleguide 4.1
 button.is-link,
@@ -22,14 +24,29 @@ a.is-link {
     margin-top: $baseline/2;
     line-height: 1;
 
+    &.is-primary {
+        background: $info;
+        border: darken($info, 0.1);
+        color: white !important;
+        text-decoration: none;
+    }
+
     .fa {
         font-size: inherit;
         vertical-align: baseline;
         margin-left: 1ex;
+        &:first-child {
+            margin-right: 1ex;
+            margin-left: 0;
+        }
     }
 
     .control & {
         margin-top: 0;
+    }
+
+    & + .is-link {
+        margin-left: $baseline;
     }
 }
 
