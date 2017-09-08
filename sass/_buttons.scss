@@ -384,9 +384,7 @@ a.button {
 // Intercom launcher
 // 
 // markup:
-// <a class="contact-launcher">
-//     <i class="fa fa-question" aria-hidden="true"></i>
-// </a>
+// <a class="contact-launcher"></a>
 //
 // Styleguide 4.6
 .contact-launcher {
@@ -401,9 +399,7 @@ a.button {
     cursor: pointer;
     box-shadow: 0 1px 6px rgba(0,0,0,.06),0 2px 32px rgba(0,0,0,.16);
     text-align: center;
-    i {
-        line-height: $size - ($border * 2);
-        color: white;
-        font-size: $size / 2;
-    }
+    background: url('#{$root}/images/buttons/contact-launcher.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
