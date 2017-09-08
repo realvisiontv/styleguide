@@ -50,13 +50,41 @@ h6 {
     font-size: $size-6;
 }
 
+// Inverse Headings
+//
+// markup:
+// <h1 class="is-inverse"><span>Heading 1</span></h1>
+// <h2 class="is-inverse"><span>Heading 2</span></h2>
+// <h3 class="is-inverse"><span>Heading 3</span></h3>
+// <h4 class="is-inverse"><span>Heading 4</span></h4>
+// <h5 class="is-inverse"><span>Heading 5</span></h5>
+// <h6 class="is-inverse"><span>Heading 6</span></h6>
+//
+// Styleguide 3.2
+h1,h2,h3,h4,h5,h6 {
+    $padding: 0.5ex;
+    &.is-inverse {
+        text-transform: uppercase;
+        padding: 0 $padding;
+        letter-spacing: 1px;
+        line-height: 1.2;
+        font-weight: 800;
+        color: white;
+
+        span {
+            background-color: black;
+            box-shadow: $padding 0 0 black, -$padding 0 0 black;
+        }
+    }
+}
+
 // Paragraphs
 //
 // markup:
 // <p>Murenam te accusante defenderem. Si enim ad populum me vocas, eum. Eorum enim est haec querela, qui sibi cari sunt seseque diligunt. Primum in nostrane potestate est, quid meminerimus? Immo alio genere; Nunc omni virtuti vitium contrario nomine opponitur. Quorum sine causa fieri nihil putandum est. Quod mihi quidem visus est, cum sciret, velle tamen confitentem audire Torquatum. Comprehensum, quod cognitum non habet?</p>
 // <p>Murenam te accusante defenderem. Si enim ad populum me vocas, eum. Eorum enim est haec querela, qui sibi cari sunt seseque diligunt. Primum in nostrane potestate est, quid meminerimus? Immo alio genere; Nunc omni virtuti vitium contrario nomine opponitur. Quorum sine causa fieri nihil putandum est. Quod mihi quidem visus est, cum sciret, velle tamen confitentem audire Torquatum. Comprehensum, quod cognitum non habet?</p>
 //
-// Styleguide 3.2
+// Styleguide 3.3
 p {
     line-height: $baseline;
 }
@@ -87,7 +115,7 @@ p {
 //     <dd>Nam his libris eum malo quam reliquo ornatu villae delectari.</dd>
 // </dl>
 //
-// Styleguide 3.3
+// Styleguide 3.4
 ul,
 ol {
     list-style-position: outside;
@@ -103,7 +131,7 @@ li+li {
 }
 
 dt {
-    opacity: 0.75;
+    color: $brand;
     font-weight: 700;
 }
 
@@ -122,7 +150,7 @@ dd+dt {
 //     insectantur eos, a quibus de veritate dissentiunt.
 // </pre>
 //
-// Styleguide 3.4
+// Styleguide 3.5
 pre {
     padding: $baseline 0;
     line-height: $baseline;
@@ -133,7 +161,7 @@ pre {
 // markup:
 // <blockquote>The quick brown fox jumps over the lazy dog</blockquote>
 //
-// Styleguide 3.5
+// Styleguide 3.6
 blockquote {}
 
 // Anchors
@@ -148,7 +176,7 @@ blockquote {}
 // markup:
 // <a href="#" class="{$modifiers}">Quo modo autem philosophus loquitur?</a>
 // 
-// Styleguide 3.6
+// Styleguide 3.7
 a {
     text-decoration: underline;
     text-decoration-skip: ink;
@@ -178,7 +206,7 @@ a {
 // markup:
 // <div class="badge">Analysis</div>
 // 
-// Styleguide 3.7
+// Styleguide 3.8
 .badge {
     background: grey;
     color: white;
@@ -193,13 +221,13 @@ a {
 // markup:
 // <p class="strap"><i class="fa fa-info"></i>Shane Oliver is one of Australia's most highly rated economists</p>
 // 
-// Styleguide 3.8
+// Styleguide 3.9
 .strap {
-    color: $color-cyan;
+    color: $brand;
     line-height: 26px;
 
     .fa {
-        background: $color-cyan;
+        background: $brand;
         color: black;
         margin-right: 1ex;
         border-radius: 50%;
@@ -215,7 +243,7 @@ a {
 // markup:
 // <p class="has-text-justified-mobile">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sollicitudin viverra pellentesque. Morbi sed orci et turpis consectetur sodales id eget lectus. Curabitur ante arcu, ornare nec iaculis quis, luctus quis magna. Etiam lobortis placerat justo consequat bibendum. Nunc velit magna, ultrices vel mauris vitae, sollicitudin pulvinar turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed libero metus, ornare sit amet tincidunt eu, accumsan at purus.</p>
 // 
-// Styleguide 3.9
+// Styleguide 3.10
 @include mobile {
     .has-text-justified-mobile {
         text-align: justify !important;
@@ -225,51 +253,67 @@ a {
 // Featured numbered list
 // 
 // markup:
-// <ol class="featured">
-//     <li>
-//         <a>
-//             <div class="columns">
-//                 <div class="column">
-//                     <div class="meta">Meta info</div>
-//                     <div class="item">Main text</div>
+// <div class="featured">
+//     <ol>
+//         <li>
+//             <a>
+//                 <div class="columns">
+//                     <div class="column">
+//                         <div class="meta">Meta info</div>
+//                         <div class="item">Main text</div>
+//                     </div>
 //                 </div>
-//             </div>
-//         </a>
-//     </li>
-//     <li>
-//         <a>
-//             <div class="columns">
-//                 <div class="column">
-//                     <div class="meta">Meta info</div>
-//                     <div class="item">Main text</div>
+//             </a>
+//         </li>
+//         <li>
+//             <a>
+//                 <div class="columns">
+//                     <div class="column">
+//                         <div class="meta">Meta info</div>
+//                         <div class="item">Main text</div>
+//                     </div>
 //                 </div>
-//             </div>
-//         </a>
-//     </li>
-//     <li>
-//         <a>
-//             <div class="columns">
-//                 <div class="column">
-//                     <div class="item">Main text</div>
+//             </a>
+//         </li>
+//         <li>
+//             <a>
+//                 <div class="columns">
+//                     <div class="column">
+//                         <div class="item">Main text</div>
+//                     </div>
 //                 </div>
-//             </div>
-//         </a>
-//     </li>
-// </ol>
+//             </a>
+//         </li>
+//     </ol>
+// </div>
 // 
-// Styleguide 3.10
-ol.featured {
-    counter-reset: featured-counter;
-    list-style: none;
-    margin-left: 0;
+// Styleguide 3.11
+.featured {
+    background: url('#{$root}/images/components/crinkled-paper-effect.jpg') 50% 50%;
+    padding: $baseline;
+
+    ol {
+        counter-reset: featured-counter;
+        list-style: none;
+        margin-left: 0;
+        margin-bottom: $baseline;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
 
     li {
+        margin-top: $baseline / 2;
         position: relative;
+
+        &:first-child {
+            margin-top: 0;
+        }
 
         &:before {
             content: counter(featured-counter);
             counter-increment: featured-counter;
-            background: grey;
+            background: #92a0ac;
             color: white;
             display: inline-block;
             width: 24px;
@@ -284,28 +328,40 @@ ol.featured {
         }
 
         a {
+            color: black;
             display: block;
             margin-left: calc(0.75rem + 24px);
             font-size: $size-6;
             font-weight: 700;
             text-decoration: none;
-            min-height: 24px;
         }
 
         .meta {
+            color: #92a0ac;
             font-size: $size-7;
-            font-weight: 400;
             text-transform: uppercase;
+        }
+
+        i {
+            color: #92a0ac;
         }
 
         .columns {
             margin-top: 0;
             margin-bottom: 0;
-            align-items: flex-end;
         }
 
         .column {
             padding-top: 0;
+            padding-bottom: 0;
+
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+
+        .is-link {
+            margin-top: 0;
         }
     }
 }

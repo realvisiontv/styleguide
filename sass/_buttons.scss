@@ -4,6 +4,8 @@
 // :hover   - Hover state
 // :focus   - Focus state
 // .is-primary - Primary colours
+// .is-transparent - Transparent
+// .no-border - No border
 // 
 // markup:
 // <button class="is-link {$modifiers}"><span>The quick brown fox</span><i class="fa fa-play" aria-hidden="true"></i></button>
@@ -12,8 +14,8 @@
 // Styleguide 4.1
 button.is-link,
 a.is-link {
-    background: transparent;
-    border: 1px solid rgba(0,0,0,0.1);
+    background: #ddd;
+    border: 2px solid rgba(0,0,0,0.1);
     border-radius: 2px;
     display: inline-block;
     text-decoration: underline;
@@ -25,10 +27,21 @@ a.is-link {
     line-height: 1;
 
     &.is-primary {
-        background: $info;
-        border: darken($info, 0.1);
-        color: white !important;
+        background: $brand;
+        border-color: transparent;
+        color: black !important;
+        font-family: 'Function Pro';
+        font-weight: 800;
         text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    &.is-transparent {
+        background: transparent;
+    }
+
+    &.no-border {
+        border-color: transparent;
     }
 
     .fa {
@@ -59,6 +72,7 @@ a.is-link {
 // :focus   - Focus state
 // .disabled - Disabled state
 // .is-large - Large
+// .is-primary - Primary colours
 // 
 // markup:
 // <button class="button {$modifiers}">The quick brown fox</button><br />
@@ -130,6 +144,13 @@ a.is-link {
             color: white;
             text-decoration: none;
         }
+    }
+    
+    &.is-primary {
+        background: $brand;
+        border-color: transparent;
+        color: black !important;
+        font-weight: 800;
     }
 
     .icon:first-child:not(:last-child) {
@@ -286,6 +307,7 @@ a.button {
 // .hide-text - Hidden label
 // .is-large - Larger version (deprecated .large also works)
 // .invert - Inverted colour
+// .is-transparent - Transparent
 // :hover - Hover state
 // :focus - Focus state
 // 
@@ -306,8 +328,8 @@ a.button {
     line-height: $size;
 
     .fa {
-        background: #363D4E;
-        border: 2px solid #363D4E;
+        background: $color-bright-gray;
+        border: 2px solid $color-bright-gray;
         color: white;
         display: flex;
         height: $size;
@@ -348,23 +370,43 @@ a.button {
     }
 
     &.invert {
-        background: #363D4E;
+        background: $color-bright-gray;
         color: white;
 
         .fa {
             background: white;
-            border: 2px solid #363D4E;
-            color: #363D4E;
+            border: 2px solid $color-bright-gray;
+            color: $color-bright-gray;
         }
         &:hover,
         &:focus {
             background: white;
-            color: #363D4E;
+            color: $color-bright-gray;
 
             .fa {
-                background: #363D4E;
-                border-color: #363D4E;
+                background: $color-bright-gray;
+                border-color: $color-bright-gray;
                 color: white;
+            }
+        }
+    }
+
+    &.is-transparent {
+        background: transparent;
+
+        .fa {
+            background: transparent;
+            border-color: white;
+        }
+        &:hover,
+        &:focus {
+            background: transparent;
+            color: $brand;
+
+            .fa {
+                background: transparent;
+                border-color: $brand;
+                color: $brand;
             }
         }
     }
@@ -375,8 +417,8 @@ a.button {
 
         .fa {
             background: white;
-            border-color: #363D4E;
-            color: #363D4E;
+            border-color: $color-bright-gray;
+            color: $color-bright-gray;
         }
     }
 }
@@ -384,9 +426,7 @@ a.button {
 // Intercom launcher
 // 
 // markup:
-// <a class="contact-launcher">
-//     <i class="fa fa-question" aria-hidden="true"></i>
-// </a>
+// <a class="contact-launcher"></a>
 //
 // Styleguide 4.6
 .contact-launcher {
@@ -401,9 +441,7 @@ a.button {
     cursor: pointer;
     box-shadow: 0 1px 6px rgba(0,0,0,.06),0 2px 32px rgba(0,0,0,.16);
     text-align: center;
-    i {
-        line-height: $size - ($border * 2);
-        color: white;
-        font-size: $size / 2;
-    }
+    background: url('#{$root}/images/buttons/contact-launcher.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }

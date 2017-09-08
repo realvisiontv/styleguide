@@ -241,7 +241,7 @@
         width: calc(30% - #{$padding});
         text-align: center;
         font-family: 'Function Pro';
-        height: 15%;
+        height: 16%;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -249,13 +249,14 @@
 
     blockquote {
         color: #fff;
-        font-size: $size-7;
+        font-size: $size-6;
+        line-height: 1.2;
         margin: $padding;
         opacity: 0;
         transition: opacity $transition-out-speed;
         transition-delay: $transition-out-delay;
         position: relative;
-        max-height: 3em; 
+        max-height: 3.6em; 
         overflow: hidden;
 
         cite {
@@ -1018,7 +1019,7 @@
     }
 
     .synopsis {
-        background: #39434b;
+        background: $color-bright-gray;
         padding: $baseline / 2;
     }
 
@@ -1051,7 +1052,7 @@
             right: 0;
 
             @include tablet {
-                background: linear-gradient(to right, black 33%, transparent 65%);
+                background: linear-gradient(to right, black 45%, transparent 75%);
             }
         }
     }
