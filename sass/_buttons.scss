@@ -307,6 +307,7 @@ a.button {
 // .hide-text - Hidden label
 // .is-large - Larger version (deprecated .large also works)
 // .invert - Inverted colour
+// .is-transparent - Transparent
 // :hover - Hover state
 // :focus - Focus state
 // 
@@ -386,6 +387,26 @@ a.button {
                 background: $color-bright-gray;
                 border-color: $color-bright-gray;
                 color: white;
+            }
+        }
+    }
+
+    &.is-transparent {
+        background: transparent;
+
+        .fa {
+            background: transparent;
+            border-color: white;
+        }
+        &:hover,
+        &:focus {
+            background: transparent;
+            color: $brand;
+
+            .fa {
+                background: transparent;
+                border-color: $brand;
+                color: $brand;
             }
         }
     }

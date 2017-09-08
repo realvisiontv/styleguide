@@ -249,13 +249,14 @@
 
     blockquote {
         color: #fff;
-        font-size: $size-7;
+        font-size: $size-6;
+        line-height: 1.2;
         margin: $padding;
         opacity: 0;
         transition: opacity $transition-out-speed;
         transition-delay: $transition-out-delay;
         position: relative;
-        max-height: 3em; 
+        max-height: 3.6em; 
         overflow: hidden;
 
         cite {
