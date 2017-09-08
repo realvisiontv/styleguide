@@ -219,7 +219,7 @@
 }
 
 // Pullout Block - Quote
-// 
+//
 // Default - default
 // .no-background - No background image
 //
@@ -309,6 +309,7 @@
 
         .icon-star {
             width: 1rem;
+            height: 1rem;
             path {
                 fill: $color-torch-red;
             }
@@ -320,6 +321,7 @@
             svg {
                 fill: #6e7789;
                 width: 20px;
+                height: 20px;
 
                 &.icon-quote--open {
                     margin-left: -20px;
@@ -726,18 +728,18 @@
 // markup:
 // <div class="endorsements">
 //      <div class="columns is-mobile is-vcentered">
-//          <div class="column is-6">
+//          <div class="column is-7-mobile is-5-tablet">
 //              <img src="/images/logos/logo-cfa.png"/>
 //          </div>
-//          <div class="column is-4 is-offset-2">
+//          <div class="column is-3-tablet is-offset-2-mobile is-offset-3-tablet">
 //              <img src="/images/logos/logo-cisi.png"/>
 //          </div>
 //      </div>
 //      <div class="columns is-mobile is-vcentered">
-//          <div class="column is-3">
+//          <div class="column is-3-mobile is-2-tablet">
 //              <img src="/images/logos/logo-cfp.png"/>
 //          </div>
-//          <div class="column is-4 is-offset-1">
+//          <div class="column is-4 is-offset-2-tablet is-offset-1-mobile">
 //              <img src="/images/logos/logo-cambridge.png"/>
 //          </div>
 //          <div class="column is-3 is-offset-1">
@@ -1203,7 +1205,7 @@
         }
     }
 
-    
+
 
     p {
         line-height: 1.2rem;
@@ -1272,10 +1274,14 @@
     }
 
     p {
-        line-height: 1.45rem;
+        line-height: 1.3rem;
         span {
-
+            font-family: 'Function Pro';
+            font-weight: 400;
             font-size: $size-6;
+            line-height: 0.8rem;
+            padding: 5px 0;
+            text-transform: none;
         }
 
         @include tablet {
@@ -1300,7 +1306,10 @@
     }
 
     &.hide-cta {
-        padding-bottom: $baseline / 2;
+        padding-bottom: $baseline * 1.5;
+        & .columns:nth-last-child(2) {
+            margin-bottom: -0.75rem; // Makes penultamate columns the same as last .columns incase there is an empty cta block
+        }
     }
 
     &.content-left {
@@ -1677,7 +1686,7 @@
 //      <div class="columns is-mobile">
 //          <div class="column is-6-desktop is-12-mobile is-paddingless play-block_container">
 //              <div class="play-block_body">How to use Macro Analysis to Gain an Edge press
-//                  <span class="play-block__play">play <button class="icon-button fa-play hide-text">Play</button></span>
+//                  <span class="play-block__play">play <button class="icon-button"><i class="fa fa-play hide-text" aria-hidden="true"></i></button></span>
 //              </div>
 //          </div>
 //      </div>
@@ -1710,7 +1719,7 @@
         }
     }
     h2 {
-        margin-bottom: $baseline * 2;
+        margin-bottom: $baseline;
         line-height: 2.3rem;
         span {
             font-size: $size-3;
@@ -1720,27 +1729,29 @@
         }
     }
     .play-block_body {
+        font-family: 'Function Pro';
         font-size: $size-2;
         font-weight: 800;
         color: #fff;
         line-height: 3rem;
+        margin-top: $baseline;
+        margin-bottom: $baseline;
     }
     .play-block__play {
         display: inline-flex;
         color: $color-cyan;
 
         button {
-            margin-left: 10px;
-
-            &:before {
-                color: black;
+            margin-left: 25px;
+            .fa {
+                color: $color-bright-gray;
                 background: $color-cyan;
                 border-color: $color-cyan;
-            }
-
-            &:hover {
-                &:before {
+                font-size: 18px;
+                padding-left: 3px;
+                &:hover {
                     color: white;
+                    border-color: white;
                     background: transparent;
                 }
             }
