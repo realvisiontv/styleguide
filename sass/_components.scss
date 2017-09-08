@@ -429,9 +429,12 @@
 }
 
 // Rating
+// 
+// default - Default
+// .is-inverse - Inverse
 //
 // markup:
-// <div class="rating">
+// <div class="rating {$modifiers}">
 //     <div class="columns is-mobile">
 //         <div class="column">
 //             <a class="like" href=""><i class="fa fa-thumbs-up"></i> <span>75</span></a>
@@ -467,6 +470,24 @@
         i {
             font-size: $size-6;
             line-height: $size-4;
+        }
+    }
+
+    &.is-inverse {
+        .progress {
+            background: rgba(255, 255, 255, 0.2);
+
+            div {
+                background: #fe30aa;
+            }
+        }
+
+        a {
+            color: $brand;
+
+            &.inactive {
+                color: gray;
+            }
         }
     }
 }

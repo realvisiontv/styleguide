@@ -4,6 +4,8 @@
 // :hover   - Hover state
 // :focus   - Focus state
 // .is-primary - Primary colours
+// .is-transparent - Transparent
+// .no-border - No border
 // 
 // markup:
 // <button class="is-link {$modifiers}"><span>The quick brown fox</span><i class="fa fa-play" aria-hidden="true"></i></button>
@@ -12,8 +14,8 @@
 // Styleguide 4.1
 button.is-link,
 a.is-link {
-    background: transparent;
-    border: 1px solid rgba(0,0,0,0.1);
+    background: #ddd;
+    border: 2px solid rgba(0,0,0,0.1);
     border-radius: 2px;
     display: inline-block;
     text-decoration: underline;
@@ -25,10 +27,21 @@ a.is-link {
     line-height: 1;
 
     &.is-primary {
-        background: $info;
-        border: darken($info, 0.1);
-        color: white !important;
+        background: $brand;
+        border-color: transparent;
+        color: black !important;
+        font-family: 'Function Pro';
+        font-weight: 800;
         text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    &.is-transparent {
+        background: transparent;
+    }
+
+    &.no-border {
+        border-color: transparent;
     }
 
     .fa {
@@ -59,6 +72,7 @@ a.is-link {
 // :focus   - Focus state
 // .disabled - Disabled state
 // .is-large - Large
+// .is-primary - Primary colours
 // 
 // markup:
 // <button class="button {$modifiers}">The quick brown fox</button><br />
@@ -130,6 +144,13 @@ a.is-link {
             color: white;
             text-decoration: none;
         }
+    }
+    
+    &.is-primary {
+        background: $brand;
+        border-color: transparent;
+        color: black !important;
+        font-weight: 800;
     }
 
     .icon:first-child:not(:last-child) {

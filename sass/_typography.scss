@@ -68,7 +68,7 @@ h1,h2,h3,h4,h5,h6 {
         padding: 0 $padding;
         letter-spacing: 1px;
         line-height: 1.2;
-        font-weight: 700;
+        font-weight: 800;
         color: white;
 
         span {
@@ -131,7 +131,7 @@ li+li {
 }
 
 dt {
-    opacity: 0.75;
+    color: $brand;
     font-weight: 700;
 }
 
@@ -253,51 +253,67 @@ a {
 // Featured numbered list
 // 
 // markup:
-// <ol class="featured">
-//     <li>
-//         <a>
-//             <div class="columns">
-//                 <div class="column">
-//                     <div class="meta">Meta info</div>
-//                     <div class="item">Main text</div>
+// <div class="featured">
+//     <ol>
+//         <li>
+//             <a>
+//                 <div class="columns">
+//                     <div class="column">
+//                         <div class="meta">Meta info</div>
+//                         <div class="item">Main text</div>
+//                     </div>
 //                 </div>
-//             </div>
-//         </a>
-//     </li>
-//     <li>
-//         <a>
-//             <div class="columns">
-//                 <div class="column">
-//                     <div class="meta">Meta info</div>
-//                     <div class="item">Main text</div>
+//             </a>
+//         </li>
+//         <li>
+//             <a>
+//                 <div class="columns">
+//                     <div class="column">
+//                         <div class="meta">Meta info</div>
+//                         <div class="item">Main text</div>
+//                     </div>
 //                 </div>
-//             </div>
-//         </a>
-//     </li>
-//     <li>
-//         <a>
-//             <div class="columns">
-//                 <div class="column">
-//                     <div class="item">Main text</div>
+//             </a>
+//         </li>
+//         <li>
+//             <a>
+//                 <div class="columns">
+//                     <div class="column">
+//                         <div class="item">Main text</div>
+//                     </div>
 //                 </div>
-//             </div>
-//         </a>
-//     </li>
-// </ol>
+//             </a>
+//         </li>
+//     </ol>
+// </div>
 // 
 // Styleguide 3.11
-ol.featured {
-    counter-reset: featured-counter;
-    list-style: none;
-    margin-left: 0;
+.featured {
+    background: url('#{$root}/images/components/crinkled-paper-effect.jpg') 50% 50%;
+    padding: $baseline;
+
+    ol {
+        counter-reset: featured-counter;
+        list-style: none;
+        margin-left: 0;
+        margin-bottom: $baseline;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
 
     li {
+        margin-top: $baseline / 2;
         position: relative;
+
+        &:first-child {
+            margin-top: 0;
+        }
 
         &:before {
             content: counter(featured-counter);
             counter-increment: featured-counter;
-            background: grey;
+            background: #92a0ac;
             color: white;
             display: inline-block;
             width: 24px;
@@ -312,28 +328,40 @@ ol.featured {
         }
 
         a {
+            color: black;
             display: block;
             margin-left: calc(0.75rem + 24px);
             font-size: $size-6;
             font-weight: 700;
             text-decoration: none;
-            min-height: 24px;
         }
 
         .meta {
+            color: #92a0ac;
             font-size: $size-7;
-            font-weight: 400;
             text-transform: uppercase;
+        }
+
+        i {
+            color: #92a0ac;
         }
 
         .columns {
             margin-top: 0;
             margin-bottom: 0;
-            align-items: flex-end;
         }
 
         .column {
             padding-top: 0;
+            padding-bottom: 0;
+
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+
+        .is-link {
+            margin-top: 0;
         }
     }
 }
