@@ -50,13 +50,41 @@ h6 {
     font-size: $size-6;
 }
 
+// Inverse Headings
+//
+// markup:
+// <h1 class="is-inverse"><span>Heading 1</span></h1>
+// <h2 class="is-inverse"><span>Heading 2</span></h2>
+// <h3 class="is-inverse"><span>Heading 3</span></h3>
+// <h4 class="is-inverse"><span>Heading 4</span></h4>
+// <h5 class="is-inverse"><span>Heading 5</span></h5>
+// <h6 class="is-inverse"><span>Heading 6</span></h6>
+//
+// Styleguide 3.2
+h1,h2,h3,h4,h5,h6 {
+    $padding: 0.5ex;
+    &.is-inverse {
+        text-transform: uppercase;
+        padding: 0 $padding;
+        letter-spacing: 1px;
+        line-height: 1.2;
+        font-weight: 800;
+        color: white;
+
+        span {
+            background-color: black;
+            box-shadow: $padding 0 0 black, -$padding 0 0 black;
+        }
+    }
+}
+
 // Paragraphs
 //
 // markup:
 // <p>Murenam te accusante defenderem. Si enim ad populum me vocas, eum. Eorum enim est haec querela, qui sibi cari sunt seseque diligunt. Primum in nostrane potestate est, quid meminerimus? Immo alio genere; Nunc omni virtuti vitium contrario nomine opponitur. Quorum sine causa fieri nihil putandum est. Quod mihi quidem visus est, cum sciret, velle tamen confitentem audire Torquatum. Comprehensum, quod cognitum non habet?</p>
 // <p>Murenam te accusante defenderem. Si enim ad populum me vocas, eum. Eorum enim est haec querela, qui sibi cari sunt seseque diligunt. Primum in nostrane potestate est, quid meminerimus? Immo alio genere; Nunc omni virtuti vitium contrario nomine opponitur. Quorum sine causa fieri nihil putandum est. Quod mihi quidem visus est, cum sciret, velle tamen confitentem audire Torquatum. Comprehensum, quod cognitum non habet?</p>
 //
-// Styleguide 3.2
+// Styleguide 3.3
 p {
     line-height: $baseline;
 }
@@ -87,7 +115,7 @@ p {
 //     <dd>Nam his libris eum malo quam reliquo ornatu villae delectari.</dd>
 // </dl>
 //
-// Styleguide 3.3
+// Styleguide 3.4
 ul,
 ol {
     list-style-position: outside;
@@ -122,7 +150,7 @@ dd+dt {
 //     insectantur eos, a quibus de veritate dissentiunt.
 // </pre>
 //
-// Styleguide 3.4
+// Styleguide 3.5
 pre {
     padding: $baseline 0;
     line-height: $baseline;
@@ -133,7 +161,7 @@ pre {
 // markup:
 // <blockquote>The quick brown fox jumps over the lazy dog</blockquote>
 //
-// Styleguide 3.5
+// Styleguide 3.6
 blockquote {}
 
 // Anchors
@@ -148,7 +176,7 @@ blockquote {}
 // markup:
 // <a href="#" class="{$modifiers}">Quo modo autem philosophus loquitur?</a>
 // 
-// Styleguide 3.6
+// Styleguide 3.7
 a {
     text-decoration: underline;
     text-decoration-skip: ink;
@@ -178,7 +206,7 @@ a {
 // markup:
 // <div class="badge">Analysis</div>
 // 
-// Styleguide 3.7
+// Styleguide 3.8
 .badge {
     background: grey;
     color: white;
@@ -193,7 +221,7 @@ a {
 // markup:
 // <p class="strap"><i class="fa fa-info"></i>Shane Oliver is one of Australia's most highly rated economists</p>
 // 
-// Styleguide 3.8
+// Styleguide 3.9
 .strap {
     color: $brand;
     line-height: 26px;
@@ -215,7 +243,7 @@ a {
 // markup:
 // <p class="has-text-justified-mobile">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sollicitudin viverra pellentesque. Morbi sed orci et turpis consectetur sodales id eget lectus. Curabitur ante arcu, ornare nec iaculis quis, luctus quis magna. Etiam lobortis placerat justo consequat bibendum. Nunc velit magna, ultrices vel mauris vitae, sollicitudin pulvinar turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed libero metus, ornare sit amet tincidunt eu, accumsan at purus.</p>
 // 
-// Styleguide 3.9
+// Styleguide 3.10
 @include mobile {
     .has-text-justified-mobile {
         text-align: justify !important;
@@ -257,7 +285,7 @@ a {
 //     </li>
 // </ol>
 // 
-// Styleguide 3.10
+// Styleguide 3.11
 ol.featured {
     counter-reset: featured-counter;
     list-style: none;
