@@ -219,7 +219,7 @@
 }
 
 // Pullout Block - Quote
-// 
+//
 // Default - default
 // .no-background - No background image
 //
@@ -309,6 +309,7 @@
 
         .icon-star {
             width: 1rem;
+            height: 1rem;
             path {
                 fill: $color-torch-red;
             }
@@ -320,6 +321,7 @@
             svg {
                 fill: #6e7789;
                 width: 20px;
+                height: 20px;
 
                 &.icon-quote--open {
                     margin-left: -20px;
