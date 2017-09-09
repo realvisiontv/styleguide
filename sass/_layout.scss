@@ -544,3 +544,22 @@ footer {
         margin: 0 0 $baseline 0;
     }
 }
+
+
+// Paper background
+//
+// markup:
+// <div class="container is-paper">Any content can be placed in a paper background element. <code>.is-paper</code> can be applied on any element</div>
+// 
+// Styleguide 2.6
+.is-paper {
+    background-image: url('#{$root}/images/components/crinkled-paper-effect.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: $baseline;
+
+    hr {
+        background-color: rgba(0, 0, 0, 0.15);
+    }
+}
