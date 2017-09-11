@@ -281,7 +281,7 @@
             margin-bottom: $baseline;
 
             @include mobile {
-                font-size: $size-5;
+                font-size: $size-6;
                 font-weight: normal;
                 margin-bottom: 0;
             }
@@ -429,7 +429,7 @@
 }
 
 // Rating
-// 
+//
 // default - Default
 // .is-inverse - Inverse
 //
@@ -772,9 +772,9 @@
 // Styleguide 5.12
 .endorsements {
     background: white;
-    padding: $baseline ($baseline * 2);
+    padding: $baseline ($baseline * 4);
     @include mobile {
-        padding: $baseline;
+        padding: $baseline ($baseline * 2);
         background: #363e4e;
     }
 }
