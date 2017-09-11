@@ -287,9 +287,14 @@
             }
         }
 
-        strong {
-            font-style: normal;
+        a {
+            text-decoration: none;
             color: $color-torch-red;
+            transition: color 200ms ease-in-out;
+
+            &:hover {
+                color: $text;
+            }
         }
     }
 
@@ -317,6 +322,7 @@
 
         blockquote {
             margin-left: 20px;
+            font-style: italic;
 
             svg {
                 fill: #6e7789;
@@ -419,7 +425,7 @@
 // markup:
 // <div class="pullout-block pullout-block__text">
 //      <div class="pullout-block__content">
-//          <p>With Macro Insiders, two of the world's top macro-researchers, <em>Raoul Pal</em> and <em>Julian Brigden</em>, bring you a lever of elite macro analysis that was previously only available to large banks, hedge funds and wealthy families.</p>
+//          <p>With Macro Insiders, two of the world's top macro-researchers, <a href="#">Raoul Pal</a> and <a href="#">Julian Brigden</a>, bring you a lever of elite macro analysis that was previously only available to large banks, hedge funds and wealthy families.</p>
 //      </div>
 // </div>
 //
@@ -846,9 +852,14 @@
         padding: $baseline ($baseline * 2);
     }
 
-    strong {
+    a {
         font-style: normal;
         color: $color-torch-red;
+        transition: color 200ms ease-in-out;
+
+        &:hover {
+            color: white;
+        }
     }
 
     h2, h3 {
@@ -953,7 +964,7 @@
     h3:last-child {
         margin-bottom: 0;
     }
-    a {
+    a.button {
         position: relative;
         right: auto;
         bottom: auto;
@@ -1101,7 +1112,7 @@
 //              </div>
 //              <div class="product-hero__cell">
 //                  <h3><span>One</span></h3>
-//                  <p><span>Weekly Newsletter, <em>The hack</em>,<br/> delivered straight to your inbox</span></p>
+//                  <p><span>Weekly Newsletter, <a href="#">The hack</a>,<br/> delivered straight to your inbox</span></p>
 //              </div>
 //          </div>
 //      </div>
@@ -1141,7 +1152,7 @@
 
     &.content-center {
         text-align: center;
-        a {
+        a.button {
             right: auto;
             left: auto;
             transform: translateX(0);
