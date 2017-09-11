@@ -513,19 +513,19 @@
 //
 // markup:
 // <div class="container tri-hero loading">
-//     <div class="columns images is-hidden-mobile">
+//     <div class="columns images is-hidden-touch">
 //         <article class="column is-7"></article>
 //         <article class="column is-2-5"></article>
 //         <article class="column is-2-5"></article>
 //     </div>
 //     <div class="columns content">
 //         <article class="column is-5"><a></a></article>
-//         <article class="column is-3 is-offset-0-5 is-hidden-mobile"><a></a></article>
-//         <article class="column is-3 is-offset-0-5 is-hidden-mobile"><a></a></article>
+//         <article class="column is-3 is-offset-0-5 is-hidden-touch"><a></a></article>
+//         <article class="column is-3 is-offset-0-5 is-hidden-touch"><a></a></article>
 //     </div>
 // </div>
 // <div class="container tri-hero">
-//     <div class="columns images is-hidden-mobile">
+//     <div class="columns images is-hidden-touch">
 //         <article class="column is-7">
 //             <img src="https://lorempixel.com/1600/900/people" />
 //         </article>
@@ -538,7 +538,7 @@
 //     </div>
 //     <div class="columns content">
 //         <article class="column is-5">
-//             <img src="https://lorempixel.com/1600/900/people" class="is-hidden-tablet" />
+//             <img src="https://lorempixel.com/1600/900/people" class="is-hidden-touch" />
 //             <a>
 //                 <h2>Latest Video</h2>
 //                 <h1>Looking under the hood gold</h1>
@@ -548,23 +548,23 @@
 //             </a>
 //         </article>
 //         <article class="column is-3 is-offset-0-5">
-//             <img src="https://lorempixel.com/1600/900/city" class="is-hidden-tablet" />
+//             <img src="https://lorempixel.com/1600/900/city" class="is-hidden-touch" />
 //             <a>
 //                 <h2>Latest Video</h2>
 //                 <h1>Looking under the hood gold</h1>
 //                 <p>Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
 //                 <button class="icon-button large hide-text info"><i class="fa fa-info" aria-hidden="true"></i>More information</button>
-//                 <button class="icon-button invert large play is-hidden-tablet"><i class="fa fa-play" aria-hidden="true"></i>24:45</button>
+//                 <button class="icon-button invert large play is-hidden-touch"><i class="fa fa-play" aria-hidden="true"></i>24:45</button>
 //             </a>
 //         </article>
 //         <article class="column is-3 is-offset-0-5">
-//             <img src="https://lorempixel.com/1600/900/abstract" class="is-hidden-tablet" />
+//             <img src="https://lorempixel.com/1600/900/abstract" class="is-hidden-touch" />
 //             <a>
 //                 <h2>Latest Video</h2>
 //                 <h1>Looking under the hood gold</h1>
 //                 <p>Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
 //                 <button class="icon-button large hide-text info"><i class="fa fa-info" aria-hidden="true"></i>More information</button>
-//                 <button class="icon-button invert large play is-hidden-tablet"><i class="fa fa-play" aria-hidden="true"></i>24:45</button>
+//                 <button class="icon-button invert large play is-hidden-touch"><i class="fa fa-play" aria-hidden="true"></i>24:45</button>
 //             </a>
 //         </article>
 //     </div>
@@ -588,7 +588,7 @@
         overflow: hidden;
         margin: 0;
         position: relative;
-        @include tablet {
+        @include desktop {
             height: 548px;
             margin-top: -548px;
         }
@@ -686,7 +686,7 @@
         padding: 0 ($baseline / 2);
     }
 
-    @include tablet {
+    @include desktop {
         .images {
             overflow: hidden;
             height: 548px;
@@ -795,7 +795,7 @@
         }
     }
     
-    @include mobile {
+    @include touch {
         width: 100%;
         overflow: scroll;
         scroll-snap-type: mandatory;
@@ -862,7 +862,6 @@
 
             h1,
             .is-3 h1 {
-                font-size: $size-3;
                 max-height: 4em;
             }
     
@@ -875,10 +874,6 @@
 
             h2 {
                 font-size: $size-6;
-            }
-
-            p {
-                display: none;
             }
 
             .icon-button.info,
