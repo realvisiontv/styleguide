@@ -1974,6 +1974,7 @@
     .email-capture--success {
         display: none;
         text-align: center;
+        margin: 0;
     }
 
     .email-capture--error {
@@ -1988,7 +1989,6 @@
 
     &.success {
         .email-capture--success {
-            margin: 0;
             display: block;
         }
 
