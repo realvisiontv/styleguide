@@ -595,6 +595,7 @@
 
         a {
             color: white;
+            text-decoration: none;
         }
  
         .icon-button.play {
@@ -684,9 +685,7 @@
 
     @include desktop {
         padding: 0 ($baseline / 2);
-    }
 
-    @include desktop {
         .images {
             overflow: hidden;
             height: 548px;
