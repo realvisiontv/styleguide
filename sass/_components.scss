@@ -253,20 +253,20 @@
     position: relative;
 
     h3 {
-        line-height: $size-5;
+        line-height: $size-4;
         margin-left: 10px;
         margin-bottom: $baseline;
         span {
-            font-size: $size-5;
+            font-size: $size-4;
             color: white;
             background-color: black;
             box-shadow: 10px 0 0 black, -10px 0 0 black;
         }
 
         @include tablet {
-            line-height: $size-4;
+            line-height: $size-3;
             span {
-                font-size: $size-4;
+                font-size: $size-3;
             }
         }
     }
