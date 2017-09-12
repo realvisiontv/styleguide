@@ -1748,8 +1748,7 @@
 // .full-width - Play block with the 'play' text full width in desktop view
 //
 // markup:
-// <div class="play-block {$modifiers}">
-//    <a href="#">
+// <a class="play-block {$modifiers}">
 //      <h2><span>They all used macro-analysis. That’s why you should care about this kind of research.</span></h2>
 //      <div class="columns is-mobile">
 //          <div class="column is-6-desktop is-12-mobile is-paddingless play-block_container">
@@ -1758,12 +1757,11 @@
 //              </div>
 //          </div>
 //      </div>
-//    </a>
-// </div>
+// </a>
 //
 // Styleguide 5.20
 .play-block {
-
+    display: block;
     background-image: url('#{$root}/images/components/product-play-block-bg.jpg');
     background-position: center;
     background-size: cover;
@@ -1771,10 +1769,7 @@
     position: relative;
     padding: $baseline;
     text-transform: uppercase;
-
-    a {
-        text-decoration: none;
-    }
+    text-decoration: none;
 
     @include tablet {
         padding: $baseline ($baseline * 2);
