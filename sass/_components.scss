@@ -226,6 +226,7 @@
 // markup:
 // <div class="pullout-block pullout-block__product-quote {$modifiers}">
 //      <div class="pullout-block__content">
+//          <h3><span>Disrupting Financial Media</span></h3>
 //          <p class="pullout-block__content-heading">Get exposed to investment ideas and financial insights that you can't get anywhere else.</p>
 //          <div class="is-hidden-mobile">
 //              <div class="icons">
@@ -250,6 +251,25 @@
 .pullout-block {
     padding: $baseline;
     position: relative;
+
+    h3 {
+        line-height: $size-5;
+        margin-left: 10px;
+        margin-bottom: $baseline;
+        span {
+            font-size: $size-5;
+            color: white;
+            background-color: black;
+            box-shadow: 10px 0 0 black, -10px 0 0 black;
+        }
+
+        @include tablet {
+            line-height: $size-4;
+            span {
+                font-size: $size-4;
+            }
+        }
+    }
 
     @include mobile {
         padding: 0;
@@ -357,6 +377,7 @@
 // markup:
 // <div class="pullout-block pullout-block__list">
 //      <div class="pullout-block__content">
+//          <h3><span>Disrupting Financial Media</span></h3>
 //          <p class="pullout-block__content-heading">Think long, win big&hellip;</p>
 //          <p class="pullout-block__content-subheading">A good macro idea can be worth millions of dollars&hellip;</p>
 //          <ul>
@@ -420,6 +441,7 @@
 // markup:
 // <div class="pullout-block pullout-block__text">
 //      <div class="pullout-block__content">
+//          <h3><span>Disrupting Financial Media</span></h3>
 //          <p>With Macro Insiders, two of the world's top macro-researchers, <em>Raoul Pal</em> and <em>Julian Brigden</em>, bring you a lever of elite macro analysis that was previously only available to large banks, hedge funds and wealthy families.</p>
 //      </div>
 // </div>
@@ -431,9 +453,6 @@
 
 // Rating
 // 
-// default - Default
-// .is-inverse - Inverse
-//
 // default - Default
 // .is-inverse - Inverse
 //
