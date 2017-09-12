@@ -466,7 +466,7 @@
 }
 
 // Rating
-// 
+//
 // default - Default
 // .is-inverse - Inverse
 //
@@ -2070,5 +2070,39 @@
         .email-capture--error {
             display: block;
         }
+    }
+}
+
+// Media Block
+//
+// default - Default
+// .has-text-centered - Centers the image
+// .has-text-right - Aligns the image to the right
+// .is-full-width - Have the image fill the block
+// .has-padding - Add padding inside the block
+// .has-margin - Add margin outside the block
+//
+// markup:
+// <div class="media-block {$modifiers}">
+//     <img src="http://lorempixel.com/320/180/abstract" />
+// </div>
+//
+// Styleguide 5.25
+.media-block {
+    background: #eee;
+    img {
+        vertical-align:bottom;
+    }
+
+    &.is-full-width img {
+        width: 100%;
+    }
+
+    &.has-padding {
+        padding: $baseline;
+    }
+
+    &.has-margin {
+        margin: $baseline;
     }
 }
