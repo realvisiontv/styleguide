@@ -309,9 +309,19 @@
             }
         }
 
-        strong {
-            font-style: normal;
+        a {
+            text-decoration: none;
+            font-weight: bold;
             color: $color-torch-red;
+            transition: color 300ms ease-in-out;
+
+            &:hover {
+                color: $text;
+            }
+        }
+
+        strong {
+            color: $text;
         }
     }
 
@@ -456,7 +466,7 @@
 // <div class="pullout-block pullout-block__text {$modifiers}">
 //      <div class="pullout-block__content">
 //          <h3 class="pullout-block--title"><span>Disrupting Financial Media</span></h3>
-//          <p>With Macro Insiders, two of the world's top macro-researchers, <em>Raoul Pal</em> and <em>Julian Brigden</em>, bring you a lever of elite macro analysis that was previously only available to large banks, hedge funds and wealthy families.</p>
+//          <p>With Macro Insiders, two of the world's top macro-researchers, <a href="#">Raoul Pal</a> and <a href="#">Julian Brigden</a>, bring you a lever of elite macro analysis that was previously only available to large banks, hedge funds and wealthy families.</p>
 //      </div>
 // </div>
 //
