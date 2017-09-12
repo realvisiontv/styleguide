@@ -222,11 +222,12 @@
 //
 // Default - default
 // .no-background - No background image
+// .no-block-title - No block title (black/white heading)
 //
 // markup:
 // <div class="pullout-block pullout-block__product-quote {$modifiers}">
 //      <div class="pullout-block__content">
-//          <h3><span>Disrupting Financial Media</span></h3>
+//          <h3 class="pullout-block--title"><span>Disrupting Financial Media</span></h3>
 //          <p class="pullout-block__content-heading">Get exposed to investment ideas and financial insights that you can't get anywhere else.</p>
 //          <div class="is-hidden-mobile">
 //              <div class="icons">
@@ -252,10 +253,11 @@
     padding: $baseline;
     position: relative;
 
-    h3 {
+    .pullout-block--title {
         line-height: $size-4;
         margin-left: 10px;
         margin-bottom: $baseline;
+        margin-top: $baseline / 2;
         span {
             font-size: $size-4;
             color: white;
@@ -317,6 +319,12 @@
         background: transparent;
     }
 
+    &.no-block-title {
+        .pullout-block--title {
+            display: none;
+        }
+    }
+
     &.pullout-block__product-quote {
         .icons {
             text-align: center;
@@ -374,10 +382,13 @@
 
 // Pullout Block - List
 //
+// default - Default component
+// .no-block-title - No block title (black/white heading)
+//
 // markup:
-// <div class="pullout-block pullout-block__list">
+// <div class="pullout-block pullout-block__list {$modifiers}">
 //      <div class="pullout-block__content">
-//          <h3><span>Disrupting Financial Media</span></h3>
+//          <h3 class="pullout-block--title"><span>Disrupting Financial Media</span></h3>
 //          <p class="pullout-block__content-heading">Think long, win big&hellip;</p>
 //          <p class="pullout-block__content-subheading">A good macro idea can be worth millions of dollars&hellip;</p>
 //          <ul>
@@ -438,10 +449,13 @@
 
 // Pullout Block - Text
 //
+// default - Default component
+// .no-block-title - No block title (black/white heading)
+//
 // markup:
-// <div class="pullout-block pullout-block__text">
+// <div class="pullout-block pullout-block__text {$modifiers}">
 //      <div class="pullout-block__content">
-//          <h3><span>Disrupting Financial Media</span></h3>
+//          <h3 class="pullout-block--title"><span>Disrupting Financial Media</span></h3>
 //          <p>With Macro Insiders, two of the world's top macro-researchers, <em>Raoul Pal</em> and <em>Julian Brigden</em>, bring you a lever of elite macro analysis that was previously only available to large banks, hedge funds and wealthy families.</p>
 //      </div>
 // </div>
