@@ -1347,6 +1347,7 @@
 
         @include tablet {
             line-height: 2rem;
+            width: 70%;
 
             span {
                 font-size: $size-4;
@@ -1375,6 +1376,12 @@
 
     &.has-text-left .has-text-right-tablet {
         @extend .has-text-left;
+    }
+
+    &.has-text-right {
+        p {
+            margin-left: auto;
+        }
     }
 
     .columns:last-child:not(.hero-cta__container) {
