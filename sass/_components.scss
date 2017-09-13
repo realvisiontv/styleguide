@@ -1252,7 +1252,7 @@
     @include tablet {
         padding: $baseline ($baseline * 2);
     }
-    
+
     &.hide-cta {
         padding-bottom: $baseline / 2;
     }
@@ -1273,7 +1273,7 @@
             font-size: $size-6;
         }
     }
-    
+
     .columns:last-child:not(.hero-cta__container) {
         margin-bottom: $baseline / 2;
     }
@@ -1372,11 +1372,11 @@
             margin-bottom: -0.75rem; // Makes penultamate columns the same as last .columns incase there is an empty cta block
         }
     }
-    
+
     &.has-text-left .has-text-right-tablet {
         @extend .has-text-left;
     }
-    
+
     .columns:last-child:not(.hero-cta__container) {
         margin-bottom: $baseline / 2;
     }
@@ -1776,7 +1776,7 @@
     }
     .play-block_body {
         font-family: 'Function Pro';
-        font-size: $size-2;
+        font-size: 2.8rem;
         font-weight: 800;
         color: #fff;
         line-height: 3rem;
@@ -2089,7 +2089,7 @@
 
 .product-price-block {
     font-weight: 800;
-    
+
     .product-price__title {
         text-transform: uppercase;
         color: white;
@@ -2100,11 +2100,11 @@
         font-size: $size-5;
         padding: ($baseline / 2) $baseline;
     }
-    
+
     .product-price__product {
         color: $brand;
     }
-    
+
     .product-price {
         display: flex;
         background: url('#{$root}/images/components/crinkled-paper-effect.jpg'), #363e4e;
@@ -2115,7 +2115,7 @@
         position: relative;
         overflow: hidden;
         padding: $baseline $baseline ($baseline * 2 );
-        
+
         * {
             margin: 0;
         }
@@ -2140,29 +2140,29 @@
                 font-size: $size-4;
             }
         }
-        
+
         .product-price__header {
             flex-direction: row;
             display: flex;
         }
-        
+
         .product-price__body {
             flex-direction: column;
             display: flex;
         }
-        
+
         .product-price__price {
             font-size: $size-1;
             line-height: $size-1;
         }
-        
+
         .product-price__term {
             font-size: $size-4;
             line-height: $size-4;
             padding-left: 0.2rem;
             margin-top: auto;
         }
-        
+
         .product-price__conditions {
             font-size: $size-6;
             line-height: $size-6;
@@ -2200,6 +2200,30 @@
 
     &.has-padding {
         padding: $baseline;
+    }
+
+    &.has-margin {
+        margin: $baseline;
+    }
+}
+
+// CTA Block
+//
+// default - Default
+// .has-text-centered - Aligns the button to the center
+// .has-text-right - Aligns the button to the right
+// .has-margin - Add margin outside the block
+// .has-dark-text - Makes the text on the button dark for use with light backgrounds
+//
+// markup:
+// <div class="cta-block {$modifiers}">
+//     <a href="#" class="button">Call to action button</a>
+// </div>
+//
+// Styleguide 5.27
+.cta-block {
+    &.has-dark-text .button{
+        color: $color-bright-gray;
     }
 
     &.has-margin {
