@@ -222,10 +222,12 @@
 //
 // Default - default
 // .no-background - No background image
+// .no-block-title - No block title (black/white heading)
 //
 // markup:
 // <div class="pullout-block pullout-block__product-quote {$modifiers}">
 //      <div class="pullout-block__content">
+//          <h3 class="pullout-block--title"><span>Disrupting Financial Media</span></h3>
 //          <p class="pullout-block__content-heading">Get exposed to investment ideas and financial insights that you can't get anywhere else.</p>
 //          <div class="is-hidden-mobile">
 //              <div class="icons">
@@ -250,6 +252,26 @@
 .pullout-block {
     padding: $baseline;
     position: relative;
+
+    .pullout-block--title {
+        line-height: $size-4;
+        margin-left: 10px;
+        margin-bottom: $baseline;
+        margin-top: $baseline / 2;
+        span {
+            font-size: $size-4;
+            color: white;
+            background-color: black;
+            box-shadow: 10px 0 0 black, -10px 0 0 black;
+        }
+
+        @include tablet {
+            line-height: $size-3;
+            span {
+                font-size: $size-3;
+            }
+        }
+    }
 
     @include mobile {
         padding: 0;
@@ -287,14 +309,30 @@
             }
         }
 
-        strong {
-            font-style: normal;
+        a {
+            text-decoration: none;
+            font-weight: bold;
             color: $color-torch-red;
+            transition: color 300ms ease-in-out;
+
+            &:hover {
+                color: $text;
+            }
+        }
+
+        strong {
+            color: $text;
         }
     }
 
     &.no-background .pullout-block__content {
         background: transparent;
+    }
+
+    &.no-block-title {
+        .pullout-block--title {
+            display: none;
+        }
     }
 
     &.pullout-block__product-quote {
@@ -317,6 +355,7 @@
 
         blockquote {
             margin-left: 20px;
+            font-style: italic;
 
             svg {
                 fill: #6e7789;
@@ -353,9 +392,13 @@
 
 // Pullout Block - List
 //
+// default - Default component
+// .no-block-title - No block title (black/white heading)
+//
 // markup:
-// <div class="pullout-block pullout-block__list">
+// <div class="pullout-block pullout-block__list {$modifiers}">
 //      <div class="pullout-block__content">
+//          <h3 class="pullout-block--title"><span>Disrupting Financial Media</span></h3>
 //          <p class="pullout-block__content-heading">Think long, win big&hellip;</p>
 //          <p class="pullout-block__content-subheading">A good macro idea can be worth millions of dollars&hellip;</p>
 //          <ul>
@@ -416,10 +459,14 @@
 
 // Pullout Block - Text
 //
+// default - Default component
+// .no-block-title - No block title (black/white heading)
+//
 // markup:
-// <div class="pullout-block pullout-block__text">
+// <div class="pullout-block pullout-block__text {$modifiers}">
 //      <div class="pullout-block__content">
-//          <p>With Macro Insiders, two of the world's top macro-researchers, <em>Raoul Pal</em> and <em>Julian Brigden</em>, bring you a lever of elite macro analysis that was previously only available to large banks, hedge funds and wealthy families.</p>
+//          <h3 class="pullout-block--title"><span>Disrupting Financial Media</span></h3>
+//          <p>With Macro Insiders, two of the world's top macro-researchers, <a href="#">Raoul Pal</a> and <a href="#">Julian Brigden</a>, bring you a lever of elite macro analysis that was previously only available to large banks, hedge funds and wealthy families.</p>
 //      </div>
 // </div>
 //
@@ -429,9 +476,6 @@
 }
 
 // Rating
-// 
-// default - Default
-// .is-inverse - Inverse
 //
 // default - Default
 // .is-inverse - Inverse
@@ -1704,8 +1748,7 @@
 // .full-width - Play block with the 'play' text full width in desktop view
 //
 // markup:
-// <div class="play-block {$modifiers}">
-//    <a href="#">
+// <a class="play-block {$modifiers}">
 //      <h2><span>They all used macro-analysis. That’s why you should care about this kind of research.</span></h2>
 //      <div class="columns is-mobile">
 //          <div class="column is-6-desktop is-12-mobile is-paddingless play-block_container">
@@ -1714,12 +1757,11 @@
 //              </div>
 //          </div>
 //      </div>
-//    </a>
-// </div>
+// </a>
 //
 // Styleguide 5.20
 .play-block {
-
+    display: block;
     background-image: url('#{$root}/images/components/product-play-block-bg.jpg');
     background-position: center;
     background-size: cover;
@@ -1727,10 +1769,7 @@
     position: relative;
     padding: $baseline;
     text-transform: uppercase;
-
-    a {
-        text-decoration: none;
-    }
+    text-decoration: none;
 
     @include tablet {
         padding: $baseline ($baseline * 2);
@@ -2148,5 +2187,39 @@
             font-weight: 400;
             margin-bottom: auto;
         }
+    }
+}
+
+// Media Block
+//
+// default - Default
+// .has-text-centered - Centers the image
+// .has-text-right - Aligns the image to the right
+// .is-full-width - Have the image fill the block
+// .has-padding - Add padding inside the block
+// .has-margin - Add margin outside the block
+//
+// markup:
+// <div class="media-block {$modifiers}">
+//     <img src="http://lorempixel.com/320/180/abstract" />
+// </div>
+//
+// Styleguide 5.26
+.media-block {
+    background: #eee;
+    img {
+        vertical-align:bottom;
+    }
+
+    &.is-full-width img {
+        width: 100%;
+    }
+
+    &.has-padding {
+        padding: $baseline;
+    }
+
+    &.has-margin {
+        margin: $baseline;
     }
 }
