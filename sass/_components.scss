@@ -853,7 +853,7 @@
 //                  <p><span>Smart Opinions</span></p>
 //              </div>
 //          </div>
-//          <div class="column has-text-centered hero-cta__container">
+//          <div class="column has-text-centered is-vertically-bottom hero-cta__container is-narrow">
 //              <a href="#" class="button">Read More</a>
 //          </div>
 //      </div>
@@ -861,6 +861,17 @@
 //
 // Styleguide 5.13
 .product-hero {
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: $baseline;
+    text-transform: uppercase;
+
+    @include tablet {
+        padding: $baseline ($baseline * 2);
+    }
+
     &.product-hero--3x1 {
         background-image: url('#{$root}/images/components/product-hero-bg.png');
 
@@ -878,16 +889,6 @@
                 }
             }
         }
-    }
-    position: relative;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    padding: $baseline;
-    text-transform: uppercase;
-
-    @include tablet {
-        padding: $baseline ($baseline * 2);
     }
 
     strong {
@@ -998,9 +999,6 @@
         margin-bottom: 0;
     }
     a {
-        position: relative;
-        right: auto;
-        bottom: auto;
         font-size: $size-6;
         background: $brand;
         color: black;
@@ -1014,9 +1012,6 @@
         }
 
         @include tablet {
-            position: absolute;
-            right: ($baseline * 2);
-            bottom: $baseline;
             font-size: $size-4;
         }
     }
@@ -1077,8 +1072,10 @@
 //              </div>
 //          </div>
 //      </div>
-//      <div class="columns has-text-centered hero-cta__container">
-//          <a href="#" class="button">Read More</a>
+//      <div class="columns hero-cta__container">
+//          <div class="column has-text-centered has-text-right-tablet">
+//              <a href="#" class="button">Read More</a>
+//          </div>
 //      </div>
 // </div>
 //
@@ -1096,7 +1093,6 @@
 
     @include tablet {
         padding: $baseline ($baseline * 2);
-        padding-bottom: ($baseline * 4);
 
         .hero-cta__container {
             margin-top: 0;
@@ -1118,7 +1114,7 @@
 //
 // default - Default Hero
 // .hide-cta - Hero without CTA Button
-// .content-center - Hero with center aligned content and CTA
+// .has-text-centered - Hero with center aligned content and CTA
 //
 // markup:
 // <div class="product-hero product-hero--2x2 {$modifiers}">
@@ -1149,8 +1145,10 @@
 //              </div>
 //          </div>
 //      </div>
-//      <div class="columns has-text-centered hero-cta__container">
-//          <a href="#" class="button">Read More</a>
+//      <div class="columns hero-cta__container">
+//          <div class="column has-text-centered has-text-right-tablet">
+//              <a href="#" class="button">Read More</a>
+//          </div>
 //      </div>
 // </div>
 //
@@ -1168,7 +1166,6 @@
 
     @include tablet {
         padding: $baseline ($baseline * 2);
-        padding-bottom: ($baseline * 4);
 
         .hero-cta__container {
             margin-top: 0;
@@ -1183,19 +1180,12 @@
         padding-bottom: $baseline / 2;
     }
 
-    &.content-center {
-        text-align: center;
-        a {
-            right: auto;
-            left: auto;
-            transform: translateX(0);
+    &.has-text-centered .has-text-right-tablet {
+        @extend .has-text-centered;
+    }
 
-            @include tablet {
-                right: auto;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-        }
+    .columns:last-child:not(.hero-cta__container) {
+        margin-bottom: $baseline / 2;
     }
 }
 
@@ -1205,7 +1195,7 @@
 // .hide-cta - Hero without CTA Button
 //
 // markup:
-// <div class="product-hero product-hero--2x3 {$modifiers}">
+// <div class="product-hero product-hero--2x3 has-text-centered-tablet {$modifiers}">
 //      <div class="columns is-mobile">
 //          <div class="column">
 //              <h2><span>With Real Vision Television, You Get...</span></h2>
@@ -1243,8 +1233,10 @@
 //              </div>
 //          </div>
 //      </div>
-//      <div class="columns has-text-centered hero-cta__container">
-//          <a href="#" class="button">Read More</a>
+//      <div class="columns hero-cta__container">
+//          <div class="column has-text-centered has-text-right-tablet">
+//              <a href="#" class="button">Read More</a>
+//          </div>
 //      </div>
 // </div>
 //
@@ -1257,14 +1249,16 @@
     text-align: left;
     padding: $baseline;
 
-    .hero-cta__container {
-        margin-top: $baseline / 3;
-    }
-
     @include tablet {
         padding: $baseline ($baseline * 2);
-        padding-bottom: ($size-2 * 2);
-        text-align: center;
+    }
+    
+    &.hide-cta {
+        padding-bottom: $baseline / 2;
+    }
+
+    .hero-cta__container {
+        margin-top: $baseline / 3;
     }
 
     .product-hero__cell-container {
@@ -1273,17 +1267,15 @@
         }
     }
 
-
-
     p {
         line-height: 1.2rem;
         span {
             font-size: $size-6;
         }
     }
-
-    &.hide-cta {
-        padding-bottom: $baseline / 2;
+    
+    .columns:last-child:not(.hero-cta__container) {
+        margin-bottom: $baseline / 2;
     }
 }
 
@@ -1292,8 +1284,8 @@
 // default - Default Hero
 // .hide-cta - Hero without CTA Button
 // .hide-heading - Hero without main block heading
-// .content-left - Hero with left aligned content and CTA
-// .content-right - Hero with right aligned content and CTA
+// .has-text-left - Hero with left aligned content and CTA
+// .has-text-right - Hero with right aligned content and CTA
 //
 // markup:
 // <div class="product-hero product-hero--descriptive {$modifiers}">
@@ -1307,8 +1299,10 @@
 //              <p><span>Real Vision Television is accredited by some of the most respected financial and educational institutions across the globe, including:</span></p>
 //          </div>
 //      </div>
-//      <div class="columns has-text-centered hero-cta__container">
-//          <a href="#" class="button">Read More</a>
+//      <div class="columns hero-cta__container">
+//          <div class="column has-text-centered has-text-right-tablet">
+//              <a href="#" class="button">Read More</a>
+//          </div>
 //      </div>
 // </div>
 //
@@ -1322,7 +1316,6 @@
 
     @include tablet {
         padding: $baseline ($baseline * 2);
-        padding-bottom: ($baseline * 4);
     }
 
     h2 {
@@ -1379,23 +1372,13 @@
             margin-bottom: -0.75rem; // Makes penultamate columns the same as last .columns incase there is an empty cta block
         }
     }
-
-    &.content-left {
-        text-align: left;
-        a {
-            margin-left: -10px;
-            margin-right: auto;
-            left: auto;
-            right: auto;
-
-            @include tablet {
-                left: ($baseline * 2);
-            }
-        }
+    
+    &.has-text-left .has-text-right-tablet {
+        @extend .has-text-left;
     }
-
-    &.content-right {
-        text-align: right;
+    
+    .columns:last-child:not(.hero-cta__container) {
+        margin-bottom: $baseline / 2;
     }
 }
 

@@ -56,6 +56,16 @@
         flex-grow: 1;
     }
 }
+@include tablet {
+    .is-vertically-center:not(.columns) {
+        align-items: center;
+        display: flex;
+    }
+    .is-vertically-bottom:not(.columns) {
+        align-items: flex-end;
+        display: flex;
+    }
+}
 
 // Vertical Rhythm
 //
