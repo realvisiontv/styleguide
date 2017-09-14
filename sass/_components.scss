@@ -2092,9 +2092,9 @@
 //                    <div class="product-price__body">
 //                        <div class="product-price__term">MONTH</div>
 //                        <div class="product-price__conditions">(BILLED ANNUALLY)</div>
-//                    </div>
-//                    <a href="#" class="button is-pulled-right is-hidden-tablet {$modifiers}">START YOUR TRIAL</a>
+//                    </div>                 
 //                </div>
+//                <a href="#" class="button is-pulled-right is-hidden-tablet {$modifiers}">START YOUR FREE TRIAL NOW</a>
 //                <div class="product-price__subtitle is-pulled-left is-hidden-mobile">SIGN UP FOR A FREE TRIAL NOW</div>
 //                <a href="#" class="button is-pulled-right is-hidden-mobile {$modifiers}">START YOUR TRIAL</a>
 //            </div>
@@ -2112,7 +2112,8 @@
         font-weight: 800;
         background: url('#{$root}/images/components/crinkled-paper-effect.jpg'), #363e4e;
         background-size: cover;
-    
+        overflow: hidden;
+        
         .product-price__title {
             text-transform: uppercase;
             color: white;
