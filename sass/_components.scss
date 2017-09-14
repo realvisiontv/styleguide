@@ -2377,3 +2377,126 @@
         }
     }
 }
+
+// Pullout Container
+//
+// A container that contains pullout blocks and card grids
+//
+// Default - default
+//
+// markup:
+// <div class="pullout-container">
+//      <div class="pullout-container__content">
+//          <div class="pullout-block pullout-block__text">
+//              <div class="pullout-block__content">
+//                  <h3 class="pullout-block--title"><span>Feature Documentaries</span></h3>
+//                  <p><strong>Geopolitics with Gordon Dee Smith to the History of Gold with Grant Williams; to Charting masterclasses with Peter Brandt, you can watch documentary-style programming with the smartest investors in the world about topics that will broaden both your mind and your investment opportunities.</strong></p>
+//              </div>
+//          </div>
+//          <div class="image-row">
+//              <h2>EXAMPLES OF FEATURE DOCUMENTARIES</h2>
+//              <div class="columns is-tablet">
+//                  <div class="card column">
+//                      <a href="#">
+//                          <div class="card-image">
+//                              <figure class="image is-16by9">
+//                                  <img src="/images/components/image-grid-1.jpg" alt="Image">
+//                              </figure>
+//                          </div>
+//                          <div class="card-content">
+//                              <div class="content">
+//                                  <h3 class="title">GOLD - GRANT WILLIAMS</h3>
+//                              </div>
+//                          </div>
+//                      </a>
+//                  </div>
+//                  <div class="card column">
+//                      <a href="#">
+//                          <div class="card-image">
+//                              <figure class="image is-16by9">
+//                                  <img src="/images/components/image-grid-2.jpg" alt="Image">
+//                              </figure>
+//                          </div>
+//                          <div class="card-content">
+//                              <div class="content">
+//                                  <h3 class="title">GEOPOLITICS - GORDON LEE SMITH</h3>
+//                              </div>
+//                          </div>
+//                      </a>
+//                  </div>
+//                  <div class="card column">
+//                      <a href="#">
+//                          <div class="card-image">
+//                              <figure class="image is-16by9">
+//                                  <img src="/images/components/image-grid-3.jpg" alt="Image">
+//                              </figure>
+//                          </div>
+//                          <div class="card-content">
+//                              <div class="content">
+//                                  <h3 class="title">CHARTING - PETER BRANDT</h3>
+//                              </div>
+//                          </div>
+//                      </a>
+//                  </div>
+//              </div>
+//          </div>
+//          <div class="pullout-block pullout-block__product-quote">
+//              <div class="pullout-block__content">
+//                  <div class="is-hidden-mobile">
+//                      <div class="icons">
+//                          <svg class="icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.62292 316.34321" class="icon-star"><path d="M166.31 0l51.395 104.134 114.918 16.698-83.156 81.057 19.63 114.452-102.786-54.038-102.784 54.038 19.63-114.454L0 120.83l114.918-16.698z" /></svg>
+//                          <svg class="icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.62292 316.34321" class="icon-star"><path d="M166.31 0l51.395 104.134 114.918 16.698-83.156 81.057 19.63 114.452-102.786-54.038-102.784 54.038 19.63-114.454L0 120.83l114.918-16.698z" /></svg>
+//                          <svg class="icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.62292 316.34321" class="icon-star"><path d="M166.31 0l51.395 104.134 114.918 16.698-83.156 81.057 19.63 114.452-102.786-54.038-102.784 54.038 19.63-114.454L0 120.83l114.918-16.698z" /></svg>
+//                          <svg class="icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.62292 316.34321" class="icon-star"><path d="M166.31 0l51.395 104.134 114.918 16.698-83.156 81.057 19.63 114.452-102.786-54.038-102.784 54.038 19.63-114.454L0 120.83l114.918-16.698z" /></svg>
+//                          <svg class="icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.62292 316.34321" class="icon-star"><path d="M166.31 0l51.395 104.134 114.918 16.698-83.156 81.057 19.63 114.452-102.786-54.038-102.784 54.038 19.63-114.454L0 120.83l114.918-16.698z" /></svg>
+//                      </div>
+//                      <blockquote>
+//                          <svg class="icon-quote icon-quote--open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><path class="icon-quote-fill" d="M68.2 163.1c-5.4-88 32-104 32-104s-.1-33 0-33.3C5.1 51.2 9.6 167.1 9.6 167.1v98.7h102.7V163.1s-30-.5-44.1 0zm173.4 0c-5.4-88 32-104 32-104s-.1-33 0-33.3C178.5 51.2 183 167.1 183 167.1v98.7h102.7V163.1s-30-.5-44.1 0z"/></svg>
+//                          <p>This was so clear and succinct, which is as rare as a white buffalo in this murky world of charting and risk management.</p>
+//                          <svg class="icon-quote icon-quote--close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><path class="icon-quote-fill" d="M227.1 128.5c5.4 88-32 104-32 104s.1 33 0 33.3c95.1-25.4 90.6-141.3 90.6-141.3V25.8H183v102.7s30 .5 44.1 0zm-173.4 0c5.4 88-32 104-32 104s.1 33 0 33.3c95.1-25.4 90.6-141.3 90.6-141.3V25.8H9.6v102.7s30 .5 44.1 0z"></path></svg>
+//                      </blockquote>
+//                      <hr/>
+//                      <cite>John A.</cite>
+//                  </div>
+//              </div>
+//          </div>
+//      </div>
+// </div>
+//
+// Styleguide 5.29
+.pullout-container {
+    padding: 0;
+
+    @include tablet {
+        padding: $baseline / 2 $baseline;
+    }
+
+    .pullout-container__content {
+        background-image: url('#{$root}/images/components/crinkled-paper-effect.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        padding: $baseline ($baseline * 2);
+    }
+
+    .pullout-block__content {
+        background: none;
+    }
+    .pullout-block {
+        padding: 0;
+        .pullout-block__content {
+            padding: 0;
+        }
+        &:before {
+            content: none;
+        }
+    }
+    .image-row {
+        padding: 0;
+        
+    }
+
+    .pullout-block:not(:last-child), .image-row:not(:last-child) {
+        margin-bottom: $baseline;
+    }
+}
