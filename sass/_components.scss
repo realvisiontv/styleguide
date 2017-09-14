@@ -1252,7 +1252,7 @@
     @include tablet {
         padding: $baseline ($baseline * 2);
     }
-    
+
     &.hide-cta {
         padding-bottom: $baseline / 2;
     }
@@ -1273,7 +1273,7 @@
             font-size: $size-6;
         }
     }
-    
+
     .columns:last-child:not(.hero-cta__container) {
         margin-bottom: $baseline / 2;
     }
@@ -1347,6 +1347,7 @@
 
         @include tablet {
             line-height: 2rem;
+            width: 70%;
 
             span {
                 font-size: $size-4;
@@ -1372,11 +1373,17 @@
             margin-bottom: -0.75rem; // Makes penultamate columns the same as last .columns incase there is an empty cta block
         }
     }
-    
+
     &.has-text-left .has-text-right-tablet {
         @extend .has-text-left;
     }
-    
+
+    &.has-text-right {
+        p {
+            margin-left: auto;
+        }
+    }
+
     .columns:last-child:not(.hero-cta__container) {
         margin-bottom: $baseline / 2;
     }
@@ -1746,7 +1753,7 @@
 .play-block {
     display: block;
     background-image: url('#{$root}/images/components/product-play-block-bg.jpg');
-    background-position: center;
+    background-position: top right;
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
@@ -1776,12 +1783,14 @@
     }
     .play-block_body {
         font-family: 'Function Pro';
-        font-size: $size-2;
         font-weight: 800;
         color: #fff;
-        line-height: 3rem;
+        line-height: 1.2;
         margin-top: $baseline;
         margin-bottom: $baseline;
+        @include widescreen {
+            font-size: 4rem !important;
+        }
     }
     .play-block__play {
         display: inline-flex;
@@ -1793,7 +1802,6 @@
                 color: $color-bright-gray;
                 background: $color-cyan;
                 border-color: $color-cyan;
-                font-size: 18px;
                 padding-left: 3px;
                 &:hover {
                     color: white;
@@ -1808,6 +1816,11 @@
         .play-block_container {
             width: 100%;
         }
+    }
+
+    .columns {
+        align-items: center;
+        display: flex;
     }
 }
 
@@ -2116,11 +2129,11 @@
     .product-price__subtitle {
         padding-left: ($baseline * 3);
     }
-    
+
     .product-price__product {
         color: $brand;
     }
-    
+
     .product-price {
         display: flex;
         padding-top: 1rem;
@@ -2129,7 +2142,11 @@
         position: relative;
         overflow: hidden;
         padding: $baseline $baseline ($baseline * 2 );
-        
+
+        * {
+            margin: 0;
+        }
+
         a {
             position: absolute;
             right: 0;
@@ -2144,17 +2161,17 @@
         * {
             margin: 0;
         }
-        
+
         .product-price__header {
             flex-direction: row;
             display: flex;
         }
-        
+
         .product-price__body {
             flex-direction: column;
             display: flex;
         }
-        
+
         .product-price__price {
             font-size: $size-1;
             line-height: $size-1;
@@ -2164,7 +2181,7 @@
                 line-height: 4.5rem;
             }
         }
-        
+
         .product-price__term {
             font-size: $size-4;
             line-height: $size-4;
@@ -2176,7 +2193,7 @@
                 line-height: 2.5rem;
             }
         }
-        
+
         .product-price__conditions {
             font-size: $size-6;
             line-height: $size-6;
@@ -2232,6 +2249,30 @@
 
     &.has-padding {
         padding: $baseline;
+    }
+
+    &.has-margin {
+        margin: $baseline;
+    }
+}
+
+// CTA Block
+//
+// default - Default
+// .has-text-centered - Aligns the button to the center
+// .has-text-right - Aligns the button to the right
+// .has-margin - Add margin outside the block
+// .has-dark-text - Makes the text on the button dark for use with light backgrounds
+//
+// markup:
+// <div class="cta-block {$modifiers}">
+//     <a href="#" class="button">Call to action button</a>
+// </div>
+//
+// Styleguide 5.27
+.cta-block {
+    &.has-dark-text .button{
+        color: $color-bright-gray;
     }
 
     &.has-margin {
