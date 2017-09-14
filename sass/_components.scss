@@ -2287,3 +2287,93 @@
         margin: $baseline;
     }
 }
+
+// Image Row
+//
+// Single row of images - contents will adjust width based on number images
+//
+// default - Default
+//
+// markup:
+// <div class="image-row">
+//      <h2>EXAMPLES OF FEATURE DOCUMENTARIES</h2>
+//      <div class="columns is-tablet">
+//          <div class="card column">
+//              <a href="#">
+//                  <div class="card-image">
+//                      <figure class="image is-16by9">
+//                          <img src="/images/components/image-grid-1.jpg" alt="Image">
+//                      </figure>
+//                  </div>
+//                  <div class="card-content">
+//                      <div class="content">
+//                          <h3 class="title">GOLD - GRANT WILLIAMS</h3>
+//                      </div>
+//                  </div>
+//              </a>
+//          </div>
+//          <div class="card column">
+//              <a href="#">
+//                  <div class="card-image">
+//                      <figure class="image is-16by9">
+//                          <img src="/images/components/image-grid-2.jpg" alt="Image">
+//                      </figure>
+//                  </div>
+//                  <div class="card-content">
+//                      <div class="content">
+//                          <h3 class="title">GEOPOLITICS - GORDON LEE SMITH</h3>
+//                      </div>
+//                  </div>
+//              </a>
+//          </div>
+//          <div class="card column">
+//              <a href="#">
+//                  <div class="card-image">
+//                      <figure class="image is-16by9">
+//                          <img src="/images/components/image-grid-3.jpg" alt="Image">
+//                      </figure>
+//                  </div>
+//                  <div class="card-content">
+//                      <div class="content">
+//                          <h3 class="title">CHARTING - PETER BRANDT</h3>
+//                      </div>
+//                  </div>
+//              </a>
+//          </div>
+//      </div>
+// </div>
+//
+// Styleguide 5.28
+.image-row {
+    padding: $baseline;
+    background: none;
+
+    a {
+        text-decoration: none;
+        color: $text;
+    }
+
+    h2 {
+        color: #6e7789;
+        text-align: center;
+        margin-bottom: $baseline;
+        font-size: $size-5;
+    }
+
+    .card {
+        margin-bottom: 0;
+        .card-content {
+            text-align: left;
+
+            .title {
+                font-size: $size-5;
+                margin-top: $baseline / 2;
+                font-weight: 800;
+
+                @include tablet-only {
+                    font-size: $size-6;
+                }
+            }
+        }
+    }
+}
