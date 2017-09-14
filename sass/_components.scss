@@ -2081,143 +2081,150 @@
 //
 // markup:
 // <div class="product-price-block">
-//     <div class="columns is-vcentered">
-//        <div class="column">
-//            <div class="product-price__title">REAL VISION <span class="product-price__product">PRO</span></div>        
-//            <div class="product-price {$modifiers}">
-//                <div class="product-price__header">
-//                    <div class="product-price__price">$49/</div>
+//     <div class="product-price-block__content">
+//         <div class="columns is-vcentered">
+//            <div class="column">
+//                <div class="product-price__title">REAL VISION <span class="product-price__product">PRO</span></div>        
+//                <div class="product-price {$modifiers}">
+//                    <div class="product-price__header">
+//                        <div class="product-price__price">$49/</div>
+//                    </div>
+//                    <div class="product-price__body">
+//                        <div class="product-price__term">MONTH</div>
+//                        <div class="product-price__conditions">(BILLED ANNUALLY)</div>
+//                    </div>
+//                    <a href="#" class="button is-pulled-right is-hidden-tablet {$modifiers}">START YOUR TRIAL</a>
 //                </div>
-//                <div class="product-price__body">
-//                    <div class="product-price__term">MONTH</div>
-//                    <div class="product-price__conditions">(BILLED ANNUALLY)</div>
-//                </div>
-//            <a href="#" class="button is-pulled-right is-hidden-tablet {$modifiers}">START YOUR TRIAL</a>
+//                <div class="product-price__subtitle is-pulled-left is-hidden-mobile">SIGN UP FOR A FREE TRIAL NOW</div>
+//                <a href="#" class="button is-pulled-right is-hidden-mobile {$modifiers}">START YOUR TRIAL</a>
 //            </div>
-//            <div class="product-price__subtitle is-pulled-left is-hidden-mobile">SIGN UP FOR A FREE TRIAL NOW</div>
-//            <a href="#" class="button is-pulled-right is-hidden-mobile {$modifiers}">START YOUR TRIAL</a>
 //        </div>
-//     </div>
+//    </div>
 // </div>
 //
 // Styleguide 5.25
 
 .product-price-block {
-    font-weight: 800;
-    background: url('#{$root}/images/components/crinkled-paper-effect.jpg'), #363e4e;
-    background-size: cover;
+    padding: $baseline $baseline 0 $baseline;
+    position: relative;
     
-    .product-price__title {
-        text-transform: uppercase;
-        color: white;
-        background: url('#{$root}/images/overlays/white_splatter.png'), #363e4e;
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        font-size: $size-5;
-        padding: ($baseline / 2) $baseline;
-        
-        @include tablet {
-            display:inline-block;
-            float:left;
-            margin: $baseline $baseline ($baseline / 2) 0;
-            padding: ($baseline / 2) $baseline ($baseline / 2) ($baseline * 3);
-            font-size: $size-3;
-        }
-    }
-    
-    .product-price__subtitle {
-        padding-left: ($baseline * 3);
-    }
-
-    .product-price__product {
-        color: $brand;
-    }
-
-    .product-price {
-        display: flex;
-        padding-top: 1rem;
-        padding-bottom: 3.5rem;
-        margin: auto;
-        position: relative;
-        overflow: hidden;
-        padding: $baseline $baseline ($baseline * 2 );
-
-        * {
-            margin: 0;
-        }
-
-        a {
-            position: absolute;
-            right: 0;
-            bottom: 0;
-        }
-        
-        @include tablet {
-            justify-content: flex-end;
-            padding: $baseline ($baseline * 3) ($baseline / 2);
-        }
-        
-        * {
-            margin: 0;
-        }
-
-        .product-price__header {
-            flex-direction: row;
-            display: flex;
-        }
-
-        .product-price__body {
-            flex-direction: column;
-            display: flex;
-        }
-
-        .product-price__price {
-            font-size: $size-1;
-            line-height: $size-1;
-            
-            @include tablet {
-                font-size: 4.5rem;
-                line-height: 4.5rem;
-            }
-        }
-
-        .product-price__term {
-            font-size: $size-4;
-            line-height: $size-4;
-            padding-left: 0.2rem;
-            margin-top: auto;
-            
-            @include tablet {
-                font-size: 2.5rem;
-                line-height: 2.5rem;
-            }
-        }
-
-        .product-price__conditions {
-            font-size: $size-6;
-            line-height: $size-6;
-            font-style: italic;
-            font-weight: 400;
-            margin-bottom: auto;
-        }
-    }
-    
-    a {
-        font-size: $size-6;
-        background: $brand;
-        color: black;
+    .product-price-block__content {
         font-weight: 800;
-        padding: 0 ($baseline / 3);
-
-        &:hover {
-            background: black;
-            color: $brand;
-            border: solid 2px $brand;
+        background: url('#{$root}/images/components/crinkled-paper-effect.jpg'), #363e4e;
+        background-size: cover;
+    
+        .product-price__title {
+            text-transform: uppercase;
+            color: white;
+            background: url('#{$root}/images/overlays/white_splatter.png'), #363e4e;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-size: $size-5;
+            padding: ($baseline / 2) $baseline;
+            
+            @include tablet {
+                display:inline-block;
+                float:left;
+                margin: $baseline $baseline ($baseline / 2) 0;
+                padding: ($baseline / 2) $baseline ($baseline / 2) ($baseline * 3);
+                font-size: $size-3;
+            }
+        }
+        
+        .product-price__subtitle {
+            padding-left: ($baseline * 3);
         }
 
-        @include tablet {
-            font-size: $size-4;
+        .product-price__product {
+            color: $brand;
+        }
+
+        .product-price {
+            display: flex;
+            padding-top: 1rem;
+            padding-bottom: 3.5rem;
+            margin: auto;
+            position: relative;
+            overflow: hidden;
+            padding: $baseline $baseline ($baseline * 2 );
+
+            * {
+                margin: 0;
+            }
+
+            a {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+            }
+            
+            @include tablet {
+                justify-content: flex-end;
+                padding: $baseline ($baseline * 3) ($baseline / 2);
+            }
+            
+            * {
+                margin: 0;
+            }
+
+            .product-price__header {
+                flex-direction: row;
+                display: flex;
+            }
+
+            .product-price__body {
+                flex-direction: column;
+                display: flex;
+            }
+
+            .product-price__price {
+                font-size: $size-1;
+                line-height: $size-1;
+                
+                @include tablet {
+                    font-size: 4.5rem;
+                    line-height: 4.5rem;
+                }
+            }
+
+            .product-price__term {
+                font-size: $size-4;
+                line-height: $size-4;
+                padding-left: 0.2rem;
+                margin-top: auto;
+                
+                @include tablet {
+                    font-size: 2.5rem;
+                    line-height: 2.5rem;
+                }
+            }
+
+            .product-price__conditions {
+                font-size: $size-6;
+                line-height: $size-6;
+                font-style: italic;
+                font-weight: 400;
+                margin-bottom: auto;
+            }
+        }
+        
+        a {
+            font-size: $size-6;
+            background: $brand;
+            color: black;
+            font-weight: 800;
+            padding: 0 ($baseline / 3);
+
+            &:hover {
+                background: black;
+                color: $brand;
+                border: solid 2px $brand;
+            }
+
+            @include tablet {
+                font-size: $size-4;
+            }
         }
     }
 }
