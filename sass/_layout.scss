@@ -221,12 +221,12 @@ h6 {
 // 
 // Styleguide 2.3
 .navigation {
-    background: #1f2732;
+    background: $color-dark-gray;
     position: relative;
     > .columns {
         margin: 0;
         padding: 0 ($baseline/2);
-        border-bottom: 1px solid $brand;
+        border-bottom: 1px solid $color-rose;
     }
     .column {
         padding-bottom: 0;
@@ -310,19 +310,18 @@ h6 {
             }
     
             &:hover {
-                color: $brand;
+                color: $color-rose;
             }
         }
 
         &.active {
-            border-bottom-color: $brand;
+            border-bottom-color: $color-rose;
             > a {
-                color: $brand;
+                color: $color-rose;
             }
         }
 
         &.open {
-            background: #171d25;
 
             @include tablet {
                 position: relative;
@@ -434,7 +433,7 @@ h6 {
 .additional-navigation {
     z-index: 990;
     position: relative;
-    background: rgba(0,0,0,0.25);
+    background: #363435;
     margin: 0;
     padding: 0 $baseline;
     font-size: 16px;
@@ -508,7 +507,7 @@ h6 {
 // 
 // Styleguide 2.5
 footer {
-    background: $color-spruce;
+    background: $color-dark-gray;
     padding: $baseline;
     color: #e3e3e3;
     ul {
@@ -534,7 +533,7 @@ footer {
                 transition: color 200ms ease-in;
 
                 &:hover {
-                    color: $color-torch-red;
+                    color: $color-rose;
                 }
             }
         }

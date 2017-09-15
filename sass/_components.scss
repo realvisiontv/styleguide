@@ -2536,3 +2536,59 @@
         margin-bottom: $baseline;
     }
 }
+
+// Breadcrumb Block
+//
+// Default - default
+// :hover - Hover state
+//
+// markup:
+//  <div class="breadcrumbs-block" typeof="BreadcrumbList" vocab="https://schema.org/">
+//      <span property="itemListElement" typeof="ListItem">
+//          <a property="item" typeof="WebPage" title="Go to home." href="#" class="home">
+//              <span property="name" class="{$modifiers}">Home</span>
+//          </a>
+//          <meta property="position" content="1">
+//      </span>
+//      / 
+//      <span property="itemListElement" typeof="ListItem">
+//          <a property="item" typeof="WebPage" title="Go to Free Stuff." href="#" class="post post-page">
+//              <span property="name" class="{$modifiers}">Newsletters</span>
+//          </a>
+//          <meta property="position" content="2">
+//      </span>
+//      /
+//      <span property="itemListElement" typeof="ListItem">
+//          <span property="name">Publications</span>
+//          <meta property="position" content="4">
+//      </span>
+//  </div>
+//
+// Styleguide 5.30
+.breadcrumbs-block {
+    font-family: "Function Pro";
+    padding: $baseline;
+    background-color: $color-dark-gray;
+    color: white;
+    font-weight: 800;
+    text-transform: uppercase;
+
+    .home, .post, .post-page {
+        color: white;
+        text-decoration: none;
+        
+        span {
+            color: white;
+            transition: color 200ms ease-in-out;
+
+            &:hover {
+                color: $color-rose;
+            }
+        }
+    }
+    
+    span {
+        color: $color-rose;
+    }
+    
+}
