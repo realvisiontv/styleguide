@@ -259,6 +259,7 @@
         margin-bottom: $baseline;
         margin-top: $baseline / 2;
         span {
+            box-decoration-break: clone;
             font-size: $size-4;
             color: white;
             background-color: black;
@@ -899,6 +900,7 @@
     h2, h3 {
         margin-bottom: $baseline;
         span {
+            box-decoration-break: clone;
             margin: 0;
             font-weight: 800;
         }
@@ -943,9 +945,9 @@
     p {
         margin-top: 0;
         margin-bottom: 0;
-
         line-height: 1.2rem;
         span {
+            box-decoration-break: clone;
             font-weight: 800;
             font-size: $size-6;
             color: white;
@@ -1767,6 +1769,7 @@
 
     h2, h3 {
         span {
+            box-decoration-break: clone;
             margin: 0;
             font-weight: 800;
         }
@@ -1885,6 +1888,7 @@
         text-transform: uppercase;
 
         span {
+            box-decoration-break: clone;
             margin: 0;
             font-weight: 800;
         }
