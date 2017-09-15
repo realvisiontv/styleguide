@@ -2137,6 +2137,7 @@
                 margin: $baseline $baseline ($baseline / 3) 0;
                 padding: ($baseline / 3) $baseline ($baseline / 3) ($baseline * 2);
                 font-size: $size-5;
+                max-width: 50%;
             }
             
             @include desktop {
@@ -2149,7 +2150,8 @@
         .product-price__subtitle {
             font-size: $size-6;
             padding-left: ($baseline * 2);
-            
+            clear: both;
+
             @include desktop {
                 font-size: $size-4;
                 padding-left: ($baseline * 3);
