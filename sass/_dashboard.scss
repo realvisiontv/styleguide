@@ -928,13 +928,20 @@
 //                 </div>
 //             </div>
 //             <p class="strap"><i class="fa fa-info"></i>Shane Oliver is one of Australia's most highly rated economists</p>
-//             <button class="icon-button invert large plus"><i class="fa fa-plus" aria-hidden="true"></i>Watch Later</button>
+//             <div class="columns is-mobile">
+//                 <div class="column is-paddingless">
+//                     <button class="icon-button invert large is-size-6-mobile plus"><i class="fa fa-plus" aria-hidden="true"></i>Watch Later</button>
+//                 </div>
+//                 <div class="column is-paddingless has-text-right is-hidden-tablet">
+//                     <button class="icon-button invert large is-size-6-mobile play"><i class="fa fa-play" aria-hidden="true"></i>01:24:45</button>
+//                 </div>
+//             </div>
 //         </div>
 //     </div>
 //     <div class="image child-full-height">
 //         <div class="column is-8 is-offset-4" style="background-image: url(https://lorempixel.com/1600/900/city)"></div>
 //     </div>
-//     <button class="icon-button invert large play"><i class="fa fa-play" aria-hidden="true"></i>01:24:45</button>
+//     <button class="icon-button invert large play is-hidden-mobile"><i class="fa fa-play" aria-hidden="true"></i>01:24:45</button>
 //     <button class="icon-button close hide-text large"><i class="fa fa-close" aria-hidden="true"></i>Close more information</button>
 // </section>
 // 
@@ -952,6 +959,7 @@
         top: $baseline;
         right: $baseline;
         background: rgba(0, 0, 0, 0.25);
+        z-index: 1;
 
         &:before {
             border: 0;
@@ -960,10 +968,19 @@
         }
     }
 
-    .icon-button.play {
-        position: absolute;
-        bottom: $baseline;
-        right: $baseline;
+    @include mobile {
+        .icon-button {
+            width: calc(100% - 2ex);
+            margin: 0 1ex;
+        }
+    }
+
+    @include tablet {
+        .icon-button.play {
+            position: absolute;
+            bottom: $baseline;
+            right: $baseline;
+        }
     }
     
     .content {

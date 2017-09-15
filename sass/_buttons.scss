@@ -312,7 +312,8 @@ a.button {
 // :focus - Focus state
 // 
 // markup:
-// <button class="icon-button {$modifiers}"><i class="fa fa-close" aria-hidden="true"></i>Some text</button>
+// <button class="icon-button {$modifiers}"><i class="fa fa-close" aria-hidden="true"></i>Single Line</button>
+// <button class="icon-button {$modifiers}"><i class="fa fa-close" aria-hidden="true"></i>Multiple<br/>Lines</button>
 //
 // Styleguide 4.5
 .icon-button {
@@ -322,22 +323,22 @@ a.button {
     background: transparent;
     border: 0;
     cursor: pointer;
-    // font-family: 'Function Pro', sans-serif;
+    display: inline-block;
     position: relative;
-    padding: 0 10px 0 $size+10px;
-    line-height: $size;
+    padding: 5px 10px 6px $size+10px;
+    line-height: 1.2;
+    text-align: center;
 
     .fa {
         background: $color-bright-gray;
         border: 2px solid $color-bright-gray;
         color: white;
         display: flex;
-        height: $size;
+        height: 100%;
         width: $size;
         position: absolute;
         left: 0;
-        top: 50%;
-        transform: translateY(-50%);
+        top: 0;
         align-items: center;
         justify-content: center;
         font-size: 14px;
@@ -348,11 +349,9 @@ a.button {
     &.large, // Deprecated
     &.is-large {
         font-size: $size-5;
-        padding-left: $large+10px;
-        line-height: $large;
+        padding: 9px 10px 10px $large+10px;
 
         .fa {
-            height: $large;
             width: $large;
             font-size: 24px;
         }
