@@ -700,6 +700,10 @@
         &:last-child {
             border-bottom: 0;
         }
+
+        .content {
+            word-wrap: break-word;
+        }
     }
     .avatar {
         line-height: 44px;
