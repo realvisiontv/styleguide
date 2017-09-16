@@ -903,7 +903,7 @@
 // markup:
 // <section class="more-info container">
 //     <div class="columns">
-//         <div class="content column is-7">
+//         <div class="content column is-7-desktop">
 //             <div class="badge">Analysis</div>
 //             <h1>Looking under the hood gold</h1>
 //             <div class="columns is-8">
@@ -1063,6 +1063,10 @@
             right: 0;
 
             @include tablet {
+                background: linear-gradient(to right, black 45%, transparent 100%);
+            }
+
+            @include desktop {
                 background: linear-gradient(to right, black 45%, transparent 75%);
             }
         }
