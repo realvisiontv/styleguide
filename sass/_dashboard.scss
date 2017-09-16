@@ -232,7 +232,7 @@
     }
 
     .theme {
-        background: $color-spruce;
+        background: black;
         color: #fff;
         text-transform: uppercase;
         position: absolute;
@@ -280,7 +280,7 @@
     .icon {
         position: absolute;
         right: 0;
-        bottom: calc(15% + 1.75rem);
+        bottom: calc(20% + 1.75rem);
         width: 30%;
         opacity: 0;
         transition: opacity $transition-out-speed;
