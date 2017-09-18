@@ -14,6 +14,7 @@ $fa-font-path: "#{$root}/fonts/font-awesome" !default;
 // $color-purple - Purple
 // $color-bright-gray - Bright Gray
 // $color-spruce - Spruce
+// $color-rose - Rose
 // 
 // markup:
 // <div style="background: {$modifiers};" class="styleguide-color">{$modifiers}</div>
@@ -26,6 +27,7 @@ $color-orange: #ffce4a;
 $color-purple: #a822ef;
 $color-spruce: #3a444c;
 $color-poppy: #f8931f;
+$color-rose: #fe30aa;
 $text: $color-bright-gray !default;
 $brand: $color-cyan !default;
 

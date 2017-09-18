@@ -259,6 +259,7 @@
         margin-bottom: $baseline;
         margin-top: $baseline / 2;
         span {
+            box-decoration-break: clone;
             font-size: $size-4;
             color: white;
             background-color: black;
@@ -525,7 +526,7 @@
             background: rgba(255, 255, 255, 0.2);
 
             div {
-                background: #fe30aa;
+                background: $color-rose;
             }
         }
 
@@ -698,6 +699,11 @@
 
         &:last-child {
             border-bottom: 0;
+        }
+
+        .content {
+            word-break: break-word;
+            word-wrap: break-word;
         }
     }
     .avatar {
@@ -899,6 +905,7 @@
     h2, h3 {
         margin-bottom: $baseline;
         span {
+            box-decoration-break: clone;
             margin: 0;
             font-weight: 800;
         }
@@ -943,9 +950,9 @@
     p {
         margin-top: 0;
         margin-bottom: 0;
-
         line-height: 1.2rem;
         span {
+            box-decoration-break: clone;
             font-weight: 800;
             font-size: $size-6;
             color: white;
@@ -1767,6 +1774,7 @@
 
     h2, h3 {
         span {
+            box-decoration-break: clone;
             margin: 0;
             font-weight: 800;
         }
@@ -1885,6 +1893,7 @@
         text-transform: uppercase;
 
         span {
+            box-decoration-break: clone;
             margin: 0;
             font-weight: 800;
         }
@@ -2081,143 +2090,183 @@
 //
 // markup:
 // <div class="product-price-block">
-//     <div class="columns is-vcentered">
-//        <div class="column">
-//            <div class="product-price__title">REAL VISION <span class="product-price__product">PRO</span></div>        
-//            <div class="product-price {$modifiers}">
-//                <div class="product-price__header">
-//                    <div class="product-price__price">$49/</div>
+//     <div class="product-price-block__content">
+//         <div class="columns is-vcentered">
+//            <div class="column">
+//                <div class="product-price__title">REAL VISION <span class="product-price__product">PRO</span></div>        
+//                <div class="product-price {$modifiers}">
+//                    <div class="product-price__header">
+//                        <div class="product-price__price">$49/</div>
+//                    </div>
+//                    <div class="product-price__body">
+//                        <div class="product-price__term">MONTH</div>
+//                        <div class="product-price__conditions">(BILLED ANNUALLY)</div>
+//                    </div>                 
 //                </div>
-//                <div class="product-price__body">
-//                    <div class="product-price__term">MONTH</div>
-//                    <div class="product-price__conditions">(BILLED ANNUALLY)</div>
-//                </div>
-//            <a href="#" class="button is-pulled-right is-hidden-tablet {$modifiers}">START YOUR TRIAL</a>
+//                <a href="#" class="button is-pulled-right is-hidden-tablet {$modifiers}">START YOUR FREE TRIAL NOW</a>
+//                <div class="product-price__subtitle is-pulled-left is-hidden-mobile">SIGN UP FOR A FREE TRIAL NOW</div>
+//                <a href="#" class="button is-pulled-right is-hidden-mobile {$modifiers}">START YOUR TRIAL</a>
 //            </div>
-//            <div class="product-price__subtitle is-pulled-left is-hidden-mobile">SIGN UP FOR A FREE TRIAL NOW</div>
-//            <a href="#" class="button is-pulled-right is-hidden-mobile {$modifiers}">START YOUR TRIAL</a>
 //        </div>
-//     </div>
+//    </div>
 // </div>
 //
 // Styleguide 5.25
 
 .product-price-block {
-    font-weight: 800;
-    background: url('#{$root}/images/components/crinkled-paper-effect.jpg'), #363e4e;
-    background-size: cover;
+    padding: $baseline;
+    position: relative;
+    font-family: 'Function Pro', sans-serif;
+    color: $color-spruce;
     
-    .product-price__title {
-        text-transform: uppercase;
-        color: white;
-        background: url('#{$root}/images/overlays/white_splatter.png'), #363e4e;
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        font-size: $size-5;
-        padding: ($baseline / 2) $baseline;
-        
-        @include tablet {
-            display:inline-block;
-            float:left;
-            margin: $baseline $baseline ($baseline / 2) 0;
-            padding: ($baseline / 2) $baseline ($baseline / 2) ($baseline * 3);
-            font-size: $size-3;
-        }
+    @include mobile {
+        padding: 0;
     }
     
-    .product-price__subtitle {
-        padding-left: ($baseline * 3);
-    }
-
-    .product-price__product {
-        color: $brand;
-    }
-
-    .product-price {
-        display: flex;
-        padding-top: 1rem;
-        padding-bottom: 3.5rem;
-        margin: auto;
-        position: relative;
-        overflow: hidden;
-        padding: $baseline $baseline ($baseline * 2 );
-
-        * {
-            margin: 0;
-        }
-
-        a {
-            position: absolute;
-            right: 0;
-            bottom: 0;
-        }
-        
-        @include tablet {
-            justify-content: flex-end;
-            padding: $baseline ($baseline * 3) ($baseline / 2);
-        }
-        
-        * {
-            margin: 0;
-        }
-
-        .product-price__header {
-            flex-direction: row;
-            display: flex;
-        }
-
-        .product-price__body {
-            flex-direction: column;
-            display: flex;
-        }
-
-        .product-price__price {
-            font-size: $size-1;
-            line-height: $size-1;
-            
-            @include tablet {
-                font-size: 4.5rem;
-                line-height: 4.5rem;
-            }
-        }
-
-        .product-price__term {
-            font-size: $size-4;
-            line-height: $size-4;
-            padding-left: 0.2rem;
-            margin-top: auto;
-            
-            @include tablet {
-                font-size: 2.5rem;
-                line-height: 2.5rem;
-            }
-        }
-
-        .product-price__conditions {
-            font-size: $size-6;
-            line-height: $size-6;
-            font-style: italic;
-            font-weight: 400;
-            margin-bottom: auto;
-        }
-    }
-    
-    a {
-        font-size: $size-6;
-        background: $brand;
-        color: black;
+    .product-price-block__content {
         font-weight: 800;
-        padding: 0 ($baseline / 3);
+        background: url('#{$root}/images/components/crinkled-paper-effect.jpg'), #363e4e;
+        background-size: cover;
+        overflow: hidden;
+        
+        .product-price__title {
+            text-transform: uppercase;
+            color: white;
+            background: url('#{$root}/images/overlays/white_splatter.png'), #000;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-size: $size-5;
+            padding: ($baseline / 2) $baseline;
+            margin-top: $baseline;
+            
+            @include tablet {
+                display:inline-block;
+                float:left;
+                margin: $baseline $baseline ($baseline / 3) 0;
+                padding: ($baseline / 3) $baseline ($baseline / 3) ($baseline * 2);
+                font-size: $size-5;
+                max-width: 50%;
+            }
+            
+            @include desktop {
+                margin: $baseline 0 ($baseline / 2) 0;
+                padding: ($baseline / 2) $baseline ($baseline / 2) ($baseline * 3);
+                font-size: $size-3;
+            }
+        }
+        
+        .product-price__subtitle {
+            font-size: $size-6;
+            padding-left: ($baseline * 2);
+            clear: both;
 
-        &:hover {
-            background: black;
-            color: $brand;
-            border: solid 2px $brand;
+            @include desktop {
+                font-size: $size-4;
+                padding-left: ($baseline * 3);
+            }
         }
 
-        @include tablet {
-            font-size: $size-4;
+        .product-price__product {
+            color: $brand;
+        }
+
+        .product-price {
+            display: flex;
+            padding-top: 1rem;
+            padding-bottom: 3.5rem;
+            margin: auto;
+            position: relative;
+            overflow: hidden;
+            padding: $baseline;
+
+            * {
+                margin: 0;
+            }
+
+            a {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+            }
+            
+            @include tablet {
+                justify-content: flex-end;
+                padding: $baseline ($baseline * 3) ($baseline / 2);
+            }
+
+            * {
+                margin: 0;
+            }
+
+            .product-price__header {
+                flex-direction: row;
+                display: flex;
+            }
+
+            .product-price__body {
+                flex-direction: column;
+                display: flex;
+            }
+
+            .product-price__price {
+                font-size: $size-1;
+                line-height: $size-1;
+                
+                @include desktop {
+                    font-size: 4.5rem;
+                    line-height: 4.5rem;
+                }
+            }
+
+            .product-price__term {
+                font-size: $size-3;
+                line-height: $size-3;
+                padding-left: 0.2rem;
+                margin-top: auto;
+                
+                @include desktop {
+                    font-size: 3rem;
+                    line-height: 3rem;
+                }
+            }
+
+            .product-price__conditions {
+                font-size: ($size-6 / 1.1);
+                line-height: ($size-6 / 1.1);
+                font-style: italic;
+                font-weight: 600;
+                margin-bottom: auto;
+                
+                @include desktop {
+                    font-size: $size-5;
+                    line-height: $size-5;
+                }
+            }
+        }
+        
+        a {
+            font-size: $size-6;
+            background: $brand;
+            color: black;
+            font-weight: 800;
+            padding: 0 ($baseline / 3);
+            margin-top: $baseline / 2;
+            
+            &:hover {
+                background: black;
+                color: $brand;
+                border: solid 2px $brand;
+            }
+            
+            @include tablet {
+                font-size: 1.3rem;
+            }
+
+            @include desktop {
+                font-size: 1.7rem;
+                margin-top: $baseline;
+            }
         }
     }
 }
@@ -2277,5 +2326,218 @@
 
     &.has-margin {
         margin: $baseline;
+    }
+}
+
+// Image Row
+//
+// Single row of images - contents will adjust width based on number images
+//
+// default - Default
+//
+// markup:
+// <div class="image-row">
+//      <h2>EXAMPLES OF FEATURE DOCUMENTARIES</h2>
+//      <div class="columns is-tablet">
+//          <div class="card column">
+//              <a href="#">
+//                  <div class="card-image">
+//                      <figure class="image is-16by9">
+//                          <img src="/images/components/image-grid-1.jpg" alt="Image">
+//                      </figure>
+//                  </div>
+//                  <div class="card-content">
+//                      <div class="content">
+//                          <h3 class="title">GOLD - GRANT WILLIAMS</h3>
+//                      </div>
+//                  </div>
+//              </a>
+//          </div>
+//          <div class="card column">
+//              <a href="#">
+//                  <div class="card-image">
+//                      <figure class="image is-16by9">
+//                          <img src="/images/components/image-grid-2.jpg" alt="Image">
+//                      </figure>
+//                  </div>
+//                  <div class="card-content">
+//                      <div class="content">
+//                          <h3 class="title">GEOPOLITICS - GORDON LEE SMITH</h3>
+//                      </div>
+//                  </div>
+//              </a>
+//          </div>
+//          <div class="card column">
+//              <a href="#">
+//                  <div class="card-image">
+//                      <figure class="image is-16by9">
+//                          <img src="/images/components/image-grid-3.jpg" alt="Image">
+//                      </figure>
+//                  </div>
+//                  <div class="card-content">
+//                      <div class="content">
+//                          <h3 class="title">CHARTING - PETER BRANDT</h3>
+//                      </div>
+//                  </div>
+//              </a>
+//          </div>
+//      </div>
+// </div>
+//
+// Styleguide 5.28
+.image-row {
+    padding: $baseline;
+    background: none;
+
+    a {
+        text-decoration: none;
+        color: $text;
+    }
+
+    h2 {
+        color: #6e7789;
+        text-align: center;
+        margin-bottom: $baseline;
+        font-size: $size-5;
+    }
+
+    .card {
+        margin-bottom: 0;
+        .card-content {
+            text-align: left;
+
+            .title {
+                font-size: $size-5;
+                margin-top: $baseline / 2;
+                font-weight: 800;
+
+                @include tablet {
+                    font-size: $size-6;
+                }
+            }
+        }
+    }
+}
+
+// Pullout Container
+//
+// A container that contains pullout blocks and card grids
+//
+// Default - default
+//
+// markup:
+// <div class="pullout-container">
+//      <div class="pullout-container__content">
+//          <div class="pullout-block pullout-block__text">
+//              <div class="pullout-block__content">
+//                  <h3 class="pullout-block--title"><span>Feature Documentaries</span></h3>
+//                  <p><strong>Geopolitics with Gordon Dee Smith to the History of Gold with Grant Williams; to Charting masterclasses with Peter Brandt, you can watch documentary-style programming with the smartest investors in the world about topics that will broaden both your mind and your investment opportunities.</strong></p>
+//              </div>
+//          </div>
+//          <div class="image-row">
+//              <h2>EXAMPLES OF FEATURE DOCUMENTARIES</h2>
+//              <div class="columns is-tablet">
+//                  <div class="card column">
+//                      <a href="#">
+//                          <div class="card-image">
+//                              <figure class="image is-16by9">
+//                                  <img src="/images/components/image-grid-1.jpg" alt="Image">
+//                              </figure>
+//                          </div>
+//                          <div class="card-content">
+//                              <div class="content">
+//                                  <h3 class="title">GOLD - GRANT WILLIAMS</h3>
+//                              </div>
+//                          </div>
+//                      </a>
+//                  </div>
+//                  <div class="card column">
+//                      <a href="#">
+//                          <div class="card-image">
+//                              <figure class="image is-16by9">
+//                                  <img src="/images/components/image-grid-2.jpg" alt="Image">
+//                              </figure>
+//                          </div>
+//                          <div class="card-content">
+//                              <div class="content">
+//                                  <h3 class="title">GEOPOLITICS - GORDON LEE SMITH</h3>
+//                              </div>
+//                          </div>
+//                      </a>
+//                  </div>
+//                  <div class="card column">
+//                      <a href="#">
+//                          <div class="card-image">
+//                              <figure class="image is-16by9">
+//                                  <img src="/images/components/image-grid-3.jpg" alt="Image">
+//                              </figure>
+//                          </div>
+//                          <div class="card-content">
+//                              <div class="content">
+//                                  <h3 class="title">CHARTING - PETER BRANDT</h3>
+//                              </div>
+//                          </div>
+//                      </a>
+//                  </div>
+//              </div>
+//          </div>
+//          <div class="pullout-block pullout-block__product-quote">
+//              <div class="pullout-block__content">
+//                  <div class="is-hidden-mobile">
+//                      <div class="icons">
+//                          <svg class="icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.62292 316.34321" class="icon-star"><path d="M166.31 0l51.395 104.134 114.918 16.698-83.156 81.057 19.63 114.452-102.786-54.038-102.784 54.038 19.63-114.454L0 120.83l114.918-16.698z" /></svg>
+//                          <svg class="icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.62292 316.34321" class="icon-star"><path d="M166.31 0l51.395 104.134 114.918 16.698-83.156 81.057 19.63 114.452-102.786-54.038-102.784 54.038 19.63-114.454L0 120.83l114.918-16.698z" /></svg>
+//                          <svg class="icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.62292 316.34321" class="icon-star"><path d="M166.31 0l51.395 104.134 114.918 16.698-83.156 81.057 19.63 114.452-102.786-54.038-102.784 54.038 19.63-114.454L0 120.83l114.918-16.698z" /></svg>
+//                          <svg class="icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.62292 316.34321" class="icon-star"><path d="M166.31 0l51.395 104.134 114.918 16.698-83.156 81.057 19.63 114.452-102.786-54.038-102.784 54.038 19.63-114.454L0 120.83l114.918-16.698z" /></svg>
+//                          <svg class="icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.62292 316.34321" class="icon-star"><path d="M166.31 0l51.395 104.134 114.918 16.698-83.156 81.057 19.63 114.452-102.786-54.038-102.784 54.038 19.63-114.454L0 120.83l114.918-16.698z" /></svg>
+//                      </div>
+//                      <blockquote>
+//                          <svg class="icon-quote icon-quote--open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><path class="icon-quote-fill" d="M68.2 163.1c-5.4-88 32-104 32-104s-.1-33 0-33.3C5.1 51.2 9.6 167.1 9.6 167.1v98.7h102.7V163.1s-30-.5-44.1 0zm173.4 0c-5.4-88 32-104 32-104s-.1-33 0-33.3C178.5 51.2 183 167.1 183 167.1v98.7h102.7V163.1s-30-.5-44.1 0z"/></svg>
+//                          <p>This was so clear and succinct, which is as rare as a white buffalo in this murky world of charting and risk management.</p>
+//                          <svg class="icon-quote icon-quote--close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><path class="icon-quote-fill" d="M227.1 128.5c5.4 88-32 104-32 104s.1 33 0 33.3c95.1-25.4 90.6-141.3 90.6-141.3V25.8H183v102.7s30 .5 44.1 0zm-173.4 0c5.4 88-32 104-32 104s.1 33 0 33.3c95.1-25.4 90.6-141.3 90.6-141.3V25.8H9.6v102.7s30 .5 44.1 0z"></path></svg>
+//                      </blockquote>
+//                      <hr/>
+//                      <cite>John A.</cite>
+//                  </div>
+//              </div>
+//          </div>
+//      </div>
+// </div>
+//
+// Styleguide 5.29
+.pullout-container {
+    padding: 0;
+
+    @include tablet {
+        padding: $baseline / 2 $baseline;
+    }
+
+    .pullout-container__content {
+        background-image: url('#{$root}/images/components/crinkled-paper-effect.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        padding: $baseline ($baseline * 2);
+    }
+
+    .pullout-block__content {
+        background: none;
+    }
+    .pullout-block {
+        padding: 0;
+        .pullout-block__content {
+            padding: 0;
+        }
+        &:before {
+            content: none;
+        }
+    }
+    .image-row {
+        padding: 0;
+        
+    }
+
+    .pullout-block:not(:last-child), .image-row:not(:last-child) {
+        margin-bottom: $baseline;
     }
 }
