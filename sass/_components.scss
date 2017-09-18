@@ -2725,3 +2725,49 @@
         }
     }
 }
+
+// WYSIWYG
+//
+// markup:
+// <div class="wysiwyg-block">
+//      <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor at orci in sodales. In convallis urna et nisi dictum varius. Duis ornare felis vel nisi pretium, non lobortis ligula consequat.</h2><br/>
+//      <br/>
+//      <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor at orci in sodales. In convallis urna et nisi dictum varius. Duis ornare felis vel nisi pretium, non lobortis ligula consequat.</h3>
+// </div>
+//
+// Styleguide 5.33
+.wysiwyg-block {
+    padding: $baseline;
+    h2, h3 {
+        display: inline;
+        box-decoration-break: clone;
+        margin: 0;
+        margin-left: 10px;
+        padding-right: 10px;
+        font-weight: 800;
+    }
+    h2 {
+        line-height: 1.8rem;
+        font-size: $size-4;
+        color: $color-dark-gray;
+        background-color: white;
+        box-shadow: 10px 0 0 white, -10px 0 0 white;
+        
+        @include tablet {
+            line-height: 3.1rem;
+            font-size: $size-2;
+        }
+    }
+    h3 {
+        line-height: 1.8rem;
+        font-size: $size-4;
+        color: white;
+        background-color: $color-dark-gray;
+        box-shadow: 10px 0 0 $color-dark-gray, -10px 0 0 $color-dark-gray;
+        
+        @include tablet {
+            line-height: 2.4rem;
+            font-size: $size-3;
+        }
+    }
+}
