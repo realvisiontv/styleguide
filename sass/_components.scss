@@ -1,7 +1,7 @@
 // Feature Quote
 //
 // default  - Default button
-// .large    - Large
+// .is-large-tablet    - Large
 //
 // markup:
 // <blockquote class="feature-quote {$modifiers}">
@@ -51,19 +51,20 @@
         line-height: 1;
         opacity: 0.75;
     }
+    @include tablet {
+        &.is-large-tablet {
+            p {
+                font-size: 3rem;
+            }
 
-    &.large {
-        p {
-            font-size: 3rem;
-        }
+            cite {
+                font-size: 1.75rem;
+            }
 
-        cite {
-            font-size: 1.75rem;
-        }
-
-        .icon-star {
-            width: 1.5rem;
-            height: 1.5rem;
+            .icon-star {
+                width: 1.5rem;
+                height: 1.5rem;
+            }
         }
     }
 }
@@ -699,6 +700,11 @@
 
         &:last-child {
             border-bottom: 0;
+        }
+
+        .content {
+            word-break: break-word;
+            word-wrap: break-word;
         }
     }
     .avatar {
