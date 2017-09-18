@@ -29,7 +29,7 @@
 //                     Go you good thing Thats the best rant I've heard for a short while.
 //                     <cite>Mark M.</cite>
 //                 </blockquote>
-//                 <div class="icon"></div>
+//                 <div class="icon"><i class="fa fa-play" aria-hidden="true"></i></div>
 //             </div>
 //         </a>
 //     </article>
@@ -61,7 +61,7 @@
 //                     Go you good thing Thats the best rant I've heard for a short while.
 //                     <cite>Mark M.</cite>
 //                 </blockquote>
-//                 <div class="icon"></div>
+//                 <div class="icon"><i class="fa fa-book" aria-hidden="true"></i></div>
 //             </div>
 //         </a>
 //     </article>
@@ -278,22 +278,17 @@
     }
 
     .icon {
+        color: white;
         position: absolute;
-        right: 0;
+        right: $baseline / 2;
         bottom: calc(20% + 1.75rem);
-        width: 30%;
+        width: calc(30% - #{$baseline / 2});
         opacity: 0;
         transition: opacity $transition-out-speed;
         transition-delay: $transition-out-delay;
 
-        &:after {
-            border-top: 20px solid transparent;
-            border-left: 30px solid #fff;
-            border-bottom: 20px solid transparent;
-            content: "";
-            display: block;
-            width: 0;
-            height: 0;
+        .fa {
+            font-size: 3rem;
         }
     }
 
