@@ -567,11 +567,13 @@ footer {
 // <div class="container is-paper">Any content can be placed in a paper background element. <code>.is-paper</code> can be applied on any element</div>
 // 
 // Styleguide 2.6
+.has-paper-background {
+    background-image: url('#{$root}/images/components/crinkled-paper-effect.jpg'), url('#{$root}/images/components/crinkled-paper-repeat.jpg');
+    background-position: top center;
+    background-repeat: no-repeat, repeat;
+}
 .is-paper {
-    background-image: url('#{$root}/images/components/crinkled-paper-effect.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    @extend .has-paper-background;
     padding: $baseline;
 
     hr {

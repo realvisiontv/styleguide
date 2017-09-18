@@ -293,10 +293,7 @@
     }
 
     .pullout-block__content {
-        background-image: url('#{$root}/images/components/crinkled-paper-effect.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
+        @extend .has-paper-background;
         padding: $baseline ($baseline * 2);
 
         .pullout-block__content-heading {
@@ -2125,9 +2122,8 @@
     }
 
     .product-price-block__content {
+        @extend .has-paper-background;
         font-weight: 800;
-        background: url('#{$root}/images/components/crinkled-paper-effect.jpg'), #363e4e;
-        background-size: cover;
         overflow: hidden;
 
         .product-price__title {
@@ -2514,10 +2510,7 @@
     }
 
     .pullout-container__content {
-        background-image: url('#{$root}/images/components/crinkled-paper-effect.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
+        @extend .has-paper-background;
         padding: $baseline ($baseline * 2);
     }
 

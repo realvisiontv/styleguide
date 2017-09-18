@@ -289,7 +289,7 @@ a {
 // 
 // Styleguide 3.11
 .featured {
-    background: url('#{$root}/images/components/crinkled-paper-effect.jpg') 50% 50%;
+    @extend .has-paper-background;
     padding: $baseline;
 
     ol {
