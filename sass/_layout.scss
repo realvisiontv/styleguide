@@ -508,7 +508,7 @@ h6 {
 // 
 // Styleguide 2.5
 footer {
-    background: $color-spruce;
+    background: $color-dark-gray;
     padding: $baseline;
     color: #e3e3e3;
     ul {
@@ -534,7 +534,7 @@ footer {
                 transition: color 200ms ease-in;
 
                 &:hover {
-                    color: $color-torch-red;
+                    color: $color-rose;
                 }
             }
         }
