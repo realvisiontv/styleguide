@@ -2578,6 +2578,11 @@
     color: white;
     font-weight: 800;
     text-transform: uppercase;
+    font-size: $size-7;
+
+    @include tablet {
+        font-size: $size-4;
+    }
 
     .home, .post, .post-page {
         color: white;
