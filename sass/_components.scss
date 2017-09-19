@@ -2732,6 +2732,42 @@
     }
 }
 
+// Hero - Bottom Align
+//
+// default - Default Hero
+//
+// markup:
+// <div class="product-hero hero-bottom {$modifiers}">
+//      <div class="columns hero-bottom__content is-mobile">
+//          <div class="column product-hero--heading">
+//              <h2><span>Leading Institutions give us the thumbs up too...</span></h2>
+//          </div>
+//      </div>
+// </div>
+//
+// Styleguide 5.33
+
+.hero-bottom {
+    background-image: url('#{$root}/images/components/product-hero-bg-5.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: $baseline;
+    min-height: 300px;
+    position: relative;
+
+    &__content {
+        position: absolute;
+        bottom: 0;
+        left: 10px;
+        padding: $baseline * 1.5;
+    }
+
+    h2 {
+        margin-bottom: 0;
+    }
+}
+
 // WYSIWYG
 //
 // markup:
@@ -2741,7 +2777,7 @@
 //      <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor at orci in sodales. In convallis urna et nisi dictum varius. Duis ornare felis vel nisi pretium, non lobortis ligula consequat.</h3>
 // </div>
 //
-// Styleguide 5.33
+// Styleguide 5.34
 .wysiwyg-block {
     padding: $baseline;
     h2, h3 {
@@ -2758,7 +2794,7 @@
         color: $color-dark-gray;
         background-color: white;
         box-shadow: 10px 0 0 white, -10px 0 0 white;
-        
+
         @include tablet {
             line-height: 3.1rem;
             font-size: $size-2;
@@ -2770,7 +2806,7 @@
         color: white;
         background-color: $color-dark-gray;
         box-shadow: 10px 0 0 $color-dark-gray, -10px 0 0 $color-dark-gray;
-        
+
         @include tablet {
             line-height: 2.4rem;
             font-size: $size-3;
