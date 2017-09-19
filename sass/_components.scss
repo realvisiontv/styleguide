@@ -2573,11 +2573,17 @@
 // Styleguide 5.30
 .breadcrumbs-block {
     font-family: "Function Pro";
-    padding: $baseline;
+    padding: $baseline / 2 $baseline;
     background-color: $color-dark-gray;
     color: white;
     font-weight: 800;
     text-transform: uppercase;
+    font-size: $size-7;
+
+    @include tablet {
+        padding: $baseline;
+        font-size: $size-4;
+    }
 
     .home, .post, .post-page {
         color: white;
