@@ -58,7 +58,7 @@ a.is-link {
         margin-top: 0;
     }
 
-    & + .is-link {
+    &:not(.is-hidden) + .is-link {
         margin-left: $baseline;
     }
 }
