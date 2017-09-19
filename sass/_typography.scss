@@ -72,8 +72,8 @@ h1,h2,h3,h4,h5,h6 {
         color: white;
 
         span {
-            background-color: black;
-            box-shadow: $padding 0 0 black, -$padding 0 0 black;
+            background-color: $color-dark-gray;
+            box-shadow: $padding 0 0 $color-dark-gray, -$padding 0 0 $color-dark-gray;
         }
     }
 }
