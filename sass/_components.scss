@@ -2655,7 +2655,7 @@
     }
 
     @include tablet {
-        padding: $baseline ($baseline * 2);
+        padding: $baseline ($baseline * 2) ($baseline * 2) ($baseline * 2);
     }
 
     p {
@@ -2729,6 +2729,10 @@
             background-color: white;
             box-shadow: 10px 0 0 white, -10px 0 0 white;
         }
+    }
+
+    @include tablet {
+        padding: $baseline ($baseline * 2);
     }
 }
 
