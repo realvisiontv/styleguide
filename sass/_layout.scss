@@ -67,6 +67,41 @@
     }
 }
 
+.container {
+    margin: 0 auto;
+    position: relative;
+    @include from($desktop) {
+        max-width: $desktop - (2 * $gap);
+        width: $desktop - (2 * $gap);
+        &.is-fluid {
+            margin-left: $gap;
+            margin-right: $gap;
+            max-width: none;
+            width: auto;
+        }
+    }
+    @include until($widescreen) {
+        &.is-widescreen {
+            max-width: $widescreen - (2 * $gap);
+            width: auto;
+        }
+    }
+    @include until($fullhd) {
+        &.is-fullhd {
+            max-width: $fullhd - (2 * $gap);
+            width: auto;
+        }
+    }
+    @include from($widescreen) {
+        max-width: $widescreen - (2 * $gap);
+        width: $widescreen - (2 * $gap);
+    }
+    @include from($fullhd) {
+        max-width: $fullhd - (2 * $gap);
+        width: $fullhd - (2 * $gap);
+    }
+}
+
 // Vertical Rhythm
 //
 // Vertical rhythym is on a baseline 1.5rem value (24px). The default line
@@ -615,5 +650,372 @@ footer {
 
     hr {
         background-color: rgba(0, 0, 0, 0.15);
+    }
+}
+
+
+// Navigation (pre-paywall)
+//
+// Best previewed in fullscreen mode. Dropdown controls require javascript implementation.
+// 
+// default - Default
+// 
+// markup:
+// <div class="container is-paddingless navigation-pre">
+//     <div class="columns is-mobile">
+//         <h1 class="logo column is-narrow-desktop">
+//              <a href="http://prospect-local.realvision.com/"><svg xmlns="http:www.w3.org/2000/svg" class="logo_generic" viewBox="30 0 444 170.3"><path class="logo_generic--text" d="M320.7 0c-1.5 3.1-3 6.2-4.5 9.2-5.4 11.1-73.2 150.3-78.1 160.3l-.4.8-.4-.7L155.5 0h41.3s41.1 89.1 41.3 89.2C238.2 89.1 279.2.3 279 0h41.7zm153.1 101.1h-1l-26.4-28.4v27.5h-4.6V62.5h1.2l.4.4 25.5 27.3s.2.2.4.2h.1s.1 0 .1-.1v-27h4.5l-.2 37.8zM30 63.1s7.2 0 10.4.1c1.6 0 3.2.2 4.7.8 3.2 1.2 5 3.6 5.5 6.9.3 1.8.2 3.6-.4 5.4-1.1 3.3-3.3 5.4-6.7 6.2-.3.1-.9.3-1.8.5-.1 0 10.2 17.2 10.2 17.2h-5.4l-9.7-16.9h-2v17H30V63.1zm4.8 16.1c2.5 0 4.9 0 7.2-.5 1.7-.4 2.9-1.4 3.5-3 .6-1.3.6-2.7.4-4.1-.4-2-1.6-3.3-3.5-3.9-.6-.2-1.2-.3-1.8-.3-1.7-.1-3.4-.1-5.2-.1h-.6v11.9zm95.5 21h-.7L125 89.6h-13.8c-1.5 3.5-3 7.1-4.5 10.6h-5c3.8-8.8 15.6-36.4 16.4-37.9 0 0 .1-.1.2-.1h.1c.2.2.3.5.5.8l15.8 37.2m-11.4-14.7c-1.8-4.3-3.3-8.5-5.1-12.8-1.8 4.4-3.5 8.6-5.3 12.8h10.4zM72.5 78h14.4v4.1H72.6l-.1 13.7h14.7v4.2l-19.4.1-.1-36.8H87v4.3H72.6L72.5 78zm81.7 17.9H166v4.3h-16.5V63.3h4.6l.1 32.6zm252.2 4.9c-5 0-9.5-1.6-13.2-5.1-2.5-2.4-4.2-5.2-5.1-8.6-1.3-4.9-1-9.7 1.2-14.2 2.5-5.1 6.6-8.4 12.1-9.8 4.1-1.1 8.2-1 12.1.4 6 2.1 10 6.3 11.7 12.4 1.9 6.9.5 13.2-4.3 18.6-3 3.4-6.9 5.3-11.4 6-1 .3-2.1.4-3.1.3zm-.1-4.4c.7 0 1.4-.1 2.1-.1.4 0 .9-.1 1.3-.2 4.9-1.1 8.4-3.9 10.3-8.6 1.2-3 1.4-6.1.8-9.2-.5-2.5-1.5-4.8-3.2-6.7-3.1-3.3-6.9-4.8-11.4-4.6-5.7.2-9.9 2.9-12.4 8.1-1.9 3.9-1.9 8-.5 12.1 1.9 5.6 7 9.3 13 9.2zM330.6 93l4.1-1.9s.2.5.4.8c.4.9.8 1.9 1.5 2.7 1.5 2 3.8 2.5 5.9 1.9 2.1-.5 3.6-2.4 3.9-4.7.4-2.7-.5-4.9-2.8-6.4-1.1-.7-2.1-1.4-3.3-2-1.6-.8-3.2-1.8-4.6-2.9-2.6-2-3.9-4.6-3.9-7.9 0-2.4.5-4.6 2-6.6 2.1-2.7 5-3.7 8.3-3.4 4 .3 6.7 2.5 8.5 6l.1.2-3.7 2.1s-.6-.8-.8-1.2c-.9-1.3-1.9-2.4-3.5-2.8-2.7-.7-5.4.8-6.2 3.5-.7 2.7 0 4.7 2.1 6.4 1.3 1 2.7 1.7 4.1 2.5 1.4.8 2.7 1.5 4 2.5 5.8 4.2 5.4 13.1.2 17-4.9 3.8-12.4 2.1-15.3-3.3-.4-.7-.6-1.4-.9-2.1.1-.1-.1-.4-.1-.4zm-19.8-29.8h4.6v37h-4.6zm56.2 0h4.6v37H367z"></path></svg></a>
+//          </h1>
+//         <div class="page-navigation-outer-container desktop-navigation is-hidden-mobile is-hidden-tablet-only">
+//             <div class="page-navigation-container">
+//                 <ul id="menu-primary" class="page-navigation">
+//                     <li data-id="574" class=" menu-item menu-item-type-post_type menu-item-object-page "><a href="http://prospect-local.realvision.com/television/">Television</a>
+//                     </li>
+//                     <li data-id="899" class=" menu-item menu-item-type-post_type menu-item-object-page "><a href="http://prospect-local.realvision.com/reports/">Reports</a>
+//                     </li>
+//                     <li data-id="1109" class=" menu-item menu-item-type-post_type menu-item-object-page "><a href="http://prospect-local.realvision.com/free-stuff/">Free Stuff</a>
+//                     </li>
+//                     <li data-id="1625" class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children "><a href="#">Success Stories <svg viewBox="0 0 767.5 1024" height="1024" width="767.5" xmlns="http:www.w3.org/2000/svg" class="icon_down_arrow"><path d="M0 384l383.75 383.75L767.5 384H0z" class="icon_down_arrow--arrow"></path></svg></a>
+//                     </li>
+//                     <li data-id="841" class=" menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children is-open is-fixed "><a href="#">Blogs <svg viewBox="0 0 767.5 1024" height="1024" width="767.5" xmlns="http:www.w3.org/2000/svg" class="icon_down_arrow"><path d="M0 384l383.75 383.75L767.5 384H0z" class="icon_down_arrow--arrow"></path></svg></a>
+//                     </li>
+//                 </ul>
+//             </div>
+//         </div>
+//         <div class="spacer is-hidden-mobile"></div>
+//         <div class="column is-narrow">
+//             <ul>
+//                 <li class="is-hidden-mobile">
+//                     <a href="https://development.realvision.com/rv/login">LOGIN</a>
+//                 </li>
+//                 <li>
+//                     <a class="button is-primary" href="https://development.realvision.com/subscribe">SUBSCRIBE</a>
+//                 </li>
+//             </ul>
+//         </div>
+//         <div class="column is-narrow is-hidden-desktop">
+//             <a class="hamburger"><span class="is-hidden" aria-hidden="true">Menu</span> <span class="icon"><i class="fa fa-bars" aria-hidden="true"></i></span></a>
+//         </div>
+//     </div>
+//     <div data-parent="1625" class="additional-navigation is-hidden-mobile is-hidden-tablet-only ">
+//         <ul>
+//             <li class=" menu-item menu-item-type-post_type menu-item-object-page "><a href="http://prospect-local.realvision.com/success-stories/">All stories</a>
+//             </li>
+//             <li class=" menu-item menu-item-type-post_type menu-item-object-page "><a href="http://prospect-local.realvision.com/success-stories/student/">Student</a>
+//             </li>
+//             <li class=" menu-item menu-item-type-post_type menu-item-object-page "><a href="http://prospect-local.realvision.com/success-stories/private-investors/">Private Investors</a>
+//             </li>
+//         </ul>
+//     </div>
+//     <div data-parent="841" class="additional-navigation is-hidden-mobile is-hidden-tablet-only is-open is-fixed">
+//         <ul>
+//             <li class=" menu-item menu-item-type-post_type menu-item-object-page "><a href="http://prospect-local.realvision.com/free-stuff/360-vision/">360 Vision</a>
+//             </li>
+//             <li class=" menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-1473 current_page_item is-active"><a href="http://prospect-local.realvision.com/big-stories/">Big Stories</a>
+//             </li>
+//         </ul>
+//     </div>
+//     <div class="page-navigation-container is-hidden-desktop hamburger-navigation">
+//         <ul class="page-navigation">
+//             <li class=" menu-item menu-item-type-post_type menu-item-object-page "><a href="http://prospect-local.realvision.com/television/">Television</a>
+//             </li>
+//             <li class=" menu-item menu-item-type-post_type menu-item-object-page "><a href="http://prospect-local.realvision.com/reports/">Reports</a>
+//             </li>
+//             <li class=" menu-item menu-item-type-post_type menu-item-object-page "><a href="http://prospect-local.realvision.com/free-stuff/">Free Stuff</a>
+//             </li>
+//             <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children "><a href="#">Success Stories  <svg viewBox="0 0 767.5 1024" height="1024" width="767.5" xmlns="http:www.w3.org/2000/svg" class="icon_down_arrow"><path d="M0 384l383.75 383.75L767.5 384H0z" class="icon_down_arrow--arrow"></path></svg></a>
+//                 <ul>
+//                     <li class=" menu-item menu-item-type-post_type menu-item-object-page "><a href="http://prospect-local.realvision.com/success-stories/">All stories</a>
+//                     </li>
+//                     <li class=" menu-item menu-item-type-post_type menu-item-object-page "><a href="http://prospect-local.realvision.com/success-stories/student/">Student</a>
+//                     </li>
+//                     <li class=" menu-item menu-item-type-post_type menu-item-object-page "><a href="http://prospect-local.realvision.com/success-stories/private-investors/">Private Investors</a>
+//                     </li>
+//                 </ul>
+//             </li>
+//             <li class=" menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children "><a href="#">Blogs  <svg viewBox="0 0 767.5 1024" height="1024" width="767.5" xmlns="http:www.w3.org/2000/svg" class="icon_down_arrow"><path d="M0 384l383.75 383.75L767.5 384H0z" class="icon_down_arrow--arrow"></path></svg></a>
+//                 <ul>
+//                     <li class=" menu-item menu-item-type-post_type menu-item-object-page "><a href="http://prospect-local.realvision.com/free-stuff/360-vision/">360 Vision</a>
+//                     </li>
+//                     <li class=" menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-1473 current_page_item is-active"><a href="http://prospect-local.realvision.com/big-stories/">Big Stories</a>
+//                     </li>
+//                 </ul>
+//             </li>
+//             <li>
+//                 <a href="https://development.realvision.com/rv/login">LOGIN</a>
+//             </li>
+//             <li>
+//                 <a href="https://development.realvision.com/subscribe">SUBSCRIBE</a>
+//             </li>
+//         </ul>
+//     </div>
+// </div>
+// 
+// Styleguide 2.6
+.navigation-pre {
+    background: $color-dark-gray;
+    position: relative;
+    > .columns {
+        margin: 0;
+        padding: 0 ($baseline/2);
+        border-bottom: 2px solid $color-rose;
+    }
+    .column {
+        padding: 0;
+        flex-basis: auto;
+        display: flex;
+        align-items: center;
+    }
+    .search {
+        flex-basis: auto;
+    }
+    .hamburger {
+        border: 2px solid rgba(white, 0.25);
+        border-radius: 2px;
+        color: white;
+        display: inline-block;
+        padding: 0 ($baseline/2);
+        text-transform: uppercase;
+        font-family: 'Function Pro';
+        font-weight: 700;
+        text-decoration: none;
+        margin-left: 7mm;
+        .icon {
+            height: 40px;
+        }
+    }
+    .icon_down_arrow {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin-left: 0;
+    }
+    .logo svg {
+        display: block;
+        height: 42px;
+        width: 110px;
+        margin: ($baseline / 2) 0;
+        @include desktop {
+            margin: ($baseline / 2) 2.25rem ($baseline / 2) 0;
+        }
+    }
+    .logo svg.logo_tv_small,
+    .logo svg.logo_publications_small {
+        height: 46px;
+        width: 55px;
+    }
+    path {
+        fill: white;
+    }
+
+    .page-navigation li {
+        display: block;
+    }
+
+    @include desktop {
+        .additional-navigation,
+        .page-navigation {
+            height: 100%;
+            display: flex;
+            align-items: center;
+
+            li a {
+                border-right: 2px solid rgba(255,255,255,0.5);
+                padding-left: 1vw;
+                padding-right: 1vw;
+            }
+        }
+
+        .page-navigation li {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+
+        .additional-navigation {
+            background: #363435;
+            display: none;
+
+            &.is-open {
+                display: block;
+            }
+
+            ul {
+                margin-left: calc(122px + 2.25rem);
+            }
+
+            li {
+                padding: 0.75rem 0;
+            }
+
+            li.active a {
+                color: $brand;
+            }
+        }
+    }
+
+    ul {
+        margin: 0;
+
+        ul {
+            display: none;
+            margin-top: 0;
+            margin-bottom: 0;
+            a {
+                border-bottom: 0;
+                padding: ($baseline / 2) ($baseline * 2);
+            }
+        }
+    }
+    li {
+        list-style: none;
+        margin-top: 0;
+        display: inline-block;
+
+        @include desktop {
+            border-bottom: 4px solid transparent;
+            border-top: 4px solid transparent;
+            padding: 0;
+            margin: 0;
+
+            &:last-child a {
+                border-right: 0;
+                margin-right: 0;
+            }
+        }
+
+        a {
+            color: white;
+            border-bottom: 1px solid rgba(white, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: ($baseline / 2) $baseline;
+            text-transform: none;
+            font-family: 'Proxima Nova';
+            text-decoration: none;
+            white-space: nowrap;
+
+            @include desktop {
+                border: 0;
+                display: inline;
+                padding: 0;
+                font-family: 'Function Pro', sans-serif;
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+    
+            &:hover {
+                color: $brand;
+            }
+
+            &.is-active {
+                color: $brand;
+            }
+        }
+
+        &.is-active a {
+            color: $brand;
+        }
+
+        &.current-menu-parent a {
+            color: $brand;
+        }
+
+        &.is-open {
+            background: #363435;
+
+            @include desktop {
+                height: calc(100% + 5px);
+                position: relative;
+                z-index: 1;
+                transform: translateY(2px);
+                border-bottom-width: 6px;
+
+                a {
+                    text-decoration: underline;
+                }
+            }
+            a {
+                border-color: transparent;
+                text-decoration: underline;
+                text-decoration-color: rgba(white, 0.5);
+                &:hover {
+                    color: white;
+                    text-decoration-color: rgba(white, 0.5);
+                }
+            }
+            ul {
+                display: block;
+
+                a {
+                    text-decoration: none; 
+                    
+                    &.is-active {
+                        color: $brand;
+                    }
+                }
+            }
+        }
+    }
+    .navigation-dropdown {
+        position: absolute;
+        top: auto;
+        left: 0;
+        z-index: 1000;
+        display: none;
+        float: left;
+        min-width: 160px;
+        padding: 5px 0;
+        margin: 2px 0 0;
+        list-style: none;
+        font-size: 14px;
+        background-color: #191e24;
+        border: 2px solid #555b62;
+        border-radius: 4px;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+        background-clip: padding-box;
+        padding: 12px 24px;
+    }
+    .open .navigation-dropdown {
+        display: block;
+        visibility: visible;
+        opacity: 1;
+    }
+    .page-navigation-outer-container {
+        display: flex;
+        align-items: flex-end;
+
+        @include desktop {
+            margin-top: 0;
+        }
+    }
+    .page-navigation-container {
+        display: none;
+        height: 100%;
+        
+        &.show {
+            display: flex;
+            flex-direction: column;
+        }
+
+        @include desktop {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    .top-navigation {
+        white-space: nowrap;
+    }
+    .desktop-navigation .top-navigation {
+        display: flex;
+        align-items: flex-end;
+        height: 100%;
+    }
+
+    li a.button {
+        font-size: $size-6;
+        padding: 0.325rem 0.75rem;
+        margin-left: 1.5rem;
     }
 }
