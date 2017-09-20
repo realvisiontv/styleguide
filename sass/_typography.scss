@@ -72,8 +72,8 @@ h1,h2,h3,h4,h5,h6 {
         color: white;
 
         span {
-            background-color: black;
-            box-shadow: $padding 0 0 black, -$padding 0 0 black;
+            background-color: $color-dark-gray;
+            box-shadow: $padding 0 0 $color-dark-gray, -$padding 0 0 $color-dark-gray;
         }
     }
 }
@@ -252,8 +252,11 @@ a {
 
 // Featured numbered list
 // 
+// default - Default
+// .is-primary - Branded
+// 
 // markup:
-// <div class="featured">
+// <div class="featured {$modifiers}">
 //     <ol>
 //         <li>
 //             <a>
@@ -342,6 +345,14 @@ a {
             text-transform: uppercase;
         }
 
+        .item {
+            margin-top: 4px;
+        }
+
+        .meta + .item {
+            margin-top: 0;
+        }
+
         i {
             color: #92a0ac;
         }
@@ -363,5 +374,10 @@ a {
         .is-link {
             margin-top: 0;
         }
+    }
+
+    &.is-primary li:before {
+        background: $brand;
+        color: black;
     }
 }
