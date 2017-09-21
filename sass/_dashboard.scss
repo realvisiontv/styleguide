@@ -1,7 +1,7 @@
 // Content Tile
 //
 // :hover - hover state
-// 
+//
 // markup:
 // <div class="columns">
 //     <article class="column content-tile">
@@ -74,7 +74,7 @@
     $transition-out-speed: 0.5s;
     $transition-out-delay: 0.5s;
 
-    
+
     @keyframes loading {
         to {
             background-position: 200% 0, 0 0, 0 0, 0 0;
@@ -91,10 +91,10 @@
     }
 
     &.loading {
-        background-image: 
+        background-image:
             linear-gradient(90deg, transparent 0%, rgba(lightgray, 0.5) 50%, transparent 100%),
-            linear-gradient(transparent 0, lightgray 0), 
-            linear-gradient(transparent 0, white 0), 
+            linear-gradient(transparent 0, lightgray 0),
+            linear-gradient(transparent 0, white 0),
             linear-gradient(lightgray 100%, transparent 0)
         ;
         background-repeat: no-repeat;
@@ -152,7 +152,7 @@
             }
         }
     }
-    
+
     &.column {
         .image:after {
             top: 0;
@@ -198,7 +198,7 @@
         font-weight: 800;
         margin: 0;
         position: relative;
-        max-height: 3em; 
+        max-height: 3em;
         overflow: hidden;
 
         &:after {
@@ -219,7 +219,7 @@
             overflow: hidden;
             display: -webkit-box;
             max-height: none;
-            
+
             &:after {
                 display: none;
             }
@@ -247,7 +247,8 @@
         justify-content: center;
     }
 
-    blockquote {
+    blockquote,
+    .summary {
         color: #fff;
         font-size: $size-6;
         line-height: 1.2;
@@ -256,7 +257,7 @@
         transition: opacity $transition-out-speed;
         transition-delay: $transition-out-delay;
         position: relative;
-        max-height: 3.6em; 
+        max-height: 3.6em;
         overflow: hidden;
 
         cite {
@@ -267,7 +268,7 @@
             margin-top: 5px;
             padding-top: 5px;
         }
-    
+
         @supports (-webkit-line-clamp: 3) {
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
@@ -311,15 +312,40 @@
             }
         }
     }
+
+    &__listing {
+        .image{
+            padding-bottom:0;
+        }
+
+        .subheading .fa {
+            font-size: 13px;
+            line-height: 17px;
+        }
+
+        .button {
+            padding: 0 $baseline/2;
+            display: inline-block;
+            background: $text;
+            color: #fff;
+            font-size: 1rem;
+
+            &:hover {
+                color: $text;
+                border-color: $text;
+                background: #fff;
+            }
+        }
+    }
 }
 
 // Content Tile - Double Height List
-// 
+//
 // A content tile at double height. Contains a list of up to 4 things. Each item
 // in the list is cropped to 2 lines of text.
-// 
+//
 // :hover - hover state
-// 
+//
 // markup:
 // <div class="columns">
 //     <article class="column content-tile double {$modifiers}">
@@ -365,7 +391,7 @@
 //         </div>
 //     </article>
 // </div>
-// 
+//
 // Styleguide 6.2
 .content-tile.double {
     $transition-in-speed: 0.2s;
@@ -503,7 +529,7 @@
 }
 
 // Tri-hero
-// 
+//
 // This component is dependent on specific container dimensions, see fullscreen.
 //
 // markup:
@@ -564,7 +590,7 @@
 //         </article>
 //     </div>
 // </div>
-// 
+//
 // Styleguide 6.3
 .tri-hero {
     $rotation: 25deg;
@@ -573,8 +599,8 @@
     // Scale calculation - cos(θ) + max{(W/H),(H/W)} * sin(θ)
 
     padding: 0;
-    
-    .images { 
+
+    .images {
         margin-top: 0;
     }
 
@@ -592,7 +618,7 @@
             color: white;
             text-decoration: none;
         }
- 
+
         .icon-button.play {
             position: absolute;
             bottom: $baseline;
@@ -610,7 +636,7 @@
             h1 {
                 max-height: 3em;
             }
-            
+
             @supports (-webkit-line-clamp: 3) {
                 h1 {
                     -webkit-line-clamp: 3;
@@ -625,7 +651,7 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            
+
             h1 {
                 font-size: 2rem;
             }
@@ -633,7 +659,7 @@
                 max-height: 1.5em;
                 margin: 0 0 $baseline/2;
             }
-            
+
             @supports (-webkit-line-clamp: 1) {
                 p {
                     -webkit-line-clamp: 1;
@@ -732,7 +758,7 @@
                 max-width: none;
                 width: auto;
             }
-                
+
             .is-7 img {
                 transform: rotate(-$rotation) scale(#{1/$scaleFactorWideColumn}) translate(-16%, -11.2%) ;
             }
@@ -753,7 +779,7 @@
                 background-size: 100% 1.5rem, 50% 3.5rem, 100% 5rem, 100% 9rem, 100% 10.5rem, 80% 21rem, 100% 100%;
                 background-position: 0.75rem 0, 0.75rem 0, 0.75rem 0;
             }
-            
+
             .content article.is-3 {
                 background-image: linear-gradient(transparent 0, lightgray 0), linear-gradient(transparent 0, white 0), linear-gradient(transparent 0, lightgray 0), linear-gradient(transparent 0, white 0), linear-gradient(transparent 0, lightgray 0), linear-gradient(transparent 0, white 0), linear-gradient(lightgray 100%, transparent 0);
                 background-repeat: no-repeat;
@@ -782,13 +808,13 @@
             background-position: 200% 0;
         }
     }
-    
+
     @keyframes tri-hero-loading-mobile {
         to {
             background-position: 200% 0, 0 0, 0.75rem 0, 0 0, 0.75rem 0, 0 0;
         }
     }
-    
+
     @include touch {
         width: 100%;
         overflow: scroll;
@@ -818,7 +844,7 @@
         .content {
             margin: 0;
             width: 300%;
-            
+
             article:after {
                 content: "";
                 background: linear-gradient(to top, black calc(40px + (2.5% * 16/9)), rgba(0, 0, 255, 0) calc(70px + (2.5% * 16/9))), linear-gradient(to right, black 0, rgba(0, 0, 255, 0) 50%);
@@ -858,7 +884,7 @@
             .is-3 h1 {
                 max-height: 4em;
             }
-    
+
             @supports (-webkit-line-clamp: 4) {
                 h1,
                 .is-3 h1 {
@@ -877,12 +903,12 @@
                 left: 2.5%;
                 width: 45%;
             }
-            
+
             .icon-button.info {
                 left: auto;
                 right: 2.5%;
                 margin-right: 0;
-                
+
                 i {
                     width: 100%;
                 }
@@ -892,7 +918,7 @@
 }
 
 // Content tile more info
-// 
+//
 // This component is dependent on specific container dimensions, see fullscreen.
 //
 // markup:
@@ -939,7 +965,7 @@
 //     <button class="icon-button invert large play is-hidden-mobile"><i class="fa fa-play" aria-hidden="true"></i>01:24:45</button>
 //     <button class="icon-button close hide-text large"><i class="fa fa-close" aria-hidden="true"></i>Close more information</button>
 // </section>
-// 
+//
 // Styleguide 6.4
 .more-info {
     position: relative;
@@ -977,7 +1003,7 @@
             right: $baseline;
         }
     }
-    
+
     .content {
         color: #fff;
         padding: $baseline;
