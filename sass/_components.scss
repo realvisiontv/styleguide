@@ -2817,3 +2817,19 @@
         }
     }
 }
+
+// Pagination
+//
+// markup:
+// <nav class="pagination is-medium" role="navigation" aria-label="pagination">
+//   <a class="pagination-previous button">Prev.</a>
+//   <a class="pagination-next button">Next</a>
+// </nav>
+//
+// Styleguide 5.35
+
+.pagination {
+    .button {
+        padding: 0 0.5rem;
+    }
+}
