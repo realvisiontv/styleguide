@@ -1812,7 +1812,7 @@
         button {
             margin-left: 25px;
             .fa {
-                color: $color-bright-gray;
+                color: $color-dark-gray;
                 background: $color-cyan;
                 border-color: $color-cyan;
                 padding-left: 3px;
@@ -2325,7 +2325,7 @@
 // Styleguide 5.27
 .cta-block {
     &.has-dark-text .button{
-        color: $color-bright-gray;
+        color: $color-dark-gray;
     }
 
     &.has-margin {
