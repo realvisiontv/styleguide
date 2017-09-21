@@ -279,7 +279,7 @@ h6 {
 // 
 // Styleguide 2.3
 .navigation {
-    background: #1f2732;
+    background: $color-dark-gray;
     position: relative;
     > .columns {
         margin: 0;
@@ -388,7 +388,7 @@ h6 {
         }
 
         &.open {
-            background: #171d25;
+            background: #404040;
 
             @include tablet {
                 position: relative;
@@ -472,7 +472,7 @@ h6 {
     }
 
     .product-navigation {
-        background: #171d25;
+        background: #404040;
         margin: 0;
         padding: 0 $baseline;
         font-size: 16px;
@@ -520,7 +520,7 @@ h6 {
     }
     
     .dropdown-content {
-        background-color: #171d25;
+        background-color: #404040;
         box-shadow: 0 0px 30px rgba(0, 0, 0, 0.5);
     }
 
