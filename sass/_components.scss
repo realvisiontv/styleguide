@@ -2831,5 +2831,11 @@
 .pagination {
     .button {
         padding: 0 0.5rem;
+        color: #fff;
+        margin-left: 5px;
+
+        &:hover {
+            color: $color-torch-red
+        }
     }
 }
