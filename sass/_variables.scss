@@ -22,15 +22,16 @@ $fa-font-path: "#{$root}/fonts/font-awesome" !default;
 // 
 // Styleguide 1.1
 $color-torch-red: #FE1135;
-$color-bright-gray: #363D4E;
+$color-bright-gray: #4e4e4e;
 $color-cyan: #31FEE8;
 $color-orange: #ffce4a;
 $color-purple: #a822ef;
-$color-spruce: #3a444c;
+$color-spruce: #4c4c4c;
 $color-poppy: #f8931f;
 $color-rose: #ff21a6;
 $color-dark-gray: #232323;
-$text: $color-bright-gray !default;
+
+$text: $color-dark-gray !default;
 $brand: $color-cyan !default;
 
 // Heading Font 
