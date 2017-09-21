@@ -906,20 +906,20 @@ footer {
             }
     
             &:hover {
-                color: $brand;
+                color: $color-rose;
             }
 
             &.is-active {
-                color: $brand;
+                color: $color-rose;
             }
         }
 
         &.is-active a {
-            color: $brand;
+            color: $color-rose;
         }
 
         &.current-menu-parent a {
-            color: $brand;
+            color: $color-rose;
         }
 
         &.is-open {
