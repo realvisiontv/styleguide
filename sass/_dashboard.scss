@@ -822,7 +822,7 @@
             article:after {
                 content: "";
                 background: linear-gradient(to top, black calc(40px + (2.5% * 16/9)), rgba(0, 0, 255, 0) calc(70px + (2.5% * 16/9))), linear-gradient(to right, black 0, rgba(0, 0, 255, 0) 50%);
-                background: linear-gradient(to top, #1f2732 calc(40px + (5% * 16/9)), #1f2732 calc(40px + (5% * 16/9)), transparent calc(41px + (5% * 16/9))), linear-gradient(to right, black 0, rgba(0, 0, 255, 0) 75%);
+                background: linear-gradient(to top, $color-dark-gray calc(40px + (5% * 16/9)), $color-dark-gray calc(40px + (5% * 16/9)), transparent calc(41px + (5% * 16/9))), linear-gradient(to right, black 0, rgba(0, 0, 255, 0) 75%);
                 display: block;
                 position: absolute;
                 top: 0;
