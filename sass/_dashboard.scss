@@ -1004,8 +1004,7 @@
 
     @include mobile {
         .icon-button {
-            width: calc(100% - 2ex);
-            margin: 0 1ex;
+            width: 100%;
         }
     }
 
