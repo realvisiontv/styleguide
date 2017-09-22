@@ -234,7 +234,7 @@ a.button {
     display: inline-block;
     overflow: hidden;
     text-decoration: none;
-    @include transform(rotate(1deg));
+    transform: rotate(1deg);
 
     .button {
         background: transparent;
@@ -273,7 +273,7 @@ a.button {
     }
 
     &.product-button-2 {
-        @include transform(rotate(-1deg));
+        transform: rotate(-1deg);
 
         &:after {
             top: auto;
@@ -291,7 +291,7 @@ a.button {
     }
 
     &.product-button-4 {
-        @include transform(rotate(-1deg));
+        transform: rotate(-1deg);
 
         &:after {
             top: auto;
