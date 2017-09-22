@@ -3,11 +3,6 @@
 // Styleguide 1.0
 @import 'variables';
 
-// Mixins
-// 
-// Styleguide 7.0
-@import 'mixins';
-
 // styleguide:ignore:start
 @import 'node_modules/font-awesome/scss/font-awesome';
 @import 'node_modules/bulma/sass/utilities/_all';
@@ -71,3 +66,8 @@ body {
 //
 // Styleguide 6.0
 @import 'dashboard';
+
+// Navigation
+//
+// Styleguide 7.0
+@import 'navigation';
