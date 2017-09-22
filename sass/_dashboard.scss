@@ -754,7 +754,7 @@
                 position: absolute;
                 top: 0;
                 left: 0;
-                transform: rotate(-$rotation) scale(#{1/$scaleFactorNarrowColumn}) translate(-62%, -46.3%);
+                transform: rotate(-$rotation) scale(#{1/$scaleFactorNarrowColumn}) translate(-62%, -51.6%);
                 height: 100%;
                 max-width: none;
                 width: auto;
@@ -801,6 +801,18 @@
                 background-position: -100% 0;
                 animation: tri-hero-loading 2.5s infinite;
             }
+        }
+    }
+
+    @include widescreen {
+        .images img {
+            transform: rotate(-$rotation) scale(#{1/$scaleFactorNarrowColumn}) translate(-62%, -49%);
+        }
+    }
+
+    @include fullhd {
+        .images img {
+            transform: rotate(-$rotation) scale(#{1/$scaleFactorNarrowColumn}) translate(-62%, -46.3%);
         }
     }
 
