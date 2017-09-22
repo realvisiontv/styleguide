@@ -308,6 +308,7 @@ a.button {
 // .is-large - Larger version (deprecated .large also works)
 // .invert - Inverted colour
 // .is-transparent - Transparent
+// .is-primary - Primary
 // :hover - Hover state
 // :focus - Focus state
 // 
@@ -404,6 +405,28 @@ a.button {
 
             .fa {
                 background: transparent;
+                border-color: $brand;
+                color: $brand;
+            }
+        }
+    }
+
+    &.is-primary {
+        background: $color-black;
+        color: $brand;
+
+        .fa {
+            background: $brand;
+            border-color: $brand;
+            color: $color-black;
+        }
+        &:hover,
+        &:focus {
+            background: $brand;
+            color: $color-black;
+
+            .fa {
+                background: $color-black;
                 border-color: $brand;
                 color: $brand;
             }
