@@ -962,11 +962,11 @@
 //                 </div>
 //             </div>
 //             <p class="strap"><i class="fa fa-info"></i>Shane Oliver is one of Australia's most highly rated economists</p>
-//             <div class="columns is-mobile">
+//             <div class="columns">
 //                 <div class="column is-paddingless">
 //                     <button class="icon-button invert large is-size-6-mobile plus"><i class="fa fa-plus" aria-hidden="true"></i>Watch Later</button>
 //                 </div>
-//                 <div class="column is-paddingless has-text-right is-hidden-tablet">
+//                 <div class="column is-hidden-tablet">
 //                     <button class="icon-button invert large is-size-6-mobile play"><i class="fa fa-play" aria-hidden="true"></i>01:24:45</button>
 //                 </div>
 //             </div>
@@ -1004,8 +1004,7 @@
 
     @include mobile {
         .icon-button {
-            width: calc(100% - 2ex);
-            margin: 0 1ex;
+            width: 100%;
         }
     }
 
