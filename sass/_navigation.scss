@@ -751,7 +751,7 @@
     }
     .page-navigation-outer-container {
         display: flex;
-        align-items: flex-end;
+        align-items: center;
 
         @include desktop {
             margin-top: 0;
