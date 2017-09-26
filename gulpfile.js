@@ -1,6 +1,8 @@
+var https = require('https');
 var gulp = require('gulp');
 var styleguide = require('sc5-styleguide');
 var sass = require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
 var outputPath = 'docs';
 var server = require('./server');
 var options = {
@@ -8,8 +10,7 @@ var options = {
     rootPath: outputPath,
     appRoot: '/styleguide',
     overviewPath: 'README.md',
-    server: false,
-    disableHtml5Mode: true
+    extraHead: ['<link rel="stylesheet" href="/css/custom_styleguide.css">']
 };
 
 gulp.task('styleguide:generate', function() {
@@ -22,6 +23,9 @@ gulp.task('styleguide:generate', function() {
         .pipe(gulp.dest('./images'))
         .pipe(gulp.dest(outputPath + '/images'));
 
+    gulp.src(['custom_styleguide.css'])
+        .pipe(gulp.dest(outputPath + '/css'));
+
     return gulp.src('sass/*.scss')
         .pipe(styleguide.generate(options))
         .pipe(gulp.dest(outputPath));
@@ -33,6 +37,9 @@ gulp.task('styleguide:applystyles', function() {
             errLogToConsole: true
         }))
         .pipe(styleguide.applyStyles())
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions', 'ie >= 9', '> 1%']
+        }))
         .pipe(gulp.dest(outputPath));
 });
 
@@ -41,11 +48,17 @@ gulp.task('watch', ['styleguide'], function() {
     // Styleguide automatically detects existing server instance
     gulp.watch(['sass/*.scss'], ['styleguide']);
 
-    var app = server(options);
+    var app = server(options),
+        port = process.env.PORT || 3000;
 
-    app.listen(3000, function() {
-        console.log('Express server listening on port 3000. http://localhost:3000');
+    app.listen(port, function() {
+        console.log('Express server listening on port 3000. http://localhost:' + port);
     });
+    
+    // Keep Heroku dyno awake
+    setInterval(function() {
+        https.get("https://rv-styleguide.herokuapp.com");
+    }, 300000);
 });
 
 gulp.task('styleguide', ['styleguide:generate', 'styleguide:applystyles']);

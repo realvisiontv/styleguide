@@ -1,8 +1,8 @@
 // Feature Quote
-// 
-// .default  - Default button
-// .large    - Large
-// 
+//
+// default  - Default button
+// .is-large-tablet    - Large
+//
 // markup:
 // <blockquote class="feature-quote {$modifiers}">
 //     <div class="icons">
@@ -20,6 +20,7 @@
 .feature-quote {
     display: inline-block;
     text-align: center;
+    width: 100%;
 
     .icons * {
         display: inline-block;
@@ -27,6 +28,7 @@
 
     .icon-star {
         width: 0.5rem;
+        height: 0.5rem;
         path {
             fill: $color-torch-red;
         }
@@ -39,482 +41,38 @@
         font-weight: 700;
         line-height: 1;
         margin: 0.25rem 0;
+        word-wrap: break-word;
     }
 
     cite {
         font-family: 'Function Pro', sans-serif;
-        font-size: 0.75rem;
+        font-size: $size-6;
         font-style: normal;
         line-height: 1;
         opacity: 0.75;
     }
-
-    &.large {
-        p {
-            font-size: 3rem;
-        }
-
-        cite {
-            font-size: 1.75rem;
-        }
-
-        .icon-star {
-            width: 1.5rem;
-        }
-    }
-}
-
-// Content Tile
-//
-// :hover - hover state
-// 
-// markup:
-// <div class="columns">
-//     <article class="column content-tile">
-//         <a href="#" class="{$modifiers}">
-//             <div class="image">
-//                 <img src="http://lorempixel.com/320/180/people"  />
-//                 <div class="spinner-container">
-//                     <div class="spinner"></div>
-//                 </div>
-//             </div>
-//             <div class="content">
-//                 <div class="title">
-//                     <div class="subheading">
-//                         <div class="is-pulled-left">Think Piece</div>
-//                         <div class="is-pulled-right">36:00</div>
-//                     </div>
-//                     <h1>Looking Under the Hood Australia</h1>
-//                     <div class="buttons">
-//                         <button class="icon-button fa-info hide-text">More Information</button>
-//                         <button class="icon-button fa-plus hide-text">Add to My List</button>
-//                     </div>
-//                 </div>
-//                 <div class="theme">Insight</div>
-//                 <blockquote>
-//                     Go you good thing Thats the best rant I've heard for a short while.
-//                     <cite>Mark M.</cite>
-//                 </blockquote>
-//                 <div class="icon"></div>
-//             </div>
-//         </a>
-//     </article>
-//     <article class="column content-tile loading">
-//         <div class="image">
-//             <div class="spinner-container">
-//                 <div class="spinner"></div>
-//             </div>
-//         </div>
-//     </article>
-//     <article class="column content-tile">
-//         <a href="#">
-//             <div class="image">
-//                 <img src="http://lorempixel.com/320/180/abstract"  />
-//                 <div class="spinner-container">
-//                     <div class="spinner"></div>
-//                 </div>
-//             </div>
-//             <div class="content">
-//                 <div class="title">
-//                     <div class="progress" style="width: 75%">You've watched 75%</div>
-//                     <div class="subheading">
-//                         <div class="is-pulled-left">Think Piece</div>
-//                         <div class="is-pulled-right">1:15:00</div>
-//                     </div>
-//                     <h1>Quantitative Insight with a Discretionary Edge - Richard Excell</h1>
-//                     <div class="buttons">
-//                         <button class="icon-button fa-info hide-text">More Information</button>
-//                     </div>
-//                 </div>
-//                 <div class="theme">Insight</div>
-//                 <blockquote>
-//                     Go you good thing Thats the best rant I've heard for a short while.
-//                     <cite>Mark M.</cite>
-//                 </blockquote>
-//                 <div class="icon"></div>
-//             </div>
-//         </a>
-//     </article>
-// </div>
-//
-// Styleguide 5.2
-.content-tile {
-    $padding: 0.75rem;
-    $transition-in-speed: 0.2s;
-    $transition-out-speed: 0.5s;
-    $transition-out-delay: 0.5s;
-
-    overflow: hidden;
-    position: relative;
-
-    &:before {
-        display: block;
-        content: '';
-        width: 100%;
-    }
-
-    .spinner-container {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 0;
-    }
-
-    .buttons {
-        margin-top: 0;
-        max-height: 0;
-        transition: max-height $transition-out-speed, margin-top $transition-out-speed;
-        transition-delay: $transition-out-delay;
-    }
-
-    .content {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        padding: $padding;
-        z-index: 1;
-    }
-
-    .image {
-        background: lightgrey;
-        height: 0;
-        padding-bottom: 2 / 3 * 100%;
-        &:after {
-            background: rgba(0, 0, 0, 0.5);
-            content: "";
-            display: block;
-            position: absolute;
-            top: $padding;
-            bottom: $padding;
-            left: $padding;
-            right: $padding;
-            opacity: 0;
-            transition: opacity 0.52s;
-            transition-delay: $transition-out-delay;
-            z-index: 1;
-        }
-    }
-
-    img {
-        position: relative;
-        transition: opacity 0.2s;
-        width: 100%;
-        z-index: 1;
-    }
-
-    img[data-src] {
-        opacity: 0;
-    }
-
-    .title {
-        background: #fff;
-        position: absolute;
-        bottom: $padding;
-        left: $padding;
-        padding-top: 3px;
-        padding-right: 6px;
-        width: calc(70% - #{$padding});
-    }
-
-    .progress {
-        background-color: $color-torch-red;
-        font-size: 0;
-        height: 2px;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-
-    h1 {
-        font-size: $size-5;
-        font-weight: 800;
-        margin: 0;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        display: -webkit-box;
-    }
-    .subheading {
-        overflow: hidden;
-        text-transform: uppercase;
-        font-size: $size-7;
-    }
-
-    .theme {
-        background: grey;
-        color: #fff;
-        text-transform: uppercase;
-        position: absolute;
-        bottom: $padding;
-        right: $padding;
-        width: calc(30% - #{$padding});
-        text-align: center;
-        font-family: 'Function Pro';
-        height: 15%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    blockquote {
-        color: #fff;
-        font-size: $size-7;
-        margin: $padding;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        display: -webkit-box;
-        opacity: 0;
-        transition: opacity $transition-out-speed;
-        transition-delay: $transition-out-delay;
-        cite {
-            display: block;
-            border-top: 1px solid rgba(255, 255, 255, 0.5);
-            font-style: normal;
-            text-transform: uppercase;
-            margin-top: 5px;
-            padding-top: 5px;
-        }
-    }
-
-    .icon {
-        position: absolute;
-        right: 0;
-        bottom: calc(15% + 1.75rem);
-        width: 30%;
-        opacity: 0;
-        transition: opacity $transition-out-speed;
-        transition-delay: $transition-out-delay;
-
-        &:after {
-            border-top: 20px solid transparent;
-            border-left: 30px solid #fff;
-            border-bottom: 20px solid transparent;
-            content: "";
-            display: block;
-            width: 0;
-            height: 0;
-            margin: 0 auto;
-        }
-    }
-
-    a {
-        color: $text;
-        &:hover,
-        &:focus {
-            blockquote,
-            .icon,
-            .image:after {
-                opacity: 1;
-                transition-duration: $transition-in-speed;
-                transition-delay: 0s;
-            }
-            .buttons {
-                margin-top: $padding;
-                max-height: 50px;
-                transition-duration: $transition-in-speed;
-                transition-delay: 0s;
-            }
-        }
-    }
-}
-
-// Content Tile - Double Height List
-// 
-// A content tile at double height. Contains a list of up to 4 things. Each item
-// in the list is cropped to 2 lines of text.
-// 
-// :hover - hover state
-// 
-// markup:
-// <div class="columns">
-//     <article class="column content-tile double {$modifiers}">
-//         <div class="image">
-//             <img src="http://lorempixel.com/332/455/people"  />
-//         </div>
-//         <div class="content">
-//             <ol>
-//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec Suspendisse in arcu mattis, porta mi nec</div></a></li>
-//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec</div></a></li>
-//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec</div></a></li>
-//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec</div></a></li>
-//                 </ol>
-//             <a class="button" href="#">See all 40 videos</a>
-//         </div>
-//     </article>
-//     <article class="column content-tile double">
-//         <div class="image">
-//             <img src="http://lorempixel.com/332/455/city"  />
-//         </div>
-//         <div class="content">
-//             <ol>
-//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec Suspendisse in arcu mattis, porta mi nec</div></a></li>
-//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec</div></a></li>
-//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec</div></a></li>
-//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec</div></a></li>
-//                 </ol>
-//             <a class="button" href="#">See all 40 videos</a>
-//         </div>
-//     </article>
-//     <article class="column content-tile double">
-//         <div class="image">
-//             <img src="http://lorempixel.com/332/455/abstract"  />
-//         </div>
-//         <div class="content">
-//             <ol>
-//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec Suspendisse in arcu mattis, porta mi nec</div></a></li>
-//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec</div></a></li>
-//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec</div></a></li>
-//                 <li><a href="#"><div class="meta">29th Aug 2017 <span class="badge">Insights</span></div><div class="item">Suspendisse in arcu mattis, porta mi nec</div></a></li>
-//                 </ol>
-//             <a class="button" href="#">See all 40 videos</a>
-//         </div>
-//     </article>
-// </div>
-// 
-// Styleguide 5.3
-.content-tile.double {
-    $transition-in-speed: 0.2s;
-    $transition-out-speed: 0.5s;
-    $transition-out-delay: 0.5s;
-
-    margin: 0;
-
-    .image {
-        height: auto;
-        padding-bottom: 0;
-        overflow: hidden;
-
-        img {
-            display: block;
-            height: 100%;
-            width: auto;
-            transition: filter $transition-out-speed, transform $transition-out-speed;
-            transition-delay: $transition-out-delay;
-        }
-    }
-
-    .badge {
-        background: grey;
-        color: white;
-        display: inline-block;
-        margin: 0 2ex;
-        padding: 4px 10px 2px;
-        text-transform: uppercase;
-        font-size: 0.5rem;
-        font-family: 'Function Pro', sans-serif;
-        vertical-align: text-top;
-    }
-
-    .content {
-        background: rgba(0,0,0,0.5);
-        margin: 0.75rem;
-        line-height: 1.2;
-        display: flex;
-        flex-direction: column;
-        transform: translateY(100%);
-        transition: transform $transition-out-speed;
-        transition-delay: $transition-out-delay;
-
-        ol {
-            counter-reset: content-tile-counter;
-            list-style: none;
-            margin-left: 0;
-            flex-grow: 1;
-        }
-
-        li {
-            position: relative;
-
-            &:before {
-                content: counter(content-tile-counter);
-                counter-increment: content-tile-counter;
-                background: grey;
-                color: white;
-                display: inline-block;
-                width: 24px;
-                height: 24px;
-                text-align: center;
-                line-height: 24px;
-                font-family: 'Function Pro', sans-serif;
-                font-weight: 700;
-                left: 0;
-                top: 4px;
-                position: absolute;
-            }
-        }
-
-        li+li {
-            margin-top: $baseline;
-        }
-
-        li a {
-            color: white;
-            display: block;
-            margin-left: calc(0.75rem + 24px);
-            font-size: $size-5;
-            font-weight: 700;
-            text-decoration: none;
-
-            .meta {
-                font-size: $size-7;
-                font-weight: 400;
-                text-transform: uppercase;
+    @include tablet {
+        &.is-large-tablet {
+            p {
+                font-size: 3rem;
             }
 
-            .item {
-                height: 2.4em;
-                -webkit-line-clamp: 2;
-                -webkit-box-orient: vertical;
-                overflow: hidden;
-                display: -webkit-box;
+            cite {
+                font-size: 1.75rem;
             }
 
-            &:hover {
-                text-decoration: underline;
-                text-decoration-skip: ink;
-                text-decoration-color: rgba(white, 0.5);
+            .icon-star {
+                width: 1.5rem;
+                height: 1.5rem;
             }
-        }
-
-        .button {
-            color: white;
-            text-align: center;
-            width: 100%;
-
-            &:hover {
-                color: $color-torch-red;
-            }
-
-            &:focus {
-                color: $color-torch-red;
-            }
-        }
-    }
-
-    &:hover,
-    &:focus {
-        img {
-            filter: blur(10px);
-            transform: scale(1.05);
-            transition: filter $transition-in-speed, transform $transition-in-speed;
-            transition-delay: 0s;
-        }
-        .content {
-            transform: translateY(0);
-            transition: transform $transition-in-speed;
-            transition-delay: 0s;
         }
     }
 }
 
 // Hero Image
-// 
+//
 // A large (optional) clickable hero image.
-// 
+//
 // markup:
 // <div class="hero-image">
 //     <a>
@@ -522,7 +80,7 @@
 //     </a>
 // </div>
 //
-// Styleguide 5.4
+// Styleguide 5.2
 .hero-image {
     img {
         display: block;
@@ -531,9 +89,9 @@
 }
 
 // Hero Image with CTA
-// 
+//
 // A large hero image with text and a CTA button. Full page width.
-// 
+//
 // markup:
 // <div class="hero-image-w-cta">
 //     <div class="image" style="background-image: url('http://via.placeholder.com/1600x900')"></div>
@@ -543,7 +101,7 @@
 //     </div>
 // </div>
 //
-// Styleguide 5.5
+// Styleguide 5.3
 .hero-image-w-cta {
     position: relative;
 
@@ -576,203 +134,59 @@
     }
 }
 
-// Navigation
-//
-// Pre-paywall navigation component with mobile 'hamburger' menu. Current breakpoint for mobile view is 800px
-//
-// .normal - Default navigation
-// :hover   - Hover state for <strong>mobile</strong> 'hamburger' button
-// .open   - Open state for <strong>mobile</strong> 'hamburger' button
+// Avatar badge
 //
 // markup:
-// <div class="navigation">
-//     <div class="columns">
-//         <h1 class="column is-narrow"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" class="logo_generic" viewBox="30 0 444 170.3"><path class="logo_generic--text" d="M320.7 0c-1.5 3.1-3 6.2-4.5 9.2-5.4 11.1-73.2 150.3-78.1 160.3l-.4.8-.4-.7L155.5 0h41.3s41.1 89.1 41.3 89.2C238.2 89.1 279.2.3 279 0h41.7zm153.1 101.1h-1l-26.4-28.4v27.5h-4.6V62.5h1.2l.4.4 25.5 27.3s.2.2.4.2h.1s.1 0 .1-.1v-27h4.5l-.2 37.8zM30 63.1s7.2 0 10.4.1c1.6 0 3.2.2 4.7.8 3.2 1.2 5 3.6 5.5 6.9.3 1.8.2 3.6-.4 5.4-1.1 3.3-3.3 5.4-6.7 6.2-.3.1-.9.3-1.8.5-.1 0 10.2 17.2 10.2 17.2h-5.4l-9.7-16.9h-2v17H30V63.1zm4.8 16.1c2.5 0 4.9 0 7.2-.5 1.7-.4 2.9-1.4 3.5-3 .6-1.3.6-2.7.4-4.1-.4-2-1.6-3.3-3.5-3.9-.6-.2-1.2-.3-1.8-.3-1.7-.1-3.4-.1-5.2-.1h-.6v11.9zm95.5 21h-.7L125 89.6h-13.8c-1.5 3.5-3 7.1-4.5 10.6h-5c3.8-8.8 15.6-36.4 16.4-37.9 0 0 .1-.1.2-.1h.1c.2.2.3.5.5.8l15.8 37.2m-11.4-14.7c-1.8-4.3-3.3-8.5-5.1-12.8-1.8 4.4-3.5 8.6-5.3 12.8h10.4zM72.5 78h14.4v4.1H72.6l-.1 13.7h14.7v4.2l-19.4.1-.1-36.8H87v4.3H72.6L72.5 78zm81.7 17.9H166v4.3h-16.5V63.3h4.6l.1 32.6zm252.2 4.9c-5 0-9.5-1.6-13.2-5.1-2.5-2.4-4.2-5.2-5.1-8.6-1.3-4.9-1-9.7 1.2-14.2 2.5-5.1 6.6-8.4 12.1-9.8 4.1-1.1 8.2-1 12.1.4 6 2.1 10 6.3 11.7 12.4 1.9 6.9.5 13.2-4.3 18.6-3 3.4-6.9 5.3-11.4 6-1 .3-2.1.4-3.1.3zm-.1-4.4c.7 0 1.4-.1 2.1-.1.4 0 .9-.1 1.3-.2 4.9-1.1 8.4-3.9 10.3-8.6 1.2-3 1.4-6.1.8-9.2-.5-2.5-1.5-4.8-3.2-6.7-3.1-3.3-6.9-4.8-11.4-4.6-5.7.2-9.9 2.9-12.4 8.1-1.9 3.9-1.9 8-.5 12.1 1.9 5.6 7 9.3 13 9.2zM330.6 93l4.1-1.9s.2.5.4.8c.4.9.8 1.9 1.5 2.7 1.5 2 3.8 2.5 5.9 1.9 2.1-.5 3.6-2.4 3.9-4.7.4-2.7-.5-4.9-2.8-6.4-1.1-.7-2.1-1.4-3.3-2-1.6-.8-3.2-1.8-4.6-2.9-2.6-2-3.9-4.6-3.9-7.9 0-2.4.5-4.6 2-6.6 2.1-2.7 5-3.7 8.3-3.4 4 .3 6.7 2.5 8.5 6l.1.2-3.7 2.1s-.6-.8-.8-1.2c-.9-1.3-1.9-2.4-3.5-2.8-2.7-.7-5.4.8-6.2 3.5-.7 2.7 0 4.7 2.1 6.4 1.3 1 2.7 1.7 4.1 2.5 1.4.8 2.7 1.5 4 2.5 5.8 4.2 5.4 13.1.2 17-4.9 3.8-12.4 2.1-15.3-3.3-.4-.7-.6-1.4-.9-2.1.1-.1-.1-.4-.1-.4zm-19.8-29.8h4.6v37h-4.6zm56.2 0h4.6v37H367z"/></svg></a></h1>
-//         <ul class="column navigation-desktop">
-//              <li><a href="#">Desktop 1</a></li>
-//              <li><a href="#">Desktop 2</a></li>
-//              <li><a href="#">Desktop 3</a></li>
-//         </ul>
-//         <div class="navigation-mobile {$modifiers}">
-//              <a class="menuButton hover-grow">
-//                  <span></span>
-//              </a>
-//              <div class="navigation-mobile--dropdown">
-//                  <a href="#">Mobile 1</a>
-//                  <a href="#">Mobile 2</a>
-//                  <a href="#">Mobile 3</a>
-//              </div>
-//         </div>
-//         <a class="user" href="#">Login</a>
-//     </div>
-// </div>
-// 
-// Styleguide 5.6
+// <a class="avatar">RV</a>
+//
+// Styleguide 5.4
+.avatar {
+    background: $brand;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    color: #000;
+    cursor: pointer;
+    display: inline-block;
+    height: 46px;
+    width: 46px;
+    line-height: 44px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 21px;
+    font-weight: 400;
+    font-family: 'Function Pro';
+}
 
-.navigation {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 0.75rem;
-    position: relative;
+// Search form
+//
+// markup:
+// <form method="GET" action="" class="search-form">
+//     <input type="text" name="parameters_query" value="" placeholder="Assets, topics..." />
+//     <button type="submit" name="search"></button>
+// </form>
+//
+// Styleguide 5.5
+.search-form {
+    display: flex;
+    margin-top: $baseline / 8;
 
-    svg {
+    input {
+        background: rgba(white,0.1);
+        border: 0;
+        color: white;
+        padding: 9px;
         display: block;
-        height: 44px;
-
-        path {
-            fill: #fff;
-        }
+        flex-grow: 1;
+        font-size: 16px;
     }
 
-    ul {
-        list-style: none;
-        margin: 0;
-    }
-
-    li {
-        display: inline-block;
-        margin: 0 1.5rem;
-        font-size: $size-6;
-    }
-
-    a {
-        color: #fff;
-        font-family: 'Function Pro', sans-serif;
-        line-height: 44px;
-        text-decoration: none;
-        text-transform: uppercase;
-    }
-
-    .user {
-        background: $color-torch-red;
-        display: block;
-        height: 44px;
-        width: 44px;
-        font-size: $size-7;
-        font-weight: 700;
-        text-align: center;
-        position: absolute;
-        top: 50%;
-        right: 25px;
-        @include transform(translateY(-50%));
-    }
-
-    @include touch {
-        .navigation-desktop {
-            display: none;
-        }
-        .navigation-mobile {
-            display: block;
-        }
-    }
-
-    @include desktop {
-        .navigation-desktop {
-            display: block;
-        }
-        .navigation-mobile {
-            display: none;
-        }
-    }
-
-    .navigation-mobile {
-        &.open {
-            .navigation-mobile--dropdown {
-                display: block;
-                z-index: 1;
-            }
-
-            .menuButton span {
-                background: transparent;
-                &:before,
-                &:after {
-                    @include transition(top .2s 0s);
-                    @include transition(bottom .2s 0s);
-                    @include transition(transform .2s .2s);
-                }
-                &:before {
-                    top: 0;
-                    @include transform(rotate(45deg));
-                }
-                &:after {
-                    bottom: 0;
-                    @include transform(rotate(-45deg));
-                }
-            }
-        }
-        &:hover {
-            .menuButton {
-                span {
-                    transform: scale(1.2);
-                }
-            }
-        }
-    }
-
-    .menuButton {
-        position: absolute;
-        cursor: pointer;
-        width: 30px;
-        height: 30px;
-        min-width: 10mm;
-        min-height: 10mm;
-        display: block;
-        left: 165px;
-        top: 50%;
-        @include transform(translateY(-50%));
-        
-        span {
-            display: block;
-            position: absolute;
-            top: 18px;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: #fff;
-            @include transition(transform .2s ease-in-out);
-            &:before,
-            &:after {
-                content: "";
-                position: absolute;
-                display: block;
-                left: 0;
-                right: 0;
-                height: 4px;
-                background: #fff;
-            }
-            &:before {
-                top: -10px;
-            }
-            &:after {
-                bottom: -10px;
-            }
-        }
-    }
-
-    .navigation-mobile--dropdown {
-        position: absolute;
-        border: none;
-        border-radius: 5px;
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-        margin-top: 0px;
-        width: 200px;
-        background-color: rgba(0, 0, 0, 0.5);
-        padding: .75rem;
-        width: auto;
-        a {
-            display: block;
-        }
-        hr {
-            border-top: 1px solid #353f4a;
-        }
-        @include touch {
-            top: 68px;
-            left: 150px;
-            z-index: -1;
-            a {
-                font-size: 20px;
-            }
-        }
+    button {
+        @extend .fa;
+        @extend .fa-search;
+        background: rgba(white,0.1);
+        border: 0;
+        color: white;
+        width: 45px;
     }
 }
 
@@ -780,11 +194,11 @@
 //
 // markup:
 // <div class="spinner"></div>
-// 
-// Styleguide 5.7
+//
+// Styleguide 5.6
 .spinner {
     border: 1px solid grey;
-    border-top-color: transparent;
+    border-top-color: transparent !important;
     border-radius: 50%;
     position: relative;
     animation: spinner-rotate 1s linear infinite;
@@ -798,262 +212,24 @@
 
 @keyframes spinner-rotate {
     0% {
-        @include transform(rotate(0));
+        transform: rotate(0);
     }
     100% {
-        @include transform(rotate(360deg));
+        transform: rotate(360deg);
     }
 }
 
-// Tri-hero
-// 
-// This component is dependent on specific container dimensions, see fullscreen.
+// Pullout Block - Quote
+//
+// Default - default
+// .no-background - No background image
+// .no-block-title - No block title (black/white heading)
 //
 // markup:
-// <section class="container tri-hero">
-//     <div class="columns images">
-//         <article class="test column is-7">
-//             <img src="https://lorempixel.com/1600/1600/people" />
-//         </article>
-//         <article class="test column is-2-5">
-//             <img src="https://lorempixel.com/1600/1600/city" />
-//         </article>
-//         <article class="test column is-2-5">
-//             <img src="https://lorempixel.com/1600/1600/abstract" />
-//         </article>
-//     </div>
-//     <div class="columns content">
-//         <article class="test2 column is-5">
-//             <h2>Latest Video</h2>
-//             <h1>Looking under the hood gold</h1>
-//             <p>Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
-//             <button class="icon-button large hide-text fa-info">More information</button>
-//             <button class="icon-button invert large fa-play">24:45</button>
-//         </article>
-//         <article class="test2 column is-3 is-offset-0-5">
-//             <h2>Latest Video</h2>
-//             <h1>Looking under the hood gold</h1>
-//             <p>Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
-//             <button class="icon-button large hide-text fa-info">More information</button>
-//         </article>
-//         <article class="test2 column is-3 is-offset-0-5">
-//             <h2>Latest Video</h2>
-//             <h1>Looking under the hood gold</h1>
-//             <p>Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
-//             <button class="icon-button large hide-text fa-info">More information</button>
-//         </article>
-//     </div>
-// </section>
-// 
-// Styleguide 5.8
-.tri-hero {
-    $rotation: 25deg;
-    $scaleFactorNarrowColumn: 1.73;
-    $scaleFactorWideColumn: 1.52;
-    // Scale calculation - cos(θ) + max{(W/H),(H/W)} * sin(θ)
-
-    .images {
-        overflow: hidden;
-        height: 548px;
-        margin-bottom: 0;
-
-        article {
-            transform: rotate($rotation);
-            overflow: hidden;
-            position: relative;
-            transform: rotate($rotation) scale($scaleFactorNarrowColumn);
-
-            &:after {
-                content: "";
-                background: linear-gradient(to top, black 17%, rgba(0, 0, 255, 0) 45%);
-                display: block;
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                transform: translate(-31%, 4%) rotate(-$rotation) scaleX(2);
-            }
-
-            &.is-7 {
-                transform: rotate($rotation) scale($scaleFactorWideColumn);
-                &:after {
-                    background: linear-gradient(to bottom, black 23%, rgba(0, 0, 255, 0) 77%);
-                    transform: translate(-3%, -13%) rotate(-$rotation);
-                }
-            }
-
-            &:last-child {
-                transform: translateX(40%) rotate($rotation) scale($scaleFactorNarrowColumn);
-            }
-
-            &:hover {
-                img {
-                    opacity: 0;
-                }
-            }
-        }
-
-        img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            transform: translate(-31%, 4%) rotate(-$rotation);
-        }
-
-        .is-2-5 img {
-            height: 100%;
-            max-width: none;
-        }
-            
-        .is-7 img {
-            transform: translate(-3%, -13%) rotate(-$rotation);
-        }
-    }
-
-    .content {
-        color: white;
-        overflow: hidden;
-        height:548px;
-        margin-top: -548px;
-        margin-bottom: 0;
-        position: relative;
- 
-        .icon-button.fa-play {
-            position: absolute;
-            bottom: $baseline;
-            left: $baseline;
-
-            &:before {
-                bottom: 0;
-                left: 0;
-            }
-        }
-
-        .is-5 {
-            padding: $baseline;
-        }
-
-        .is-3 {
-            padding-bottom: $baseline;
-            padding-left: 1.25rem;
-            padding-right: 1rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            
-            h1 {
-                font-size: 2rem;
-            }
-            p {
-                -webkit-line-clamp: 1;
-                margin: 0 0 $baseline/2;
-            }
-        }
-
-        h1 {
-            font-weight: 800;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            display: -webkit-box;
-        }
-        h2 {
-            text-transform: none;
-            font-weight: 400;
-            font-family: 'Proxima Nova';
-            text-decoration: underline;
-            font-size: 1.5rem
-        }
-        p {
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            display: -webkit-box;
-        }
-    }
-}
-
-// Page Footer
-//
-// markup:
-// <footer>
-//      <ul class="footer-links columns is-mobile">
-//          <li class="column"><a href="#">About</a></li>
-//          <li class="column"><a href="#">FAQ</a></li>
-//          <li class="column"><a href="#">Contact</a></li>
-//          <li class="column"><a href="#">Privacy</a></li>
-//      </ul>
-//      <h4 class='footer-social__heading'>Follow us</h4>
-//      <ul class="footer-social columns is-mobile">
-//          <div class="column">
-//              <li><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
-//              <li><a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
-//              <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
-//          </div>
-//      </ul>
-// </footer>
-// 
-// Styleguide 5.9
-footer {
-    background: #1C293B;
-    padding: $baseline;
-    ul {
-        list-style: none;
-        text-align: center;
-
-        li {
-            display: inline-block;
-            margin: 0;
-
-            .fa {
-                font-size: $size-2;
-            }
-
-            a {
-                text-decoration: none;
-                color: grey;
-                text-transform: uppercase;
-                @include transition(color 200ms ease-in);
-
-                &:hover {
-                    color: $color-torch-red;
-                }
-            }
-        }
-    }
-
-    .footer-social {
-        li {
-            margin: 0 $baseline;
-
-            @include mobile {
-                margin: 0 ($baseline / 2);
-            }
-        }
-    }
-    .footer-social__heading {
-        color: grey;
-        text-align: center;
-        margin: ($baseline / 2) 0 $baseline 0;
-    }
-
-    .footer-links {
-        li {
-            @include mobile {
-                padding-left: 0;
-                padding-right: 0;
-            }
-        }
-    }
-}
-
-// Product Quote
-//
-// markup:
-// <div class="product-quote">
-//      <div class="product-quote__content">
-//          <p class="product-quote__content-heading">Get exposed to investment ideas and financial insights that you can't get anywhere else.</p>
+// <div class="pullout-block pullout-block__product-quote {$modifiers}">
+//      <div class="pullout-block__content">
+//          <h3 class="pullout-block--title"><span>Disrupting Financial Media</span></h3>
+//          <p class="pullout-block__content-heading">Get exposed to investment ideas and financial insights that you can't get anywhere else.</p>
 //          <div class="is-hidden-mobile">
 //              <div class="icons">
 //                  <svg class="icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.62292 316.34321" class="icon-star"><path d="M166.31 0l51.395 104.134 114.918 16.698-83.156 81.057 19.63 114.452-102.786-54.038-102.784 54.038 19.63-114.454L0 120.83l114.918-16.698z" /></svg>
@@ -1072,45 +248,94 @@ footer {
 //          </div>
 //      </div>
 // </div>
-// 
-// Styleguide 5.10
-.product-quote {
+//
+// Styleguide 5.7
+.pullout-block {
     padding: $baseline;
     position: relative;
+    background: white;
+
+    .pullout-block--title {
+        line-height: $size-4;
+        margin-left: 10px;
+        margin-bottom: $baseline;
+        margin-top: $baseline / 2;
+        span {
+            box-decoration-break: clone;
+            font-size: $size-4;
+            color: white;
+            background-color: $color-dark-gray;
+            box-shadow: 10px 0 0 $color-dark-gray, -10px 0 0 $color-dark-gray;
+        }
+
+        @include tablet {
+            line-height: $size-3;
+            span {
+                font-size: $size-3;
+            }
+        }
+    }
 
     @include mobile {
         padding: 0;
 
-        &:before {
+        &:not(.no-arrows):before {
             position: absolute;
             content: '';
             z-index: 10;
             height: 0;
             width: 0;
             top: 50%;
-            @include transform(translateY(-50%));
+            transform: translateY(-50%);
             border-top: 2rem solid transparent;
             border-bottom: 2rem solid transparent;
-            border-left: 1.5rem solid #363D4E;
+            border-left: 1.5rem solid $text;
         }
     }
 
-    .product-quote__content {
-        background: url('#{$root}/images/components/crinkled-paper-effect.png');
-        background-size: cover;
-        background-repeat: no-repeat;
+    .pullout-block__content {
+        @extend .has-paper-background;
         padding: $baseline ($baseline * 2);
 
-        .product-quote__content-heading {
+        .pullout-block__content-heading {
             font-size: $size-4;
             font-weight: bold;
             margin-bottom: $baseline;
 
             @include mobile {
+                font-size: $size-6;
+                font-weight: normal;
                 margin-bottom: 0;
             }
         }
 
+        a {
+            text-decoration: none;
+            font-weight: bold;
+            color: $color-torch-red;
+            transition: color 300ms ease-in-out;
+
+            &:hover {
+                color: $text;
+            }
+        }
+
+        strong {
+            color: $text;
+        }
+    }
+
+    &.no-background .pullout-block__content {
+        background: transparent;
+    }
+
+    &.no-block-title {
+        .pullout-block--title {
+            display: none;
+        }
+    }
+
+    &.pullout-block__product-quote {
         .icons {
             text-align: center;
             margin-bottom: $baseline;
@@ -1122,6 +347,7 @@ footer {
 
         .icon-star {
             width: 1rem;
+            height: 1rem;
             path {
                 fill: $color-torch-red;
             }
@@ -1129,10 +355,12 @@ footer {
 
         blockquote {
             margin-left: 20px;
+            font-style: italic;
 
             svg {
                 fill: #6e7789;
                 width: 20px;
+                height: 20px;
 
                 &.icon-quote--open {
                     margin-left: -20px;
@@ -1151,12 +379,2407 @@ footer {
             font-style: normal;
             font-weight: bold;
             color: #6e7789;
+            display: inline-block;
         }
-        
+
         hr {
             width: 50%;
             margin-left: 20px;
             background: #6e7789;
+        }
+    }
+}
+
+// Pullout Block - List
+//
+// default - Default component
+// .no-block-title - No block title (black/white heading)
+//
+// markup:
+// <div class="pullout-block pullout-block__list {$modifiers}">
+//      <div class="pullout-block__content">
+//          <h3 class="pullout-block--title"><span>Disrupting Financial Media</span></h3>
+//          <p class="pullout-block__content-heading">Think long, win big&hellip;</p>
+//          <p class="pullout-block__content-subheading">A good macro idea can be worth millions of dollars&hellip;</p>
+//          <ul>
+//              <li>In 1992, legendary traders George Soros and Stanley Druckenmiller made more than $1 billion by betting on a decline in the British Pound.</li>
+//              <li>In 2007 and 2008, hedge fund manager John Paulson personally made over $3 billion by betting on the U.S. mortgage market meltdown.</li>
+//              <li>In 2009, hedge fund manager David Tepper believed the worst of the 2008 financial crisis was over for the U.S. banks, taking a huge position in bank stocks and made over $5 billion as banks recovered.</li>
+//          </ul>
+//      </div>
+// </div>
+//
+// Styleguide 5.8
+.pullout-block__list {
+    &:not(.no-arrows):before {
+        content: none;
+    }
+
+    .pullout-block__content-subheading {
+        margin-bottom: $baseline;
+    }
+
+    ul {
+        margin-left: 0;
+        list-style: none;
+
+        li {
+            position: relative;
+            &:before {
+                margin-top: 0;
+                left: -($baseline * 2);
+                margin-left: 0;
+                position: absolute;
+                content: '';
+                top: 0;
+                border-top: 1rem solid transparent;
+                border-bottom: 1rem solid transparent;
+                border-left: 1rem solid $text;
+            }
+
+            & + li {
+                margin-top: $baseline / 2;
+            }
+
+            @include tablet {
+
+                &:before {
+                    content: '';
+                    background: $color-torch-red;
+                    height: .65rem;
+                    width: .65rem;
+                    margin-top: 7px;
+                    margin-left: 1.4rem;
+                    border: none;
+                }
+            }
+        }
+    }
+}
+
+// Pullout Block - Text
+//
+// default - Default component
+// .no-block-title - No block title (black/white heading)
+//
+// markup:
+// <div class="pullout-block pullout-block__text {$modifiers}">
+//      <div class="pullout-block__content">
+//          <h3 class="pullout-block--title"><span>Disrupting Financial Media</span></h3>
+//          <p>With Macro Insiders, two of the world's top macro-researchers, <a href="#">Raoul Pal</a> and <a href="#">Julian Brigden</a>, bring you a lever of elite macro analysis that was previously only available to large banks, hedge funds and wealthy families.</p>
+//      </div>
+// </div>
+//
+// Styleguide 5.9
+.pullout-block__text {
+
+}
+
+// Rating
+//
+// default - Default
+// .is-inverse - Inverse
+//
+// markup:
+// <div class="rating {$modifiers}">
+//     <div class="columns is-mobile">
+//         <div class="column">
+//             <a class="like" href=""><i class="fa fa-thumbs-up"></i> <span>75</span></a>
+//         </div>
+//         <div class="column has-text-right">
+//             <a class="dislike inactive" href=""><span>25</span> <i class="fa fa-thumbs-down"></i></a>
+//         </div>
+//     </div>
+//     <div class="progress"><div style="width: calc(75 / (75 + 25) * 100%)"></div></div>
+// </div>
+//
+// Styleguide 5.10
+.rating {
+    .columns {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .progress {
+        background: #dbdbdb;
+        height: 3px;
+
+        div {
+            width: 0;
+            background: #23d160;
+            height: 3px;
+        }
+    }
+    a {
+        &.inactive {
+            color: $color-torch-red;
+        }
+
+        i {
+            font-size: $size-6;
+            line-height: $size-4;
+        }
+    }
+
+    &.is-inverse {
+        .progress {
+            background: rgba(255, 255, 255, 0.2);
+
+            div {
+                background: $color-rose;
+            }
+        }
+
+        a {
+            color: $brand;
+
+            &.inactive {
+                color: gray;
+            }
+        }
+    }
+}
+
+// Comments
+//
+// markup:
+// <div class="comments">
+//     <ul>
+//         <li class="comment">
+//             <div class="columns">
+//                 <div class="column is-narrow is-hidden-mobile">
+//                     <span class="avatar">RV</span>
+//                 </div>
+//                 <div class="column comment--content">
+//                     <div class="meta">
+//                         <div class="details">
+//                             <p class="name">John Smith</p>
+//                             <p class="date">12 July 2017 @ 04:10</p>
+//                             <div class="buttons">
+//                                 <a class="active" href=""><i class="fa fa-thumbs-up"></i> <span>75</span></a>
+//                                 <a class="active" href=""><i class="fa fa-thumbs-down"></i> <span>25</span></a>
+//                             </div>
+//                         </div>
+//                     </div>
+//                     <div class="content">
+//                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sollicitudin viverra pellentesque. Morbi sed orci et turpis consectetur sodales id eget lectus. Curabitur ante arcu, ornare nec iaculis quis, luctus quis magna. Etiam lobortis placerat justo consequat bibendum. Nunc velit magna, ultrices vel mauris vitae, sollicitudin pulvinar turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed libero metus, ornare sit amet tincidunt eu, accumsan at purus.
+//                         <div>
+//                             <button class="button--reply is-link">Reply <i class="fa fa-reply" aria-hidden="true"></i></a>
+//                         </div>
+//                     </div>
+//                 </div>
+//             </div>
+//             <form method="POST" class="add-reply">
+//                 <div class="field">
+//                     <div class="control">
+//                         <textarea type="text" name="reply" class="textarea" rows="2" required placeholder="Reply..."></textarea>
+//                     </div>
+//                 </div>
+//                 <div class="field is-grouped">
+//                     <div class="control">
+//                         <input type="submit" name="submit" value="Reply" class="button" />
+//                     </div>
+//                     <div class="control">
+//                         <button class="button--cancel is-link">Cancel</button>
+//                     </div>
+//                 </div>
+//             </form>
+//             <div class="replies-view expanded">
+//                 <ul>
+//                     <li class="comment comment--reply">
+//                         <div class="columns">
+//                             <div class="column is-narrow is-hidden-mobile">
+//                                 <span class="avatar">RV</span>
+//                             </div>
+//                             <div class="column comment--content">
+//                                 <div class="meta">
+//                                     <div class="details">
+//                                         <p class="name">Real Vision</p>
+//                                         <p class="date">12 July 2017 @ 04:10</p>
+//                                         <div class="buttons">
+//                                             <a class="active" href=""><i class="fa fa-thumbs-up"></i> <span>75</span></a>
+//                                             <a class="active" href=""><i class="fa fa-thumbs-down"></i> <span>25</span></a>
+//                                         </div>
+//                                     </div>
+//                                 </div>
+//                                 <div class="content">
+//                                 Ut fringilla scelerisque eros. Nulla ac malesuada augue. Nullam nec rhoncus justo. Fusce pellentesque dapibus libero. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum erat urna, euismod vel risus in, vulputate auctor massa. Duis dignissim blandit porttitor. Duis tincidunt quis justo sed condimentum. Nulla vulputate posuere neque, nec posuere quam fermentum eu. Proin ut risus tortor.
+//                                 </div>
+//                             </div>
+//                         </div>
+//                     </li>
+//                 </ul>
+//             </div>
+//         </li>
+//         <li class="comment">
+//             <div class="columns">
+//                 <div class="column is-narrow is-hidden-mobile">
+//                     <span class="avatar">RV</span>
+//                 </div>
+//                 <div class="column comment--content">
+//                     <div class="meta">
+//                         <div class="details">
+//                             <p class="name">John Smith</p>
+//                             <p class="date">12 July 2017 @ 04:10</p>
+//                             <div class="buttons">
+//                                 <span class="badge">Hotly Debated</span>
+//                                 <a class="active" href=""><i class="fa fa-thumbs-up"></i> <span>75</span></a>
+//                                 <a class="active" href=""><i class="fa fa-thumbs-down"></i> <span>25</span></a>
+//                             </div>
+//                         </div>
+//                     </div>
+//                     <div class="content">
+//                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sollicitudin viverra pellentesque. Morbi sed orci et turpis consectetur sodales id eget lectus. Curabitur ante arcu, ornare nec iaculis quis, luctus quis magna. Etiam lobortis placerat justo consequat bibendum. Nunc velit magna, ultrices vel mauris vitae, sollicitudin pulvinar turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed libero metus, ornare sit amet tincidunt eu, accumsan at purus.
+//                         <div>
+//                             <button class="button--reply is-link">Reply <i class="fa fa-reply" aria-hidden="true"></i></a>
+//                         </div>
+//                     </div>
+//                 </div>
+//             </div>
+//             <form method="POST" class="add-reply is-hidden">
+//                 <div class="field">
+//                     <div class="control">
+//                         <textarea type="text" name="reply" class="textarea" rows="2" required placeholder="Reply..."></textarea>
+//                     </div>
+//                 </div>
+//                 <div class="field is-grouped">
+//                     <div class="control">
+//                         <input type="submit" name="submit" value="Reply" class="button" />
+//                     </div>
+//                     <div class="control">
+//                         <button class="button--cancel is-link">Cancel</button>
+//                     </div>
+//                 </div>
+//             </form>
+//             <div class="replies-view">
+//                 <ul>
+//                     <li class="comment comment--reply">
+//                         <div class="columns">
+//                             <div class="column is-narrow is-hidden-mobile">
+//                                 <span class="avatar">RV}</span>
+//                             </div>
+//                             <div class="column comment--content">
+//                                 <div class="meta">
+//                                     <div class="details">
+//                                         <p class="name">Real Vision}</p>
+//                                         <p class="date">12 July 2017 @ 04:10</p>
+//                                         <div class="buttons">
+//                                             <a class="active" href=""><i class="fa fa-thumbs-up"></i> <span>75</span></a>
+//                                             <a class="active" href=""><i class="fa fa-thumbs-down"></i> <span>25</span></a>
+//                                         </div>
+//                                     </div>
+//                                 </div>
+//                                 <div class="content">
+//                                 Ut fringilla scelerisque eros. Nulla ac malesuada augue. Nullam nec rhoncus justo. Fusce pellentesque dapibus libero. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum erat urna, euismod vel risus in, vulputate auctor massa. Duis dignissim blandit porttitor. Duis tincidunt quis justo sed condimentum. Nulla vulputate posuere neque, nec posuere quam fermentum eu. Proin ut risus tortor.
+//                                 </div>
+//                             </div>
+//                         </div>
+//                     </li>
+//                 </ul>
+//             </div>
+//         </li>
+//     </ul>
+// </div>
+//
+// Styleguide 5.11
+.comments {
+    ul {
+        list-style: none;
+        padding: 0;
+        margin-left: 0;
+
+        ul {
+            list-style: none;
+        }
+    }
+
+    .comment {
+        margin-bottom: $baseline / 2;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+
+        &:last-child {
+            border-bottom: 0;
+        }
+
+        .content {
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+    }
+    .avatar {
+        line-height: 44px;
+    }
+    .name {
+        font-weight: 700;
+        margin-bottom: 0;
+    }
+    .date {
+        font-size: $size-7;
+        margin-top: 0;
+    }
+    .comment--content {
+        width: calc(1.5rem - 100%);
+    }
+    .comment--reply {
+        margin-bottom: 0;
+        padding-bottom: $baseline;
+        border-bottom: 0;
+
+        .avatar {
+            width: 32px;
+            height: 32px;
+            line-height: 30px;
+            font-size: 13px;
+        }
+    }
+    .details {
+        position: relative;
+    }
+    .meta .buttons {
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin-top: 15px;
+        a {
+            margin-left: 1em;
+
+            &.inactive {
+                color: $color-torch-red;
+            }
+
+            i {
+                font-size: $size-7;
+                line-height: $size-5;
+            }
+        }
+        .badge {
+            font-weight: 700;
+        }
+    }
+    .replies-view {
+        height: 0;
+        overflow: hidden;
+        margin-top: 10px;
+        background: rgba(0,0,0,0.05);
+        position: relative;
+
+        &.expanded {
+            padding: $baseline $baseline 0 $baseline;
+            height: auto;
+        }
+
+        &:before {
+            content: "";
+            display: block;
+            width: 100%;
+            height: $baseline * 2;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: linear-gradient(to top, transparent, white);
+        }
+    }
+
+    .like i {
+        margin-right: 1ex;
+    }
+    .dislike i {
+        margin-left: 1ex;
+    }
+
+    @include tablet {
+        .add-reply {
+            margin-left: $baseline * 3;
+        }
+        .comment--reply {
+            margin-left: $baseline * 3;
+        }
+        .replies-view.expanded {
+            padding: $baseline $baseline 0 0;
+        }
+    }
+}
+
+// Endorsements Block
+//
+// markup:
+// <div class="endorsements">
+//      <div class="columns is-mobile is-vcentered">
+//          <div class="column is-7-mobile is-5-tablet">
+//              <img src="/images/logos/logo-cfa.png"/>
+//          </div>
+//          <div class="column is-3-tablet is-offset-2-mobile is-offset-3-tablet">
+//              <img src="/images/logos/logo-cisi.png"/>
+//          </div>
+//      </div>
+//      <div class="columns is-mobile is-vcentered">
+//          <div class="column is-3-mobile is-2-tablet">
+//              <img src="/images/logos/logo-cfp.png"/>
+//          </div>
+//          <div class="column is-4 is-offset-2-tablet is-offset-1-mobile">
+//              <img src="/images/logos/logo-cambridge.png"/>
+//          </div>
+//          <div class="column is-3 is-offset-1">
+//              <img src="/images/logos/logo-ciipa.png"/>
+//          </div>
+//      </div>
+// </div>
+//
+// Styleguide 5.12
+.endorsements {
+    background: white;
+    padding: $baseline ($baseline * 4);
+    @include mobile {
+        padding: $baseline ($baseline * 2);
+        background: #363e4e;
+    }
+}
+
+// Product Hero - 3x1
+//
+// default - Default Hero
+// .hide-cta - Hero without CTA Button
+//
+// markup:
+// <div class="product-hero product-hero--3x1 {$modifiers}">
+//      <div class="columns is-mobile">
+//          <div class="column">
+//              <h2><span>What the hell is real vision television?</span></h2>
+//          </div>
+//      </div>
+//      <div class="columns">
+//          <div class="column product-hero__cell-container">
+//              <div class="product-hero__cell">
+//                  <h3><span>Unbiased</span></h3>
+//                  <p><span>Financial Insight</span></p>
+//              </div>
+//              <div class="product-hero__cell">
+//                  <h3><span>Unfiltered</span></h3>
+//                  <p><span>Actionable Ideas</span></p>
+//              </div>
+//              <div class="product-hero__cell">
+//                  <h3><span>Unapologetic</span></h3>
+//                  <p><span>Smart Opinions</span></p>
+//              </div>
+//          </div>
+//          <div class="column has-text-centered is-vertically-bottom hero-cta__container is-narrow">
+//              <a href="#" class="button">Read More</a>
+//          </div>
+//      </div>
+// </div>
+//
+// Styleguide 5.13
+.product-hero {
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: $baseline;
+    text-transform: uppercase;
+
+    @include tablet {
+        padding: $baseline ($baseline * 2);
+    }
+
+    &.product-hero--3x1 {
+        background-image: url('#{$root}/images/components/product-hero-bg.png');
+
+        h2 {
+            margin-bottom: $baseline;
+        }
+
+        .product-hero__cell-container {
+            padding-bottom: 0;
+
+            @include tablet {
+                padding-bottom: $baseline / 2;
+                .product-hero__cell {
+                    margin-bottom: $baseline * 2;
+                }
+            }
+        }
+    }
+
+    strong {
+        font-style: normal;
+        color: $color-torch-red;
+    }
+
+    h2, h3 {
+        margin-bottom: $baseline;
+        span {
+            box-decoration-break: clone;
+            margin: 0;
+            font-weight: 800;
+        }
+        @include tablet {
+            margin-bottom: $baseline * 2;
+        }
+    }
+    h2 {
+
+        line-height: $size-4;
+        span {
+
+            font-size: $size-4;
+            color: $color-dark-gray;
+            background-color: white;
+            box-shadow: 10px 0 0 white, -10px 0 0 white;
+        }
+
+        @include tablet {
+            line-height: $size-2;
+            span {
+                font-size: $size-2;
+            }
+        }
+    }
+    h3 {
+        line-height: $size-4;
+        span {
+            font-size: $size-4;
+            color: white;
+            background-color: $color-dark-gray;
+            box-shadow: 10px 0 0 $color-dark-gray, -10px 0 0 $color-dark-gray;
+        }
+
+        @include tablet {
+            line-height: $size-3;
+            span {
+                font-size: $size-3;
+            }
+        }
+    }
+    p {
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 1.2rem;
+        span {
+            box-decoration-break: clone;
+            font-weight: 800;
+            font-size: $size-6;
+            color: white;
+            background-color: $color-dark-gray;
+            box-shadow: 10px 0 0 $color-dark-gray, -10px 0 0 $color-dark-gray;
+        }
+        br {
+            display: none;
+        }
+
+        @include tablet {
+            line-height: $size-5;
+            span {
+                font-size: $size-5;
+            }
+            br {
+                display: block;
+            }
+        }
+    }
+    .product-hero__sub-head {
+        line-height: 2rem;
+        span {
+            color: $color-dark-gray;
+            background-color: white;
+            box-shadow: 10px 0 0 white, -10px 0 0 white;
+        }
+    }
+    .product-hero__cell-container {
+        padding-bottom: 0;
+        margin-bottom: $baseline / 2;
+
+        @include tablet {
+            margin-bottom: 0;
+        }
+        .product-hero__cell {
+            margin-bottom: $baseline;
+            h3 {
+                margin-bottom: 0;
+            }
+            @include tablet {
+                margin-bottom: $baseline * 2;
+            }
+        }
+
+        .product-hero__cell:last-child {
+            margin-bottom: 0;
+        }
+    }
+    h3:last-child {
+        margin-bottom: 0;
+    }
+    a {
+        font-size: $size-6;
+        background: $brand;
+        color: $color-dark-gray;
+        font-weight: 800;
+        padding: 0 ($baseline / 3);
+
+        &:hover {
+            background: $color-dark-gray;
+            color: $brand;
+            border: solid 2px $brand;
+        }
+
+        &:focus {
+            background: $color-dark-gray;
+            color: $brand;
+            border: solid 2px $brand;
+            text-decoration: underline;
+        }
+
+        @include tablet {
+            font-size: $size-4;
+        }
+    }
+    &.hide-cta {
+        .hero-cta__container {
+            display: none;
+        }
+    }
+}
+
+// Product Hero - 3x2
+//
+// default - Default Hero
+// .hide-cta - Hero without CTA Button
+//
+// markup:
+// <div class="product-hero product-hero--3x2 {$modifiers}">
+//      <div class="columns is-mobile">
+//          <div class="column">
+//              <h2><span>With Real Vision Television, You Get...</span></h2>
+//          </div>
+//      </div>
+//      <div class="columns is-hidden-mobile">
+//          <div class="column is-5">
+//              <h3 class="product-hero__sub-head"><span>Let's Start with what you don't get:</span></h3>
+//          </div>
+//          <div class="column is-5 is-offset-2">
+//              <h3 class="product-hero__sub-head"><span>So, what do you get with us?</span></h3>
+//          </div>
+//      </div>
+//      <div class="columns">
+//          <div class="column is-hidden-mobile is-5-tablet product-hero__cell-container">
+//              <div class="product-hero__cell">
+//                  <h3><span>No ads</span></h3>
+//                  <p><span>To interrupt you</span></p>
+//              </div>
+//              <div class="product-hero__cell">
+//                  <h3><span>No bias</span></h3>
+//                  <p><span>To sway you</span></p>
+//              </div>
+//              <div class="product-hero__cell">
+//                  <h3><span>No hype</span></h3>
+//                  <p><span>To distract you</span></p>
+//              </div>
+//          </div>
+//          <div class="column is-5-tablet is-offset-2-tablet product-hero__cell-container">
+//              <div class="product-hero__cell">
+//                  <h3><span>Reliable</span></h3>
+//                  <p><span>Insight</span></p>
+//              </div>
+//              <div class="product-hero__cell">
+//                  <h3><span>Intelligent</span></h3>
+//                  <p><span>Opinions</span></p>
+//              </div>
+//              <div class="product-hero__cell">
+//                  <h3><span>Actionable</span></h3>
+//                  <p><span>Ideas</span></p>
+//              </div>
+//          </div>
+//      </div>
+//      <div class="columns hero-cta__container">
+//          <div class="column has-text-centered has-text-right-tablet">
+//              <a href="#" class="button">Read More</a>
+//          </div>
+//      </div>
+// </div>
+//
+// Styleguide 5.14
+.product-hero--3x2 {
+    background-image: url('#{$root}/images/components/product-hero-bg-2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: $baseline;
+
+    .hero-cta__container {
+        margin-top: $baseline / 3;
+    }
+
+    @include tablet {
+        padding: $baseline ($baseline * 2);
+
+        .hero-cta__container {
+            margin-top: 0;
+        }
+    }
+
+    .product-hero__cell-container {
+        .product-hero__cell {
+            margin-bottom: $baseline;
+        }
+    }
+
+    &.hide-cta {
+        padding-bottom: $baseline / 2;
+    }
+}
+
+// Product Hero - 2x2
+//
+// default - Default Hero
+// .hide-cta - Hero without CTA Button
+// .has-text-centered - Hero with center aligned content and CTA
+//
+// markup:
+// <div class="product-hero product-hero--2x2 {$modifiers}">
+//      <div class="columns is-mobile">
+//          <div class="column">
+//              <h2><span>With Real Vision Television, You Get...</span></h2>
+//          </div>
+//      </div>
+//      <div class="columns">
+//          <div class="column is-6-tablet product-hero__cell-container">
+//              <div class="product-hero__cell">
+//                  <h3><span>One Hundred</span></h3>
+//                  <p><span>Research reports per year covering<br/> all aspects of financial markets</span></p>
+//              </div>
+//              <div class="product-hero__cell">
+//                  <h3><span>Thirty</span></h3>
+//                  <p><span>Independent investment<br/> research experts</span></p>
+//              </div>
+//          </div>
+//          <div class="column is-6-tablet product-hero__cell-container">
+//              <div class="product-hero__cell">
+//                  <h3><span>Two</span></h3>
+//                  <p><span>Research reports<br/> per week</span></p>
+//              </div>
+//              <div class="product-hero__cell">
+//                  <h3><span>One</span></h3>
+//                  <p><span>Weekly Newsletter, <em>The hack</em>,<br/> delivered straight to your inbox</span></p>
+//              </div>
+//          </div>
+//      </div>
+//      <div class="columns hero-cta__container">
+//          <div class="column has-text-centered has-text-right-tablet">
+//              <a href="#" class="button">Read More</a>
+//          </div>
+//      </div>
+// </div>
+//
+// Styleguide 5.15
+.product-hero--2x2 {
+    background-image: url('#{$root}/images/components/product-hero-bg-3.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: $baseline;
+
+    .hero-cta__container {
+        margin-top: $baseline / 3;
+    }
+
+    @include tablet {
+        padding: $baseline ($baseline * 2);
+
+        .hero-cta__container {
+            margin-top: 0;
+        }
+    }
+
+    h2 {
+        margin-bottom: $baseline / 2;
+    }
+
+    &.hide-cta {
+        padding-bottom: $baseline / 2;
+    }
+
+    &.has-text-centered .has-text-right-tablet {
+        @extend .has-text-centered;
+    }
+
+    .columns:last-child:not(.hero-cta__container) {
+        margin-bottom: $baseline / 2;
+    }
+}
+
+// Product Hero - 2x3
+//
+// default - Default Hero
+// .hide-cta - Hero without CTA Button
+//
+// markup:
+// <div class="product-hero product-hero--2x3 has-text-centered-tablet {$modifiers}">
+//      <div class="columns is-mobile">
+//          <div class="column">
+//              <h2><span>With Real Vision Television, You Get...</span></h2>
+//          </div>
+//      </div>
+//      <div class="columns">
+//          <div class="column is-10-mobile is-4-tablet product-hero__cell-container">
+//              <div class="product-hero__cell">
+//                  <h3><span>Accessible</span></h3>
+//                  <p><span>Via Desktop, Mobile and iOS app so you can watch it where you are</span></p>
+//              </div>
+//              <div class="product-hero__cell">
+//                  <h3><span>Organized</span></h3>
+//                  <p><span>Weekly content schedules categorized videos, bookmarks and watch-later buttons so you don't miss a thing during busy times</span></p>
+//              </div>
+//          </div>
+//          <div class="column is-10-mobile is-4-tablet product-hero__cell-container">
+//              <div class="product-hero__cell">
+//                  <h3><span>Convenient</span></h3>
+//                  <p><span>Audio and video transcript downloads for when you're offline</span></p>
+//              </div>
+//              <div class="product-hero__cell">
+//                  <h3><span>Sharable</span></h3>
+//                  <p><span>Share your thoughts and opinions with our community space on every piece of content</span></p>
+//              </div>
+//          </div>
+//          <div class="column is-4-tablet is-hidden-mobile product-hero__cell-container">
+//              <div class="product-hero__cell">
+//                  <h3><span>Time-Saving</span></h3>
+//                  <p><span>Multiple playback speeds &amp; chapter so you can quickly access the sections you want</span></p>
+//              </div>
+//              <div class="product-hero__cell">
+//                  <h3><span>Immediate</span></h3>
+//                  <p><span>A one-step login, process &amp; update, content daily</span></p>
+//              </div>
+//          </div>
+//      </div>
+//      <div class="columns hero-cta__container">
+//          <div class="column has-text-centered has-text-right-tablet">
+//              <a href="#" class="button">Read More</a>
+//          </div>
+//      </div>
+// </div>
+//
+// Styleguide 5.16
+.product-hero--2x3 {
+    background-image: url('#{$root}/images/components/product-hero-bg-4.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: left;
+    padding: $baseline;
+
+    @include tablet {
+        padding: $baseline ($baseline * 2);
+    }
+
+    &.hide-cta {
+        padding-bottom: $baseline / 2;
+    }
+
+    .hero-cta__container {
+        margin-top: $baseline / 3;
+    }
+
+    .product-hero__cell-container {
+        .product-hero__cell:first_child {
+            margin-bottom: $baseline * 3;
+        }
+    }
+
+    p {
+        line-height: 1.2rem;
+        span {
+            font-size: $size-6;
+        }
+    }
+
+    .columns:last-child:not(.hero-cta__container) {
+        margin-bottom: $baseline / 2;
+    }
+}
+
+// Product Hero - Descriptive
+//
+// default - Default Hero
+// .hide-cta - Hero without CTA Button
+// .hide-heading - Hero without main block heading
+// .has-text-left - Hero with left aligned content and CTA
+// .has-text-right - Hero with right aligned content and CTA
+//
+// markup:
+// <div class="product-hero product-hero--descriptive {$modifiers}">
+//      <div class="columns is-mobile">
+//          <div class="column product-hero--heading">
+//              <h2><span>Leading Institutions give us the thumbs up too...</span></h2>
+//          </div>
+//      </div>
+//      <div class="columns">
+//          <div class="column">
+//              <p><span>Real Vision Television is accredited by some of the most respected financial and educational institutions across the globe, including:</span></p>
+//          </div>
+//      </div>
+//      <div class="columns hero-cta__container">
+//          <div class="column has-text-centered has-text-right-tablet">
+//              <a href="#" class="button">Read More</a>
+//          </div>
+//      </div>
+// </div>
+//
+// Styleguide 5.17
+.product-hero--descriptive {
+    background-image: url('#{$root}/images/components/product-hero-bg-5.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: $baseline;
+
+    @include tablet {
+        padding: $baseline ($baseline * 2);
+    }
+
+    h2 {
+        margin-bottom: $baseline;
+        line-height: $size-4;
+        span {
+            font-size: $size-4;
+        }
+
+        @include tablet {
+            line-height: $size-3;
+
+            span {
+                font-size: $size-3;
+            }
+        }
+    }
+
+    p {
+        line-height: 1.3rem;
+        span {
+            font-family: 'Function Pro';
+            font-weight: 400;
+            font-size: $size-6;
+            line-height: 0.8rem;
+            padding: 5px 0;
+            text-transform: none;
+        }
+
+        @include tablet {
+            line-height: 2rem;
+            width: 70%;
+
+            span {
+                font-size: $size-4;
+            }
+        }
+    }
+    a {
+        margin-right: auto;
+        @include tablet {
+            margin-right: -10px;
+        }
+    }
+
+    &.hide-heading {
+        .product-hero--heading {
+            display: none;
+        }
+    }
+
+    &.hide-cta {
+        padding-bottom: $baseline * 1.5;
+        & .columns:nth-last-child(2) {
+            margin-bottom: -0.75rem; // Makes penultamate columns the same as last .columns incase there is an empty cta block
+        }
+    }
+
+    &.has-text-left .has-text-right-tablet {
+        @extend .has-text-left;
+    }
+
+    &.has-text-right {
+        p {
+            margin-left: auto;
+        }
+    }
+
+    .columns:last-child:not(.hero-cta__container) {
+        margin-bottom: $baseline / 2;
+    }
+}
+
+// Card Grid
+//
+// default - Default Hero
+//
+// markup:
+// <div class="card-grid {$modifiers}">
+//      <h2><span>More Testimonials</span></h2>
+//      <div class="columns is-tablet is-multiline">
+//          <div class="card column is-6-tablet is-3-desktop">
+//              <a href="#">
+//                  <div class="card-image">
+//                      <figure class="image is-16by9">
+//                          <img src="/images/components/testimonials/1.jpg" alt="Image">
+//                      </figure>
+//                  </div>
+//                  <div class="card-content">
+//                      <div class="content">
+//                          <h3 class="title">John Smith</h3>
+//                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.</p>
+//                      </div>
+//                  </div>
+//              </a>
+//          </div>
+//          <div class="card column is-6-tablet is-3-desktop">
+//              <a href="#">
+//                  <div class="card-image">
+//                      <figure class="image is-16by9">
+//                          <img src="/images/components/testimonials/2.jpg" alt="Image">
+//                      </figure>
+//                  </div>
+//                  <div class="card-content">
+//                      <div class="content">
+//                          <h3 class="title">John Smith</h3>
+//                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.</p>
+//                      </div>
+//                  </div>
+//              </a>
+//          </div>
+//          <div class="card column is-6-tablet is-3-desktop">
+//              <a href="#">
+//                  <div class="card-image">
+//                      <figure class="image is-16by9">
+//                          <img src="/images/components/testimonials/3.jpg" alt="Image">
+//                      </figure>
+//                  </div>
+//                  <div class="card-content">
+//                      <div class="content">
+//                          <h3 class="title">John Smith</h3>
+//                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.</p>
+//                      </div>
+//                  </div>
+//              </a>
+//          </div>
+//          <div class="card column is-6-tablet is-3-desktop">
+//              <a href="#">
+//                  <div class="card-image">
+//                      <figure class="image is-16by9">
+//                          <img src="/images/components/testimonials/4.jpg" alt="Image">
+//                      </figure>
+//                  </div>
+//                  <div class="card-content">
+//                      <div class="content">
+//                          <h3 class="title">John Smith</h3>
+//                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.</p>
+//                      </div>
+//                  </div>
+//              </a>
+//          </div>
+//      </div>
+//      <div class="columns is-tablet is-multiline">
+//          <div class="card column is-6-tablet is-3-desktop">
+//              <a href="#">
+//                  <div class="card-image">
+//                      <figure class="image is-16by9">
+//                          <img src="/images/components/testimonials/5.jpg" alt="Image">
+//                      </figure>
+//                  </div>
+//                  <div class="card-content">
+//                      <div class="content">
+//                          <h3 class="title">John Smith</h3>
+//                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.</p>
+//                      </div>
+//                  </div>
+//              </a>
+//          </div>
+//          <div class="card column is-6-tablet is-3-desktop">
+//              <a href="#">
+//                  <div class="card-image">
+//                      <figure class="image is-16by9">
+//                          <img src="/images/components/testimonials/6.jpg" alt="Image">
+//                      </figure>
+//                  </div>
+//                  <div class="card-content">
+//                      <div class="content">
+//                          <h3 class="title">John Smith</h3>
+//                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.</p>
+//                      </div>
+//                  </div>
+//              </a>
+//          </div>
+//          <div class="card column is-6-tablet is-3-desktop">
+//              <a href="#">
+//                  <div class="card-image">
+//                      <figure class="image is-16by9">
+//                          <img src="/images/components/testimonials/7.jpg" alt="Image">
+//                      </figure>
+//                  </div>
+//                  <div class="card-content">
+//                      <div class="content">
+//                          <h3 class="title">John Smith</h3>
+//                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.</p>
+//                      </div>
+//                  </div>
+//              </a>
+//          </div>
+//          <div class="card column is-6-tablet is-3-desktop">
+//              <a href="#">
+//                  <div class="card-image">
+//                      <figure class="image is-16by9">
+//                          <img src="/images/components/testimonials/8.jpg" alt="Image">
+//                      </figure>
+//                  </div>
+//                  <div class="card-content">
+//                      <div class="content">
+//                          <h3 class="title">John Smith</h3>
+//                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.</p>
+//                      </div>
+//                  </div>
+//              </a>
+//          </div>
+//      </div>
+// </div>
+//
+// Styleguide 5.18
+.card-grid {
+    padding: $baseline;
+    background: white;
+
+    a {
+        text-decoration: none;
+        color: $text;
+    }
+
+    h2 {
+        line-height: 1.5rem;
+        margin-bottom: $baseline;
+        margin-left: 10px;
+        text-transform: uppercase;
+        span {
+
+            font-size: $size-4;
+            color: white;
+            background-color: $color-dark-gray;
+            box-shadow: 10px 0 0 $color-dark-gray, -10px 0 0 $color-dark-gray;
+        }
+
+        @include tablet {
+            line-height: 2.3rem;
+            span {
+                font-size: $size-3;
+            }
+        }
+    }
+
+    .card {
+        margin-bottom: $baseline;
+        .card-content {
+            text-align: left;
+
+            p {
+                display: inline;
+            }
+
+            h3 {
+                font-size: $size-5;
+                text-transform: uppercase;
+                margin-bottom: $baseline / 2;
+            }
+        }
+        .card-image {
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+// Product Links Block
+//
+// default - Default Hero
+// :hover - Hover State
+//
+// markup:
+// <div class="product-links-block">
+// <div class="columns is-vcentered">
+//    <div class="column is-4-tablet">
+//        <div class="product-link product-link--tv {$modifiers}">
+//            <a href="#">
+//                <h3>Watch</h3>
+//                <p>Real Vision</p>
+//                <p><strong>Television</strong></p>
+//                <div class="product-link__bottom-overlay">
+//                    <p class="product-link__bottom-arrow"></p>
+//                </div>
+//            </a>
+//        </div>
+//    </div>
+//    <div class="column is-4-tablet">
+//        <div class="product-link product-link--publishing {$modifiers}">
+//            <a href="#">
+//                <h3>Read</h3>
+//                <p>Real Vision</p>
+//                <p><strong>Publishing</strong></p>
+//                <div class="product-link__bottom-overlay">
+//                    <p class="product-link__bottom-arrow"></p>
+//                </div>
+//            </a>
+//        </div>
+//    </div>
+//    <div class="column is-4-tablet">
+//        <div class="product-link product-link--podcast {$modifiers}">
+//            <a href="#">
+//                <h3>Listen</h3>
+//                <p>Real Vision</p>
+//                <p><strong>Podcast</strong></p>
+//                <div class="product-link__bottom-overlay">
+//                    <p class="product-link__bottom-arrow"></p>
+//                </div>
+//            </a>
+//        </div>
+//    </div>
+// </div>
+// </div>
+//
+// Styleguide 5.19
+.product-links-block {
+    background-image: url('#{$root}/images/components/product-links-block_bg_mobile.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: $baseline;
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+
+    @include tablet {
+        background-image: url('#{$root}/images/components/product-links-block_bg.jpg');
+    }
+
+    .product-link {
+        background: url('#{$root}/images/overlays/white_splatter.png'), #363e4e;
+        background-size: cover;
+        padding-top: 1rem;
+        padding-bottom: 3.5rem;
+        margin: auto;
+        position: relative;
+        overflow: hidden;
+
+        * {
+            margin: 0;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .product-link__bottom-overlay {
+            content: '';
+            width: 100%;
+            height: 100%;
+            max-height: 40px;
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            transition: bottom 200ms ease-in-out;
+        }
+
+        .product-link__bottom-arrow {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 20px;
+            border-left: 1.25rem solid transparent;
+            border-right: 1.25rem solid transparent;
+            border-top: 1rem solid $text;
+        }
+
+        &:hover {
+            cursor: pointer;
+            .product-link__bottom-overlay {
+                bottom: 0px;
+            }
+        }
+    }
+
+    h3, p {
+        font-weight: 800;
+    }
+
+    h3 {
+        font-size: $size-1;
+        line-height: 2.5rem;
+    }
+
+    p {
+        font-size: $size-4;
+    }
+
+    strong {
+        font-style: normal;
+    }
+
+    .product-link--tv {
+        strong {
+            color: $brand;
+        }
+
+        .product-link__bottom-overlay {
+            background: url('#{$root}/images/overlays/stripe_clear.png'), $brand;
+        }
+    }
+    .product-link--publishing {
+        strong {
+            color: $color-orange;
+        }
+
+        .product-link__bottom-overlay {
+            background: url('#{$root}/images/overlays/stripe_clear.png'), $color-orange;
+        }
+    }
+    .product-link--podcast {
+        strong {
+            color: $color-purple;
+        }
+
+        .product-link__bottom-overlay {
+            background: url('#{$root}/images/overlays/stripe_clear.png'), $color-purple;
+        }
+    }
+}
+
+// Product Play Block
+//
+// default - Default
+// .full-width - Play block with the 'play' text full width in desktop view
+//
+// markup:
+// <a class="play-block {$modifiers}">
+//      <h2><span>They all used macro-analysis. That’s why you should care about this kind of research.</span></h2>
+//      <div class="columns is-mobile">
+//          <div class="column is-6-desktop is-12-mobile is-paddingless play-block_container">
+//              <div class="play-block_body">How to use Macro Analysis to Gain an Edge press
+//                  <span class="play-block__play">play <button class="icon-button"><i class="fa fa-play hide-text" aria-hidden="true"></i></button></span>
+//              </div>
+//          </div>
+//      </div>
+// </a>
+//
+// Styleguide 5.20
+.play-block {
+    display: block;
+    background-image: url('#{$root}/images/components/product-play-block-bg.jpg');
+    background-position: top right;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: $baseline;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    @include tablet {
+        padding: $baseline ($baseline * 2);
+    }
+
+    h2, h3 {
+        span {
+            box-decoration-break: clone;
+            margin: 0;
+            font-weight: 800;
+        }
+    }
+    h2 {
+        margin-bottom: $baseline;
+        line-height: 2.3rem;
+        span {
+            font-size: $size-3;
+            color: $color-dark-gray;
+            background-color: white;
+            box-shadow: 10px 0 0 white, -10px 0 0 white;
+        }
+    }
+    .play-block_body {
+        font-family: 'Function Pro';
+        font-weight: 800;
+        color: #fff;
+        line-height: 1.2;
+        margin-top: $baseline;
+        margin-bottom: $baseline;
+        @include widescreen {
+            font-size: 4rem !important;
+        }
+    }
+    .play-block__play {
+        display: inline-flex;
+        color: $brand;
+
+        button {
+            margin-left: 25px;
+            .fa {
+                color: $color-dark-gray;
+                background: $color-cyan;
+                border-color: $color-cyan;
+                padding-left: 3px;
+                &:hover {
+                    color: white;
+                    border-color: white;
+                    background: transparent;
+                }
+            }
+        }
+    }
+
+    &.full-width {
+        .play-block_container {
+            width: 100%;
+        }
+    }
+
+    .columns {
+        align-items: center;
+        display: flex;
+    }
+}
+
+// Spacer Row
+//
+// An empty colored block to separate components
+//
+// default - Default
+//
+// markup:
+// <div class="spacer-row">
+// </div>
+//
+// Styleguide 5.21
+.spacer-row {
+    padding: .5rem;
+    background-color: #363e4e;
+
+    @include tablet {
+        padding: 1rem;
+    }
+}
+
+// Product Listing Item
+//
+// A single instance of a product listing item
+//
+// default - Default
+//
+// markup:
+// <div class="product-listing--item">
+//      <div class="columns is-tablet is-multiline">
+//          <div class="column is-7-desktop is-12-tablet">
+//              <div class="product-listing--content">
+//                  <h2><span>Real Vision Television</span></h2>
+//                  <h3>Refreshingly Honest Insight</h3>
+//                  <p>Have a "holy shit" moment with daily videos covering thought-provoking
+//                      investment ideas that will make you think differently and invest better.
+//                      Real Vision has been described as "TED Talks for Finance."
+//                      Watch and learn as the world's greatest investment pros discuss the
+//                      financial topics that really matter. If you manage money and
+//                      you're tired of the bias and clickbait that's out there...you need this.
+//                  </p>
+//              </div>
+//              <a href="#" class="button">Try it free for 7 days</a>
+//          </div>
+//          <div class="column is-5-desktop is-12-tablet has-text-centered">
+//              <img src="/images/components/product-listing-img.jpg"/>
+//          </div>
+//      </div>
+// </div>
+//
+// Styleguide 5.22
+.product-listing--item {
+    padding: $baseline;
+
+    @include tablet {
+        padding: $baseline $baseline * 2;
+    }
+
+    h2, h3 {
+        text-transform: uppercase;
+
+        span {
+            box-decoration-break: clone;
+            margin: 0;
+            font-weight: 800;
+        }
+    }
+    h2 {
+        margin-left: 10px;
+        line-height: 1.5rem;
+        margin-bottom: $baseline;
+        span {
+
+            font-size: $size-4;
+            color: white;
+            background-color: $color-dark-gray;
+            box-shadow: 10px 0 0 $color-dark-gray, -10px 0 0 $color-dark-gray;
+        }
+
+        @include tablet {
+            line-height: 2.3rem;
+            span {
+                font-size: $size-3;
+            }
+        }
+    }
+    h3 {
+        font-size: $size-6;
+        margin-bottom: $baseline / 2;
+    }
+
+    .button {
+        font-size: $size-6;
+        padding: .25rem 1rem;
+
+        @include tablet {
+            font-size: $size-5;
+        }
+    }
+}
+
+// Signup Progress
+//
+// markup:
+// <ol class="columns signup-progress is-marginless is-mobile">
+//     <li class="column is-paddingless active">Step 1</li>
+//     <li class="column is-paddingless active">Step 2</li>
+//     <li class="column is-paddingless">Step 3</li>
+// </ol>
+//
+// Styleguide 5.23
+.signup-progress {
+    counter-reset: step;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+    li {
+        color: grey;
+        list-style-type: none;
+        position: relative;
+        text-align: center;
+        font-weight: 700;
+        margin-top: 0;
+        &:before {
+            background: white;
+            width: 30px;
+            height: 30px;
+            color: grey;
+            content: counter(step);
+            counter-increment: step;
+            line-height: 26px;
+            border: 2px solid grey;
+            display: block;
+            text-align: center;
+            margin: 0 auto 10px auto;
+            border-radius: 50%;
+            font-size: 14px;
+        }
+        &:after {
+            width: 100%;
+            height: 2px;
+            content: '';
+            position: absolute;
+            background-color: grey;
+            top: 15px;
+            left: -50%;
+            z-index: -1;
+        }
+        &:first-child:after {
+            content: none;
+        }
+        &.active {
+            color: $color-torch-red;
+            &:before {
+                border-color: $color-torch-red;
+                content: "";
+                background: $color-torch-red url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1000'%3E%3Cpath fill='white' d='M849.9 115L360 604.9 150 395 10 535l210 210 35 35 105 105 630-630.1L849.9 115z'/%3E%3C/svg%3E") no-repeat 50%;
+                background-size: 50%;
+            }
+            &:after {
+                background-color: $color-torch-red;
+            }
+        }
+    }
+}
+
+// Email Capture
+//
+// A simple form to capture target users' first names and email addresses
+//
+// default - Default
+// .error - Error state shown after failed submission
+// .success - Success state shown after successful submission
+//
+// markup:
+// <div class="email-capture {$modifiers}">
+//      <p class="email-capture--title">Can we interest you in checking out our recent blog post?</p>
+//      <p class="email-capture--success">Thanks for signing up!</p>
+//      <form action="" method="get" class="validate" validate>
+//          <div class="field is-horizontal">
+//              <div class="field-body">
+//                  <div class="field">
+//                      <p class="control is-expanded has-icons-left">
+//                          <input class="input" type="text" name="FNAME" placeholder="First Name" required>
+//                          <span class="icon is-small is-left">
+//                              <i class="fa fa-user"></i>
+//                          </span>
+//                      </p>
+//                  </div>
+//                  <div class="field">
+//                      <p class="control is-expanded has-icons-left">
+//                          <input class="input" type="email" name="EMAIL" placeholder="Email Address" required>
+//                          <span class="icon is-small is-left">
+//                              <i class="fa fa-envelope"></i>
+//                          </span>
+//                      </p>
+//                  </div>
+//                  <div class="field">
+//                      <p class="control is-expanded">
+//                          <input type="submit" name="subscribe" class="button is-success" value="Sign up for free" />
+//                      </p>
+//                  </div>
+//              </div>
+//          </div>
+//      </form>
+//      <p class="email-capture--error">Oops! It looks like something went wrong. Please try again.</p>
+// </div>
+//
+// Styleguide 5.24
+.email-capture {
+    padding: $baseline;
+
+    .email-capture--title, .email-capture--success {
+        font-weight: bold;
+        font-size: $size-5;
+        margin-bottom: $baseline;
+    }
+
+    .email-capture--success {
+        display: none;
+        text-align: center;
+        margin: 0;
+    }
+
+    .email-capture--error {
+        display: none;
+        color: $color-torch-red;
+        margin-bottom: 0;
+    }
+
+    .field .icon {
+        height: 100%;
+    }
+
+    &.success {
+        .email-capture--success {
+            display: block;
+        }
+
+        .email-capture--title, form {
+            display: none;
+        }
+    }
+
+    &.error {
+        .email-capture--error {
+            display: block;
+        }
+    }
+}
+
+// Product Price/CTA Block
+//
+// default - Default CTA
+// :hover - Hover State
+//
+// markup:
+// <div class="product-price-block">
+//     <div class="product-price-block__content">
+//         <div class="columns is-vcentered">
+//             <div class="column">
+//                 <div class="columns">
+//                     <div class="column">
+//                         <div class="product-price__title">REAL VISION <span class="product-price__product">PRO</span></div>
+//                     </div>
+//                     <div class="column is-narrow product-price {$modifiers}">
+//                         <div class="product-price__header">
+//                             <div class="product-price__price">$49/</div>
+//                         </div>
+//                         <div class="product-price__body">
+//                             <div class="product-price__term">MONTH</div>
+//                             <div class="product-price__conditions">(BILLED ANNUALLY)</div>
+//                         </div>
+//                     </div>
+//                 </div>
+//                 <a href="#" class="button is-pulled-right is-hidden-tablet {$modifiers}">START YOUR FREE TRIAL NOW</a>
+//                 <div class="product-price__subtitle is-pulled-left is-hidden-mobile">SIGN UP FOR A FREE TRIAL NOW</div>
+//                 <a href="#" class="button is-pulled-right is-hidden-mobile {$modifiers}">START YOUR TRIAL</a>
+//            </div>
+//        </div>
+//    </div>
+// </div>
+//
+// Styleguide 5.25
+
+.product-price-block {
+    padding: $baseline;
+    position: relative;
+    font-family: 'Function Pro', sans-serif;
+    color: $color-spruce;
+
+    @include mobile {
+        padding: 0;
+    }
+
+    .product-price-block__content {
+        @extend .has-paper-background;
+        font-weight: 800;
+        overflow: hidden;
+
+        .product-price__title {
+            text-transform: uppercase;
+            color: white;
+            background: url('#{$root}/images/overlays/white_splatter.png'), $color-dark-gray;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-size: $size-5;
+            padding: ($baseline / 2) $baseline;
+            margin-top: $baseline;
+
+            @include tablet {
+                display:inline-block;
+                margin: $baseline $baseline ($baseline / 3) 0;
+                padding: ($baseline / 3) $baseline ($baseline / 3) ($baseline * 2);
+                font-size: $size-5;
+            }
+
+            @include desktop {
+                margin: $baseline 0 ($baseline / 2) 0;
+                padding: ($baseline / 2) $baseline ($baseline / 2) ($baseline * 3);
+                font-size: $size-3;
+            }
+        }
+
+        .product-price__subtitle {
+            font-size: $size-6;
+            padding-left: ($baseline * 2);
+            clear: both;
+
+            @include desktop {
+                font-size: $size-4;
+                padding-left: ($baseline * 3);
+            }
+        }
+
+        .product-price__product {
+            color: $brand;
+        }
+
+        .product-price {
+            display: flex;
+            padding-top: 1rem;
+            padding-bottom: 3.5rem;
+            margin: auto;
+            position: relative;
+            overflow: hidden;
+            padding: $baseline;
+
+            * {
+                margin: 0;
+            }
+
+            a {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+            }
+
+            @include tablet {
+                justify-content: flex-end;
+                padding: $baseline ($baseline * 3) ($baseline / 2);
+            }
+
+            * {
+                margin: 0;
+            }
+
+            .product-price__header {
+                flex-direction: row;
+                display: flex;
+            }
+
+            .product-price__body {
+                flex-direction: column;
+                display: flex;
+            }
+
+            .product-price__price {
+                font-size: $size-1;
+                line-height: $size-1;
+
+                @include desktop {
+                    font-size: 4.5rem;
+                    line-height: 4.5rem;
+                }
+            }
+
+            .product-price__term {
+                font-size: $size-3;
+                line-height: $size-3;
+                padding-left: 0.2rem;
+                margin-top: auto;
+
+                @include desktop {
+                    font-size: 3rem;
+                    line-height: 3rem;
+                }
+            }
+
+            .product-price__conditions {
+                font-size: ($size-6 / 1.1);
+                line-height: ($size-6 / 1.1);
+                font-style: italic;
+                font-weight: 600;
+                margin-bottom: auto;
+
+                @include desktop {
+                    font-size: $size-5;
+                    line-height: $size-5;
+                }
+            }
+        }
+
+        a {
+            font-size: $size-6;
+            background: $brand;
+            color: $color-dark-gray;
+            font-weight: 800;
+            padding: 0 ($baseline / 3);
+            margin-top: $baseline / 2;
+
+            &:hover {
+                background: $color-dark-gray;
+                color: $brand;
+                border: solid 2px $brand;
+            }
+
+            @include tablet {
+                font-size: 1.3rem;
+            }
+
+            @include desktop {
+                font-size: 1.7rem;
+                margin-top: $baseline;
+            }
+        }
+    }
+}
+
+// Media Block
+//
+// default - Default
+// .has-text-centered - Centers the image
+// .has-text-right - Aligns the image to the right
+// .is-full-width - Have the image fill the block
+// .has-padding - Add padding inside the block
+// .has-margin - Add margin outside the block
+//
+// markup:
+// <div class="media-block {$modifiers}">
+//     <img src="http://lorempixel.com/320/180/abstract" />
+// </div>
+//
+// Styleguide 5.26
+.media-block {
+    background: #eee;
+    img {
+        vertical-align:bottom;
+    }
+
+    &.is-full-width img {
+        width: 100%;
+    }
+
+    &.has-padding {
+        padding: $baseline;
+    }
+
+    &.has-margin {
+        margin: $baseline;
+    }
+}
+
+// CTA Block
+//
+// default - Default
+// .has-text-centered - Aligns the button to the center
+// .has-text-right - Aligns the button to the right
+// .has-margin - Add margin outside the block
+// .has-dark-text - Makes the text on the button dark for use with light backgrounds
+//
+// markup:
+// <div class="cta-block {$modifiers}">
+//     <a href="#" class="button">Call to action button</a>
+// </div>
+//
+// Styleguide 5.27
+.cta-block {
+    &.has-dark-text .button{
+        color: $color-dark-gray;
+    }
+
+    &.has-margin {
+        margin: $baseline;
+    }
+}
+
+// Image Row
+//
+// Single row of images - contents will adjust width based on number images
+//
+// default - Default
+//
+// markup:
+// <div class="image-row">
+//      <h2>EXAMPLES OF FEATURE DOCUMENTARIES</h2>
+//      <div class="columns is-tablet">
+//          <div class="card column">
+//              <a href="#">
+//                  <div class="card-image">
+//                      <figure class="image is-16by9">
+//                          <img src="/images/components/image-grid-1.jpg" alt="Image">
+//                      </figure>
+//                  </div>
+//                  <div class="card-content">
+//                      <div class="content">
+//                          <h3 class="title">GOLD - GRANT WILLIAMS</h3>
+//                      </div>
+//                  </div>
+//              </a>
+//          </div>
+//          <div class="card column">
+//              <a href="#">
+//                  <div class="card-image">
+//                      <figure class="image is-16by9">
+//                          <img src="/images/components/image-grid-2.jpg" alt="Image">
+//                      </figure>
+//                  </div>
+//                  <div class="card-content">
+//                      <div class="content">
+//                          <h3 class="title">GEOPOLITICS - GORDON LEE SMITH</h3>
+//                      </div>
+//                  </div>
+//              </a>
+//          </div>
+//          <div class="card column">
+//              <a href="#">
+//                  <div class="card-image">
+//                      <figure class="image is-16by9">
+//                          <img src="/images/components/image-grid-3.jpg" alt="Image">
+//                      </figure>
+//                  </div>
+//                  <div class="card-content">
+//                      <div class="content">
+//                          <h3 class="title">CHARTING - PETER BRANDT</h3>
+//                      </div>
+//                  </div>
+//              </a>
+//          </div>
+//      </div>
+// </div>
+//
+// Styleguide 5.28
+.image-row {
+    padding: $baseline;
+    background: none;
+
+    a {
+        text-decoration: none;
+        color: $text;
+    }
+
+    h2 {
+        color: #6e7789;
+        text-align: center;
+        margin-bottom: $baseline;
+        font-size: $size-5;
+    }
+
+    .card {
+        margin-bottom: 0;
+        .card-content {
+            text-align: left;
+
+            .title {
+                font-size: $size-5;
+                margin-top: $baseline / 2;
+                font-weight: 800;
+
+                @include tablet {
+                    font-size: $size-6;
+                }
+            }
+        }
+    }
+}
+
+// Pullout Container
+//
+// A container that contains pullout blocks and card grids
+//
+// Default - default
+//
+// markup:
+// <div class="pullout-container">
+//      <div class="pullout-container__content">
+//          <div class="pullout-block pullout-block__text">
+//              <div class="pullout-block__content">
+//                  <h3 class="pullout-block--title"><span>Feature Documentaries</span></h3>
+//                  <p><strong>Geopolitics with Gordon Dee Smith to the History of Gold with Grant Williams; to Charting masterclasses with Peter Brandt, you can watch documentary-style programming with the smartest investors in the world about topics that will broaden both your mind and your investment opportunities.</strong></p>
+//              </div>
+//          </div>
+//          <div class="image-row">
+//              <h2>EXAMPLES OF FEATURE DOCUMENTARIES</h2>
+//              <div class="columns is-tablet">
+//                  <div class="card column">
+//                      <a href="#">
+//                          <div class="card-image">
+//                              <figure class="image is-16by9">
+//                                  <img src="/images/components/image-grid-1.jpg" alt="Image">
+//                              </figure>
+//                          </div>
+//                          <div class="card-content">
+//                              <div class="content">
+//                                  <h3 class="title">GOLD - GRANT WILLIAMS</h3>
+//                              </div>
+//                          </div>
+//                      </a>
+//                  </div>
+//                  <div class="card column">
+//                      <a href="#">
+//                          <div class="card-image">
+//                              <figure class="image is-16by9">
+//                                  <img src="/images/components/image-grid-2.jpg" alt="Image">
+//                              </figure>
+//                          </div>
+//                          <div class="card-content">
+//                              <div class="content">
+//                                  <h3 class="title">GEOPOLITICS - GORDON LEE SMITH</h3>
+//                              </div>
+//                          </div>
+//                      </a>
+//                  </div>
+//                  <div class="card column">
+//                      <a href="#">
+//                          <div class="card-image">
+//                              <figure class="image is-16by9">
+//                                  <img src="/images/components/image-grid-3.jpg" alt="Image">
+//                              </figure>
+//                          </div>
+//                          <div class="card-content">
+//                              <div class="content">
+//                                  <h3 class="title">CHARTING - PETER BRANDT</h3>
+//                              </div>
+//                          </div>
+//                      </a>
+//                  </div>
+//              </div>
+//          </div>
+//          <div class="pullout-block pullout-block__product-quote">
+//              <div class="pullout-block__content">
+//                  <div class="is-hidden-mobile">
+//                      <div class="icons">
+//                          <svg class="icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.62292 316.34321" class="icon-star"><path d="M166.31 0l51.395 104.134 114.918 16.698-83.156 81.057 19.63 114.452-102.786-54.038-102.784 54.038 19.63-114.454L0 120.83l114.918-16.698z" /></svg>
+//                          <svg class="icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.62292 316.34321" class="icon-star"><path d="M166.31 0l51.395 104.134 114.918 16.698-83.156 81.057 19.63 114.452-102.786-54.038-102.784 54.038 19.63-114.454L0 120.83l114.918-16.698z" /></svg>
+//                          <svg class="icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.62292 316.34321" class="icon-star"><path d="M166.31 0l51.395 104.134 114.918 16.698-83.156 81.057 19.63 114.452-102.786-54.038-102.784 54.038 19.63-114.454L0 120.83l114.918-16.698z" /></svg>
+//                          <svg class="icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.62292 316.34321" class="icon-star"><path d="M166.31 0l51.395 104.134 114.918 16.698-83.156 81.057 19.63 114.452-102.786-54.038-102.784 54.038 19.63-114.454L0 120.83l114.918-16.698z" /></svg>
+//                          <svg class="icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.62292 316.34321" class="icon-star"><path d="M166.31 0l51.395 104.134 114.918 16.698-83.156 81.057 19.63 114.452-102.786-54.038-102.784 54.038 19.63-114.454L0 120.83l114.918-16.698z" /></svg>
+//                      </div>
+//                      <blockquote>
+//                          <svg class="icon-quote icon-quote--open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><path class="icon-quote-fill" d="M68.2 163.1c-5.4-88 32-104 32-104s-.1-33 0-33.3C5.1 51.2 9.6 167.1 9.6 167.1v98.7h102.7V163.1s-30-.5-44.1 0zm173.4 0c-5.4-88 32-104 32-104s-.1-33 0-33.3C178.5 51.2 183 167.1 183 167.1v98.7h102.7V163.1s-30-.5-44.1 0z"/></svg>
+//                          <p>This was so clear and succinct, which is as rare as a white buffalo in this murky world of charting and risk management.</p>
+//                          <svg class="icon-quote icon-quote--close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><path class="icon-quote-fill" d="M227.1 128.5c5.4 88-32 104-32 104s.1 33 0 33.3c95.1-25.4 90.6-141.3 90.6-141.3V25.8H183v102.7s30 .5 44.1 0zm-173.4 0c5.4 88-32 104-32 104s.1 33 0 33.3c95.1-25.4 90.6-141.3 90.6-141.3V25.8H9.6v102.7s30 .5 44.1 0z"></path></svg>
+//                      </blockquote>
+//                      <hr/>
+//                      <cite>John A.</cite>
+//                  </div>
+//              </div>
+//          </div>
+//      </div>
+// </div>
+//
+// Styleguide 5.29
+.pullout-container {
+    padding: 0;
+
+    @include tablet {
+        padding: $baseline / 2 $baseline;
+    }
+
+    .pullout-container__content {
+        @extend .has-paper-background;
+        padding: $baseline ($baseline * 2);
+    }
+
+    .pullout-block__content {
+        background: none;
+    }
+    .pullout-block {
+        padding: 0;
+        .pullout-block__content {
+            padding: 0;
+        }
+        &:before {
+            content: none;
+        }
+    }
+    .image-row {
+        padding: 0;
+
+    }
+
+    .pullout-block:not(:last-child), .image-row:not(:last-child) {
+        margin-bottom: $baseline;
+    }
+}
+
+// Hero - No Text Background
+//
+// default - Default Hero
+//
+// markup:
+// <div class="product-hero hero--no-bg {$modifiers}">
+//      <div class="columns">
+//          <div class="column is-half">
+//              <h1>Oil</h1>
+//              <p><span>Real Vision Television is accredited by some of the most respected financial and educational institutions across the globe, including:</span></p>
+//          </div>
+//      </div>
+// </div>
+//
+// Styleguide 5.31
+.hero--no-bg {
+    background-image: url('#{$root}/images/components/product-hero-bg-5.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: $baseline;
+
+    &:before {
+        content: " ";
+        background-image: linear-gradient(45deg, rgba(58,68,76,1) 30%,rgba(58,68,76,0) 100%);
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        @include tablet {
+            background-image: linear-gradient(45deg, rgba(58,68,76,1) 25%,rgba(58,68,76,0) 75%);
+        }
+    }
+
+    .columns {
+        position: relative;
+        z-index: 10;
+    }
+
+    h1, h2, p {
+        color: #fff;
+    }
+
+    h1 {
+        margin-bottom: $baseline / 2;
+    }
+
+    @include tablet {
+        padding: $baseline ($baseline * 2) ($baseline * 2) ($baseline * 2);
+    }
+
+    p {
+        line-height: 1.3rem;
+        text-transform: none;
+
+        span {
+            background: transparent;
+            box-shadow: none;
+        }
+
+        @include tablet {
+            line-height: 2rem;
+
+            span {
+                font-size: $size-4;
+            }
+        }
+    }
+}
+
+
+// Post Hero
+//
+// default - Default Hero
+//
+// markup:
+// <div class="product-hero hero--no-bg post-hero {$modifiers}">
+//      <div class="columns">
+//          <div class="column is-half">
+//              <h1 class="post-hero__cat-title"><span>Big Stories</span></h1>
+//              <h1>Oil</h1>
+//              <p><span>Real Vision Television is accredited by some of the most respected financial and educational institutions across the globe, including:</span></p>
+//          </div>
+//      </div>
+//      <div class="columns">
+//          <div class="column has-text-centered has-text-left-tablet post-hero__published">
+//            Publishing on <span class="post-hero__pubdate">Aug 10 2017</span>
+//          </div>
+//          <div class="column has-text-centered has-text-right-tablet">
+//              <a href="#" class="button">Read More</a>
+//          </div>
+//      </div>
+// </div>
+//
+// Styleguide 5.32
+
+.post-hero {
+    .post-hero__published {
+        color: #779199;
+        text-transform: none;
+        font-weight: 700;
+        font-size: $size-5;
+        line-height: 36px;
+    }
+
+    .post-hero__pubdate {
+        text-transform: uppercase;
+    }
+
+    .button {
+        background: $color-torch-red;
+        color: $white;
+    }
+
+    .post-hero__cat-title {
+        margin-bottom: $baseline;
+        span {
+            font-size: $size-2;
+            color: $color-dark-gray;
+            background-color: white;
+            box-shadow: 10px 0 0 white, -10px 0 0 white;
+        }
+    }
+
+    @include tablet {
+        padding: $baseline ($baseline * 2);
+    }
+}
+
+// Hero - Bottom Align
+//
+// default - Default Hero
+//
+// markup:
+// <div class="product-hero hero-bottom {$modifiers}">
+//      <div class="columns hero-bottom__content is-mobile">
+//          <div class="column product-hero--heading">
+//              <h2><span>Leading Institutions give us the thumbs up too...</span></h2>
+//          </div>
+//      </div>
+// </div>
+//
+// Styleguide 5.33
+
+.hero-bottom {
+    background-image: url('#{$root}/images/components/product-hero-bg-5.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: $baseline;
+    min-height: 300px;
+    position: relative;
+
+    &__content {
+        position: absolute;
+        bottom: 0;
+        left: 10px;
+        padding: $baseline * 1.5;
+    }
+
+    h2 {
+        margin-bottom: 0;
+    }
+}
+
+// WYSIWYG
+//
+// markup:
+// <div class="wysiwyg-block">
+//      <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor at orci in sodales. In convallis urna et nisi dictum varius. Duis ornare felis vel nisi pretium, non lobortis ligula consequat.</h2><br/>
+//      <br/>
+//      <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor at orci in sodales. In convallis urna et nisi dictum varius. Duis ornare felis vel nisi pretium, non lobortis ligula consequat.</h3>
+// </div>
+//
+// Styleguide 5.34
+.wysiwyg-block {
+    padding: $baseline;
+    h2, h3 {
+        display: inline;
+        box-decoration-break: clone;
+        margin: 0;
+        margin-left: 10px;
+        padding-right: 10px;
+        font-weight: 800;
+    }
+    h2 {
+        line-height: 1.8rem;
+        font-size: $size-4;
+        color: $color-dark-gray;
+        background-color: white;
+        box-shadow: 10px 0 0 white, -10px 0 0 white;
+
+        @include tablet {
+            line-height: 3.1rem;
+            font-size: $size-2;
+        }
+    }
+    h3 {
+        line-height: 1.8rem;
+        font-size: $size-4;
+        color: white;
+        background-color: $color-dark-gray;
+        box-shadow: 10px 0 0 $color-dark-gray, -10px 0 0 $color-dark-gray;
+
+        @include tablet {
+            line-height: 2.4rem;
+            font-size: $size-3;
+        }
+    }
+}
+
+// Pagination
+//
+// markup:
+// <nav class="pagination is-medium" role="navigation" aria-label="pagination">
+//   <a class="pagination-previous button">Prev.</a>
+//   <a class="pagination-next button">Next</a>
+// </nav>
+//
+// Styleguide 5.35
+
+.pagination {
+    .button {
+        padding: 0 0.5rem;
+        color: #fff;
+        margin-left: 5px;
+
+        &:hover {
+            color: $color-torch-red
         }
     }
 }

@@ -1,2 +1,4 @@
 node_modules/*
 css/*
+docs/*
+package-lock.json

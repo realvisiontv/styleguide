@@ -2,16 +2,18 @@
   "name": "realvision-styles",
   "version": "0.1.0",
   "scripts": {
-    "start": "gulp watch"
+    "start": "gulp watch",
+    "build": "gulp"
   },
   "dependencies": {
-    "bulma": "^0.4.3",
+    "bulma": "0.5.1",
     "font-awesome": "^4.7.0"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
     "gulp-sass": "^3.1.0",
-    "sc5-styleguide": "2.0.1",
-    "sass-lint": "^1.10.2"
+    "sass-lint": "^1.10.2",
+    "sc5-styleguide": "2.0.1"
   }
 }

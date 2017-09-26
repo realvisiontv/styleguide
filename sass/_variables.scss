@@ -1,31 +1,49 @@
 // styleguide:ignore:start
 $baseline: 1.5rem !default;
 $root: '/styleguide' !default;
-$fa-font-path:   "#{$root}/fonts/font-awesome" !default;
+$tablet: 768px !default;
+$fa-font-path: "#{$root}/fonts/font-awesome" !default;
 // styleguide:ignore:end
 
 // Colors
 // 
+// $color-cyan - Cyan (TV brand colour)
+// $color-poppy - Poppy (Publications brand colour)
 // $color-torch-red - Torch Red
+// $color-orange - Orange
+// $color-purple - Purple
 // $color-bright-gray - Bright Gray
+// $color-spruce - Spruce
+// $color-rose - Rose
+// $color-dark-gray - Dark Gray
 // 
 // markup:
 // <div style="background: {$modifiers};" class="styleguide-color">{$modifiers}</div>
 // 
 // Styleguide 1.1
 $color-torch-red: #FE1135;
-$color-bright-gray: #363D4E;
-$text: $color-bright-gray;
+$color-bright-gray: #4e4e4e;
+$color-cyan: #31FEE8;
+$color-orange: #ffce4a;
+$color-purple: #a822ef;
+$color-spruce: #4c4c4c;
+$color-poppy: #f8931f;
+$color-rose: #ff21a6;
+$color-dark-gray: #232323;
+$color-black: #111;
+
+$text: $color-dark-gray !default;
+$brand: $color-cyan !default;
 
 // Heading Font 
 // 
 // Function Pro
 // 
 // Markup:
-// <div style="font-size: 2rem; line-height:1.5; font-family: monospace">(400) <span style="font-family: Function Pro;">The quick brown fox jumps over the lazy dog.</span></div>
-// <div style="font-size: 2rem; line-height:1.5; font-family: monospace">(700) <span style="font-family: Function Pro; font-weight: 700;">The quick brown fox jumps over the lazy dog.</span></div>
-// <div style="font-size: 2rem; line-height:1.5; font-family: monospace">(800) <span style="font-family: Function Pro; font-weight: 800;">The quick brown fox jumps over the lazy dog.</span></div>
-// <div style="font-size: 2rem; line-height:1.5; font-family: monospace">(900) <span style="font-family: Function Pro; font-weight: 900;">The quick brown fox jumps over the lazy dog.</span></div>
+// <div style="font-size: 2rem; line-height:1.5; font-family: monospace">(400) <span class="function-pro">The quick brown fox jumps over the lazy dog.</span></div>
+// <div style="font-size: 2rem; line-height:1.5; font-family: monospace">(700) <span class="function-pro" style="font-weight: 700;">The quick brown fox jumps over the lazy dog.</span></div>
+// <div style="font-size: 2rem; line-height:1.5; font-family: monospace">(800) <span class="function-pro" style="font-weight: 800;">The quick brown fox jumps over the lazy dog.</span></div>
+// <div style="font-size: 2rem; line-height:1.5; font-family: monospace">(900) <span class="function-pro" style="font-weight: 900;">The quick brown fox jumps over the lazy dog.</span></div>
 // 
 // Styleguide 1.3 
 @font-face {
@@ -76,13 +94,17 @@ $text: $color-bright-gray;
     font-style: normal;
 }
 
+.function-pro {
+    font-family: 'Function Pro' !important;
+}
+
 // Body Font 
 // 
 // Proxima Nova
 // 
 // Markup:
-// <div style="font-size: 2rem; line-height:1.5; font-family: monospace">(400) <span style="font-family: Proxima Nova;">The quick brown fox jumps over the lazy dog.</span></div>
-// <div style="font-size: 2rem; line-height:1.5; font-family: monospace">(700) <span style="font-family: Proxima Nova;font-weight: 700">The quick brown fox jumps over the lazy dog.</span></div>
+// <div style="font-size: 2rem; line-height:1.5; font-family: monospace">(400) <span class="proxima-nova" >The quick brown fox jumps over the lazy dog.</span></div>
+// <div style="font-size: 2rem; line-height:1.5; font-family: monospace">(700) <span class="proxima-nova" style="font-weight: 700">The quick brown fox jumps over the lazy dog.</span></div>
 // 
 // Styleguide 1.4 
 @font-face {
@@ -108,6 +130,10 @@ $text: $color-bright-gray;
     font-style: normal;
 }
 
+.proxima-nova {
+    font-family: 'Proxima Nova' !important;
+}
+
 // Grafitti Font 
 // 
 // Stampete
@@ -126,4 +152,23 @@ $text: $color-bright-gray;
     url('#{$root}/fonts/stampete/stampete.svg#stampete') format('svg');
     font-weight: 400;
     font-style: normal;
+}
+
+
+// Font weights
+// 
+// Markup:
+// <div class="function-pro font-weight-normal">Normal</div>
+// <div class="function-pro font-weight-bold">Bold</div>
+// <div class="function-pro font-weight-extrabold">Extra Bold</div>
+// 
+// Styleguide 1.6
+.font-weight-normal {
+    font-weight: 400 !important;
+}
+.font-weight-bold {
+    font-weight: 700 !important;
+}
+.font-weight-extrabold {
+    font-weight: 800 !important;
 }

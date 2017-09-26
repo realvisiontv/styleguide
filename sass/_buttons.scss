@@ -1,15 +1,95 @@
+// Link style button
+// 
+// default - Default
+// :hover   - Hover state
+// :focus   - Focus state
+// .is-primary - Primary colours
+// .is-transparent - Transparent
+// .no-border - No border
+// 
+// markup:
+// <button class="is-link {$modifiers}"><span>The quick brown fox</span><i class="fa fa-play" aria-hidden="true"></i></button>
+// <button class="is-link {$modifiers}"><i class="fa fa-play" aria-hidden="true"></i><span>The quick brown fox</span></button>
+//
+// Styleguide 4.1
+button.is-link,
+a.is-link {
+    background: #ddd;
+    border: 2px solid rgba(0,0,0,0.1);
+    border-radius: 2px;
+    display: inline-block;
+    text-decoration: underline;
+    text-decoration-skip: ink;
+    text-decoration-color: rgba(0,0,0,0.25);
+    font-size: $size-6;
+    padding: calc(1px + (#{$baseline} / 4)) ($baseline / 2);
+    margin-top: $baseline/2;
+    line-height: 1;
+
+    &.is-primary {
+        background: $brand;
+        border-color: transparent;
+        color: black !important;
+        font-family: 'Function Pro';
+        font-weight: 800;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    &.is-transparent {
+        background: transparent;
+    }
+
+    &.no-border {
+        border-color: transparent;
+    }
+
+    .fa {
+        font-size: inherit;
+        vertical-align: baseline;
+        margin-left: 1ex;
+        &:first-child {
+            margin-right: 1ex;
+            margin-left: 0;
+        }
+    }
+
+    .control & {
+        margin-top: 0;
+    }
+
+    &:not(.is-hidden) + .is-link {
+        margin-left: $baseline;
+    }
+}
+
 // Interaction button
 // 
 // Button for performing a non-navigation action.
 // 
-// .button  - Default button
+// default  - Default
 // :hover   - Hover state
 // :focus   - Focus state
+// .disabled - Disabled state
+// .is-large - Large
+// .is-primary - Primary colours
 // 
 // markup:
-// <button class="button {$modifiers}">The quick brown fox</button>
+// <button class="button {$modifiers}">The quick brown fox</button><br />
+// <button class="button {$modifiers}">
+//     <span>The quick brown fox</span>
+//     <span class="icon">
+//         <i class="fa fa-arrow-right" aria-hidden="true"></i>
+//     </span>
+// </button><br />
+// <button class="button {$modifiers}">
+//     <span class="icon">
+//         <i class="fa fa-arrow-left" aria-hidden="true"></i>
+//     </span>
+//     <span>The quick brown fox</span>
+// </button>
 //
-// Styleguide 4.1
+// Styleguide 4.2
 .button {
     background: $color-torch-red;
     border: 2px solid transparent;
@@ -18,23 +98,96 @@
     font-family: 'Function Pro', sans-serif;
     font-size: $size-5;
     font-weight: 700;
-    line-height: 1;
     padding: 1rem 2rem;
     text-transform: uppercase;
     transition: background 0.2s, border-color 0.2s, color 0.2s;
+    display: flex;
+    align-items: center;
 
     &:hover {
         background: transparent;
-        border-color: $color-torch-red;
+        border-color: rgba($color-torch-red, 0.5);
         color: $color-torch-red;
     }
 
     &:focus {
         background: transparent;
-        border-color: $color-torch-red;
+        border-color: rgba($color-torch-red, 0.5);
         color: $color-torch-red;
         text-decoration: underline;
         text-decoration-color: rgba($color-torch-red, 0.25);
+    }
+
+    &.is-large {
+        font-size: $size-3;
+        .icon .fa {
+            font-size: 28px;
+        }
+        .icon:first-child:not(:last-child) {
+            margin-left: 0;
+            margin-right: $baseline / 2;
+        }
+    
+        .icon:last-child:not(:first-child) {
+            margin-right: 0;
+            margin-left: $baseline / 2;
+        }
+    }
+    
+    &.disabled {
+        background: lightgrey;
+        cursor: default;
+        text-decoration: none;
+        &:hover, &:focus {
+            background: lightgrey;
+            border-color: transparent;
+            color: white;
+            text-decoration: none;
+        }
+    }
+    
+    &.is-primary {
+        background: $brand;
+        border-color: transparent;
+        color: black !important;
+        font-weight: 800;
+    }
+
+    .icon:first-child:not(:last-child) {
+        margin-left: 0;
+        margin-right: $baseline / 4;
+    }
+
+    .icon:last-child:not(:first-child) {
+        margin-right: 0;
+        margin-left: $baseline / 4;
+    }
+
+    form & {
+        font-size: $size-6;
+        padding: ($baseline / 4) ($baseline / 2);
+        &.is-large {
+            font-size: $size-4;
+            .icon .fa {
+                font-size: 21px;
+            }
+            .icon:first-child:not(:last-child) {
+                margin-right: $baseline / 4;
+            }
+        
+            .icon:last-child:not(:first-child) {
+                margin-left: $baseline / 4;
+            }
+        }
+        .icon:first-child:not(:last-child) {
+            margin-left: calc((#{$baseline} / 4) - 1px);
+            margin-right: $baseline / 8;
+        }
+    
+        .icon:last-child:not(:first-child) {
+            margin-right: calc((#{$baseline} / 4) - 1px);
+            margin-left: $baseline / 8;
+        }
     }
 }
 
@@ -50,7 +203,7 @@
 // markup:
 // <a href="#" class="button {$modifiers}">The quick brown fox</a>
 //
-// Styleguide 4.2
+// Styleguide 4.3
 a.button {
     display: inline-block;
     text-decoration: none;
@@ -75,18 +228,18 @@ a.button {
 //      </div>
 // </a>
 //
-// Styleguide 4.3
+// Styleguide 4.4
 .product-button {
     position: relative;
     display: inline-block;
     overflow: hidden;
     text-decoration: none;
-    @include transform(rotate(1deg));
+    transform: rotate(1deg);
 
     .button {
         background: transparent;
-        color: $color-torch-red;
-        border: 4px solid $color-torch-red;
+        color: $color-rose;
+        border: 4px solid $color-rose;
         font-weight: 800;
         padding: .5rem 1rem;
     }
@@ -105,14 +258,14 @@ a.button {
 
     &:hover {
         .button {
-            background: $color-torch-red;
+            background: $color-rose;
             color: #FFF;
         }
     }
 
     &:focus {
         .button {
-            background: $color-torch-red;
+            background: $color-rose;
             color: #FFF;
             text-decoration: underline;
             text-decoration-color: rgba(#FFF, 1);
@@ -120,7 +273,7 @@ a.button {
     }
 
     &.product-button-2 {
-        @include transform(rotate(-1deg));
+        transform: rotate(-1deg);
 
         &:after {
             top: auto;
@@ -138,7 +291,7 @@ a.button {
     }
 
     &.product-button-4 {
-        @include transform(rotate(-1deg));
+        transform: rotate(-1deg);
 
         &:after {
             top: auto;
@@ -151,19 +304,19 @@ a.button {
 
 // Icon button
 // 
-// .fa-info - More information
-// .fa-plus - Add
-// .fa-play - Play
 // .hide-text - Hidden label
-// .large - Larger version
+// .is-large - Larger version (deprecated .large also works)
 // .invert - Inverted colour
+// .is-transparent - Transparent
+// .is-primary - Primary
 // :hover - Hover state
 // :focus - Focus state
 // 
 // markup:
-// <button class="icon-button {$modifiers}">Some text</button>
+// <button class="icon-button {$modifiers}"><i class="fa fa-close" aria-hidden="true"></i>Single Line</button>
+// <button class="icon-button {$modifiers}"><i class="fa fa-close" aria-hidden="true"></i>Multiple<br/>Lines</button>
 //
-// Styleguide 4.4
+// Styleguide 4.5
 .icon-button {
     $size: 26px;
     $large: 40px;
@@ -171,38 +324,35 @@ a.button {
     background: transparent;
     border: 0;
     cursor: pointer;
-    font-family: 'Function Pro', sans-serif;
+    display: inline-block;
     position: relative;
-    padding: 0 10px 0 $size+10px;
-    line-height: $size;
+    padding: 5px 10px 6px $size+10px;
+    line-height: 1.2;
+    text-align: center;
 
-    &:before {
-        background: grey;
-        border: 2px solid grey;
+    .fa {
+        background: $color-bright-gray;
+        border: 2px solid $color-bright-gray;
         color: white;
-        content: 'v';
         display: flex;
-        height: $size;
+        height: 100%;
         width: $size;
         position: absolute;
         left: 0;
-        top: 50%;
-        transform: translateY(-50%);
+        top: 0;
         align-items: center;
         justify-content: center;
         font-size: 14px;
         transition: background 0.2s, color 0.2s;
         text-indent: 0;
-        @extend .fa;
     }
 
-    &.large {
+    &.large, // Deprecated
+    &.is-large {
         font-size: $size-5;
-        padding-left: $large+10px;
-        line-height: $large;
+        padding: 9px 10px 10px $large+10px;
 
-        &:before {
-            height: $large;
+        .fa {
             width: $large;
             font-size: 24px;
         }
@@ -210,41 +360,110 @@ a.button {
 
     &.hide-text {
         padding-left: 0;
-        font-size: 0;
+        text-indent: -1000em;
         width: $size;
         margin-right: 1ex;
-    }
 
-    &.invert {
-        background: grey;
-        color: white;
-
-        &:before {
-            background: white;
-            border: 2px solid white;
-            color: grey;
+        &.large {
+            width: $large;
         }
     }
 
-    &.fa-info:before {
-        @extend .fa-info;
+    &.invert {
+        background: $color-bright-gray;
+        color: white;
+
+        .fa {
+            background: white;
+            border: 2px solid $color-bright-gray;
+            color: $color-bright-gray;
+        }
+        &:hover,
+        &:focus {
+            background: white;
+            color: $color-bright-gray;
+
+            .fa {
+                background: $color-bright-gray;
+                border-color: $color-bright-gray;
+                color: white;
+            }
+        }
     }
 
-    &.fa-plus:before {
-        @extend .fa-plus;
+    &.is-transparent {
+        background: transparent;
+
+        .fa {
+            background: transparent;
+            border-color: white;
+        }
+        &:hover,
+        &:focus {
+            background: transparent;
+            color: $brand;
+
+            .fa {
+                background: transparent;
+                border-color: $brand;
+                color: $brand;
+            }
+        }
     }
 
-    &.fa-play:before {
-        @extend .fa-play;
+    &.is-primary {
+        background: $color-black;
+        color: $brand;
+
+        .fa {
+            background: $brand;
+            border-color: $brand;
+            color: $color-black;
+        }
+        &:hover,
+        &:focus {
+            background: $brand;
+            color: $color-black;
+
+            .fa {
+                background: $color-black;
+                border-color: $brand;
+                color: $brand;
+            }
+        }
     }
 
     &:hover,
     &:focus {
         text-decoration: underline;
 
-        &:before {
-            background: transparent;
-            border-color: white;
+        .fa {
+            background: white;
+            border-color: $color-bright-gray;
+            color: $color-bright-gray;
         }
     }
+}
+
+// Intercom launcher
+// 
+// markup:
+// <a class="contact-launcher"></a>
+//
+// Styleguide 4.6
+.contact-launcher {
+    $size: 46px;
+    $border: 2px;
+    display: block;
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    background: $color-bright-gray;
+    border: 2px solid white;
+    cursor: pointer;
+    box-shadow: 0 1px 6px rgba(0,0,0,.06),0 2px 32px rgba(0,0,0,.16);
+    text-align: center;
+    background: url('#{$root}/images/buttons/contact-launcher.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }

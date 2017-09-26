@@ -2,7 +2,9 @@ Real Vision Styleguide
 ===
 
 ## Online
-Visit https://realvisiontv.github.io/styleguide/
+The styleguide **develop** branch is automatically deployed to Heroku using Heroku-Github integration.
+
+Visit https://rv-styleguide.herokuapp.com/
 
 
 ## Locally
@@ -12,7 +14,7 @@ git clone git@github.com:realvisiontv/styleguide.git
 cd styleguide
 npm install
 npm start
-sensible-browser http://localhost:3000
+sensible-browser https://rv-styleguide.herokuapp.com/
 ```
 
 Requirements:

@@ -3,11 +3,6 @@
 // Styleguide 1.0
 @import 'variables';
 
-// Mixins
-// 
-// Styleguide 6.0
-@import 'mixins';
-
 // styleguide:ignore:start
 @import 'node_modules/font-awesome/scss/font-awesome';
 @import 'node_modules/bulma/sass/utilities/_all';
@@ -15,6 +10,10 @@
 @import 'node_modules/bulma/sass/base/_all';
 @import 'node_modules/bulma/sass/grid/_all';
 @import 'node_modules/bulma/sass/elements/other';
+@import 'node_modules/bulma/sass/elements/form';
+@import 'node_modules/bulma/sass/elements/icon';
+@import 'node_modules/bulma/sass/elements/image';
+@import 'node_modules/bulma/sass/components/dropdown';
 
 body {
     overflow-x: initial;
@@ -35,6 +34,10 @@ body {
     .section-markup-wrapper {
         overflow: hidden;
         box-sizing: border-box;
+    }
+    .container {
+        margin: 0 auto;
+        position: relative;
     }
 }
 // styleguide:ignore:end
@@ -58,3 +61,13 @@ body {
 //
 // Styleguide 5.0
 @import 'components';
+
+// Dashboard
+//
+// Styleguide 6.0
+@import 'dashboard';
+
+// Navigation
+//
+// Styleguide 7.0
+@import 'navigation';
