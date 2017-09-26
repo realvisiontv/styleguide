@@ -701,8 +701,9 @@
         }
 
         .content {
-            word-break: break-all;
+            overflow-wrap: break-word;
             word-wrap: break-word;
+            hyphens: auto;
         }
     }
     .avatar {
@@ -715,6 +716,9 @@
     .date {
         font-size: $size-7;
         margin-top: 0;
+    }
+    .comment--content {
+        width: calc(1.5rem - 100%);
     }
     .comment--reply {
         margin-bottom: 0;
