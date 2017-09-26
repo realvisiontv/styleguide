@@ -2101,20 +2101,24 @@
 // <div class="product-price-block">
 //     <div class="product-price-block__content">
 //         <div class="columns is-vcentered">
-//            <div class="column">
-//                <div class="product-price__title">REAL VISION <span class="product-price__product">PRO</span></div>
-//                <div class="product-price {$modifiers}">
-//                    <div class="product-price__header">
-//                        <div class="product-price__price">$49/</div>
-//                    </div>
-//                    <div class="product-price__body">
-//                        <div class="product-price__term">MONTH</div>
-//                        <div class="product-price__conditions">(BILLED ANNUALLY)</div>
-//                    </div>
-//                </div>
-//                <a href="#" class="button is-pulled-right is-hidden-tablet {$modifiers}">START YOUR FREE TRIAL NOW</a>
-//                <div class="product-price__subtitle is-pulled-left is-hidden-mobile">SIGN UP FOR A FREE TRIAL NOW</div>
-//                <a href="#" class="button is-pulled-right is-hidden-mobile {$modifiers}">START YOUR TRIAL</a>
+//             <div class="column">
+//                 <div class="columns">
+//                     <div class="column">
+//                         <div class="product-price__title">REAL VISION <span class="product-price__product">PRO</span></div>
+//                     </div>
+//                     <div class="column is-narrow product-price {$modifiers}">
+//                         <div class="product-price__header">
+//                             <div class="product-price__price">$49/</div>
+//                         </div>
+//                         <div class="product-price__body">
+//                             <div class="product-price__term">MONTH</div>
+//                             <div class="product-price__conditions">(BILLED ANNUALLY)</div>
+//                         </div>
+//                     </div>
+//                 </div>
+//                 <a href="#" class="button is-pulled-right is-hidden-tablet {$modifiers}">START YOUR FREE TRIAL NOW</a>
+//                 <div class="product-price__subtitle is-pulled-left is-hidden-mobile">SIGN UP FOR A FREE TRIAL NOW</div>
+//                 <a href="#" class="button is-pulled-right is-hidden-mobile {$modifiers}">START YOUR TRIAL</a>
 //            </div>
 //        </div>
 //    </div>
@@ -2150,11 +2154,9 @@
 
             @include tablet {
                 display:inline-block;
-                float:left;
                 margin: $baseline $baseline ($baseline / 3) 0;
                 padding: ($baseline / 3) $baseline ($baseline / 3) ($baseline * 2);
                 font-size: $size-5;
-                max-width: 50%;
             }
 
             @include desktop {
