@@ -478,6 +478,7 @@
 
         @include tablet {
             font-size: $size-4;
+            line-height: 1.75rem;
             margin: 2rem 0;
         }
     }
