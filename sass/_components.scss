@@ -473,11 +473,11 @@
 // Styleguide 5.9
 .pullout-block__text {
     p {
-        font-size: 1rem;
-        margin: .75rem 0;
+        font-size: $size-6;
+        margin: ($baseline / 2) 0;
 
         @include tablet {
-            font-size: $baseline;
+            font-size: $size-4;
             margin: 2rem 0;
         }
     }
