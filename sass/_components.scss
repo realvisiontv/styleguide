@@ -472,7 +472,15 @@
 //
 // Styleguide 5.9
 .pullout-block__text {
+    p {
+        font-size: $size-6;
+        margin: ($baseline / 2) 0;
 
+        @include tablet {
+            font-size: $size-4;
+            margin: 2rem 0;
+        }
+    }
 }
 
 // Rating
