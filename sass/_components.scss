@@ -838,7 +838,7 @@
     padding: $baseline ($baseline * 4);
     @include mobile {
         padding: $baseline ($baseline * 2);
-        background: #363e4e;
+        background: $color-dark-gray;
     }
 }
 
@@ -1862,7 +1862,7 @@
 // Styleguide 5.21
 .spacer-row {
     padding: .5rem;
-    background-color: #363e4e;
+    background-color: $color-dark-gray;
 
     @include tablet {
         padding: 1rem;
