@@ -1663,7 +1663,7 @@
     }
 
     .product-link {
-        background: url('#{$root}/images/overlays/white_splatter.png'), #363e4e;
+        background: url('#{$root}/images/overlays/white_splatter.png'), $color-dark-gray;
         background-size: cover;
         padding-top: 1rem;
         padding-bottom: 3.5rem;
@@ -1699,7 +1699,7 @@
             height: 20px;
             border-left: 1.25rem solid transparent;
             border-right: 1.25rem solid transparent;
-            border-top: 1rem solid $text;
+            border-top: 1rem solid $color-dark-gray;
         }
 
         &:hover {
