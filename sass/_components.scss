@@ -2441,7 +2441,7 @@
 
 // Pullout Container
 //
-// A container that contains pullout blocks and card grids
+// A paper background container that holds other components
 //
 // Default - default
 //
@@ -2552,11 +2552,34 @@
     }
     .image-row {
         padding: 0;
-
     }
 
-    .pullout-block:not(:last-child), .image-row:not(:last-child) {
-        margin-bottom: $baseline;
+    .pullout-block, .image-row,
+    .endorsements, .product-price-block,
+    .cta-block, .email-capture,
+    .card-grid, .media-block {
+        background: transparent;
+        background-image: none;
+        padding: 0;
+
+        .product-price-block__content {
+            background-image: none;
+        }
+
+        .columns:last-child {
+            margin-bottom: 0;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: $baseline;
+        }
+    }
+
+    .embed-container {
+
+        &:not(:last-child) {
+            margin-bottom: $baseline;
+        }
     }
 }
 
