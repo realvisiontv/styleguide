@@ -72,9 +72,6 @@
 // Hero Image
 //
 // A large (optional) clickable hero image.
-//
-// default  - Default
-// .deferredLoading - Lazy loaded image, container assumes 16:9 image size
 // 
 // markup:
 // <div class="hero-image">
@@ -85,23 +82,11 @@
 //
 // Styleguide 5.2
 .hero-image {
-    position: relative;
+    background: $color-bright-gray;
 
     img {
         display: block;
         width:100%;
-    }
-
-    &.deferredLoading {
-        background: $color-bright-gray;
-        padding-top: 56.25%;
-        position: relative;
-
-        img {
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
     }
 }
 
