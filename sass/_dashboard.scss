@@ -36,7 +36,7 @@
 //     <article class="column content-tile loading">
 //         <div class="image"></div>
 //     </article>
-//     <article class="column content-tile">
+//     <article class="column content-tile watched">
 //         <a href="#">
 //             <div class="image">
 //                 <img src="http://lorempixel.com/320/180/abstract"  />
@@ -56,12 +56,41 @@
 //                         <button class="icon-button hide-text"><i class="fa fa-info" aria-hidden="true"></i>More Information</button>
 //                     </div>
 //                 </div>
-//                 <div class="theme">Insight</div>
+//                 <div class="theme">Watched</div>
 //                 <blockquote>
 //                     Go you good thing Thats the best rant I've heard for a short while.
 //                     <cite>Mark M.</cite>
 //                 </blockquote>
 //                 <div class="icon"><i class="fa fa-book" aria-hidden="true"></i></div>
+//             </div>
+//         </a>
+//     </article>
+//     <article class="column content-tile">
+//         <a href="#">
+//             <div class="image">
+//                 <img src="http://lorempixel.com/320/180/people"  />
+//                 <div class="spinner-container">
+//                     <div class="spinner"></div>
+//                 </div>
+//             </div>
+//             <div class="content">
+//                 <div class="title">
+//                     <div class="subheading">
+//                         <div class="is-pulled-left">Think Piece</div>
+//                         <div class="is-pulled-right">36:00</div>
+//                     </div>
+//                     <h1>Looking Under the Hood Australia</h1>
+//                     <div class="buttons">
+//                         <button class="icon-button hide-text"><i class="fa fa-info" aria-hidden="true"></i>More Information</button>
+//                         <button class="icon-button hide-text"><i class="fa fa-plus" aria-hidden="true"></i>Add to My List</button>
+//                     </div>
+//                 </div>
+//                 <div class="theme">Insight</div>
+//                 <blockquote>
+//                     Go you good thing Thats the best rant I've heard for a short while.
+//                     <cite>Mark M.</cite>
+//                 </blockquote>
+//                 <div class="icon"><i class="fa fa-play" aria-hidden="true"></i></div>
 //             </div>
 //         </a>
 //     </article>
@@ -178,7 +207,7 @@
         position: absolute;
         bottom: $padding;
         left: $padding;
-        padding-top: 3px;
+        padding-top: 4px;
         padding-right: 6px;
         width: calc(70% - #{$padding});
         overflow: hidden;
@@ -187,7 +216,7 @@
     .progress {
         background-color: $color-rose;
         font-size: 0;
-        height: 2px;
+        height: 3px;
         position: absolute;
         top: 0;
         left: 0;
@@ -240,11 +269,11 @@
         right: $padding;
         width: calc(30% - #{$padding});
         text-align: center;
-        font-family: 'Function Pro';
         height: 16%;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        font-size: $size-7;
     }
 
     blockquote,
@@ -336,6 +365,12 @@
                 border-color: $text;
                 background: #fff;
             }
+        }
+    }
+
+    &.watched {
+        .theme {
+            background-color: $color-rose;
         }
     }
 }
