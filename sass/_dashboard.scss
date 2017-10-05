@@ -46,7 +46,7 @@
 //             </div>
 //             <div class="content">
 //                 <div class="title">
-//                     <div class="progress" style="width: 75%">You've watched 75%</div>
+//                     <div class="progress">You've watched 75%<div class="bar" style="width: 75%"></div></div>
 //                     <div class="subheading">
 //                         <div class="is-pulled-left">Think Piece</div>
 //                         <div class="is-pulled-right">1:15:00</div>
@@ -207,19 +207,26 @@
         position: absolute;
         bottom: $padding;
         left: $padding;
-        padding-top: 4px;
+        padding-top: 5px;
         padding-right: 6px;
         width: calc(70% - #{$padding});
         overflow: hidden;
     }
 
     .progress {
-        background-color: $color-rose;
+        background-color: $color-dark-gray;
         font-size: 0;
-        height: 3px;
+        height: 4px;
         position: absolute;
         top: 0;
         left: 0;
+        right: 0;
+        .bar {
+            background: $brand;
+            height: 2px;
+            margin-top: 1px;
+            width: 0;
+        }
     }
 
     h1 {
@@ -370,7 +377,8 @@
 
     &.watched {
         .theme {
-            background-color: $color-rose;
+            color: $brand;
+            font-weight: 700;
         }
     }
 }
