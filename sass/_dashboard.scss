@@ -600,8 +600,14 @@
 //                 <h2>Latest Video</h2>
 //                 <h1>Looking under the hood gold</h1>
 //                 <p>Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
-//                 <button class="icon-button large hide-text info"><i class="fa fa-info" aria-hidden="true"></i>More information</button>
-//                 <button class="icon-button invert large play"><i class="fa fa-play" aria-hidden="true"></i>24:45</button>
+//                 <div class="columns is-mobile is-marginless-mobile buttons">
+//                     <div class="column is-narrow-desktop">
+//                         <button class="icon-button large hide-text info"><i class="fa fa-info" aria-hidden="true"></i>More information</button>
+//                     </div>
+//                     <div class="column is-narrow-desktop">
+//                         <button class="icon-button invert large play"><i class="fa fa-play" aria-hidden="true"></i>24:45</button>
+//                     </div>
+//                 </div>
 //             </a>
 //         </article>
 //         <article class="column is-3 is-offset-0-5">
@@ -610,8 +616,14 @@
 //                 <h2>Latest Video</h2>
 //                 <h1>Looking under the hood gold</h1>
 //                 <p>Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
-//                 <button class="icon-button large hide-text info"><i class="fa fa-info" aria-hidden="true"></i>More information</button>
-//                 <button class="icon-button invert large play is-hidden-touch"><i class="fa fa-play" aria-hidden="true"></i>24:45</button>
+//                 <div class="columns is-mobile is-marginless-mobile buttons">
+//                     <div class="column">
+//                         <button class="icon-button large hide-text info"><i class="fa fa-info" aria-hidden="true"></i>More information</button>
+//                     </div>
+//                     <div class="column is-hidden-desktop">
+//                         <button class="icon-button invert large play"><i class="fa fa-play" aria-hidden="true"></i>24:45</button>
+//                     </div>
+//                 </div>
 //             </a>
 //         </article>
 //         <article class="column is-3 is-offset-0-5">
@@ -620,8 +632,14 @@
 //                 <h2>Latest Video</h2>
 //                 <h1>Looking under the hood gold</h1>
 //                 <p>Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
-//                 <button class="icon-button large hide-text info"><i class="fa fa-info" aria-hidden="true"></i>More information</button>
-//                 <button class="icon-button invert large play is-hidden-touch"><i class="fa fa-play" aria-hidden="true"></i>24:45</button>
+//                 <div class="columns is-mobile is-marginless-mobile buttons">
+//                     <div class="column">
+//                         <button class="icon-button large hide-text info"><i class="fa fa-info" aria-hidden="true"></i>More information</button>
+//                     </div>
+//                     <div class="column is-hidden-desktop">
+//                         <button class="icon-button invert large play"><i class="fa fa-play" aria-hidden="true"></i>24:45</button>
+//                     </div>
+//                 </div>
 //             </a>
 //         </article>
 //     </div>
@@ -630,8 +648,9 @@
 // Styleguide 6.3
 .tri-hero {
     $rotation: 25deg;
-    $scaleFactorNarrowColumn: 1.73;
-    $scaleFactorWideColumn: 1.52;
+    $scaleFactorNarrowColumn: 1.65;
+    $scaleFactorWideColumn: 1.58;
+    $height: 490px;
     // Scale calculation - cos(θ) + max{(W/H),(H/W)} * sin(θ)
 
     padding: 0;
@@ -646,8 +665,8 @@
         margin: 0;
         position: relative;
         @include desktop {
-            height: 548px;
-            margin-top: -548px;
+            height: $height;
+            margin-top: -$height;
         }
 
         a {
@@ -656,9 +675,7 @@
         }
 
         .icon-button.play {
-            position: absolute;
-            bottom: $baseline;
-            left: $baseline;
+            margin-right: $baseline;
 
             &:before {
                 bottom: 0;
@@ -666,20 +683,7 @@
             }
         }
 
-        .is-5 {
-            padding: $baseline;
-
-            h1 {
-                max-height: 3em;
-            }
-
-            @supports (-webkit-line-clamp: 3) {
-                h1 {
-                    -webkit-line-clamp: 3;
-                }
-            }
-        }
-
+        .is-5,
         .is-3 {
             padding-bottom: $baseline;
             padding-left: 1.25rem;
@@ -689,8 +693,9 @@
             justify-content: flex-end;
 
             h1 {
-                font-size: 2rem;
+                font-size: $size-3;
             }
+
             p {
                 max-height: 1.5em;
                 margin: 0 0 $baseline/2;
@@ -699,6 +704,23 @@
             @supports (-webkit-line-clamp: 1) {
                 p {
                     -webkit-line-clamp: 1;
+                }
+            }
+        }
+
+        .is-5 {
+
+            h1 {
+                font-size: $size-1;
+            }
+
+            p {
+                max-height: 3em;
+            }
+
+            @supports (-webkit-line-clamp: 2) {
+                p {
+                    -webkit-line-clamp: 2;
                 }
             }
         }
@@ -743,9 +765,13 @@
     @include desktop {
         padding: 0 ($baseline / 2);
 
+        .is-offset-0-5-desktop {
+            margin-left: 5.25%;
+        }
+
         .images {
             overflow: hidden;
-            height: 548px;
+            height: $height;
             margin-bottom: 0;
 
             article {
@@ -756,32 +782,25 @@
 
                 &:after {
                     content: "";
-                    background: linear-gradient(to top, rgba(0,0,0,.85) 17%, rgba(0, 0, 0, 0) 45%);
+                    background: linear-gradient(to top, rgba(0,0,0,.75) 14%, transparent 65%);
                     display: block;
                     position: absolute;
                     top: 0;
                     bottom: 0;
                     left: 0;
                     right: 0;
-                    transform: translate(-31%, 4%) rotate(-$rotation) scaleX(2);
+                    transform: rotate(-$rotation) scaleX(2) scaleY(#{1/$scaleFactorNarrowColumn});
                 }
 
                 &.is-7 {
                     transform: rotate($rotation) scale($scaleFactorWideColumn);
                     &:after {
-                        background: linear-gradient(to bottom, rgba(0,0,0,.85) 23%, rgba(0, 0, 0, 0) 77%);
-                        transform: rotate(-$rotation) translate(-4%, 13%) ;
+                        transform: rotate(-$rotation) scaleX(2) scaleY(#{1/$scaleFactorWideColumn});
                     }
                 }
 
                 &:last-child {
                     transform: translateX(40%) rotate($rotation) scale($scaleFactorNarrowColumn);
-                }
-
-                &:hover {
-                    img {
-                        opacity: 0;
-                    }
                 }
             }
 
@@ -789,14 +808,14 @@
                 position: absolute;
                 top: 0;
                 left: 0;
-                transform: rotate(-$rotation) scale(#{1/$scaleFactorNarrowColumn}) translate(-62%, -51.6%);
+                transform: rotate(-$rotation) scale(#{1/$scaleFactorNarrowColumn}) translate(-62%, -47.8%);
                 height: 100%;
                 max-width: none;
                 width: auto;
             }
 
             .is-7 img {
-                transform: rotate(-$rotation) scale(#{1/$scaleFactorWideColumn}) translate(-16%, -11.2%) ;
+                transform: rotate(-$rotation) scale(#{1/$scaleFactorWideColumn}) translate(-21%, -21.2%);
             }
         }
 
@@ -809,14 +828,7 @@
                 }
             }
 
-            .content article.is-5 {
-                background-image: linear-gradient(transparent 0, lightgray 0), linear-gradient(transparent 0, white 0), linear-gradient(transparent 0, lightgray 0), linear-gradient(transparent 0, white 0), linear-gradient(transparent 0, lightgray 0), linear-gradient(transparent 0, white 0), linear-gradient(lightgray 100%, transparent 0);
-                background-repeat: no-repeat;
-                background-size: 100% 1.5rem, 50% 3.5rem, 100% 5rem, 100% 9rem, 100% 10.5rem, 80% 21rem, 100% 100%;
-                background-position: 0.75rem 0, 0.75rem 0, 0.75rem 0;
-            }
-
-            .content article.is-3 {
+            .content article {
                 background-image: linear-gradient(transparent 0, lightgray 0), linear-gradient(transparent 0, white 0), linear-gradient(transparent 0, lightgray 0), linear-gradient(transparent 0, white 0), linear-gradient(transparent 0, lightgray 0), linear-gradient(transparent 0, white 0), linear-gradient(lightgray 100%, transparent 0);
                 background-repeat: no-repeat;
                 background-size: 100% 62%, 50% 66%, 100% 69%, 90% 82%, 100% 85%, 69% 96%, 100% 100%;
@@ -841,13 +853,19 @@
 
     @include widescreen {
         .images img {
-            transform: rotate(-$rotation) scale(#{1/$scaleFactorNarrowColumn}) translate(-62%, -49%);
+            transform: rotate(-$rotation) scale(#{1/$scaleFactorNarrowColumn}) translate(-61%, -45%);
+        }
+        .images .is-7 img {
+            transform: rotate(-$rotation) scale(#{1/$scaleFactorWideColumn}) translate(-16%, -13.5%) ;
         }
     }
 
     @include fullhd {
         .images img {
-            transform: rotate(-$rotation) scale(#{1/$scaleFactorNarrowColumn}) translate(-62%, -46.3%);
+            transform: rotate(-$rotation) scale(#{1/$scaleFactorNarrowColumn}) translate(-57%, -42%);
+        }
+        .images .is-7 img {
+            transform: rotate(-$rotation) scale(#{1/$scaleFactorWideColumn}) translate(-8%, -6%) ;
         }
     }
 
@@ -889,14 +907,22 @@
             }
         }
 
+        .buttons {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 0 ($baseline / 2);
+            margin: 0;
+        }
+
         .content {
             margin: 0;
             width: 300%;
 
             article:after {
                 content: "";
-                background: linear-gradient(to top, rgba(0,0,0,.85) calc(40px + (2.5% * 16/9)), rgba(0, 0, 0, 0) calc(70px + (2.5% * 16/9))), linear-gradient(to right, rgba(0,0,0,.85) 0, rgba(0, 0, 0, 0) 50%);
-                background: linear-gradient(to top, $color-dark-gray calc(40px + (5% * 16/9)), $color-dark-gray calc(40px + (5% * 16/9)), transparent calc(41px + (5% * 16/9))), linear-gradient(to right, rgba(0,0,0,.85) 0, rgba(0, 0, 0, 0) 75%);
+                background: linear-gradient(to top, $color-dark-gray 67px, transparent 67px), linear-gradient(to right, rgba(0,0,0,.85) 0, rgba(0, 0, 0, 0) 75%);
                 display: block;
                 position: absolute;
                 top: 0;
@@ -905,7 +931,7 @@
                 right: 0;
             }
 
-            .column {
+            > .column {
                 float: left;
                 padding: 0;
                 position: relative;
@@ -923,7 +949,7 @@
             a {
                 display: block;
                 height: 0;
-                padding: ($baseline / 2) ($baseline / 2) calc(61.25% - (#{$baseline} / 2) + 40px);
+                padding: ($baseline / 2) ($baseline / 2) calc(56.25% - #{$baseline / 2} + 67px);
                 position: relative;
                 z-index: 1;
             }
@@ -946,17 +972,10 @@
 
             .icon-button.info,
             .icon-button.play {
-                position: absolute;
-                bottom: (2.5% * 16/9);
-                left: 2.5%;
-                width: 45%;
+                width: 100%;
             }
 
             .icon-button.info {
-                left: auto;
-                right: 2.5%;
-                margin-right: 0;
-
                 i {
                     width: 100%;
                 }
