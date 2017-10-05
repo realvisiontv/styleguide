@@ -601,10 +601,10 @@
 //                 <h1>Looking under the hood gold</h1>
 //                 <p>Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
 //                 <div class="columns is-mobile is-marginless-mobile buttons">
-//                     <div class="column">
+//                     <div class="column is-narrow-desktop">
 //                         <button class="icon-button large hide-text info"><i class="fa fa-info" aria-hidden="true"></i>More information</button>
 //                     </div>
-//                     <div class="column has-text-right">
+//                     <div class="column is-narrow-desktop">
 //                         <button class="icon-button invert large play"><i class="fa fa-play" aria-hidden="true"></i>24:45</button>
 //                     </div>
 //                 </div>
@@ -693,8 +693,9 @@
             justify-content: flex-end;
 
             h1 {
-                font-size: 2rem;
+                font-size: $size-3;
             }
+
             p {
                 max-height: 1.5em;
                 margin: 0 0 $baseline/2;
@@ -708,6 +709,11 @@
         }
 
         .is-5 {
+
+            h1 {
+                font-size: $size-1;
+            }
+
             p {
                 max-height: 3em;
             }
@@ -907,6 +913,7 @@
             left: 0;
             right: 0;
             padding: 0 ($baseline / 2);
+            margin: 0;
         }
 
         .content {
