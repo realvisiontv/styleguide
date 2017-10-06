@@ -2291,6 +2291,57 @@
             }
         }
     }
+
+    &.product-price-block--variant-1 {
+        a.button {
+            margin: $baseline / 2 0 $baseline / 3 0;
+            box-shadow: 2px 2px 5px rgba(0,0,0,.8);
+            font-size: $size-4;
+            border-radius: 5px;
+
+            @include tablet {
+                font-size: 1.3rem;
+                padding: $baseline / 3;
+                margin: 0 2.5rem 0 0;
+            }
+
+            @include desktop {
+                padding: $baseline / 2;
+            }
+        }
+
+        .product-price-block__content {
+
+            .product-price__title {
+                margin-bottom: 0;
+            }
+
+            .product-price__cta {
+                text-align: center;
+
+                @include tablet {
+                    text-align: right;
+                }
+            }
+
+            .product-price__subtitle {
+                font-size: 1.1rem;
+                margin-bottom: $baseline;
+                padding-left: 0;
+                text-align: center;
+
+                @include tablet {
+                    padding-left: $baseline * 2;
+                    margin-top: .25rem;
+                    text-align: left;
+                }
+
+                @include desktop {
+                    padding-left: $baseline * 3;
+                }
+            }
+        }
+    }
 }
 
 // Media Block
