@@ -578,80 +578,64 @@
 //
 // markup:
 // <div class="container tri-hero loading">
-//     <div class="columns images is-hidden-touch">
-//         <article class="column is-7"></article>
-//         <article class="column is-2-5"></article>
-//         <article class="column is-2-5"></article>
-//     </div>
-//     <div class="columns content">
-//         <article class="column is-5"><a></a></article>
-//         <article class="column is-3 is-offset-0-5 is-hidden-touch"><a></a></article>
-//         <article class="column is-3 is-offset-0-5 is-hidden-touch"><a></a></article>
+//     <div class="columns">
+//         <article class="column is-6"><a class="inner-container"><div class="content"></div></a></article>
+//         <article class="column is-3"><a class="inner-container"><div class="content"></div></a></article>
+//         <article class="column is-3"><a class="inner-container"><div class="content"></div></a></article>
 //     </div>
 // </div>
 // <div class="container tri-hero">
-//     <div class="columns images is-hidden-touch">
-//         <article class="column is-7">
-//             <img src="https://lorempixel.com/1600/900/people" />
-//         </article>
-//         <article class="column is-2-5">
-//             <img src="https://lorempixel.com/1600/900/city" />
-//         </article>
-//         <article class="column is-2-5">
-//             <img src="https://lorempixel.com/1600/900/abstract" />
-//         </article>
-//         <map name="map">
-//             <area shape="poly" coords="0, 0,   738,0,  510,490,  0,490" href="#"></area>
-//             <area shape="poly" coords="739, 0, 1138,0, 911,490,  511,490" href="#"></area>
-//             <area shape="poly" coords="1139,0, 1344,0, 1344,490, 912,490" href="#"></area>
-//         </map>
-//         <img class="imagemap" usemap="#map" src="#{$root}/images/dashboard/image_map.gif" style="" />
-//     </div>
-//     <div class="columns content">
-//         <article class="column is-5">
-//             <img src="https://lorempixel.com/1600/900/people" class="is-hidden-desktop" />
-//             <a>
-//                 <h2 class="is-size-3-tablet-only">Latest Video</h2>
-//                 <h1 class="is-size-3-mobile is-size-1-tablet-only">Looking under the hood gold</h1>
-//                 <p class="is-size-4-tablet-only is-hidden-mobile">Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
-//                 <div class="columns is-mobile is-marginless-mobile buttons">
-//                     <div class="column is-narrow-desktop">
-//                         <button class="icon-button invert large hide-text info is-primary"><i class="fa fa-info" aria-hidden="true"></i>More information</button>
-//                     </div>
-//                     <div class="column is-narrow-desktop">
-//                         <button class="icon-button invert large play is-primary"><i class="fa fa-play" aria-hidden="true"></i>24:45</button>
+//     <div class="columns">
+//         <article class="column is-6">
+//             <a class="inner-container" href="#">
+//                 <img src="https://lorempixel.com/1600/900/people" />
+//                 <div class="content">
+//                     <h2 class="is-size-3-tablet-only">Latest Video</h2>
+//                     <h1 class="is-size-3-mobile is-size-1-tablet-only">Looking under the hood gold</h1>
+//                     <p class="is-size-4-tablet-only is-hidden-mobile">Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
+//                     <div class="columns is-mobile is-marginless-mobile buttons">
+//                         <div class="column is-narrow-desktop">
+//                             <button class="icon-button invert large hide-text info is-primary"><i class="fa fa-info" aria-hidden="true"></i>More information</button>
+//                         </div>
+//                         <div class="column is-narrow-desktop">
+//                             <button class="icon-button invert large play is-primary"><i class="fa fa-play" aria-hidden="true"></i>24:45</button>
+//                         </div>
 //                     </div>
 //                 </div>
 //             </a>
 //         </article>
-//         <article class="column is-3 is-offset-0-5-desktop">
-//             <img src="https://lorempixel.com/1600/900/city" class="is-hidden-desktop" />
-//             <a>
-//                 <h2 class="is-size-4-tablet-only is-hidden-desktop">Latest Video</h2>
-//                 <h1 class="is-size-3-mobile is-size-1-tablet-only">Looking under the hood gold</h1>
-//                 <p class="is-size-4-tablet-only is-hidden-mobile">Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
-//                 <div class="columns is-mobile is-marginless-mobile buttons">
-//                     <div class="column">
-//                         <button class="icon-button invert large hide-text info is-primary"><i class="fa fa-info" aria-hidden="true"></i>More information</button>
-//                     </div>
-//                     <div class="column is-hidden-desktop">
-//                         <button class="icon-button invert large play is-primary"><i class="fa fa-play" aria-hidden="true"></i>24:45</button>
+//         <article class="column is-3">
+//             <a class="inner-container" href="#">
+//                 <img src="https://lorempixel.com/1600/900/city" />
+//                 <div class="content">
+//                     <h2 class="is-size-3-tablet-only">Latest Video</h2>
+//                     <h1 class="is-size-3-mobile is-size-1-tablet-only">Looking under the hood gold</h1>
+//                     <p class="is-size-4-tablet-only is-hidden-mobile">Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
+//                     <div class="columns is-mobile is-marginless-mobile buttons">
+//                         <div class="column is-narrow-desktop">
+//                             <button class="icon-button invert large hide-text info is-primary"><i class="fa fa-info" aria-hidden="true"></i>More information</button>
+//                         </div>
+//                         <div class="column is-narrow-desktop">
+//                             <button class="icon-button invert large play is-primary"><i class="fa fa-play" aria-hidden="true"></i>24:45</button>
+//                         </div>
 //                     </div>
 //                 </div>
 //             </a>
 //         </article>
-//         <article class="column is-3 is-offset-0-5-desktop">
-//             <img src="https://lorempixel.com/1600/900/city" class="is-hidden-desktop" />
-//             <a>
-//                 <h2 class="is-size-4-tablet-only is-hidden-desktop">Latest Video</h2>
-//                 <h1 class="is-size-3-mobile is-size-1-tablet-only">Looking under the hood gold</h1>
-//                 <p class="is-size-4-tablet-only is-hidden-mobile">Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
-//                 <div class="columns is-mobile is-marginless-mobile buttons">
-//                     <div class="column">
-//                         <button class="icon-button invert large hide-text info is-primary"><i class="fa fa-info" aria-hidden="true"></i>More information</button>
-//                     </div>
-//                     <div class="column is-hidden-desktop">
-//                         <button class="icon-button invert large play is-primary"><i class="fa fa-play" aria-hidden="true"></i>24:45</button>
+//         <article class="column is-3">
+//             <a class="inner-container" href="#">
+//                 <img src="https://lorempixel.com/1600/900/abstract" />
+//                 <div class="content">
+//                     <h2 class="is-size-3-tablet-only">Latest Video</h2>
+//                     <h1 class="is-size-3-mobile is-size-1-tablet-only">Looking under the hood gold</h1>
+//                     <p class="is-size-4-tablet-only is-hidden-mobile">Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
+//                     <div class="columns is-mobile is-marginless-mobile buttons">
+//                         <div class="column is-narrow-desktop">
+//                             <button class="icon-button invert large hide-text info is-primary"><i class="fa fa-info" aria-hidden="true"></i>More information</button>
+//                         </div>
+//                         <div class="column is-narrow-desktop">
+//                             <button class="icon-button invert large play is-primary"><i class="fa fa-play" aria-hidden="true"></i>24:45</button>
+//                         </div>
 //                     </div>
 //                 </div>
 //             </a>
@@ -661,53 +645,27 @@
 //
 // Styleguide 6.3
 .tri-hero {
-
-    @function scaleFactor($rotation, $width, $height) {
-        // Scale calculation - cos(θ) + max{(W/H),(H/W)} * sin(θ)
-        @return cos($rotation) + max($width / $height, $height / $width) * sin($rotation);
-    }
-
-    $hoverScale: 1.05;
-    $rotation: 25deg;
+    $skew: 25deg;
     $height: 350px;
-    $widthNarrow: 200px;
-    $widthWide: 560px;
-    $scaleFactorNarrowColumn: scaleFactor($rotation, $widthNarrow, $height);
-    $scaleFactorWideColumn: scaleFactor($rotation, $widthWide, $height);
 
     padding: 0;
+    overflow: hidden;
 
-    .columns {
+
+    > .columns {
         margin: 0;
-    }
-
-    .images {
-        margin-top: 0;
-    }
-
-    .imagemap {
-        position: absolute !important;
-        transform: nonee !important;
-        height: 100%e !important;
-        width: 100%e !important;
-    }
-
-    .content {
         color: white;
         overflow: hidden;
         margin: 0;
         position: relative;
-        pointer-events: none;
 
-        .hover {
-            a {
-                text-decoration: underline;
-            }
-        }
-
-        a {
+        .content {
             color: white;
             text-decoration: none;
+            position: absolute;
+            max-height: 100%;
+            bottom: 0;
+            overflow: hidden; // For Internet Explorer
         }
 
         button {
@@ -723,8 +681,7 @@
             }
         }
 
-        .is-5,
-        .is-3 {
+        article {
             padding-bottom: $baseline;
             padding-left: 1.25rem;
             padding-right: 1rem;
@@ -744,23 +701,6 @@
             @supports (-webkit-line-clamp: 1) {
                 p {
                     -webkit-line-clamp: 1;
-                }
-            }
-        }
-
-        .is-5 {
-
-            h1 {
-                font-size: $size-1;
-            }
-
-            p {
-                max-height: 3em;
-            }
-
-            @supports (-webkit-line-clamp: 2) {
-                p {
-                    -webkit-line-clamp: 2;
                 }
             }
         }
@@ -804,167 +744,295 @@
 
     @include desktop {
 
-        .content {
-            height: $height;
-            margin-top: -$height;
-        }
-
         .buttons .column {
             padding: 0;
         }
 
-        .images {
+        > .columns {
             overflow: hidden;
             height: $height;
             margin-bottom: 0;
+            width: 117%;
 
             article {
+                $skew: -25deg;
                 background: grey;
                 overflow: hidden;
                 position: relative;
-                transform: translate(-17%) rotate($rotation) scale($scaleFactorNarrowColumn);
+                transform: skew($skew);
+                transform-origin: top;
+                transition: width 0.2s;
 
-                &:after {
-                    content: "";
-                    background: linear-gradient(to top, rgba(0,0,0,.75) 14%, transparent 65%);
-                    display: block;
+                .inner-container {
                     position: absolute;
                     top: 0;
-                    bottom: 0;
                     left: 0;
-                    right: 0;
-                    transform: rotate(-$rotation) scaleX(2) scaleY(#{1/$scaleFactorNarrowColumn});
-                }
+                    transform: skew(-$skew);
+                    transform-origin: bottom;
+                    transition: transform 0.2s;
+                    height: 100%;
+                    width: 100%;
+                    padding: $baseline;
 
-                &.is-7 {
-                    transform: rotate($rotation) scale($scaleFactorWideColumn);
                     &:after {
-                        transform: rotate(-$rotation) scaleX(2) scaleY(#{1/$scaleFactorWideColumn});
+                        content: "";
+                        background: linear-gradient(to top, rgba(0,0,0,.75) 14%, transparent 65%);
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        width: 100vw;
+                    }
+
+                    img {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        max-width: none;
+                        width: auto;
+                        transition: transform 0.2s;
+                    }
+
+                    .content {
+                        bottom: $baseline;
+                        transition: left 0.2s, width 0.2s;
+                        z-index: 1;
+                    }
+
+                    h1, h2 {
+                        transition: font-size 0.2s;
+                    }
+
+                    h2,
+                    .icon-button.play {
+                        transition: opacity 0.2s;
+                    }
+
+                    p {
+                        transition: max-height 0.2s, -webkit-line-clamp 0.2s;
                     }
                 }
 
-                &:last-of-type {
-                    transform: translateX(26%) rotate($rotation) scale($scaleFactorNarrowColumn);
+                &.is-6 {
+                    .inner-container .content {
+                        left: 24%;
+                        width: calc(100% - 7rem);
+                    }
+
+                    &:last-of-type {
+                        .inner-container .content {
+                            width: calc(100% - 9.5rem);
+                        }
+                    }
+
+                    .inner-container img {
+                        transform: translateX(8.3%) scale(1.175);
+                    }
+
+                    h2,
+                    .icon-button.play {
+                        opacity: 1;
+                    }
+
+                    h2 {
+                        font-size: $size-4;
+                    }
+
+                    h1 {
+                        font-size: $size-1;
+                    }
+
+                    p {
+                        max-height: 3em;
+                    }
+
+                    @supports (-webkit-line-clamp: 2) {
+                        p {
+                            -webkit-line-clamp: 2;
+                        }
+                    }
+                }
+                &.is-3 {
+                    .inner-container .content {
+                        left: 30%;
+                        width: calc(100% - #{$baseline * 2});
+                    }
+
+                    .inner-container img {
+                        transform: translateX(-14%);
+                    }
+
+                    h2,
+                    .icon-button.play {
+                        opacity: 0;
+                    }
+
+                    h1 {
+                        font-size: $size-3;
+                        word-break: break-word;
+                    }
+                }
+
+                &.is-3:first-of-type,
+                &.is-6:first-of-type {
+                    .inner-container {
+                        transform-origin: top;
+
+                        .content {
+                            left: $baseline;
+                            width: calc(100% - #{$baseline * 2} - 112px);
+                        }
+                    }
                 }
             }
 
-            img {
-                position: absolute;
-                top: 0;
-                left: 0;
-                transform: rotate(-$rotation) scale(#{1/$scaleFactorNarrowColumn}) translate(-59%, -42%);
-                transition: transform 0.2s;
-                height: 100%;
-                max-width: none;
-                width: auto;
-            }
-
             .hover img {
-                transform: rotate(-$rotation) scale(#{1/$scaleFactorNarrowColumn}) translate(-59%, -42%) scale($hoverScale);
-            }
-
-            .is-7 img {
-                transform: rotate(-$rotation) scale(#{1/$scaleFactorWideColumn}) translate(-8%, -6.2%);
-            }
-
-            .is-7.hover img {
-                transform: rotate(-$rotation) scale(#{1/$scaleFactorWideColumn}) translate(-8%, -6.2%) scale($hoverScale);
+                transform: skew(-$skew);
             }
         }
 
         &.loading {
-            .images article {
-                background: lightgray;
+            background: lightgray;
+            article {
+                background-color: lightgray;
 
-                &:after {
-                    display: none;
+                .inner-container {
+                    .content {
+                        background-image: linear-gradient(transparent 0, lightgray 0), linear-gradient(transparent 0, white 0), linear-gradient(transparent 0, lightgray 0), linear-gradient(transparent 0, white 0), linear-gradient(transparent 0, lightgray 0), linear-gradient(transparent 0, white 0), linear-gradient(lightgray 100%, transparent 0);
+                        background-repeat: no-repeat;
+                        background-size: 100% 62%, 50% 66%, 100% 69%, 86% 82%, 100% 85%, 69% 96%, 100% 100%;
+                        background-position: $baseline 0, $baseline 0, $baseline 0;
+                        height: 100%;
+
+                        &:after {
+                            content: "";
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            bottom: 0;
+                            left: 0;
+                            background-image: linear-gradient(90deg, transparent 0%, rgba(lightgray, 0.5) 50%, transparent 100%);
+                            background-repeat: no-repeat;
+                            background-size: 400px 100%;
+                            background-position: -100% 0;
+                            animation: tri-hero-loading 2.5s infinite;
+                        }
+                    }
+
+                    &:after {
+                        background: lightgray;
+                    }
                 }
-            }
 
-            .content article {
-                background-image: linear-gradient(transparent 0, lightgray 0), linear-gradient(transparent 0, white 0), linear-gradient(transparent 0, lightgray 0), linear-gradient(transparent 0, white 0), linear-gradient(transparent 0, lightgray 0), linear-gradient(transparent 0, white 0), linear-gradient(lightgray 100%, transparent 0);
-                background-repeat: no-repeat;
-                background-size: 100% 62%, 50% 66%, 100% 69%, 86% 82%, 100% 85%, 69% 96%, 100% 100%;
-                background-position: $baseline 0, $baseline 0, $baseline 0;
-            }
-
-            &:after {
-                content: "";
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                background-image: linear-gradient(90deg, transparent 0%, rgba(lightgray, 0.5) 50%, transparent 100%);
-                background-repeat: no-repeat;
-                background-size: 400px 100%;
-                background-position: -100% 0;
-                animation: tri-hero-loading 2.5s infinite;
+                &.is-6 {
+                    .inner-container .content {
+                        background-position: 0 0, 0 0, 0 0;
+                    }
+                }
             }
         }
     }
 
     @include widescreen {
         $height: 420px;
-        $widthNarrow: 240px;
-        $widthWide: 672px;
-        $scaleFactorNarrowColumn: scaleFactor($rotation, $widthNarrow, $height);
-        $scaleFactorWideColumn: scaleFactor($rotation, $widthWide, $height);
 
-        .content {
+        > .columns {
             height: $height;
-            margin-top: -$height;
 
-            .is-offset-0-5-desktop {
-                padding-left: 0;
+            article {
+                &.is-6 {
+                    .inner-container .content {
+                        left: 20%;
+                        width: calc(100% - 7rem);
+                    }
+
+                    &:last-of-type {
+                        .inner-container .content {
+                            width: calc(100% - 9.5rem);
+                        }
+                    }
+
+                    .inner-container img {
+                        transform: translateX(8.3%) scale(1.175);
+                    }
+                }
+                &.is-3 {
+                    .inner-container .content {
+                        left: 26%;
+                        width: calc(100% - 3.5rem);
+                    }
+
+                    .inner-container img {
+                        transform: translateX(-14%);
+                    }
+                }
+
+                &.is-3:first-of-type,
+                &.is-6:first-of-type {
+                    .inner-container .content {
+                        width: calc(100% - 204px);
+                    }
+                }
+
+                &.is-3:last-of-type {
+                    .inner-container .content {
+                        width: calc(100% - 6.5rem);
+                    }
+                }
             }
-        }
-
-        .images {
-            height: $height;
-        }
-        .images img {
-            transform: rotate(-$rotation) scale(#{1/$scaleFactorNarrowColumn}) translate(-57%, -42%);
-        }
-        .images .hover img {
-            transform: rotate(-$rotation) scale(#{1/$scaleFactorNarrowColumn}) translate(-57%, -42%) scale($hoverScale);
-        }
-
-        .images .is-7 img {
-            transform: rotate(-$rotation) scale(#{1/$scaleFactorWideColumn}) translate(-8%, -6%);
-        }
-        .images .is-7.hover img {
-            transform: rotate(-$rotation) scale(#{1/$scaleFactorWideColumn}) translate(-8%, -6%) scale($hoverScale);
         }
     }
 
     @include fullhd {
         $height: 490px;
-        $widthNarrow: 280px;
-        $widthWide: 784px;
-        $scaleFactorNarrowColumn: scaleFactor($rotation, $widthNarrow, $height);
-        $scaleFactorWideColumn: scaleFactor($rotation, $widthWide, $height);
 
-        .content {
+        > .columns {
             height: $height;
-            margin-top: -$height;
-        }
 
-        .images {
-            height: $height;
-        }
-        .images img {
-            transform: rotate(-$rotation) scale(#{1/$scaleFactorNarrowColumn}) translate(-57%, -42%);
-        }
-        .images .hover img {
-            transform: rotate(-$rotation) scale(#{1/$scaleFactorNarrowColumn}) translate(-57%, -42%) scale($hoverScale);
-        }
+            article {
+                &.is-6 {
+                    .inner-container .content {
+                        left: 18%;
+                        width: calc(100% - 7rem);
+                    }
 
-        .images .is-7 img {
-            transform: rotate(-$rotation) scale(#{1/$scaleFactorWideColumn}) translate(-8%, -6%);
-        }
-        .images .is-7.hover img {
-            transform: rotate(-$rotation) scale(#{1/$scaleFactorWideColumn}) translate(-8%, -6%) scale($hoverScale);
+                    &:last-of-type {
+                        .inner-container .content {
+                            width: calc(100% - 10rem);
+                        }
+                    }
+
+                    .inner-container img {
+                        transform: translateX(8.3%) scale(1.175);
+                    }
+                }
+                &.is-3 {
+                    .inner-container .content {
+                        left: 24%;
+                        width: calc(100% - 3.5rem);
+                    }
+
+                    .inner-container img {
+                        transform: translateX(-14%);
+                    }
+                }
+
+                &.is-3:first-of-type,
+                &.is-6:first-of-type {
+                    .inner-container .content {
+                        width: calc(100% - 222px);
+                    }
+                }
+
+                &.is-3:last-of-type {
+                    .inner-container .content {
+                        width: calc(100% - 6.5rem);
+                    }
+                }
+            }
         }
     }
 
@@ -987,21 +1055,14 @@
         &.loading {
             .content {
                 width: 100%;
+                background-image: linear-gradient(90deg, transparent 0%, rgba(lightgray, 0.5) 50%, transparent 100%), linear-gradient(transparent 0, lightgray 0), linear-gradient(transparent 0, white 0), linear-gradient(transparent 0, lightgray 0), linear-gradient(transparent 0, white 0), linear-gradient(lightgray 100%, transparent 0);
+                background-repeat: no-repeat;
+                background-size: 200px 100%, 100% 0.75rem, 47% 2.5rem, 100% 4rem, 80% 8rem, 100% 100%;
+                background-position: -100% 0, 0 0, 0.75rem 0, 0 0, 0.75rem 0, 0 0;
+                animation: tri-hero-loading-mobile 2.5s infinite;
 
-                article {
-                    background-image: linear-gradient(90deg, transparent 0%, rgba(lightgray, 0.5) 50%, transparent 100%), linear-gradient(transparent 0, lightgray 0), linear-gradient(transparent 0, white 0), linear-gradient(transparent 0, lightgray 0), linear-gradient(transparent 0, white 0), linear-gradient(lightgray 100%, transparent 0);
-                    background-repeat: no-repeat;
-                    background-size: 200px 100%, 100% 0.75rem, 47% 2.5rem, 100% 4rem, 80% 8rem, 100% 100%;
-                    background-position: -100% 0, 0 0, 0.75rem 0, 0 0, 0.75rem 0, 0 0;
-                    animation: tri-hero-loading-mobile 2.5s infinite;
-                }
-
-                article:after {
+                &:after {
                     display: none;
-                }
-
-                .column {
-                    width: 100%;
                 }
             }
         }
@@ -1015,7 +1076,7 @@
             margin: 0;
         }
 
-        .content {
+        > .columns {
             margin: 0;
             width: 300%;
 
@@ -1045,7 +1106,7 @@
                 z-index: 0;
             }
 
-            a {
+            .content {
                 display: block;
                 height: 0;
                 // Firefox interprets percentage scale here strangely - use vw units instead
