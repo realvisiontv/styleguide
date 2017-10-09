@@ -600,52 +600,58 @@
 //         <article class="column is-2-5">
 //             <img src="https://lorempixel.com/1600/900/abstract" />
 //         </article>
+//         <map name="map">
+//             <area shape="poly" coords="0, 0,   738,0,  510,490,  0,490" href="#"></area>
+//             <area shape="poly" coords="739, 0, 1138,0, 911,490,  511,490" href="#"></area>
+//             <area shape="poly" coords="1139,0, 1344,0, 1344,490, 912,490" href="#"></area>
+//         </map>
+//         <img class="imagemap" usemap="#map" src="#{$root}/images/dashboard/image_map.gif" style="" />
 //     </div>
 //     <div class="columns content">
 //         <article class="column is-5">
-//             <img src="https://lorempixel.com/1600/900/people" class="is-hidden-touch" />
+//             <img src="https://lorempixel.com/1600/900/people" class="is-hidden-desktop" />
 //             <a>
-//                 <h2>Latest Video</h2>
-//                 <h1>Looking under the hood gold</h1>
-//                 <p>Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
+//                 <h2 class="is-size-3-tablet-only">Latest Video</h2>
+//                 <h1 class="is-size-3-mobile is-size-1-tablet-only">Looking under the hood gold</h1>
+//                 <p class="is-size-4-tablet-only is-hidden-mobile">Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
 //                 <div class="columns is-mobile is-marginless-mobile buttons">
 //                     <div class="column is-narrow-desktop">
-//                         <button class="icon-button large hide-text info"><i class="fa fa-info" aria-hidden="true"></i>More information</button>
+//                         <button class="icon-button invert large hide-text info is-primary"><i class="fa fa-info" aria-hidden="true"></i>More information</button>
 //                     </div>
 //                     <div class="column is-narrow-desktop">
-//                         <button class="icon-button invert large play"><i class="fa fa-play" aria-hidden="true"></i>24:45</button>
+//                         <button class="icon-button invert large play is-primary"><i class="fa fa-play" aria-hidden="true"></i>24:45</button>
 //                     </div>
 //                 </div>
 //             </a>
 //         </article>
-//         <article class="column is-3 is-offset-0-5">
-//             <img src="https://lorempixel.com/1600/900/city" class="is-hidden-touch" />
+//         <article class="column is-3 is-offset-0-5-desktop">
+//             <img src="https://lorempixel.com/1600/900/city" class="is-hidden-desktop" />
 //             <a>
-//                 <h2>Latest Video</h2>
-//                 <h1>Looking under the hood gold</h1>
-//                 <p>Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
+//                 <h2 class="is-size-4-tablet-only is-hidden-desktop">Latest Video</h2>
+//                 <h1 class="is-size-3-mobile is-size-1-tablet-only">Looking under the hood gold</h1>
+//                 <p class="is-size-4-tablet-only is-hidden-mobile">Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
 //                 <div class="columns is-mobile is-marginless-mobile buttons">
 //                     <div class="column">
-//                         <button class="icon-button large hide-text info"><i class="fa fa-info" aria-hidden="true"></i>More information</button>
+//                         <button class="icon-button invert large hide-text info is-primary"><i class="fa fa-info" aria-hidden="true"></i>More information</button>
 //                     </div>
 //                     <div class="column is-hidden-desktop">
-//                         <button class="icon-button invert large play"><i class="fa fa-play" aria-hidden="true"></i>24:45</button>
+//                         <button class="icon-button invert large play is-primary"><i class="fa fa-play" aria-hidden="true"></i>24:45</button>
 //                     </div>
 //                 </div>
 //             </a>
 //         </article>
-//         <article class="column is-3 is-offset-0-5">
-//             <img src="https://lorempixel.com/1600/900/abstract" class="is-hidden-touch" />
+//         <article class="column is-3 is-offset-0-5-desktop">
+//             <img src="https://lorempixel.com/1600/900/city" class="is-hidden-desktop" />
 //             <a>
-//                 <h2>Latest Video</h2>
-//                 <h1>Looking under the hood gold</h1>
-//                 <p>Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
+//                 <h2 class="is-size-4-tablet-only is-hidden-desktop">Latest Video</h2>
+//                 <h1 class="is-size-3-mobile is-size-1-tablet-only">Looking under the hood gold</h1>
+//                 <p class="is-size-4-tablet-only is-hidden-mobile">Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
 //                 <div class="columns is-mobile is-marginless-mobile buttons">
 //                     <div class="column">
-//                         <button class="icon-button large hide-text info"><i class="fa fa-info" aria-hidden="true"></i>More information</button>
+//                         <button class="icon-button invert large hide-text info is-primary"><i class="fa fa-info" aria-hidden="true"></i>More information</button>
 //                     </div>
 //                     <div class="column is-hidden-desktop">
-//                         <button class="icon-button invert large play"><i class="fa fa-play" aria-hidden="true"></i>24:45</button>
+//                         <button class="icon-button invert large play is-primary"><i class="fa fa-play" aria-hidden="true"></i>24:45</button>
 //                     </div>
 //                 </div>
 //             </a>
@@ -655,16 +661,35 @@
 //
 // Styleguide 6.3
 .tri-hero {
+
+    @function scaleFactor($rotation, $width, $height) {
+        // Scale calculation - cos(θ) + max{(W/H),(H/W)} * sin(θ)
+        @return cos($rotation) + max($width / $height, $height / $width) * sin($rotation);
+    }
+
+    $hoverScale: 1.05;
     $rotation: 25deg;
-    $scaleFactorNarrowColumn: 1.65;
-    $scaleFactorWideColumn: 1.58;
-    $height: 490px;
-    // Scale calculation - cos(θ) + max{(W/H),(H/W)} * sin(θ)
+    $height: 350px;
+    $widthNarrow: 200px;
+    $widthWide: 560px;
+    $scaleFactorNarrowColumn: scaleFactor($rotation, $widthNarrow, $height);
+    $scaleFactorWideColumn: scaleFactor($rotation, $widthWide, $height);
 
     padding: 0;
 
+    .columns {
+        margin: 0;
+    }
+
     .images {
         margin-top: 0;
+    }
+
+    .imagemap {
+        position: absolute;
+        transform: none;
+        height: 100%;
+        width: 100%;
     }
 
     .content {
@@ -672,14 +697,21 @@
         overflow: hidden;
         margin: 0;
         position: relative;
-        @include desktop {
-            height: $height;
-            margin-top: -$height;
+        pointer-events: none;
+
+        .hover {
+            a {
+                text-decoration: underline;
+            }
         }
 
         a {
             color: white;
             text-decoration: none;
+        }
+
+        button {
+            pointer-events: auto;
         }
 
         .icon-button.play {
@@ -771,10 +803,14 @@
     }
 
     @include desktop {
-        padding: 0 ($baseline / 2);
 
-        .is-offset-0-5-desktop {
-            margin-left: 5.25%;
+        .content {
+            height: $height;
+            margin-top: -$height;
+        }
+
+        .buttons .column {
+            padding: 0;
         }
 
         .images {
@@ -786,7 +822,7 @@
                 background: grey;
                 overflow: hidden;
                 position: relative;
-                transform: rotate($rotation) scale($scaleFactorNarrowColumn);
+                transform: translate(-17%) rotate($rotation) scale($scaleFactorNarrowColumn);
 
                 &:after {
                     content: "";
@@ -807,8 +843,8 @@
                     }
                 }
 
-                &:last-child {
-                    transform: translateX(40%) rotate($rotation) scale($scaleFactorNarrowColumn);
+                &:last-of-type {
+                    transform: translateX(26%) rotate($rotation) scale($scaleFactorNarrowColumn);
                 }
             }
 
@@ -816,14 +852,23 @@
                 position: absolute;
                 top: 0;
                 left: 0;
-                transform: rotate(-$rotation) scale(#{1/$scaleFactorNarrowColumn}) translate(-62%, -47.8%);
+                transform: rotate(-$rotation) scale(#{1/$scaleFactorNarrowColumn}) translate(-59%, -42%);
+                transition: transform 0.2s;
                 height: 100%;
                 max-width: none;
                 width: auto;
             }
 
+            .hover img {
+                transform: rotate(-$rotation) scale(#{1/$scaleFactorNarrowColumn}) translate(-59%, -42%) scale($hoverScale);
+            }
+
             .is-7 img {
-                transform: rotate(-$rotation) scale(#{1/$scaleFactorWideColumn}) translate(-21%, -21.2%);
+                transform: rotate(-$rotation) scale(#{1/$scaleFactorWideColumn}) translate(-8%, -6.2%);
+            }
+
+            .is-7.hover img {
+                transform: rotate(-$rotation) scale(#{1/$scaleFactorWideColumn}) translate(-8%, -6.2%) scale($hoverScale);
             }
         }
 
@@ -839,8 +884,8 @@
             .content article {
                 background-image: linear-gradient(transparent 0, lightgray 0), linear-gradient(transparent 0, white 0), linear-gradient(transparent 0, lightgray 0), linear-gradient(transparent 0, white 0), linear-gradient(transparent 0, lightgray 0), linear-gradient(transparent 0, white 0), linear-gradient(lightgray 100%, transparent 0);
                 background-repeat: no-repeat;
-                background-size: 100% 62%, 50% 66%, 100% 69%, 90% 82%, 100% 85%, 69% 96%, 100% 100%;
-                background-position: 0 0, 0 0, 0 0;
+                background-size: 100% 62%, 50% 66%, 100% 69%, 86% 82%, 100% 85%, 69% 96%, 100% 100%;
+                background-position: $baseline 0, $baseline 0, $baseline 0;
             }
 
             &:after {
@@ -860,20 +905,66 @@
     }
 
     @include widescreen {
-        .images img {
-            transform: rotate(-$rotation) scale(#{1/$scaleFactorNarrowColumn}) translate(-61%, -45%);
+        $height: 420px;
+        $widthNarrow: 240px;
+        $widthWide: 672px;
+        $scaleFactorNarrowColumn: scaleFactor($rotation, $widthNarrow, $height);
+        $scaleFactorWideColumn: scaleFactor($rotation, $widthWide, $height);
+
+        .content {
+            height: $height;
+            margin-top: -$height;
+
+            .is-offset-0-5-desktop {
+                padding-left: 0;
+            }
         }
+
+        .images {
+            height: $height;
+        }
+        .images img {
+            transform: rotate(-$rotation) scale(#{1/$scaleFactorNarrowColumn}) translate(-57%, -42%);
+        }
+        .images .hover img {
+            transform: rotate(-$rotation) scale(#{1/$scaleFactorNarrowColumn}) translate(-57%, -42%) scale($hoverScale);
+        }
+
         .images .is-7 img {
-            transform: rotate(-$rotation) scale(#{1/$scaleFactorWideColumn}) translate(-16%, -13.5%) ;
+            transform: rotate(-$rotation) scale(#{1/$scaleFactorWideColumn}) translate(-8%, -6%);
+        }
+        .images .is-7.hover img {
+            transform: rotate(-$rotation) scale(#{1/$scaleFactorWideColumn}) translate(-8%, -6%) scale($hoverScale);
         }
     }
 
     @include fullhd {
+        $height: 490px;
+        $widthNarrow: 280px;
+        $widthWide: 784px;
+        $scaleFactorNarrowColumn: scaleFactor($rotation, $widthNarrow, $height);
+        $scaleFactorWideColumn: scaleFactor($rotation, $widthWide, $height);
+
+        .content {
+            height: $height;
+            margin-top: -$height;
+        }
+
+        .images {
+            height: $height;
+        }
         .images img {
             transform: rotate(-$rotation) scale(#{1/$scaleFactorNarrowColumn}) translate(-57%, -42%);
         }
+        .images .hover img {
+            transform: rotate(-$rotation) scale(#{1/$scaleFactorNarrowColumn}) translate(-57%, -42%) scale($hoverScale);
+        }
+
         .images .is-7 img {
-            transform: rotate(-$rotation) scale(#{1/$scaleFactorWideColumn}) translate(-8%, -6%) ;
+            transform: rotate(-$rotation) scale(#{1/$scaleFactorWideColumn}) translate(-8%, -6%);
+        }
+        .images .is-7.hover img {
+            transform: rotate(-$rotation) scale(#{1/$scaleFactorWideColumn}) translate(-8%, -6%) scale($hoverScale);
         }
     }
 
@@ -957,7 +1048,8 @@
             a {
                 display: block;
                 height: 0;
-                padding: ($baseline / 2) ($baseline / 2) calc(56.25% - #{$baseline / 2} + 67px);
+                // Firefox interprets percentage scale here strangely - use vw units instead
+                padding: ($baseline / 2) ($baseline / 2) calc(56.25vw - #{$baseline / 2} + 67px);
                 position: relative;
                 z-index: 1;
             }
