@@ -207,8 +207,8 @@ footer {
                 text-transform: uppercase;
                 transition: color 200ms ease-in;
 
-                &:hover {
-                    color: $color-rose;
+                &:hover, &:active {
+                    color: $color-red-ribbon;
                 }
             }
         }
