@@ -686,10 +686,10 @@
     }
 
     .imagemap {
-        position: absolute;
-        transform: none;
-        height: 100%;
-        width: 100%;
+        position: absolute !important;
+        transform: nonee !important;
+        height: 100%e !important;
+        width: 100%e !important;
     }
 
     .content {
