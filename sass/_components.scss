@@ -2953,7 +2953,10 @@
                 }
 
                 i {
-                    font-size: $size-3;
+                    font-size: $size-4;
+                    @include tablet {
+                        font-size: $size-3;
+                    }
                 }
             }
         }
@@ -2962,8 +2965,7 @@
     &.is-featured {
         .podcast-episode__content {
             border: 1px solid $color-dark-gray;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px $color-dark-gray inset;
+            box-shadow: 0px 5px 15px $color-dark-gray;
         }
     }
 }
