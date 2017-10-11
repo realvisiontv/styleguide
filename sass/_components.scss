@@ -2923,6 +2923,7 @@
 //
 // Styleguide 5.36
 .podcast-episode {
+    padding: $baseline / 2;
     .podcast-episode__detail {
         h1 {
             font-size: $size-4;
@@ -2933,6 +2934,23 @@
         }
         small {
             font-size: $size-6;
+        }
+    }
+
+    .podcast-episode__player--links {
+        padding: $baseline / 3;
+
+        a {
+            color: $color-dark-gray;
+            transition: color 250ms ease-in-out;
+
+            &:hover {
+                color: $color-red-ribbon;
+            }
+
+            i {
+                font-size: $size-3;
+            }
         }
     }
 
