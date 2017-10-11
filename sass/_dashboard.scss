@@ -593,7 +593,7 @@
 //                     <h2 class="is-size-3-tablet-only">Latest Video</h2>
 //                     <h1 class="is-size-3-mobile is-size-1-tablet-only">Looking under the hood gold</h1>
 //                     <p class="is-size-4-tablet-only is-hidden-mobile">Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
-//                     <div class="columns is-mobile is-marginless-mobile buttons">
+//                     <div class="columns is-mobile is-marginless buttons">
 //                         <div class="column is-narrow-desktop">
 //                             <button class="icon-button invert large hide-text info is-primary"><i class="fa fa-info" aria-hidden="true"></i>More information</button>
 //                         </div>
@@ -611,7 +611,7 @@
 //                     <h2 class="is-size-3-tablet-only">Latest Video</h2>
 //                     <h1 class="is-size-3-mobile is-size-1-tablet-only">Looking under the hood gold</h1>
 //                     <p class="is-size-4-tablet-only is-hidden-mobile">Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
-//                     <div class="columns is-mobile is-marginless-mobile buttons">
+//                     <div class="columns is-mobile is-marginless buttons">
 //                         <div class="column is-narrow-desktop">
 //                             <button class="icon-button invert large hide-text info is-primary"><i class="fa fa-info" aria-hidden="true"></i>More information</button>
 //                         </div>
@@ -629,7 +629,7 @@
 //                     <h2 class="is-size-3-tablet-only">Latest Video</h2>
 //                     <h1 class="is-size-3-mobile is-size-1-tablet-only">Looking under the hood gold</h1>
 //                     <p class="is-size-4-tablet-only is-hidden-mobile">Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
-//                     <div class="columns is-mobile is-marginless-mobile buttons">
+//                     <div class="columns is-mobile is-marginless buttons">
 //                         <div class="column is-narrow-desktop">
 //                             <button class="icon-button invert large hide-text info is-primary"><i class="fa fa-info" aria-hidden="true"></i>More information</button>
 //                         </div>
@@ -645,7 +645,7 @@
 //
 // Styleguide 6.3
 .tri-hero {
-    $skew: 25deg;
+    $skew: -25deg;
     $height: 350px;
 
     padding: 0;
@@ -755,7 +755,6 @@
             width: 117%;
 
             article {
-                $skew: -25deg;
                 background: grey;
                 overflow: hidden;
                 position: relative;
