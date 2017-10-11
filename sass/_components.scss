@@ -30,7 +30,7 @@
         width: 0.5rem;
         height: 0.5rem;
         path {
-            fill: $color-torch-red;
+            fill: $color-red-ribbon;
         }
     }
 
@@ -314,7 +314,7 @@
         a {
             text-decoration: none;
             font-weight: bold;
-            color: $color-torch-red;
+            color: $color-red-ribbon;
             transition: color 300ms ease-in-out;
 
             &:hover {
@@ -351,7 +351,7 @@
             width: 1rem;
             height: 1rem;
             path {
-                fill: $color-torch-red;
+                fill: $color-red-ribbon;
             }
         }
 
@@ -447,7 +447,7 @@
 
                 &:before {
                     content: '';
-                    background: $color-torch-red;
+                    background: $color-red-ribbon;
                     height: .65rem;
                     width: .65rem;
                     margin-top: 7px;
@@ -521,7 +521,7 @@
     }
     a {
         &.inactive {
-            color: $color-torch-red;
+            color: $color-red-ribbon;
         }
 
         i {
@@ -535,7 +535,7 @@
             background: rgba(255, 255, 255, 0.2);
 
             div {
-                background: $color-rose;
+                background: $color-red-ribbon;
             }
         }
 
@@ -753,7 +753,7 @@
             margin-left: 1em;
 
             &.inactive {
-                color: $color-torch-red;
+                color: $color-red-ribbon;
             }
 
             i {
@@ -763,7 +763,7 @@
         }
         .badge {
             font-weight: 700;
-            background-color: $color-rose;
+            background-color: $color-red-ribbon;
             color: $color-dark-gray;
         }
     }
@@ -913,7 +913,7 @@
 
     strong {
         font-style: normal;
-        color: $color-torch-red;
+        color: $color-red-ribbon;
     }
 
     h2, h3 {
@@ -2079,7 +2079,7 @@
 
     .email-capture--error {
         display: none;
-        color: $color-torch-red;
+        color: $color-red-ribbon;
         margin-bottom: 0;
     }
 
@@ -2748,8 +2748,14 @@
     }
 
     .button {
-        background: $color-torch-red;
+        background: $color-red-ribbon;
         color: $white;
+
+        &:hover, &:active {
+            background: $color-dark-gray;
+            color: $color-red-ribbon;
+            border-color: $color-red-ribbon;
+        }
     }
 
     .post-hero__cat-title {
@@ -2866,7 +2872,7 @@
         margin-left: 5px;
 
         &:hover {
-            color: $color-torch-red
+            color: $color-red-ribbon
         }
     }
 }

@@ -506,7 +506,7 @@
     > .columns {
         margin: 0;
         padding: 0 ($baseline/2);
-        border-bottom: 2px solid $color-rose;
+        border-bottom: 2px solid $color-red-ribbon;
     }
     .column {
         padding: 0;
@@ -665,20 +665,20 @@
             }
     
             &:hover {
-                color: $color-rose;
+                color: $color-red-ribbon;
             }
 
             &.is-active {
-                color: $color-rose;
+                color: $color-red-ribbon;
             }
         }
 
         &.is-active a {
-            color: $color-rose;
+            color: $color-red-ribbon;
         }
 
         &.current-menu-parent a {
-            color: $color-rose;
+            color: $color-red-ribbon;
         }
 
         &.is-open {
@@ -839,13 +839,13 @@
             transition: color 200ms ease-in-out;
 
             &:hover {
-                color: $color-rose;
+                color: $color-red-ribbon;
             }
         }
     }
 
     span {
-        color: $color-rose;
+        color: $color-red-ribbon;
     }
 
 }
