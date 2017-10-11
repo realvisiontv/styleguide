@@ -2895,8 +2895,8 @@
 //              </div>
 //              <div class="column is-10-tablet is-12-mobile">
 //                  <div class="podcast-episode__detail">
-//                      <h1>1 - 2017 SUMMER SERIES: MILTON'S MAILBAG</h1>
-//                      <small>Published On: 8-4-2017</small>
+//                      <h1><a href="#">1 - 2017 SUMMER SERIES: MILTON'S MAILBAG</a></h1>
+//                      <small>Published On: Aug 4, 2017</small>
 //                      <p>Grant and Aaron kick off the 2017 Summer Series by addressing some of the most pressing listener questions during the first season of Adventures in Finance. The guys are also joined by Jeffrey Snider, of Alhambra Partners, and Michael Oliver, of Momentum Structural Analysis, who shed light on the Eurodollar markets and FAANG momentum, respectively.</p>
 //                  </div>
 //              </div>
@@ -2932,6 +2932,16 @@
             h1 {
                 font-size: $size-4;
                 margin-bottom: $baseline / 2;
+
+                a {
+                    color: $text;
+                    transition: color 250ms ease-in-out;
+                    text-decoration: none;
+
+                    &:hover {
+                        color: $color-red-ribbon;
+                    }
+                }
             }
             p {
                 font-size: $size-5;
