@@ -2924,6 +2924,7 @@
 // Styleguide 5.36
 .podcast-episode {
     padding: $baseline;
+    background: white;
     .podcast-episode__content {
         @extend .has-paper-background;
         padding: $baseline;
@@ -2977,6 +2978,166 @@
         .podcast-episode__content {
             border: 1px solid $color-dark-gray;
             box-shadow: 0px 5px 15px $color-dark-gray;
+        }
+    }
+}
+
+// Podcast Listing
+//
+// default - Default
+// .feature-latest - Features the latest post in the listing
+//
+// markup:
+// <div class="podcast-listing">
+//      <div class="columns is-vcentered is-marginless is-mobile podcast-listing__heading">
+//          <div class="column">
+//              <h2><span>TITLE</span></h2>
+//          </div>
+//          <div class="column">
+//              <div class="pagination is-pulled-right">
+//                  <a href="#" class="button">Next</a>
+//              </div>
+//          </div>
+//      </div>
+//      <section class="podcast-episode {$modifiers}">
+//          <div class="podcast-episode__content">
+//              <div class="columns is-multiline is-mobile is-marginless">
+//                  <div class="column is-2-tablet is-hidden-mobile">
+//                      <div class="podcast-episode__player--image">
+//                          <article>
+//                              <img src="/images/components/podcast-episode-img.jpg" />
+//                          </article>
+//                      </div>
+//                  </div>
+//                  <div class="column is-10-tablet is-12-mobile">
+//                      <div class="podcast-episode__detail">
+//                          <h1><a href="#">1 - 2017 SUMMER SERIES: MILTON'S MAILBAG</a></h1>
+//                          <small>Published On: Aug 4, 2017</small>
+//                          <p>Grant and Aaron kick off the 2017 Summer Series by addressing some of the most pressing listener questions during the first season of Adventures in Finance. The guys are also joined by Jeffrey Snider, of Alhambra Partners, and Michael Oliver, of Momentum Structural Analysis, who shed light on the Eurodollar markets and FAANG momentum, respectively.</p>
+//                      </div>
+//                  </div>
+//              </div>
+//              <div class="columns is-vcentered is-multiline is-mobile is-marginless is-paddingless">
+//                  <div class="column is-12">
+//                      <div class="podcast-episode__player--media">
+//                          <?php echo do_shortcode('[powerpress url="'.$podcast_episode_audio_url.'"]'); ?>
+//                      </div>
+//                      <div class="podcast-episode__player--links">
+//                          <div class="podcast-episode__player--links-download pull-left">
+//                              <a href="<?php echo $podcast_episode_audio_url; ?>" download><i class="fa fa-download" aria-hidden="true"></i></a>
+//                          </div>
+//                          <div class="podcast-episode__player--links-social pull-right">
+//                              <a href="https://twitter.com/realvision"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+//                              <a href="https://twitter.com/realvision"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+//                              <a href="https://twitter.com/realvision"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+//                          </div>
+//                      </div>
+//                  </div>
+//              </div>
+//          </div>
+//      </section>
+//      <section class="podcast-episode {$modifiers}">
+//          <div class="podcast-episode__content">
+//              <div class="columns is-multiline is-mobile is-marginless">
+//                  <div class="column is-2-tablet is-hidden-mobile">
+//                      <div class="podcast-episode__player--image">
+//                          <article>
+//                              <img src="/images/components/podcast-episode-img.jpg" />
+//                          </article>
+//                      </div>
+//                  </div>
+//                  <div class="column is-10-tablet is-12-mobile">
+//                      <div class="podcast-episode__detail">
+//                          <h1><a href="#">1 - 2017 SUMMER SERIES: MILTON'S MAILBAG</a></h1>
+//                          <small>Published On: Aug 4, 2017</small>
+//                          <p>Grant and Aaron kick off the 2017 Summer Series by addressing some of the most pressing listener questions during the first season of Adventures in Finance. The guys are also joined by Jeffrey Snider, of Alhambra Partners, and Michael Oliver, of Momentum Structural Analysis, who shed light on the Eurodollar markets and FAANG momentum, respectively.</p>
+//                      </div>
+//                  </div>
+//              </div>
+//              <div class="columns is-vcentered is-multiline is-mobile is-marginless is-paddingless">
+//                  <div class="column is-12">
+//                      <div class="podcast-episode__player--media">
+//                          <?php echo do_shortcode('[powerpress url="'.$podcast_episode_audio_url.'"]'); ?>
+//                      </div>
+//                      <div class="podcast-episode__player--links">
+//                          <div class="podcast-episode__player--links-download pull-left">
+//                              <a href="<?php echo $podcast_episode_audio_url; ?>" download><i class="fa fa-download" aria-hidden="true"></i></a>
+//                          </div>
+//                          <div class="podcast-episode__player--links-social pull-right">
+//                              <a href="https://twitter.com/realvision"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+//                              <a href="https://twitter.com/realvision"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+//                              <a href="https://twitter.com/realvision"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+//                          </div>
+//                      </div>
+//                  </div>
+//              </div>
+//          </div>
+//      </section>
+//      <section class="podcast-episode {$modifiers}">
+//          <div class="podcast-episode__content">
+//              <div class="columns is-multiline is-mobile is-marginless">
+//                  <div class="column is-2-tablet is-hidden-mobile">
+//                      <div class="podcast-episode__player--image">
+//                          <article>
+//                              <img src="/images/components/podcast-episode-img.jpg" />
+//                          </article>
+//                      </div>
+//                  </div>
+//                  <div class="column is-10-tablet is-12-mobile">
+//                      <div class="podcast-episode__detail">
+//                          <h1><a href="#">1 - 2017 SUMMER SERIES: MILTON'S MAILBAG</a></h1>
+//                          <small>Published On: Aug 4, 2017</small>
+//                          <p>Grant and Aaron kick off the 2017 Summer Series by addressing some of the most pressing listener questions during the first season of Adventures in Finance. The guys are also joined by Jeffrey Snider, of Alhambra Partners, and Michael Oliver, of Momentum Structural Analysis, who shed light on the Eurodollar markets and FAANG momentum, respectively.</p>
+//                      </div>
+//                  </div>
+//              </div>
+//              <div class="columns is-vcentered is-multiline is-mobile is-marginless is-paddingless">
+//                  <div class="column is-12">
+//                      <div class="podcast-episode__player--media">
+//                          <?php echo do_shortcode('[powerpress url="'.$podcast_episode_audio_url.'"]'); ?>
+//                      </div>
+//                      <div class="podcast-episode__player--links">
+//                          <div class="podcast-episode__player--links-download pull-left">
+//                              <a href="<?php echo $podcast_episode_audio_url; ?>" download><i class="fa fa-download" aria-hidden="true"></i></a>
+//                          </div>
+//                          <div class="podcast-episode__player--links-social pull-right">
+//                              <a href="https://twitter.com/realvision"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+//                              <a href="https://twitter.com/realvision"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+//                              <a href="https://twitter.com/realvision"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+//                          </div>
+//                      </div>
+//                  </div>
+//              </div>
+//          </div>
+//      </section>
+// </div>
+//
+// Styleguide 5.37
+.podcast-listing {
+    padding: $baseline / 2;
+
+    .podcast-episode {
+        padding: $baseline / 2;
+    }
+
+    .podcast-listing__heading {
+        h2 {
+            margin-left: 10px;
+            margin-bottom: 0;
+            margin-top: 0;
+            span {
+                box-decoration-break: clone;
+                font-size: $size-4;
+                color: white;
+                background-color: $color-dark-gray;
+                box-shadow: 10px 0 0 $color-dark-gray, -10px 0 0 $color-dark-gray;
+            }
+
+            @include tablet {
+                span {
+                    font-size: $size-3;
+                }
+            }
         }
     }
 }
