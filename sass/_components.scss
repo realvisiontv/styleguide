@@ -2985,7 +2985,7 @@
 // Podcast Listing
 //
 // default - Default
-// .feature-latest - Features the latest post in the listing
+// .featured-post - Features the latest post in the listing
 //
 // markup:
 // <div class="podcast-listing">
@@ -2999,7 +2999,7 @@
 //              </div>
 //          </div>
 //      </div>
-//      <section class="podcast-episode {$modifiers}">
+//      <section class="podcast-episode">
 //          <div class="podcast-episode__content">
 //              <div class="columns is-multiline is-mobile is-marginless">
 //                  <div class="column is-2-tablet is-hidden-mobile">
@@ -3036,7 +3036,7 @@
 //              </div>
 //          </div>
 //      </section>
-//      <section class="podcast-episode {$modifiers}">
+//      <section class="podcast-episode">
 //          <div class="podcast-episode__content">
 //              <div class="columns is-multiline is-mobile is-marginless">
 //                  <div class="column is-2-tablet is-hidden-mobile">
@@ -3073,7 +3073,7 @@
 //              </div>
 //          </div>
 //      </section>
-//      <section class="podcast-episode {$modifiers}">
+//      <section class="podcast-episode">
 //          <div class="podcast-episode__content">
 //              <div class="columns is-multiline is-mobile is-marginless">
 //                  <div class="column is-2-tablet is-hidden-mobile">
@@ -3137,6 +3137,15 @@
                 span {
                     font-size: $size-3;
                 }
+            }
+        }
+    }
+
+    .featured-post {
+        .podcast-episode {
+            .podcast-episode__content {
+                border: 1px solid $color-dark-gray;
+                box-shadow: 0px 5px 15px $color-dark-gray;
             }
         }
     }
