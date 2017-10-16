@@ -2957,6 +2957,15 @@
         .podcast-episode__player--links {
             padding: $baseline / 3;
 
+            .podcast-episode__player--links-social {
+                a:not(:last-child) {
+                    margin-right: $baseline / 2;
+                    @include tablet {
+                        margin-right: $baseline;
+                    }
+                }
+            }
+
             a {
                 color: $color-dark-gray;
                 transition: color 250ms ease-in-out;
