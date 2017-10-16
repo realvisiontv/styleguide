@@ -2975,9 +2975,39 @@
     }
 
     &.is-featured {
+        background: black;
         .podcast-episode__content {
-            border: 1px solid $color-dark-gray;
-            box-shadow: 0px 5px 15px $color-dark-gray;
+            background: black;
+
+            .podcast-episode__detail {
+                h1 {
+                    a {
+                        color: white;
+                        transition: color 250ms ease-in-out;
+
+                        &:hover {
+                            color: $color-red-ribbon;
+                        }
+                    }
+                }
+                p {
+                    color: white;
+                }
+                small {
+                    color: $color-spring-green;
+                }
+            }
+
+            .podcast-episode__player--links {
+                a {
+                    color: white;
+                    transition: color 250ms ease-in-out;
+
+                    &:hover {
+                        color: $color-red-ribbon;
+                    }
+                }
+            }
         }
     }
 }
