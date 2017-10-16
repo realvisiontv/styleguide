@@ -1693,6 +1693,7 @@
             bottom: -20px;
             left: 0;
             transition: bottom 200ms ease-in-out;
+            background: url('#{$root}/images/overlays/stripe_clear.png');
         }
 
         .product-link__bottom-arrow {
@@ -1729,34 +1730,6 @@
 
     strong {
         font-style: normal;
-    }
-
-    .product-link--tv {
-        strong {
-            color: $brand;
-        }
-
-        .product-link__bottom-overlay {
-            background: url('#{$root}/images/overlays/stripe_clear.png'), $brand;
-        }
-    }
-    .product-link--publishing {
-        strong {
-            color: $color-orange;
-        }
-
-        .product-link__bottom-overlay {
-            background: url('#{$root}/images/overlays/stripe_clear.png'), $color-orange;
-        }
-    }
-    .product-link--podcast {
-        strong {
-            color: $color-purple;
-        }
-
-        .product-link__bottom-overlay {
-            background: url('#{$root}/images/overlays/stripe_clear.png'), $color-purple;
-        }
     }
 }
 
