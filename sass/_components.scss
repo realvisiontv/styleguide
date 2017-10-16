@@ -3051,6 +3051,7 @@
 //      <div class="{$modifiers}">
 //          <section class="podcast-episode">
 //              <div class="podcast-episode__content">
+//                  <i class="featured-icon fa fa-star" aria-hidden="true"></i>
 //                  <div class="columns is-multiline is-mobile is-marginless">
 //                      <div class="column is-2-tablet is-hidden-mobile">
 //                          <div class="podcast-episode__player--image">
@@ -3089,6 +3090,7 @@
 //      </div>
 //      <section class="podcast-episode">
 //          <div class="podcast-episode__content">
+//              <i class="featured-icon fa fa-star" aria-hidden="true"></i>
 //              <div class="columns is-multiline is-mobile is-marginless">
 //                  <div class="column is-2-tablet is-hidden-mobile">
 //                      <div class="podcast-episode__player--image">
@@ -3126,6 +3128,7 @@
 //      </section>
 //      <section class="podcast-episode">
 //          <div class="podcast-episode__content">
+//              <i class="featured-icon fa fa-star" aria-hidden="true"></i>
 //              <div class="columns is-multiline is-mobile is-marginless">
 //                  <div class="column is-2-tablet is-hidden-mobile">
 //                      <div class="podcast-episode__player--image">
@@ -3171,6 +3174,12 @@
         padding: $baseline / 2;
     }
 
+    .podcast-episode__content {
+        .featured-icon {
+            display: none;
+        }
+    }
+
     .podcast-listing__heading {
         h2 {
             margin-left: 10px;
@@ -3197,6 +3206,19 @@
             background: black;
             .podcast-episode__content {
                 background: black;
+
+                .featured-icon {
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    font-size: 2rem;
+                    color: $color-spring-green;
+
+                    @include tablet {
+                        font-size: 3rem;
+                    }
+                }
 
                 .podcast-episode__detail {
                     h1 {
