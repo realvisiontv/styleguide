@@ -2933,9 +2933,6 @@
             .podcast-episode__player--links-social {
                 a:not(:last-child) {
                     margin-right: $baseline / 2;
-                    @include tablet {
-                        margin-right: $baseline;
-                    }
                 }
             }
 
