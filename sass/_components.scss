@@ -3269,7 +3269,7 @@
     
     background: #111111;
     color: white;
-    padding: 1.5rem;
+    padding: $baseline;
     
     .contributor-container:after {
         background: linear-gradient(to bottom, transparent 35%, rgba(17, 20, 25, 0.5) 60%, #111111 80%);
@@ -3307,13 +3307,13 @@
     }
     
     .is-padded {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
+        padding-left: $baseline;
+        padding-right: $baseline;
     }
     
     .top-border {
         border-top: 3px solid rgba(255, 255, 255, 0.2);
-        padding-top: 0.75rem;
+        padding-top: $baseline / 2;
     }
     
     .contributor-links {
