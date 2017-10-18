@@ -3195,3 +3195,140 @@
         }
     }
 }
+
+// Post Header
+//
+// default - Default
+//
+// markup:
+// <div class="contributor-header container is-paddingless is-black">
+// 		<div class="contributor-container">
+// 			<div class="splash"><img alt="" src="http://via.placeholder.com/1600x900"></div>
+// 			<div class="is-padded contributor-details">
+// 				<div class="columns is-multiline">
+// 					<div class="column is-full">
+// 						<h1 class="is-size-3-mobile">RAOUL PAL</h1>
+// 						<h2 class="proxima-nova font-weight-normal is-size-3 is-size-5-mobile de-emphasis">Global Macro Investor</h2>
+// 					</div>
+// 					<div class="column is-7 contributor-bio">
+// 						<div class="top-border">
+// 							<p class="has-text-justified-mobile"></p>
+// 							<ul>
+// 								<li>Si autem id non concedatur, non continuo vita beata tollitur.</li>
+// 								<li>Sed venio ad inconstantiae crimen, ne saepius dicas me aberrare;</li>
+// 								<li>Parvi enim primo ortu sic iacent, tamquam omnino sine animo sint.</li>
+// 								<li>Quam ob rem tandem, inquit, non satisfacit?</li>
+// 							</ul>
+// 							<p></p>
+// 						</div>
+// 					</div>
+// 					<div class="column is-2">
+// 						<div class="top-border">
+// 							<div class="columns">
+// 								<div class="column">
+// 									<dl>
+// 										<dt>Company</dt>
+// 										<dd>RealVision</dd>
+// 										<dt>Specialism(s)</dt>
+// 										<dd>Macro</dd>
+// 									</dl>
+// 								</div>
+// 							</div>
+// 						</div>
+// 					</div>
+// 					<div class="column is-3">
+// 						<div class="top-border">
+// 							<dl>
+// 								<dt>Links</dt>
+// 								<dd>
+// 									<ul class="contributor-links">
+// 										<li>
+// 											<i aria-hidden="true" class="fa fa-external-link-square"></i><a href="http://www.roaulpal.com">www.roaulpal.com</a>
+// 										</li>
+// 										<li>
+// 											<i aria-hidden="true" class="fa fa-twitter-square"></i><a href="http://www.twitter.com">twitter</a>
+// 										</li>
+// 										<li>
+// 											<i aria-hidden="true" class="fa fa-linkedin-square"></i><a href="http://www.linkedin.com">linkedin</a>
+// 										</li>
+// 									</ul>
+// 								</dd>
+// 							</dl>
+// 						</div>
+// 					</div>
+// 				</div>
+// 				<div class="columns">
+// 					<div class="column"></div>
+// 				</div>
+// 			</div>
+// 		</div>
+// 	</div>
+//
+// Styleguide 5.38
+.contributor-header.is-black {
+    
+    background: #111111;
+    color: white;
+    padding: 1.5rem;
+    
+    .contributor-container:after {
+        background: linear-gradient(to bottom, transparent 35%, rgba(17, 20, 25, 0.5) 60%, #111111 80%);
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        transition: opacity .5s .5s;
+    }
+    
+    .contributor-details {
+        margin-top: -15%;
+        position: relative;
+        z-index: 1;
+        
+        .de-emphasis {
+            opacity: 0.5;
+        }
+        
+        .contributor-bio {
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                
+                li::before {
+                  content: "• ";
+                  color: $color-cyan; 
+                  padding-right: 15px;
+                }
+            }
+        }
+    }
+    
+    .is-padded {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    
+    .top-border {
+        border-top: 3px solid rgba(255, 255, 255, 0.2);
+        padding-top: 0.75rem;
+    }
+    
+    .contributor-links {
+        margin-left: 0;
+        list-style: none;
+        margin-top: 10px;
+        
+        a {
+            color: #fff;
+        	text-decoration: none;
+        }
+        
+        i {
+            padding-right: 10px;
+        	vertical-align: bottom;
+        }
+    }
+}
