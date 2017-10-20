@@ -2880,6 +2880,23 @@
     background: #111111;
     color: white;
     padding: $baseline;
+
+    .contributor-container {
+        .splash {
+            position: relative;
+
+            &:after {
+                background: linear-gradient(to bottom, transparent 35%, rgba(17, 20, 25, 0.5) 60%, #111111 80%);
+                content: '';
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                left: 0;
+                top: 0;
+                transition: opacity .5s .5s;
+            }
+        }
+    }
     
     .contributor-container:after {
         background: linear-gradient(to bottom, transparent 35%, rgba(17, 20, 25, 0.5) 60%, #111111 80%);
