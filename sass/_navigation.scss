@@ -849,3 +849,124 @@
     }
 
 }
+
+// Pagination
+//
+// markup:
+// <nav class="pagination is-medium" role="navigation" aria-label="pagination">
+//   <a class="pagination-previous button">Prev.</a>
+//   <a class="pagination-next button">Next</a>
+// </nav>
+//
+// Styleguide 7.4
+
+.pagination {
+    .button {
+        padding: 0 0.5rem;
+        color: #fff;
+        margin-left: 5px;
+
+        &:hover {
+            color: $color-red-ribbon
+        }
+    }
+}
+
+// Signup Progress
+//
+// markup:
+// <ol class="columns signup-progress is-marginless is-mobile">
+//     <li class="column is-paddingless active">Step 1</li>
+//     <li class="column is-paddingless active">Step 2</li>
+//     <li class="column is-paddingless">Step 3</li>
+// </ol>
+//
+// Styleguide 7.5
+.signup-progress {
+    counter-reset: step;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+    li {
+        color: grey;
+        list-style-type: none;
+        position: relative;
+        text-align: center;
+        font-weight: 700;
+        margin-top: 0;
+        &:before {
+            background: white;
+            width: 30px;
+            height: 30px;
+            color: grey;
+            content: counter(step);
+            counter-increment: step;
+            line-height: 26px;
+            border: 2px solid grey;
+            display: block;
+            text-align: center;
+            margin: 0 auto 10px auto;
+            border-radius: 50%;
+            font-size: 14px;
+        }
+        &:after {
+            width: 100%;
+            height: 2px;
+            content: '';
+            position: absolute;
+            background-color: grey;
+            top: 15px;
+            left: -50%;
+            z-index: -1;
+        }
+        &:first-child:after {
+            content: none;
+        }
+        &.active {
+            color: $color-dark-gray;
+            &:before {
+                border-color: $color-dark-gray;
+                content: "";
+                background: $brand url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1000'%3E%3Cpath fill='#{$color-dark-gray}' d='M849.9 115L360 604.9 150 395 10 535l210 210 35 35 105 105 630-630.1L849.9 115z'/%3E%3C/svg%3E") no-repeat 50%;
+                background-size: 50%;
+            }
+            &:after {
+                background-color: $color-dark-gray;
+            }
+        }
+    }
+}
+
+// Search form
+//
+// markup:
+// <form method="GET" action="" class="search-form">
+//     <input type="text" name="parameters_query" value="" placeholder="Assets, topics..." />
+//     <button type="submit" name="search"></button>
+// </form>
+//
+// Styleguide 7.6
+.search-form {
+    display: flex;
+    margin-top: $baseline / 8;
+
+    input {
+        background: rgba(white,0.1);
+        border: 0;
+        color: white;
+        padding: 9px;
+        display: block;
+        flex-grow: 1;
+        font-size: 16px;
+    }
+
+    button {
+        @extend .fa;
+        @extend .fa-search;
+        background: rgba(white,0.1);
+        border: 0;
+        color: white;
+        width: 45px;
+    }
+}

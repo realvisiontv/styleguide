@@ -47,10 +47,18 @@
     .is-vertically-center:not(.columns) {
         align-items: center;
         display: flex;
+
+        &.has-text-centered {
+            justify-content: center;
+        }
     }
     .is-vertically-bottom:not(.columns) {
         align-items: flex-end;
         display: flex;
+
+        &.has-text-centered {
+            justify-content: center;
+        }
     }
 }
 
@@ -248,3 +256,22 @@ footer {
     }
 }
 
+// Spacer Row
+//
+// An empty colored block to separate components
+//
+// default - Default
+//
+// markup:
+// <div class="spacer-row">
+// </div>
+//
+// Styleguide 2.6
+.spacer-row {
+    padding: .5rem;
+    background-color: $color-dark-gray;
+
+    @include tablet {
+        padding: 1rem;
+    }
+}
