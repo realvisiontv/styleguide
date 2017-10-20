@@ -381,3 +381,74 @@ a {
         color: black;
     }
 }
+
+// Feature Quote
+//
+// default  - Default button
+// .is-large-tablet    - Large
+//
+// markup:
+// <blockquote class="feature-quote {$modifiers}">
+//     <div class="icons">
+//         <svg class="icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.62292 316.34321" class="icon-star"><path d="M166.31 0l51.395 104.134 114.918 16.698-83.156 81.057 19.63 114.452-102.786-54.038-102.784 54.038 19.63-114.454L0 120.83l114.918-16.698z" /></svg>
+//         <svg class="icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.62292 316.34321" class="icon-star"><path d="M166.31 0l51.395 104.134 114.918 16.698-83.156 81.057 19.63 114.452-102.786-54.038-102.784 54.038 19.63-114.454L0 120.83l114.918-16.698z" /></svg>
+//         <svg class="icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.62292 316.34321" class="icon-star"><path d="M166.31 0l51.395 104.134 114.918 16.698-83.156 81.057 19.63 114.452-102.786-54.038-102.784 54.038 19.63-114.454L0 120.83l114.918-16.698z" /></svg>
+//         <svg class="icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.62292 316.34321" class="icon-star"><path d="M166.31 0l51.395 104.134 114.918 16.698-83.156 81.057 19.63 114.452-102.786-54.038-102.784 54.038 19.63-114.454L0 120.83l114.918-16.698z" /></svg>
+//         <svg class="icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.62292 316.34321" class="icon-star"><path d="M166.31 0l51.395 104.134 114.918 16.698-83.156 81.057 19.63 114.452-102.786-54.038-102.784 54.038 19.63-114.454L0 120.83l114.918-16.698z" /></svg>
+//     </div>
+//     <p>Pure Gold</p>
+//     <cite>Tim Brothers</cite>
+// </blockquote>
+//
+// Styleguide 3.12
+.feature-quote {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+
+    .icons * {
+        display: inline-block;
+    }
+
+    .icon-star {
+        width: 0.5rem;
+        height: 0.5rem;
+        path {
+            fill: $color-red-ribbon;
+        }
+    }
+
+    p {
+        font-family: 'Function Pro', sans-serif;
+        font-size: 1.5rem;
+        font-style: italic;
+        font-weight: 700;
+        line-height: 1;
+        margin: 0.25rem 0;
+        word-wrap: break-word;
+    }
+
+    cite {
+        font-family: 'Function Pro', sans-serif;
+        font-size: $size-6;
+        font-style: normal;
+        line-height: 1;
+        opacity: 0.75;
+    }
+    @include tablet {
+        &.is-large-tablet {
+            p {
+                font-size: 3rem;
+            }
+
+            cite {
+                font-size: 1.75rem;
+            }
+
+            .icon-star {
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+        }
+    }
+}

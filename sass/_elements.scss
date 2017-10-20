@@ -1,0 +1,130 @@
+// Spinner
+//
+// markup:
+// <div class="spinner"></div>
+//
+// Styleguide 8.1
+.spinner {
+    border: 1px solid grey;
+    border-top-color: transparent !important;
+    border-radius: 50%;
+    position: relative;
+    animation: spinner-rotate 1s linear infinite;
+    margin: 0 auto;
+    top: 50%;
+
+    width: $baseline * 2;
+    height: $baseline * 2;
+    border-width: $baseline / 3;
+}
+
+@keyframes spinner-rotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+// Avatar badge
+//
+// markup:
+// <a class="avatar">RV</a>
+//
+// Styleguide 8.2
+.avatar {
+    background: $brand;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    color: #000;
+    cursor: pointer;
+    display: inline-block;
+    height: 46px;
+    width: 46px;
+    line-height: 44px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 21px;
+    font-weight: 400;
+    font-family: 'Function Pro';
+}
+
+// Hero Image
+//
+// A large (optional) clickable hero image.
+// 
+// markup:
+// <div class="hero-image">
+//     <a>
+//         <img src="http://via.placeholder.com/1600x900" alt="" />
+//     </a>
+// </div>
+//
+// Styleguide 8.3
+.hero-image {
+    background: $color-bright-gray;
+
+    img {
+        display: block;
+        width:100%;
+    }
+}
+
+// Media Block
+//
+// default - Default
+// .has-text-centered - Centers the image
+// .has-text-right - Aligns the image to the right
+// .is-full-width - Have the image fill the block
+// .has-padding - Add padding inside the block
+// .has-margin - Add margin outside the block
+//
+// markup:
+// <div class="media-block {$modifiers}">
+//     <img src="http://lorempixel.com/320/180/abstract" />
+// </div>
+//
+// Styleguide 8.4
+.media-block {
+    background: #eee;
+    img {
+        vertical-align:bottom;
+    }
+
+    &.is-full-width img {
+        width: 100%;
+    }
+
+    &.has-padding {
+        padding: $baseline;
+    }
+
+    &.has-margin {
+        margin: $baseline;
+    }
+}
+
+// CTA Block
+//
+// default - Default
+// .has-text-centered - Aligns the button to the center
+// .has-text-right - Aligns the button to the right
+// .has-margin - Add margin outside the block
+// .has-dark-text - Makes the text on the button dark for use with light backgrounds
+//
+// markup:
+// <div class="cta-block {$modifiers}">
+//     <a href="#" class="button">Call to action button</a>
+// </div>
+//
+// Styleguide 8.5
+.cta-block {
+    &.has-dark-text .button{
+        color: $color-dark-gray;
+    }
+
+    &.has-margin {
+        margin: $baseline;
+    }
+}
