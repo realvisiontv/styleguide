@@ -2836,14 +2836,10 @@
 // 							<div class="columns">
 // 								<div class="column">
 // 									<dl>
-//                                      <div class="contributor-companies">
-// 										   <dt>Company</dt>
-// 										   <dd>RealVision</dd>
-//                                      </div>
-//                                      <div class="contributor-specialisms">
-// 										   <dt>Specialism(s)</dt>
-// 										   <dd>Macro</dd>
-//                                      </div>
+//                                      <dt>Company</dt>
+//                                      <dd>RealVision</dd>
+//                                      <dt>Specialism(s)</dt>
+//                                      <dd>Macro</dd>
 // 									</dl>
 // 								</div>
 // 							</div>
@@ -2928,12 +2924,6 @@
                         position: absolute;
                     }
                 }
-            }
-        }
-
-        .contributor-companies, .contributor-specialisms {
-            dd {
-                display: inline-block;
             }
         }
     }
