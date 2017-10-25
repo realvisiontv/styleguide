@@ -2829,7 +2829,6 @@
 // 								<li>Parvi enim primo ortu sic iacent, tamquam omnino sine animo sint.</li>
 // 								<li>Quam ob rem tandem, inquit, non satisfacit?</li>
 // 							</ul>
-// 							<p></p>
 // 						</div>
 // 					</div>
 // 					<div class="column is-2">
@@ -2837,10 +2836,10 @@
 // 							<div class="columns">
 // 								<div class="column">
 // 									<dl>
-// 										<dt>Company</dt>
-// 										<dd>RealVision</dd>
-// 										<dt>Specialism(s)</dt>
-// 										<dd>Macro</dd>
+//                                      <dt>Company</dt>
+//                                      <dd>RealVision</dd>
+//                                      <dt>Specialism(s)</dt>
+//                                      <dd>Macro</dd>
 // 									</dl>
 // 								</div>
 // 							</div>
@@ -2876,7 +2875,6 @@
 //
 // Styleguide 5.20
 .contributor-header.is-black {
-    
     background: #111111;
     color: white;
     padding: $baseline;
@@ -2913,11 +2911,18 @@
                 list-style: none;
                 padding: 0;
                 margin: 0;
-                
-                li::before {
-                  content: "• ";
-                  color: $color-cyan; 
-                  padding-right: 15px;
+
+                li {
+                    position: relative;
+                    margin-left: 1rem;
+
+                    &:before {
+                        content: "• ";
+                        color: $color-cyan; 
+                        margin-left: $baseline;
+                        left: -2.5rem;
+                        position: absolute;
+                    }
                 }
             }
         }
