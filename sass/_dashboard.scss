@@ -651,7 +651,6 @@
     padding: 0;
     overflow: hidden;
 
-
     > .columns {
         margin: 0;
         color: white;
@@ -666,6 +665,10 @@
             max-height: 100%;
             bottom: 0;
             overflow: hidden; // For Internet Explorer
+        }
+
+        button {
+            pointer-events: auto;
         }
 
         button {
@@ -701,6 +704,23 @@
             @supports (-webkit-line-clamp: 1) {
                 p {
                     -webkit-line-clamp: 1;
+                }
+            }
+        }
+
+        .is-5 {
+
+            h1 {
+                font-size: $size-1;
+            }
+
+            p {
+                max-height: 3em;
+            }
+
+            @supports (-webkit-line-clamp: 2) {
+                p {
+                    -webkit-line-clamp: 2;
                 }
             }
         }
@@ -772,7 +792,6 @@
                     height: 100%;
                     width: 100%;
                     padding: $baseline;
-
                     &:after {
                         content: "";
                         background: linear-gradient(to top, rgba(0,0,0,.75) 14%, transparent 65%);
