@@ -1,95 +1,3 @@
-// Feature Quote
-//
-// default  - Default button
-// .is-large-tablet    - Large
-//
-// markup:
-// <blockquote class="feature-quote {$modifiers}">
-//     <div class="icons">
-//         <svg class="icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.62292 316.34321" class="icon-star"><path d="M166.31 0l51.395 104.134 114.918 16.698-83.156 81.057 19.63 114.452-102.786-54.038-102.784 54.038 19.63-114.454L0 120.83l114.918-16.698z" /></svg>
-//         <svg class="icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.62292 316.34321" class="icon-star"><path d="M166.31 0l51.395 104.134 114.918 16.698-83.156 81.057 19.63 114.452-102.786-54.038-102.784 54.038 19.63-114.454L0 120.83l114.918-16.698z" /></svg>
-//         <svg class="icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.62292 316.34321" class="icon-star"><path d="M166.31 0l51.395 104.134 114.918 16.698-83.156 81.057 19.63 114.452-102.786-54.038-102.784 54.038 19.63-114.454L0 120.83l114.918-16.698z" /></svg>
-//         <svg class="icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.62292 316.34321" class="icon-star"><path d="M166.31 0l51.395 104.134 114.918 16.698-83.156 81.057 19.63 114.452-102.786-54.038-102.784 54.038 19.63-114.454L0 120.83l114.918-16.698z" /></svg>
-//         <svg class="icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.62292 316.34321" class="icon-star"><path d="M166.31 0l51.395 104.134 114.918 16.698-83.156 81.057 19.63 114.452-102.786-54.038-102.784 54.038 19.63-114.454L0 120.83l114.918-16.698z" /></svg>
-//     </div>
-//     <p>Pure Gold</p>
-//     <cite>Tim Brothers</cite>
-// </blockquote>
-//
-// Styleguide 5.1
-.feature-quote {
-    display: inline-block;
-    text-align: center;
-    width: 100%;
-
-    .icons * {
-        display: inline-block;
-    }
-
-    .icon-star {
-        width: 0.5rem;
-        height: 0.5rem;
-        path {
-            fill: $color-torch-red;
-        }
-    }
-
-    p {
-        font-family: 'Function Pro', sans-serif;
-        font-size: 1.5rem;
-        font-style: italic;
-        font-weight: 700;
-        line-height: 1;
-        margin: 0.25rem 0;
-        word-wrap: break-word;
-    }
-
-    cite {
-        font-family: 'Function Pro', sans-serif;
-        font-size: $size-6;
-        font-style: normal;
-        line-height: 1;
-        opacity: 0.75;
-    }
-    @include tablet {
-        &.is-large-tablet {
-            p {
-                font-size: 3rem;
-            }
-
-            cite {
-                font-size: 1.75rem;
-            }
-
-            .icon-star {
-                width: 1.5rem;
-                height: 1.5rem;
-            }
-        }
-    }
-}
-
-// Hero Image
-//
-// A large (optional) clickable hero image.
-// 
-// markup:
-// <div class="hero-image">
-//     <a>
-//         <img src="http://via.placeholder.com/1600x900" alt="" />
-//     </a>
-// </div>
-//
-// Styleguide 5.2
-.hero-image {
-    background: $color-bright-gray;
-
-    img {
-        display: block;
-        width:100%;
-    }
-}
-
 // Hero Image with CTA
 //
 // A large hero image with text and a CTA button. Full page width.
@@ -103,7 +11,7 @@
 //     </div>
 // </div>
 //
-// Styleguide 5.3
+// Styleguide 5.1
 .hero-image-w-cta {
     position: relative;
 
@@ -133,91 +41,6 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
         display: -webkit-box;
-    }
-}
-
-// Avatar badge
-//
-// markup:
-// <a class="avatar">RV</a>
-//
-// Styleguide 5.4
-.avatar {
-    background: $brand;
-    border-radius: 50%;
-    border: 2px solid transparent;
-    color: #000;
-    cursor: pointer;
-    display: inline-block;
-    height: 46px;
-    width: 46px;
-    line-height: 44px;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 21px;
-    font-weight: 400;
-    font-family: 'Function Pro';
-}
-
-// Search form
-//
-// markup:
-// <form method="GET" action="" class="search-form">
-//     <input type="text" name="parameters_query" value="" placeholder="Assets, topics..." />
-//     <button type="submit" name="search"></button>
-// </form>
-//
-// Styleguide 5.5
-.search-form {
-    display: flex;
-    margin-top: $baseline / 8;
-
-    input {
-        background: rgba(white,0.1);
-        border: 0;
-        color: white;
-        padding: 9px;
-        display: block;
-        flex-grow: 1;
-        font-size: 16px;
-    }
-
-    button {
-        @extend .fa;
-        @extend .fa-search;
-        background: rgba(white,0.1);
-        border: 0;
-        color: white;
-        width: 45px;
-    }
-}
-
-// Spinner
-//
-// markup:
-// <div class="spinner"></div>
-//
-// Styleguide 5.6
-.spinner {
-    border: 1px solid grey;
-    border-top-color: transparent !important;
-    border-radius: 50%;
-    position: relative;
-    animation: spinner-rotate 1s linear infinite;
-    margin: 0 auto;
-    top: 50%;
-
-    width: $baseline * 2;
-    height: $baseline * 2;
-    border-width: $baseline / 3;
-}
-
-@keyframes spinner-rotate {
-    0% {
-        transform: rotate(0);
-    }
-    100% {
-        transform: rotate(360deg);
     }
 }
 
@@ -251,7 +74,7 @@
 //      </div>
 // </div>
 //
-// Styleguide 5.7
+// Styleguide 5.2
 .pullout-block {
     padding: $baseline;
     position: relative;
@@ -314,7 +137,7 @@
         a {
             text-decoration: none;
             font-weight: bold;
-            color: $color-torch-red;
+            color: $color-red-ribbon;
             transition: color 300ms ease-in-out;
 
             &:hover {
@@ -351,7 +174,7 @@
             width: 1rem;
             height: 1rem;
             path {
-                fill: $color-torch-red;
+                fill: $color-red-ribbon;
             }
         }
 
@@ -411,7 +234,7 @@
 //      </div>
 // </div>
 //
-// Styleguide 5.8
+// Styleguide 5.3
 .pullout-block__list {
     &:not(.no-arrows):before {
         content: none;
@@ -447,7 +270,7 @@
 
                 &:before {
                     content: '';
-                    background: $color-torch-red;
+                    background: $color-red-ribbon;
                     height: .65rem;
                     width: .65rem;
                     margin-top: 7px;
@@ -472,7 +295,7 @@
 //      </div>
 // </div>
 //
-// Styleguide 5.9
+// Styleguide 5.4
 .pullout-block__text {
     p {
         font-size: $size-6;
@@ -503,7 +326,7 @@
 //     <div class="progress"><div style="width: calc(75 / (75 + 25) * 100%)"></div></div>
 // </div>
 //
-// Styleguide 5.10
+// Styleguide 5.5
 .rating {
     .columns {
         margin-top: 0;
@@ -521,7 +344,7 @@
     }
     a {
         &.inactive {
-            color: $color-torch-red;
+            color: $color-red-ribbon;
         }
 
         i {
@@ -535,7 +358,7 @@
             background: rgba(255, 255, 255, 0.2);
 
             div {
-                background: $color-rose;
+                background: $color-red-ribbon;
             }
         }
 
@@ -690,7 +513,7 @@
 //     </ul>
 // </div>
 //
-// Styleguide 5.11
+// Styleguide 5.6
 .comments {
     ul {
         list-style: none;
@@ -753,7 +576,7 @@
             margin-left: 1em;
 
             &.inactive {
-                color: $color-torch-red;
+                color: $color-red-ribbon;
             }
 
             i {
@@ -763,7 +586,7 @@
         }
         .badge {
             font-weight: 700;
-            background-color: $color-rose;
+            background-color: $color-red-ribbon;
             color: $color-dark-gray;
         }
     }
@@ -836,7 +659,7 @@
 //      </div>
 // </div>
 //
-// Styleguide 5.12
+// Styleguide 5.7
 .endorsements {
     background: white;
     padding: $baseline ($baseline * 4);
@@ -846,10 +669,24 @@
     }
 }
 
-// Product Hero - 3x1
-//
-// default - Default Hero
+// Product Hero
+// 
+// Multiple variants available:
+// * `.product-hero--3x1`
+// * `.product-hero--3x2`
+// * `.product-hero--2x2`
+// * `.product-hero--2x3`
+// * `.product-hero--description`
+// * `.hero--no-bg`
+// * `.post-hero`
+// * `.hero-bottom`
+// 
+// default - Default
 // .hide-cta - Hero without CTA Button
+// .has-text-centered - Hero with center aligned content and CTA
+// .hide-heading - Hero without main block heading
+// .has-text-left - Hero with left aligned content and CTA
+// .has-text-right - Hero with right aligned content and CTA
 //
 // markup:
 // <div class="product-hero product-hero--3x1 {$modifiers}">
@@ -878,8 +715,185 @@
 //          </div>
 //      </div>
 // </div>
+// <div class="product-hero product-hero--3x2 {$modifiers}">
+//      <div class="columns is-mobile">
+//          <div class="column">
+//              <h2><span>With Real Vision Television, You Get...</span></h2>
+//          </div>
+//      </div>
+//      <div class="columns is-hidden-mobile">
+//          <div class="column is-5">
+//              <h3 class="product-hero__sub-head"><span>Let's Start with what you don't get:</span></h3>
+//          </div>
+//          <div class="column is-5 is-offset-2">
+//              <h3 class="product-hero__sub-head"><span>So, what do you get with us?</span></h3>
+//          </div>
+//      </div>
+//      <div class="columns">
+//          <div class="column is-hidden-mobile is-5-tablet product-hero__cell-container">
+//              <div class="product-hero__cell">
+//                  <h3><span>No ads</span></h3>
+//                  <p><span>To interrupt you</span></p>
+//              </div>
+//              <div class="product-hero__cell">
+//                  <h3><span>No bias</span></h3>
+//                  <p><span>To sway you</span></p>
+//              </div>
+//              <div class="product-hero__cell">
+//                  <h3><span>No hype</span></h3>
+//                  <p><span>To distract you</span></p>
+//              </div>
+//          </div>
+//          <div class="column is-5-tablet is-offset-2-tablet product-hero__cell-container">
+//              <div class="product-hero__cell">
+//                  <h3><span>Reliable</span></h3>
+//                  <p><span>Insight</span></p>
+//              </div>
+//              <div class="product-hero__cell">
+//                  <h3><span>Intelligent</span></h3>
+//                  <p><span>Opinions</span></p>
+//              </div>
+//              <div class="product-hero__cell">
+//                  <h3><span>Actionable</span></h3>
+//                  <p><span>Ideas</span></p>
+//              </div>
+//          </div>
+//      </div>
+//      <div class="columns hero-cta__container">
+//          <div class="column has-text-centered has-text-right-tablet">
+//              <a href="#" class="button">Read More</a>
+//          </div>
+//      </div>
+// </div>
+// <div class="product-hero product-hero--2x2 {$modifiers}">
+//      <div class="columns is-mobile">
+//          <div class="column">
+//              <h2><span>With Real Vision Television, You Get...</span></h2>
+//          </div>
+//      </div>
+//      <div class="columns">
+//          <div class="column is-6-tablet product-hero__cell-container">
+//              <div class="product-hero__cell">
+//                  <h3><span>One Hundred</span></h3>
+//                  <p><span>Research reports per year covering<br/> all aspects of financial markets</span></p>
+//              </div>
+//              <div class="product-hero__cell">
+//                  <h3><span>Thirty</span></h3>
+//                  <p><span>Independent investment<br/> research experts</span></p>
+//              </div>
+//          </div>
+//          <div class="column is-6-tablet product-hero__cell-container">
+//              <div class="product-hero__cell">
+//                  <h3><span>Two</span></h3>
+//                  <p><span>Research reports<br/> per week</span></p>
+//              </div>
+//              <div class="product-hero__cell">
+//                  <h3><span>One</span></h3>
+//                  <p><span>Weekly Newsletter, <em>The hack</em>,<br/> delivered straight to your inbox</span></p>
+//              </div>
+//          </div>
+//      </div>
+//      <div class="columns hero-cta__container">
+//          <div class="column has-text-centered has-text-right-tablet">
+//              <a href="#" class="button">Read More</a>
+//          </div>
+//      </div>
+// </div>
+// <div class="product-hero product-hero--2x3 has-text-centered-tablet {$modifiers}">
+//      <div class="columns is-mobile">
+//          <div class="column">
+//              <h2><span>With Real Vision Television, You Get...</span></h2>
+//          </div>
+//      </div>
+//      <div class="columns">
+//          <div class="column is-10-mobile is-4-tablet product-hero__cell-container">
+//              <div class="product-hero__cell">
+//                  <h3><span>Accessible</span></h3>
+//                  <p><span>Via Desktop, Mobile and iOS app so you can watch it where you are</span></p>
+//              </div>
+//              <div class="product-hero__cell">
+//                  <h3><span>Organized</span></h3>
+//                  <p><span>Weekly content schedules categorized videos, bookmarks and watch-later buttons so you don't miss a thing during busy times</span></p>
+//              </div>
+//          </div>
+//          <div class="column is-10-mobile is-4-tablet product-hero__cell-container">
+//              <div class="product-hero__cell">
+//                  <h3><span>Convenient</span></h3>
+//                  <p><span>Audio and video transcript downloads for when you're offline</span></p>
+//              </div>
+//              <div class="product-hero__cell">
+//                  <h3><span>Sharable</span></h3>
+//                  <p><span>Share your thoughts and opinions with our community space on every piece of content</span></p>
+//              </div>
+//          </div>
+//          <div class="column is-4-tablet is-hidden-mobile product-hero__cell-container">
+//              <div class="product-hero__cell">
+//                  <h3><span>Time-Saving</span></h3>
+//                  <p><span>Multiple playback speeds &amp; chapter so you can quickly access the sections you want</span></p>
+//              </div>
+//              <div class="product-hero__cell">
+//                  <h3><span>Immediate</span></h3>
+//                  <p><span>A one-step login, process &amp; update, content daily</span></p>
+//              </div>
+//          </div>
+//      </div>
+//      <div class="columns hero-cta__container">
+//          <div class="column has-text-centered has-text-right-tablet">
+//              <a href="#" class="button">Read More</a>
+//          </div>
+//      </div>
+// </div>
+// <div class="product-hero product-hero--descriptive {$modifiers}">
+//      <div class="columns is-mobile">
+//          <div class="column product-hero--heading">
+//              <h2><span>Leading Institutions give us the thumbs up too...</span></h2>
+//          </div>
+//      </div>
+//      <div class="columns">
+//          <div class="column">
+//              <p><span>Real Vision Television is accredited by some of the most respected financial and educational institutions across the globe, including:</span></p>
+//          </div>
+//      </div>
+//      <div class="columns hero-cta__container">
+//          <div class="column has-text-centered has-text-right-tablet">
+//              <a href="#" class="button">Read More</a>
+//          </div>
+//      </div>
+// </div>
+// <div class="product-hero hero--no-bg {$modifiers}">
+//      <div class="columns">
+//          <div class="column is-half">
+//              <h1>Oil</h1>
+//              <p><span>Real Vision Television is accredited by some of the most respected financial and educational institutions across the globe, including:</span></p>
+//          </div>
+//      </div>
+// </div>
+// <div class="product-hero post-hero {$modifiers}">
+//      <div class="columns">
+//          <div class="column is-half">
+//              <h1 class="post-hero__cat-title"><span>Big Stories</span></h1>
+//              <h1>Oil</h1>
+//              <p><span>Real Vision Television is accredited by some of the most respected financial and educational institutions across the globe, including:</span></p>
+//          </div>
+//      </div>
+//      <div class="columns">
+//          <div class="column has-text-centered has-text-left-tablet post-hero__published">
+//            Publishing on <span class="post-hero__pubdate">Aug 10 2017</span>
+//          </div>
+//          <div class="column has-text-centered has-text-right-tablet">
+//              <a href="#" class="button">Read More</a>
+//          </div>
+//      </div>
+// </div>
+// <div class="product-hero hero-bottom {$modifiers}">
+//      <div class="columns hero-bottom__content is-mobile">
+//          <div class="column product-hero--heading">
+//              <h2><span>Leading Institutions give us the thumbs up too...</span></h2>
+//          </div>
+//      </div>
+// </div>
 //
-// Styleguide 5.13
+// Styleguide 5.8
 .product-hero {
     position: relative;
     background-size: cover;
@@ -887,6 +901,11 @@
     background-position: center;
     padding: $baseline;
     text-transform: uppercase;
+
+    // For styleguide
+    .section-markup-wrapper & {
+        margin-bottom: 1.5rem;
+    }
 
     @include tablet {
         padding: $baseline ($baseline * 2);
@@ -913,7 +932,7 @@
 
     strong {
         font-style: normal;
-        color: $color-torch-red;
+        color: $color-red-ribbon;
     }
 
     h2, h3 {
@@ -1049,65 +1068,6 @@
         }
     }
 }
-
-// Product Hero - 3x2
-//
-// default - Default Hero
-// .hide-cta - Hero without CTA Button
-//
-// markup:
-// <div class="product-hero product-hero--3x2 {$modifiers}">
-//      <div class="columns is-mobile">
-//          <div class="column">
-//              <h2><span>With Real Vision Television, You Get...</span></h2>
-//          </div>
-//      </div>
-//      <div class="columns is-hidden-mobile">
-//          <div class="column is-5">
-//              <h3 class="product-hero__sub-head"><span>Let's Start with what you don't get:</span></h3>
-//          </div>
-//          <div class="column is-5 is-offset-2">
-//              <h3 class="product-hero__sub-head"><span>So, what do you get with us?</span></h3>
-//          </div>
-//      </div>
-//      <div class="columns">
-//          <div class="column is-hidden-mobile is-5-tablet product-hero__cell-container">
-//              <div class="product-hero__cell">
-//                  <h3><span>No ads</span></h3>
-//                  <p><span>To interrupt you</span></p>
-//              </div>
-//              <div class="product-hero__cell">
-//                  <h3><span>No bias</span></h3>
-//                  <p><span>To sway you</span></p>
-//              </div>
-//              <div class="product-hero__cell">
-//                  <h3><span>No hype</span></h3>
-//                  <p><span>To distract you</span></p>
-//              </div>
-//          </div>
-//          <div class="column is-5-tablet is-offset-2-tablet product-hero__cell-container">
-//              <div class="product-hero__cell">
-//                  <h3><span>Reliable</span></h3>
-//                  <p><span>Insight</span></p>
-//              </div>
-//              <div class="product-hero__cell">
-//                  <h3><span>Intelligent</span></h3>
-//                  <p><span>Opinions</span></p>
-//              </div>
-//              <div class="product-hero__cell">
-//                  <h3><span>Actionable</span></h3>
-//                  <p><span>Ideas</span></p>
-//              </div>
-//          </div>
-//      </div>
-//      <div class="columns hero-cta__container">
-//          <div class="column has-text-centered has-text-right-tablet">
-//              <a href="#" class="button">Read More</a>
-//          </div>
-//      </div>
-// </div>
-//
-// Styleguide 5.14
 .product-hero--3x2 {
     background-image: url('#{$root}/images/components/product-hero-bg-2.jpg');
     background-size: cover;
@@ -1137,50 +1097,6 @@
         padding-bottom: $baseline / 2;
     }
 }
-
-// Product Hero - 2x2
-//
-// default - Default Hero
-// .hide-cta - Hero without CTA Button
-// .has-text-centered - Hero with center aligned content and CTA
-//
-// markup:
-// <div class="product-hero product-hero--2x2 {$modifiers}">
-//      <div class="columns is-mobile">
-//          <div class="column">
-//              <h2><span>With Real Vision Television, You Get...</span></h2>
-//          </div>
-//      </div>
-//      <div class="columns">
-//          <div class="column is-6-tablet product-hero__cell-container">
-//              <div class="product-hero__cell">
-//                  <h3><span>One Hundred</span></h3>
-//                  <p><span>Research reports per year covering<br/> all aspects of financial markets</span></p>
-//              </div>
-//              <div class="product-hero__cell">
-//                  <h3><span>Thirty</span></h3>
-//                  <p><span>Independent investment<br/> research experts</span></p>
-//              </div>
-//          </div>
-//          <div class="column is-6-tablet product-hero__cell-container">
-//              <div class="product-hero__cell">
-//                  <h3><span>Two</span></h3>
-//                  <p><span>Research reports<br/> per week</span></p>
-//              </div>
-//              <div class="product-hero__cell">
-//                  <h3><span>One</span></h3>
-//                  <p><span>Weekly Newsletter, <em>The hack</em>,<br/> delivered straight to your inbox</span></p>
-//              </div>
-//          </div>
-//      </div>
-//      <div class="columns hero-cta__container">
-//          <div class="column has-text-centered has-text-right-tablet">
-//              <a href="#" class="button">Read More</a>
-//          </div>
-//      </div>
-// </div>
-//
-// Styleguide 5.15
 .product-hero--2x2 {
     background-image: url('#{$root}/images/components/product-hero-bg-3.jpg');
     background-position: center;
@@ -1216,59 +1132,6 @@
         margin-bottom: $baseline / 2;
     }
 }
-
-// Product Hero - 2x3
-//
-// default - Default Hero
-// .hide-cta - Hero without CTA Button
-//
-// markup:
-// <div class="product-hero product-hero--2x3 has-text-centered-tablet {$modifiers}">
-//      <div class="columns is-mobile">
-//          <div class="column">
-//              <h2><span>With Real Vision Television, You Get...</span></h2>
-//          </div>
-//      </div>
-//      <div class="columns">
-//          <div class="column is-10-mobile is-4-tablet product-hero__cell-container">
-//              <div class="product-hero__cell">
-//                  <h3><span>Accessible</span></h3>
-//                  <p><span>Via Desktop, Mobile and iOS app so you can watch it where you are</span></p>
-//              </div>
-//              <div class="product-hero__cell">
-//                  <h3><span>Organized</span></h3>
-//                  <p><span>Weekly content schedules categorized videos, bookmarks and watch-later buttons so you don't miss a thing during busy times</span></p>
-//              </div>
-//          </div>
-//          <div class="column is-10-mobile is-4-tablet product-hero__cell-container">
-//              <div class="product-hero__cell">
-//                  <h3><span>Convenient</span></h3>
-//                  <p><span>Audio and video transcript downloads for when you're offline</span></p>
-//              </div>
-//              <div class="product-hero__cell">
-//                  <h3><span>Sharable</span></h3>
-//                  <p><span>Share your thoughts and opinions with our community space on every piece of content</span></p>
-//              </div>
-//          </div>
-//          <div class="column is-4-tablet is-hidden-mobile product-hero__cell-container">
-//              <div class="product-hero__cell">
-//                  <h3><span>Time-Saving</span></h3>
-//                  <p><span>Multiple playback speeds &amp; chapter so you can quickly access the sections you want</span></p>
-//              </div>
-//              <div class="product-hero__cell">
-//                  <h3><span>Immediate</span></h3>
-//                  <p><span>A one-step login, process &amp; update, content daily</span></p>
-//              </div>
-//          </div>
-//      </div>
-//      <div class="columns hero-cta__container">
-//          <div class="column has-text-centered has-text-right-tablet">
-//              <a href="#" class="button">Read More</a>
-//          </div>
-//      </div>
-// </div>
-//
-// Styleguide 5.16
 .product-hero--2x3 {
     background-image: url('#{$root}/images/components/product-hero-bg-4.jpg');
     background-position: center;
@@ -1306,35 +1169,6 @@
         margin-bottom: $baseline / 2;
     }
 }
-
-// Product Hero - Descriptive
-//
-// default - Default Hero
-// .hide-cta - Hero without CTA Button
-// .hide-heading - Hero without main block heading
-// .has-text-left - Hero with left aligned content and CTA
-// .has-text-right - Hero with right aligned content and CTA
-//
-// markup:
-// <div class="product-hero product-hero--descriptive {$modifiers}">
-//      <div class="columns is-mobile">
-//          <div class="column product-hero--heading">
-//              <h2><span>Leading Institutions give us the thumbs up too...</span></h2>
-//          </div>
-//      </div>
-//      <div class="columns">
-//          <div class="column">
-//              <p><span>Real Vision Television is accredited by some of the most respected financial and educational institutions across the globe, including:</span></p>
-//          </div>
-//      </div>
-//      <div class="columns hero-cta__container">
-//          <div class="column has-text-centered has-text-right-tablet">
-//              <a href="#" class="button">Read More</a>
-//          </div>
-//      </div>
-// </div>
-//
-// Styleguide 5.17
 .product-hero--descriptive {
     background-image: url('#{$root}/images/components/product-hero-bg-5.jpg');
     background-position: center;
@@ -1414,6 +1248,122 @@
 
     .columns:last-child:not(.hero-cta__container) {
         margin-bottom: $baseline / 2;
+    }
+}
+.hero--no-bg {
+    background-image: url('#{$root}/images/components/product-hero-bg-5.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: $baseline;
+
+    &:before {
+        content: " ";
+        background-image: linear-gradient(45deg, rgba(58,68,76,1) 30%,rgba(58,68,76,0) 100%);
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        @include tablet {
+            background-image: linear-gradient(45deg, rgba(58,68,76,1) 25%,rgba(58,68,76,0) 75%);
+        }
+    }
+
+    .columns {
+        position: relative;
+        z-index: 10;
+    }
+
+    h1, h2, p {
+        color: #fff;
+    }
+
+    h1 {
+        margin-bottom: $baseline / 2;
+    }
+
+    @include tablet {
+        padding: $baseline ($baseline * 2) ($baseline * 2) ($baseline * 2);
+    }
+
+    p {
+        line-height: 1.3rem;
+        text-transform: none;
+
+        span {
+            background: transparent;
+            box-shadow: none;
+        }
+
+        @include tablet {
+            line-height: 2rem;
+
+            span {
+                font-size: $size-4;
+            }
+        }
+    }
+}
+.post-hero {
+    @extend .hero--no-bg;
+
+    .post-hero__published {
+        color: #779199;
+        text-transform: none;
+        font-weight: 700;
+        font-size: $size-5;
+        line-height: 36px;
+    }
+
+    .post-hero__pubdate {
+        text-transform: uppercase;
+    }
+
+    .button {
+        background: $color-red-ribbon;
+        color: $white;
+
+        &:hover, &:active {
+            background: $color-dark-gray;
+            color: $color-red-ribbon;
+            border-color: $color-red-ribbon;
+        }
+    }
+
+    .post-hero__cat-title {
+        margin-bottom: $baseline;
+        span {
+            font-size: $size-2;
+            color: $color-dark-gray;
+            background-color: white;
+            box-shadow: 10px 0 0 white, -10px 0 0 white;
+        }
+    }
+
+    @include tablet {
+        padding: $baseline ($baseline * 2);
+    }
+}
+.hero-bottom {
+    background-image: url('#{$root}/images/components/product-hero-bg-5.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: $baseline;
+    min-height: 300px;
+    position: relative;
+
+    &__content {
+        position: absolute;
+        bottom: 0;
+        left: 10px;
+        padding: $baseline * 1.5;
+    }
+
+    h2 {
+        margin-bottom: 0;
     }
 }
 
@@ -1550,7 +1500,7 @@
 //      </div>
 // </div>
 //
-// Styleguide 5.18
+// Styleguide 5.9
 .card-grid {
     padding: $baseline;
     background: white;
@@ -1651,7 +1601,7 @@
 // </div>
 // </div>
 //
-// Styleguide 5.19
+// Styleguide 5.10
 .product-links-block {
     background-image: url('#{$root}/images/components/product-links-block_bg_mobile.jpg');
     background-position: center;
@@ -1693,6 +1643,7 @@
             bottom: -20px;
             left: 0;
             transition: bottom 200ms ease-in-out;
+            background: url('#{$root}/images/overlays/stripe_clear.png');
         }
 
         .product-link__bottom-arrow {
@@ -1730,34 +1681,6 @@
     strong {
         font-style: normal;
     }
-
-    .product-link--tv {
-        strong {
-            color: $brand;
-        }
-
-        .product-link__bottom-overlay {
-            background: url('#{$root}/images/overlays/stripe_clear.png'), $brand;
-        }
-    }
-    .product-link--publishing {
-        strong {
-            color: $color-orange;
-        }
-
-        .product-link__bottom-overlay {
-            background: url('#{$root}/images/overlays/stripe_clear.png'), $color-orange;
-        }
-    }
-    .product-link--podcast {
-        strong {
-            color: $color-purple;
-        }
-
-        .product-link__bottom-overlay {
-            background: url('#{$root}/images/overlays/stripe_clear.png'), $color-purple;
-        }
-    }
 }
 
 // Product Play Block
@@ -1777,7 +1700,7 @@
 //      </div>
 // </a>
 //
-// Styleguide 5.20
+// Styleguide 5.11
 .play-block {
     display: block;
     background-image: url('#{$root}/images/components/product-play-block-bg.jpg');
@@ -1853,26 +1776,6 @@
     }
 }
 
-// Spacer Row
-//
-// An empty colored block to separate components
-//
-// default - Default
-//
-// markup:
-// <div class="spacer-row">
-// </div>
-//
-// Styleguide 5.21
-.spacer-row {
-    padding: .5rem;
-    background-color: $color-dark-gray;
-
-    @include tablet {
-        padding: 1rem;
-    }
-}
-
 // Product Listing Item
 //
 // A single instance of a product listing item
@@ -1902,7 +1805,7 @@
 //      </div>
 // </div>
 //
-// Styleguide 5.22
+// Styleguide 5.12
 .product-listing--item {
     padding: $baseline;
 
@@ -1953,72 +1856,6 @@
     }
 }
 
-// Signup Progress
-//
-// markup:
-// <ol class="columns signup-progress is-marginless is-mobile">
-//     <li class="column is-paddingless active">Step 1</li>
-//     <li class="column is-paddingless active">Step 2</li>
-//     <li class="column is-paddingless">Step 3</li>
-// </ol>
-//
-// Styleguide 5.23
-.signup-progress {
-    counter-reset: step;
-    overflow: hidden;
-    padding: 0;
-    position: relative;
-    z-index: 1;
-    li {
-        color: grey;
-        list-style-type: none;
-        position: relative;
-        text-align: center;
-        font-weight: 700;
-        margin-top: 0;
-        &:before {
-            background: white;
-            width: 30px;
-            height: 30px;
-            color: grey;
-            content: counter(step);
-            counter-increment: step;
-            line-height: 26px;
-            border: 2px solid grey;
-            display: block;
-            text-align: center;
-            margin: 0 auto 10px auto;
-            border-radius: 50%;
-            font-size: 14px;
-        }
-        &:after {
-            width: 100%;
-            height: 2px;
-            content: '';
-            position: absolute;
-            background-color: grey;
-            top: 15px;
-            left: -50%;
-            z-index: -1;
-        }
-        &:first-child:after {
-            content: none;
-        }
-        &.active {
-            color: $color-dark-gray;
-            &:before {
-                border-color: $color-dark-gray;
-                content: "";
-                background: $brand url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1000'%3E%3Cpath fill='#{$color-dark-gray}' d='M849.9 115L360 604.9 150 395 10 535l210 210 35 35 105 105 630-630.1L849.9 115z'/%3E%3C/svg%3E") no-repeat 50%;
-                background-size: 50%;
-            }
-            &:after {
-                background-color: $color-dark-gray;
-            }
-        }
-    }
-}
-
 // Email Capture
 //
 // A simple form to capture target users' first names and email addresses
@@ -2061,7 +1898,7 @@
 //      <p class="email-capture--error">Oops! It looks like something went wrong. Please try again.</p>
 // </div>
 //
-// Styleguide 5.24
+// Styleguide 5.13
 .email-capture {
     padding: $baseline;
 
@@ -2079,7 +1916,7 @@
 
     .email-capture--error {
         display: none;
-        color: $color-torch-red;
+        color: $color-red-ribbon;
         margin-bottom: 0;
     }
 
@@ -2136,8 +1973,7 @@
 //    </div>
 // </div>
 //
-// Styleguide 5.25
-
+// Styleguide 5.14
 .product-price-block {
     padding: $baseline;
     position: relative;
@@ -2344,64 +2180,6 @@
     }
 }
 
-// Media Block
-//
-// default - Default
-// .has-text-centered - Centers the image
-// .has-text-right - Aligns the image to the right
-// .is-full-width - Have the image fill the block
-// .has-padding - Add padding inside the block
-// .has-margin - Add margin outside the block
-//
-// markup:
-// <div class="media-block {$modifiers}">
-//     <img src="http://lorempixel.com/320/180/abstract" />
-// </div>
-//
-// Styleguide 5.26
-.media-block {
-    background: #eee;
-    img {
-        vertical-align:bottom;
-    }
-
-    &.is-full-width img {
-        width: 100%;
-    }
-
-    &.has-padding {
-        padding: $baseline;
-    }
-
-    &.has-margin {
-        margin: $baseline;
-    }
-}
-
-// CTA Block
-//
-// default - Default
-// .has-text-centered - Aligns the button to the center
-// .has-text-right - Aligns the button to the right
-// .has-margin - Add margin outside the block
-// .has-dark-text - Makes the text on the button dark for use with light backgrounds
-//
-// markup:
-// <div class="cta-block {$modifiers}">
-//     <a href="#" class="button">Call to action button</a>
-// </div>
-//
-// Styleguide 5.27
-.cta-block {
-    &.has-dark-text .button{
-        color: $color-dark-gray;
-    }
-
-    &.has-margin {
-        margin: $baseline;
-    }
-}
-
 // Image Row
 //
 // Single row of images - contents will adjust width based on number images
@@ -2409,7 +2187,7 @@
 // default - Default
 //
 // markup:
-// <div class="image-row">
+// <div class="image-row"
 //      <h2>EXAMPLES OF FEATURE DOCUMENTARIES</h2>
 //      <div class="columns is-tablet">
 //          <div class="card column">
@@ -2457,7 +2235,7 @@
 //      </div>
 // </div>
 //
-// Styleguide 5.28
+// Styleguide 5.15
 .image-row {
     padding: $baseline;
     background: none;
@@ -2577,7 +2355,7 @@
 //      </div>
 // </div>
 //
-// Styleguide 5.29
+// Styleguide 5.16
 .pullout-container {
     padding: 0;
 
@@ -2636,173 +2414,6 @@
     }
 }
 
-// Hero - No Text Background
-//
-// default - Default Hero
-//
-// markup:
-// <div class="product-hero hero--no-bg {$modifiers}">
-//      <div class="columns">
-//          <div class="column is-half">
-//              <h1>Oil</h1>
-//              <p><span>Real Vision Television is accredited by some of the most respected financial and educational institutions across the globe, including:</span></p>
-//          </div>
-//      </div>
-// </div>
-//
-// Styleguide 5.31
-.hero--no-bg {
-    background-image: url('#{$root}/images/components/product-hero-bg-5.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding: $baseline;
-
-    &:before {
-        content: " ";
-        background-image: linear-gradient(45deg, rgba(58,68,76,1) 30%,rgba(58,68,76,0) 100%);
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-
-        @include tablet {
-            background-image: linear-gradient(45deg, rgba(58,68,76,1) 25%,rgba(58,68,76,0) 75%);
-        }
-    }
-
-    .columns {
-        position: relative;
-        z-index: 10;
-    }
-
-    h1, h2, p {
-        color: #fff;
-    }
-
-    h1 {
-        margin-bottom: $baseline / 2;
-    }
-
-    @include tablet {
-        padding: $baseline ($baseline * 2) ($baseline * 2) ($baseline * 2);
-    }
-
-    p {
-        line-height: 1.3rem;
-        text-transform: none;
-
-        span {
-            background: transparent;
-            box-shadow: none;
-        }
-
-        @include tablet {
-            line-height: 2rem;
-
-            span {
-                font-size: $size-4;
-            }
-        }
-    }
-}
-
-
-// Post Hero
-//
-// default - Default Hero
-//
-// markup:
-// <div class="product-hero hero--no-bg post-hero {$modifiers}">
-//      <div class="columns">
-//          <div class="column is-half">
-//              <h1 class="post-hero__cat-title"><span>Big Stories</span></h1>
-//              <h1>Oil</h1>
-//              <p><span>Real Vision Television is accredited by some of the most respected financial and educational institutions across the globe, including:</span></p>
-//          </div>
-//      </div>
-//      <div class="columns">
-//          <div class="column has-text-centered has-text-left-tablet post-hero__published">
-//            Publishing on <span class="post-hero__pubdate">Aug 10 2017</span>
-//          </div>
-//          <div class="column has-text-centered has-text-right-tablet">
-//              <a href="#" class="button">Read More</a>
-//          </div>
-//      </div>
-// </div>
-//
-// Styleguide 5.32
-
-.post-hero {
-    .post-hero__published {
-        color: #779199;
-        text-transform: none;
-        font-weight: 700;
-        font-size: $size-5;
-        line-height: 36px;
-    }
-
-    .post-hero__pubdate {
-        text-transform: uppercase;
-    }
-
-    .button {
-        background: $color-torch-red;
-        color: $white;
-    }
-
-    .post-hero__cat-title {
-        margin-bottom: $baseline;
-        span {
-            font-size: $size-2;
-            color: $color-dark-gray;
-            background-color: white;
-            box-shadow: 10px 0 0 white, -10px 0 0 white;
-        }
-    }
-
-    @include tablet {
-        padding: $baseline ($baseline * 2);
-    }
-}
-
-// Hero - Bottom Align
-//
-// default - Default Hero
-//
-// markup:
-// <div class="product-hero hero-bottom {$modifiers}">
-//      <div class="columns hero-bottom__content is-mobile">
-//          <div class="column product-hero--heading">
-//              <h2><span>Leading Institutions give us the thumbs up too...</span></h2>
-//          </div>
-//      </div>
-// </div>
-//
-// Styleguide 5.33
-
-.hero-bottom {
-    background-image: url('#{$root}/images/components/product-hero-bg-5.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding: $baseline;
-    min-height: 300px;
-    position: relative;
-
-    &__content {
-        position: absolute;
-        bottom: 0;
-        left: 10px;
-        padding: $baseline * 1.5;
-    }
-
-    h2 {
-        margin-bottom: 0;
-    }
-}
-
 // WYSIWYG
 //
 // markup:
@@ -2812,7 +2423,7 @@
 //      <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor at orci in sodales. In convallis urna et nisi dictum varius. Duis ornare felis vel nisi pretium, non lobortis ligula consequat.</h3>
 // </div>
 //
-// Styleguide 5.34
+// Styleguide 5.17
 .wysiwyg-block {
     padding: $baseline;
     h2, h3 {
@@ -2849,24 +2460,574 @@
     }
 }
 
-// Pagination
+// Podcast Episode
+//
+// default - Default Episode
+// .is-featured - Featured Episode
 //
 // markup:
-// <nav class="pagination is-medium" role="navigation" aria-label="pagination">
-//   <a class="pagination-previous button">Prev.</a>
-//   <a class="pagination-next button">Next</a>
-// </nav>
+// <section class="podcast-episode {$modifiers}">
+//     <div class="podcast-episode__content">
+//          <div class="columns is-multiline is-mobile is-marginless">
+//              <div class="column is-2-tablet is-hidden-mobile">
+//                  <div class="podcast-episode__player--image">
+//                      <article>
+//                          <img src="/images/components/podcast-episode-img.jpg" />
+//                      </article>
+//                  </div>
+//              </div>
+//              <div class="column is-10-tablet is-12-mobile">
+//                  <div class="podcast-episode__detail">
+//                      <h1><a href="#">1 - 2017 SUMMER SERIES: MILTON'S MAILBAG</a></h1>
+//                      <small>Published On: Aug 4, 2017</small>
+//                      <p>Grant and Aaron kick off the 2017 Summer Series by addressing some of the most pressing listener questions during the first season of Adventures in Finance. The guys are also joined by Jeffrey Snider, of Alhambra Partners, and Michael Oliver, of Momentum Structural Analysis, who shed light on the Eurodollar markets and FAANG momentum, respectively.</p>
+//                  </div>
+//              </div>
+//          </div>
+//          <div class="columns is-vcentered is-multiline is-mobile is-marginless is-paddingless">
+//              <div class="column is-12">
+//                  <div class="podcast-episode__player--media">
+//                      <?php echo do_shortcode('[powerpress url="'.$podcast_episode_audio_url.'"]'); ?>
+//                  </div>
+//                  <div class="podcast-episode__player--links">
+//                      <div class="podcast-episode__player--links-download pull-left">
+//                          <a href="<?php echo $podcast_episode_audio_url; ?>" download><i class="fa fa-download" aria-hidden="true"></i></a>
+//                      </div>
+//                      <div class="podcast-episode__player--links-social pull-right">
+//                          <a href="https://twitter.com/realvision"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+//                          <a href="https://twitter.com/realvision"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+//                          <a href="https://twitter.com/realvision"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+//                      </div>
+//                  </div>
+//              </div>
+//          </div>
+//          </div>
+// </section>
 //
-// Styleguide 5.35
+// Styleguide 5.18
+.podcast-episode {
+    padding: $baseline;
+    background: white;
+    .podcast-episode__content {
+        @extend .has-paper-background;
+        padding: $baseline;
+        position: relative;
 
-.pagination {
-    .button {
-        padding: 0 0.5rem;
-        color: #fff;
-        margin-left: 5px;
+        .podcast-episode__detail {
+            h1 {
+                font-size: $size-4;
+                margin-bottom: $baseline / 2;
 
-        &:hover {
-            color: $color-torch-red
+                a {
+                    color: $text;
+                    transition: color 250ms ease-in-out;
+                    text-decoration: none;
+
+                    &:hover {
+                        color: $color-red-ribbon;
+                    }
+                }
+            }
+            p {
+                font-size: $size-5;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+            small {
+                font-style: italic;
+                font-size: $size-6;
+            }
         }
+
+        .podcast-episode__player--links {
+            padding: $baseline / 3;
+
+            .podcast-episode__player--links-social {
+                a:not(:last-child) {
+                    margin-right: $baseline / 2;
+                }
+            }
+
+            a {
+                color: $color-dark-gray;
+                transition: color 250ms ease-in-out;
+
+                &:hover {
+                    color: $color-red-ribbon;
+                }
+
+                i {
+                    font-size: $size-4;
+                    @include tablet {
+                        font-size: $size-3;
+                    }
+                }
+            }
+        }
+    }
+
+    &.is-featured {
+        background: black;
+        .podcast-episode__content {
+            background: black;
+
+            .podcast-episode__detail {
+                h1 {
+                    a {
+                        color: white;
+                        transition: color 250ms ease-in-out;
+
+                        &:hover {
+                            color: $color-red-ribbon;
+                        }
+                    }
+                }
+                p {
+                    color: white;
+                }
+                small {
+                    color: $color-spring-green;
+                }
+            }
+
+            .podcast-episode__player--links {
+                a {
+                    color: white;
+                    transition: color 250ms ease-in-out;
+
+                    &:hover {
+                        color: $color-red-ribbon;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Podcast Listing
+//
+// default - Default
+// .featured-post - Features the latest post in the listing
+//
+// markup:
+// <div class="podcast-listing">
+//      <div class="columns is-vcentered is-marginless is-mobile podcast-listing__heading">
+//          <div class="column">
+//              <h2><span>TITLE</span></h2>
+//          </div>
+//          <div class="column">
+//              <div class="pagination is-pulled-right">
+//                  <a href="#" class="button">Next</a>
+//              </div>
+//          </div>
+//      </div>
+//      <div class="{$modifiers}">
+//          <section class="podcast-episode">
+//              <div class="podcast-episode__content">
+//                  <div class="columns is-multiline is-mobile is-marginless">
+//                      <div class="column is-2-tablet is-hidden-mobile">
+//                          <div class="podcast-episode__player--image">
+//                              <article>
+//                                  <img src="/images/components/podcast-episode-img.jpg" />
+//                              </article>
+//                          </div>
+//                      </div>
+//                      <div class="column is-10-tablet is-12-mobile">
+//                          <div class="podcast-episode__detail">
+//                              <h1><a href="#">1 - 2017 SUMMER SERIES: MILTON'S MAILBAG</a></h1>
+//                              <small>Published On: Aug 4, 2017</small>
+//                              <p>Grant and Aaron kick off the 2017 Summer Series by addressing some of the most pressing listener questions during the first season of Adventures in Finance. The guys are also joined by Jeffrey Snider, of Alhambra Partners, and Michael Oliver, of Momentum Structural Analysis, who shed light on the Eurodollar markets and FAANG momentum, respectively.</p>
+//                          </div>
+//                      </div>
+//                  </div>
+//                  <div class="columns is-vcentered is-multiline is-mobile is-marginless is-paddingless">
+//                      <div class="column is-12">
+//                          <div class="podcast-episode__player--media">
+//                              <?php echo do_shortcode('[powerpress url="'.$podcast_episode_audio_url.'"]'); ?>
+//                          </div>
+//                          <div class="podcast-episode__player--links">
+//                              <div class="podcast-episode__player--links-download pull-left">
+//                                  <a href="<?php echo $podcast_episode_audio_url; ?>" download><i class="fa fa-download" aria-hidden="true"></i></a>
+//                              </div>
+//                              <div class="podcast-episode__player--links-social pull-right">
+//                                  <a href="https://twitter.com/realvision"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+//                                  <a href="https://twitter.com/realvision"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+//                                  <a href="https://twitter.com/realvision"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+//                              </div>
+//                          </div>
+//                      </div>
+//                  </div>
+//              </div>
+//      </section>
+//      </div>
+//      <section class="podcast-episode">
+//          <div class="podcast-episode__content">
+//              <div class="columns is-multiline is-mobile is-marginless">
+//                  <div class="column is-2-tablet is-hidden-mobile">
+//                      <div class="podcast-episode__player--image">
+//                          <article>
+//                              <img src="/images/components/podcast-episode-img.jpg" />
+//                          </article>
+//                      </div>
+//                  </div>
+//                  <div class="column is-10-tablet is-12-mobile">
+//                      <div class="podcast-episode__detail">
+//                          <h1><a href="#">1 - 2017 SUMMER SERIES: MILTON'S MAILBAG</a></h1>
+//                          <small>Published On: Aug 4, 2017</small>
+//                          <p>Grant and Aaron kick off the 2017 Summer Series by addressing some of the most pressing listener questions during the first season of Adventures in Finance. The guys are also joined by Jeffrey Snider, of Alhambra Partners, and Michael Oliver, of Momentum Structural Analysis, who shed light on the Eurodollar markets and FAANG momentum, respectively.</p>
+//                      </div>
+//                  </div>
+//              </div>
+//              <div class="columns is-vcentered is-multiline is-mobile is-marginless is-paddingless">
+//                  <div class="column is-12">
+//                      <div class="podcast-episode__player--media">
+//                          <?php echo do_shortcode('[powerpress url="'.$podcast_episode_audio_url.'"]'); ?>
+//                      </div>
+//                      <div class="podcast-episode__player--links">
+//                          <div class="podcast-episode__player--links-download pull-left">
+//                              <a href="<?php echo $podcast_episode_audio_url; ?>" download><i class="fa fa-download" aria-hidden="true"></i></a>
+//                          </div>
+//                          <div class="podcast-episode__player--links-social pull-right">
+//                              <a href="https://twitter.com/realvision"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+//                              <a href="https://twitter.com/realvision"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+//                              <a href="https://twitter.com/realvision"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+//                          </div>
+//                      </div>
+//                  </div>
+//              </div>
+//          </div>
+//      </section>
+//      <section class="podcast-episode">
+//          <div class="podcast-episode__content">
+//              <div class="columns is-multiline is-mobile is-marginless">
+//                  <div class="column is-2-tablet is-hidden-mobile">
+//                      <div class="podcast-episode__player--image">
+//                          <article>
+//                              <img src="/images/components/podcast-episode-img.jpg" />
+//                          </article>
+//                      </div>
+//                  </div>
+//                  <div class="column is-10-tablet is-12-mobile">
+//                      <div class="podcast-episode__detail">
+//                          <h1><a href="#">1 - 2017 SUMMER SERIES: MILTON'S MAILBAG</a></h1>
+//                          <small>Published On: Aug 4, 2017</small>
+//                          <p>Grant and Aaron kick off the 2017 Summer Series by addressing some of the most pressing listener questions during the first season of Adventures in Finance. The guys are also joined by Jeffrey Snider, of Alhambra Partners, and Michael Oliver, of Momentum Structural Analysis, who shed light on the Eurodollar markets and FAANG momentum, respectively.</p>
+//                      </div>
+//                  </div>
+//              </div>
+//              <div class="columns is-vcentered is-multiline is-mobile is-marginless is-paddingless">
+//                  <div class="column is-12">
+//                      <div class="podcast-episode__player--media">
+//                          <?php echo do_shortcode('[powerpress url="'.$podcast_episode_audio_url.'"]'); ?>
+//                      </div>
+//                      <div class="podcast-episode__player--links">
+//                          <div class="podcast-episode__player--links-download pull-left">
+//                              <a href="<?php echo $podcast_episode_audio_url; ?>" download><i class="fa fa-download" aria-hidden="true"></i></a>
+//                          </div>
+//                          <div class="podcast-episode__player--links-social pull-right">
+//                              <a href="https://twitter.com/realvision"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+//                              <a href="https://twitter.com/realvision"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+//                              <a href="https://twitter.com/realvision"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+//                          </div>
+//                      </div>
+//                  </div>
+//              </div>
+//          </div>
+//      </section>
+// </div>
+//
+// Styleguide 5.19
+.podcast-listing {
+    padding: $baseline / 2;
+
+    .podcast-episode {
+        padding: $baseline / 2;
+    }
+
+    .podcast-listing__heading {
+        h2 {
+            margin-left: 10px;
+            margin-bottom: 0;
+            margin-top: 0;
+            span {
+                box-decoration-break: clone;
+                font-size: $size-4;
+                color: white;
+                background-color: $color-dark-gray;
+                box-shadow: 10px 0 0 $color-dark-gray, -10px 0 0 $color-dark-gray;
+            }
+
+            @include tablet {
+                span {
+                    font-size: $size-3;
+                }
+            }
+        }
+    }
+
+    .featured-post {
+        .podcast-episode {
+            background: white;
+            .podcast-episode__content {
+                background: black;
+
+                .podcast-episode__detail {
+                    h1 {
+                        a {
+                            color: white;
+                            transition: color 250ms ease-in-out;
+
+                            &:hover {
+                                color: $color-red-ribbon;
+                            }
+                        }
+                    }
+                    p {
+                        color: white;
+                    }
+                    small {
+                        color: $color-spring-green;
+                    }
+                }
+
+                .podcast-episode__player--links {
+                    a {
+                        color: white;
+                        transition: color 250ms ease-in-out;
+
+                        &:hover {
+                            color: $color-red-ribbon;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Post Header
+//
+// default - Default
+//
+// markup:
+// <div class="contributor-header container is-paddingless is-black">
+// 		<div class="contributor-container">
+// 			<div class="splash"><img alt="" src="http://via.placeholder.com/1600x900"></div>
+// 			<div class="is-padded contributor-details">
+// 				<div class="columns is-multiline">
+// 					<div class="column is-full">
+// 						<h1 class="is-size-3-mobile">RAOUL PAL</h1>
+// 						<h2 class="proxima-nova font-weight-normal is-size-3 is-size-5-mobile de-emphasis">Global Macro Investor</h2>
+// 					</div>
+// 					<div class="column is-7 contributor-bio">
+// 						<div class="top-border">
+// 							<p class="has-text-justified-mobile"></p>
+// 							<ul>
+// 								<li>Si autem id non concedatur, non continuo vita beata tollitur.</li>
+// 								<li>Sed venio ad inconstantiae crimen, ne saepius dicas me aberrare;</li>
+// 								<li>Parvi enim primo ortu sic iacent, tamquam omnino sine animo sint.</li>
+// 								<li>Quam ob rem tandem, inquit, non satisfacit?</li>
+// 							</ul>
+// 						</div>
+// 					</div>
+// 					<div class="column is-2">
+// 						<div class="top-border">
+// 							<div class="columns">
+// 								<div class="column">
+// 									<dl>
+//                                      <dt>Company</dt>
+//                                      <dd>RealVision</dd>
+//                                      <dt>Specialism(s)</dt>
+//                                      <dd>Macro</dd>
+// 									</dl>
+// 								</div>
+// 							</div>
+// 						</div>
+// 					</div>
+// 					<div class="column is-3">
+// 						<div class="top-border">
+// 							<dl>
+// 								<dt>Links</dt>
+// 								<dd>
+// 									<ul class="contributor-links">
+// 										<li>
+// 											<i aria-hidden="true" class="fa fa-external-link-square"></i><a href="http://www.roaulpal.com">www.roaulpal.com</a>
+// 										</li>
+// 										<li>
+// 											<i aria-hidden="true" class="fa fa-twitter-square"></i><a href="http://www.twitter.com">twitter</a>
+// 										</li>
+// 										<li>
+// 											<i aria-hidden="true" class="fa fa-linkedin-square"></i><a href="http://www.linkedin.com">linkedin</a>
+// 										</li>
+// 									</ul>
+// 								</dd>
+// 							</dl>
+// 						</div>
+// 					</div>
+// 				</div>
+// 				<div class="columns">
+// 					<div class="column"></div>
+// 				</div>
+// 			</div>
+// 		</div>
+// 	</div>
+//
+// Styleguide 5.20
+.contributor-header.is-black {
+    background: #111111;
+    color: white;
+    padding: $baseline;
+    width: 100%;
+
+    .contributor-container {
+        .splash {
+            position: relative;
+
+            &:after {
+                background: linear-gradient(to bottom, transparent 35%, rgba(17, 20, 25, 0.5) 60%, #111111 80%);
+                content: '';
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                left: 0;
+                top: 0;
+                transition: opacity .5s .5s;
+            }
+        }
+    }
+    
+    .contributor-details {
+        margin-top: -15%;
+        position: relative;
+        z-index: 1;
+        
+        .de-emphasis {
+            opacity: 0.5;
+        }
+        
+        .contributor-bio {
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+                li {
+                    position: relative;
+                    margin-left: 1rem;
+
+                    &:before {
+                        content: "• ";
+                        color: $color-cyan; 
+                        margin-left: $baseline;
+                        left: -2.5rem;
+                        position: absolute;
+                    }
+                }
+            }
+        }
+    }
+    
+    .is-padded {
+        padding-left: $baseline;
+        padding-right: $baseline;
+    }
+    
+    .top-border {
+        border-top: 3px solid rgba(255, 255, 255, 0.2);
+        padding-top: $baseline / 2;
+    }
+    
+    .contributor-links {
+        margin-left: 0;
+        list-style: none;
+        margin-top: 10px;
+        
+        a {
+            color: #fff;
+        	text-decoration: none;
+        }
+        
+        i {
+            padding-right: 10px;
+        	vertical-align: bottom;
+        }
+    }
+}
+
+// Countdown banner
+// 
+// markup:
+// <div class="container countdown-banner">
+//     <div class="columns is-marginless">
+//         <div class="column is-vertically-center">
+//             <div>
+//                 <h2>REAL VISION THINK TANK</h2>
+//                 <p>THE NEW AND IMPROVED REAL VISION PUBLICATIONS</p>
+//             </div>
+//         </div>
+//         <div class="column is-vertically-center has-text-centered">
+//             <a class="button is-primary" href="#">Find out more</a>
+//         </div>
+//         <div class="column is-narrow">
+//             <p class="hurry-text has-text-centered is-uppercase">Launch discount ends in</p>
+//             <div class="columns is-marginless">
+//                 <div class="column is-paddingless">
+//                     <div class="countdown__time-value countdown__time-days">4</div>
+//                     <div class="countdown__time-label">Days</div>
+//                 </div>
+//                 <div class="column is-paddingless">
+//                     <div class="countdown__time-value countdown__time-hours">14</div>
+//                     <div class="countdown__time-label">Hours</div>
+//                 </div>
+//                 <div class="column is-paddingless">
+//                     <div class="countdown__time-value countdown__time-mins">23</div>
+//                     <div class="countdown__time-label">Mins</div>
+//                 </div>
+//                 <div class="column is-paddingless">
+//                     <div class="countdown__time-value countdown__time-secs">05</div>
+//                     <div class="countdown__time-label">Secs</div>
+//                 </div>
+//             </div>
+//         </div>
+//     </div>
+// </div>
+// 
+// Styleguide 5.21
+.countdown-banner {
+    background: black;
+    color: white;
+    padding: 0 ($baseline / 2);
+
+    .button {
+        padding: ($baseline / 2) 1rem;
+    }
+
+    p {
+        color: $brand;
+        font-family: 'Function Pro', sans-serif;
+        font-size: $size-5;
+        margin: 0;
+    }
+
+    .hurry-text {
+        color: white;
+        font-family: 'Proxima Nova', sans-serif;
+        font-size: $size-6;
+    }
+
+    .countdown__time-value {
+        background: white;
+        color: black;
+        font-size: 2rem;
+        padding: ($baseline / 4) 0;
+        width: 2em;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .countdown__time-label {
+        text-align: center;
+        text-transform: lowercase;
     }
 }
