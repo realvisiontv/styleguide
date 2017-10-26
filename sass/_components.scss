@@ -2431,6 +2431,12 @@
 //          <li>Item 3</li>
 //          <li>Item 4</li>
 //      </ul>
+//      <ol>
+//          <li>Item 1</li>
+//          <li>Item 2</li>
+//          <li>Item 3</li>
+//          <li>Item 4</li>
+//      </ol>
 // </div>
 //
 // Styleguide 5.17
@@ -2506,6 +2512,20 @@
                     border: none;
                 }
             }
+        }
+    }
+
+    ul, ol, p {
+        @include tablet {
+            font-size: $size-4;
+        }
+    }
+
+    ol {
+        margin-left: 0;
+
+        @include tablet {
+            margin-left: $baseline;
         }
     }
 }
