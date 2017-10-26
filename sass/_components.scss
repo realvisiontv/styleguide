@@ -84,7 +84,6 @@
         line-height: $size-4;
         margin-left: 10px;
         margin-bottom: $baseline;
-        margin-top: $baseline / 2;
         span {
             box-decoration-break: clone;
             font-size: $size-4;
@@ -94,6 +93,7 @@
         }
 
         @include tablet {
+            margin-top: $baseline / 2;
             line-height: $size-3;
             span {
                 font-size: $size-3;
@@ -181,6 +181,7 @@
         blockquote {
             margin-left: 20px;
             font-style: italic;
+            font-size: $size-4;
 
             svg {
                 fill: #6e7789;
@@ -205,6 +206,7 @@
             font-weight: bold;
             color: #6e7789;
             display: inline-block;
+            font-size: $size-4;
         }
 
         hr {
