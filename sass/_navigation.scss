@@ -826,7 +826,6 @@
     font-size: $size-7;
 
     @include tablet {
-        padding: $baseline;
         font-size: $size-4;
     }
 
