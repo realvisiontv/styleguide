@@ -84,7 +84,6 @@
         line-height: $size-4;
         margin-left: 10px;
         margin-bottom: $baseline;
-        margin-top: $baseline / 2;
         span {
             box-decoration-break: clone;
             font-size: $size-4;
@@ -94,6 +93,7 @@
         }
 
         @include tablet {
+            margin-top: $baseline / 2;
             line-height: $size-3;
             span {
                 font-size: $size-3;
@@ -184,6 +184,7 @@
         blockquote {
             margin-left: 20px;
             font-style: italic;
+            font-size: $size-4;
             display: inline;
 
             svg {
@@ -209,6 +210,7 @@
             font-weight: bold;
             color: #6e7789;
             display: inline-block;
+            font-size: $size-4;
         }
 
         hr {
@@ -272,13 +274,14 @@
             }
 
             @include tablet {
+                font-size: $size-4;
 
                 &:before {
                     content: '';
                     background: $color-red-ribbon;
                     height: .65rem;
                     width: .65rem;
-                    margin-top: 7px;
+                    margin-top: 15px;
                     margin-left: 1.4rem;
                     border: none;
                 }
@@ -2578,6 +2581,19 @@
 //      <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor at orci in sodales. In convallis urna et nisi dictum varius. Duis ornare felis vel nisi pretium, non lobortis ligula consequat.</h2><br/>
 //      <br/>
 //      <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor at orci in sodales. In convallis urna et nisi dictum varius. Duis ornare felis vel nisi pretium, non lobortis ligula consequat.</h3>
+//      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor at orci in sodales. In convallis urna et nisi dictum varius. Duis ornare felis vel nisi pretium, non lobortis ligula consequat.</p>
+//      <ul>
+//          <li>Item 1</li>
+//          <li>Item 2</li>
+//          <li>Item 3</li>
+//          <li>Item 4</li>
+//      </ul>
+//      <ol>
+//          <li>Item 1</li>
+//          <li>Item 2</li>
+//          <li>Item 3</li>
+//          <li>Item 4</li>
+//      </ol>
 // </div>
 //
 // Styleguide 5.18
@@ -2614,6 +2630,64 @@
             line-height: 2.4rem;
             font-size: $size-3;
         }
+    }
+
+    ul {
+        margin-left: 0;
+        list-style: none;
+
+        li {
+            position: relative;
+            &:before {
+                margin-top: 0;
+                left: -$baseline;
+                margin-left: 0;
+                position: absolute;
+                content: '';
+                top: -5px;
+                border-top: 1rem solid transparent;
+                border-bottom: 1rem solid transparent;
+                border-left: 1rem solid $text;
+            }
+
+            & + li {
+                margin-top: $baseline / 2;
+            }
+
+            @include tablet {
+                font-size: $size-4;
+                margin-left: $baseline;
+
+                &:before {
+                    content: '';
+                    left: -$baseline;
+                    top: 0;
+                    background: $color-red-ribbon;
+                    height: .65rem;
+                    width: .65rem;
+                    margin-top: 15px;
+                    border: none;
+                }
+            }
+        }
+    }
+
+    ul, ol, p {
+        @include tablet {
+            font-size: $size-4;
+        }
+    }
+
+    ol {
+        margin-left: 0;
+
+        @include tablet {
+            margin-left: $baseline;
+        }
+    }
+
+    p {
+        line-height: 1.5;
     }
 }
 
