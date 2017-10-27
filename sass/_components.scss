@@ -1692,8 +1692,8 @@
 // <div class="link-blocks">
 //  <div class="columns is-vcentered">
 //      <div class="column">
-//          <div class="link-block {$modifiers}">
-//              <a href="#">
+//          <a href="#" class="link-block {$modifiers}">
+//              <div class="link-block__container">
 //                  <div class="link-block__content">
 //                      <h3>Watch</h3>
 //                      <p>Real Vision</p>
@@ -1701,12 +1701,12 @@
 //                  </div>
 //                  <p class="link-block__bottom-arrow"></p>
 //                  <img class="link-block__edge-overlay" src="/images/overlays/white_splatter_edges.png" />
-//              </a>
-//          </div>
+//              </div>
+//          </a>
 //      </div>
 //      <div class="column">
-//          <div class="link-block {$modifiers}">
-//              <a href="#">
+//          <a href="#" class="link-block {$modifiers}">
+//              <div class="link-block__container">
 //                  <div class="link-block__content">
 //                      <h3>Read</h3>
 //                      <p>Real Vision</p>
@@ -1714,12 +1714,12 @@
 //                  </div>
 //                  <p class="link-block__bottom-arrow"></p>
 //                  <img class="link-block__edge-overlay" src="/images/overlays/white_splatter_edges.png" />
-//              </a>
-//          </div>
+//              </div>
+//          </a>
 //      </div>
 //      <div class="column">
-//          <div class="link-block {$modifiers}">
-//              <a href="#">
+//          <a href="#" class="link-block {$modifiers}">
+//              <div class="link-block__container">
 //                  <div class="link-block__content">
 //                      <h3>Listen</h3>
 //                      <p>Real Vision</p>
@@ -1727,12 +1727,12 @@
 //                  </div>
 //                  <p class="link-block__bottom-arrow"></p>
 //                  <img class="link-block__edge-overlay" src="/images/overlays/white_splatter_edges.png" />
-//              </a>
-//          </div>
+//              </div>
+//          </a>
 //      </div>
 //      <div class="column">
-//          <div class="link-block {$modifiers}">
-//              <a href="#">
+//          <a href="#" class="link-block {$modifiers}">
+//              <div class="link-block__container">
 //                  <div class="link-block__content">
 //                      <h3>Get</h3>
 //                      <p>Real Vision</p>
@@ -1740,8 +1740,8 @@
 //                  </div>
 //                  <p class="link-block__bottom-arrow"></p>
 //                  <img class="link-block__edge-overlay" src="/images/overlays/white_splatter_edges.png" />
-//              </a>
-//          </div>
+//              </div>
+//          </a>
 //      </div>
 //  </div>
 // </div>
@@ -1755,6 +1755,22 @@
     background: white;
 
     .link-block {
+        color: white;
+        text-decoration: none;
+
+        &:hover {
+            .link-block__container {
+                padding-top: .75rem;
+                padding-bottom: 2rem;
+                
+                .link-block__bottom-arrow {
+                    bottom: 7px;
+                }
+            }
+        }
+    }
+
+    .link-block__container {
         background: url('#{$root}/images/overlays/white_splatter.png'), $color-dark-gray;
         background-size: cover;
         background-repeat: no-repeat;
@@ -1762,11 +1778,6 @@
         padding: $baseline 0;
         transition: padding 200ms ease-in-out;
         overflow: hidden;
-
-        a {
-            color: white;
-            text-decoration: none;
-        }
 
         .link-block__content {
             * {
@@ -1794,16 +1805,6 @@
             height: 100%;
             left: 0;
             top: 0;
-        }
-
-        &:hover {
-            cursor: pointer;
-            padding-top: .75rem;
-            padding-bottom: 2rem;
-            
-            .link-block__bottom-arrow {
-                bottom: 7px;
-            }
         }
     }
 
