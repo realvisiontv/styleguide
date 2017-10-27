@@ -1688,6 +1688,158 @@
     }
 }
 
+// Link Blocks
+//
+// default - Default Hero
+// :hover - Hover State
+//
+// markup:
+// <div class="link-blocks">
+//  <div class="columns is-vcentered">
+//      <div class="column">
+//          <a href="#" class="link-block {$modifiers}">
+//              <div class="link-block__container">
+//                  <div class="link-block__content">
+//                      <h3>Watch</h3>
+//                      <p>Real Vision</p>
+//                      <p><strong>Television</strong></p>
+//                  </div>
+//                  <p class="link-block__bottom-arrow"></p>
+//                  <img class="link-block__edge-overlay" src="/images/overlays/white_splatter_edges.png" />
+//              </div>
+//          </a>
+//      </div>
+//      <div class="column">
+//          <a href="#" class="link-block {$modifiers}">
+//              <div class="link-block__container">
+//                  <div class="link-block__content">
+//                      <h3>Read</h3>
+//                      <p>Real Vision</p>
+//                      <p><strong>Publishing</strong></p>
+//                  </div>
+//                  <p class="link-block__bottom-arrow"></p>
+//                  <img class="link-block__edge-overlay" src="/images/overlays/white_splatter_edges.png" />
+//              </div>
+//          </a>
+//      </div>
+//      <div class="column">
+//          <a href="#" class="link-block {$modifiers}">
+//              <div class="link-block__container">
+//                  <div class="link-block__content">
+//                      <h3>Listen</h3>
+//                      <p>Real Vision</p>
+//                      <p><strong>Podcast</strong></p>
+//                  </div>
+//                  <p class="link-block__bottom-arrow"></p>
+//                  <img class="link-block__edge-overlay" src="/images/overlays/white_splatter_edges.png" />
+//              </div>
+//          </a>
+//      </div>
+//      <div class="column">
+//          <a href="#" class="link-block {$modifiers}">
+//              <div class="link-block__container">
+//                  <div class="link-block__content">
+//                      <h3>Get</h3>
+//                      <p>Real Vision</p>
+//                      <p><strong>Free Stuff</strong></p>
+//                  </div>
+//                  <p class="link-block__bottom-arrow"></p>
+//                  <img class="link-block__edge-overlay" src="/images/overlays/white_splatter_edges.png" />
+//              </div>
+//          </a>
+//      </div>
+//  </div>
+// </div>
+//
+// Styleguide 5.11
+.link-blocks {
+    padding: $baseline;
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    background: white;
+
+    .link-block {
+        color: white;
+        text-decoration: none;
+
+        &:hover {
+            .link-block__container {
+                padding-top: .75rem;
+                padding-bottom: 2rem;
+                
+                .link-block__bottom-arrow {
+                    bottom: 7px;
+                }
+            }
+        }
+    }
+
+    .link-block__container {
+        background: url('#{$root}/images/overlays/white_splatter.png'), $color-dark-gray;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        padding: $baseline 0;
+        transition: padding 200ms ease-in-out;
+        overflow: hidden;
+
+        .link-block__content {
+            * {
+                margin: 0;
+            }
+        }
+
+        .link-block__bottom-arrow {
+            position: absolute;
+            height: 20px;
+            width: 20px;
+            margin: auto;
+            left: 50%;
+            bottom: -20px;
+            transform: translateX(-50%);
+            border-left: 1.25rem solid transparent;
+            border-right: 1.25rem solid transparent;
+            border-top: 1rem solid $brand;
+            transition: bottom 200ms ease-in-out;
+        }
+
+        .link-block__edge-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+        }
+    }
+
+    h3, p {
+        font-weight: 800;
+    }
+
+    h3 {
+        font-size: $size-1;
+        line-height: 2.5rem;
+
+        @include tablet-only {
+            font-size: $size-2;
+            line-height: 2rem;
+        }
+    }
+
+    p {
+        font-size: $size-4;
+
+        @include tablet-only {
+            font-size: $size-5;
+        }
+    }
+
+    strong {
+        font-style: normal;
+    }
+}
+
 // Product Play Block
 //
 // default - Default
@@ -1705,7 +1857,7 @@
 //      </div>
 // </a>
 //
-// Styleguide 5.11
+// Styleguide 5.12
 .play-block {
     display: block;
     background-image: url('#{$root}/images/components/product-play-block-bg.jpg');
@@ -1810,7 +1962,7 @@
 //      </div>
 // </div>
 //
-// Styleguide 5.12
+// Styleguide 5.13
 .product-listing--item {
     padding: $baseline;
 
@@ -1903,7 +2055,7 @@
 //      <p class="email-capture--error">Oops! It looks like something went wrong. Please try again.</p>
 // </div>
 //
-// Styleguide 5.13
+// Styleguide 5.14
 .email-capture {
     padding: $baseline;
 
@@ -1978,7 +2130,7 @@
 //    </div>
 // </div>
 //
-// Styleguide 5.14
+// Styleguide 5.15
 .product-price-block {
     padding: $baseline;
     position: relative;
@@ -2240,7 +2392,7 @@
 //      </div>
 // </div>
 //
-// Styleguide 5.15
+// Styleguide 5.16
 .image-row {
     padding: $baseline;
     background: none;
@@ -2360,7 +2512,7 @@
 //      </div>
 // </div>
 //
-// Styleguide 5.16
+// Styleguide 5.17
 .pullout-container {
     padding: 0;
 
@@ -2428,7 +2580,7 @@
 //      <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor at orci in sodales. In convallis urna et nisi dictum varius. Duis ornare felis vel nisi pretium, non lobortis ligula consequat.</h3>
 // </div>
 //
-// Styleguide 5.17
+// Styleguide 5.18
 .wysiwyg-block {
     padding: $baseline;
     h2, h3 {
@@ -2509,7 +2661,7 @@
 //          </div>
 // </section>
 //
-// Styleguide 5.18
+// Styleguide 5.19
 .podcast-episode {
     padding: $baseline;
     background: white;
@@ -2742,7 +2894,7 @@
 //      </section>
 // </div>
 //
-// Styleguide 5.19
+// Styleguide 5.20
 .podcast-listing {
     padding: $baseline / 2;
 
@@ -2817,68 +2969,69 @@
 //
 // markup:
 // <div class="contributor-header container is-paddingless is-black">
-// 		<div class="contributor-container">
-// 			<div class="splash"><img alt="" src="http://via.placeholder.com/1600x900"></div>
-// 			<div class="is-padded contributor-details">
-// 				<div class="columns is-multiline">
-// 					<div class="column is-full">
-// 						<h1 class="is-size-3-mobile">RAOUL PAL</h1>
-// 						<h2 class="proxima-nova font-weight-normal is-size-3 is-size-5-mobile de-emphasis">Global Macro Investor</h2>
-// 					</div>
-// 					<div class="column is-7 contributor-bio">
-// 						<div class="top-border">
-// 							<p class="has-text-justified-mobile"></p>
-// 							<ul>
-// 								<li>Si autem id non concedatur, non continuo vita beata tollitur.</li>
-// 								<li>Sed venio ad inconstantiae crimen, ne saepius dicas me aberrare;</li>
-// 								<li>Parvi enim primo ortu sic iacent, tamquam omnino sine animo sint.</li>
-// 								<li>Quam ob rem tandem, inquit, non satisfacit?</li>
-// 							</ul>
-// 						</div>
-// 					</div>
-// 					<div class="column is-2">
-// 						<div class="top-border">
-// 							<div class="columns">
-// 								<div class="column">
-// 									<dl>
-//                                      <dt>Company</dt>
-//                                      <dd>RealVision</dd>
-//                                      <dt>Specialism(s)</dt>
-//                                      <dd>Macro</dd>
-// 									</dl>
-// 								</div>
-// 							</div>
-// 						</div>
-// 					</div>
-// 					<div class="column is-3">
-// 						<div class="top-border">
-// 							<dl>
-// 								<dt>Links</dt>
-// 								<dd>
-// 									<ul class="contributor-links">
-// 										<li>
-// 											<i aria-hidden="true" class="fa fa-external-link-square"></i><a href="http://www.roaulpal.com">www.roaulpal.com</a>
-// 										</li>
-// 										<li>
-// 											<i aria-hidden="true" class="fa fa-twitter-square"></i><a href="http://www.twitter.com">twitter</a>
-// 										</li>
-// 										<li>
-// 											<i aria-hidden="true" class="fa fa-linkedin-square"></i><a href="http://www.linkedin.com">linkedin</a>
-// 										</li>
-// 									</ul>
-// 								</dd>
-// 							</dl>
-// 						</div>
-// 					</div>
-// 				</div>
-// 				<div class="columns">
-// 					<div class="column"></div>
-// 				</div>
-// 			</div>
-// 		</div>
-// 	</div>
+//    <div class="contributor-container">
+//      <div class="splash"><img alt="" src="http://via.placeholder.com/1600x900"></div>
+//      <div class="is-padded contributor-details">
+//        <div class="columns is-multiline">
+//          <div class="column is-full">
+//            <h1 class="is-size-3-mobile">RAOUL PAL</h1>
+//            <h2 class="proxima-nova font-weight-normal is-size-3 is-size-5-mobile de-emphasis">Global Macro Investor</h2>
+//          </div>
+//          <div class="column is-7 contributor-bio">
+//            <div class="top-border">
+//              <p class="has-text-justified-mobile"></p>
+//              <ul>
+//                <li>Si autem id non concedatur, non continuo vita beata tollitur.</li>
+//                <li>Sed venio ad inconstantiae crimen, ne saepius dicas me aberrare;</li>
+//                <li>Parvi enim primo ortu sic iacent, tamquam omnino sine animo sint.</li>
+//                <li>Quam ob rem tandem, inquit, non satisfacit?</li>
+//              </ul>
+//              <p></p>
+//            </div>
+//          </div>
+//          <div class="column is-2">
+//            <div class="top-border">
+//              <div class="columns">
+//                <div class="column">
+//                  <dl>
+//                    <dt>Company</dt>
+//                    <dd>RealVision</dd>
+//                    <dt>Specialism(s)</dt>
+//                    <dd>Macro</dd>
+//                  </dl>
+//                </div>
+//              </div>
+//            </div>
+//          </div>
+//          <div class="column is-3">
+//            <div class="top-border">
+//              <dl>
+//                <dt>Links</dt>
+//                <dd>
+//                  <ul class="contributor-links">
+//                    <li>
+//                      <i aria-hidden="true" class="fa fa-external-link-square"></i><a href="http://www.roaulpal.com">www.roaulpal.com</a>
+//                    </li>
+//                    <li>
+//                      <i aria-hidden="true" class="fa fa-twitter-square"></i><a href="http://www.twitter.com">twitter</a>
+//                    </li>
+//                    <li>
+//                      <i aria-hidden="true" class="fa fa-linkedin-square"></i><a href="http://www.linkedin.com">linkedin</a>
+//                    </li>
+//                  </ul>
+//                </dd>
+//              </dl>
+//            </div>
+//          </div>
+//        </div>
+//        <div class="columns">
+//          <div class="column"></div>
+//        </div>
+//      </div>
+//    </div>
+//  </div>
 //
-// Styleguide 5.20
+// Styleguide 5.21
 .contributor-header.is-black {
     background: #111111;
     color: white;
@@ -2950,12 +3103,12 @@
         
         a {
             color: #fff;
-        	text-decoration: none;
+          text-decoration: none;
         }
         
         i {
             padding-right: 10px;
-        	vertical-align: bottom;
+          vertical-align: bottom;
         }
     }
 }
@@ -2998,7 +3151,7 @@
 //     </div>
 // </div>
 // 
-// Styleguide 5.21
+// Styleguide 5.22
 .countdown-banner {
     background: black;
     color: white;
