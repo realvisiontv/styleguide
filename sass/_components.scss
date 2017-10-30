@@ -392,12 +392,20 @@
 //                 </div>
 //                 <div class="column comment--content">
 //                     <div class="meta">
-//                         <div class="details">
-//                             <p class="name">John Smith</p>
-//                             <p class="date">12 July 2017 @ 04:10</p>
-//                             <div class="buttons">
-//                                 <a class="active" href=""><i class="fa fa-thumbs-up"></i> <span>75</span></a>
-//                                 <a class="active" href=""><i class="fa fa-thumbs-down"></i> <span>25</span></a>
+//                         <div class="columns is-mobile details">
+//                             <div class="column">
+//                                 <p class="name">John Smith</p>
+//                                 <p class="date">12 July 2017 @ 04:10</p>
+//                             </div>
+//                             <div class="column is-narrow buttons">
+//                                 <div class="columns is-mobile">
+//                                     <div class="column is-hidden is-full badge"><span>Hotly Debated</span></div>
+//                                 </div>
+//                                 <div class="columns is-mobile">
+//                                     <div class="column"></div>
+//                                     <a class="column is-narrow is-paddingless active" href=""><i class="fa fa-thumbs-up"></i> <span>75</span></a>
+//                                     <a class="column is-narrow is-paddingless active" href=""><i class="fa fa-thumbs-down"></i> <span>25</span></a>
+//                                 </div>
 //                             </div>
 //                         </div>
 //                     </div>
@@ -433,84 +441,19 @@
 //                             </div>
 //                             <div class="column comment--content">
 //                                 <div class="meta">
-//                                     <div class="details">
+//                                     <div class="columns is-mobile details">
 //                                         <p class="name">Real Vision</p>
 //                                         <p class="date">12 July 2017 @ 04:10</p>
-//                                         <div class="buttons">
-//                                             <a class="active" href=""><i class="fa fa-thumbs-up"></i> <span>75</span></a>
-//                                             <a class="active" href=""><i class="fa fa-thumbs-down"></i> <span>25</span></a>
+//                                     </div>
+//                                     <div class="column is-narrow buttons">
+//                                         <div class="columns is-mobile">
+//                                             <a class="column is-narrow is-paddingless active" href=""><i class="fa fa-thumbs-up"></i> <span>75</span></a>
+//                                             <a class="column is-narrow is-paddingless active" href=""><i class="fa fa-thumbs-down"></i> <span>25</span></a>
 //                                         </div>
 //                                     </div>
 //                                 </div>
 //                                 <div class="content">
-//                                 Ut fringilla scelerisque eros. Nulla ac malesuada augue. Nullam nec rhoncus justo. Fusce pellentesque dapibus libero. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum erat urna, euismod vel risus in, vulputate auctor massa. Duis dignissim blandit porttitor. Duis tincidunt quis justo sed condimentum. Nulla vulputate posuere neque, nec posuere quam fermentum eu. Proin ut risus tortor.
-//                                 </div>
-//                             </div>
-//                         </div>
-//                     </li>
-//                 </ul>
-//             </div>
-//         </li>
-//         <li class="comment">
-//             <div class="columns">
-//                 <div class="column is-narrow is-hidden-mobile">
-//                     <span class="avatar">RV</span>
-//                 </div>
-//                 <div class="column comment--content">
-//                     <div class="meta">
-//                         <div class="details">
-//                             <p class="name">John Smith</p>
-//                             <p class="date">12 July 2017 @ 04:10</p>
-//                             <div class="buttons">
-//                                 <span class="badge">Hotly Debated</span>
-//                                 <a class="active" href=""><i class="fa fa-thumbs-up"></i> <span>75</span></a>
-//                                 <a class="active" href=""><i class="fa fa-thumbs-down"></i> <span>25</span></a>
-//                             </div>
-//                         </div>
-//                     </div>
-//                     <div class="content">
-//                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sollicitudin viverra pellentesque. Morbi sed orci et turpis consectetur sodales id eget lectus. Curabitur ante arcu, ornare nec iaculis quis, luctus quis magna. Etiam lobortis placerat justo consequat bibendum. Nunc velit magna, ultrices vel mauris vitae, sollicitudin pulvinar turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed libero metus, ornare sit amet tincidunt eu, accumsan at purus.
-//                         <div>
-//                             <button class="button--reply is-link">Reply <i class="fa fa-reply" aria-hidden="true"></i></a>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>
-//             <form method="POST" class="add-reply is-hidden">
-//                 <div class="field">
-//                     <div class="control">
-//                         <textarea type="text" name="reply" class="textarea" rows="2" required placeholder="Reply..."></textarea>
-//                     </div>
-//                 </div>
-//                 <div class="field is-grouped">
-//                     <div class="control">
-//                         <input type="submit" name="submit" value="Reply" class="button" />
-//                     </div>
-//                     <div class="control">
-//                         <button class="button--cancel is-link">Cancel</button>
-//                     </div>
-//                 </div>
-//             </form>
-//             <div class="replies-view">
-//                 <ul>
-//                     <li class="comment comment--reply">
-//                         <div class="columns">
-//                             <div class="column is-narrow is-hidden-mobile">
-//                                 <span class="avatar">RV}</span>
-//                             </div>
-//                             <div class="column comment--content">
-//                                 <div class="meta">
-//                                     <div class="details">
-//                                         <p class="name">Real Vision}</p>
-//                                         <p class="date">12 July 2017 @ 04:10</p>
-//                                         <div class="buttons">
-//                                             <a class="active" href=""><i class="fa fa-thumbs-up"></i> <span>75</span></a>
-//                                             <a class="active" href=""><i class="fa fa-thumbs-down"></i> <span>25</span></a>
-//                                         </div>
-//                                     </div>
-//                                 </div>
-//                                 <div class="content">
-//                                 Ut fringilla scelerisque eros. Nulla ac malesuada augue. Nullam nec rhoncus justo. Fusce pellentesque dapibus libero. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum erat urna, euismod vel risus in, vulputate auctor massa. Duis dignissim blandit porttitor. Duis tincidunt quis justo sed condimentum. Nulla vulputate posuere neque, nec posuere quam fermentum eu. Proin ut risus tortor.
+//                                     Ut fringilla scelerisque eros. Nulla ac malesuada augue. Nullam nec rhoncus justo. Fusce pellentesque dapibus libero. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum erat urna, euismod vel risus in, vulputate auctor massa. Duis dignissim blandit porttitor. Duis tincidunt quis justo sed condimentum. Nulla vulputate posuere neque, nec posuere quam fermentum eu. Proin ut risus tortor.
 //                                 </div>
 //                             </div>
 //                         </div>
