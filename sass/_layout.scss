@@ -43,6 +43,11 @@
         flex-grow: 1;
     }
 }
+
+.columns.is-mobile > .column.is-narrow {
+    width: auto;
+}
+
 @include tablet {
     .is-vertically-center:not(.columns) {
         align-items: center;

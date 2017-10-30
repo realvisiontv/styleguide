@@ -576,9 +576,6 @@
         position: relative;
     }
     .meta .buttons {
-        position: absolute;
-        right: 0;
-        top: 0;
         margin-top: 15px;
         a {
             margin-left: 1em;
@@ -593,9 +590,14 @@
             }
         }
         .badge {
-            font-weight: 700;
-            background-color: $color-red-ribbon;
-            color: $color-dark-gray;
+            background: transparent;
+            padding: 0;
+            span{
+                font-weight: 700;
+                background-color: $color-red-ribbon;
+                color: $color-dark-gray;
+                padding: 0 5px;
+            }
         }
     }
     .replies-view {
