@@ -73,6 +73,8 @@ a.is-link {
 // .disabled - Disabled state
 // .is-large - Large
 // .is-primary - Primary colours
+// .is-black - Black
+// .is-bold - Bold
 // 
 // markup:
 // <button class="button {$modifiers}">The quick brown fox</button><br />
@@ -150,6 +152,20 @@ a.is-link {
         background: $brand;
         border-color: transparent;
         color: black !important;
+        font-weight: 800;
+    }
+
+    &.is-black {
+        background: black;
+
+        &:hover, &:focus {
+            background: white;
+            border-color: black;
+            color: black;
+        }
+    }
+
+    &.is-bold {
         font-weight: 800;
     }
 

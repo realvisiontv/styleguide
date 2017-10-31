@@ -3137,31 +3137,30 @@
 // markup:
 // <div class="container countdown-banner">
 //     <div class="columns is-marginless">
-//         <div class="column is-vertically-center">
+//         <div class="column has-text-centered-mobile is-vertically-center">
 //             <div>
 //                 <h2>REAL VISION THINK TANK</h2>
 //                 <p>THE NEW AND IMPROVED REAL VISION PUBLICATIONS</p>
 //             </div>
 //         </div>
 //         <div class="column is-vertically-center has-text-centered">
-//             <a class="button is-primary" href="#">Find out more</a>
+//             <a class="button is-black is-bold" href="#">Find out more</a>
 //         </div>
-//         <div class="column is-narrow">
-//             <p class="hurry-text has-text-centered is-uppercase">Launch discount ends in</p>
-//             <div class="columns is-marginless">
-//                 <div class="column is-paddingless">
+//         <div class="column is-narrow is-vertically-center">
+//             <div class="columns is-mobile is-paddingless is-marginless">
+//                 <div class="column countdown__time">
 //                     <div class="countdown__time-value countdown__time-days">4</div>
 //                     <div class="countdown__time-label">Days</div>
 //                 </div>
-//                 <div class="column is-paddingless">
+//                 <div class="column countdown__time">
 //                     <div class="countdown__time-value countdown__time-hours">14</div>
 //                     <div class="countdown__time-label">Hours</div>
 //                 </div>
-//                 <div class="column is-paddingless">
+//                 <div class="column countdown__time">
 //                     <div class="countdown__time-value countdown__time-mins">23</div>
 //                     <div class="countdown__time-label">Mins</div>
 //                 </div>
-//                 <div class="column is-paddingless">
+//                 <div class="column countdown__time">
 //                     <div class="countdown__time-value countdown__time-secs">05</div>
 //                     <div class="countdown__time-label">Secs</div>
 //                 </div>
@@ -3169,21 +3168,47 @@
 //         </div>
 //     </div>
 // </div>
+// <p></p>
+// <div class="container countdown-banner">
+//     <div class="columns is-marginless">
+//         <div class="column has-text-centered-mobile is-vertically-center">
+//             <div>
+//                 <h2>REAL VISION THINK TANK</h2>
+//                 <p>THE NEW AND IMPROVED REAL VISION PUBLICATIONS</p>
+//             </div>
+//         </div>
+//         <div class="column is-vertically-center has-text-centered is-narrow">
+//             <a class="button is-black is-bold" href="#">Find out more</a>
+//         </div>
+//     </div>
+// </div>
 // 
 // Styleguide 5.22
 .countdown-banner {
-    background: black;
+    background: $color-poppy url(#{$root}/images/components/countdown_banner_background.png) no-repeat;
+    background-size: cover;
     color: white;
     padding: 0 ($baseline / 2);
 
+    > .columns > .column:first-child {
+        flex-grow: 2;
+    }
+
     .button {
+        font-size: $size-7;
         padding: ($baseline / 2) 1rem;
     }
 
+    h2 {
+        font-size: $size-4;
+        font-weight: 800;
+    }
+
     p {
-        color: $brand;
+        color: black;
         font-family: 'Function Pro', sans-serif;
         font-size: $size-5;
+        font-weight: 700;
         margin: 0;
     }
 
@@ -3193,18 +3218,74 @@
         font-size: $size-6;
     }
 
-    .countdown__time-value {
+    .countdown__time {
         background: white;
+        padding: 0;
+        margin: 0 ($baseline / 4);
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    .countdown__time-value {
         color: black;
-        font-size: 2rem;
-        padding: ($baseline / 4) 0;
-        width: 2em;
+        font-size: $size-4;
+        padding: ($baseline / 4) 0 0;
+        line-height: 1;
         font-weight: 700;
         text-align: center;
     }
 
     .countdown__time-label {
+        color: $color-poppy;
+        font-size: $size-7;
+        font-weight: 700;
         text-align: center;
-        text-transform: lowercase;
+        text-transform: uppercase;
+    }
+
+    @include mobile {
+        > .columns > .column {
+            padding: $baseline / 4;
+
+            &:first-child {
+                padding-top: $baseline / 2;
+            }
+
+            &:last-child {
+                padding-bottom: $baseline / 2;
+            }
+        }
+    }
+
+    @include tablet {
+        .countdown__time-value {
+            width: 2em;
+        }
+    }
+
+    @include desktop {
+        .button {
+            font-size: $size-5;
+        }
+    }
+
+    @include widescreen {
+        h2 {
+            font-size: $size-3;
+        }
+
+        p {
+            font-size: $size-3;
+        }
+
+        .countdown__time-value {
+            font-size: $size-3;
+        }
     }
 }
