@@ -54,7 +54,7 @@
 // <div class="pullout-block pullout-block__product-quote {$modifiers}">
 //      <div class="pullout-block__content">
 //          <h3 class="pullout-block--title"><span>Disrupting Financial Media</span></h3>
-//          <p class="pullout-block__content-heading">Get exposed to investment ideas and financial insights that you can't get anywhere else.</p>
+//          <p class="pullout-block__content-heading">The world’s first video on demand service for finance, giving you direct access  to the thoughts and ideas of the smartest investors on the planet.</p>
 //          <div class="is-hidden-mobile">
 //              <div class="icons">
 //                  <svg class="icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.62292 316.34321" class="icon-star"><path d="M166.31 0l51.395 104.134 114.918 16.698-83.156 81.057 19.63 114.452-102.786-54.038-102.784 54.038 19.63-114.454L0 120.83l114.918-16.698z" /></svg>
@@ -126,6 +126,7 @@
             font-size: $size-4;
             font-weight: bold;
             margin-bottom: $baseline;
+            line-height: 1.5;
 
             @include mobile {
                 font-size: $size-6;
@@ -248,7 +249,9 @@
     }
 
     .pullout-block__content-subheading {
+        font-size: $size-4;
         margin-bottom: $baseline;
+        line-height: 1.5;
     }
 
     ul {
@@ -296,10 +299,22 @@
 // .no-block-title - No block title (black/white heading)
 //
 // markup:
-// <div class="pullout-block pullout-block__text {$modifiers}">
+// <div class="pullout-block pullout-block__text no-arrows {$modifiers}">
 //      <div class="pullout-block__content">
 //          <h3 class="pullout-block--title"><span>Disrupting Financial Media</span></h3>
 //          <p>With Macro Insiders, two of the world's top macro-researchers, <a href="#">Raoul Pal</a> and <a href="#">Julian Brigden</a>, bring you a lever of elite macro analysis that was previously only available to large banks, hedge funds and wealthy families.</p>
+//          <ul>
+//              <li>Item 1</li>
+//              <li>Item 2</li>
+//              <li>Item 3</li>
+//              <li>Item 4</li>
+//          </ul>
+//          <ol>
+//              <li>Item 1</li>
+//              <li>Item 2</li>
+//              <li>Item 3</li>
+//              <li>Item 4</li>
+//          </ol>
 //      </div>
 // </div>
 //
@@ -308,10 +323,65 @@
     p {
         font-size: $size-6;
         margin: ($baseline / 2) 0;
+        line-height: 1.5;
 
         @include tablet {
             font-size: $size-4;
             margin: 2rem 0;
+        }
+    }
+
+    ul {
+        margin-left: 0;
+        list-style: none;
+
+        li {
+            position: relative;
+            &:before {
+                margin-top: 0;
+                left: - ($baseline * 2);
+                margin-left: 0;
+                position: absolute;
+                content: '';
+                top: -5px;
+                border-top: 1rem solid transparent;
+                border-bottom: 1rem solid transparent;
+                border-left: 1rem solid $text;
+            }
+
+            & + li {
+                margin-top: $baseline / 2;
+            }
+
+            @include tablet {
+                font-size: $size-4;
+                margin-left: $baseline;
+
+                &:before {
+                    content: '';
+                    left: -$baseline;
+                    top: 0;
+                    background: $color-red-ribbon;
+                    height: .65rem;
+                    width: .65rem;
+                    margin-top: 15px;
+                    border: none;
+                }
+            }
+        }
+    }
+
+    ul, ol {
+        @include tablet {
+            font-size: $size-4;
+        }
+    }
+
+    ol {
+        margin-left: 0;
+
+        @include tablet {
+            margin-left: $baseline;
         }
     }
 }
@@ -2457,6 +2527,24 @@
 //                  </div>
 //              </div>
 //          </div>
+//          <div class="wysiwyg-block">
+//              <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor at orci in sodales. In convallis urna et nisi dictum varius. Duis ornare felis vel nisi pretium, non lobortis ligula consequat.</h2><br/>
+//              <br/>
+//              <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor at orci in sodales. In convallis urna et nisi dictum varius. Duis ornare felis vel nisi pretium, non lobortis ligula consequat.</h3>
+//              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor at orci in sodales. In convallis urna et nisi dictum varius. Duis ornare felis vel nisi pretium, non lobortis ligula consequat.</p>
+//              <ul>
+//                  <li>Item 1</li>
+//                  <li>Item 2</li>
+//                  <li>Item 3</li>
+//                  <li>Item 4</li>
+//              </ul>
+//              <ol>
+//                  <li>Item 1</li>
+//                  <li>Item 2</li>
+//                  <li>Item 3</li>
+//                  <li>Item 4</li>
+//              </ol>
+//          </div>
 //      </div>
 // </div>
 //
@@ -2493,7 +2581,7 @@
     .pullout-block, .image-row,
     .endorsements, .product-price-block,
     .cta-block, .email-capture,
-    .card-grid, .media-block {
+    .card-grid, .media-block, .wysiwyg-block {
         background: transparent;
         background-image: none;
         padding: 0;
