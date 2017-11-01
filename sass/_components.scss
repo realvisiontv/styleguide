@@ -303,7 +303,7 @@
 // .no-block-title - No block title (black/white heading)
 //
 // markup:
-// <div class="pullout-block pullout-block__text no-arrows {$modifiers}">
+// <div class="pullout-block pullout-block__text {$modifiers}">
 //      <div class="pullout-block__content">
 //          <h3 class="pullout-block--title"><span>Disrupting Financial Media</span></h3>
 //          <p>With Macro Insiders, two of the world's top macro-researchers, <a href="#">Raoul Pal</a> and <a href="#">Julian Brigden</a>, bring you a lever of elite macro analysis that was previously only available to large banks, hedge funds and wealthy families.</p>
@@ -333,6 +333,10 @@
             font-size: $size-4;
             margin: 0 0 $baseline 0;
         }
+    }
+
+    &:not(.no-arrows):before {
+        content: none;
     }
 
     ul {
