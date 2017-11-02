@@ -578,8 +578,10 @@
         font-size: $size-7;
         margin-top: 0;
     }
-    .comment--content {
-        width: calc(1.5rem - 100%);
+    @include tablet {
+        .comment--content {
+            width: calc(1.5rem - 100%);
+        }
     }
     .comment--reply {
         margin-bottom: 0;
