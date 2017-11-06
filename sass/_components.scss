@@ -3,7 +3,7 @@
 // A large hero image with text and a CTA button. Full page width.
 //
 // markup:
-// <div class="hero-image-w-cta">
+// <div class="hero-image-w-cta prospect-component">
 //     <div class="image" style="background-image: url('http://via.placeholder.com/1600x900')"></div>
 //     <div class="container">
 //         <p class="column is-half">Vestibulum sed varius urna, ut tempus arcu. Aenean vel velit neque. Phasellus convallis placerat purus vitae tempus. Donec cursus magna non euismod aliquet.</p>
@@ -51,7 +51,7 @@
 // .no-block-title - No block title (black/white heading)
 //
 // markup:
-// <div class="pullout-block pullout-block__product-quote {$modifiers}">
+// <div class="pullout-block pullout-block__product-quote prospect-component {$modifiers}">
 //      <div class="pullout-block__content">
 //          <h3 class="pullout-block--title"><span>Disrupting Financial Media</span></h3>
 //          <p class="pullout-block__content-heading">The world’s first video on demand service for finance, giving you direct access  to the thoughts and ideas of the smartest investors on the planet.</p>
@@ -229,7 +229,7 @@
 // .no-block-title - No block title (black/white heading)
 //
 // markup:
-// <div class="pullout-block pullout-block__list {$modifiers}">
+// <div class="pullout-block pullout-block__list prospect-component {$modifiers}">
 //      <div class="pullout-block__content">
 //          <h3 class="pullout-block--title"><span>Disrupting Financial Media</span></h3>
 //          <p class="pullout-block__content-heading">Think long, win big&hellip;</p>
@@ -303,7 +303,7 @@
 // .no-block-title - No block title (black/white heading)
 //
 // markup:
-// <div class="pullout-block pullout-block__text {$modifiers}">
+// <div class="pullout-block pullout-block__text prospect-component {$modifiers}">
 //      <div class="pullout-block__content">
 //          <h3 class="pullout-block--title"><span>Disrupting Financial Media</span></h3>
 //          <p>With Macro Insiders, two of the world's top macro-researchers, <a href="#">Raoul Pal</a> and <a href="#">Julian Brigden</a>, bring you a lever of elite macro analysis that was previously only available to large banks, hedge funds and wealthy families.</p>
@@ -400,7 +400,7 @@
 // .is-inverse - Inverse
 //
 // markup:
-// <div class="rating {$modifiers}">
+// <div class="rating prospect-component {$modifiers}">
 //     <div class="columns is-mobile">
 //         <div class="column">
 //             <a class="like" href=""><i class="fa fa-thumbs-up"></i> <span>75</span></a>
@@ -461,7 +461,7 @@
 // Comments
 //
 // markup:
-// <div class="comments">
+// <div class="comments prospect-component">
 //     <ul>
 //         <li class="comment">
 //             <div class="columns">
@@ -670,7 +670,7 @@
 // Endorsements Block
 //
 // markup:
-// <div class="endorsements">
+// <div class="endorsements prospect-component">
 //      <div class="columns is-mobile is-vcentered">
 //          <div class="column is-7-mobile is-5-tablet">
 //              <img src="/images/logos/logo-cfa.png"/>
@@ -722,7 +722,7 @@
 // .has-text-right - Hero with right aligned content and CTA
 //
 // markup:
-// <div class="product-hero product-hero--3x1 {$modifiers}">
+// <div class="product-hero product-hero--3x1 prospect-component {$modifiers}">
 //      <div class="columns is-mobile">
 //          <div class="column">
 //              <h2><span>What the hell is real vision television?</span></h2>
@@ -748,7 +748,7 @@
 //          </div>
 //      </div>
 // </div>
-// <div class="product-hero product-hero--3x2 {$modifiers}">
+// <div class="product-hero product-hero--3x2 prospect-component {$modifiers}">
 //      <div class="columns is-mobile">
 //          <div class="column">
 //              <h2><span>With Real Vision Television, You Get...</span></h2>
@@ -798,7 +798,7 @@
 //          </div>
 //      </div>
 // </div>
-// <div class="product-hero product-hero--2x2 {$modifiers}">
+// <div class="product-hero product-hero--2x2 prospect-component {$modifiers}">
 //      <div class="columns is-mobile">
 //          <div class="column">
 //              <h2><span>With Real Vision Television, You Get...</span></h2>
@@ -832,7 +832,7 @@
 //          </div>
 //      </div>
 // </div>
-// <div class="product-hero product-hero--2x3 has-text-centered-tablet {$modifiers}">
+// <div class="product-hero product-hero--2x3 prospect-component has-text-centered-tablet {$modifiers}">
 //      <div class="columns is-mobile">
 //          <div class="column">
 //              <h2><span>With Real Vision Television, You Get...</span></h2>
@@ -876,7 +876,7 @@
 //          </div>
 //      </div>
 // </div>
-// <div class="product-hero product-hero--descriptive {$modifiers}">
+// <div class="product-hero product-hero--descriptive prospect-component {$modifiers}">
 //      <div class="columns is-mobile">
 //          <div class="column product-hero--heading">
 //              <h2><span>Leading Institutions give us the thumbs up too...</span></h2>
@@ -893,7 +893,7 @@
 //          </div>
 //      </div>
 // </div>
-// <div class="product-hero hero--no-bg {$modifiers}">
+// <div class="product-hero hero--no-bg prospect-component {$modifiers}">
 //      <div class="columns">
 //          <div class="column is-half">
 //              <h1>Oil</h1>
@@ -906,7 +906,7 @@
 //          </div>
 //      </div>
 // </div>
-// <div class="product-hero post-hero {$modifiers}">
+// <div class="product-hero post-hero prospect-component {$modifiers}">
 //      <div class="columns">
 //          <div class="column is-half">
 //              <h1 class="post-hero__cat-title"><span>Big Stories</span></h1>
@@ -923,7 +923,7 @@
 //          </div>
 //      </div>
 // </div>
-// <div class="product-hero hero-bottom {$modifiers}">
+// <div class="product-hero hero-bottom prospect-component {$modifiers}">
 //      <div class="columns hero-bottom__content is-mobile">
 //          <div class="column product-hero--heading">
 //              <h2><span>Leading Institutions give us the thumbs up too...</span></h2>
@@ -1421,7 +1421,7 @@
 // default - Default Hero
 //
 // markup:
-// <div class="card-grid {$modifiers}">
+// <div class="card-grid prospect-component {$modifiers}">
 //      <h2><span>More Testimonials</span></h2>
 //      <div class="columns is-tablet is-multiline">
 //          <div class="card column is-6-tablet is-3-desktop">
@@ -1609,7 +1609,7 @@
 // :hover - Hover State
 //
 // markup:
-// <div class="product-links-block">
+// <div class="product-links-block prospect-component">
 // <div class="columns is-vcentered">
 //    <div class="column is-4-tablet">
 //        <div class="product-link product-link--tv {$modifiers}">
@@ -1738,7 +1738,7 @@
 // :hover - Hover State
 //
 // markup:
-// <div class="link-blocks">
+// <div class="link-blocks prospect-component">
 //  <div class="columns is-vcentered">
 //      <div class="column">
 //          <a href="#" class="link-block link-block__1 {$modifiers}">
@@ -1914,7 +1914,7 @@
 // .full-width - Play block with the 'play' text full width in desktop view
 //
 // markup:
-// <a class="play-block {$modifiers}">
+// <a class="play-block prospect-component {$modifiers}">
 //      <h2><span>They all used macro-analysis. That’s why you should care about this kind of research.</span></h2>
 //      <div class="columns is-mobile">
 //          <div class="column is-6-desktop is-12-mobile is-paddingless play-block_container">
@@ -2008,7 +2008,7 @@
 // default - Default
 //
 // markup:
-// <div class="product-listing--item">
+// <div class="product-listing--item prospect-component">
 //      <div class="columns is-tablet is-multiline">
 //          <div class="column is-7-desktop is-12-tablet">
 //              <div class="product-listing--content">
@@ -2090,7 +2090,7 @@
 // .success - Success state shown after successful submission
 //
 // markup:
-// <div class="email-capture {$modifiers}">
+// <div class="email-capture prospect-component {$modifiers}">
 //      <p class="email-capture--title">Can we interest you in checking out our recent blog post?</p>
 //      <p class="email-capture--success">Thanks for signing up!</p>
 //      <form action="" method="get" class="validate" validate>
@@ -2172,7 +2172,7 @@
 // :hover - Hover State
 //
 // markup:
-// <div class="product-price-block">
+// <div class="product-price-block prospect-component">
 //     <div class="product-price-block__content">
 //         <div class="columns is-vcentered">
 //             <div class="column">
@@ -2412,7 +2412,7 @@
 // default - Default
 //
 // markup:
-// <div class="image-row"
+// <div class="image-row prospect-component">
 //      <h2>EXAMPLES OF FEATURE DOCUMENTARIES</h2>
 //      <div class="columns is-tablet">
 //          <div class="card column">
@@ -2502,7 +2502,7 @@
 // Default - default
 //
 // markup:
-// <div class="pullout-container">
+// <div class="pullout-container prospect-component">
 //      <div class="pullout-container__content">
 //          <div class="pullout-block pullout-block__text">
 //              <div class="pullout-block__content">
@@ -2510,7 +2510,7 @@
 //                  <p><strong>Geopolitics with Gordon Dee Smith to the History of Gold with Grant Williams; to Charting masterclasses with Peter Brandt, you can watch documentary-style programming with the smartest investors in the world about topics that will broaden both your mind and your investment opportunities.</strong></p>
 //              </div>
 //          </div>
-//          <div class="image-row">
+//          <div class="image-row prospect-component">
 //              <h2>EXAMPLES OF FEATURE DOCUMENTARIES</h2>
 //              <div class="columns is-tablet">
 //                  <div class="card column">
@@ -2557,7 +2557,7 @@
 //                  </div>
 //              </div>
 //          </div>
-//          <div class="pullout-block pullout-block__product-quote">
+//          <div class="pullout-block pullout-block__product-quote prospect-component">
 //              <div class="pullout-block__content">
 //                  <div class="is-hidden-mobile">
 //                      <div class="icons">
@@ -2577,7 +2577,7 @@
 //                  </div>
 //              </div>
 //          </div>
-//          <div class="wysiwyg-block">
+//          <div class="wysiwyg-block prospect-component">
 //              <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor at orci in sodales. In convallis urna et nisi dictum varius. Duis ornare felis vel nisi pretium, non lobortis ligula consequat.</h2><br/>
 //              <br/>
 //              <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor at orci in sodales. In convallis urna et nisi dictum varius. Duis ornare felis vel nisi pretium, non lobortis ligula consequat.</h3>
@@ -2628,10 +2628,7 @@
         padding: 0;
     }
 
-    .pullout-block, .image-row,
-    .endorsements, .product-price-block,
-    .cta-block, .email-capture,
-    .card-grid, .media-block, .wysiwyg-block {
+    .prospect-component {
         background: transparent;
         background-image: none;
         padding: 0;
@@ -2660,7 +2657,7 @@
 // WYSIWYG
 //
 // markup:
-// <div class="wysiwyg-block">
+// <div class="wysiwyg-block prospect-component">
 //      <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor at orci in sodales. In convallis urna et nisi dictum varius. Duis ornare felis vel nisi pretium, non lobortis ligula consequat.</h2><br/>
 //      <br/>
 //      <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor at orci in sodales. In convallis urna et nisi dictum varius. Duis ornare felis vel nisi pretium, non lobortis ligula consequat.</h3>
@@ -2781,7 +2778,7 @@
 // .is-featured - Featured Episode
 //
 // markup:
-// <section class="podcast-episode {$modifiers}">
+// <section class="podcast-episode prospect-component {$modifiers}">
 //     <div class="podcast-episode__content">
 //          <div class="columns is-multiline is-mobile is-marginless">
 //              <div class="column is-2-tablet is-hidden-mobile">
@@ -2926,7 +2923,7 @@
 // .featured-post - Features the latest post in the listing
 //
 // markup:
-// <div class="podcast-listing">
+// <div class="podcast-listing prospect-component">
 //      <div class="columns is-vcentered is-marginless is-mobile podcast-listing__heading">
 //          <div class="column">
 //              <h2><span>TITLE</span></h2>
@@ -3126,7 +3123,7 @@
 // default - Default
 //
 // markup:
-// <div class="contributor-header container is-paddingless is-black">
+// <div class="contributor-header prospect-component container is-paddingless is-black">
 //    <div class="contributor-container">
 //      <div class="splash"><img alt="" src="http://via.placeholder.com/1600x900"></div>
 //      <div class="is-padded contributor-details">
@@ -3274,7 +3271,7 @@
 // Countdown banner
 // 
 // markup:
-// <div class="container countdown-banner">
+// <div class="container countdown-banner prospect-component">
 //     <div class="columns is-marginless">
 //         <div class="column has-text-centered-mobile is-vertically-center">
 //             <div>
@@ -3308,7 +3305,7 @@
 //     </div>
 // </div>
 // <p></p>
-// <div class="container countdown-banner">
+// <div class="container countdown-banner prospect-component">
 //     <div class="columns is-marginless">
 //         <div class="column has-text-centered-mobile is-vertically-center">
 //             <div>
