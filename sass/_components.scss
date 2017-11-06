@@ -900,6 +900,11 @@
 //              <p><span>Real Vision Television is accredited by some of the most respected financial and educational institutions across the globe, including:</span></p>
 //          </div>
 //      </div>
+//      <div class="columns">
+//          <div class="column has-text-centered has-text-left-tablet product-hero__published">
+//            Publishing on <span class="post-hero__pubdate">Aug 10 2017</span>
+//          </div>
+//      </div>
 // </div>
 // <div class="product-hero post-hero {$modifiers}">
 //      <div class="columns">
@@ -910,7 +915,7 @@
 //          </div>
 //      </div>
 //      <div class="columns">
-//          <div class="column has-text-centered has-text-left-tablet post-hero__published">
+//          <div class="column has-text-centered has-text-left-tablet product-hero__published">
 //            Publishing on <span class="post-hero__pubdate">Aug 10 2017</span>
 //          </div>
 //          <div class="column has-text-centered has-text-right-tablet">
@@ -1318,7 +1323,7 @@
     }
 
     @include tablet {
-        padding: $baseline ($baseline * 2) ($baseline * 2) ($baseline * 2);
+        padding: $baseline ($baseline * 2);
     }
 
     p {
@@ -1397,6 +1402,17 @@
 
     h2 {
         margin-bottom: 0;
+    }
+}
+
+.product-hero__published {
+    color: #779199;
+    text-transform: none;
+    font-weight: 700;
+    font-size: $size-6;
+
+    @include tablet {
+        font-size: $size-5;
     }
 }
 
