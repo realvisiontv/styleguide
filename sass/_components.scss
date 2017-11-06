@@ -3284,7 +3284,9 @@
 // 
 // Styleguide 5.22
 .countdown-banner {
-    background: $color-poppy url(#{$root}/images/components/countdown_banner_background.png) no-repeat;
+    background-color: $color-poppy;
+    background-image: url(#{$root}/images/components/countdown_banner_background.png);
+    background-repeat: no-repeat;
     background-size: cover;
     color: white;
     padding: 0 ($baseline / 2);
@@ -3386,5 +3388,12 @@
         .countdown__time-value {
             font-size: $size-3;
         }
+    }
+
+    &.is-bottom {
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        z-index: 10;
     }
 }
