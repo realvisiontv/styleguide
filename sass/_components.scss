@@ -1725,7 +1725,7 @@
 // <div class="link-blocks">
 //  <div class="columns is-vcentered">
 //      <div class="column">
-//          <a href="#" class="link-block {$modifiers}">
+//          <a href="#" class="link-block link-block__1 {$modifiers}">
 //              <div class="link-block__container">
 //                  <div class="link-block__content">
 //                      <h3>Watch</h3>
@@ -1733,12 +1733,11 @@
 //                      <p><strong>Television</strong></p>
 //                  </div>
 //                  <p class="link-block__bottom-arrow"></p>
-//                  <img class="link-block__edge-overlay" src="/images/overlays/white_splatter_edges.png" />
 //              </div>
 //          </a>
 //      </div>
 //      <div class="column">
-//          <a href="#" class="link-block {$modifiers}">
+//          <a href="#" class="link-block link-block__2 {$modifiers}">
 //              <div class="link-block__container">
 //                  <div class="link-block__content">
 //                      <h3>Read</h3>
@@ -1746,12 +1745,11 @@
 //                      <p><strong>Publishing</strong></p>
 //                  </div>
 //                  <p class="link-block__bottom-arrow"></p>
-//                  <img class="link-block__edge-overlay" src="/images/overlays/white_splatter_edges.png" />
 //              </div>
 //          </a>
 //      </div>
 //      <div class="column">
-//          <a href="#" class="link-block {$modifiers}">
+//          <a href="#" class="link-block link-block__3 {$modifiers}">
 //              <div class="link-block__container">
 //                  <div class="link-block__content">
 //                      <h3>Listen</h3>
@@ -1759,12 +1757,11 @@
 //                      <p><strong>Podcast</strong></p>
 //                  </div>
 //                  <p class="link-block__bottom-arrow"></p>
-//                  <img class="link-block__edge-overlay" src="/images/overlays/white_splatter_edges.png" />
 //              </div>
 //          </a>
 //      </div>
 //      <div class="column">
-//          <a href="#" class="link-block {$modifiers}">
+//          <a href="#" class="link-block link-block__4 {$modifiers}">
 //              <div class="link-block__container">
 //                  <div class="link-block__content">
 //                      <h3>Get</h3>
@@ -1772,7 +1769,6 @@
 //                      <p><strong>Free Stuff</strong></p>
 //                  </div>
 //                  <p class="link-block__bottom-arrow"></p>
-//                  <img class="link-block__edge-overlay" src="/images/overlays/white_splatter_edges.png" />
 //              </div>
 //          </a>
 //      </div>
@@ -1789,30 +1785,57 @@
 
     .link-block {
         color: white;
+        display: block;
+        position: relative;
         text-decoration: none;
+
+        &:after {
+            background: url('#{$root}/images/overlays/white_splatter_edges.jpg') $color-dark-gray;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        &.link-block__2:after {
+            transform: rotate(180deg) translateZ(0);
+        }
+
+        &.link-block__3:after {
+            transform: scaleX(-1) translateZ(0);
+        }
+
+        &.link-block__4:after {
+            transform: rotate(180deg) scaleX(-1) translateZ(0);
+        }
 
         &:hover {
             .link-block__container {
-                padding-top: .75rem;
-                padding-bottom: 2rem;
+                .link-block__content {
+                    transform: translateY(-0.75rem);
+                }
                 
                 .link-block__bottom-arrow {
                     bottom: 7px;
+                    opacity: 1;
                 }
             }
         }
     }
 
     .link-block__container {
-        background: url('#{$root}/images/overlays/white_splatter.png'), $color-dark-gray;
-        background-size: cover;
-        background-repeat: no-repeat;
         position: relative;
         padding: $baseline 0;
-        transition: padding 200ms ease-in-out;
         overflow: hidden;
+        z-index: 1;
 
         .link-block__content {
+            transition: transform 200ms ease-in-out;
             * {
                 margin: 0;
             }
@@ -1829,7 +1852,8 @@
             border-left: 1.25rem solid transparent;
             border-right: 1.25rem solid transparent;
             border-top: 1rem solid $brand;
-            transition: bottom 200ms ease-in-out;
+            transition: bottom 200ms ease-in-out, opacity 200ms ease-in-out;
+            opacity: 0;
         }
 
         .link-block__edge-overlay {
