@@ -54,7 +54,7 @@
 // <div class="pullout-block pullout-block__product-quote {$modifiers}">
 //      <div class="pullout-block__content">
 //          <h3 class="pullout-block--title"><span>Disrupting Financial Media</span></h3>
-//          <p class="pullout-block__content-heading">Get exposed to investment ideas and financial insights that you can't get anywhere else.</p>
+//          <p class="pullout-block__content-heading">The world’s first video on demand service for finance, giving you direct access  to the thoughts and ideas of the smartest investors on the planet.</p>
 //          <div class="is-hidden-mobile">
 //              <div class="icons">
 //                  <svg class="icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.62292 316.34321" class="icon-star"><path d="M166.31 0l51.395 104.134 114.918 16.698-83.156 81.057 19.63 114.452-102.786-54.038-102.784 54.038 19.63-114.454L0 120.83l114.918-16.698z" /></svg>
@@ -68,8 +68,8 @@
 //                  <p>I have gone through the rabbit hole with Real Vision and found some great leaders and thinkers that have expanded my investment horizons. I am grateful for the introduction to these great minds that I would never have heard about as an individual investor.</p>
 //                  <svg class="icon-quote icon-quote--close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><path class="icon-quote-fill" d="M227.1 128.5c5.4 88-32 104-32 104s.1 33 0 33.3c95.1-25.4 90.6-141.3 90.6-141.3V25.8H183v102.7s30 .5 44.1 0zm-173.4 0c5.4 88-32 104-32 104s.1 33 0 33.3c95.1-25.4 90.6-141.3 90.6-141.3V25.8H9.6v102.7s30 .5 44.1 0z"></path></svg>
 //              </blockquote>
-//              <hr/>
 //              <cite>Alain B.</cite>
+//              <hr/>
 //          </div>
 //      </div>
 // </div>
@@ -84,7 +84,6 @@
         line-height: $size-4;
         margin-left: 10px;
         margin-bottom: $baseline;
-        margin-top: $baseline / 2;
         span {
             box-decoration-break: clone;
             font-size: $size-4;
@@ -94,6 +93,7 @@
         }
 
         @include tablet {
+            margin-top: $baseline / 2;
             line-height: $size-3;
             span {
                 font-size: $size-3;
@@ -126,6 +126,7 @@
             font-size: $size-4;
             font-weight: bold;
             margin-bottom: $baseline;
+            line-height: 1.5;
 
             @include mobile {
                 font-size: $size-6;
@@ -158,12 +159,15 @@
         .pullout-block--title {
             display: none;
         }
+        .pullout-block__content-heading {
+            margin-top: .5rem;
+        }
     }
 
     &.pullout-block__product-quote {
         .icons {
             text-align: center;
-            margin-bottom: $baseline;
+            margin-bottom: $baseline / 2;
         }
 
         .icons * {
@@ -181,6 +185,8 @@
         blockquote {
             margin-left: 20px;
             font-style: italic;
+            font-size: $size-4;
+            display: inline;
 
             svg {
                 fill: #6e7789;
@@ -205,12 +211,14 @@
             font-weight: bold;
             color: #6e7789;
             display: inline-block;
+            font-size: $size-4;
         }
 
         hr {
             width: 50%;
-            margin-left: 20px;
             background: #6e7789;
+            margin-bottom: .5rem;
+            margin-top: 1rem;
         }
     }
 }
@@ -242,6 +250,11 @@
 
     .pullout-block__content-subheading {
         margin-bottom: $baseline;
+
+        @include tablet {
+            font-size: $size-4;
+            line-height: 1.5;
+        }
     }
 
     ul {
@@ -267,13 +280,15 @@
             }
 
             @include tablet {
+                font-size: $size-4;
+                margin-left: $baseline * 2;
 
                 &:before {
                     content: '';
                     background: $color-red-ribbon;
                     height: .65rem;
                     width: .65rem;
-                    margin-top: 7px;
+                    margin-top: 15px;
                     margin-left: 1.4rem;
                     border: none;
                 }
@@ -292,6 +307,18 @@
 //      <div class="pullout-block__content">
 //          <h3 class="pullout-block--title"><span>Disrupting Financial Media</span></h3>
 //          <p>With Macro Insiders, two of the world's top macro-researchers, <a href="#">Raoul Pal</a> and <a href="#">Julian Brigden</a>, bring you a lever of elite macro analysis that was previously only available to large banks, hedge funds and wealthy families.</p>
+//          <ul>
+//              <li>Item 1</li>
+//              <li>Item 2</li>
+//              <li>Item 3</li>
+//              <li>Item 4</li>
+//          </ul>
+//          <ol>
+//              <li>Item 1</li>
+//              <li>Item 2</li>
+//              <li>Item 3</li>
+//              <li>Item 4</li>
+//          </ol>
 //      </div>
 // </div>
 //
@@ -300,10 +327,69 @@
     p {
         font-size: $size-6;
         margin: ($baseline / 2) 0;
+        line-height: 1.5;
 
         @include tablet {
             font-size: $size-4;
-            margin: 2rem 0;
+            margin: 0 0 $baseline 0;
+        }
+    }
+
+    &:not(.no-arrows):before {
+        content: none;
+    }
+
+    ul {
+        margin-left: 0;
+        list-style: none;
+
+        li {
+            position: relative;
+            &:before {
+                margin-top: 0;
+                left: - ($baseline * 2);
+                margin-left: 0;
+                position: absolute;
+                content: '';
+                top: -5px;
+                border-top: 1rem solid transparent;
+                border-bottom: 1rem solid transparent;
+                border-left: 1rem solid $text;
+            }
+
+            & + li {
+                margin-top: $baseline / 2;
+            }
+
+            @include tablet {
+                font-size: $size-4;
+                margin-left: $baseline * 2;
+
+                &:before {
+                    content: '';
+                    left: -$baseline;
+                    top: 0;
+                    background: $color-red-ribbon;
+                    height: .65rem;
+                    width: .65rem;
+                    margin-top: 15px;
+                    border: none;
+                }
+            }
+        }
+    }
+
+    ul, ol {
+        @include tablet {
+            font-size: $size-4;
+        }
+    }
+
+    ol {
+        margin-left: 0;
+
+        @include tablet {
+            margin-left: $baseline * 2;
         }
     }
 }
@@ -384,12 +470,20 @@
 //                 </div>
 //                 <div class="column comment--content">
 //                     <div class="meta">
-//                         <div class="details">
-//                             <p class="name">John Smith</p>
-//                             <p class="date">12 July 2017 @ 04:10</p>
-//                             <div class="buttons">
-//                                 <a class="active" href=""><i class="fa fa-thumbs-up"></i> <span>75</span></a>
-//                                 <a class="active" href=""><i class="fa fa-thumbs-down"></i> <span>25</span></a>
+//                         <div class="columns is-mobile details">
+//                             <div class="column">
+//                                 <p class="name">John Smith</p>
+//                                 <p class="date">12 July 2017 @ 04:10</p>
+//                             </div>
+//                             <div class="column is-narrow buttons">
+//                                 <div class="columns is-mobile">
+//                                     <div class="column is-hidden is-full badge"><span>Hotly Debated</span></div>
+//                                 </div>
+//                                 <div class="columns is-mobile">
+//                                     <div class="column"></div>
+//                                     <a class="column is-narrow is-paddingless active" href=""><i class="fa fa-thumbs-up"></i> <span>75</span></a>
+//                                     <a class="column is-narrow is-paddingless active" href=""><i class="fa fa-thumbs-down"></i> <span>25</span></a>
+//                                 </div>
 //                             </div>
 //                         </div>
 //                     </div>
@@ -425,84 +519,19 @@
 //                             </div>
 //                             <div class="column comment--content">
 //                                 <div class="meta">
-//                                     <div class="details">
+//                                     <div class="columns is-mobile details">
 //                                         <p class="name">Real Vision</p>
 //                                         <p class="date">12 July 2017 @ 04:10</p>
-//                                         <div class="buttons">
-//                                             <a class="active" href=""><i class="fa fa-thumbs-up"></i> <span>75</span></a>
-//                                             <a class="active" href=""><i class="fa fa-thumbs-down"></i> <span>25</span></a>
+//                                     </div>
+//                                     <div class="column is-narrow buttons">
+//                                         <div class="columns is-mobile">
+//                                             <a class="column is-narrow is-paddingless active" href=""><i class="fa fa-thumbs-up"></i> <span>75</span></a>
+//                                             <a class="column is-narrow is-paddingless active" href=""><i class="fa fa-thumbs-down"></i> <span>25</span></a>
 //                                         </div>
 //                                     </div>
 //                                 </div>
 //                                 <div class="content">
-//                                 Ut fringilla scelerisque eros. Nulla ac malesuada augue. Nullam nec rhoncus justo. Fusce pellentesque dapibus libero. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum erat urna, euismod vel risus in, vulputate auctor massa. Duis dignissim blandit porttitor. Duis tincidunt quis justo sed condimentum. Nulla vulputate posuere neque, nec posuere quam fermentum eu. Proin ut risus tortor.
-//                                 </div>
-//                             </div>
-//                         </div>
-//                     </li>
-//                 </ul>
-//             </div>
-//         </li>
-//         <li class="comment">
-//             <div class="columns">
-//                 <div class="column is-narrow is-hidden-mobile">
-//                     <span class="avatar">RV</span>
-//                 </div>
-//                 <div class="column comment--content">
-//                     <div class="meta">
-//                         <div class="details">
-//                             <p class="name">John Smith</p>
-//                             <p class="date">12 July 2017 @ 04:10</p>
-//                             <div class="buttons">
-//                                 <span class="badge">Hotly Debated</span>
-//                                 <a class="active" href=""><i class="fa fa-thumbs-up"></i> <span>75</span></a>
-//                                 <a class="active" href=""><i class="fa fa-thumbs-down"></i> <span>25</span></a>
-//                             </div>
-//                         </div>
-//                     </div>
-//                     <div class="content">
-//                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sollicitudin viverra pellentesque. Morbi sed orci et turpis consectetur sodales id eget lectus. Curabitur ante arcu, ornare nec iaculis quis, luctus quis magna. Etiam lobortis placerat justo consequat bibendum. Nunc velit magna, ultrices vel mauris vitae, sollicitudin pulvinar turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed libero metus, ornare sit amet tincidunt eu, accumsan at purus.
-//                         <div>
-//                             <button class="button--reply is-link">Reply <i class="fa fa-reply" aria-hidden="true"></i></a>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>
-//             <form method="POST" class="add-reply is-hidden">
-//                 <div class="field">
-//                     <div class="control">
-//                         <textarea type="text" name="reply" class="textarea" rows="2" required placeholder="Reply..."></textarea>
-//                     </div>
-//                 </div>
-//                 <div class="field is-grouped">
-//                     <div class="control">
-//                         <input type="submit" name="submit" value="Reply" class="button" />
-//                     </div>
-//                     <div class="control">
-//                         <button class="button--cancel is-link">Cancel</button>
-//                     </div>
-//                 </div>
-//             </form>
-//             <div class="replies-view">
-//                 <ul>
-//                     <li class="comment comment--reply">
-//                         <div class="columns">
-//                             <div class="column is-narrow is-hidden-mobile">
-//                                 <span class="avatar">RV}</span>
-//                             </div>
-//                             <div class="column comment--content">
-//                                 <div class="meta">
-//                                     <div class="details">
-//                                         <p class="name">Real Vision}</p>
-//                                         <p class="date">12 July 2017 @ 04:10</p>
-//                                         <div class="buttons">
-//                                             <a class="active" href=""><i class="fa fa-thumbs-up"></i> <span>75</span></a>
-//                                             <a class="active" href=""><i class="fa fa-thumbs-down"></i> <span>25</span></a>
-//                                         </div>
-//                                     </div>
-//                                 </div>
-//                                 <div class="content">
-//                                 Ut fringilla scelerisque eros. Nulla ac malesuada augue. Nullam nec rhoncus justo. Fusce pellentesque dapibus libero. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum erat urna, euismod vel risus in, vulputate auctor massa. Duis dignissim blandit porttitor. Duis tincidunt quis justo sed condimentum. Nulla vulputate posuere neque, nec posuere quam fermentum eu. Proin ut risus tortor.
+//                                     Ut fringilla scelerisque eros. Nulla ac malesuada augue. Nullam nec rhoncus justo. Fusce pellentesque dapibus libero. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum erat urna, euismod vel risus in, vulputate auctor massa. Duis dignissim blandit porttitor. Duis tincidunt quis justo sed condimentum. Nulla vulputate posuere neque, nec posuere quam fermentum eu. Proin ut risus tortor.
 //                                 </div>
 //                             </div>
 //                         </div>
@@ -570,9 +599,6 @@
         position: relative;
     }
     .meta .buttons {
-        position: absolute;
-        right: 0;
-        top: 0;
         margin-top: 15px;
         a {
             margin-left: 1em;
@@ -587,9 +613,14 @@
             }
         }
         .badge {
-            font-weight: 700;
-            background-color: $color-red-ribbon;
-            color: $color-dark-gray;
+            background: transparent;
+            padding: 0;
+            span{
+                font-weight: 700;
+                background-color: $color-red-ribbon;
+                color: $color-dark-gray;
+                padding: 0 5px;
+            }
         }
     }
     .replies-view {
@@ -869,6 +900,11 @@
 //              <p><span>Real Vision Television is accredited by some of the most respected financial and educational institutions across the globe, including:</span></p>
 //          </div>
 //      </div>
+//      <div class="columns">
+//          <div class="column has-text-centered has-text-left-tablet product-hero__published">
+//            Publishing on <span class="post-hero__pubdate">Aug 10 2017</span>
+//          </div>
+//      </div>
 // </div>
 // <div class="product-hero post-hero {$modifiers}">
 //      <div class="columns">
@@ -879,7 +915,7 @@
 //          </div>
 //      </div>
 //      <div class="columns">
-//          <div class="column has-text-centered has-text-left-tablet post-hero__published">
+//          <div class="column has-text-centered has-text-left-tablet product-hero__published">
 //            Publishing on <span class="post-hero__pubdate">Aug 10 2017</span>
 //          </div>
 //          <div class="column has-text-centered has-text-right-tablet">
@@ -1287,7 +1323,7 @@
     }
 
     @include tablet {
-        padding: $baseline ($baseline * 2) ($baseline * 2) ($baseline * 2);
+        padding: $baseline ($baseline * 2);
     }
 
     p {
@@ -1366,6 +1402,17 @@
 
     h2 {
         margin-bottom: 0;
+    }
+}
+
+.product-hero__published {
+    color: #779199;
+    text-transform: none;
+    font-weight: 700;
+    font-size: $size-6;
+
+    @include tablet {
+        font-size: $size-5;
     }
 }
 
@@ -1685,6 +1732,182 @@
     }
 }
 
+// Link Blocks
+//
+// default - Default Hero
+// :hover - Hover State
+//
+// markup:
+// <div class="link-blocks">
+//  <div class="columns is-vcentered">
+//      <div class="column">
+//          <a href="#" class="link-block link-block__1 {$modifiers}">
+//              <div class="link-block__container">
+//                  <div class="link-block__content">
+//                      <h3>Watch</h3>
+//                      <p>Real Vision</p>
+//                      <p><strong>Television</strong></p>
+//                  </div>
+//                  <p class="link-block__bottom-arrow"></p>
+//              </div>
+//          </a>
+//      </div>
+//      <div class="column">
+//          <a href="#" class="link-block link-block__2 {$modifiers}">
+//              <div class="link-block__container">
+//                  <div class="link-block__content">
+//                      <h3>Read</h3>
+//                      <p>Real Vision</p>
+//                      <p><strong>Publishing</strong></p>
+//                  </div>
+//                  <p class="link-block__bottom-arrow"></p>
+//              </div>
+//          </a>
+//      </div>
+//      <div class="column">
+//          <a href="#" class="link-block link-block__3 {$modifiers}">
+//              <div class="link-block__container">
+//                  <div class="link-block__content">
+//                      <h3>Listen</h3>
+//                      <p>Real Vision</p>
+//                      <p><strong>Podcast</strong></p>
+//                  </div>
+//                  <p class="link-block__bottom-arrow"></p>
+//              </div>
+//          </a>
+//      </div>
+//      <div class="column">
+//          <a href="#" class="link-block link-block__4 {$modifiers}">
+//              <div class="link-block__container">
+//                  <div class="link-block__content">
+//                      <h3>Get</h3>
+//                      <p>Real Vision</p>
+//                      <p><strong>Free Stuff</strong></p>
+//                  </div>
+//                  <p class="link-block__bottom-arrow"></p>
+//              </div>
+//          </a>
+//      </div>
+//  </div>
+// </div>
+//
+// Styleguide 5.11
+.link-blocks {
+    padding: $baseline;
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    background: white;
+
+    .link-block {
+        color: white;
+        display: block;
+        position: relative;
+        text-decoration: none;
+
+        &:after {
+            background: url('#{$root}/images/overlays/white_splatter_edges.jpg') $color-dark-gray;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        &.link-block__2:after {
+            transform: rotate(180deg) translateZ(0);
+        }
+
+        &.link-block__3:after {
+            transform: scaleX(-1) translateZ(0);
+        }
+
+        &.link-block__4:after {
+            transform: rotate(180deg) scaleX(-1) translateZ(0);
+        }
+
+        &:hover {
+            .link-block__container {
+                .link-block__content {
+                    transform: translateY(-0.75rem);
+                }
+                
+                .link-block__bottom-arrow {
+                    bottom: 7px;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .link-block__container {
+        position: relative;
+        padding: $baseline 0;
+        overflow: hidden;
+        z-index: 1;
+
+        .link-block__content {
+            transition: transform 200ms ease-in-out;
+            * {
+                margin: 0;
+            }
+        }
+
+        .link-block__bottom-arrow {
+            position: absolute;
+            height: 20px;
+            width: 20px;
+            margin: auto;
+            left: 50%;
+            bottom: -20px;
+            transform: translateX(-50%);
+            border-left: 1.25rem solid transparent;
+            border-right: 1.25rem solid transparent;
+            border-top: 1rem solid $brand;
+            transition: bottom 200ms ease-in-out, opacity 200ms ease-in-out;
+            opacity: 0;
+        }
+
+        .link-block__edge-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+        }
+    }
+
+    h3, p {
+        font-weight: 800;
+    }
+
+    h3 {
+        font-size: $size-1;
+        line-height: 2.5rem;
+
+        @include tablet-only {
+            font-size: $size-2;
+            line-height: 2rem;
+        }
+    }
+
+    p {
+        font-size: $size-4;
+
+        @include tablet-only {
+            font-size: $size-5;
+        }
+    }
+
+    strong {
+        font-style: normal;
+    }
+}
+
 // Product Play Block
 //
 // default - Default
@@ -1702,7 +1925,7 @@
 //      </div>
 // </a>
 //
-// Styleguide 5.11
+// Styleguide 5.12
 .play-block {
     display: block;
     background-image: url('#{$root}/images/components/product-play-block-bg.jpg');
@@ -1807,7 +2030,7 @@
 //      </div>
 // </div>
 //
-// Styleguide 5.12
+// Styleguide 5.13
 .product-listing--item {
     padding: $baseline;
 
@@ -1900,7 +2123,7 @@
 //      <p class="email-capture--error">Oops! It looks like something went wrong. Please try again.</p>
 // </div>
 //
-// Styleguide 5.13
+// Styleguide 5.14
 .email-capture {
     padding: $baseline;
 
@@ -1975,7 +2198,7 @@
 //    </div>
 // </div>
 //
-// Styleguide 5.14
+// Styleguide 5.15
 .product-price-block {
     padding: $baseline;
     position: relative;
@@ -2237,7 +2460,7 @@
 //      </div>
 // </div>
 //
-// Styleguide 5.15
+// Styleguide 5.16
 .image-row {
     padding: $baseline;
     background: none;
@@ -2354,10 +2577,28 @@
 //                  </div>
 //              </div>
 //          </div>
+//          <div class="wysiwyg-block">
+//              <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor at orci in sodales. In convallis urna et nisi dictum varius. Duis ornare felis vel nisi pretium, non lobortis ligula consequat.</h2><br/>
+//              <br/>
+//              <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor at orci in sodales. In convallis urna et nisi dictum varius. Duis ornare felis vel nisi pretium, non lobortis ligula consequat.</h3>
+//              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor at orci in sodales. In convallis urna et nisi dictum varius. Duis ornare felis vel nisi pretium, non lobortis ligula consequat.</p>
+//              <ul>
+//                  <li>Item 1</li>
+//                  <li>Item 2</li>
+//                  <li>Item 3</li>
+//                  <li>Item 4</li>
+//              </ul>
+//              <ol>
+//                  <li>Item 1</li>
+//                  <li>Item 2</li>
+//                  <li>Item 3</li>
+//                  <li>Item 4</li>
+//              </ol>
+//          </div>
 //      </div>
 // </div>
 //
-// Styleguide 5.16
+// Styleguide 5.17
 .pullout-container {
     padding: 0;
 
@@ -2390,7 +2631,7 @@
     .pullout-block, .image-row,
     .endorsements, .product-price-block,
     .cta-block, .email-capture,
-    .card-grid, .media-block {
+    .card-grid, .media-block, .wysiwyg-block {
         background: transparent;
         background-image: none;
         padding: 0;
@@ -2423,9 +2664,22 @@
 //      <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor at orci in sodales. In convallis urna et nisi dictum varius. Duis ornare felis vel nisi pretium, non lobortis ligula consequat.</h2><br/>
 //      <br/>
 //      <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor at orci in sodales. In convallis urna et nisi dictum varius. Duis ornare felis vel nisi pretium, non lobortis ligula consequat.</h3>
+//      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin auctor at orci in sodales. In convallis urna et nisi dictum varius. Duis ornare felis vel nisi pretium, non lobortis ligula consequat.</p>
+//      <ul>
+//          <li>Item 1</li>
+//          <li>Item 2</li>
+//          <li>Item 3</li>
+//          <li>Item 4</li>
+//      </ul>
+//      <ol>
+//          <li>Item 1</li>
+//          <li>Item 2</li>
+//          <li>Item 3</li>
+//          <li>Item 4</li>
+//      </ol>
 // </div>
 //
-// Styleguide 5.17
+// Styleguide 5.18
 .wysiwyg-block {
     padding: $baseline;
     h2, h3 {
@@ -2459,6 +2713,65 @@
             line-height: 2.4rem;
             font-size: $size-3;
         }
+    }
+
+    ul {
+        margin-left: 0;
+        list-style: none;
+
+        li {
+            position: relative;
+            &:before {
+                margin-top: 0;
+                left: -$baseline;
+                margin-left: 0;
+                position: absolute;
+                content: '';
+                top: -5px;
+                border-top: 1rem solid transparent;
+                border-bottom: 1rem solid transparent;
+                border-left: 1rem solid $text;
+            }
+
+            & + li {
+                margin-top: $baseline / 2;
+            }
+
+            @include tablet {
+                font-size: $size-4;
+                margin-left: $baseline * 2;
+
+                &:before {
+                    content: '';
+                    left: -$baseline;
+                    top: 0;
+                    background: $color-red-ribbon;
+                    height: .65rem;
+                    width: .65rem;
+                    margin-top: 15px;
+                    border: none;
+                }
+            }
+        }
+    }
+
+    ul, ol, p {
+        @include tablet {
+            font-size: $size-4;
+        }
+    }
+
+    ol {
+        margin-left: 0;
+
+        @include tablet {
+            margin-left: $baseline * 2;
+        }
+    }
+
+    p {
+        line-height: 1.5;
+        margin-bottom: $baseline;
     }
 }
 
@@ -2506,7 +2819,7 @@
 //          </div>
 // </section>
 //
-// Styleguide 5.18
+// Styleguide 5.19
 .podcast-episode {
     padding: $baseline;
     background: white;
@@ -2739,7 +3052,7 @@
 //      </section>
 // </div>
 //
-// Styleguide 5.19
+// Styleguide 5.20
 .podcast-listing {
     padding: $baseline / 2;
 
@@ -2814,68 +3127,69 @@
 //
 // markup:
 // <div class="contributor-header container is-paddingless is-black">
-// 		<div class="contributor-container">
-// 			<div class="splash"><img alt="" src="http://via.placeholder.com/1600x900"></div>
-// 			<div class="is-padded contributor-details">
-// 				<div class="columns is-multiline">
-// 					<div class="column is-full">
-// 						<h1 class="is-size-3-mobile">RAOUL PAL</h1>
-// 						<h2 class="proxima-nova font-weight-normal is-size-3 is-size-5-mobile de-emphasis">Global Macro Investor</h2>
-// 					</div>
-// 					<div class="column is-7 contributor-bio">
-// 						<div class="top-border">
-// 							<p class="has-text-justified-mobile"></p>
-// 							<ul>
-// 								<li>Si autem id non concedatur, non continuo vita beata tollitur.</li>
-// 								<li>Sed venio ad inconstantiae crimen, ne saepius dicas me aberrare;</li>
-// 								<li>Parvi enim primo ortu sic iacent, tamquam omnino sine animo sint.</li>
-// 								<li>Quam ob rem tandem, inquit, non satisfacit?</li>
-// 							</ul>
-// 						</div>
-// 					</div>
-// 					<div class="column is-2">
-// 						<div class="top-border">
-// 							<div class="columns">
-// 								<div class="column">
-// 									<dl>
-//                                      <dt>Company</dt>
-//                                      <dd>RealVision</dd>
-//                                      <dt>Specialism(s)</dt>
-//                                      <dd>Macro</dd>
-// 									</dl>
-// 								</div>
-// 							</div>
-// 						</div>
-// 					</div>
-// 					<div class="column is-3">
-// 						<div class="top-border">
-// 							<dl>
-// 								<dt>Links</dt>
-// 								<dd>
-// 									<ul class="contributor-links">
-// 										<li>
-// 											<i aria-hidden="true" class="fa fa-external-link-square"></i><a href="http://www.roaulpal.com">www.roaulpal.com</a>
-// 										</li>
-// 										<li>
-// 											<i aria-hidden="true" class="fa fa-twitter-square"></i><a href="http://www.twitter.com">twitter</a>
-// 										</li>
-// 										<li>
-// 											<i aria-hidden="true" class="fa fa-linkedin-square"></i><a href="http://www.linkedin.com">linkedin</a>
-// 										</li>
-// 									</ul>
-// 								</dd>
-// 							</dl>
-// 						</div>
-// 					</div>
-// 				</div>
-// 				<div class="columns">
-// 					<div class="column"></div>
-// 				</div>
-// 			</div>
-// 		</div>
-// 	</div>
+//    <div class="contributor-container">
+//      <div class="splash"><img alt="" src="http://via.placeholder.com/1600x900"></div>
+//      <div class="is-padded contributor-details">
+//        <div class="columns is-multiline">
+//          <div class="column is-full">
+//            <h1 class="is-size-3-mobile">RAOUL PAL</h1>
+//            <h2 class="proxima-nova font-weight-normal is-size-3 is-size-5-mobile de-emphasis">Global Macro Investor</h2>
+//          </div>
+//          <div class="column is-7 contributor-bio">
+//            <div class="top-border">
+//              <p class="has-text-justified-mobile"></p>
+//              <ul>
+//                <li>Si autem id non concedatur, non continuo vita beata tollitur.</li>
+//                <li>Sed venio ad inconstantiae crimen, ne saepius dicas me aberrare;</li>
+//                <li>Parvi enim primo ortu sic iacent, tamquam omnino sine animo sint.</li>
+//                <li>Quam ob rem tandem, inquit, non satisfacit?</li>
+//              </ul>
+//              <p></p>
+//            </div>
+//          </div>
+//          <div class="column is-2">
+//            <div class="top-border">
+//              <div class="columns">
+//                <div class="column">
+//                  <dl>
+//                    <dt>Company</dt>
+//                    <dd>RealVision</dd>
+//                    <dt>Specialism(s)</dt>
+//                    <dd>Macro</dd>
+//                  </dl>
+//                </div>
+//              </div>
+//            </div>
+//          </div>
+//          <div class="column is-3">
+//            <div class="top-border">
+//              <dl>
+//                <dt>Links</dt>
+//                <dd>
+//                  <ul class="contributor-links">
+//                    <li>
+//                      <i aria-hidden="true" class="fa fa-external-link-square"></i><a href="http://www.roaulpal.com">www.roaulpal.com</a>
+//                    </li>
+//                    <li>
+//                      <i aria-hidden="true" class="fa fa-twitter-square"></i><a href="http://www.twitter.com">twitter</a>
+//                    </li>
+//                    <li>
+//                      <i aria-hidden="true" class="fa fa-linkedin-square"></i><a href="http://www.linkedin.com">linkedin</a>
+//                    </li>
+//                  </ul>
+//                </dd>
+//              </dl>
+//            </div>
+//          </div>
+//        </div>
+//        <div class="columns">
+//          <div class="column"></div>
+//        </div>
+//      </div>
+//    </div>
+//  </div>
 //
-// Styleguide 5.20
+// Styleguide 5.21
 .contributor-header.is-black {
     background: #111111;
     color: white;
@@ -2947,12 +3261,12 @@
         
         a {
             color: #fff;
-        	text-decoration: none;
+          text-decoration: none;
         }
         
         i {
             padding-right: 10px;
-        	vertical-align: bottom;
+          vertical-align: bottom;
         }
     }
 }
@@ -2962,31 +3276,30 @@
 // markup:
 // <div class="container countdown-banner">
 //     <div class="columns is-marginless">
-//         <div class="column is-vertically-center">
+//         <div class="column has-text-centered-mobile is-vertically-center">
 //             <div>
 //                 <h2>REAL VISION THINK TANK</h2>
 //                 <p>THE NEW AND IMPROVED REAL VISION PUBLICATIONS</p>
 //             </div>
 //         </div>
 //         <div class="column is-vertically-center has-text-centered">
-//             <a class="button is-primary" href="#">Find out more</a>
+//             <a class="button is-black is-bold" href="#">Find out more</a>
 //         </div>
-//         <div class="column is-narrow">
-//             <p class="hurry-text has-text-centered is-uppercase">Launch discount ends in</p>
-//             <div class="columns is-marginless">
-//                 <div class="column is-paddingless">
+//         <div class="column is-narrow is-vertically-center">
+//             <div class="columns is-mobile is-paddingless is-marginless">
+//                 <div class="column countdown__time">
 //                     <div class="countdown__time-value countdown__time-days">4</div>
 //                     <div class="countdown__time-label">Days</div>
 //                 </div>
-//                 <div class="column is-paddingless">
+//                 <div class="column countdown__time">
 //                     <div class="countdown__time-value countdown__time-hours">14</div>
 //                     <div class="countdown__time-label">Hours</div>
 //                 </div>
-//                 <div class="column is-paddingless">
+//                 <div class="column countdown__time">
 //                     <div class="countdown__time-value countdown__time-mins">23</div>
 //                     <div class="countdown__time-label">Mins</div>
 //                 </div>
-//                 <div class="column is-paddingless">
+//                 <div class="column countdown__time">
 //                     <div class="countdown__time-value countdown__time-secs">05</div>
 //                     <div class="countdown__time-label">Secs</div>
 //                 </div>
@@ -2994,21 +3307,49 @@
 //         </div>
 //     </div>
 // </div>
+// <p></p>
+// <div class="container countdown-banner">
+//     <div class="columns is-marginless">
+//         <div class="column has-text-centered-mobile is-vertically-center">
+//             <div>
+//                 <h2>REAL VISION THINK TANK</h2>
+//                 <p>THE NEW AND IMPROVED REAL VISION PUBLICATIONS</p>
+//             </div>
+//         </div>
+//         <div class="column is-vertically-center has-text-centered is-narrow">
+//             <a class="button is-black is-bold" href="#">Find out more</a>
+//         </div>
+//     </div>
+// </div>
 // 
-// Styleguide 5.21
+// Styleguide 5.22
 .countdown-banner {
-    background: black;
+    background-color: $color-poppy;
+    background-image: url(#{$root}/images/components/countdown_banner_background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     color: white;
     padding: 0 ($baseline / 2);
 
+    > .columns > .column:first-child {
+        flex-grow: 2;
+    }
+
     .button {
+        font-size: $size-7;
         padding: ($baseline / 2) 1rem;
     }
 
+    h2 {
+        font-size: $size-4;
+        font-weight: 800;
+    }
+
     p {
-        color: $brand;
+        color: black;
         font-family: 'Function Pro', sans-serif;
         font-size: $size-5;
+        font-weight: 700;
         margin: 0;
     }
 
@@ -3018,18 +3359,81 @@
         font-size: $size-6;
     }
 
-    .countdown__time-value {
+    .countdown__time {
         background: white;
+        padding: 0;
+        margin: 0 ($baseline / 4);
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    .countdown__time-value {
         color: black;
-        font-size: 2rem;
-        padding: ($baseline / 4) 0;
-        width: 2em;
+        font-size: $size-4;
+        padding: ($baseline / 4) 0 0;
+        line-height: 1;
         font-weight: 700;
         text-align: center;
     }
 
     .countdown__time-label {
+        color: $color-poppy;
+        font-size: $size-7;
+        font-weight: 700;
         text-align: center;
-        text-transform: lowercase;
+        text-transform: uppercase;
+    }
+
+    @include mobile {
+        > .columns > .column {
+            padding: $baseline / 4;
+
+            &:first-child {
+                padding-top: $baseline / 2;
+            }
+
+            &:last-child {
+                padding-bottom: $baseline / 2;
+            }
+        }
+    }
+
+    @include tablet {
+        .countdown__time-value {
+            width: 2em;
+        }
+    }
+
+    @include desktop {
+        .button {
+            font-size: $size-5;
+        }
+    }
+
+    @include widescreen {
+        h2 {
+            font-size: $size-3;
+        }
+
+        p {
+            font-size: $size-3;
+        }
+
+        .countdown__time-value {
+            font-size: $size-3;
+        }
+    }
+
+    &.is-bottom {
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        z-index: 10;
     }
 }
