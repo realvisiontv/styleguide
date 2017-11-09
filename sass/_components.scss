@@ -3361,6 +3361,11 @@
         padding: 0;
         margin: 0 ($baseline / 4);
 
+        // IE Edge fix
+        @supports (-ms-ime-align: auto) {
+            flex-basis: auto;
+        }
+
         &:first-child {
             margin-left: 0;
         }
