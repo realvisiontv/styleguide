@@ -3282,7 +3282,7 @@
 //         <div class="column is-vertically-center has-text-centered">
 //             <a class="button is-black is-bold" href="#">Find out more</a>
 //         </div>
-//         <div class="column is-narrow is-vertically-center">
+//         <div class="column is-vertically-center">
 //             <div class="columns is-mobile is-paddingless is-marginless">
 //                 <div class="column countdown__time">
 //                     <div class="countdown__time-value countdown__time-days">4</div>
@@ -3360,6 +3360,11 @@
         background: white;
         padding: 0;
         margin: 0 ($baseline / 4);
+
+        // IE Edge fix
+        @supports (-ms-ime-align: auto) {
+            flex-basis: auto;
+        }
 
         &:first-child {
             margin-left: 0;
