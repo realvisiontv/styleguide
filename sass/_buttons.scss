@@ -136,6 +136,13 @@ a.is-link {
         }
     }
     
+    &.is-primary {
+        background: $brand;
+        border-color: transparent;
+        color: black !important;
+        font-weight: 800;
+    }
+    
     &.disabled {
         background: lightgrey;
         cursor: default;
@@ -146,13 +153,6 @@ a.is-link {
             color: white;
             text-decoration: none;
         }
-    }
-    
-    &.is-primary {
-        background: $brand;
-        border-color: transparent;
-        color: black !important;
-        font-weight: 800;
     }
 
     &.is-black {
