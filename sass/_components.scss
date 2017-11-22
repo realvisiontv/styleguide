@@ -2088,11 +2088,13 @@
 // default - Default
 // .error - Error state shown after failed submission
 // .success - Success state shown after successful submission
+// .subscribed - State shown if the user is already subscribed
 //
 // markup:
 // <div class="email-capture prospect-component {$modifiers}">
 //      <p class="email-capture--title">Can we interest you in checking out our recent blog post?</p>
 //      <p class="email-capture--success">Thanks for signing up!</p>
+//      <p class="email-capture--subscribed">Looks like you're already signed up!</p>
 //      <form action="" method="get" class="validate" validate>
 //          <div class="field is-horizontal">
 //              <div class="field-body">
@@ -2127,13 +2129,13 @@
 .email-capture {
     padding: $baseline;
 
-    .email-capture--title, .email-capture--success {
+    .email-capture--title, .email-capture--success, .email-capture--subscribed {
         font-weight: bold;
         font-size: $size-5;
         margin-bottom: $baseline;
     }
 
-    .email-capture--success {
+    .email-capture--success, .email-capture--subscribed {
         display: none;
         text-align: center;
         margin: 0;
@@ -2149,18 +2151,28 @@
         height: 100%;
     }
 
-    &.success {
-        .email-capture--success {
-            display: block;
-        }
+    &.success, &.subscribed {
+        background-color: $color-cyan;
 
-        .email-capture--title, form {
+        .email-capture--title, .email-capture--error, form {
             display: none;
         }
     }
 
     &.error {
         .email-capture--error {
+            display: block;
+        }
+    }
+
+    &.success {
+        .email-capture--success {
+            display: block;
+        }
+    }
+
+    &.subscribed {
+        .email-capture--subscribed {
             display: block;
         }
     }
