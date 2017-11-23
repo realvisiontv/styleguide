@@ -2151,6 +2151,12 @@
         height: 100%;
     }
 
+    .button {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+
     &.success, &.subscribed {
         background-color: $color-cyan;
 
