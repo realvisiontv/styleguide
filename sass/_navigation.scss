@@ -927,7 +927,7 @@
             &:before {
                 border-color: $color-dark-gray;
                 content: "";
-                background: $brand url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1000'%3E%3Cpath fill='#{$color-dark-gray}' d='M849.9 115L360 604.9 150 395 10 535l210 210 35 35 105 105 630-630.1L849.9 115z'/%3E%3C/svg%3E") no-repeat 50%;
+                background: $brand url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1000'%3E%3Cpath fill='" + encodecolor($color-dark-gray) + "' d='M849.9 115L360 604.9 150 395 10 535l210 210 35 35 105 105 630-630.1L849.9 115z'/%3E%3C/svg%3E") no-repeat 50%;
                 background-size: 50%;
             }
             &:after {
