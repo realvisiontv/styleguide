@@ -2151,6 +2151,10 @@
         height: 100%;
     }
 
+    .button {
+        appearance: none;
+    }
+
     &.success, &.subscribed {
         background-color: $color-cyan;
 
