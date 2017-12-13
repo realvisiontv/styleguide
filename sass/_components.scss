@@ -724,7 +724,7 @@
 // markup:
 // <div class="product-hero product-hero--3x1 prospect-component {$modifiers}">
 //      <div class="image is-hidden-mobile" style="background-image: url('/images/components/product-hero-bg.png')";></div>
-//      <div class="image is-hidden-tablet" style="background-image: url('/images/components/product-hero-_mobile.jpg')";></div>
+//      <div class="image is-hidden-tablet" style="background-image: url('/images/components/product-hero-bg.png')";></div>
 //      <div class="product-hero--content">
 //          <div class="columns is-mobile">
 //              <div class="column">
@@ -753,184 +753,212 @@
 //      </div>
 // </div>
 // <div class="product-hero product-hero--3x2 prospect-component {$modifiers}">
-//      <div class="columns is-mobile">
-//          <div class="column">
-//              <h2><span>With Real Vision Television, You Get...</span></h2>
-//          </div>
-//      </div>
-//      <div class="columns is-hidden-mobile">
-//          <div class="column is-5">
-//              <h3 class="product-hero__sub-head"><span>Let's Start with what you don't get:</span></h3>
-//          </div>
-//          <div class="column is-5 is-offset-2">
-//              <h3 class="product-hero__sub-head"><span>So, what do you get with us?</span></h3>
-//          </div>
-//      </div>
-//      <div class="columns">
-//          <div class="column is-hidden-mobile is-5-tablet product-hero__cell-container">
-//              <div class="product-hero__cell">
-//                  <h3><span>No ads</span></h3>
-//                  <p><span>To interrupt you</span></p>
-//              </div>
-//              <div class="product-hero__cell">
-//                  <h3><span>No bias</span></h3>
-//                  <p><span>To sway you</span></p>
-//              </div>
-//              <div class="product-hero__cell">
-//                  <h3><span>No hype</span></h3>
-//                  <p><span>To distract you</span></p>
+//      <div class="image is-hidden-mobile" style="background-image: url('/images/components/product-hero-bg-2.jpg')";></div>
+//      <div class="image is-hidden-tablet" style="background-image: url('/images/components/product-hero-bg-2.jpg')";></div>
+//      <div class="product-hero--content">
+//          <div class="columns is-mobile">
+//              <div class="column">
+//                  <h2><span>With Real Vision Television, You Get...</span></h2>
 //              </div>
 //          </div>
-//          <div class="column is-5-tablet is-offset-2-tablet product-hero__cell-container">
-//              <div class="product-hero__cell">
-//                  <h3><span>Reliable</span></h3>
-//                  <p><span>Insight</span></p>
+//          <div class="columns is-hidden-mobile">
+//              <div class="column is-5">
+//                  <h3 class="product-hero__sub-head"><span>Let's Start with what you don't get:</span></h3>
 //              </div>
-//              <div class="product-hero__cell">
-//                  <h3><span>Intelligent</span></h3>
-//                  <p><span>Opinions</span></p>
-//              </div>
-//              <div class="product-hero__cell">
-//                  <h3><span>Actionable</span></h3>
-//                  <p><span>Ideas</span></p>
+//              <div class="column is-5 is-offset-2">
+//                  <h3 class="product-hero__sub-head"><span>So, what do you get with us?</span></h3>
 //              </div>
 //          </div>
-//      </div>
-//      <div class="columns hero-cta__container">
-//          <div class="column has-text-centered has-text-right-tablet">
-//              <a href="#" class="button">Read More</a>
+//          <div class="columns">
+//              <div class="column is-hidden-mobile is-5-tablet product-hero__cell-container">
+//                  <div class="product-hero__cell">
+//                      <h3><span>No ads</span></h3>
+//                      <p><span>To interrupt you</span></p>
+//                  </div>
+//                  <div class="product-hero__cell">
+//                      <h3><span>No bias</span></h3>
+//                      <p><span>To sway you</span></p>
+//                  </div>
+//                  <div class="product-hero__cell">
+//                      <h3><span>No hype</span></h3>
+//                      <p><span>To distract you</span></p>
+//                  </div>
+//              </div>
+//              <div class="column is-5-tablet is-offset-2-tablet product-hero__cell-container">
+//                  <div class="product-hero__cell">
+//                      <h3><span>Reliable</span></h3>
+//                      <p><span>Insight</span></p>
+//                  </div>
+//                  <div class="product-hero__cell">
+//                      <h3><span>Intelligent</span></h3>
+//                      <p><span>Opinions</span></p>
+//                  </div>
+//                  <div class="product-hero__cell">
+//                      <h3><span>Actionable</span></h3>
+//                      <p><span>Ideas</span></p>
+//                  </div>
+//              </div>
+//          </div>
+//          <div class="columns hero-cta__container">
+//              <div class="column has-text-centered has-text-right-tablet">
+//                  <a href="#" class="button">Read More</a>
+//              </div>
 //          </div>
 //      </div>
 // </div>
 // <div class="product-hero product-hero--2x2 prospect-component {$modifiers}">
-//      <div class="columns is-mobile">
-//          <div class="column">
-//              <h2><span>With Real Vision Television, You Get...</span></h2>
-//          </div>
-//      </div>
-//      <div class="columns">
-//          <div class="column is-6-tablet product-hero__cell-container">
-//              <div class="product-hero__cell">
-//                  <h3><span>One Hundred</span></h3>
-//                  <p><span>Research reports per year covering<br/> all aspects of financial markets</span></p>
-//              </div>
-//              <div class="product-hero__cell">
-//                  <h3><span>Thirty</span></h3>
-//                  <p><span>Independent investment<br/> research experts</span></p>
+//      <div class="image is-hidden-mobile" style="background-image: url('/images/components/product-hero-bg-3.jpg')";></div>
+//      <div class="image is-hidden-tablet" style="background-image: url('/images/components/product-hero-bg-3.jpg')";></div>
+//      <div class="product-hero--content">
+//          <div class="columns is-mobile">
+//              <div class="column">
+//                  <h2><span>With Real Vision Television, You Get...</span></h2>
 //              </div>
 //          </div>
-//          <div class="column is-6-tablet product-hero__cell-container">
-//              <div class="product-hero__cell">
-//                  <h3><span>Two</span></h3>
-//                  <p><span>Research reports<br/> per week</span></p>
+//          <div class="columns">
+//              <div class="column is-6-tablet product-hero__cell-container">
+//                  <div class="product-hero__cell">
+//                      <h3><span>One Hundred</span></h3>
+//                      <p><span>Research reports per year covering<br/> all aspects of financial markets</span></p>
+//                  </div>
+//                  <div class="product-hero__cell">
+//                      <h3><span>Thirty</span></h3>
+//                      <p><span>Independent investment<br/> research experts</span></p>
+//                  </div>
 //              </div>
-//              <div class="product-hero__cell">
-//                  <h3><span>One</span></h3>
-//                  <p><span>Weekly Newsletter, <em>The hack</em>,<br/> delivered straight to your inbox</span></p>
+//              <div class="column is-6-tablet product-hero__cell-container">
+//                  <div class="product-hero__cell">
+//                      <h3><span>Two</span></h3>
+//                      <p><span>Research reports<br/> per week</span></p>
+//                  </div>
+//                  <div class="product-hero__cell">
+//                      <h3><span>One</span></h3>
+//                      <p><span>Weekly Newsletter,     <em>The hack</em>,<br/> delivered straight to your inbox</span></p>
+//                  </div>
 //              </div>
 //          </div>
-//      </div>
-//      <div class="columns hero-cta__container">
-//          <div class="column has-text-centered has-text-right-tablet">
-//              <a href="#" class="button">Read More</a>
+//          <div class="columns hero-cta__container">
+//              <div class="column has-text-centered has-text-right-tablet">
+//                  <a href="#" class="button">Read More</a>
+//              </div>
 //          </div>
 //      </div>
 // </div>
 // <div class="product-hero product-hero--2x3 prospect-component has-text-centered-tablet {$modifiers}">
-//      <div class="columns is-mobile">
-//          <div class="column">
-//              <h2><span>With Real Vision Television, You Get...</span></h2>
-//          </div>
-//      </div>
-//      <div class="columns">
-//          <div class="column is-10-mobile is-4-tablet product-hero__cell-container">
-//              <div class="product-hero__cell">
-//                  <h3><span>Accessible</span></h3>
-//                  <p><span>Via Desktop, Mobile and iOS app so you can watch it where you are</span></p>
-//              </div>
-//              <div class="product-hero__cell">
-//                  <h3><span>Organized</span></h3>
-//                  <p><span>Weekly content schedules categorized videos, bookmarks and watch-later buttons so you don't miss a thing during busy times</span></p>
+//      <div class="image is-hidden-mobile" style="background-image: url('/images/components/product-hero-bg-4.jpg')";></div>
+//      <div class="image is-hidden-tablet" style="background-image: url('/images/components/product-hero-bg-4.jpg')";></div>
+//      <div class="product-hero--content">
+//          <div class="columns is-mobile">
+//              <div class="column">
+//                  <h2><span>With Real Vision Television, You Get...</span></h2>
 //              </div>
 //          </div>
-//          <div class="column is-10-mobile is-4-tablet product-hero__cell-container">
-//              <div class="product-hero__cell">
-//                  <h3><span>Convenient</span></h3>
-//                  <p><span>Audio and video transcript downloads for when you're offline</span></p>
+//          <div class="columns">
+//              <div class="column is-10-mobile is-4-tablet product-hero__cell-container">
+//                  <div class="product-hero__cell">
+//                      <h3><span>Accessible</span></h3>
+//                      <p><span>Via Desktop, Mobile and iOS app so you can watch it where you are</span></p>
+//                  </div>
+//                  <div class="product-hero__cell">
+//                      <h3><span>Organized</span></h3>
+//                      <p><span>Weekly content schedules categorized videos, bookmarks and watch-later buttons so you don't miss a thing during busy times</span></p>
+//                  </div>
 //              </div>
-//              <div class="product-hero__cell">
-//                  <h3><span>Sharable</span></h3>
-//                  <p><span>Share your thoughts and opinions with our community space on every piece of content</span></p>
+//              <div class="column is-10-mobile is-4-tablet product-hero__cell-container">
+//                  <div class="product-hero__cell">
+//                      <h3><span>Convenient</span></h3>
+//                      <p><span>Audio and video transcript downloads for when you're offline</span></p>
+//                  </div>
+//                  <div class="product-hero__cell">
+//                      <h3><span>Sharable</span></h3>
+//                      <p><span>Share your thoughts and opinions with our community space on every piece of content</span></p>
+//                  </div>
+//              </div>
+//              <div class="column is-4-tablet is-hidden-mobile product-hero__cell-container">
+//                  <div class="product-hero__cell">
+//                      <h3><span>Time-Saving</span></h3>
+//                      <p><span>Multiple playback speeds &amp; chapter so you can quickly access the sections you want</span></p>
+//                  </div>
+//                  <div class="product-hero__cell">
+//                      <h3><span>Immediate</span></h3>
+//                      <p><span>A one-step login, process &amp; update, content daily</span></p>
+//                  </div>
 //              </div>
 //          </div>
-//          <div class="column is-4-tablet is-hidden-mobile product-hero__cell-container">
-//              <div class="product-hero__cell">
-//                  <h3><span>Time-Saving</span></h3>
-//                  <p><span>Multiple playback speeds &amp; chapter so you can quickly access the sections you want</span></p>
+//          <div class="columns hero-cta__container">
+//              <div class="column has-text-centered has-text-right-tablet">
+//                  <a href="#" class="button">Read More</a>
 //              </div>
-//              <div class="product-hero__cell">
-//                  <h3><span>Immediate</span></h3>
-//                  <p><span>A one-step login, process &amp; update, content daily</span></p>
-//              </div>
-//          </div>
-//      </div>
-//      <div class="columns hero-cta__container">
-//          <div class="column has-text-centered has-text-right-tablet">
-//              <a href="#" class="button">Read More</a>
 //          </div>
 //      </div>
 // </div>
 // <div class="product-hero product-hero--descriptive prospect-component {$modifiers}">
-//      <div class="columns is-mobile">
-//          <div class="column product-hero--heading">
-//              <h2><span>Leading Institutions give us the thumbs up too...</span></h2>
+//      <div class="image is-hidden-mobile" style="background-image: url('/images/components/product-hero-bg-5.jpg')";></div>
+//      <div class="image is-hidden-tablet" style="background-image: url('/images/components/product-hero-bg-5.jpg')";></div>
+//      <div class="product-hero--content">
+//          <div class="columns is-mobile">
+//              <div class="column product-hero--heading">
+//                  <h2><span>Leading Institutions give us the thumbs up too...</span></h2>
+//              </div>
 //          </div>
-//      </div>
-//      <div class="columns">
-//          <div class="column">
-//              <p><span>Real Vision Television is accredited by some of the most respected financial and educational institutions across the globe, including:</span></p>
+//          <div class="columns">
+//              <div class="column">
+//                  <p><span>Real Vision Television is accredited by some of the most respected financial and educational institutions across the globe, including:</span></p>
+//              </div>
 //          </div>
-//      </div>
-//      <div class="columns hero-cta__container">
-//          <div class="column has-text-centered has-text-right-tablet">
-//              <a href="#" class="button">Read More</a>
+//          <div class="columns hero-cta__container">
+//              <div class="column has-text-centered has-text-right-tablet">
+//                  <a href="#" class="button">Read More</a>
+//              </div>
 //          </div>
 //      </div>
 // </div>
 // <div class="product-hero hero--no-bg prospect-component {$modifiers}">
-//      <div class="columns">
-//          <div class="column is-half">
-//              <h1>Oil</h1>
-//              <p><span>Real Vision Television is accredited by some of the most respected financial and educational institutions across the globe, including:</span></p>
+//      <div class="image is-hidden-mobile" style="background-image: url('/images/components/product-hero-bg-5.jpg')";></div>
+//      <div class="image is-hidden-tablet" style="background-image: url('/images/components/product-hero-bg-5.jpg')";></div>
+//      <div class="product-hero--content">
+//          <div class="columns">
+//              <div class="column is-half">
+//                  <h1>Oil</h1>
+//                  <p><span>Real Vision Television is accredited by some of the most respected financial and educational institutions across the globe, including:</span></p>
+//              </div>
 //          </div>
-//      </div>
-//      <div class="columns">
-//          <div class="column has-text-centered has-text-left-tablet product-hero__published">
-//            Publishing on <span class="post-hero__pubdate">Aug 10 2017</span>
+//          <div class="columns">
+//              <div class="column has-text-centered has-text-left-tablet product-hero__published">
+//            Publishing on     <span class="post-hero__pubdate">Aug 10 2017</span>
+//              </div>
 //          </div>
 //      </div>
 // </div>
 // <div class="product-hero post-hero prospect-component {$modifiers}">
-//      <div class="columns">
-//          <div class="column is-half">
-//              <h1 class="post-hero__cat-title"><span>Big Stories</span></h1>
-//              <h1>Oil</h1>
-//              <p><span>Real Vision Television is accredited by some of the most respected financial and educational institutions across the globe, including:</span></p>
+//      <div class="image is-hidden-mobile" style="background-image: url('/images/components/product-hero-bg-5.jpg')";></div>
+//      <div class="image is-hidden-tablet" style="background-image: url('/images/components/product-hero-bg-5.jpg')";></div>
+//      <div class="product-hero--content">
+//          <div class="columns">
+//              <div class="column is-half">
+//                  <h1 class="post-hero__cat-title"><span>Big Stories</span></h1>
+//                  <h1>Oil</h1>
+//                  <p><span>Real Vision Television is accredited by some of the most respected financial and educational institutions across the globe, including:</span></p>
+//              </div>
 //          </div>
-//      </div>
-//      <div class="columns">
-//          <div class="column has-text-centered has-text-left-tablet product-hero__published">
-//            Publishing on <span class="post-hero__pubdate">Aug 10 2017</span>
-//          </div>
-//          <div class="column has-text-centered has-text-right-tablet">
-//              <a href="#" class="button">Read More</a>
+//          <div class="columns">
+//              <div class="column has-text-centered has-text-left-tablet product-hero__published">
+//            Publishing on     <span class="post-hero__pubdate">Aug 10 2017</span>
+//              </div>
+//              <div class="column has-text-centered has-text-right-tablet">
+//                  <a href="#" class="button">Read More</a>
+//              </div>
 //          </div>
 //      </div>
 // </div>
 // <div class="product-hero hero-bottom prospect-component {$modifiers}">
-//      <div class="columns hero-bottom__content is-mobile">
-//          <div class="column product-hero--heading">
-//              <h2><span>Leading Institutions give us the thumbs up too...</span></h2>
+//      <div class="image is-hidden-mobile" style="background-image: url('/images/components/product-hero-bg-5.jpg')";></div>
+//      <div class="image is-hidden-tablet" style="background-image: url('/images/components/product-hero-bg-5.jpg')";></div>
+//      <div class="product-hero--content">
+//          <div class="columns hero-bottom__content is-mobile">
+//              <div class="column product-hero--heading">
+//                  <h2><span>Leading Institutions give us the thumbs up too...</span></h2>
+//              </div>
 //          </div>
 //      </div>
 // </div>
@@ -938,9 +966,6 @@
 // Styleguide 5.8
 .product-hero {
     position: relative;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
     padding: $baseline;
     text-transform: uppercase;
 
@@ -1127,9 +1152,6 @@
     }
 }
 .product-hero--3x2 {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     padding: $baseline;
 
     .hero-cta__container {
@@ -1155,9 +1177,6 @@
     }
 }
 .product-hero--2x2 {
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
     padding: $baseline;
 
     .hero-cta__container {
@@ -1189,9 +1208,6 @@
     }
 }
 .product-hero--2x3 {
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
     text-align: left;
     padding: $baseline;
 
@@ -1225,9 +1241,6 @@
     }
 }
 .product-hero--descriptive {
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
     padding: $baseline;
 
     @include tablet {
@@ -1305,9 +1318,6 @@
     }
 }
 .hero--no-bg {
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
     padding: $baseline;
 
     &:before {
@@ -1318,6 +1328,7 @@
         position: absolute;
         top: 0;
         left: 0;
+        z-index: 1;
 
         @include tablet {
             background-image: linear-gradient(45deg, rgba(58,68,76,1) 25%,rgba(58,68,76,0) 75%);
@@ -1400,12 +1411,13 @@
     }
 }
 .hero-bottom {
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
     padding: $baseline;
     min-height: 300px;
     position: relative;
+
+    .product-hero--content {
+        position: unset;
+    }
 
     &__content {
         position: absolute;
