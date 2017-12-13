@@ -1417,17 +1417,17 @@
 
     .product-hero--content {
         position: unset;
-    }
 
-    &__content {
-        position: absolute;
-        bottom: 0;
-        left: 10px;
-        padding: $baseline * 1.5;
-    }
+        .hero-bottom__content {
+            position: absolute;
+            bottom: 0;
+            left: 10px;
+            padding: $baseline * 1.5;
+        }
 
-    h2 {
-        margin-bottom: 0;
+        h2 {
+            margin-bottom: 0;
+        }
     }
 }
 
