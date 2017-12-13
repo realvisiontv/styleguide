@@ -723,28 +723,32 @@
 //
 // markup:
 // <div class="product-hero product-hero--3x1 prospect-component {$modifiers}">
-//      <div class="columns is-mobile">
-//          <div class="column">
-//              <h2><span>What the hell is real vision television?</span></h2>
-//          </div>
-//      </div>
-//      <div class="columns">
-//          <div class="column product-hero__cell-container">
-//              <div class="product-hero__cell">
-//                  <h3><span>Unbiased</span></h3>
-//                  <p><span>Financial Insight</span></p>
-//              </div>
-//              <div class="product-hero__cell">
-//                  <h3><span>Unfiltered</span></h3>
-//                  <p><span>Actionable Ideas</span></p>
-//              </div>
-//              <div class="product-hero__cell">
-//                  <h3><span>Unapologetic</span></h3>
-//                  <p><span>Smart Opinions</span></p>
+//      <div class="image is-hidden-mobile" style="background-image: url('/images/components/product-hero-bg.png')";></div>
+//      <div class="image is-hidden-tablet" style="background-image: url('/images/components/product-hero-_mobile.jpg')";></div>
+//      <div class="product-hero--content">
+//          <div class="columns is-mobile">
+//              <div class="column">
+//                  <h2><span>What the hell is real vision television?</span></h2>
 //              </div>
 //          </div>
-//          <div class="column has-text-centered is-vertically-bottom hero-cta__container is-narrow">
-//              <a href="#" class="button">Read More</a>
+//          <div class="columns">
+//              <div class="column product-hero__cell-container">
+//                  <div class="product-hero__cell">
+//                      <h3><span>Unbiased</span></h3>
+//                      <p><span>Financial Insight</span></p>
+//                  </div>
+//                  <div class="product-hero__cell">
+//                      <h3><span>Unfiltered</span></h3>
+//                      <p><span>Actionable Ideas</span></p>
+//                  </div>
+//                  <div class="product-hero__cell">
+//                      <h3><span>Unapologetic</span></h3>
+//                      <p><span>Smart Opinions</span></p>
+//                  </div>
+//              </div>
+//              <div class="column has-text-centered is-vertically-bottom hero-cta__container is-narrow">
+//                  <a href="#" class="button">Read More</a>
+//              </div>
 //          </div>
 //      </div>
 // </div>
@@ -940,6 +944,22 @@
     padding: $baseline;
     text-transform: uppercase;
 
+    .product-hero--content {
+        position: relative;
+        z-index: 2;
+    }
+
+    .image {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-size: cover;
+        background-position: 50%;
+        z-index: 0;
+    }
+
     // For styleguide
     .section-markup-wrapper & {
         margin-bottom: 1.5rem;
@@ -950,7 +970,7 @@
     }
 
     &.product-hero--3x1 {
-        background-image: url('#{$root}/images/components/product-hero-bg.png');
+        
 
         h2 {
             margin-bottom: $baseline;
@@ -1107,7 +1127,6 @@
     }
 }
 .product-hero--3x2 {
-    background-image: url('#{$root}/images/components/product-hero-bg-2.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1136,7 +1155,6 @@
     }
 }
 .product-hero--2x2 {
-    background-image: url('#{$root}/images/components/product-hero-bg-3.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -1171,7 +1189,6 @@
     }
 }
 .product-hero--2x3 {
-    background-image: url('#{$root}/images/components/product-hero-bg-4.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -1208,7 +1225,6 @@
     }
 }
 .product-hero--descriptive {
-    background-image: url('#{$root}/images/components/product-hero-bg-5.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -1289,7 +1305,6 @@
     }
 }
 .hero--no-bg {
-    background-image: url('#{$root}/images/components/product-hero-bg-5.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -1385,7 +1400,6 @@
     }
 }
 .hero-bottom {
-    background-image: url('#{$root}/images/components/product-hero-bg-5.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
