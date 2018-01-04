@@ -2750,16 +2750,17 @@
 
         li {
             position: relative;
+            margin-left: $baseline;
+
             &:before {
-                margin-top: 0;
-                left: -$baseline;
-                margin-left: 0;
+                left: -($baseline * 2);
                 position: absolute;
                 content: '';
-                top: -5px;
-                border-top: 1rem solid transparent;
-                border-bottom: 1rem solid transparent;
-                border-left: 1rem solid $text;
+                background: $color-red-ribbon;
+                height: .5rem;
+                width: .5rem;
+                margin-top: 8px;
+                margin-left: $baseline;
             }
 
             & + li {
@@ -2771,14 +2772,10 @@
                 margin-left: $baseline * 2;
 
                 &:before {
-                    content: '';
-                    left: -$baseline;
-                    top: 0;
-                    background: $color-red-ribbon;
                     height: .65rem;
                     width: .65rem;
                     margin-top: 15px;
-                    border: none;
+                    margin-left: 1.4rem;
                 }
             }
         }
@@ -2791,7 +2788,7 @@
     }
 
     ol {
-        margin-left: 0;
+        margin-left: $baseline;
 
         @include tablet {
             margin-left: $baseline * 2;
