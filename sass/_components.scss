@@ -101,24 +101,15 @@
 
     @include mobile {
         padding: 0;
-
-        &:not(.no-arrows):before {
-            position: absolute;
-            content: '';
-            z-index: 10;
-            height: 0;
-            width: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            border-top: 2rem solid transparent;
-            border-bottom: 2rem solid transparent;
-            border-left: 1.5rem solid $text;
-        }
     }
 
     .pullout-block__content {
         @extend .has-paper-background;
         padding: $baseline ($baseline * 2);
+
+        @include mobile {
+            padding: $baseline;
+        }
 
         .pullout-block__content-heading {
             font-size: $size-4;
@@ -255,9 +246,6 @@
 //
 // Styleguide 5.3
 .pullout-block__list {
-    &:not(.no-arrows):before {
-        content: none;
-    }
 
     .pullout-block__content-subheading {
         margin-bottom: $baseline;
@@ -274,16 +262,17 @@
 
         li {
             position: relative;
+            margin-left: $baseline;
+
             &:before {
-                margin-top: 0;
                 left: -($baseline * 2);
-                margin-left: 0;
                 position: absolute;
                 content: '';
-                top: 0;
-                border-top: 1rem solid transparent;
-                border-bottom: 1rem solid transparent;
-                border-left: 1rem solid $text;
+                background: $color-red-ribbon;
+                height: .5rem;
+                width: .5rem;
+                margin-top: 8px;
+                margin-left: $baseline;
             }
 
             & + li {
@@ -295,13 +284,10 @@
                 margin-left: $baseline * 2;
 
                 &:before {
-                    content: '';
-                    background: $color-red-ribbon;
                     height: .65rem;
                     width: .65rem;
                     margin-top: 15px;
                     margin-left: 1.4rem;
-                    border: none;
                 }
             }
         }
@@ -346,26 +332,23 @@
         }
     }
 
-    &:not(.no-arrows):before {
-        content: none;
-    }
-
     ul {
         margin-left: 0;
         list-style: none;
 
         li {
             position: relative;
+            margin-left: $baseline;
+
             &:before {
-                margin-top: 0;
-                left: - ($baseline * 2);
-                margin-left: 0;
+                left: -($baseline * 2);
                 position: absolute;
                 content: '';
-                top: -5px;
-                border-top: 1rem solid transparent;
-                border-bottom: 1rem solid transparent;
-                border-left: 1rem solid $text;
+                background: $color-red-ribbon;
+                height: .5rem;
+                width: .5rem;
+                margin-top: 8px;
+                margin-left: $baseline;
             }
 
             & + li {
@@ -377,14 +360,10 @@
                 margin-left: $baseline * 2;
 
                 &:before {
-                    content: '';
-                    left: -$baseline;
-                    top: 0;
-                    background: $color-red-ribbon;
                     height: .65rem;
                     width: .65rem;
                     margin-top: 15px;
-                    border: none;
+                    margin-left: 1.4rem;
                 }
             }
         }
@@ -397,7 +376,7 @@
     }
 
     ol {
-        margin-left: 0;
+        margin-left: $baseline;
 
         @include tablet {
             margin-left: $baseline * 2;
@@ -2771,16 +2750,17 @@
 
         li {
             position: relative;
+            margin-left: $baseline;
+
             &:before {
-                margin-top: 0;
-                left: -$baseline;
-                margin-left: 0;
+                left: -($baseline * 2);
                 position: absolute;
                 content: '';
-                top: -5px;
-                border-top: 1rem solid transparent;
-                border-bottom: 1rem solid transparent;
-                border-left: 1rem solid $text;
+                background: $color-red-ribbon;
+                height: .5rem;
+                width: .5rem;
+                margin-top: 8px;
+                margin-left: $baseline;
             }
 
             & + li {
@@ -2792,14 +2772,10 @@
                 margin-left: $baseline * 2;
 
                 &:before {
-                    content: '';
-                    left: -$baseline;
-                    top: 0;
-                    background: $color-red-ribbon;
                     height: .65rem;
                     width: .65rem;
                     margin-top: 15px;
-                    border: none;
+                    margin-left: 1.4rem;
                 }
             }
         }
@@ -2812,7 +2788,7 @@
     }
 
     ol {
-        margin-left: 0;
+        margin-left: $baseline;
 
         @include tablet {
             margin-left: $baseline * 2;
