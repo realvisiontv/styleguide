@@ -101,19 +101,6 @@
 
     @include mobile {
         padding: 0;
-
-        &:not(.no-arrows):before {
-            position: absolute;
-            content: '';
-            z-index: 10;
-            height: 0;
-            width: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            border-top: 2rem solid transparent;
-            border-bottom: 2rem solid transparent;
-            border-left: 1.5rem solid $text;
-        }
     }
 
     .pullout-block__content {
@@ -259,9 +246,6 @@
 //
 // Styleguide 5.3
 .pullout-block__list {
-    &:not(.no-arrows):before {
-        content: none;
-    }
 
     .pullout-block__content-subheading {
         margin-bottom: $baseline;
@@ -346,10 +330,6 @@
             font-size: $size-4;
             margin: 0 0 $baseline 0;
         }
-    }
-
-    &:not(.no-arrows):before {
-        content: none;
     }
 
     ul {
