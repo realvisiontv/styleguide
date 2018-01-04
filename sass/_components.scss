@@ -120,6 +120,10 @@
         @extend .has-paper-background;
         padding: $baseline ($baseline * 2);
 
+        @include mobile {
+            padding: $baseline;
+        }
+
         .pullout-block__content-heading {
             font-size: $size-4;
             font-weight: bold;
@@ -274,16 +278,17 @@
 
         li {
             position: relative;
+            margin-left: $baseline;
+
             &:before {
-                margin-top: 0;
                 left: -($baseline * 2);
-                margin-left: 0;
                 position: absolute;
                 content: '';
-                top: 0;
-                border-top: 1rem solid transparent;
-                border-bottom: 1rem solid transparent;
-                border-left: 1rem solid $text;
+                background: $color-red-ribbon;
+                height: .5rem;
+                width: .5rem;
+                margin-top: 8px;
+                margin-left: $baseline;
             }
 
             & + li {
@@ -295,13 +300,10 @@
                 margin-left: $baseline * 2;
 
                 &:before {
-                    content: '';
-                    background: $color-red-ribbon;
                     height: .65rem;
                     width: .65rem;
                     margin-top: 15px;
                     margin-left: 1.4rem;
-                    border: none;
                 }
             }
         }
@@ -356,16 +358,17 @@
 
         li {
             position: relative;
+            margin-left: $baseline;
+
             &:before {
-                margin-top: 0;
-                left: - ($baseline * 2);
-                margin-left: 0;
+                left: -($baseline * 2);
                 position: absolute;
                 content: '';
-                top: -5px;
-                border-top: 1rem solid transparent;
-                border-bottom: 1rem solid transparent;
-                border-left: 1rem solid $text;
+                background: $color-red-ribbon;
+                height: .5rem;
+                width: .5rem;
+                margin-top: 8px;
+                margin-left: $baseline;
             }
 
             & + li {
@@ -377,14 +380,10 @@
                 margin-left: $baseline * 2;
 
                 &:before {
-                    content: '';
-                    left: -$baseline;
-                    top: 0;
-                    background: $color-red-ribbon;
                     height: .65rem;
                     width: .65rem;
                     margin-top: 15px;
-                    border: none;
+                    margin-left: 1.4rem;
                 }
             }
         }
@@ -397,7 +396,7 @@
     }
 
     ol {
-        margin-left: 0;
+        margin-left: $baseline;
 
         @include tablet {
             margin-left: $baseline * 2;
