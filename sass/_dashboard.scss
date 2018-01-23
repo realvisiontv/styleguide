@@ -157,6 +157,7 @@
         background: lightgray;
         height: 0;
         padding-bottom: 2 / 3 * 100%;
+        overflow: hidden;
         &:after {
             background: rgba(0, 0, 0, 0.5);
             content: "";
