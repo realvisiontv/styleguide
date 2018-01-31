@@ -2203,7 +2203,8 @@
 // A dropdown form to capture target users' first names and email addresses
 //
 // default - Default
-// .error - Error state shown after failed submission
+// .expand - Expanded dropdown form
+// .expand.error - Error state shown after failed submission
 // .success - Success state shown after successful submission
 // .subscribed - State shown if the user is already subscribed
 //
@@ -2212,9 +2213,9 @@
 //      <p class="email-capture--success">Thanks for signing up!</p>
 //      <p class="email-capture--subscribed">Looks like you're already signed up!</p>
 //      <div class="columns">
-//          <div class="column is-4-desktop is-offset-4-desktop is-8-tablet is-offset-2-tablet is-12-mobile">
-//              <button class="button email-capture--dropdown__cta">Sign up for our email list<i class="fa fa-plus-circle" aria-hidden="true"></i></button>
-//              <div class="dropdown-container expand">
+//          <div class="column is-6-desktop is-offset-3-desktop is-8-tablet is-offset-2-tablet is-12-mobile">
+//              <a class="button email-capture--dropdown__cta">Sign up for our email list<i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+//              <div class="dropdown-container">
 //                  <form action="" method="get" class="validate" validate>
 //                          <div class="field-body">
 //                              <div class="columns is-multiline">
@@ -2241,7 +2242,7 @@
 //                                  <div class="column is-12">
 //                                      <div class="field">
 //                                          <p class="control is-expanded">
-//                                              <input type="submit" name="subscribe" class="button is-success" value="Sign up for free" />
+//                                              <input type="submit" name="subscribe" class="button is-success submit" value="Sign up for free" />
 //                                          </p>
 //                                      </div>
 //                                  </div>
@@ -2258,27 +2259,44 @@
 .email-capture--dropdown {
     padding: $baseline;
 
+    &.expand {
+        .dropdown-container {
+            max-height: 1000px;
+            padding: 1rem;
+            border: 2px solid rgba(245, 15, 77, 0.5);
+            border-top: none;
+        }
+
+        .email-capture--dropdown__cta {
+            i {
+                transform: rotateZ(45deg);
+            }
+        }
+    }
+
+    input.submit {
+        margin: auto;
+    }
+
+    input:focus {
+        border-color: rgba(245, 15, 77, 0.5);
+    }
+
     .dropdown-container {
         height: auto;
         max-height: 0;
         overflow: hidden;
         transition: max-height .5s;
-
-        &.expand {
-            max-height: 1000px;
-
-            .email-capture--dropdown__cta {
-                i {
-                    transform: rotateZ(45deg);
-                }
-            }
-        }
+        border: none;
+        padding: 0;
     }
 
     .email-capture--dropdown__cta {
         margin: auto;
         width: 100%;
         position: relative;
+        text-align: center;
+        transition: all .5s;
 
         i {
             position: absolute;
@@ -2303,6 +2321,7 @@
         display: none;
         color: $color-red-ribbon;
         margin-bottom: 0;
+        text-align: center;
     }
 
     .field .icon {
