@@ -2209,44 +2209,48 @@
 //
 // markup:
 // <div class="email-capture--dropdown prospect-component {$modifiers}">
-//      <button class="button email-capture--dropdown__cta">Sign up for our email list</button>
 //      <p class="email-capture--success">Thanks for signing up!</p>
 //      <p class="email-capture--subscribed">Looks like you're already signed up!</p>
-//      <div class="dropdown-container expand">
-//          <form action="" method="get" class="validate" validate>
-//                  <div class="field-body">
-//                      <div class="columns is-multiline">
-//                          <div class="column is-12">
-//                              <div class="field">
-//                                  <p class="control is-expanded has-icons-left">
-//                                      <input class="input" type="text" name="FNAME" placeholder="First Name" required>
-//                                      <span class="icon is-small is-left">
-//                                          <i class="fa fa-user"></i>
-//                                      </span>
-//                                  </p>
+//      <div class="columns">
+//          <div class="column is-4-desktop is-offset-4-desktop is-8-tablet is-offset-2-tablet is-12-mobile">
+//              <button class="button email-capture--dropdown__cta">Sign up for our email list<i class="fa fa-plus-circle" aria-hidden="true"></i></button>
+//              <div class="dropdown-container expand">
+//                  <form action="" method="get" class="validate" validate>
+//                          <div class="field-body">
+//                              <div class="columns is-multiline">
+//                                  <div class="column is-12">
+//                                      <div class="field">
+//                                          <p class="control is-expanded has-icons-left">
+//                                              <input class="input" type="text" name="FNAME" placeholder="First Name" required>
+//                                              <span class="icon is-small is-left">
+//                                                  <i class="fa fa-user"></i>
+//                                              </span>
+//                                          </p>
+//                                      </div>
+//                                  </div>
+//                                  <div class="column is-12">
+//                                      <div class="field">
+//                                          <p class="control is-expanded has-icons-left">
+//                                              <input class="input" type="email" name="EMAIL" placeholder="Email Address" required>
+//                                              <span class="icon is-small is-left">
+//                                                  <i class="fa fa-envelope"></i>
+//                                              </span>
+//                                          </p>
+//                                      </div>
+//                                  </div>
+//                                  <div class="column is-12">
+//                                      <div class="field">
+//                                          <p class="control is-expanded">
+//                                              <input type="submit" name="subscribe" class="button is-success" value="Sign up for free" />
+//                                          </p>
+//                                      </div>
+//                                  </div>
 //                              </div>
 //                          </div>
-//                          <div class="column is-12">
-//                              <div class="field">
-//                                  <p class="control is-expanded has-icons-left">
-//                                      <input class="input" type="email" name="EMAIL" placeholder="Email Address" required>
-//                                      <span class="icon is-small is-left">
-//                                          <i class="fa fa-envelope"></i>
-//                                      </span>
-//                                  </p>
-//                              </div>
-//                          </div>
-//                          <div class="column is-12">
-//                              <div class="field">
-//                                  <p class="control is-expanded">
-//                                      <input type="submit" name="subscribe" class="button is-success" value="Sign up for free" />
-//                                  </p>
-//                              </div>
-//                          </div>
-//                      </div>
-//                  </div>
-//              <p class="email-capture--error">Oops! It looks like something went wrong. Please try again.</p>
-//          </form>
+//                      <p class="email-capture--error">Oops! It looks like something went wrong. Please try again.</p>
+//                  </form>
+//              </div>
+//          </div>
 //      </div>
 // </div>
 //
@@ -2262,11 +2266,25 @@
 
         &.expand {
             max-height: 1000px;
+
+            .email-capture--dropdown__cta {
+                i {
+                    transform: rotateZ(45deg);
+                }
+            }
         }
     }
 
     .email-capture--dropdown__cta {
         margin: auto;
+        width: 100%;
+        position: relative;
+
+        i {
+            position: absolute;
+            right: 1px;
+            top: 0;
+        }
     }
 
     .email-capture--title, .email-capture--success, .email-capture--subscribed {
