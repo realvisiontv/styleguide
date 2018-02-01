@@ -2212,10 +2212,12 @@
 // <div class="email-capture--dropdown prospect-component {$modifiers}">
 //      <p class="email-capture--success">Thanks for signing up!</p>
 //      <p class="email-capture--subscribed">Looks like you're already signed up!</p>
+//      <h2 class="email-capture--title">Like what you see? Sign up for our email list to get it straight to your inbox!</h2>
 //      <div class="columns">
 //          <div class="column is-6-desktop is-offset-3-desktop is-8-tablet is-offset-2-tablet is-12-mobile">
-//              <a class="button email-capture--dropdown__cta">Sign up for our email list<i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+//              <a class="button email-capture--dropdown__cta">Sign up for our email list</a>
 //              <div class="dropdown-container">
+//                  <p class="email-capture--description">The Adventures in Finance podcast brings you investing ideas, finance stories, lateral thinking and bold insights from some of the most brilliant minds in finance. No passport required.</p>
 //                  <form action="" method="get" class="validate" validate>
 //                          <div class="field-body">
 //                              <div class="columns is-multiline">
@@ -2266,12 +2268,6 @@
             border: 2px solid rgba(245, 15, 77, 0.5);
             border-top: none;
         }
-
-        .email-capture--dropdown__cta {
-            i {
-                transform: rotateZ(45deg);
-            }
-        }
     }
 
     input.submit {
@@ -2298,12 +2294,17 @@
         position: relative;
         text-align: center;
         transition: all .5s;
+    }
 
-        i {
-            position: absolute;
-            right: 1px;
-            top: 0;
-        }
+    .email-capture--title {
+        text-align: center;
+        margin-top: 0;
+    }
+
+    .email-capture--description {
+        font-weight: bold;
+        margin-bottom: 1rem;
+        text-align: center;
     }
 
     .email-capture--title, .email-capture--success, .email-capture--subscribed {
@@ -2340,7 +2341,7 @@
             display: none;
         }
     }
-
+ 
     &.error {
         .email-capture--error {
             display: block;
