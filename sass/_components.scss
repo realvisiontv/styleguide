@@ -2262,10 +2262,6 @@
     padding: $baseline;
 
     &.expand {
-        .dropdown-container {
-            max-height: 1000px;
-        }
-
         .email-capture--dropdown__cta {
             padding: 0 $baseline;
 
@@ -2295,7 +2291,11 @@
         overflow: hidden;
         transition: max-height .5s;
 
-        @include desktop {
+        form {
+            padding: 0 $baseline;
+        }
+
+        @include tablet {
             form {
                 padding: 0 $baseline * 4;
             }
