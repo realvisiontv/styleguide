@@ -2264,8 +2264,6 @@
     &.expand {
         .dropdown-container {
             max-height: 1000px;
-            border: 2px solid rgba(245, 15, 77, 0.5);
-            border-top: none;
         }
 
         .email-capture--dropdown__cta {
@@ -2299,7 +2297,7 @@
 
         @include desktop {
             form {
-                padding: 0 $baseline * 3;
+                padding: 0 $baseline * 4;
             }
         }
     }
