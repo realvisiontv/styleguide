@@ -2264,14 +2264,13 @@
     &.expand {
         .dropdown-container {
             max-height: 1000px;
-            padding: 1rem;
-            padding-bottom: $baseline;
             border: 2px solid rgba(245, 15, 77, 0.5);
             border-top: none;
         }
 
         .email-capture--dropdown__cta {
             padding: 0 $baseline;
+
             .collapsed-cta-text {
                 display: none;
             }
@@ -2284,6 +2283,7 @@
 
     input.submit {
         margin: auto;
+        margin-bottom: $baseline;
     }
 
     input:focus {
@@ -2333,7 +2333,7 @@
 
     .email-capture--description {
         font-weight: bold;
-        margin-bottom: 1rem;
+        margin: 1rem;
         text-align: center;
     }
 
