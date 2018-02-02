@@ -2296,8 +2296,6 @@
         max-height: 0;
         overflow: hidden;
         transition: max-height .5s;
-        border: none;
-        padding: 0;
 
         @include desktop {
             form {
