@@ -2107,7 +2107,7 @@
 // .subscribed - State shown if the user is already subscribed
 //
 // markup:
-// <div class="email-capture--simple prospect-component {$modifiers}">
+// <div class="email-capture email-capture--simple prospect-component {$modifiers}">
 //      <p class="email-capture--title">Can we interest you in checking out our recent blog post?</p>
 //      <p class="email-capture--success">Thanks for signing up!</p>
 //      <p class="email-capture--subscribed">Looks like you're already signed up!</p>
@@ -2209,7 +2209,7 @@
 // .subscribed - State shown if the user is already subscribed
 //
 // markup:
-// <div class="email-capture--dropdown prospect-component {$modifiers}">
+// <div class="email-capture email-capture--dropdown prospect-component {$modifiers}">
 //      <p class="email-capture--success">Thanks for signing up!</p>
 //      <p class="email-capture--subscribed">Looks like you're already signed up!</p>
 //      <h2 class="email-capture--title">Like what you see? Sign up for our email list to get it straight to your inbox!</h2>
@@ -2268,12 +2268,6 @@
             padding-bottom: $baseline;
             border: 2px solid rgba(245, 15, 77, 0.5);
             border-top: none;
-
-            @include desktop {
-                form {
-                    padding: 0 $baseline * 3;
-                }
-            }
         }
 
         .email-capture--dropdown__cta {
@@ -2304,6 +2298,12 @@
         transition: max-height .5s;
         border: none;
         padding: 0;
+
+        @include desktop {
+            form {
+                padding: 0 $baseline * 3;
+            }
+        }
     }
 
     .email-capture--dropdown__cta {
