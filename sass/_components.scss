@@ -2215,7 +2215,7 @@
 //      <h2 class="email-capture--title">Like what you see? Sign up for our email list to get it straight to your inbox!</h2>
 //      <div class="columns">
 //          <div class="column is-6-desktop is-offset-3-desktop is-8-tablet is-offset-2-tablet is-12-mobile">
-//              <a class="button email-capture--dropdown__cta">Sign up for our email list</a>
+//              <a class="button email-capture--dropdown__cta"><span class="collapsed-cta-text">Sign up for our email list</span><span class="expanded-cta-text">Close<i class="fa fa-close" aria-hidden="true"></i></span></a>
 //              <div class="dropdown-container">
 //                  <p class="email-capture--description">The Adventures in Finance podcast brings you investing ideas, finance stories, lateral thinking and bold insights from some of the most brilliant minds in finance. No passport required.</p>
 //                  <form action="" method="get" class="validate" validate>
@@ -2265,8 +2265,26 @@
         .dropdown-container {
             max-height: 1000px;
             padding: 1rem;
+            padding-bottom: $baseline;
             border: 2px solid rgba(245, 15, 77, 0.5);
             border-top: none;
+
+            @include desktop {
+                form {
+                    padding: 0 $baseline * 3;
+                }
+            }
+        }
+
+        .email-capture--dropdown__cta {
+            padding: 0 $baseline;
+            .collapsed-cta-text {
+                display: none;
+            }
+
+            .expanded-cta-text {
+                display: block;
+            }
         }
     }
 
@@ -2294,6 +2312,20 @@
         position: relative;
         text-align: center;
         transition: all .5s;
+
+        .collapsed-cta-text {
+            display: block;
+        }
+
+        .expanded-cta-text {
+            text-align: right;
+            display: none;
+
+            i {
+                vertical-align: baseline;
+                margin-left: $baseline;
+            }
+        }
     }
 
     .email-capture--title {
