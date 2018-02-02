@@ -2369,7 +2369,7 @@
     &.success, &.subscribed {
         background-color: $color-cyan;
 
-        .email-capture--title, .email-capture--error, form, .email-capture--dropdown__cta {
+        .email-capture--title, .email-capture--error, form, .email-capture--dropdown__cta, .dropdown-container {
             display: none;
         }
     }
