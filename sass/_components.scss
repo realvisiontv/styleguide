@@ -2286,6 +2286,7 @@
 
     .dropdown-container {
         @extend .has-paper-background;
+        max-height: 0;
         height: auto;
         overflow: hidden;
         transition: max-height .5s;
