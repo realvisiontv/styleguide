@@ -2097,7 +2097,7 @@
     }
 }
 
-// Email Capture
+// Email Capture - Simple
 //
 // A simple form to capture target users' first names and email addresses
 //
@@ -2107,7 +2107,7 @@
 // .subscribed - State shown if the user is already subscribed
 //
 // markup:
-// <div class="email-capture prospect-component {$modifiers}">
+// <div class="email-capture email-capture--simple prospect-component {$modifiers}">
 //      <p class="email-capture--title">Can we interest you in checking out our recent blog post?</p>
 //      <p class="email-capture--success">Thanks for signing up!</p>
 //      <p class="email-capture--subscribed">Looks like you're already signed up!</p>
@@ -2142,7 +2142,7 @@
 // </div>
 //
 // Styleguide 5.14
-.email-capture {
+.email-capture--simple {
     padding: $baseline;
 
     .email-capture--title, .email-capture--success, .email-capture--subscribed {
@@ -2198,6 +2198,197 @@
     }
 }
 
+// Email Capture - Dropdown
+//
+// A dropdown form to capture target users' first names and email addresses
+//
+// default - Default
+// .expand - Expanded dropdown form (Javascript required to view)
+// .expand.error - Error state shown after failed submission (Javascript required to view)
+// .success - Success state shown after successful submission
+// .subscribed - State shown if the user is already subscribed
+//
+// markup:
+// <div class="email-capture email-capture--dropdown prospect-component {$modifiers}">
+//      <p class="email-capture--success">Thanks for signing up!</p>
+//      <p class="email-capture--subscribed">Looks like you're already signed up!</p>
+//      <h2 class="email-capture--title">Like what you see? Sign up for our email list to get it straight to your inbox!</h2>
+//      <div class="columns">
+//          <div class="column is-6-desktop is-offset-3-desktop is-8-tablet is-offset-2-tablet is-12-mobile">
+//              <a class="button email-capture--dropdown__cta"><span class="collapsed-cta-text">Sign up for our email list</span><span class="expanded-cta-text">Close<i class="fa fa-close" aria-hidden="true"></i></span></a>
+//              <div class="dropdown-container">
+//                  <p class="email-capture--description">The Adventures in Finance podcast brings you investing ideas, finance stories, lateral thinking and bold insights from some of the most brilliant minds in finance. No passport required.</p>
+//                  <form action="" method="get" class="validate" validate>
+//                          <div class="field-body">
+//                              <div class="columns is-multiline">
+//                                  <div class="column is-12">
+//                                      <div class="field">
+//                                          <p class="control is-expanded has-icons-left">
+//                                              <input class="input" type="text" name="FNAME" placeholder="First Name" required>
+//                                              <span class="icon is-small is-left">
+//                                                  <i class="fa fa-user"></i>
+//                                              </span>
+//                                          </p>
+//                                      </div>
+//                                  </div>
+//                                  <div class="column is-12">
+//                                      <div class="field">
+//                                          <p class="control is-expanded has-icons-left">
+//                                              <input class="input" type="email" name="EMAIL" placeholder="Email Address" required>
+//                                              <span class="icon is-small is-left">
+//                                                  <i class="fa fa-envelope"></i>
+//                                              </span>
+//                                          </p>
+//                                      </div>
+//                                  </div>
+//                                  <div class="column is-12">
+//                                      <div class="field">
+//                                          <p class="control is-expanded">
+//                                              <input type="submit" name="subscribe" class="button is-success submit" value="Sign up for free" />
+//                                          </p>
+//                                      </div>
+//                                  </div>
+//                              </div>
+//                          </div>
+//                  </form>
+//              </div>
+//              <p class="email-capture--error">Oops! It looks like something went wrong. Please try again.</p>
+//          </div>
+//      </div>
+// </div>
+//
+// Styleguide 5.15
+.email-capture--dropdown {
+    padding: $baseline;
+
+    &.expand {
+        .email-capture--dropdown__cta {
+            padding: 0 $baseline;
+
+            .collapsed-cta-text {
+                display: none;
+            }
+
+            .expanded-cta-text {
+                display: block;
+            }
+        }
+    }
+
+    input.submit {
+        margin: auto;
+        margin-bottom: $baseline;
+    }
+
+    input:focus {
+        border-color: rgba(245, 15, 77, 0.5);
+    }
+
+    .dropdown-container {
+        @extend .has-paper-background;
+        max-height: 0;
+        height: auto;
+        overflow: hidden;
+        transition: max-height .5s;
+
+        form {
+            padding: 0 $baseline;
+        }
+
+        @include tablet {
+            form {
+                padding: 0 $baseline * 4;
+            }
+        }
+    }
+
+    .email-capture--dropdown__cta {
+        margin: auto;
+        width: 100%;
+        position: relative;
+        text-align: center;
+        transition: all .5s;
+
+        .collapsed-cta-text {
+            display: block;
+        }
+
+        .expanded-cta-text {
+            text-align: right;
+            display: none;
+
+            i {
+                vertical-align: baseline;
+                margin-left: $baseline;
+            }
+        }
+    }
+
+    .email-capture--title {
+        text-align: center;
+        margin-top: 0;
+    }
+
+    .email-capture--description {
+        font-weight: bold;
+        margin: 1rem;
+        text-align: center;
+    }
+
+    .email-capture--title, .email-capture--success, .email-capture--subscribed {
+        font-weight: bold;
+        font-size: $size-5;
+        margin-bottom: $baseline;
+    }
+
+    .email-capture--success, .email-capture--subscribed {
+        display: none;
+        text-align: center;
+        margin: 0;
+    }
+
+    .email-capture--error {
+        display: none;
+        color: $color-red-ribbon;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    .field .icon {
+        height: 100%;
+    }
+
+    .button {
+        appearance: none;
+    }
+
+    &.success, &.subscribed {
+        background-color: $color-cyan;
+
+        .email-capture--title, .email-capture--error, form, .email-capture--dropdown__cta, .dropdown-container {
+            display: none;
+        }
+    }
+ 
+    &.error {
+        .email-capture--error {
+            display: block;
+        }
+    }
+
+    &.success {
+        .email-capture--success {
+            display: block;
+        }
+    }
+
+    &.subscribed {
+        .email-capture--subscribed {
+            display: block;
+        }
+    }
+}
+
 // Product Price/CTA Block
 //
 // default - Default CTA
@@ -2230,7 +2421,7 @@
 //    </div>
 // </div>
 //
-// Styleguide 5.15
+// Styleguide 5.16
 .product-price-block {
     padding: $baseline;
     position: relative;
@@ -2492,7 +2683,7 @@
 //      </div>
 // </div>
 //
-// Styleguide 5.16
+// Styleguide 5.17
 .image-row {
     padding: $baseline;
     background: none;
@@ -2630,7 +2821,7 @@
 //      </div>
 // </div>
 //
-// Styleguide 5.17
+// Styleguide 5.18
 .pullout-container {
     padding: 0;
 
@@ -2708,7 +2899,7 @@
 //      </ol>
 // </div>
 //
-// Styleguide 5.18
+// Styleguide 5.19
 .wysiwyg-block {
     padding: $baseline;
     h2, h3 {
@@ -2845,7 +3036,7 @@
 //          </div>
 // </section>
 //
-// Styleguide 5.19
+// Styleguide 5.20
 .podcast-episode {
     padding: $baseline;
     background: white;
@@ -3078,7 +3269,7 @@
 //      </section>
 // </div>
 //
-// Styleguide 5.20
+// Styleguide 5.21
 .podcast-listing {
     padding: $baseline / 2;
 
@@ -3215,7 +3406,7 @@
 //    </div>
 //  </div>
 //
-// Styleguide 5.21
+// Styleguide 5.22
 .contributor-header.is-black {
     background: #111111;
     color: white;
@@ -3348,7 +3539,7 @@
 //     </div>
 // </div>
 // 
-// Styleguide 5.22
+// Styleguide 5.23
 .countdown-banner {
     background-color: $color-poppy;
     background-image: url(#{$root}/images/components/countdown_banner_background.png);
