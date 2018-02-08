@@ -594,7 +594,7 @@
 //                     <div class="content">
 //                         <h2 class="is-size-3-tablet-only"><span>Latest Video</span></h2>
 //                         <h1 class="is-size-3-mobile is-size-1-tablet-only"><span>Looking under the hood gold</span></h1>
-//                         <p class="is-size-4-tablet-only is-hidden-mobile">Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
+//                         <p class="is-size-4-tablet-only is-hidden-mobile video-description">Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
 //                         <div class="columns is-mobile is-marginless buttons">
 //                             <div class="column is-narrow-desktop">
 //                                 <button class="icon-button large hide-text info"><i class="fa fa-info-circle" aria-hidden="true"></i>More information</button>
@@ -614,7 +614,7 @@
 //                     <div class="content">
 //                         <h2 class="is-size-3-tablet-only"><span>Latest Video</span></h2>
 //                         <h1 class="is-size-3-mobile is-size-1-tablet-only"><span>Looking under the hood gold</span></h1>
-//                         <p class="is-size-4-tablet-only is-hidden-mobile"><span>Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</span></p>
+//                         <p class="is-size-4-tablet-only is-hidden-mobile video-description"><span>Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</span></p>
 //                         <div class="columns is-mobile is-marginless buttons">
 //                             <div class="column is-narrow-desktop">
 //                                 <button class="icon-button large hide-text info"><i class="fa fa-info-circle" aria-hidden="true"></i>More information</button>
@@ -634,7 +634,7 @@
 //                     <div class="content">
 //                         <h2 class="is-size-3-tablet-only"><span>Latest Video</span></h2>
 //                         <h1 class="is-size-3-mobile is-size-1-tablet-only"><span>Looking under the hood gold</span></h1>
-//                         <p class="is-size-4-tablet-only is-hidden-mobile"><span>Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</span></p>
+//                         <p class="is-size-4-tablet-only is-hidden-mobile video-description"><span>Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</span></p>
 //                         <div class="columns is-mobile is-marginless buttons">
 //                             <div class="column is-narrow-desktop">
 //                                 <button class="icon-button large hide-text info"><i class="fa fa-info-circle" aria-hidden="true"></i>More information</button>
@@ -654,6 +654,7 @@
 .tri-hero {
     $height: 490px;
     $transition-speed: 0.2s;
+    overflow: hidden;
 
     @include tablet {
         article {
@@ -799,7 +800,7 @@
                             line-height: 1.8rem;
                         }
 
-                        p {
+                        .video-description {
                             position: absolute;
                             bottom: 30px;
                         }
