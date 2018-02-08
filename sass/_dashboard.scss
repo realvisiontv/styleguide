@@ -587,7 +587,7 @@
 // </div>
 // <div class="container tri-hero">
 //     <div class="columns">
-//         <article class="column is-6">
+//         <article class="column is-6 hero-0">
 //             <a class="inner-container" href="#">
 //                 <img src="/images/heroes/hero_person.jpeg" />
 //                 <div class="content-container">
@@ -596,10 +596,10 @@
 //                         <h1 class="is-size-3-mobile is-size-1-tablet-only"><span>Looking under the hood gold</span></h1>
 //                         <p class="is-size-4-tablet-only is-hidden-mobile video-description">Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</p>
 //                         <div class="columns is-mobile is-marginless buttons">
-//                             <div class="column is-narrow-desktop">
+//                             <div class="column is-narrow-tablet">
 //                                 <button class="icon-button large hide-text info"><i class="fa fa-info-circle" aria-hidden="true"></i>More information</button>
 //                             </div>
-//                             <div class="column is-narrow-desktop">
+//                             <div class="column is-narrow-tablet">
 //                                 <button class="icon-button large play"><i class="fa fa-play" aria-hidden="true"></i><p>24 mins</p></button>
 //                             </div>
 //                         </div>
@@ -607,7 +607,7 @@
 //                 </div>
 //             </a>
 //         </article>
-//         <article class="column is-3">
+//         <article class="column is-3 hero-1">
 //             <a class="inner-container" href="#">
 //                 <img src="/images/heroes/hero_buildings.jpeg" />
 //                 <div class="content-container">
@@ -616,10 +616,10 @@
 //                         <h1 class="is-size-3-mobile is-size-1-tablet-only"><span>Looking under the hood gold</span></h1>
 //                         <p class="is-size-4-tablet-only is-hidden-mobile video-description"><span>Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</span></p>
 //                         <div class="columns is-mobile is-marginless buttons">
-//                             <div class="column is-narrow-desktop">
+//                             <div class="column is-narrow-tablet">
 //                                 <button class="icon-button large hide-text info"><i class="fa fa-info-circle" aria-hidden="true"></i>More information</button>
 //                             </div>
-//                             <div class="column is-narrow-desktop">
+//                             <div class="column is-narrow-tablet">
 //                                 <button class="icon-button large play"><i class="fa fa-play" aria-hidden="true"></i>24 mins</button>
 //                             </div>
 //                         </div>
@@ -627,7 +627,7 @@
 //                 </div>
 //             </a>
 //         </article>
-//         <article class="column is-3">
+//         <article class="column is-3 hero-2">
 //             <a class="inner-container" href="#">
 //                 <img src="/images/heroes/hero_text.jpeg" />
 //                 <div class="content-container">
@@ -636,10 +636,10 @@
 //                         <h1 class="is-size-3-mobile is-size-1-tablet-only"><span>Looking under the hood gold</span></h1>
 //                         <p class="is-size-4-tablet-only is-hidden-mobile video-description"><span>Curabitur et nisi venenatis, mattis tortor id, lacinia nulla. Donec id quam velit. Proin bibendum justo vitae tempor aliquam. Aenean tempus augue a dapibus vestibulum. Nullam lacinia magna eget sapien pretium, sit amet venenatis dolor efficitur. Curabitur tristique tincidunt ligula, quis scelerisque diam dapibus eu. Fusce non accumsan tellus. Nunc bibendum augue vitae nibh laoreet accumsan. Nam vitae placerat nulla, ut tempus ipsum. In mattis nisl id felis lacinia interdum. Sed ac enim quis arcu mattis auctor et in nunc.</span></p>
 //                         <div class="columns is-mobile is-marginless buttons">
-//                             <div class="column is-narrow-desktop">
+//                             <div class="column is-narrow-tablet">
 //                                 <button class="icon-button large hide-text info"><i class="fa fa-info-circle" aria-hidden="true"></i>More information</button>
 //                             </div>
-//                             <div class="column is-narrow-desktop">
+//                             <div class="column is-narrow-tablet">
 //                                 <button class="icon-button large play"><i class="fa fa-play" aria-hidden="true"></i>24 mins</button>
 //                             </div>
 //                         </div>
@@ -724,7 +724,6 @@
 
                     .buttons {
                         height: 30px;
-                        box-shadow: 10px 0 0 black, -10px 0 0 black;
 
                         div {
                             padding: 0;
@@ -770,7 +769,7 @@
                 }
             }
 
-            &.is-6 {
+            &.hero-0 {
                 .inner-container {
                     img {
                         left: 0;
@@ -786,7 +785,7 @@
                 }
             }
 
-            &.is-3 {
+            &.hero-1, &.hero-2 {
                 border-left: 5px solid white;
 
                 .inner-container {
@@ -842,14 +841,10 @@
     }
 
     @include desktop {
-        article.is-6 {
+        article.hero-0 {
             .inner-container {
                 .content {
                     max-width: 80%;
-                    
-                    .buttons {
-                        box-shadow: none;
-                    }
                 }
             }
         }
@@ -977,7 +972,7 @@
             }
 
             h1,
-            .is-3 h1 {
+            .hero-1 h1, .hero-2 h1 {
                 max-height: 4em;
             }
 
