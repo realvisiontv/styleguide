@@ -653,7 +653,7 @@
 // Styleguide 6.3
 .tri-hero {
     $height: 490px;
-    $transition-speed: 0.2s;
+    $transition-speed: 250ms;
     overflow: hidden;
 
     @include tablet {
@@ -719,7 +719,7 @@
                     }
 
                     h1, p {
-                        transition: color $transition-speed ease-in;
+                        transition: color $transition-speed ease-in-out;
                     }
 
                     .buttons {
@@ -804,7 +804,7 @@
                     }
 
                     .content {
-                        transition: top 250ms ease-in-out;
+                        transition: top $transition-speed ease-in-out;
                         height: 100%;
 
                         h1 {
@@ -853,7 +853,9 @@
         article.hero-0 {
             .inner-container {
                 .content {
-                    max-width: 80%;
+                    .video-description {
+                        max-width: 80%;
+                    }
                 }
             }
         }
