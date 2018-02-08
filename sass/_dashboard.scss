@@ -655,7 +655,7 @@
     $height: 490px;
     $transition-speed: 0.2s;
 
-    @include desktop {
+    @include tablet {
         article {
             padding: 0;
             position: relative;
@@ -672,7 +672,6 @@
                     .content {
                         h1, p {
                             color: $brand;
-                            text-decoration: underline;
                         }
                     }
                 }
@@ -792,12 +791,30 @@
                     }
 
                     .content {
-                        p, .buttons {
-                            display: none;
-                        }
+                        transition: top 250ms ease-in-out;
+                        height: 100%;
+
                         h1 {
                             font-size: $size-4;
                             line-height: 1.8rem;
+                        }
+
+                        p {
+                            position: absolute;
+                            bottom: 30px;
+                        }
+
+                        .buttons {
+                            position: absolute;
+                            bottom: 0;
+                        }
+                    }
+                }
+
+                &:hover {
+                    .inner-container {
+                        .content {
+                            top: 0;
                         }
                     }
                 }
@@ -830,7 +847,7 @@
         }
     }
 
-    @include touch {
+    @include mobile {
         width: 100%;
         overflow: scroll;
         scroll-snap-type: mandatory;
