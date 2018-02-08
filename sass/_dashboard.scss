@@ -772,7 +772,9 @@
             &.hero-0 {
                 .inner-container {
                     .content-container {
-                        padding: 3rem;
+                        padding: 1.5rem 3rem;
+                        display: flex;
+                        flex-direction: column-reverse;
                     }
                     
                     img {
@@ -781,6 +783,9 @@
 
                     .content {
                         max-width: none;
+                        display: flex;
+                        flex-direction: column;
+                        top: 0;
 
                         .video-description {
                             max-height: 2.8rem; 
