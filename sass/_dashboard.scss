@@ -711,7 +711,6 @@
                         text-transform: uppercase;
                     }
                     p {
-                        max-height: 2.8rem; 
                         overflow: hidden;
                         font-size: $size-6;
                         line-height: 1.4rem;
@@ -778,6 +777,10 @@
 
                     .content {
                         max-width: 80%;
+
+                        .video-description {
+                            max-height: 2.8rem; 
+                        }
                     }
                 }
             }
@@ -803,6 +806,7 @@
                         .video-description {
                             position: absolute;
                             bottom: 30px;
+                            max-height: 8.4rem; 
                         }
 
                         .buttons {
