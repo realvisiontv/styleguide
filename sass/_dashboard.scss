@@ -724,6 +724,7 @@
 
                     .buttons {
                         height: 30px;
+                        box-shadow: 10px 0 0 black, -10px 0 0 black;
 
                         div {
                             padding: 0;
@@ -776,6 +777,8 @@
                     }
 
                     .content {
+                        max-width: none;
+
                         .video-description {
                             max-height: 2.8rem; 
                         }
@@ -833,6 +836,20 @@
                     right: 0;
                     width: 100%;
                     z-index: -1;
+                }
+            }
+        }
+    }
+
+    @include desktop {
+        article.is-6 {
+            .inner-container {
+                .content {
+                    max-width: 80%;
+                    
+                    .buttons {
+                        box-shadow: none;
+                    }
                 }
             }
         }
