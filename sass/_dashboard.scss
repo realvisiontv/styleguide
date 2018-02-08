@@ -871,6 +871,11 @@
             }
         }
 
+        .inner-container {
+            color: white;
+            text-decoration-color: rgba(54, 54, 54, 0.25);
+        }
+
         .buttons {
             position: absolute;
             bottom: 0;
@@ -878,6 +883,44 @@
             right: 0;
             padding: 0 ($baseline / 2);
             margin: 0;
+
+            div {
+
+                button {
+                    height: auto;
+
+                    &.play {
+                        color: $brand;
+                        background: black;
+                        padding-left: 70px;
+                        box-shadow: 10px 0 0 black;
+
+                        p {
+                            margin: 0;
+                        }
+                    }
+
+                    &.info {
+                        width: 60px;
+                        margin-left: -10px;
+                    }
+
+                    i {
+                        background: black;
+                        border-color: black;
+                        color: $brand;
+                        width: 60px;
+                    }
+
+                    &:hover {
+                        i {
+                            background: $brand;
+                            border-color: $brand;
+                            color: black;
+                        }
+                    }
+                }
+            }
         }
 
         > .columns {
