@@ -580,9 +580,9 @@
 // markup:
 // <div class="container tri-hero loading">
 //     <div class="columns">
-//         <article class="column is-6"><a class="inner-container"><div class="content"></div></a></article>
-//         <article class="column is-3"><a class="inner-container"><div class="content"></div></a></article>
-//         <article class="column is-3"><a class="inner-container"><div class="content"></div></a></article>
+//         <article class="column is-6"><a class="inner-container"><div class="content-container"><div class="content"></div><div class="content-container"></div></a></article>
+//         <article class="column is-3"><a class="inner-container"><div class="content-container"><div class="content"></div><div class="content-container"></div></a></article>
+//         <article class="column is-3"><a class="inner-container"><div class="content-container"><div class="content"></div><div class="content-container"></div></a></article>
 //     </div>
 // </div>
 // <div class="container tri-hero">
@@ -711,14 +711,10 @@
                     color: white;
 
                     span {
-                        background-color: black;
-                        box-shadow: 10px 0 0 black, -10px 0 0 black;
+                        background-color: $color-dark-gray;
+                        box-shadow: 10px 0 0 $color-dark-gray, -10px 0 0 $color-dark-gray;
                     }
 
-                    h1 {
-                        font-size: 2rem;
-                        line-height: 2.4rem;
-                    }
                     h2 {
                         font-size: $size-5;
                         font-weight: normal;
@@ -729,8 +725,8 @@
                         overflow: hidden;
                         font-size: $size-6;
                         line-height: 1.4rem;
-                        box-shadow: 10px 0 0 black, -10px 0 0 black;
-                        background: black;
+                        box-shadow: 10px 0 0 $color-dark-gray, -10px 0 0 $color-dark-gray;
+                        background: $color-dark-gray;
                     }
 
                     h1, p {
@@ -742,7 +738,7 @@
 
                         div {
                             padding: 0;
-                            background: black;
+                            background: $color-dark-gray;
 
                             button {
                                 margin: 0;
@@ -752,7 +748,7 @@
                                     color: $brand;
                                     padding: 0;
                                     padding-left: 70px;
-                                    box-shadow: 10px 0 0 black;
+                                    box-shadow: 10px 0 0 $color-dark-gray;
 
                                     p {
                                         margin: 0;
@@ -765,8 +761,8 @@
                                 }
 
                                 i {
-                                    background: black;
-                                    border-color: black;
+                                    background: $color-dark-gray;
+                                    border-color: $color-dark-gray;
                                     color: $brand;
                                     width: 60px;
                                 }
@@ -775,7 +771,7 @@
                                     i {
                                         background: $brand;
                                         border-color: $brand;
-                                        color: black;
+                                        color: $color-dark-gray;
                                     }
                                 }
                             }
@@ -802,6 +798,18 @@
                         flex-direction: column;
                         top: 0;
 
+                        h1 {
+                            @include tablet {
+                                font-size: 2.4vw;
+                                line-height: 1.22;
+                            }
+
+                            @include desktop {
+                                font-size: 2rem;
+                                line-height: 2.4rem;
+                            }
+                        }
+
                         .video-description {
                             max-height: 2.8rem; 
                         }
@@ -827,14 +835,33 @@
                         height: 100%;
 
                         h1 {
-                            font-size: $size-4;
-                            line-height: 1.8rem;
+                            @include tablet {
+                                font-size: 2.4vw;
+                                line-height: 1.22;
+                            }
+
+                            @include desktop {
+                                font-size: $size-4;
+                                line-height: 1.8rem;
+                            }
                         }
 
                         .video-description {
                             position: absolute;
                             bottom: 30px;
-                            max-height: 8.4rem; 
+
+                            @include tablet {
+                                max-height: 0;
+                            }
+                            @include desktop {
+                                max-height: 4.2rem; 
+                            }
+                            @include widescreen {
+                                max-height: 7rem; 
+                            }
+                            @include fullhd {
+                                max-height: 8.4rem; 
+                            }
                         }
 
                         .buttons {
@@ -930,9 +957,9 @@
 
                     &.play {
                         color: $brand;
-                        background: black;
+                        background: $color-dark-gray;
                         padding-left: 70px;
-                        box-shadow: 10px 0 0 black;
+                        box-shadow: 10px 0 0 $color-dark-gray;
 
                         p {
                             margin: 0;
@@ -945,8 +972,8 @@
                     }
 
                     i {
-                        background: black;
-                        border-color: black;
+                        background: $color-dark-gray;
+                        border-color: $color-dark-gray;
                         color: $brand;
                         width: 60px;
                     }
