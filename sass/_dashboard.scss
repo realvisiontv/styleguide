@@ -589,7 +589,9 @@
 //     <div class="columns">
 //         <article class="column is-6 hero-0">
 //             <a class="inner-container" href="#">
-//                 <img src="/images/heroes/hero_person.jpeg" />
+//                 <div class="image">
+//                      <img src="/images/heroes/hero_person.jpeg" />
+//                 </div>
 //                 <div class="content-container">
 //                     <div class="content">
 //                         <h2 class="is-size-3-tablet-only"><span>Latest Video</span></h2>
@@ -609,7 +611,9 @@
 //         </article>
 //         <article class="column is-3 hero-1">
 //             <a class="inner-container" href="#">
-//                 <img src="/images/heroes/hero_buildings.jpeg" />
+//                 <div class="image">
+//                      <img src="/images/heroes/hero_buildings.jpeg" />
+//                 </div>
 //                 <div class="content-container">
 //                     <div class="content">
 //                         <h2 class="is-size-3-tablet-only"><span>Latest Video</span></h2>
@@ -629,7 +633,9 @@
 //         </article>
 //         <article class="column is-3 hero-2">
 //             <a class="inner-container" href="#">
-//                 <img src="/images/heroes/hero_text.jpeg" />
+//                 <div class="image">
+//                      <img src="/images/heroes/hero_text.jpeg" />
+//                 </div>
 //                 <div class="content-container">
 //                     <div class="content">
 //                         <h2 class="is-size-3-tablet-only"><span>Latest Video</span></h2>
@@ -652,7 +658,6 @@
 //
 // Styleguide 6.3
 .tri-hero {
-    $height: 490px;
     $transition-speed: 250ms;
     overflow: hidden;
 
@@ -660,11 +665,25 @@
         article {
             padding: 0;
             position: relative;
-            height: $height;
             overflow: hidden;
 
             a {
                 text-decoration: none;
+            }
+
+            .image {
+                background: lightgray;
+                height: 0;
+                overflow: hidden;
+
+                img {
+                    height: 100%;
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    max-width: none;
+                    width: auto;
+                }
             }
 
             .inner-container {
@@ -677,19 +696,13 @@
                     }
                 }
 
-                img {
-                    position: absolute;
-                    z-index: -1;
-                    height: $height;
-                    max-width: none;
-                    top: 0;
-                    left: 50%;
-                    transform: translateX(-50%);
-                }
                 .content-container {
                     height: 100%;
                     width: 100%;
                     padding: 2rem;
+                    position: absolute;
+                    top: 0;
+                    z-index: 1;
                 }
 
                 .content {
@@ -703,7 +716,7 @@
                     }
 
                     h1 {
-                        font-size: $size-3;
+                        font-size: 2rem;
                         line-height: 2.4rem;
                     }
                     h2 {
@@ -772,6 +785,10 @@
             }
 
             &.hero-0 {
+
+                .image {
+                    padding-bottom: 71.92%;
+                }
                 .inner-container {
                     .content-container {
                         padding: 2rem 3rem;
@@ -794,6 +811,10 @@
 
             &.hero-1, &.hero-2 {
                 border-left: 5px solid white;
+
+                .image {
+                    padding-bottom: 148.04%;
+                }
 
                 .inner-container {
                     img {
@@ -841,7 +862,7 @@
                     left: 0;
                     right: 0;
                     width: 100%;
-                    z-index: -1;
+                    z-index: 0;
                 }
             }
         }
