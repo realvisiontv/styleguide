@@ -864,6 +864,11 @@
                             }
                         }
 
+                        .video-description, .buttons {
+                            opacity: 0;
+                            transition: opacity $transition-speed ease-in-out;
+                        }
+
                         .video-description {
                             position: absolute;
                             bottom: 30px;
@@ -893,6 +898,10 @@
                     .inner-container {
                         .content {
                             top: 0;
+
+                            .video-description, .buttons {
+                                opacity: 1;
+                            }
                         }
                     }
                 }
