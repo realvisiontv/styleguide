@@ -580,9 +580,9 @@
 // markup:
 // <div class="container tri-hero loading">
 //     <div class="columns">
-//         <article class="column is-6"><a class="inner-container"><div class="content-container"><div class="content"></div><div class="content-container"></div></a></article>
-//         <article class="column is-3"><a class="inner-container"><div class="content-container"><div class="content"></div><div class="content-container"></div></a></article>
-//         <article class="column is-3"><a class="inner-container"><div class="content-container"><div class="content"></div><div class="content-container"></div></a></article>
+//         <article class="column is-6 hero-0"><a class="inner-container"><div class="content"></div></a></article>
+//         <article class="column is-3 hero-1"><a class="inner-container"><div class="content"></div></a></article>
+//         <article class="column is-3 hero-2"><a class="inner-container"><div class="content"></div></a></article>
 //     </div>
 // </div>
 // <div class="container tri-hero">
@@ -917,6 +917,56 @@
                     right: 0;
                     width: 100%;
                     z-index: 0;
+                }
+            }
+        }
+        &.loading {
+            background: lightgray;
+            article {
+                background-color: lightgray;
+
+                .inner-container {
+                    padding-bottom: 71.92%;
+                    .content {
+                        padding-bottom: 71.92%;
+                        background-image: linear-gradient(transparent 0, lightgray 0), linear-gradient(transparent 0, white 0), linear-gradient(transparent 0, lightgray 0), linear-gradient(transparent 0, white 0), linear-gradient(transparent 0, lightgray 0), linear-gradient(transparent 0, white 0), linear-gradient(lightgray 100%, transparent 0);
+                        background-repeat: no-repeat;
+                        background-size: 100% 62%, 50% 66%, 100% 69%, 86% 82%, 100% 85%, 69% 96%, 100% 100%;
+                        height: 100%;
+
+                        &:after {
+                            content: "";
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            bottom: 0;
+                            left: 0;
+                            background-image: linear-gradient(90deg, transparent 0%, rgba(lightgray, 0.5) 50%, transparent 100%);
+                            background-repeat: no-repeat;
+                            background-size: 400px 100%;
+                            background-position: -100% 0;
+                            animation: tri-hero-loading 2.5s infinite;
+                        }
+                    }
+
+                    &:after {
+                        background: lightgray;
+                    }
+                }
+
+                &.hero-0 {
+                    .inner-container .content {
+                        background-position: 2.5rem -1rem, 2.5rem -1rem, 2.5rem -1rem;
+                    }
+                }
+
+                &.hero-1, &.hero-2 {
+                    &:after {
+                        content: none;
+                    }
+                    .inner-container .content {
+                        background-position: .75rem -4.5rem, .75rem -4.5rem, .75rem -4.5rem;
+                    }
                 }
             }
         }
