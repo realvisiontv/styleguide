@@ -878,7 +878,7 @@
 // Signup Progress
 //
 // markup:
-// <ol class="columns signup-progress is-marginless is-mobile">
+// <ol class="columns signup-progress prospect-component is-marginless is-mobile">
 //     <li class="column is-paddingless active">Step 1</li>
 //     <li class="column is-paddingless active">Step 2</li>
 //     <li class="column is-paddingless">Step 3</li>
@@ -938,6 +938,10 @@
                 background-color: $color-dark-gray;
             }
         }
+    }
+
+    &.prospect-component {
+        padding: 1.5rem 0;
     }
 }
 
