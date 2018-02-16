@@ -748,8 +748,12 @@
                                 &.play {
                                     color: $brand;
                                     padding: 0;
-                                    padding-left: 70px;
+                                    padding-left: 50px;
                                     box-shadow: 10px 0 0 $color-dark-gray;
+
+                                    @include desktop {
+                                        padding-left: 70px;
+                                    }
 
                                     p {
                                         margin: 0;
@@ -757,15 +761,23 @@
                                 }
 
                                 &.info {
-                                    width: 60px;
+                                    width: 40px;
                                     margin-left: -10px;
+
+                                    @include desktop {
+                                        width: 60px;
+                                    }
                                 }
 
                                 i {
                                     background: $color-dark-gray;
                                     border-color: $color-dark-gray;
                                     color: $brand;
-                                    width: 60px;
+                                    width: 40px;
+
+                                    @include desktop {
+                                        width: 60px;
+                                    }
                                 }
 
                                 &:hover {
