@@ -714,6 +714,7 @@
                     span {
                         background-color: $color-dark-gray;
                         box-shadow: 10px 0 0 $color-dark-gray, -10px 0 0 $color-dark-gray;
+                        box-decoration-break: clone;
                     }
 
                     h2 {
@@ -727,6 +728,7 @@
                         font-size: $size-6;
                         line-height: 1.4rem;
                         box-shadow: 10px 0 0 $color-dark-gray, -10px 0 0 $color-dark-gray;
+                        box-decoration-break: clone;
                         background: $color-dark-gray;
                     }
 
