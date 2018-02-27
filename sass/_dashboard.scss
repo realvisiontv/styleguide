@@ -1162,6 +1162,42 @@
     }
 }
 
+// Tri-hero Guidelines
+//
+// This component is merely to visually explain the guidelines for the new tri-hero component above
+//
+// .hero - The hero images will remain the same as they currently are (16:9) but only a subsection of the image will be visible when featured as the first item in the tri-hero. The size of the visible section is 674px x 475px and can be visualized in the attached image.
+// .screenshot - The 2nd and 3rd items in the tri-hero require new images to be added as screenshots. They have an uncomfortably specific ratio of 337:499 (min. resolution of 674 x 998) and are only used in this component.
+//
+//
+// markup:
+// <div class="tri-hero--guidelines {$modifiers}">
+//      <img src="/images/components/tri-hero-guidelines/hero_visible.png" class="hero-image" />
+//      <img src="/images/components/tri-hero-guidelines/screenshot.jpeg" class="screenshot-image" />
+// </div>
+//
+// Styleguide 6.4
+
+.tri-hero--guidelines {
+    &.hero {
+        .hero-image {
+            display: block;
+        }
+        .screenshot-image {
+            display: none;
+        }
+    }
+
+    &.screenshot {
+        .screenshot-image {
+            display: block;
+        }
+        .hero-image {
+            display: none;
+        }
+    }
+}
+
 // Content tile more info
 //
 // This component is dependent on specific container dimensions, see fullscreen.
@@ -1211,7 +1247,7 @@
 //     <button class="icon-button close hide-text large"><i class="fa fa-close" aria-hidden="true"></i>Close more information</button>
 // </section>
 //
-// Styleguide 6.4
+// Styleguide 6.5
 .more-info {
     position: relative;
     overflow: hidden;
