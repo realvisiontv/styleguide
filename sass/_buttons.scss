@@ -71,10 +71,12 @@ a.is-link {
 // :hover   - Hover state
 // :focus   - Focus state
 // .disabled - Disabled state
+// .is-small - Small
 // .is-large - Large
 // .is-primary - Primary colours
 // .is-black - Black
 // .is-bold - Bold
+// .is-full - Full width
 // 
 // markup:
 // <button class="button {$modifiers}">The quick brown fox</button><br />
@@ -118,6 +120,11 @@ a.is-link {
         color: $color-red-ribbon;
         text-decoration: underline;
         text-decoration-color: rgba($color-red-ribbon, 0.25);
+    }
+
+    &.is-small {
+        font-size: $size-6;
+        padding: $size-7 $size-6;
     }
 
     &.is-large {
@@ -167,6 +174,11 @@ a.is-link {
 
     &.is-bold {
         font-weight: 800;
+    }
+
+    &.is-full {
+       justify-content: center;
+        width: 100%;
     }
 
     .icon:first-child:not(:last-child) {
