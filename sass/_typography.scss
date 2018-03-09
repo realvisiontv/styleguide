@@ -202,9 +202,13 @@ a {
 }
 
 // Badge
+//
+// default - Default
+// .is-transparent - Disable state
+// .is-small - Small
 // 
 // markup:
-// <div class="badge">Analysis</div>
+// <div class="badge {$modifiers}">Analysis</div>
 // 
 // Styleguide 3.8
 .badge {
@@ -213,7 +217,32 @@ a {
     display: inline-block;
     font-size: $size-6;
     padding: 0 5px;
-    text-transform: uppercase;
+
+    .fa {
+        font-size: inherit;
+        vertical-align: baseline;
+        margin-left: 1ex;
+        &:first-child {
+            margin-right: 1ex;
+            margin-left: 0;
+        }
+    }
+
+    &.is-small {
+        font-size: $size-7;
+    }
+
+    &.is-transparent {
+        background: transparent;
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        color: grey;
+        padding: 5px 10px;
+
+        &.is-small {
+            padding: 3px 8px;
+        }
+    }
 }
 
 // Strap
