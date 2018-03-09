@@ -542,13 +542,15 @@
         height: 10px;
         margin-left: 0;
     }
-    .logo svg {
-        display: block;
-        height: 42px;
-        width: 110px;
-        margin: ($baseline / 2) 0;
-        @include desktop {
-            margin: ($baseline / 2) 2.25rem ($baseline / 2) 0;
+    .logo {
+        svg, img {
+            display: block;
+            height: 42px;
+            width: 110px;
+            margin: ($baseline / 2) 0;
+            @include desktop {
+                margin: ($baseline / 2) 2.25rem ($baseline / 2) 0;
+            }
         }
     }
     .logo svg.logo_tv_small,
