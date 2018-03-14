@@ -1619,79 +1619,52 @@
     }
 }
 
-// Product Links Block
+// Product Links Block - Single Link
 //
 // default - Default Hero
 // :hover - Hover State
 //
 // markup:
 // <div class="product-links-block prospect-component">
-// <div class="columns is-vcentered">
-//    <div class="column is-4-tablet">
+//    <div class="product-links--content">
 //        <div class="product-link product-link--tv {$modifiers}">
 //            <a href="#">
-//                <h3>Watch</h3>
-//                <p>Real Vision</p>
-//                <p><strong>Television</strong></p>
-//                <div class="product-link__bottom-overlay">
-//                    <p class="product-link__bottom-arrow"></p>
+//                <div class="columns is-vertically-centered">
+//                  <div class="column is-6">
+//                      <div class="product-link--copy">
+//                       <h3>Real Vision <span class="is-highlighted">Television</span></h3>
+//                       <p>Sign up for a <span class="is-highlighted">Free Trial</span> Today</p>
+//                       <ul>
+//                          <li>Actionable insights from the world's smartest investors</li>
+//                          <li>Subscribe for just $597 / year at the end of your trial</li>
+//                       </ul>
+//                      </div>
+//                  </div>
+//                  <div class="product-link__right-overlay">
+//                      <span class="button" href="/">Subscribe Now</span>
+//                      <p class="product-link__right-arrow"></p>
+//                  </div>
 //                </div>
 //            </a>
 //        </div>
 //    </div>
-//    <div class="column is-4-tablet">
-//        <div class="product-link product-link--publishing {$modifiers}">
-//            <a href="#">
-//                <h3>Read</h3>
-//                <p>Real Vision</p>
-//                <p><strong>Publishing</strong></p>
-//                <div class="product-link__bottom-overlay">
-//                    <p class="product-link__bottom-arrow"></p>
-//                </div>
-//            </a>
-//        </div>
-//    </div>
-//    <div class="column is-4-tablet">
-//        <div class="product-link product-link--podcast {$modifiers}">
-//            <a href="#">
-//                <h3>Listen</h3>
-//                <p>Real Vision</p>
-//                <p><strong>Podcast</strong></p>
-//                <div class="product-link__bottom-overlay">
-//                    <p class="product-link__bottom-arrow"></p>
-//                </div>
-//            </a>
-//        </div>
-//    </div>
-// </div>
 // </div>
 //
 // Styleguide 5.10
 .product-links-block {
-    background-image: url('#{$root}/images/components/product-links-block_bg_mobile.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding: $baseline;
-    text-transform: uppercase;
+    padding: 0;
     color: white;
-    text-align: center;
 
     @include tablet {
         background-image: url('#{$root}/images/components/product-links-block_bg.jpg');
     }
 
     .product-link {
-        background: url('#{$root}/images/overlays/white_splatter.png'), $color-dark-gray;
-        background-size: cover;
-        padding-top: 1rem;
-        padding-bottom: 3.5rem;
-        margin: auto;
+        background: url('#{$root}/images/overlays/stripe_clear.png'), $color-dark-gray;
         position: relative;
-        overflow: hidden;
 
-        * {
-            margin: 0;
+        .column {
+            align-self: center;
         }
 
         a {
@@ -1699,33 +1672,69 @@
             text-decoration: none;
         }
 
-        .product-link__bottom-overlay {
-            content: '';
-            width: 100%;
-            height: 100%;
-            max-height: 40px;
-            position: absolute;
-            bottom: -20px;
-            left: 0;
-            transition: bottom 200ms ease-in-out;
-            background: url('#{$root}/images/overlays/stripe_clear.png');
+        ul {
+            margin-bottom: 0;
         }
 
-        .product-link__bottom-arrow {
+        span.is-highlighted {
+            color: $brand;
+        }
+
+        .product-link--copy {
+            padding: $baseline;
+        }
+
+        .product-link__right-overlay {
+            content: '';
+            width: 100%;
+            max-width: 52px;
+            height: 100%;
             position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            height: 20px;
-            border-left: 1.25rem solid transparent;
-            border-right: 1.25rem solid transparent;
-            border-top: 1rem solid $color-dark-gray;
+            top: 50%;
+            transform: translateY(-50%);
+            right: -20px;
+            transition: right 200ms ease-in-out;
+            background: url('#{$root}/images/overlays/stripe_clear.png') $brand;
+            transition: max-width 200ms ease-in-out;
+
+            span.button {
+                position: absolute;
+                opacity: 0;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                transition: opacity 200ms ease-in-out;
+                background: #232323;
+                border-radius: 5px;
+                box-shadow: 1px 1px 1px black;
+            }
+        }
+
+        .product-link__right-arrow {
+            position: absolute;
+            top: 45%;
+            left: 0%;
+            width: 30px;
+            transform: translateY(-50%);
+            border-top: 2rem solid transparent;
+            border-bottom: 2rem solid transparent;
+            border-right: 2rem solid $color-dark-gray;
+            transition: all 200ms ease-in-out;
         }
 
         &:hover {
             cursor: pointer;
-            .product-link__bottom-overlay {
-                bottom: 0px;
+            .product-link__right-overlay {
+                max-width: 50%;
+
+                span.button {
+                    opacity: 1;
+                }
+            }
+            .product-link__right-arrow {
+                right: 9%;
+                border-left: 2rem solid $color-dark-gray;
+                border-right: none;
             }
         }
     }
