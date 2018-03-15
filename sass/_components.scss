@@ -1630,7 +1630,7 @@
 //        <div class="product-link product-link--tv {$modifiers}">
 //            <a href="#">
 //                <div class="columns is-vertically-centered">
-//                  <div class="column is-6">
+//                  <div class="column is-6-desktop is-12">
 //                      <div class="product-link--copy">
 //                       <h3>Real Vision <span class="is-highlighted">Television</span></h3>
 //                       <p>Sign up for a <span class="is-highlighted">Free Trial</span> Today</p>
@@ -1640,9 +1640,33 @@
 //                       </ul>
 //                      </div>
 //                  </div>
-//                  <div class="product-link__right-overlay">
-//                      <span class="button" href="/">Subscribe Now</span>
-//                      <p class="product-link__right-arrow"></p>
+//                  <div class="product-link__overlay">
+//                      <span class="button" href="/">Subscribe Today</span>
+//                      <p class="product-link__arrow"></p>
+//                  </div>
+//                </div>
+//            </a>
+//        </div>
+//    </div>
+// </div>
+// <div class="product-links-block prospect-component">
+//    <div class="product-links--content">
+//        <div class="product-link product-link--think-tank {$modifiers}">
+//            <a href="#">
+//                <div class="columns is-vertically-centered">
+//                  <div class="column is-6-desktop is-12">
+//                      <div class="product-link--copy">
+//                       <h3>Real Vision <span class="is-highlighted">Think Tank</span></h3>
+//                       <p>Sign up for a <span class="is-highlighted">Free Trial</span> Today</p>
+//                       <ul>
+//                          <li>Access to a curation of written investment research</li>
+//                          <li>Sign up for just $365 / year at the end of your trial</li>
+//                       </ul>
+//                      </div>
+//                  </div>
+//                  <div class="product-link__overlay">
+//                      <span class="button" href="/">Subscribe Today</span>
+//                      <p class="product-link__arrow"></p>
 //                  </div>
 //                </div>
 //            </a>
@@ -1652,16 +1676,29 @@
 //
 // Styleguide 5.10
 .product-links-block {
+    .product-link--think-tank {
+        span.is-highlighted {
+            color: $color-poppy;
+        }
+        .product-link__overlay {
+            background: url('#{$root}/images/overlays/stripe_clear.png') $color-poppy;
+        }
+    }
+    .product-link--tv {
+        span.is-highlighted {
+            color: $color-cyan;
+        }
+        .product-link__overlay {
+            background: url('#{$root}/images/overlays/stripe_clear.png') $color-cyan;
+        }
+    }
     padding: 0;
     color: white;
-
-    @include tablet {
-        background-image: url('#{$root}/images/components/product-links-block_bg.jpg');
-    }
 
     .product-link {
         background: url('#{$root}/images/overlays/stripe_clear.png'), $color-dark-gray;
         position: relative;
+        padding-bottom: 130px;
 
         .column {
             align-self: center;
@@ -1676,65 +1713,55 @@
             margin-bottom: 0;
         }
 
-        span.is-highlighted {
-            color: $brand;
-        }
-
         .product-link--copy {
             padding: $baseline;
         }
 
-        .product-link__right-overlay {
+        .product-link__overlay {
             content: '';
             width: 100%;
-            max-width: 52px;
+            max-width: none;
             height: 100%;
+            max-height: 130px;
             position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            right: -20px;
-            transition: right 200ms ease-in-out;
-            background: url('#{$root}/images/overlays/stripe_clear.png') $brand;
-            transition: max-width 200ms ease-in-out;
+            top: auto;
+            bottom: 0;
+            transform: translateX(50%);
+            right: 50%;
 
             span.button {
                 position: absolute;
-                opacity: 0;
                 left: 50%;
                 top: 50%;
                 transform: translate(-50%, -50%);
-                transition: opacity 200ms ease-in-out;
+                transition: all 200ms ease-in-out;
                 background: #232323;
                 border-radius: 5px;
-                box-shadow: 1px 1px 1px black;
+                box-shadow: 1px 1px 1px rgba(0,0,0,.4);
+                color: #CCC;
+                padding: .75rem;
+                font-size: 1rem;
             }
         }
 
-        .product-link__right-arrow {
+        .product-link__arrow {
             position: absolute;
-            top: 45%;
-            left: 0%;
+            top: -12px;
+            left: 50%;
             width: 30px;
-            transform: translateY(-50%);
-            border-top: 2rem solid transparent;
-            border-bottom: 2rem solid transparent;
-            border-right: 2rem solid $color-dark-gray;
-            transition: all 200ms ease-in-out;
+            transform: translateX(-50%);
+            border-left: 2rem solid transparent;
+            border-right: 2rem solid transparent;
+            border-top: 1.5rem solid $color-dark-gray;
         }
 
         &:hover {
             cursor: pointer;
-            .product-link__right-overlay {
-                max-width: 50%;
-
+            .product-link__overlay {
                 span.button {
-                    opacity: 1;
+                    color: white;
+                    border: 2px solid rgba(255,255,255,.9);
                 }
-            }
-            .product-link__right-arrow {
-                right: 9%;
-                border-left: 2rem solid $color-dark-gray;
-                border-right: none;
             }
         }
     }
@@ -1754,6 +1781,63 @@
 
     strong {
         font-style: normal;
+    }
+
+    @include desktop {
+        .product-link {
+            padding-bottom: 0;
+            .product-link--copy {
+                padding: $baseline;
+            }
+
+            .product-link__overlay {
+                content: '';
+                width: 100%;
+                max-width: 50%;
+                height: 100%;
+                max-height: none;
+                position: absolute;
+                top: 50%;
+                bottom: auto;
+                transform: translateY(-50%);
+                right: -20px;
+
+                span.button {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    transition: all 200ms ease-in-out;
+                    background: #232323;
+                    border-radius: 5px;
+                    box-shadow: 1px 1px 1px rgba(0,0,0,.4);
+                    color: #CCC;
+                    padding: 1.25rem;
+                    font-size: 1.25rem;
+                }
+            }
+
+            .product-link__arrow {
+                position: absolute;
+                top: 45%;
+                left: 0%;
+                width: 30px;
+                transform: translateY(-50%);
+                border-top: 2rem solid transparent;
+                border-bottom: 2rem solid transparent;
+                border-left: 2rem solid $color-dark-gray;
+            }
+
+            &:hover {
+                cursor: pointer;
+                .product-link__overlay {
+                    span.button {
+                        color: white;
+                        border: 2px solid rgba(255,255,255,.9);
+                    }
+                }
+            }
+        }
     }
 }
 
