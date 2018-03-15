@@ -1748,6 +1748,242 @@
     }
 }
 
+// Single Product CTA
+//
+// default - Default Hero
+// :hover - Hover State
+//
+// markup:
+// <div class="single-product-cta prospect-component">
+//    <div class="product-cta product-cta--tv {$modifiers}">
+//        <a href="#">
+//            <div class="columns is-vertically-centered">
+//              <div class="column is-12">
+//                  <div class="product-cta--content">
+//                      <div class="product-cta--copy">
+//                      <h3>Real Vision <span class="is-highlighted">Television</span></h3>
+//                      <p>Sign up for a <span class="is-highlighted">Free Trial</span> Today</p>
+//                      <ul>
+//                          <li>Actionable insights from the world's smartest investors</li>
+//                          <li>Subscribe for just $597 / year at the end of your trial</li>
+//                      </ul>
+//                      </div>
+//                  </div>
+//              </div>
+//              <div class="product-cta__overlay">
+//                  <div class="button" href="/"><span>Check it out!</span></div>
+//                  <p class="product-cta__arrow"></p>
+//              </div>
+//            </div>
+//        </a>
+//    </div>
+// </div>
+// <div class="single-product-cta prospect-component">
+//    <div class="product-ctas--content">
+//        <div class="product-cta product-cta--think-tank {$modifiers}">
+//            <a href="#">
+//                <div class="columns is-vertically-centered">
+//                  <div class="column is-12">
+//                      <div class="product-cta--content">
+//                          <div class="product-cta--copy">
+//                          <h3>Real Vision <span class="is-highlighted">Think Tank</span></h3>
+//                          <p>Sign up for a <span class="is-highlighted">Free Trial</span> Today</p>
+//                          <ul>
+//                              <li>Access to a curation of written investment research</li>
+//                              <li>Sign up for just $365 / year at the end of your trial</li>
+//                          </ul>
+//                          </div>
+//                      </div>
+//                  </div>
+//                  <div class="product-cta__overlay">
+//                      <div class="button" href="/"><span>Check it out!</span></div>
+//                      <p class="product-cta__arrow"></p>
+//                  </div>
+//                </div>
+//            </a>
+//        </div>
+//    </div>
+// </div>
+//
+// Styleguide 5.11
+.single-product-cta {
+    padding: 0;
+    color: white;
+    overflow: hidden;
+    
+    .product-cta--think-tank {
+        span.is-highlighted {
+            color: $color-poppy;
+        }
+        .product-cta__overlay {
+            background: url('#{$root}/images/overlays/stripe_clear.png') rgba(248,147,31,1);;
+        }
+    }
+    .product-cta--tv {
+        span.is-highlighted {
+            color: $color-cyan;
+        }
+        .product-cta__overlay {
+            background: url('#{$root}/images/overlays/stripe_clear.png') rgba(49,254,232,1);
+        }
+    }
+
+    .product-cta {
+        background: url('#{$root}/images/overlays/stripe_clear.png'), $color-dark-gray;
+        position: relative;
+        padding-bottom: 90px;
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        ul {
+            margin-bottom: 0;
+        }
+
+        .product-cta--content {
+            text-align: center;
+            padding: $baseline;
+        }
+        .product-cta--copy {
+            display: inline-block;
+            text-align: left;
+        }
+
+        .product-cta__overlay {
+            width: 100%;
+            max-width: none;
+            height: 100%;
+            max-height: 90px;
+            position: absolute;
+            top: auto;
+            bottom: 0;
+            transform: translateX(50%);
+            right: 50%;
+
+            div.button {
+                position: absolute;
+                left: 50%;
+                top: 55%;
+                transform: translate(-50%, -50%);
+                transition: all 200ms ease-in-out;
+                background: $color-dark-gray;
+                border-radius: 5px;
+                box-shadow: 1px 1px 1px rgba(0,0,0,.4);
+                color: white;
+                border: 2px solid rgba(255,255,255,.9);
+                padding: .75rem;
+                font-size: 1rem;
+                font-weight: 800;
+                text-align: center;
+
+                span {
+                    margin: auto;
+                }
+            }
+        }
+
+        .product-cta__arrow {
+            position: absolute;
+            top: -13px;
+            left: 50%;
+            width: 30px;
+            transform: translateX(-50%);
+            border-left: 2rem solid transparent;
+            border-right: 2rem solid transparent;
+            border-top: 1rem solid $color-dark-gray;
+        }
+
+        &:hover {
+            cursor: pointer;
+            .product-cta__overlay {
+                div.button {
+                    color: white;
+                    border: 2px solid rgba(255,255,255,.9);
+                }
+            }
+            &.product-cta--tv {
+                .product-cta__overlay {
+                    background-color: rgba(49,254,232,1);
+                }
+            }
+
+            &.product-cta--think-tank {
+                .product-cta__overlay {
+                    background-color: rgba(248,147,31,1);
+                }
+            }
+        }
+    }
+
+    h3, p {
+        font-weight: 800;
+    }
+
+    h3 {
+        font-size: $size-3;
+        line-height: 2.5rem;
+    }
+
+    p {
+        font-size: $size-4;
+    }
+
+    strong {
+        font-style: normal;
+    }
+
+
+    @include desktop {
+        .product-cta--think-tank {
+            .product-cta__overlay {
+                background: url('#{$root}/images/overlays/stripe_clear.png') rgba(248,147,31,.8);
+            }
+        }
+        .product-cta--tv {
+            .product-cta__overlay {
+                background: url('#{$root}/images/overlays/stripe_clear.png') rgba(49,254,232,.8);
+            }
+        }
+        .product-cta {
+            padding-bottom: 0;
+            .product-cta--content {
+                width: 70%;
+            }
+
+            .product-cta__overlay {
+                transition: background 200ms ease-in-out;
+                max-width: 30%;
+                max-height: none;
+                top: 50%;
+                bottom: auto;
+                transform: translateY(-50%);
+                right: 0;
+
+                div.button {
+                    border-color: transparent;
+                    top: 50%;
+                    color: #CCC;
+                    padding: 1.5rem 1rem;
+                }
+            }
+
+            .product-cta__arrow {
+                top: 45%;
+                left: 0%;
+                transform: translateY(-50%);
+                border-top: 2rem solid transparent;
+                border-bottom: 2rem solid transparent;
+                border-left: 2rem solid $color-dark-gray;
+            }
+        }
+        h3 {
+            font-size: $size-1;
+        }
+    }
+}
+
 // Link Blocks
 //
 // default - Default Hero
@@ -1807,7 +2043,7 @@
 //  </div>
 // </div>
 //
-// Styleguide 5.11
+// Styleguide 5.12
 .link-blocks {
     padding: $baseline;
     text-transform: uppercase;
@@ -1941,7 +2177,7 @@
 //      </div>
 // </a>
 //
-// Styleguide 5.12
+// Styleguide 5.13
 .play-block {
     display: block;
     background-image: url('#{$root}/images/components/product-play-block-bg.jpg');
@@ -2046,7 +2282,7 @@
 //      </div>
 // </div>
 //
-// Styleguide 5.13
+// Styleguide 5.14
 .product-listing--item {
     padding: $baseline;
 
@@ -2141,7 +2377,7 @@
 //      <p class="email-capture--error">Oops! It looks like something went wrong. Please try again.</p>
 // </div>
 //
-// Styleguide 5.14
+// Styleguide 5.15
 .email-capture--simple {
     padding: $baseline;
 
@@ -2257,7 +2493,7 @@
 //      </div>
 // </div>
 //
-// Styleguide 5.15
+// Styleguide 5.16
 .email-capture--dropdown {
     padding: $baseline;
 
@@ -2421,7 +2657,7 @@
 //    </div>
 // </div>
 //
-// Styleguide 5.16
+// Styleguide 5.17
 .product-price-block {
     padding: $baseline;
     position: relative;
@@ -2683,7 +2919,7 @@
 //      </div>
 // </div>
 //
-// Styleguide 5.17
+// Styleguide 5.18
 .image-row {
     padding: $baseline;
     background: none;
@@ -2821,7 +3057,7 @@
 //      </div>
 // </div>
 //
-// Styleguide 5.18
+// Styleguide 5.19
 .pullout-container {
     padding: 0;
 
@@ -2899,7 +3135,7 @@
 //      </ol>
 // </div>
 //
-// Styleguide 5.19
+// Styleguide 5.20
 .wysiwyg-block {
     padding: $baseline;
     h2, h3 {
@@ -3036,7 +3272,7 @@
 //          </div>
 // </section>
 //
-// Styleguide 5.20
+// Styleguide 5.21
 .podcast-episode {
     padding: $baseline;
     background: white;
@@ -3269,7 +3505,7 @@
 //      </section>
 // </div>
 //
-// Styleguide 5.21
+// Styleguide 5.22
 .podcast-listing {
     padding: $baseline / 2;
 
@@ -3406,7 +3642,7 @@
 //    </div>
 //  </div>
 //
-// Styleguide 5.22
+// Styleguide 5.23
 .contributor-header.is-black {
     background: #111111;
     color: white;
@@ -3539,7 +3775,7 @@
 //     </div>
 // </div>
 // 
-// Styleguide 5.23
+// Styleguide 5.24
 .countdown-banner {
     background-color: $color-poppy;
     background-image: url(#{$root}/images/components/countdown_banner_background.png);
