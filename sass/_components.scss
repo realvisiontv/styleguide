@@ -1685,7 +1685,7 @@
             color: $color-poppy;
         }
         .product-link__overlay {
-            background: url('#{$root}/images/overlays/stripe_clear.png') rgba(248,147,31,.8);;
+            background: url('#{$root}/images/overlays/stripe_clear.png') rgba(248,147,31,1);;
         }
     }
     .product-link--tv {
@@ -1693,7 +1693,7 @@
             color: $color-cyan;
         }
         .product-link__overlay {
-            background: url('#{$root}/images/overlays/stripe_clear.png') rgba(49,254,232,.8);
+            background: url('#{$root}/images/overlays/stripe_clear.png') rgba(49,254,232,1);
         }
     }
 
@@ -1798,6 +1798,16 @@
     }
 
     @include desktop {
+        .product-link--think-tank {
+            .product-link__overlay {
+                background: url('#{$root}/images/overlays/stripe_clear.png') rgba(248,147,31,.8);
+            }
+        }
+        .product-link--tv {
+            .product-link__overlay {
+                background: url('#{$root}/images/overlays/stripe_clear.png') rgba(49,254,232,.8);
+            }
+        }
         .product-link {
             padding-bottom: 0;
             .product-link--copy {
@@ -1805,7 +1815,7 @@
             }
 
             .product-link__overlay {
-                transition: all 200ms ease-in-out;
+                transition: background 200ms ease-in-out;
                 content: '';
                 width: 100%;
                 max-width: 30%;
