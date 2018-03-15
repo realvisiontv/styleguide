@@ -1626,27 +1626,27 @@
 //
 // markup:
 // <div class="product-links-block prospect-component">
-//    <div class="product-links--content">
-//        <div class="product-link product-link--tv {$modifiers}">
-//            <a href="#">
-//                <div class="columns is-vertically-centered">
-//                  <div class="column is-8-desktop is-12">
+//    <div class="product-link product-link--tv {$modifiers}">
+//        <a href="#">
+//            <div class="columns is-vertically-centered">
+//              <div class="column is-12">
+//                  <div class="product-link--content">
 //                      <div class="product-link--copy">
-//                       <h3>Real Vision <span class="is-highlighted">Television</span></h3>
-//                       <p>Sign up for a <span class="is-highlighted">Free Trial</span> Today</p>
-//                       <ul>
+//                      <h3>Real Vision <span class="is-highlighted">Television</span></h3>
+//                      <p>Sign up for a <span class="is-highlighted">Free Trial</span> Today</p>
+//                      <ul>
 //                          <li>Actionable insights from the world's smartest investors</li>
 //                          <li>Subscribe for just $597 / year at the end of your trial</li>
-//                       </ul>
+//                      </ul>
 //                      </div>
 //                  </div>
-//                  <div class="product-link__overlay">
-//                      <span class="button" href="/">Check It Out!</span>
-//                      <p class="product-link__arrow"></p>
-//                  </div>
-//                </div>
-//            </a>
-//        </div>
+//              </div>
+//              <div class="product-link__overlay">
+//                  <span class="button" href="/">Check It Out!</span>
+//                  <p class="product-link__arrow"></p>
+//              </div>
+//            </div>
+//        </a>
 //    </div>
 // </div>
 // <div class="product-links-block prospect-component">
@@ -1654,14 +1654,16 @@
 //        <div class="product-link product-link--think-tank {$modifiers}">
 //            <a href="#">
 //                <div class="columns is-vertically-centered">
-//                  <div class="column is-8-desktop is-12">
-//                      <div class="product-link--copy">
-//                       <h3>Real Vision <span class="is-highlighted">Think Tank</span></h3>
-//                       <p>Sign up for a <span class="is-highlighted">Free Trial</span> Today</p>
-//                       <ul>
-//                          <li>Access to a curation of written investment research</li>
-//                          <li>Sign up for just $365 / year at the end of your trial</li>
-//                       </ul>
+//                  <div class="column is-12">
+//                      <div class="product-link--content">
+//                          <div class="product-link--copy">
+//                          <h3>Real Vision <span class="is-highlighted">Think Tank</span></h3>
+//                          <p>Sign up for a <span class="is-highlighted">Free Trial</span> Today</p>
+//                          <ul>
+//                              <li>Access to a curation of written investment research</li>
+//                              <li>Sign up for just $365 / year at the end of your trial</li>
+//                          </ul>
+//                          </div>
 //                      </div>
 //                  </div>
 //                  <div class="product-link__overlay">
@@ -1715,8 +1717,13 @@
             margin-bottom: 0;
         }
 
-        .product-link--copy {
+        .product-link--content {
+            text-align: center;
             padding: $baseline;
+        }
+        .product-link--copy {
+            display: inline-block;
+            text-align: left;
         }
 
         .product-link__overlay {
@@ -1810,8 +1817,8 @@
         }
         .product-link {
             padding-bottom: 0;
-            .product-link--copy {
-                padding: $baseline;
+            .product-link--content {
+                width: 70%;
             }
 
             .product-link__overlay {
@@ -1825,7 +1832,7 @@
                 top: 50%;
                 bottom: auto;
                 transform: translateY(-50%);
-                right: -20px;
+                right: 0;
 
                 span.button {
                     position: absolute;
@@ -1838,7 +1845,7 @@
                     box-shadow: 1px 1px 1px rgba(0,0,0,.4);
                     border-color: transparent;
                     color: #CCC;
-                    padding: .75rem;
+                    padding: 1.5rem 1rem;
                     font-size: 1rem;
                 }
             }
