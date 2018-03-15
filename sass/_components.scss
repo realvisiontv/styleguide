@@ -1642,7 +1642,7 @@
 //                  </div>
 //              </div>
 //              <div class="product-link__overlay">
-//                  <span class="button" href="/">Check It Out!</span>
+//                  <div class="button" href="/"><span>Check it out!</span></div>
 //                  <p class="product-link__arrow"></p>
 //              </div>
 //            </div>
@@ -1667,7 +1667,7 @@
 //                      </div>
 //                  </div>
 //                  <div class="product-link__overlay">
-//                      <span class="button" href="/">Check It Out!</span>
+//                      <div class="button" href="/"><span>Check it out!</span></div>
 //                      <p class="product-link__arrow"></p>
 //                  </div>
 //                </div>
@@ -1704,10 +1704,6 @@
         position: relative;
         padding-bottom: 90px;
 
-        .column {
-            align-self: center;
-        }
-
         a {
             color: white;
             text-decoration: none;
@@ -1727,7 +1723,6 @@
         }
 
         .product-link__overlay {
-            content: '';
             width: 100%;
             max-width: none;
             height: 100%;
@@ -1738,25 +1733,31 @@
             transform: translateX(50%);
             right: 50%;
 
-            span.button {
+            div.button {
                 position: absolute;
                 left: 50%;
                 top: 55%;
                 transform: translate(-50%, -50%);
                 transition: all 200ms ease-in-out;
-                background: #232323;
+                background: $color-dark-gray;
                 border-radius: 5px;
                 box-shadow: 1px 1px 1px rgba(0,0,0,.4);
                 color: white;
                 border: 2px solid rgba(255,255,255,.9);
                 padding: .75rem;
                 font-size: 1rem;
+                font-weight: 800;
+                text-align: center;
+
+                span {
+                    margin: auto;
+                }
             }
         }
 
         .product-link__arrow {
             position: absolute;
-            top: -12px;
+            top: -13px;
             left: 50%;
             width: 30px;
             transform: translateX(-50%);
@@ -1768,7 +1769,7 @@
         &:hover {
             cursor: pointer;
             .product-link__overlay {
-                span.button {
+                div.button {
                     color: white;
                     border: 2px solid rgba(255,255,255,.9);
                 }
@@ -1804,6 +1805,7 @@
         font-style: normal;
     }
 
+
     @include desktop {
         .product-link--think-tank {
             .product-link__overlay {
@@ -1823,38 +1825,24 @@
 
             .product-link__overlay {
                 transition: background 200ms ease-in-out;
-                content: '';
-                width: 100%;
                 max-width: 30%;
-                height: 100%;
                 max-height: none;
-                position: absolute;
                 top: 50%;
                 bottom: auto;
                 transform: translateY(-50%);
                 right: 0;
 
-                span.button {
-                    position: absolute;
-                    left: 50%;
-                    top: 50%;
-                    transform: translate(-50%, -50%);
-                    transition: all 200ms ease-in-out;
-                    background: #232323;
-                    border-radius: 5px;
-                    box-shadow: 1px 1px 1px rgba(0,0,0,.4);
+                div.button {
                     border-color: transparent;
+                    top: 50%;
                     color: #CCC;
                     padding: 1.5rem 1rem;
-                    font-size: 1rem;
                 }
             }
 
             .product-link__arrow {
-                position: absolute;
                 top: 45%;
                 left: 0%;
-                width: 30px;
                 transform: translateY(-50%);
                 border-top: 2rem solid transparent;
                 border-bottom: 2rem solid transparent;
