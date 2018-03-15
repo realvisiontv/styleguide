@@ -1792,7 +1792,7 @@
     }
 
     h3 {
-        font-size: $size-1;
+        font-size: $size-3;
         line-height: 2.5rem;
     }
 
@@ -1860,6 +1860,9 @@
                 border-bottom: 2rem solid transparent;
                 border-left: 2rem solid $color-dark-gray;
             }
+        }
+        h3 {
+            font-size: $size-1;
         }
     }
 }
