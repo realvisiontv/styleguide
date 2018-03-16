@@ -1761,8 +1761,8 @@
 //              <div class="column is-12">
 //                  <div class="product-cta--content">
 //                      <div class="product-cta--copy">
-//                      <h3>Real Vision <span class="is-highlighted">Television</span></h3>
-//                      <p>Sign up for a <span class="is-highlighted">Free Trial</span> Today</p>
+//                      <h3>Real Vision <strong>Television</strong></h3>
+//                      <p>Sign up for a <strong>Free Trial</strong> Today</p>
 //                      <ul>
 //                          <li>Actionable insights from the world's smartest investors</li>
 //                          <li>Subscribe for just $597 / year at the end of your trial</li>
@@ -1786,8 +1786,8 @@
 //                  <div class="column is-12">
 //                      <div class="product-cta--content">
 //                          <div class="product-cta--copy">
-//                          <h3>Real Vision <span class="is-highlighted">Think Tank</span></h3>
-//                          <p>Sign up for a <span class="is-highlighted">Free Trial</span> Today</p>
+//                          <h3>Real Vision <strong>Think Tank</strong></h3>
+//                          <p>Sign up for a <strong>Free Trial</strong> Today</p>
 //                          <ul>
 //                              <li>Access to a curation of written investment research</li>
 //                              <li>Sign up for just $365 / year at the end of your trial</li>
@@ -1812,7 +1812,7 @@
     overflow: hidden;
     
     .product-cta--think-tank {
-        span.is-highlighted {
+        strong {
             color: $color-poppy;
         }
         .product-cta__overlay {
@@ -1820,7 +1820,7 @@
         }
     }
     .product-cta--tv {
-        span.is-highlighted {
+        strong {
             color: $color-cyan;
         }
         .product-cta__overlay {
@@ -1924,16 +1924,15 @@
     h3 {
         font-size: $size-3;
         line-height: 2.5rem;
+
+        strong {
+            font-weight: 800;
+        }
     }
 
     p {
         font-size: $size-4;
     }
-
-    strong {
-        font-style: normal;
-    }
-
 
     @include desktop {
         .product-cta--think-tank {
