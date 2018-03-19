@@ -1771,7 +1771,7 @@
 //                  </div>
 //              </div>
 //              <div class="product-cta__overlay">
-//                  <div class="button" href="/"><span>Check it out!</span></div>
+//                  <div class="button"><span>Start my free trial</span></div>
 //                  <p class="product-cta__arrow"></p>
 //              </div>
 //            </div>
@@ -1796,7 +1796,7 @@
 //                      </div>
 //                  </div>
 //                  <div class="product-cta__overlay">
-//                      <div class="button" href="/"><span>Check it out!</span></div>
+//                      <div class="button"><span>Start my free trial</span></div>
 //                      <p class="product-cta__arrow"></p>
 //                  </div>
 //                </div>
@@ -1831,7 +1831,7 @@
     .product-cta {
         background: url('#{$root}/images/overlays/stripe_clear.png'), $color-dark-gray;
         position: relative;
-        padding-bottom: 90px;
+        padding-bottom: 100px;
 
         a {
             color: white;
@@ -1855,7 +1855,7 @@
             width: 100%;
             max-width: none;
             height: 100%;
-            max-height: 90px;
+            max-height: 100px;
             position: absolute;
             top: auto;
             bottom: 0;
@@ -1877,6 +1877,8 @@
                 font-size: 1rem;
                 font-weight: 800;
                 text-align: center;
+                width: 90%;
+                font-size: 1.25rem;
 
                 span {
                     margin: auto;
@@ -1932,6 +1934,16 @@
 
     p {
         font-size: $size-4;
+    }
+
+    @include tablet {
+        .product-cta {
+            .product-cta__overlay {
+                div.button {
+                    width: 65%;
+                }
+            }
+        }
     }
 
     @include desktop {
