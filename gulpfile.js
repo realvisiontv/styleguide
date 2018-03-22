@@ -56,9 +56,9 @@ gulp.task('watch', ['styleguide'], function() {
     });
     
     // Keep Heroku dyno awake
-    setInterval(function() {
-        https.get("https://rv-styleguide.herokuapp.com");
-    }, 300000);
+//     setInterval(function() {
+//         https.get("https://rv-styleguide.herokuapp.com");
+//     }, 300000);
 });
 
 gulp.task('styleguide', ['styleguide:generate', 'styleguide:applystyles']);
