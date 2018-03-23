@@ -1804,6 +1804,32 @@
 //        </div>
 //    </div>
 // </div>
+// <div class="single-product-cta prospect-component">
+//    <div class="product-ctas--content">
+//        <div class="product-cta product-cta--macro-insiders {$modifiers}">
+//            <a href="#">
+//                <div class="columns is-vertically-centered">
+//                  <div class="column is-12">
+//                      <div class="product-cta--content">
+//                          <div class="product-cta--copy">
+//                          <h3>Real Vision <strong>Macro Insiders</strong></h3>
+//                          <p>The highest quality of <strong>macro-level analysis</strong></p>
+//                          <ul>
+//                              <li>Full access to premium macro analysis </li>
+//                              <li>Incredible value at $2997 / year</li>
+//                          </ul>
+//                          </div>
+//                      </div>
+//                  </div>
+//                  <div class="product-cta__overlay">
+//                      <div class="button"><span>Sign me up</span></div>
+//                      <p class="product-cta__arrow"></p>
+//                  </div>
+//                </div>
+//            </a>
+//        </div>
+//    </div>
+// </div>
 //
 // Styleguide 5.11
 .single-product-cta {
@@ -1825,6 +1851,14 @@
         }
         .product-cta__overlay {
             background: url('#{$root}/images/overlays/stripe_clear.png') rgba(49,254,232,1);
+        }
+    }
+    .product-cta--macro-insiders {
+        strong {
+            color: #00fff8;
+        }
+        .product-cta__overlay {
+            background: url('#{$root}/images/overlays/stripe_clear.png') rgba(0,255,248,1);
         }
     }
 
@@ -1916,6 +1950,11 @@
                     background-color: rgba(248,147,31,1);
                 }
             }
+            &.product-cta--macro-insiders {
+                .product-cta__overlay {
+                    background-color: rgba(0,255,248,1);
+                }
+            }
         }
     }
 
@@ -1955,6 +1994,11 @@
         .product-cta--tv {
             .product-cta__overlay {
                 background: url('#{$root}/images/overlays/stripe_clear.png') rgba(49,254,232,.8);
+            }
+        }
+        .product-cta--macro-insiders {
+            .product-cta__overlay {
+                background: url('#{$root}/images/overlays/stripe_clear.png') rgba(0,255,248,.8);
             }
         }
         .product-cta {
