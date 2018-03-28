@@ -546,7 +546,7 @@
         svg, img {
             display: block;
             height: 42px;
-            width: 110px;
+            width: auto;
             margin: ($baseline / 2) 0;
             @include desktop {
                 margin: ($baseline / 2) 2.25rem ($baseline / 2) 0;
