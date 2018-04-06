@@ -3948,5 +3948,14 @@
         position: fixed;
         bottom: 0;
         z-index: 10;
+
+        @include from($desktop) {
+            max-width: 960px;
+            width: 960px;
+        }
+        @media screen and (min-width: 1260px) {
+            max-width: 1152px;
+            width: 1152px;
+        }
     }
 }
