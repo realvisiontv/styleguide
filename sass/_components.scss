@@ -3986,7 +3986,7 @@
 // 
 // Styleguide 5.25
 .expandable-container {
-    padding: $baseline;
+    padding: $baseline/3 $baseline;
 
     .dropdown-heading {
         padding: $baseline / 2;
