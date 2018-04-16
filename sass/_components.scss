@@ -3983,6 +3983,8 @@
 // 
 // Styleguide 5.25
 .expandable-container {
+    padding: $baseline;
+    
     .dropdown-content {
         height: 0;
         padding: 0;
