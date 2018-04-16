@@ -3969,7 +3969,10 @@
 // <div class="expandable-container prospect-component {$modifiers}">
 //     <div class="columns">
 //          <div class="column">
-//              <h3 class="is-size-4 is-uppercase">Why do I need Real Vision?</h3>
+//              <div class="dropdown-heading">
+//                  <h3 class="is-size-4 is-uppercase">Why do I need Real Vision?</h3>
+//                  <i class="fa fa-plus-circle"></i>
+//              </div>
 //              <div class="dropdown-content">
 //                  <p>Because who wouldn’t want to know what the best investors on the planet are thinking?</p>
 //                  <p>It just helps you make better informed decisions.</p>
@@ -3985,6 +3988,21 @@
 .expandable-container {
     padding: $baseline;
 
+    .dropdown-heading {
+        padding-right: 30px;
+        position: relative;
+
+        i {
+            margin: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 30px;
+            height: auto;
+            transition: transform 250ms ease-in-out;
+        }
+    }
+
     .dropdown-content {
         height: 0;
         padding: 0;
@@ -3996,9 +4014,6 @@
     }
 
     &.expanded {
-        h3 {
-            margin-bottom: $baseline;
-        }
         .dropdown-content {
             opacity: 1;
             padding: 1rem;
@@ -4007,8 +4022,18 @@
             display: block;
             height: auto;
 
-            .prospect-component {
-                padding: 0;
+            :last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .dropdown-heading {
+            h3 {
+                margin-bottom: $baseline;
+            }
+
+            i {
+                transform: rotateZ(45deg);
             }
         }
     }
