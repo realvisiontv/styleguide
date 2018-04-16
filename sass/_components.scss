@@ -3984,7 +3984,7 @@
 // Styleguide 5.25
 .expandable-container {
     padding: $baseline;
-    
+
     .dropdown-content {
         height: 0;
         padding: 0;
@@ -3997,7 +3997,7 @@
 
     &.expanded {
         h3 {
-            margin-bottom: 1rem;
+            margin-bottom: $baseline;
         }
         .dropdown-content {
             opacity: 1;
@@ -4006,6 +4006,10 @@
             transform: scaleY(1);
             display: block;
             height: auto;
+
+            .prospect-component {
+                padding: 0;
+            }
         }
     }
 }
