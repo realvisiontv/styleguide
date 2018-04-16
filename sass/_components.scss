@@ -3959,3 +3959,51 @@
         }
     }
 }
+
+// Expandable Container
+//
+// default - Collapsed
+// .expanded - Expanded
+// 
+// markup:
+// <div class="expandable-container prospect-component {$modifiers}">
+//     <div class="columns">
+//          <div class="column">
+//              <h3 class="is-size-4 is-uppercase">Why do I need Real Vision?</h3>
+//              <div class="dropdown-content">
+//                  <p>Because who wouldn’t want to know what the best investors on the planet are thinking?</p>
+//                  <p>It just helps you make better informed decisions.</p>
+//                  <p>Real Vision aims to democratize quality financial research so that everyone, not just the financial elite, can get the honest truth about what’s really going on in the financial markets.</p>
+//                  <p>If you’re a retail investor, hedge fund manager, trader, broker, CFA Charterholder or economics student, Real Vision will help you to manage investments, learn economic tactics and leverage market opportunities.</p>
+//                  <p>We offer investment insights in video-style format, written research, newsletter and a podcast to ensure we’ve got every angle covered in the format that suits you.</p>
+//              </div>
+//          </div>
+//     </div>
+//  </div> 
+// 
+// Styleguide 5.25
+.expandable-container {
+    .dropdown-content {
+        height: 0;
+        padding: 0;
+        margin: 0;
+        opacity: 0;
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform 250ms ease-in-out;
+    }
+
+    &.expanded {
+        h3 {
+            margin-bottom: 1rem;
+        }
+        .dropdown-content {
+            opacity: 1;
+            padding: 1rem;
+            margin-top: auto;
+            transform: scaleY(1);
+            display: block;
+            height: auto;
+        }
+    }
+}
