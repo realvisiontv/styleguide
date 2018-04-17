@@ -3970,7 +3970,7 @@
 //     <div class="columns">
 //          <div class="column">
 //              <div class="dropdown-heading">
-//                  <h3 class="is-size-5 is-size-6-mobile is-uppercase">Why do I need Real Vision?</h3>
+//                  <h3 class="is-size-6 is-uppercase">Why do I need Real Vision?</h3>
 //                  <i class="fa fa-plus-circle"></i>
 //              </div>
 //              <div class="dropdown-content">
@@ -3989,13 +3989,13 @@
     padding: $baseline/3 $baseline;
 
     .dropdown-heading {
-        padding: $baseline / 2;
+        padding: .25rem 1rem;
         padding-right: 30px;
         position: relative;
-        border: 1px solid $color-dark-gray;
+        border: 1px solid #dbdbdb;
         border-radius: 3px;
-        background: $color-dark-gray;
-        color: white;
+        background: white;
+        color: $color-dark-gray;
         transition: all 250ms ease-in-out;
         cursor: pointer;
 
@@ -4010,8 +4010,8 @@
         }
 
         &:hover {
-            background: white;
-            color: $color-dark-gray;
+            background: $color-dark-gray;
+            color: white;
         }
     }
 
@@ -4027,6 +4027,7 @@
         transform-origin: top;
         transition: transform 250ms ease-in-out;
         border: 1px solid #dbdbdb;
+        border-top: none;
     }
 
     &.expanded {
