@@ -3959,3 +3959,97 @@
         }
     }
 }
+
+// Expandable Container
+//
+// default - Collapsed
+// .expanded - Expanded
+// 
+// markup:
+// <div class="expandable-container prospect-component {$modifiers}">
+//     <div class="columns">
+//          <div class="column">
+//              <div class="dropdown-heading">
+//                  <h3 class="is-size-6 is-uppercase">Why do I need Real Vision?</h3>
+//                  <i class="fa fa-plus-circle"></i>
+//              </div>
+//              <div class="dropdown-content">
+//                  <p>Because who wouldn’t want to know what the best investors on the planet are thinking?</p>
+//                  <p>It just helps you make better informed decisions.</p>
+//                  <p>Real Vision aims to democratize quality financial research so that everyone, not just the financial elite, can get the honest truth about what’s really going on in the financial markets.</p>
+//                  <p>If you’re a retail investor, hedge fund manager, trader, broker, CFA Charterholder or economics student, Real Vision will help you to manage investments, learn economic tactics and leverage market opportunities.</p>
+//                  <p>We offer investment insights in video-style format, written research, newsletter and a podcast to ensure we’ve got every angle covered in the format that suits you.</p>
+//              </div>
+//          </div>
+//     </div>
+//  </div> 
+// 
+// Styleguide 5.25
+.expandable-container {
+    padding: $baseline/3 $baseline;
+
+    .dropdown-heading {
+        padding: .25rem 1rem;
+        padding-right: 30px;
+        position: relative;
+        border: 1px solid #dbdbdb;
+        border-radius: 3px;
+        background: white;
+        color: $color-dark-gray;
+        transition: all 250ms ease-in-out;
+        cursor: pointer;
+
+        i {
+            margin: 0;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%) rotateZ(0);
+            height: auto;
+            transition: transform 250ms ease-in-out;
+        }
+
+        &:hover {
+            background: $color-dark-gray;
+            color: white;
+        }
+    }
+
+    .dropdown-content {
+        border-radius: 0 0 3px 3px;
+        height: 0;
+        padding: 0;
+        margin: 0;
+        opacity: 0;
+        border: none;
+        box-shadow: none;
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform 250ms ease-in-out;
+        border: 1px solid #dbdbdb;
+        border-top: none;
+    }
+
+    &.expanded {
+        .dropdown-content {
+            opacity: 1;
+            padding: 1rem;
+            margin-top: auto;
+            transform: scaleY(1);
+            display: block;
+            height: auto;
+
+            :last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .dropdown-heading {
+            border-radius: 3px 3px 0 0;
+            
+            i {
+                transform: translateY(-50%) rotateZ(45deg);
+            }
+        }
+    }
+}
