@@ -4062,7 +4062,7 @@
 // <div class="card-list prospect-component">
 //     <div class="columns">
 //          <div class="column card">
-//              <div class="card-content--image">
+//              <div class="card--image">
 //                  <figure class="is-hidden-tablet">
 //                      <img src="/images/heroes/hero_person.jpeg" alt="Image">
 //                  </figure>
@@ -4070,13 +4070,13 @@
 //                      <img src="/images/components/card-list/tech-trader.jpg" alt="Image">
 //                  </figure>
 //              </div>
-//              <div class="card-content--text">
+//              <div class="card--text">
 //                  <h2 class='is-size-4-tablet is-size-5-mobile'>Tech Trader</h2>
 //                  <p>Lorem ipsum and all that jazz. Lorem ipsum and all that jazz. Lorem ipsum and all that jazz. Lorem ipsum and all that jazz.<p>
 //              </div>
 //          </div>
 //          <div class="column card">
-//              <div class="card-content--image">
+//              <div class="card--image">
 //                  <figure class="is-hidden-tablet">
 //                      <img src="/images/heroes/hero_person.jpeg" alt="Image">
 //                  </figure>
@@ -4084,13 +4084,13 @@
 //                      <img src="/images/components/card-list/mental.jpg" alt="Image">
 //                  </figure>
 //              </div>
-//              <div class="card-content--text">
+//              <div class="card--text">
 //                  <h2 class='is-size-4-tablet is-size-5-mobile'>Mental Game of Trading</h2>
 //                  <p>Lorem ipsum and all that jazz. Lorem ipsum and all that jazz. Lorem ipsum and all that jazz. Lorem ipsum and all that jazz.Lorem ipsum and all that jazz.<p>
 //              </div>
 //          </div>
 //          <div class="column card">
-//              <div class="card-content--image">
+//              <div class="card--image">
 //                  <figure class="is-hidden-tablet">
 //                      <img src="/images/heroes/hero_person.jpeg" alt="Image">
 //                  </figure>
@@ -4098,13 +4098,13 @@
 //                      <img src="/images/components/card-list/naked-call.jpg" alt="Image">
 //                  </figure>
 //              </div>
-//              <div class="card-content--text">
+//              <div class="card--text">
 //                  <h2 class='is-size-4-tablet is-size-5-mobile'>The Naked Call</h2>
 //                  <p>Lorem ipsum and all that jazz. Lorem ipsum and all that jazz.<p>
 //              </div>
 //          </div>
 //          <div class="column card">
-//              <div class="card-content--image">
+//              <div class="card--image">
 //                  <figure class="is-hidden-tablet">
 //                      <img src="/images/heroes/hero_person.jpeg" alt="Image">
 //                  </figure>
@@ -4112,7 +4112,7 @@
 //                      <img src="/images/components/card-list/mental.jpg" alt="Image">
 //                  </figure>
 //              </div>
-//              <div class="card-content--text">
+//              <div class="card--text">
 //                  <h2 class='is-size-4-tablet is-size-5-mobile'>Mental Game of Trading</h2>
 //                  <p>Lorem ipsum and all that jazz. Lorem ipsum and all that jazz. Lorem ipsum and all that jazz.<p>
 //              </div>
@@ -4133,10 +4133,7 @@
             flex-direction: row;
         }
 
-        .card-content {
-        }
-
-        .card-content--image {
+        .card--image {
             flex: 1;
             margin-bottom: .25rem;
 
@@ -4150,7 +4147,7 @@
             }
         }
 
-        .card-content--text {
+        .card--text {
             padding: $baseline/2;
             flex: 1;
             flex-basis: auto;
