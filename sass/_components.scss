@@ -4053,3 +4053,45 @@
         }
     }
 }
+
+// Video Hero
+// 
+// Video hero component that switches to a youtube video on click
+//
+// markup:
+// <section class="video-hero is-paddingless black-background">
+//     <img src="/images/heroes/hero_buildings.jpeg" />
+//     <iframe src="https://www.youtube.com/embed/hv96S50QQEs"
+//             width="100%" frameborder="0" class="is-hidden" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+// </section>
+// 
+// Styleguide 5.26
+.video-hero {
+    position: relative;
+
+    img {
+        display: block;
+        width: 100%;
+        z-index: 0;
+        position: relative;
+
+        &.is-hidden {
+            opacity: 0;
+            display: block !important;
+        }
+    }
+
+    iframe {
+        opacity: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        height: 100%;
+
+        &.is-hidden {
+            opacity: 0;
+            display: block !important;
+        }
+    }
+}
