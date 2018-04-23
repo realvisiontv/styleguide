@@ -4054,12 +4054,12 @@
     }
 }
 
-// Quad Card
+// Card List
 //
 // default
 // 
 // markup:
-// <div class="quad-card prospect-component">
+// <div class="card-list prospect-component">
 //     <div class="columns">
 //          <div class="column card">
 //              <div class="card-content--image">
@@ -4067,7 +4067,7 @@
 //                      <img src="/images/heroes/hero_person.jpeg" alt="Image">
 //                  </figure>
 //                  <figure class="is-hidden-mobile">
-//                      <img src="/images/components/quad-card/tech-trader.jpg" alt="Image">
+//                      <img src="/images/components/card-list/tech-trader.jpg" alt="Image">
 //                  </figure>
 //              </div>
 //              <div class="card-content--text">
@@ -4081,7 +4081,7 @@
 //                      <img src="/images/heroes/hero_person.jpeg" alt="Image">
 //                  </figure>
 //                  <figure class="is-hidden-mobile">
-//                      <img src="/images/components/quad-card/mental.jpg" alt="Image">
+//                      <img src="/images/components/card-list/mental.jpg" alt="Image">
 //                  </figure>
 //              </div>
 //              <div class="card-content--text">
@@ -4095,7 +4095,7 @@
 //                      <img src="/images/heroes/hero_person.jpeg" alt="Image">
 //                  </figure>
 //                  <figure class="is-hidden-mobile">
-//                      <img src="/images/components/quad-card/naked-call.jpg" alt="Image">
+//                      <img src="/images/components/card-list/naked-call.jpg" alt="Image">
 //                  </figure>
 //              </div>
 //              <div class="card-content--text">
@@ -4109,7 +4109,7 @@
 //                      <img src="/images/heroes/hero_person.jpeg" alt="Image">
 //                  </figure>
 //                  <figure class="is-hidden-mobile">
-//                      <img src="/images/components/quad-card/mental.jpg" alt="Image">
+//                      <img src="/images/components/card-list/mental.jpg" alt="Image">
 //                  </figure>
 //              </div>
 //              <div class="card-content--text">
@@ -4121,7 +4121,7 @@
 //  </div> 
 // 
 // Styleguide 5.27
-.quad-card {
+.card-list {
     padding: $baseline;
 
     .card {
