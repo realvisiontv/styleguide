@@ -4127,6 +4127,7 @@
     .card {
         display: flex;
         flex-direction: column;
+        padding: $baseline/3;
 
         @include mobile {
             flex-direction: row;
