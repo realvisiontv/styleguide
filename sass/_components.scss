@@ -4110,11 +4110,11 @@
 // 
 // Styleguide 5.28
 .notification {
-    background: white;
+    background: white url(../images/components/notification.jpg) repeat-y;
+    background-size: 100%;
     border-radius: 0;
     box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.33), 0 1px 25.5px 0 rgba(0, 0, 0, 0.18);
     margin: $baseline;
-    // TODO: Add paper background
 
     h1 {
         @extend .edo-pro;
