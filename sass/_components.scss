@@ -4177,15 +4177,9 @@
 
         .card--image {
             flex: 1;
-            margin-bottom: .25rem;
 
             img {
                 display: block;
-            }
-
-            @include mobile {
-                margin-bottom: 0;
-                margin-right: .25rem;
             }
         }
 
