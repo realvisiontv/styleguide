@@ -4096,6 +4096,120 @@
     }
 }
 
+// Card List
+//
+// default
+// 
+// markup:
+// <div class="card-list prospect-component">
+//     <div class="columns">
+//          <div class="column card">
+//              <div class="card--image">
+//                  <figure class="is-hidden-tablet">
+//                      <img src="/images/heroes/hero_person.jpeg" alt="Image">
+//                  </figure>
+//                  <figure class="is-hidden-mobile">
+//                      <img src="/images/components/card-list/tech-trader.jpg" alt="Image">
+//                  </figure>
+//              </div>
+//              <div class="card--text">
+//                  <h2 class='is-size-4-tablet is-size-5-mobile is-uppercase'>Tech Trader</h2>
+//                  <div class="card--text_description is-marginless is-hidden-mobile">Lorem ipsum and all that jazz. Lorem ipsum and all that jazz. Lorem ipsum and all that jazz. Lorem ipsum and all that jazz.</div>
+//              </div>
+//          </div>
+//          <div class="column card">
+//              <div class="card--image">
+//                  <figure class="is-hidden-tablet">
+//                      <img src="/images/heroes/hero_person.jpeg" alt="Image">
+//                  </figure>
+//                  <figure class="is-hidden-mobile">
+//                      <img src="/images/components/card-list/mental.jpg" alt="Image">
+//                  </figure>
+//              </div>
+//              <div class="card--text">
+//                  <h2 class='is-size-4-tablet is-size-5-mobile is-uppercase'>Mental Game of Trading</h2>
+//                  <div class="card--text_description is-marginless is-hidden-mobile">Lorem ipsum and all that jazz. Lorem ipsum and all that jazz. Lorem ipsum and all that jazz. Lorem ipsum and all that jazz.Lorem ipsum and all that jazz.</div>
+//              </div>
+//          </div>
+//          <div class="column card">
+//              <div class="card--image">
+//                  <figure class="is-hidden-tablet">
+//                      <img src="/images/heroes/hero_person.jpeg" alt="Image">
+//                  </figure>
+//                  <figure class="is-hidden-mobile">
+//                      <img src="/images/components/card-list/naked-call.jpg" alt="Image">
+//                  </figure>
+//              </div>
+//              <div class="card--text">
+//                  <h2 class='is-size-4-tablet is-size-5-mobile is-uppercase'>The Naked Call</h2>
+//                  <div class="card--text_description is-marginless is-hidden-mobile">Lorem ipsum and all that jazz. Lorem ipsum and all that jazz.</div>
+//              </div>
+//          </div>
+//          <div class="column card">
+//              <div class="card--image">
+//                  <figure class="is-hidden-tablet">
+//                      <img src="/images/heroes/hero_person.jpeg" alt="Image">
+//                  </figure>
+//                  <figure class="is-hidden-mobile">
+//                      <img src="/images/components/card-list/mental.jpg" alt="Image">
+//                  </figure>
+//              </div>
+//              <div class="card--text">
+//                  <h2 class='is-size-4-tablet is-size-5-mobile is-uppercase'>Mental Game of Trading</h2>
+//                  <div class="card--text_description is-marginless is-hidden-mobile">Lorem ipsum and all that jazz. Lorem ipsum and all that jazz. Lorem ipsum and all that jazz.</div>
+//              </div>
+//          </div>
+//     </div>
+//  </div> 
+// 
+// Styleguide 5.27
+.card-list {
+    padding: $baseline;
+
+    .card {
+        display: flex;
+        flex-direction: column;
+
+        @include mobile {
+            flex-direction: row;
+        }
+
+        .card--image {
+            flex: 1;
+
+            img {
+                display: block;
+            }
+        }
+
+        .card--text {
+            padding: $baseline/2;
+            flex: 1;
+            flex-basis: auto;
+            background: black;
+            position: relative;
+
+            @include mobile {
+                flex-basis: 0;
+            }
+            
+            h2 {
+                color: $brand;
+
+                @include mobile {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+
+            .card--text_description {
+                color: white;
+            }
+        }
+    }
+}
+
 // Notification
 // 
 // Notification with paper background and drop shadow.
