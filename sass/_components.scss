@@ -4053,3 +4053,132 @@
         }
     }
 }
+
+// Quad Card
+//
+// default
+// 
+// markup:
+// <div class="quad-card prospect-component">
+//     <div class="columns">
+//          <div class="column card">
+//              <div class="card-content--image">
+//                  <figure class="is-hidden-tablet">
+//                      <img src="/images/heroes/hero_person.jpeg" alt="Image">
+//                  </figure>
+//                  <figure class="is-hidden-mobile">
+//                      <img src="/images/components/quad-card/tech-trader.jpg" alt="Image">
+//                  </figure>
+//              </div>
+//              <div class="card-content--text">
+//                  <h2 class='is-size-4-tablet is-size-5-mobile'>Tech Trader</h2>
+//                  <p>Lorem ipsum and all that jazz. Lorem ipsum and all that jazz. Lorem ipsum and all that jazz. Lorem ipsum and all that jazz.<p>
+//              </div>
+//          </div>
+//          <div class="column card">
+//              <div class="card-content--image">
+//                  <figure class="is-hidden-tablet">
+//                      <img src="/images/heroes/hero_person.jpeg" alt="Image">
+//                  </figure>
+//                  <figure class="is-hidden-mobile">
+//                      <img src="/images/components/quad-card/mental.jpg" alt="Image">
+//                  </figure>
+//              </div>
+//              <div class="card-content--text">
+//                  <h2 class='is-size-4-tablet is-size-5-mobile'>Mental Game of Trading</h2>
+//                  <p>Lorem ipsum and all that jazz. Lorem ipsum and all that jazz. Lorem ipsum and all that jazz. Lorem ipsum and all that jazz.Lorem ipsum and all that jazz.<p>
+//              </div>
+//          </div>
+//          <div class="column card">
+//              <div class="card-content--image">
+//                  <figure class="is-hidden-tablet">
+//                      <img src="/images/heroes/hero_person.jpeg" alt="Image">
+//                  </figure>
+//                  <figure class="is-hidden-mobile">
+//                      <img src="/images/components/quad-card/naked-call.jpg" alt="Image">
+//                  </figure>
+//              </div>
+//              <div class="card-content--text">
+//                  <h2 class='is-size-4-tablet is-size-5-mobile'>The Naked Call</h2>
+//                  <p>Lorem ipsum and all that jazz. Lorem ipsum and all that jazz.<p>
+//              </div>
+//          </div>
+//          <div class="column card">
+//              <div class="card-content--image">
+//                  <figure class="is-hidden-tablet">
+//                      <img src="/images/heroes/hero_person.jpeg" alt="Image">
+//                  </figure>
+//                  <figure class="is-hidden-mobile">
+//                      <img src="/images/components/quad-card/mental.jpg" alt="Image">
+//                  </figure>
+//              </div>
+//              <div class="card-content--text">
+//                  <h2 class='is-size-4-tablet is-size-5-mobile'>Mental Game of Trading</h2>
+//                  <p>Lorem ipsum and all that jazz. Lorem ipsum and all that jazz. Lorem ipsum and all that jazz.<p>
+//              </div>
+//          </div>
+//     </div>
+//  </div> 
+// 
+// Styleguide 5.27
+.quad-card {
+    padding: $baseline;
+
+    .card {
+        display: flex;
+        flex-direction: column;
+
+        @include mobile {
+            flex-direction: row;
+        }
+
+        .card-content {
+        }
+
+        .card-content--image {
+            flex: 1;
+            margin-bottom: .25rem;
+
+            img {
+                display: block;
+            }
+
+            @include mobile {
+                margin-bottom: 0;
+                margin-right: .25rem;
+            }
+        }
+
+        .card-content--text {
+            padding: $baseline/2;
+            flex: 1;
+            flex-basis: auto;
+            background: black;
+            position: relative;
+
+            @include mobile {
+                flex-basis: 0;
+            }
+            
+            h2 {
+                color: $brand;
+                text-transform: uppercase;
+
+                @include mobile {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+
+            p {
+                color: white;
+                margin: 0;
+
+                @include mobile {
+                    display: none;
+                }
+            }
+        }
+    }
+}
