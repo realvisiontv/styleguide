@@ -284,3 +284,29 @@ footer {
         padding: 1rem;
     }
 }
+
+// Poster
+//
+// default - Default
+//
+// markup:
+// <div class="is-poster">
+//     <h2 class="has-text-centered is-size-4 is-uppercase">On soon</h2>
+//     <p class="has-text-centered">Android | Amazon Fire TV</p>
+// </div>
+//
+// Styleguide 2.7
+.is-poster {
+    background: white url('#{$root}/images/components/notification.jpg') repeat-y;
+    border-radius: 0 !important;
+    box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.33);
+    padding: $baseline;
+
+    *:last-child {
+        margin-bottom: 0;
+    }
+}
+:host .is-poster {
+    margin: 20px auto;
+    max-width: 80%;
+}

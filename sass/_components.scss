@@ -4098,32 +4098,39 @@
 
 // Notification
 // 
-// Notification with paper background and drop shadow
+// Notification with paper background and drop shadow.
 //
 // markup:
-// <section class="notification columns is-centered">
-//     <div class="copy column is-8">
-//         <h1 style="text-align: center;">What's New</h1>
-//         <p>We should add some on-brand copy here that is whimsical, saying that we are proud to introduce a&nbsp;<strong>new and improved Real Vision</strong>. Our financial TV channel for everyone <span style="color: #da1c5c;">for just $180/year</span>.</p>
+// <section class="notification">
+//     <div class="is-poster columns is-centered">
+//         <div class="copy column is-8">
+//             <h1 style="text-align: center;">What's New</h1>
+//             <p>We should add some on-brand copy here that is whimsical, saying that we are proud to introduce a&nbsp;<strong>new and improved Real Vision</strong>. Our financial TV channel for everyone <span style="color: #da1c5c;">for just $180/year</span>.</p>
+//         </div>
 //     </div>
 // </section>
 // 
 // Styleguide 5.28
 .notification {
-    background: white url('#{$root}/images/components/notification.jpg') repeat-y;
-    background-size: 100%;
-    border-radius: 0;
-    box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.33), 0 1px 25.5px 0 rgba(0, 0, 0, 0.18);
-    margin: $baseline;
+    background: transparent;
+    padding: 0;
+
+    .is-poster {
+        background-size: 100%;
+        border-radius: 0 !important;
+        box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.33), 0 1px 25.5px 0 rgba(0, 0, 0, 0.18);
+    }
 
     h1 {
         @extend .edo-pro;
         font-size: 4rem;
-        font-weight: 400;
     }
 
     p {
         font-size: $size-4;
         line-height: 1.2;
     }
+}
+:host .notification {
+    margin: 25px;
 }
