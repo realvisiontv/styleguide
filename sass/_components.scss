@@ -4111,6 +4111,7 @@
 //                  <figure class="is-hidden-mobile">
 //                      <img src="/images/components/card-list/tech-trader.jpg" alt="Image">
 //                  </figure>
+//                  <div class="badge"><i class="fa fa-play" aria-hidden="true"></i>2:32</div>
 //              </div>
 //              <div class="card--text">
 //                  <h2 class='is-size-4-tablet is-size-5-mobile is-uppercase'>Tech Trader</h2>
@@ -4176,9 +4177,28 @@
 
         .card--image {
             flex: 1;
+            position: relative;
 
             img {
                 display: block;
+            }
+
+            .badge {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+
+                background: #fff;
+                color: #000;
+                font-weight: 700;
+                font-size: 12px;
+                padding-left: 0;
+
+                .fa {
+                    background: $color-cyan;
+                    padding: 5px 7px 5px 9px;
+                    margin-right: 5px;
+                }
             }
         }
 

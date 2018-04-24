@@ -48,6 +48,10 @@
     width: auto;
 }
 
+.reverse-row-order {
+    flex-direction: row-reverse;
+}
+
 @include mobile {
     .is-mobile {
         .is-vertically-center:not(.columns) {
