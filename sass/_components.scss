@@ -4228,6 +4228,22 @@
             }
         }
     }
+    
+    a.card {
+        text-decoration: none;
+        transition: opacity 0.2s, transform 0.2s;
+    }
+    .columns:hover a.card {
+        opacity: 0.75;
+    }
+    .columns:hover a.card:hover {
+        opacity: 1;
+        transform: scale(1.05) rotate(-0.5deg);
+        .card--image,
+        .card--text {
+            box-shadow: 0px 0px 1px 0 rgba(0,0,0,0.5), 0 1px 25.5px 0 rgba(0,0,0,0.58);
+        }
+    }
 }
 
 // Notification
