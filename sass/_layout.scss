@@ -48,6 +48,31 @@
     width: auto;
 }
 
+@include mobile {
+    .is-mobile {
+        .is-vertically-center:not(.columns) {
+            align-items: center;
+            display: flex;
+
+            &.has-text-centered {
+                justify-content: center;
+            }
+
+            .columns {
+                flex-grow: 1;
+            }
+        }
+        .is-vertically-bottom:not(.columns) {
+            align-items: flex-end;
+            display: flex;
+
+            &.has-text-centered {
+                justify-content: center;
+            }
+        }
+    }
+}
+
 @include tablet {
     .is-vertically-center:not(.columns) {
         align-items: center;
