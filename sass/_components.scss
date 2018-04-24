@@ -4211,15 +4211,19 @@
             flex-basis: auto;
             background: black;
             position: relative;
+            height: 100%;
 
             @include mobile {
                 flex-basis: 0;
+                padding: 0;
+                height: auto;
             }
             
             h2 {
                 color: $brand;
 
                 @include mobile {
+                    margin-left: $baseline/2;
                     position: absolute;
                     top: 50%;
                     transform: translateY(-50%);
