@@ -4214,12 +4214,14 @@
 
             @include mobile {
                 flex-basis: 0;
+                padding: 0;
             }
             
             h2 {
                 color: $brand;
 
                 @include mobile {
+                    margin-left: $baseline/2;
                     position: absolute;
                     top: 50%;
                     transform: translateY(-50%);
