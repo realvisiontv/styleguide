@@ -4072,12 +4072,13 @@
     img {
         display: block;
         width: 100%;
-        z-index: 0;
+        z-index: 1;
         position: relative;
 
         &.is-hidden {
             opacity: 0;
             display: block !important;
+            z-index: 0;
         }
     }
 
@@ -4092,6 +4093,7 @@
         &.is-hidden {
             opacity: 0;
             display: block !important;
+            z-index: 0;
         }
     }
 }
