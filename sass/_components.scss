@@ -4268,7 +4268,7 @@
 // </section>
 // 
 // Styleguide 5.28
-.notification {
+section.notification {
     background-color: transparent !important;
     padding: 0;
 
@@ -4288,6 +4288,6 @@
         line-height: 1.2;
     }
 }
-:host .notification {
+:host section.notification {
     margin: 25px;
 }
