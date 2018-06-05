@@ -4291,3 +4291,67 @@ section.notification {
 :host section.notification {
     margin: 25px;
 }
+
+
+// Cookie banner
+//
+// markup:
+// <div id="cookie-consent">
+//     <div class="container">
+//         <div class="columns">
+//             <div class="column">
+//                 <p><strong>Information about how we use cookies</strong></p>
+//                 <p>Our website uses a number of cookies. A cookie is a small file of letters and numbers that we put on your computer if you agree. These cookies allow us to distinguish you from other users of our website, which helps us to provide you with a good experience when you browse our website and also allows us to improve our site. By closing this banner, clicking a link or continuing to browse otherwise, you agree to the use of cookies. <a href="/cookie-policy" class="iubenda-cs-cookie-policy-lnk">Learn more about our cookies</a>.</p>
+//                 <a class="close-btn" target="_blank"><strong><u>Accept and close</u></strong></a>
+//             </div>
+//         </div>
+//     </div>
+// </div>
+//
+// Styleguide 5.29
+#cookie-consent {
+    bottom: 0px !important;
+    left: 0px !important;
+    position: fixed !important;
+    width: 100% !important;
+    z-index: 99999998 !important;
+    background-color: black;
+
+    .column {
+        position: relative;
+    }
+
+    .container {
+        display: block;
+        margin: 0 auto;
+        padding: 20px;
+        width: auto;
+        font-size: 14px;
+        background: #000;
+        color: #fff;
+    }
+
+    .container > p {
+        line-height: 1.5;
+    }
+
+    .close-btn {
+        margin: 0;
+        color: #fff;
+        text-decoration: none;
+        font-size: 14px;
+        position: absolute;
+        top: 0.75rem;
+        right: 0.75rem;
+        border: none;
+    }
+    .container a {
+        color: white;
+        text-decoration-color: white;
+        font-weight: 800;
+    }
+
+    .container a:hover {
+        color: white;
+    }
+}
