@@ -4292,7 +4292,6 @@ section.notification {
     margin: 25px;
 }
 
-
 // Cookie banner
 //
 // markup:
@@ -4301,7 +4300,16 @@ section.notification {
 //         <div class="columns">
 //             <div class="column">
 //                 <p><strong>Information about how we use cookies</strong></p>
+//             </div>
+//             <div class="column is-narrow is-hidden-mobile">
+//                 <a class="close-btn" target="_blank"><strong><u>Accept and close</u></strong></a>
+//             </div>
+//         </div>
+//         <div class="columns">
+//             <div class="column">
 //                 <p>Our website uses a number of cookies. A cookie is a small file of letters and numbers that we put on your computer if you agree. These cookies allow us to distinguish you from other users of our website, which helps us to provide you with a good experience when you browse our website and also allows us to improve our site. By closing this banner, clicking a link or continuing to browse otherwise, you agree to the use of cookies. <a href="/cookie-policy" class="iubenda-cs-cookie-policy-lnk">Learn more about our cookies</a>.</p>
+//             </div>
+//             <div class="column is-narrow is-hidden-tablet">
 //                 <a class="close-btn" target="_blank"><strong><u>Accept and close</u></strong></a>
 //             </div>
 //         </div>
@@ -4316,6 +4324,10 @@ section.notification {
     width: 100% !important;
     z-index: 99999998 !important;
     background-color: black;
+
+    .columns {
+        margin-bottom: 0;
+    }
 
     .column {
         position: relative;
@@ -4340,10 +4352,6 @@ section.notification {
         color: #fff;
         text-decoration: none;
         font-size: 14px;
-        position: absolute;
-        top: 0.75rem;
-        right: 0.75rem;
-        border: none;
     }
     .container a {
         color: white;
@@ -4354,4 +4362,7 @@ section.notification {
     .container a:hover {
         color: white;
     }
+}
+:host #cookie-consent {
+    position: relative !important;
 }
