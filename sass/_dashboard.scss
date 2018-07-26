@@ -230,6 +230,7 @@
         }
     }
 
+    h1,
     .title {
         font-size: $size-5;
         font-weight: 800;
@@ -251,6 +252,7 @@
         }
     }
     @supports (-webkit-line-clamp: 3) {
+        h1,
         .title {
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
