@@ -13,12 +13,12 @@
 //                 </div>
 //             </div>
 //             <div class="content">
-//                 <div class="title">
+//                 <div class="info">
 //                     <div class="subheading">
 //                         <div class="is-pulled-left">Think Piece</div>
 //                         <div class="is-pulled-right">36:00</div>
 //                     </div>
-//                     <h1>Looking Under the Hood Australia</h1>
+//                     <h2 class="title">Looking Under the Hood Australia</h2>
 //                     <div class="buttons">
 //                         <button class="icon-button hide-text"><i class="fa fa-info" aria-hidden="true"></i>More Information</button>
 //                         <button class="icon-button hide-text"><i class="fa fa-plus" aria-hidden="true"></i>Add to My List</button>
@@ -45,13 +45,13 @@
 //                 </div>
 //             </div>
 //             <div class="content">
-//                 <div class="title">
+//                 <div class="info">
 //                     <div class="progress">You've watched 75%<div class="bar" style="width: 75%"></div></div>
 //                     <div class="subheading">
 //                         <div class="is-pulled-left">Think Piece</div>
 //                         <div class="is-pulled-right">1:15:00</div>
 //                     </div>
-//                     <h1>Quantitative Insight with a Discretionary Edge - Richard Excell</h1>
+//                     <h2 class="title">Quantitative Insight with a Discretionary Edge - Richard Excell</h2>
 //                     <div class="buttons">
 //                         <button class="icon-button hide-text"><i class="fa fa-info" aria-hidden="true"></i>More Information</button>
 //                     </div>
@@ -74,12 +74,12 @@
 //                 </div>
 //             </div>
 //             <div class="content">
-//                 <div class="title">
+//                 <div class="info">
 //                     <div class="subheading">
 //                         <div class="is-pulled-left">Think Piece</div>
 //                         <div class="is-pulled-right">36:00</div>
 //                     </div>
-//                     <h1>Looking Under the Hood Australia</h1>
+//                     <h2 class="title">Looking Under the Hood Australia</h2>
 //                     <div class="buttons">
 //                         <button class="icon-button hide-text"><i class="fa fa-info" aria-hidden="true"></i>More Information</button>
 //                         <button class="icon-button hide-text"><i class="fa fa-plus" aria-hidden="true"></i>Add to My List</button>
@@ -203,7 +203,7 @@
         opacity: 0;
     }
 
-    .title {
+    .info {
         background: #fff;
         position: absolute;
         bottom: $padding;
@@ -230,13 +230,14 @@
         }
     }
 
-    h1 {
+    .title {
         font-size: $size-5;
         font-weight: 800;
         margin: 0;
         position: relative;
         max-height: 3em;
         overflow: hidden;
+        text-transform: uppercase;
 
         &:after {
             content: "";
@@ -250,7 +251,7 @@
         }
     }
     @supports (-webkit-line-clamp: 3) {
-        h1 {
+        .title {
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
             overflow: hidden;
