@@ -1,0 +1,70 @@
+// Poster
+//
+// A poster image link (3:4 ratio) for Shows and Collections
+//
+// Default - default
+// .has-badge - Variant with text badge overlay on image
+//
+// markup:
+//  <div class="poster prospect-component">
+//      <div class="columns is-tablet is-multiline">
+//          <div class="column is-6-tablet is-3-desktop has-text-centered">
+//              <div class="poster__content">
+//                  <a href="#">
+//                      <span class="poster__badge">NEW EPISODES</span>
+//                      <img class="poster__image" src="http://via.placeholder.com/300x400" />
+//                  </a>
+//              </div>
+//          </div>
+//          <div class="column is-6-tablet is-3-desktop has-text-centered">
+//              <div class="poster__content">
+//                  <a href="#">
+//                      <span class="poster__badge">NEW EPISODES</span>
+//                      <img class="poster__image" src="http://via.placeholder.com/300x400" />
+//                  </a>
+//              </div>
+//          </div>
+//          <div class="column is-6-tablet is-3-desktop has-text-centered">
+//              <div class="poster__content {$modifiers}">
+//                  <a href="#">
+//                      <span class="poster__badge">NEW EPISODES</span>
+//                      <img class="poster__image" src="http://via.placeholder.com/300x400" />
+//                  </a>
+//              </div>
+//          </div>
+//          <div class="column is-6-tablet is-3-desktop has-text-centered">
+//              <div class="poster__content">
+//                  <a href="#">
+//                      <span class="poster__badge">NEW EPISODES</span>
+//                      <img class="poster__image" src="http://via.placeholder.com/300x400" />
+//                  </a>
+//              </div>
+//          </div>
+//      </div>
+//  </div>
+//
+// Styleguide 9.1
+.poster {
+    .poster__content {
+        position: relative;
+        display: inline-block;
+
+        &.has-badge {
+            .poster__badge {
+                display: block;
+            }
+        }
+    }
+    .poster__badge {
+        font-family: 'Proxima Nova';
+        font-weight: bold;
+        font-size: $baseline / 2;
+        padding: 10px;
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: black;
+        color: white;
+    }
+}
