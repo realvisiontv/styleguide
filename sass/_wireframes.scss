@@ -1,4 +1,4 @@
-// Poster
+// Poster Card
 //
 // A poster image link (3:4 ratio) for Shows
 //
@@ -68,3 +68,44 @@
         color: white;
     }
 }
+
+// Video Card
+//
+// A card containing a description, meta data, and image (16:9 ratio) for videos
+//
+// Default - default
+//
+// markup:
+//  <div class="video-card prospect-component">
+//      <div class="columns is-tablet is-multiline">
+//          <div class="column is-4-tablet has-text-centered">
+//              <div class="video-card__content {$modifiers}">
+//                  <a href="#">
+//                      <img class="video-card__image" src="http://via.placeholder.com/400x225" />
+//                      <div class="video-card__meta">
+//                      </div>
+//                  </a>
+//              </div>
+//          </div>
+//          <div class="column is-4-tablet has-text-centered">
+//              <div class="video-card__content {$modifiers}">
+//                  <a href="#">
+//                      <img class="video-card__image" src="http://via.placeholder.com/400x225" />
+//                      <div class="video-card__meta">
+//                      </div>
+//                  </a>
+//              </div>
+//          </div>
+//          <div class="column is-4-tablet has-text-centered">
+//              <div class="video-card__content {$modifiers}">
+//                  <a href="#">
+//                      <img class="video-card__image" src="http://via.placeholder.com/400x225" />
+//                      <div class="video-card__meta">
+//                      </div>
+//                  </a>
+//              </div>
+//          </div>
+//      </div>
+//  </div>
+//
+// Styleguide 9.2
