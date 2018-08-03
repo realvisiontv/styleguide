@@ -142,9 +142,6 @@
         text-decoration: none;
         color: $text;
     }
-    .video-card__content {
-
-    }
     .video-card__image {
         height: 0;
         padding-bottom: 56.25%;
@@ -167,12 +164,6 @@
     }
     .video-card__meta--columns {
         overflow: hidden;
-    }
-    .video-card__date {
-
-    }
-    .video-card__length {
-
     }
     .video-card__date, .video-card__length {
         color: #707173;
