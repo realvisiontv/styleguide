@@ -76,9 +76,9 @@
 // Default - default
 //
 // markup:
-//  <div class="video-card prospect-component">
-//      <div class="columns is-tablet is-multiline">
-//          <div class="column is-4-tablet has-text-centered">
+//  <div class="columns is-tablet is-multiline">
+//      <div class="column is-4-tablet has-text-centered">
+//          <div class="video-card prospect-component">
 //              <div class="video-card__content {$modifiers}">
 //                  <a href="#">
 //                      <div class="video-card__image">
@@ -95,7 +95,9 @@
 //                  </a>
 //              </div>
 //          </div>
-//          <div class="column is-4-tablet has-text-centered">
+//      </div>
+//      <div class="column is-4-tablet has-text-centered">
+//          <div class="video-card prospect-component">
 //              <div class="video-card__content {$modifiers}">
 //                  <a href="#">
 //                      <div class="video-card__image">
@@ -112,7 +114,9 @@
 //                  </a>
 //              </div>
 //          </div>
-//          <div class="column is-4-tablet has-text-centered">
+//      </div>
+//      <div class="column is-4-tablet has-text-centered">
+//          <div class="video-card prospect-component">
 //              <div class="video-card__content {$modifiers}">
 //                  <a href="#">
 //                      <div class="video-card__image">
