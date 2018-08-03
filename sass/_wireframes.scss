@@ -81,9 +81,11 @@
 //          <div class="column is-4-tablet has-text-centered">
 //              <div class="video-card__content {$modifiers}">
 //                  <a href="#">
-//                      <img class="video-card__image" src="http://via.placeholder.com/400x225" />
+//                      <div class="video-card__image">
+//                          <img src="http://via.placeholder.com/400x225" />
+//                      </div>
 //                      <div class="video-card__meta">
-//                          <div class="columns">
+//                          <div class="columns is-mobile">
 //                              <div class="column is-6 has-text-left">
 //                                  <p class="video-card__date is-size-7">14 APR 2018</p>
 //                              </div>
@@ -106,9 +108,11 @@
 //          <div class="column is-4-tablet has-text-centered">
 //              <div class="video-card__content {$modifiers}">
 //                  <a href="#">
-//                      <img class="video-card__image" src="http://via.placeholder.com/400x225" />
+//                      <div class="video-card__image">
+//                          <img src="http://via.placeholder.com/400x225" />
+//                      </div>
 //                      <div class="video-card__meta">
-//                          <div class="columns">
+//                          <div class="columns is-mobile">
 //                              <div class="column is-6 has-text-left">
 //                                  <p class="video-card__date is-size-7">14 APR 2018</p>
 //                              </div>
@@ -131,9 +135,11 @@
 //          <div class="column is-4-tablet has-text-centered">
 //              <div class="video-card__content {$modifiers}">
 //                  <a href="#">
-//                      <img class="video-card__image" src="http://via.placeholder.com/400x225" />
+//                      <div class="video-card__image">
+//                          <img src="http://via.placeholder.com/400x225" />
+//                      </div>
 //                      <div class="video-card__meta">
-//                          <div class="columns">
+//                          <div class="columns is-mobile">
 //                              <div class="column is-6 has-text-left">
 //                                  <p class="video-card__date is-size-7">14 APR 2018</p>
 //                              </div>
@@ -166,7 +172,19 @@
 
     }
     .video-card__image {
+        height: 0;
+        padding-bottom: 56.25%;
+        position: relative;
+        display: block;
 
+        img {
+            height: 100%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: none;
+            width: auto;
+        }
     }
     .video-card__meta {
         padding: $baseline / 2;
