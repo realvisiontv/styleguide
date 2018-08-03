@@ -85,22 +85,12 @@
 //                          <img src="http://via.placeholder.com/400x225" />
 //                      </div>
 //                      <div class="video-card__meta">
-//                          <div class="columns is-mobile">
-//                              <div class="column is-6 has-text-left">
-//                                  <p class="video-card__date is-size-7">14 APR 2018</p>
-//                              </div>
-//                              <div class="column is-6 has-text-right">
-//                                  <p class="video-card__length is-size-7">23:30</p>
-//                              </div>
+//                          <div class="video-card__meta--columns">
+//                              <div class="video-card__date is-size-7 is-pulled-left">14 APR 2018</div>
+//                              <div class="video-card__length is-size-7 is-pulled-right">23:30</div>
 //                          </div>
-//                          <div class="columns is-multiline has-text-left">
-//                              <div class="column is-12">
-//                                  <h2 class="video-card__title is-size-5">HOME WRECKER</h2>
-//                              </div>
-//                              <div class="column is-12">
-//                                  <p class="video-card__description">Technical analyst Mark Newton of Newton Advisors says more pain is on the horizon for the U.S. housing market. In this interview with Brian Price, Mark explains why this development will drive shares of the world’s largest flooring company sharply lower. Filmed on July 31, 2018.</p>
-//                              </div>
-//                          </div>
+//                          <h2 class="video-card__title is-size-5">HOME WRECKER</h2>
+//                          <p class="video-card__description">Technical analyst Mark Newton of Newton Advisors says more pain is on the horizon for the U.S. housing market. In this interview with Brian Price, Mark explains why this development will drive shares of the world’s largest flooring company sharply lower. Filmed on July 31, 2018.</p>
 //                      </div>
 //                  </a>
 //              </div>
@@ -112,22 +102,12 @@
 //                          <img src="http://via.placeholder.com/400x225" />
 //                      </div>
 //                      <div class="video-card__meta">
-//                          <div class="columns is-mobile">
-//                              <div class="column is-6 has-text-left">
-//                                  <p class="video-card__date is-size-7">14 APR 2018</p>
-//                              </div>
-//                              <div class="column is-6 has-text-right">
-//                                  <p class="video-card__length is-size-7">23:30</p>
-//                              </div>
+//                          <div class="video-card__meta--columns">
+//                              <div class="video-card__date is-size-7 is-pulled-left">14 APR 2018</div>
+//                              <div class="video-card__length is-size-7 is-pulled-right">23:30</div>
 //                          </div>
-//                          <div class="columns is-multiline has-text-left">
-//                              <div class="column is-12">
-//                                  <h2 class="video-card__title is-size-5">GRANT WILLIAMS IN CONVERSATION WITH BEN HUNT</h2>
-//                              </div>
-//                              <div class="column is-12">
-//                                  <p class="video-card__description">Grant travels to rural Connecticut to spend a day with Dr. Ben Hunt, author of Epsilon Theory. In a wide-ranging discussion, Ben shares his journey from tenured academic to software entrepreneur and on to his role as Chief Risk Officer at Salient Partners and the birth of Epsilon Theory. The two discuss the importance and power of narratives in financial markets, the ways in which spending time surrounded by nature can help improve investment returns and the reason “why” is the most important question to ask. Filmed on July 12th, 2018.</p>
-//                              </div>
-//                          </div>
+//                          <h2 class="video-card__title is-size-5">GRANT WILLIAMS IN CONVERSATION WITH BEN HUNT</h2>
+//                          <p class="video-card__description">Grant travels to rural Connecticut to spend a day with Dr. Ben Hunt, author of Epsilon Theory. In a wide-ranging discussion, Ben shares his journey from tenured academic to software entrepreneur and on to his role as Chief Risk Officer at Salient Partners and the birth of Epsilon Theory. The two discuss the importance and power of narratives in financial markets, the ways in which spending time surrounded by nature can help improve investment returns and the reason “why” is the most important question to ask. Filmed on July 12th, 2018.</p>
 //                      </div>
 //                  </a>
 //              </div>
@@ -139,22 +119,12 @@
 //                          <img src="http://via.placeholder.com/400x225" />
 //                      </div>
 //                      <div class="video-card__meta">
-//                          <div class="columns is-mobile">
-//                              <div class="column is-6 has-text-left">
-//                                  <p class="video-card__date is-size-7">14 APR 2018</p>
-//                              </div>
-//                              <div class="column is-6 has-text-right">
-//                                  <p class="video-card__length is-size-7">23:30</p>
-//                              </div>
+//                          <div class="video-card__meta--columns">
+//                              <div class="video-card__date is-size-7 is-pulled-left">14 APR 2018</div>
+//                              <div class="video-card__length is-size-7 is-pulled-right">23:30</div>
 //                          </div>
-//                          <div class="columns is-multiline has-text-left">
-//                              <div class="column is-12">
-//                                  <h2 class="video-card__title is-size-5">CHINA TRADE TENSIONS AND DIAMONDS</h2>
-//                              </div>
-//                              <div class="column is-12">
-//                                  <p class="video-card__description">Why will rising concerns about China’s trade-related retaliation lead diamonds to become clearer? Justine, Roger and Alex discuss. Filmed on July 16, 2018.</p>
-//                              </div>
-//                          </div>
+//                          <h2 class="video-card__title is-size-5">CHINA TRADE TENSIONS AND DIAMONDS</h2>
+//                          <p class="video-card__description">Why will rising concerns about China’s trade-related retaliation lead diamonds to become clearer? Justine, Roger and Alex discuss. Filmed on July 16, 2018.</p>
 //                      </div>
 //                  </a>
 //              </div>
@@ -189,6 +159,10 @@
     .video-card__meta {
         padding: $baseline / 2;
         padding-top: 0;
+        text-align: left;
+    }
+    .video-card__meta--columns {
+        overflow: hidden;
     }
     .video-card__date {
 
@@ -198,11 +172,12 @@
     }
     .video-card__date, .video-card__length {
         color: #707173;
+        margin-top: $baseline / 2;
     }
     .video-card__title {
-
+        margin-top: $baseline / 2;
     }
     .video-card__description {
-
+        margin-bottom: 0;
     }
 }
