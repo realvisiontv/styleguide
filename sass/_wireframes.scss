@@ -1,0 +1,295 @@
+// Poster Card
+//
+// A poster image link (3:4 ratio) for Shows
+//
+// Default - default
+// .has-badge - Variant with text badge overlay on image
+//
+// markup:
+//  <div class="poster prospect-component">
+//      <div class="columns is-tablet is-multiline">
+//          <div class="column is-6-tablet is-3-desktop has-text-centered">
+//              <div class="poster__content {$modifiers}">
+//                  <a href="#">
+//                      <span class="poster__badge">NEW EPISODES</span>
+//                      <img class="poster__image" src="http://via.placeholder.com/300x400" />
+//                  </a>
+//              </div>
+//          </div>
+//          <div class="column is-6-tablet is-3-desktop has-text-centered">
+//              <div class="poster__content {$modifiers}">
+//                  <a href="#">
+//                      <span class="poster__badge">NEW EPISODES</span>
+//                      <img class="poster__image" src="http://via.placeholder.com/300x400" />
+//                  </a>
+//              </div>
+//          </div>
+//          <div class="column is-6-tablet is-3-desktop has-text-centered">
+//              <div class="poster__content {$modifiers}">
+//                  <a href="#">
+//                      <span class="poster__badge">NEW EPISODES</span>
+//                      <img class="poster__image" src="http://via.placeholder.com/300x400" />
+//                  </a>
+//              </div>
+//          </div>
+//          <div class="column is-6-tablet is-3-desktop has-text-centered">
+//              <div class="poster__content {$modifiers}">
+//                  <a href="#">
+//                      <span class="poster__badge">NEW EPISODES</span>
+//                      <img class="poster__image" src="http://via.placeholder.com/300x400" />
+//                  </a>
+//              </div>
+//          </div>
+//      </div>
+//  </div>
+//
+// Styleguide 9.1
+.poster {
+    .poster__content {
+        position: relative;
+        display: inline-block;
+
+        &.has-badge {
+            .poster__badge {
+                display: block;
+            }
+        }
+    }
+    .poster__badge {
+        font-family: 'Proxima Nova';
+        font-weight: bold;
+        font-size: $baseline / 2;
+        padding: 10px;
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: black;
+        color: white;
+    }
+}
+
+// Video Card
+//
+// A card containing a description, meta data, and image (16:9 ratio) for videos
+//
+// Default - default
+//
+// markup:
+//  <div class="columns is-tablet is-multiline">
+//      <div class="column is-4-tablet has-text-centered">
+//          <div class="video-card prospect-component">
+//              <div class="video-card__content">
+//                  <a href="#">
+//                      <div class="video-card__image">
+//                          <img src="http://via.placeholder.com/400x225" />
+//                          <span class="video-card__play-icon"><i class="fa fa-play" aria-hidden="true"></i></span>
+//                      </div>
+//                      <div class="video-card__meta">
+//                          <div class="video-card__meta--columns">
+//                              <div class="video-card__date is-size-7 is-pulled-left">14 APR 2018</div>
+//                              <div class="video-card__length is-size-7 is-pulled-right">23:30</div>
+//                          </div>
+//                          <h2 class="video-card__title is-size-5">HOME WRECKER</h2>
+//                          <p class="video-card__description">Technical analyst Mark Newton of Newton Advisors says more pain is on the horizon for the U.S. housing market. In this interview with Brian Price, Mark explains why this development will drive shares of the world’s largest flooring company sharply lower. Filmed on July 31, 2018.</p>
+//                      </div>
+//                  </a>
+//              </div>
+//          </div>
+//      </div>
+//      <div class="column is-4-tablet has-text-centered">
+//          <div class="video-card prospect-component">
+//              <div class="video-card__content">
+//                  <a href="#">
+//                      <div class="video-card__image">
+//                          <img src="http://via.placeholder.com/400x225" />
+//                          <span class="video-card__play-icon"><i class="fa fa-play" aria-hidden="true"></i></span>
+//                      </div>
+//                      <div class="video-card__meta">
+//                          <div class="video-card__meta--columns">
+//                              <div class="video-card__date is-size-7 is-pulled-left">14 APR 2018</div>
+//                              <div class="video-card__length is-size-7 is-pulled-right">23:30</div>
+//                          </div>
+//                          <h2 class="video-card__title is-size-5">GRANT WILLIAMS IN CONVERSATION WITH BEN HUNT</h2>
+//                          <p class="video-card__description">Grant travels to rural Connecticut to spend a day with Dr. Ben Hunt, author of Epsilon Theory. In a wide-ranging discussion, Ben shares his journey from tenured academic to software entrepreneur and on to his role as Chief Risk Officer at Salient Partners and the birth of Epsilon Theory. The two discuss the importance and power of narratives in financial markets, the ways in which spending time surrounded by nature can help improve investment returns and the reason “why” is the most important question to ask. Filmed on July 12th, 2018.</p>
+//                      </div>
+//                  </a>
+//              </div>
+//          </div>
+//      </div>
+//      <div class="column is-4-tablet has-text-centered">
+//          <div class="video-card prospect-component">
+//              <div class="video-card__content">
+//                  <a href="#">
+//                      <div class="video-card__image">
+//                          <img src="http://via.placeholder.com/400x225" />
+//                          <span class="video-card__play-icon"><i class="fa fa-play" aria-hidden="true"></i></span>
+//                      </div>
+//                      <div class="video-card__meta">
+//                          <div class="video-card__meta--columns">
+//                              <div class="video-card__date is-size-7 is-pulled-left">14 APR 2018</div>
+//                              <div class="video-card__length is-size-7 is-pulled-right">23:30</div>
+//                          </div>
+//                          <h2 class="video-card__title is-size-5">CHINA TRADE TENSIONS AND DIAMONDS</h2>
+//                          <p class="video-card__description">Why will rising concerns about China’s trade-related retaliation lead diamonds to become clearer? Justine, Roger and Alex discuss. Filmed on July 16, 2018.</p>
+//                      </div>
+//                  </a>
+//              </div>
+//          </div>
+//      </div>
+//  </div>
+//
+// Styleguide 9.2
+.video-card {
+    a {
+        text-decoration: none;
+        color: $text;
+    }
+    .video-card__image {
+        height: 0;
+        padding-bottom: 56.25%;
+        position: relative;
+        display: block;
+
+        img {
+            height: 100%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: none;
+            width: auto;
+        }
+    }
+    .video-card__meta {
+        padding: $baseline / 2;
+        padding-top: 0;
+        text-align: left;
+    }
+    .video-card__meta--columns {
+        overflow: hidden;
+    }
+    .video-card__date, .video-card__length {
+        color: #707173;
+        margin-top: $baseline / 2;
+    }
+    .video-card__title {
+        margin-top: $baseline / 2;
+    }
+    .video-card__description {
+        margin-bottom: 0;
+    }
+    .video-card__play-icon {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        color: white;
+        background: $text;
+        padding: 4px 10px 2px;
+    }
+}
+
+// Collection Card
+//
+// A card containing a title, subtitle, and image (16:9 ratio) for collections
+//
+// Default - default
+//
+// markup:
+//  <div class="columns is-tablet is-multiline">
+//      <div class="column is-4-desktop has-text-centered">
+//          <div class="collection-card prospect-component">
+//              <div class="collection-card__content {$modifiers}">
+//                  <a href="#">
+//                      <div class="collection-card__image">
+//                          <img src="http://via.placeholder.com/400x225" />
+//                      </div>
+//                      <div class="collection-card__copy">
+//                          <h2 class="collection-card__title is-size-3-mobile is-size-4-tablet">Milton's Picks</h2>
+//                          <p class="collection-card__subtitle is-size-6-mobile is-size-7-tablet">Check out some content hand-picked by Milton himself.</p>
+//                      </div>
+//                  </a>
+//              </div>
+//          </div>
+//      </div>
+//      <div class="column is-4-desktop has-text-centered">
+//          <div class="collection-card prospect-component">
+//              <div class="collection-card__content {$modifiers}">
+//                  <a href="#">
+//                      <div class="collection-card__image">
+//                          <img src="http://via.placeholder.com/400x225" />
+//                      </div>
+//                      <div class="collection-card__copy">
+//                          <h2 class="collection-card__title is-size-3-mobile is-size-4-tablet">Milton's Picks</h2>
+//                          <p class="collection-card__subtitle is-size-6-mobile is-size-7-tablet">Check out some content hand-picked by Milton himself.</p>
+//                      </div>
+//                  </a>
+//              </div>
+//          </div>
+//      </div>
+//      <div class="column is-4-desktop has-text-centered">
+//          <div class="collection-card prospect-component">
+//              <div class="collection-card__content {$modifiers}">
+//                  <a href="#">
+//                      <div class="collection-card__image">
+//                          <img src="http://via.placeholder.com/400x225" />
+//                      </div>
+//                      <div class="collection-card__copy">
+//                          <h2 class="collection-card__title is-size-3-mobile is-size-4-tablet">Milton's Picks</h2>
+//                          <p class="collection-card__subtitle is-size-6-mobile is-size-7-tablet">Check out some content hand-picked by Milton himself.</p>
+//                      </div>
+//                  </a>
+//              </div>
+//          </div>
+//      </div>
+//  </div>
+//
+// Styleguide 9.3
+.collection-card {
+    a {
+        text-decoration: none;
+        color: white;
+    }
+    .collection-card__image {
+        height: 0;
+        padding-bottom: 56.25%;
+        position: relative;
+        display: block;
+
+        img {
+            height: 100%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: none;
+            width: auto;
+        }
+
+        &::before {
+            display: block;
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: rgba(0,0,0,.3);
+        }
+    }
+    .collection-card__content {
+        position: relative;
+    }
+    .collection-card__copy {
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        padding: 0 $baseline / 3;
+    }
+    .collection-card__title {
+        text-transform: uppercase;
+    }
+    .collection-card__subtitle {
+        margin: 0;
+    }
+}
