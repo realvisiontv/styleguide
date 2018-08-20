@@ -293,3 +293,87 @@
         margin: 0;
     }
 }
+
+// Video Listing Hero
+//
+// A hero containing show details and a show episode (video card)
+//
+// Default - default
+//
+// markup:
+//  <div class="video-listing-hero">
+//      <div class="columns is-tablet is-multiline">
+//          <div class="column is-6">
+//              <div class="video-listing-hero__details">
+//                  <div class="video-listing-hero__details--content">
+//                      <h1>SHOW TITLE</h1>
+//                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.</p>
+//                  </div>
+//              </div>
+//          </div>
+//          <div class="column is-6">
+//              <div class="video-listing-hero__episode">
+//                  <h2>Latest Episode</h2>
+//                  <div class="video-card prospect-component">
+//                      <div class="video-card__content">
+//                          <a href="#">
+//                              <div class="video-card__image">
+//                                  <img src="http://via.placeholder.com/400x225" />
+//                                  <span class="video-card__play-icon"><i class="fa fa-play" aria-hidden="true"></i></span>
+//                              </div>
+//                              <div class="video-card__meta">
+//                                  <div class="video-card__meta--columns">
+//                                      <div class="video-card__date is-size-7 is-pulled-left">14 APR 2018</div>
+//                                      <div class="video-card__length is-size-7 is-pulled-right">23:30</div>
+//                                  </div>
+//                                  <h2 class="video-card__title is-size-5">CHINA TRADE TENSIONS AND DIAMONDS</h2>
+//                                  <p class="video-card__description">Why will rising concerns about China’s trade-related retaliation lead diamonds to become clearer? Justine, Roger and Alex discuss. Filmed on July 16, 2018.</p>
+//                              </div>
+//                          </a>
+//                      </div>
+//                  </div>
+//              </div>
+//          </div>
+//      </div>
+//  </div>
+//
+// Styleguide 9.4
+.video-listing-hero {
+    padding: $baseline;
+    background: grey;
+
+    .video-card__meta {
+        background: #a5a5a5;
+    }
+
+    .video-listing-hero__details {
+        position: relative;
+        height: 100%;
+    }
+    .video-listing-hero__details--content {
+        position: relative;
+
+        h1 {
+            display: inline-block;
+            padding-left: 5px;
+            color: white;
+            position: relative;
+            z-index: 0;
+
+            &:before {
+                content: "";
+                position: absolute;
+                width: 95%;
+                height: 100%;
+                background: $color-dark-gray;
+                left: 0;
+                z-index: -1;
+            }
+        }
+
+        @include tablet {
+            position: absolute;
+            bottom: 0;
+        }
+    }
+}
