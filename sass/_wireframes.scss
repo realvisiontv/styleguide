@@ -393,15 +393,11 @@
 //      <div class="collection-hero__image">
 //          <img src="http://via.placeholder.com/1200x675" />
 //      </div>
-//      <div class="columns is-tablet is-multiline">
-//          <div class="column is-6">
-//              <div class="collection-hero__details">
-//                  <div class="collection-hero__details--content">
-//                      <h1>Collection Title</h1>
-//                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor.</p>
-//                      <a href="#" class="button is-primary">HERO CTA</a>
-//                  </div>
-//              </div>
+//      <div class="collection-hero__details">
+//          <div class="collection-hero__details--content">
+//              <h1>Collection Title</h1>
+//              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor.</p>
+//              <a href="#" class="button is-primary">HERO CTA</a>
 //          </div>
 //      </div>
 //  </div>
@@ -430,6 +426,11 @@
     .collection-hero__details {
         position: relative;
         height: 100%;
+        width: 100%;
+
+        @include tablet {
+            width: 50%;
+        }
     }
     .collection-hero__details--content {
         position: relative;
