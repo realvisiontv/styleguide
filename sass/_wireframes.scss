@@ -298,25 +298,25 @@
     }
 }
 
-// Video Listing Hero
+// Show Hero
 //
 // A hero containing show details and a show episode (video card)
 //
 // Default - default
 //
 // markup:
-//  <div class="video-listing-hero">
+//  <div class="show-hero">
 //      <div class="columns is-tablet is-multiline">
 //          <div class="column is-6">
-//              <div class="video-listing-hero__details">
-//                  <div class="video-listing-hero__details--content">
+//              <div class="show-hero__details">
+//                  <div class="show-hero__details--content">
 //                      <h1>SHOW TITLE</h1>
 //                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.</p>
 //                  </div>
 //              </div>
 //          </div>
 //          <div class="column is-6">
-//              <div class="video-listing-hero__episode">
+//              <div class="show-hero__episode">
 //                  <h2>Latest Episode</h2>
 //                  <div class="video-card prospect-component">
 //                      <div class="video-card__content">
@@ -342,7 +342,7 @@
 //  </div>
 //
 // Styleguide 9.4
-.video-listing-hero {
+.show-hero {
     padding: $baseline;
     background: grey;
 
@@ -350,11 +350,11 @@
         background: #a5a5a5;
     }
 
-    .video-listing-hero__details {
+    .show-hero__details {
         position: relative;
         height: 100%;
     }
-    .video-listing-hero__details--content {
+    .show-hero__details--content {
         position: relative;
 
         h1 {
@@ -372,6 +372,102 @@
                 background: $color-dark-gray;
                 left: 0;
                 z-index: -1;
+            }
+        }
+
+        @include tablet {
+            position: absolute;
+            bottom: 0;
+        }
+    }
+}
+
+// Collection Hero
+//
+// A hero containing collection details and a CTA
+//
+// Default - default
+//
+// markup:
+//  <div class="collection-hero">
+//      <div class="collection-hero__image">
+//          <img src="http://via.placeholder.com/1200x675" />
+//      </div>
+//      <div class="columns is-tablet is-multiline">
+//          <div class="column is-6">
+//              <div class="collection-hero__details">
+//                  <div class="collection-hero__details--content">
+//                      <h1>Collection Title</h1>
+//                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor.</p>
+//                      <a href="#" class="button is-primary">HERO CTA</a>
+//                  </div>
+//              </div>
+//          </div>
+//      </div>
+//  </div>
+//
+// Styleguide 9.5
+.collection-hero {
+    padding: 0;
+    background: grey;
+
+    .collection-hero__image {
+        height: 0;
+        padding-bottom: 56.25%;
+        position: relative;
+        display: block;
+
+        img {
+            height: 100%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: none;
+            width: auto;
+        }
+    }
+
+    .collection-hero__details {
+        position: relative;
+        height: 100%;
+    }
+    .collection-hero__details--content {
+        position: relative;
+        padding: $baseline;
+
+        h1 {
+            display: inline-block;
+            padding-left: 5px;
+            color: white;
+            position: relative;
+            z-index: 0;
+
+            &:before {
+                content: "";
+                position: absolute;
+                width: 95%;
+                height: 100%;
+                background: $color-dark-gray;
+                left: 0;
+                z-index: -1;
+            }
+        }
+
+        .button.is-primary {
+            border-radius: 5px;
+            padding: .5rem 1rem;
+            transition: all 100ms ease-in-out;
+            font-weight: 700;
+            background: #09c9c2;
+            color: black;
+            border: 2px solid transparent;
+            box-shadow: 0 4px #079893;
+            text-decoration: none !important;
+
+            &:hover {
+                background: #0ae1da;
+                box-shadow: 0 2px #079893;
+                transform: translateY(2px);
             }
         }
 
