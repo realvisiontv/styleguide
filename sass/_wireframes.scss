@@ -1,4 +1,4 @@
-// Poster Card
+// Show Poster Card
 //
 // A poster image link (3:4 ratio) for Shows
 //
@@ -6,37 +6,37 @@
 // .has-badge - Variant with text badge overlay on image
 //
 // markup:
-//  <div class="poster prospect-component">
+//  <div class="show-poster-card prospect-component">
 //      <div class="columns is-tablet is-multiline">
 //          <div class="column is-6-tablet is-3-desktop has-text-centered">
-//              <div class="poster__content {$modifiers}">
+//              <div class="show-poster-card__content {$modifiers}">
 //                  <a href="#">
-//                      <span class="poster__badge">NEW EPISODES</span>
-//                      <img class="poster__image" src="http://via.placeholder.com/300x400" />
+//                      <span class="show-poster-card__badge">NEW EPISODES</span>
+//                      <img class="show-poster-card__image" src="http://via.placeholder.com/300x400" />
 //                  </a>
 //              </div>
 //          </div>
 //          <div class="column is-6-tablet is-3-desktop has-text-centered">
-//              <div class="poster__content {$modifiers}">
+//              <div class="show-poster-card__content {$modifiers}">
 //                  <a href="#">
-//                      <span class="poster__badge">NEW EPISODES</span>
-//                      <img class="poster__image" src="http://via.placeholder.com/300x400" />
+//                      <span class="show-poster-card__badge">NEW EPISODES</span>
+//                      <img class="show-poster-card__image" src="http://via.placeholder.com/300x400" />
 //                  </a>
 //              </div>
 //          </div>
 //          <div class="column is-6-tablet is-3-desktop has-text-centered">
-//              <div class="poster__content {$modifiers}">
+//              <div class="show-poster-card__content {$modifiers}">
 //                  <a href="#">
-//                      <span class="poster__badge">NEW EPISODES</span>
-//                      <img class="poster__image" src="http://via.placeholder.com/300x400" />
+//                      <span class="show-poster-card__badge">NEW EPISODES</span>
+//                      <img class="show-poster-card__image" src="http://via.placeholder.com/300x400" />
 //                  </a>
 //              </div>
 //          </div>
 //          <div class="column is-6-tablet is-3-desktop has-text-centered">
-//              <div class="poster__content {$modifiers}">
+//              <div class="show-poster-card__content {$modifiers}">
 //                  <a href="#">
-//                      <span class="poster__badge">NEW EPISODES</span>
-//                      <img class="poster__image" src="http://via.placeholder.com/300x400" />
+//                      <span class="show-poster-card__badge">NEW EPISODES</span>
+//                      <img class="show-poster-card__image" src="http://via.placeholder.com/300x400" />
 //                  </a>
 //              </div>
 //          </div>
@@ -44,21 +44,21 @@
 //  </div>
 //
 // Styleguide 9.1
-.poster {
-    .poster__content {
+.show-poster-card {
+    .show-poster-card__content {
         position: relative;
         display: inline-block;
 
         &.has-badge {
-            .poster__badge {
+            .show-poster-card__badge {
                 display: block;
             }
         }
     }
-    .poster__image {
+    .show-poster-card__image {
         display: block;
     }
-    .poster__badge {
+    .show-poster-card__badge {
         font-family: 'Proxima Nova';
         font-weight: bold;
         font-size: $baseline / 2;
@@ -74,7 +74,7 @@
 
 // Video Card
 //
-// A card containing a description, meta data, and image (16:9 ratio) for videos
+// A card containing a description, meta data, and image (16:9 ratio) for Videos
 //
 // Default - default
 //
@@ -192,54 +192,54 @@
     }
 }
 
-// Collection Card
+// Playlist Card
 //
-// A card containing a title, subtitle, and image (16:9 ratio) for collections
+// A card containing a title, subtitle, and image (16:9 ratio) for Playlist collections
 //
 // Default - default
 //
 // markup:
 //  <div class="columns is-tablet is-multiline">
 //      <div class="column is-4-desktop has-text-centered">
-//          <div class="collection-card prospect-component">
-//              <div class="collection-card__content {$modifiers}">
+//          <div class="playlist-card prospect-component">
+//              <div class="playlist-card__content {$modifiers}">
 //                  <a href="#">
-//                      <div class="collection-card__image">
+//                      <div class="playlist-card__image">
 //                          <img src="http://via.placeholder.com/400x225" />
 //                      </div>
-//                      <div class="collection-card__copy">
-//                          <h2 class="collection-card__title is-size-3-mobile is-size-4-tablet">Milton's Picks</h2>
-//                          <p class="collection-card__subtitle is-size-6-mobile is-size-7-tablet">Check out some content hand-picked by Milton himself.</p>
+//                      <div class="playlist-card__copy">
+//                          <h2 class="playlist-card__title is-size-3-mobile is-size-4-tablet">Milton's Picks</h2>
+//                          <p class="playlist-card__subtitle is-size-6-mobile is-size-7-tablet">Check out some content hand-picked by Milton himself.</p>
 //                      </div>
 //                  </a>
 //              </div>
 //          </div>
 //      </div>
 //      <div class="column is-4-desktop has-text-centered">
-//          <div class="collection-card prospect-component">
-//              <div class="collection-card__content {$modifiers}">
+//          <div class="playlist-card prospect-component">
+//              <div class="playlist-card__content {$modifiers}">
 //                  <a href="#">
-//                      <div class="collection-card__image">
+//                      <div class="playlist-card__image">
 //                          <img src="http://via.placeholder.com/400x225" />
 //                      </div>
-//                      <div class="collection-card__copy">
-//                          <h2 class="collection-card__title is-size-3-mobile is-size-4-tablet">Milton's Picks</h2>
-//                          <p class="collection-card__subtitle is-size-6-mobile is-size-7-tablet">Check out some content hand-picked by Milton himself.</p>
+//                      <div class="playlist-card__copy">
+//                          <h2 class="playlist-card__title is-size-3-mobile is-size-4-tablet">Milton's Picks</h2>
+//                          <p class="playlist-card__subtitle is-size-6-mobile is-size-7-tablet">Check out some content hand-picked by Milton himself.</p>
 //                      </div>
 //                  </a>
 //              </div>
 //          </div>
 //      </div>
 //      <div class="column is-4-desktop has-text-centered">
-//          <div class="collection-card prospect-component">
-//              <div class="collection-card__content {$modifiers}">
+//          <div class="playlist-card prospect-component">
+//              <div class="playlist-card__content {$modifiers}">
 //                  <a href="#">
-//                      <div class="collection-card__image">
+//                      <div class="playlist-card__image">
 //                          <img src="http://via.placeholder.com/400x225" />
 //                      </div>
-//                      <div class="collection-card__copy">
-//                          <h2 class="collection-card__title is-size-3-mobile is-size-4-tablet">Milton's Picks</h2>
-//                          <p class="collection-card__subtitle is-size-6-mobile is-size-7-tablet">Check out some content hand-picked by Milton himself.</p>
+//                      <div class="playlist-card__copy">
+//                          <h2 class="playlist-card__title is-size-3-mobile is-size-4-tablet">Milton's Picks</h2>
+//                          <p class="playlist-card__subtitle is-size-6-mobile is-size-7-tablet">Check out some content hand-picked by Milton himself.</p>
 //                      </div>
 //                  </a>
 //              </div>
@@ -248,12 +248,12 @@
 //  </div>
 //
 // Styleguide 9.3
-.collection-card {
+.playlist-card {
     a {
         text-decoration: none;
         color: white;
     }
-    .collection-card__image {
+    .playlist-card__image {
         height: 0;
         padding-bottom: 56.25%;
         position: relative;
@@ -278,10 +278,10 @@
             background: rgba(0,0,0,.3);
         }
     }
-    .collection-card__content {
+    .playlist-card__content {
         position: relative;
     }
-    .collection-card__copy {
+    .playlist-card__copy {
         width: 100%;
         position: absolute;
         top: 50%;
@@ -290,33 +290,33 @@
         z-index: 2;
         padding: 0 $baseline / 3;
     }
-    .collection-card__title {
+    .playlist-card__title {
         text-transform: uppercase;
     }
-    .collection-card__subtitle {
+    .playlist-card__subtitle {
         margin: 0;
     }
 }
 
-// Show Hero
+// Promoted Show Hero
 //
-// A hero containing show details and a show episode (video card)
+// A hero for promoting a single show containing show details and a show episode (video card)
 //
 // Default - default
 //
 // markup:
-//  <div class="show-hero">
+//  <div class="promoted-show-hero">
 //      <div class="columns is-tablet is-multiline">
 //          <div class="column is-6">
-//              <div class="show-hero__details">
-//                  <div class="show-hero__details--content">
+//              <div class="promoted-show-hero__details">
+//                  <div class="promoted-show-hero__details--content">
 //                      <h1>SHOW TITLE</h1>
 //                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.</p>
 //                  </div>
 //              </div>
 //          </div>
 //          <div class="column is-6">
-//              <div class="show-hero__episode">
+//              <div class="promoted-show-hero__episode">
 //                  <h2>Latest Episode</h2>
 //                  <div class="video-card prospect-component">
 //                      <div class="video-card__content">
@@ -342,7 +342,7 @@
 //  </div>
 //
 // Styleguide 9.4
-.show-hero {
+.promoted-show-hero {
     padding: $baseline;
     background: grey;
 
@@ -350,11 +350,11 @@
         background: #a5a5a5;
     }
 
-    .show-hero__details {
+    .promoted-show-hero__details {
         position: relative;
         height: 100%;
     }
-    .show-hero__details--content {
+    .promoted-show-hero__details--content {
         position: relative;
 
         h1 {
@@ -382,19 +382,19 @@
     }
 }
 
-// Collection Hero
+// Promoted Video Hero
 //
-// A hero containing collection details and a CTA
+// A hero for promoting a single video containing video details and CTAs
 //
 // Default - default
 //
 // markup:
-//  <div class="collection-hero">
-//      <div class="collection-hero__image">
+//  <div class="promoted-video-hero">
+//      <div class="promoted-video-hero__image">
 //          <img src="http://via.placeholder.com/1200x675" />
 //      </div>
-//      <div class="collection-hero__details">
-//          <div class="collection-hero__details--content">
+//      <div class="promoted-video-hero__details">
+//          <div class="promoted-video-hero__details--content">
 //              <h1>Collection Title</h1>
 //              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor.</p>
 //              <a href="#" class="button is-primary">HERO CTA</a>
@@ -403,11 +403,11 @@
 //  </div>
 //
 // Styleguide 9.5
-.collection-hero {
+.promoted-video-hero {
     padding: 0;
     background: grey;
 
-    .collection-hero__image {
+    .promoted-video-hero__image {
         height: 0;
         padding-bottom: 56.25%;
         position: relative;
@@ -423,7 +423,7 @@
         }
     }
 
-    .collection-hero__details {
+    .promoted-video-hero__details {
         position: relative;
         height: 100%;
         width: 100%;
@@ -432,7 +432,7 @@
             width: 50%;
         }
     }
-    .collection-hero__details--content {
+    .promoted-video-hero__details--content {
         position: relative;
         padding: $baseline;
 
