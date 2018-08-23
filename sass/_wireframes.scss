@@ -478,3 +478,129 @@
         }
     }
 }
+
+// Documentary Card
+//
+// A card containing a title, episode count, play icon, and image (16:9 ratio) for Documentary collections
+//
+// Default - default
+//
+// markup:
+// markup:
+//  <div class="columns is-tablet is-multiline">
+//      <div class="column is-6-tablet has-text-centered">
+//          <div class="documentary-card prospect-component">
+//              <div class="documentary-card__content">
+//                  <a href="#">
+//                      <div class="documentary-card__image">
+//                          <img src="http://via.placeholder.com/800x450" />
+//                      </div>
+//                      <div class="documentary-card__meta">
+//                          <h2 class="documentary-card__title is-size-4 is-marginless">A World on the Brink</h2>
+//                      </div>
+//                      <span class="documentary-card__play-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></span>
+//                      <span class="documentary-poster-card__badge">3 EPISODES</span>
+//                  </a>
+//              </div>
+//          </div>
+//      </div>
+//      <div class="column is-6-tablet has-text-centered">
+//          <div class="documentary-card prospect-component">
+//              <div class="documentary-card__content">
+//                  <a href="#">
+//                      <div class="documentary-card__image">
+//                          <img src="http://via.placeholder.com/800x450" />
+//                      </div>
+//                      <div class="documentary-card__meta">
+//                          <h2 class="documentary-card__title is-size-4 is-marginless">History of Gold with Grant Williams</h2>
+//                      </div>
+//                      <span class="documentary-card__play-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></span>
+//                      <span class="documentary-poster-card__badge">2 EPISODES</span>
+//                  </a>
+//              </div>
+//          </div>
+//      </div>
+//      <div class="column is-6-tablet has-text-centered">
+//          <div class="documentary-card prospect-component">
+//              <div class="documentary-card__content">
+//                  <a href="#">
+//                      <div class="documentary-card__image">
+//                          <img src="http://via.placeholder.com/800x450" />
+//                      </div>
+//                      <div class="documentary-card__meta">
+//                          <h2 class="documentary-card__title is-size-4 is-marginless">Charting Masterclasses with Peter Brandt</h2>
+//                      </div>
+//                      <span class="documentary-card__play-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></span>
+//                      <span class="documentary-poster-card__badge">5 EPISODES</span>
+//                  </a>
+//              </div>
+//          </div>
+//      </div>
+//      <div class="column is-6-tablet has-text-centered">
+//          <div class="documentary-card prospect-component">
+//              <div class="documentary-card__content">
+//                  <a href="#">
+//                      <div class="documentary-card__image">
+//                          <img src="http://via.placeholder.com/800x450" />
+//                      </div>
+//                      <div class="documentary-card__meta">
+//                          <h2 class="documentary-card__title is-size-4 is-marginless">Mental Game of Trading</h2>
+//                      </div>
+//                      <span class="documentary-card__play-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></span>
+//                      <span class="documentary-poster-card__badge">12 EPISODES</span>
+//                  </a>
+//              </div>
+//          </div>
+//      </div>
+//  </div>
+//
+// Styleguide 9.6
+.documentary-card {
+    position: relative;
+
+    a {
+        color: $text;
+    }
+
+    .documentary-card__image {
+        padding-bottom: 56.25%;
+        position: relative;
+
+        img {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .documentary-card__meta {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+    }
+
+    .documentary-card__play-icon {
+        position: absolute;
+        left: 50%;
+        top: 20%;
+        transform: translateX(-50%);
+
+        i {
+            font-size: 40px;
+        }
+    }
+
+    .documentary-poster-card__badge {
+        font-weight: bold;
+        font-size: $baseline / 2;
+        padding: 10px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: black;
+        color: white;
+    }
+}
