@@ -1026,11 +1026,8 @@
 //                  </div>
 //              </div>
 //          </div>
-//         <div class="column is-hidden-mobile search">
-//             <form method="GET" action="" class="search-form">
-//                 <input class="is-hidden-touch" size="1" type="text" name="parameters_query" value="" placeholder="Assets, topics..." />
-//                 <button type="submit" name="search"></button>
-//             </form>
+//         <div class="column is-hidden-mobile search is-narrow">
+//            <a href="#" class="search-icon"><i class="fa fa-search"></i></a>
 //         </div>
 //         <div class="column is-hidden-mobile is-narrow desktop-link" data-toggle="additional-navigation--account">
 //             <div class="dropdown is-right">
@@ -1140,5 +1137,11 @@
 
     .desktop-navigation .top-navigation {
         align-items: center;
+    }
+
+    .search-icon {
+        margin-top: 10px;
+        display: block;
+        color: $text;
     }
 }
