@@ -1013,15 +1013,15 @@
 //                  <div class="dropdown-content">
 //                      <a href="#" class="dropdown-item">
 //                          Television
-//                          <span class="product-badge is-pulled-right">Subscribed</span>
+//                          <span class="product-badge product-badge--subscribed is-pulled-right">Subscribed</span>
 //                      </a>
 //                      <a href="#" class="dropdown-item">
 //                          Think Tank
-//                          <span class="product-badge is-pulled-right">Subscribed</span>
+//                          <span class="product-badge product-badge--subscribed is-pulled-right">Subscribed</span>
 //                      </a>
 //                      <a href="#" class="dropdown-item">
 //                          Macro Insiders
-//                          <span class="product-badge is-pulled-right">Find out more</span>
+//                          <span class="product-badge product-badge--unsubscribed is-pulled-right">Find out more <i class="fa fa-caret-right"></i></span>
 //                      </a>
 //                  </div>
 //              </div>
@@ -1088,15 +1088,28 @@
 
     .dropdown-content {
         background: white;
+        padding: 0;
 
         a {
             color: $text;
-            padding-right: 1rem;
+            padding: .75rem 1rem;
 
             .product-badge {
                 padding: 0 .5rem;
                 font-size: .75rem;
+            }
+
+            .product-badge--subscribed {
                 background: $brand;
+            }
+
+            &:hover {
+                background: #232323;
+                color: white;
+
+                .product-badge--subscribed {
+                    color: $text;
+                }
             }
         }
     }
