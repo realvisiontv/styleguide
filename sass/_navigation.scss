@@ -1058,8 +1058,28 @@
         border: none;
     }
 
-    li a {
-        color: $text;
+    li {
+        padding: 0;
+        border: none;
+
+        &.is-active {
+
+            a {
+                color: white;
+                background: #232323;
+                font-weight: bold;
+            }
+        }
+
+        a {
+            padding: 10px;
+            color: $text;
+
+            &:hover {
+                color: white;
+                background: #232323;
+            }
+        }
     }
 
     .dropdown-trigger svg path {
@@ -1116,5 +1136,9 @@
 
     .dropdown-menu {
         min-width: 20rem;
+    }
+
+    .desktop-navigation .top-navigation {
+        align-items: center;
     }
 }
