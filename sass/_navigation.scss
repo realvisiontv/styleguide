@@ -224,7 +224,7 @@
                 display: inline;
                 padding: 0;
             }
-    
+
             &:hover {
                 color: $brand;
             }
@@ -262,8 +262,8 @@
                 display: block;
 
                 a {
-                    text-decoration: none; 
-                    
+                    text-decoration: none;
+
                     &.is-active {
                         color: $brand;
                     }
@@ -305,7 +305,7 @@
     .page-navigation-container {
         display: none;
         height: 100%;
-        
+
         &.show {
             display: flex;
             flex-direction: column;
@@ -344,18 +344,18 @@
             display: inline-block;
             padding: $baseline / 2 $baseline / 4;
             margin-right: 2em;
-            
+
             &.is-active {
                 color: $brand;
                 text-decoration: underline;
                 text-decoration-color: rgba($brand, 0.5);
             }
         }
-    
+
         &.open {
             display: block;
         }
-    
+
         &.right {
             text-align: right;
             li a{
@@ -363,7 +363,7 @@
                 margin-left: 2em;
             }
         }
-    
+
         &.center {
             text-align: center;
             li a {
@@ -372,7 +372,7 @@
             }
         }
     }
-    
+
     .dropdown-content {
         background-color: #404040;
         box-shadow: 0 0px 30px rgba(0, 0, 0, 0.5);
@@ -666,7 +666,7 @@
                 font-weight: 800;
                 text-transform: uppercase;
             }
-    
+
             &:hover {
                 color: $color-red-ribbon;
             }
@@ -715,8 +715,8 @@
                 display: block;
 
                 a {
-                    text-decoration: none; 
-                    
+                    text-decoration: none;
+
                     &.is-active {
                         color: $brand;
                     }
@@ -763,7 +763,7 @@
     .page-navigation-container {
         display: none;
         height: 100%;
-        
+
         &.show {
             display: flex;
             flex-direction: column;
@@ -1010,18 +1010,36 @@
 //                  <a href="#" aria-haspopup="true" aria-controls="dropdown-menu">Your subscriptions <svg viewBox="0 0 767.5 1024" height="1024" width="767.5" xmlns="http://www.w3.org/2000/svg" class="icon_down_arrow"><path d="M0 384l383.75 383.75L767.5 384H0z" class="icon_down_arrow--arrow" /></svg></a>
 //              </div>
 //              <div class="dropdown-menu" id="dropdown-menu" role="menu">
-//                  <div class="dropdown-content">
+//                  <div class="dropdown-content dropdown-content--subscriptions">
 //                      <a href="#" class="dropdown-item">
-//                          Television
-//                          <span class="product-badge product-badge--subscribed is-pulled-right">Subscribed</span>
+//                          <div class="columns">
+//                              <div class="column">
+//                                  Television
+//                              </div>
+//                              <div class="column is-narrow">
+//                                  <span class="product-badge product-badge--subscribed is-pulled-right">Subscribed</span>
+//                              </div>
+//                          </div>
 //                      </a>
 //                      <a href="#" class="dropdown-item">
-//                          Think Tank
-//                          <span class="product-badge product-badge--subscribed is-pulled-right">Subscribed</span>
+//                          <div class="columns">
+//                              <div class="column">
+//                                  Think Tank
+//                              </div>
+//                              <div class="column is-narrow">
+//                                  <span class="product-badge product-badge--subscribed is-pulled-right">Subscribed</span>
+//                              </div>
+//                          </div>
 //                      </a>
 //                      <a href="#" class="dropdown-item">
-//                          Macro Insiders
-//                          <span class="product-badge product-badge--unsubscribed is-pulled-right">Find out more <i class="fa fa-caret-right"></i></span>
+//                          <div class="columns">
+//                              <div class="column">
+//                                  Macro Insiders
+//                              </div>
+//                              <div class="column is-narrow">
+//                                  <span class="product-badge product-badge--unsubscribed is-pulled-right">Find out more <i class="fa fa-caret-right"></i></span>
+//                              </div>
+//                          </div>
 //                      </a>
 //                  </div>
 //              </div>
@@ -1094,6 +1112,7 @@
 .navigation--global {
     color: $text;
     background: transparent;
+    z-index: 10;
 
     > .columns {
         border: none;
@@ -1121,6 +1140,10 @@
                 background: #232323;
             }
         }
+    }
+
+    .hamburger-navigation {
+        background: white;
     }
 
     .dropdown-trigger svg path {
@@ -1158,6 +1181,12 @@
             .product-badge {
                 padding: 0 .5rem;
                 font-size: .75rem;
+
+                i {
+                    font-size: 18px;
+                    vertical-align: middle;
+                    margin-left: 3px;
+                }
             }
 
             .product-badge--subscribed {
@@ -1175,8 +1204,25 @@
         }
     }
 
+    .dropdown-content--subscriptions {
+        .column {
+            padding-bottom: .75rem;
+        }
+    }
+
     .dropdown-menu {
-        min-width: 20rem;
+        left: auto;
+        right: 0;
+    }
+
+    .dropdown-content {
+        .page-navigation {
+            margin-left: 0;
+        }
+        li {
+            display: block;
+            margin: 0;
+        }
     }
 
     .desktop-navigation .top-navigation {
