@@ -1011,36 +1011,44 @@
 //              </div>
 //              <div class="dropdown-menu" id="dropdown-menu" role="menu">
 //                  <div class="dropdown-content dropdown-content--subscriptions">
-//                      <a href="#" class="dropdown-item">
-//                          <div class="columns">
-//                              <div class="column">
-//                                  Television
-//                              </div>
-//                              <div class="column is-narrow">
-//                                  <span class="product-badge product-badge--subscribed is-pulled-right">Subscribed</span>
-//                              </div>
-//                          </div>
-//                      </a>
-//                      <a href="#" class="dropdown-item">
-//                          <div class="columns">
-//                              <div class="column">
-//                                  Think Tank
-//                              </div>
-//                              <div class="column is-narrow">
-//                                  <span class="product-badge product-badge--subscribed is-pulled-right">Subscribed</span>
-//                              </div>
-//                          </div>
-//                      </a>
-//                      <a href="#" class="dropdown-item">
-//                          <div class="columns">
-//                              <div class="column">
-//                                  Macro Insiders
-//                              </div>
-//                              <div class="column is-narrow">
-//                                  <span class="product-badge product-badge--unsubscribed is-pulled-right">Find out more <i class="fa fa-caret-right"></i></span>
-//                              </div>
-//                          </div>
-//                      </a>
+//                      <ul>
+//                        <li>
+//                            <a href="#" class="dropdown-item">
+//                                <div class="columns">
+//                                    <div class="column">
+//                                        Television
+//                                    </div>
+//                                    <div class="column is-narrow">
+//                                        <span class="product-badge product-badge--subscribed">Subscribed</span>
+//                                    </div>
+//                                </div>
+//                            </a>
+//                        </li>
+//                        <li>
+//                            <a href="#" class="dropdown-item">
+//                                <div class="columns">
+//                                    <div class="column">
+//                                        Think Tank
+//                                    </div>
+//                                    <div class="column is-narrow">
+//                                        <span class="product-badge product-badge--subscribed">Subscribed</span>
+//                                    </div>
+//                                </div>
+//                            </a>
+//                        </li>
+//                        <li>
+//                            <a href="#" class="dropdown-item">
+//                                <div class="columns">
+//                                    <div class="column">
+//                                        Macro Insiders
+//                                    </div>
+//                                    <div class="column is-narrow">
+//                                        <span class="product-badge product-badge--unsubscribed">Find out more <i class="fa fa-caret-right"></i></span>
+//                                    </div>
+//                                </div>
+//                            </a>
+//                        </li>
+//                    </ul>
 //                  </div>
 //              </div>
 //          </div>
@@ -1207,6 +1215,10 @@
     .dropdown-content--subscriptions {
         .column {
             padding-bottom: .75rem;
+        }
+
+        ul {
+            margin-left: 0;
         }
     }
 
