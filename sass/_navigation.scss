@@ -409,9 +409,9 @@
 // Navigation (pre-paywall)
 //
 // Best previewed in fullscreen mode. Dropdown controls require javascript implementation.
-// 
+//
 // default - Default
-// 
+//
 // markup:
 // <div class="container is-paddingless navigation-pre">
 //     <div class="columns is-mobile">
@@ -502,7 +502,7 @@
 //         </ul>
 //     </div>
 // </div>
-// 
+//
 // Styleguide 7.2
 .navigation-pre {
     background: $color-dark-gray;
@@ -1142,6 +1142,7 @@
         a {
             padding: 10px;
             color: $text;
+            font-size: 1rem;
 
             &:hover {
                 color: white;
@@ -1186,33 +1187,15 @@
             color: $text;
             padding: .75rem 1rem;
 
-            .product-badge {
-                padding: 0 .5rem;
-                font-size: .75rem;
-
-                i {
-                    font-size: 18px;
-                    vertical-align: middle;
-                    margin-left: 3px;
-                }
-            }
-
-            .product-badge--subscribed {
-                background: $brand;
-            }
-
             &:hover {
                 background: #232323;
                 color: white;
-
-                .product-badge--subscribed {
-                    color: $text;
-                }
             }
         }
     }
 
     .dropdown-content--subscriptions {
+        font-size: 1rem;
         .column {
             padding-bottom: .75rem;
         }
@@ -1220,6 +1203,22 @@
         ul {
             margin-left: 0;
         }
+    }
+
+    .product-badge {
+        padding: 0 .5rem;
+        font-size: .75rem;
+        color: $text;
+
+        i {
+            font-size: 18px;
+            vertical-align: middle;
+            margin-left: 3px;
+        }
+    }
+
+    .product-badge--subscribed {
+        background: $brand;
     }
 
     .dropdown-menu {
