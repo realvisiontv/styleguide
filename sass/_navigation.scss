@@ -1118,9 +1118,13 @@
 //
 // Styleguide 7.7
 .navigation--global {
-    color: $text;
-    background: transparent;
+    color: white;
+    background: rgba(35, 35, 35, 0.65);
     z-index: 10;
+
+    @include tablet {
+        background: transparent;
+    }
 
     > .columns {
         border: none;
@@ -1135,14 +1139,15 @@
             a {
                 color: white;
                 background: #232323;
-                font-weight: bold;
             }
         }
 
         a {
+            transition: all 150ms ease-in-out;
             padding: 10px;
-            color: $text;
+            color: white;
             font-size: 1rem;
+            font-weight: bold;
 
             &:hover {
                 color: white;
@@ -1153,6 +1158,24 @@
 
     .hamburger-navigation {
         background: white;
+
+        li {
+            &.is-active {
+                a {
+                    color: white;
+                    background: #232323;
+                }
+            }
+            a {
+                transition: all 150ms ease-in-out;
+                color: $text;
+
+                &:hover {
+                    color: white;
+                    background: #232323;
+                }
+            }
+        }
     }
 
     .dropdown-trigger svg path {
@@ -1171,12 +1194,12 @@
     }
 
     .search-form button {
-        color: $text;
+        color: white;
     }
 
     .hamburger {
-        border: 2px solid rgba(35, 35, 35, 0.25);
-        color: $text;
+        border: 2px solid rgba(255, 255, 255, 0.25);
+        color: white;
     }
 
     .dropdown-content {
@@ -1244,6 +1267,14 @@
         margin-right: 10px;
         display: block;
         color: $text;
+    }
+
+    .search-form {
+        margin-bottom: $baseline / 2;
+
+        @include tablet {
+            margin-bottom: 0;
+        }
     }
 
     .subscribe {
