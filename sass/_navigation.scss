@@ -1272,8 +1272,30 @@
     .search-form {
         margin-bottom: $baseline / 2;
 
+        button {
+            background: $text;
+            color: white;
+        }
+
+        input {
+            background: rgba(35, 35, 35, 0.65);
+            color: white;
+
+            &::placeholder {
+                color: rgba(255, 255, 255, 0.65);
+            }
+        }
+
         @include tablet {
             margin-bottom: 0;
+
+            button {
+                background: transparent;
+            }
+            input {
+                background: white;
+                color: $text;
+            }
         }
     }
 
