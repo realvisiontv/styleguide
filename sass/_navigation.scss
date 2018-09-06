@@ -224,7 +224,7 @@
                 display: inline;
                 padding: 0;
             }
-    
+
             &:hover {
                 color: $brand;
             }
@@ -262,8 +262,8 @@
                 display: block;
 
                 a {
-                    text-decoration: none; 
-                    
+                    text-decoration: none;
+
                     &.is-active {
                         color: $brand;
                     }
@@ -305,7 +305,7 @@
     .page-navigation-container {
         display: none;
         height: 100%;
-        
+
         &.show {
             display: flex;
             flex-direction: column;
@@ -344,18 +344,18 @@
             display: inline-block;
             padding: $baseline / 2 $baseline / 4;
             margin-right: 2em;
-            
+
             &.is-active {
                 color: $brand;
                 text-decoration: underline;
                 text-decoration-color: rgba($brand, 0.5);
             }
         }
-    
+
         &.open {
             display: block;
         }
-    
+
         &.right {
             text-align: right;
             li a{
@@ -363,7 +363,7 @@
                 margin-left: 2em;
             }
         }
-    
+
         &.center {
             text-align: center;
             li a {
@@ -372,7 +372,7 @@
             }
         }
     }
-    
+
     .dropdown-content {
         background-color: #404040;
         box-shadow: 0 0px 30px rgba(0, 0, 0, 0.5);
@@ -409,9 +409,9 @@
 // Navigation (pre-paywall)
 //
 // Best previewed in fullscreen mode. Dropdown controls require javascript implementation.
-// 
+//
 // default - Default
-// 
+//
 // markup:
 // <div class="container is-paddingless navigation-pre">
 //     <div class="columns is-mobile">
@@ -502,7 +502,7 @@
 //         </ul>
 //     </div>
 // </div>
-// 
+//
 // Styleguide 7.2
 .navigation-pre {
     background: $color-dark-gray;
@@ -666,7 +666,7 @@
                 font-weight: 800;
                 text-transform: uppercase;
             }
-    
+
             &:hover {
                 color: $color-red-ribbon;
             }
@@ -715,8 +715,8 @@
                 display: block;
 
                 a {
-                    text-decoration: none; 
-                    
+                    text-decoration: none;
+
                     &.is-active {
                         color: $brand;
                     }
@@ -763,7 +763,7 @@
     .page-navigation-container {
         display: none;
         height: 100%;
-        
+
         &.show {
             display: flex;
             flex-direction: column;
@@ -1010,19 +1010,45 @@
 //                  <a href="#" aria-haspopup="true" aria-controls="dropdown-menu">Your subscriptions <svg viewBox="0 0 767.5 1024" height="1024" width="767.5" xmlns="http://www.w3.org/2000/svg" class="icon_down_arrow"><path d="M0 384l383.75 383.75L767.5 384H0z" class="icon_down_arrow--arrow" /></svg></a>
 //              </div>
 //              <div class="dropdown-menu" id="dropdown-menu" role="menu">
-//                  <div class="dropdown-content">
-//                      <a href="#" class="dropdown-item">
-//                          Television
-//                          <span class="product-badge product-badge--subscribed is-pulled-right">Subscribed</span>
-//                      </a>
-//                      <a href="#" class="dropdown-item">
-//                          Think Tank
-//                          <span class="product-badge product-badge--subscribed is-pulled-right">Subscribed</span>
-//                      </a>
-//                      <a href="#" class="dropdown-item">
-//                          Macro Insiders
-//                          <span class="product-badge product-badge--unsubscribed is-pulled-right">Find out more <i class="fa fa-caret-right"></i></span>
-//                      </a>
+//                  <div class="dropdown-content dropdown-content--subscriptions">
+//                      <ul>
+//                        <li>
+//                            <a href="#" class="dropdown-item">
+//                                <div class="columns">
+//                                    <div class="column">
+//                                        Television
+//                                    </div>
+//                                    <div class="column is-narrow">
+//                                        <span class="product-badge product-badge--subscribed">Subscribed</span>
+//                                    </div>
+//                                </div>
+//                            </a>
+//                        </li>
+//                        <li>
+//                            <a href="#" class="dropdown-item">
+//                                <div class="columns">
+//                                    <div class="column">
+//                                        Think Tank
+//                                    </div>
+//                                    <div class="column is-narrow">
+//                                        <span class="product-badge product-badge--subscribed">Subscribed</span>
+//                                    </div>
+//                                </div>
+//                            </a>
+//                        </li>
+//                        <li>
+//                            <a href="#" class="dropdown-item">
+//                                <div class="columns">
+//                                    <div class="column">
+//                                        Macro Insiders
+//                                    </div>
+//                                    <div class="column is-narrow">
+//                                        <span class="product-badge product-badge--unsubscribed">Find out more <i class="fa fa-caret-right"></i></span>
+//                                    </div>
+//                                </div>
+//                            </a>
+//                        </li>
+//                    </ul>
 //                  </div>
 //              </div>
 //          </div>
@@ -1092,8 +1118,13 @@
 //
 // Styleguide 7.7
 .navigation--global {
-    color: $text;
-    background: transparent;
+    color: white;
+    background: rgba(35, 35, 35, 0.65);
+    z-index: 10;
+
+    @include tablet {
+        background: transparent;
+    }
 
     > .columns {
         border: none;
@@ -1108,17 +1139,41 @@
             a {
                 color: white;
                 background: #232323;
-                font-weight: bold;
             }
         }
 
         a {
+            transition: all 150ms ease-in-out;
             padding: 10px;
-            color: $text;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
 
             &:hover {
                 color: white;
                 background: #232323;
+            }
+        }
+    }
+
+    .hamburger-navigation {
+        background: white;
+
+        li {
+            &.is-active {
+                a {
+                    color: white;
+                    background: #232323;
+                }
+            }
+            a {
+                transition: all 150ms ease-in-out;
+                color: $text;
+
+                &:hover {
+                    color: white;
+                    background: #232323;
+                }
             }
         }
     }
@@ -1139,12 +1194,12 @@
     }
 
     .search-form button {
-        color: $text;
+        color: white;
     }
 
     .hamburger {
-        border: 2px solid rgba(35, 35, 35, 0.25);
-        color: $text;
+        border: 2px solid rgba(255, 255, 255, 0.25);
+        color: white;
     }
 
     .dropdown-content {
@@ -1155,28 +1210,53 @@
             color: $text;
             padding: .75rem 1rem;
 
-            .product-badge {
-                padding: 0 .5rem;
-                font-size: .75rem;
-            }
-
-            .product-badge--subscribed {
-                background: $brand;
-            }
-
             &:hover {
                 background: #232323;
                 color: white;
-
-                .product-badge--subscribed {
-                    color: $text;
-                }
             }
         }
     }
 
+    .dropdown-content--subscriptions {
+        font-size: 1rem;
+        .column {
+            padding-bottom: .75rem;
+        }
+
+        ul {
+            margin-left: 0;
+        }
+    }
+
+    .product-badge {
+        padding: 0 .5rem;
+        font-size: .75rem;
+        color: $text;
+
+        i {
+            font-size: 18px;
+            vertical-align: middle;
+            margin-left: 3px;
+        }
+    }
+
+    .product-badge--subscribed {
+        background: $brand;
+    }
+
     .dropdown-menu {
-        min-width: 20rem;
+        left: auto;
+        right: 0;
+    }
+
+    .dropdown-content {
+        .page-navigation {
+            margin-left: 0;
+        }
+        li {
+            display: block;
+            margin: 0;
+        }
     }
 
     .desktop-navigation .top-navigation {
@@ -1184,8 +1264,59 @@
     }
 
     .search-icon {
-        margin-top: 10px;
+        margin-right: 10px;
         display: block;
+        color: white;
+    }
+
+    .search-form {
+        margin-bottom: $baseline / 2;
+
+        button {
+            background: $text;
+            color: white;
+        }
+
+        input {
+            background: rgba(35, 35, 35, 0.65);
+            color: white;
+
+            &::placeholder {
+                color: rgba(255, 255, 255, 0.65);
+            }
+        }
+
+        @include tablet {
+            margin-bottom: 0;
+
+            button {
+                background: transparent;
+            }
+            input {
+                background: white;
+                color: $text;
+            }
+        }
+    }
+
+    .subscribe {
+        background: #2bc7db;
+        border-radius: 5px;
         color: $text;
+        padding: 5px 10px;
+        display: inline-block;
+        font-weight: 800;
+        font-size: 13px;
+        font-family: 'Proxima Nova';
+        box-shadow: 0px 2px 5px rgba(0,0,0,0.25);
+        flex-grow: 1;
+
+        &:hover {
+            border-color: rgba(245,15,77,0.5);
+        }
+    }
+
+    .avatar {
+        background: #2bc7db;
     }
 }
