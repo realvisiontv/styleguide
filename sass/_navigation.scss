@@ -1213,6 +1213,10 @@
             &:hover {
                 background: #232323;
                 color: white;
+
+                .product-badge--unsubscribed {
+                    color: white;
+                }
             }
         }
     }
@@ -1242,6 +1246,10 @@
 
     .product-badge--subscribed {
         background: $brand;
+    }
+
+    .product-badge--unsubscribed {
+        transition: color 150ms ease-in-out;
     }
 
     .dropdown-menu {
