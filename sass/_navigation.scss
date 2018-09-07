@@ -1299,7 +1299,7 @@
         }
     }
 
-    .subscribe {
+    .button.is-primary {
         background: #2bc7db;
         border-radius: 5px;
         color: $text;
@@ -1314,6 +1314,12 @@
         &:hover {
             border-color: rgba(245,15,77,0.5);
         }
+    }
+
+    .loginContainer {
+        margin-left: 10px;
+        display: flex;
+        align-items: center;
     }
 
     .avatar {
