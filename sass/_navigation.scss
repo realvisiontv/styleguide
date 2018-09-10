@@ -1223,6 +1223,16 @@
         }
     }
 
+    .hamburger-navigation {
+        a {
+            &:hover {
+                .product-badge--unsubscribed {
+                    color: white;
+                }
+            }
+        }
+    }
+
     .dropdown-content--subscriptions {
         font-size: 1rem;
         .column {
