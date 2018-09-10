@@ -1202,6 +1202,7 @@
     .hamburger {
         border: 2px solid rgba(255, 255, 255, 0.25);
         color: white;
+        margin-bottom: .65rem;
     }
 
     .dropdown-content {
@@ -1231,6 +1232,17 @@
                 }
             }
         }
+
+        hr {
+            margin: $baseline / 3 0;
+        }
+    }
+
+    .logo--mobile {
+        position: absolute;
+        left: 50%;
+        top: 55%;
+        transform: translate(-50%, -50%);
     }
 
     .dropdown-content--subscriptions {
