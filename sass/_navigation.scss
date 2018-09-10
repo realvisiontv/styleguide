@@ -1158,6 +1158,8 @@
 
     .hamburger-navigation {
         background: white;
+        z-index: 10;
+        position: relative;
 
         li {
             &.is-active {
@@ -1244,11 +1246,27 @@
         }
     }
 
+    .product-badge--subscribed, .product-badge--expired {
+        padding-left: 0.25rem;
+
+        i {
+            margin-left: 0;
+            font-size: .75rem;
+            margin-bottom: 2px;
+            margin-right: 5px;
+        }
+    }
+
     .product-badge--subscribed {
-        background: $brand;
+        background: #2bc7db;
+    }
+
+    .product-badge--expired {
+        background: #DA1C5C;
     }
 
     .product-badge--unsubscribed {
+        color: $text;
         transition: color 150ms ease-in-out;
     }
 
