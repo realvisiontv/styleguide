@@ -1158,6 +1158,8 @@
 
     .hamburger-navigation {
         background: white;
+        z-index: 10;
+        position: relative;
 
         li {
             &.is-active {
@@ -1200,6 +1202,7 @@
     .hamburger {
         border: 2px solid rgba(255, 255, 255, 0.25);
         color: white;
+        margin-bottom: .65rem;
     }
 
     .dropdown-content {
@@ -1213,8 +1216,33 @@
             &:hover {
                 background: #232323;
                 color: white;
+
+                .product-badge--unsubscribed {
+                    color: white;
+                }
             }
         }
+    }
+
+    .hamburger-navigation {
+        a {
+            &:hover {
+                .product-badge--unsubscribed {
+                    color: white;
+                }
+            }
+        }
+
+        hr {
+            margin: $baseline / 3 0;
+        }
+    }
+
+    .logo--mobile {
+        position: absolute;
+        left: 50%;
+        top: 55%;
+        transform: translate(-50%, -50%);
     }
 
     .dropdown-content--subscriptions {
@@ -1240,8 +1268,29 @@
         }
     }
 
+    .product-badge--subscribed, .product-badge--expired {
+        padding-left: 0.25rem;
+
+        i {
+            margin-left: 0;
+            font-size: .75rem;
+            margin-bottom: 2px;
+            margin-right: 5px;
+        }
+    }
+
     .product-badge--subscribed {
-        background: $brand;
+        background: #2bc7db;
+    }
+
+    .product-badge--expired {
+        background: #DA1C5C;
+    }
+
+    .product-badge--unsubscribed {
+        color: $text;
+        padding-right: 0;
+        transition: color 150ms ease-in-out;
     }
 
     .dropdown-menu {
@@ -1270,7 +1319,8 @@
     }
 
     .search-form {
-        margin-bottom: $baseline / 2;
+        margin-bottom: .25rem;
+        margin-top: 0;
 
         button {
             background: $text;
@@ -1299,7 +1349,7 @@
         }
     }
 
-    .subscribe {
+    .button.is-primary {
         background: #2bc7db;
         border-radius: 5px;
         color: $text;
@@ -1314,6 +1364,12 @@
         &:hover {
             border-color: rgba(245,15,77,0.5);
         }
+    }
+
+    .loginContainer {
+        margin-left: 10px;
+        display: flex;
+        align-items: center;
     }
 
     .avatar {
