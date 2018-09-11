@@ -1134,14 +1134,6 @@
         padding: 0;
         border: none;
 
-        &.is-active {
-
-            a {
-                color: white;
-                background: #232323;
-            }
-        }
-
         a {
             transition: all 150ms ease-in-out;
             padding: 10px;
@@ -1151,7 +1143,13 @@
 
             &:hover {
                 color: white;
-                background: #232323;
+                background: rgba(155, 155, 155, 0.5);
+                border-radius: 3px;
+            }
+
+            &.is-active {
+                color: white;
+                border-bottom: 2px solid rgba(255,255,255,0.70);
             }
         }
     }
@@ -1161,21 +1159,18 @@
         z-index: 10;
         position: relative;
 
-        li {
-            &.is-active {
-                a {
-                    color: white;
-                    background: #232323;
-                }
-            }
-            a {
-                transition: all 150ms ease-in-out;
-                color: $text;
+        a {
+            transition: all 150ms ease-in-out;
+            color: $text;
+            border-radius: 0;
 
-                &:hover {
-                    color: white;
-                    background: #232323;
-                }
+            &.is-active, &:hover {
+                color: white;
+                background: #232323;
+                border-radius: 0;
+            }
+            &.is-active {
+                border: none;
             }
         }
     }
@@ -1212,10 +1207,12 @@
         a {
             color: $text;
             padding: .75rem 1rem;
+            border-radius: 0;
 
             &:hover {
                 background: #232323;
                 color: white;
+                border-radius: 0;
 
                 .product-badge--unsubscribed {
                     color: white;
