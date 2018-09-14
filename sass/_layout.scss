@@ -371,10 +371,10 @@ footer {
     max-width: 80%;
 }
 
-// Page Footer v2
+// Global Footer
 //
 // markup:
-// <footer class="page-footer">
+// <footer class="global-footer">
 //      <div class="columns is-multiline is-mobile">
 //          <div class="column is-12 has-text-centered">
 //              <ul class="footer-social">
@@ -414,7 +414,7 @@ footer {
 // </footer>
 //
 // Styleguide 2.8
-footer.page-footer {
+.global-footer {
     background: transparent;
     padding: $baseline;
     color: $text;
