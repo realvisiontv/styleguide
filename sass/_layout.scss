@@ -370,3 +370,117 @@ footer {
     margin: 20px auto;
     max-width: 80%;
 }
+
+// Global Footer
+//
+// markup:
+// <footer class="global-footer">
+//      <div class="columns is-multiline is-mobile">
+//          <div class="column is-12 has-text-centered">
+//              <ul class="footer-social">
+//                  <li><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+//                  <li><a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+//                  <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+//              </ul>
+//          </div>
+//          <div class="column is-12 has-text-centered">
+//              <ul class="footer-links">
+//                  <li><a href="#">About</a> /</li>
+//                  <li><a href="#">FAQ</a> /</li>
+//                  <li><a href="#">Founders</a> /</li>
+//                  <li><a href="#">Contact</a></li>
+//              </ul>
+//          </div>
+//      </div>
+//      <hr />
+//      <div class="columns">
+//          <div class="column is-vertically-center has-text-right footer-legal__container">
+//              <div>
+//                  <div class="footer-legal__links">
+//                      <a href="#">Terms and Conditions</a> /
+//                      <a href="#">Privacy Policy</a> /
+//                      <a href="#">Cookie Policy</a>
+//                  </div>
+//                  <p class="footer-copyright is-size-7">&copy; Copyright 2017 Real Vision</p>
+//              </div>
+//          </div>
+//          <div class="column is-narrow is-vertically-center">
+//              <picture>
+//                  <source srcset="https://www.realvision.com/wp/app/themes/prospect/images/logos/logo-generic2x.png 2x, https://www.realvision.com/wp/app/themes/prospect/images/logos/logo-generic.png 1x">
+//                  <img src="https://www.realvision.com/wp/app/themes/prospect/images/logos/logo-generic.png" alt="Logo">
+//              </picture>
+//          </div>
+//      </div>
+// </footer>
+//
+// Styleguide 2.8
+.global-footer {
+    background: transparent;
+    padding: $baseline;
+    color: $text;
+    ul {
+        list-style: none;
+        margin: 0;
+
+        li {
+            display: inline;
+            margin: auto;
+
+            .fa {
+                font-size: $size-3;
+
+                @include tablet {
+                    font-size: $size-2;
+                }
+            }
+
+
+
+            a {
+                color: $text;
+                font-weight: 700;
+                text-decoration-color: rgba(35,35,35,0.5);
+                transition: color 200ms ease-in;
+
+                &:hover, &:active {
+                    color: #2bc7db;
+                }
+            }
+        }
+    }
+
+    hr {
+        background-color: rgba(35,35,35,0.25);
+        margin: 0 0 $baseline/2;
+    }
+
+    .footer-social {
+        li {
+            margin: 0 $baseline;
+
+            a {
+                color: $text;
+                text-decoration: none;
+                text-transform: uppercase;
+                transition: color 200ms ease-in;
+
+                &:hover, &:active {
+                    color: #2bc7db;
+                }
+            }
+        }
+    }
+    .footer-social__heading {
+        color: #e3e3e3;
+        text-align: center;
+        margin: 0 0 $baseline 0;
+    }
+    .footer-legal__container {
+        flex-direction: row-reverse;
+    }
+    .footer-legal__links a {
+        color: $text;
+        font-size: $size-7;
+        text-decoration-color: rgba(35,35,35,0.5);
+    }
+}
