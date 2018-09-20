@@ -4365,3 +4365,162 @@ section.notification {
 :host #cookie-consent {
     position: relative !important;
 }
+
+// Show Page Hero
+//
+// markup:
+//  <div class="hero--show-page">
+//      <div class="columns">
+//          <div class="column is-vertically-bottom is-narrow">
+//              <div class="image">
+//                  <img src="https://ichef-dev.realvision.com/306x459/Show/poster/6b84fa60652049bf8ae04cf2083dc75e"/>
+//              </div>
+//          </div>
+//          <div class="column is-6 is-vertically-bottom">
+//              <div class="content">
+//                  <div class="text">
+//                      <h2>The Jim Grant Series</h2>
+//                      <h3>FEATURING: JIM GRANT</h3>
+//                      <p class="description">Dan Rasmussen joins legendary financial reporter Jim Grant to discuss the state of equity markets, discrepancies between practice and theory, and his chronic contrarianism. Listed on Forbes’ 2017 “30 under 30” list, Rasmussen also shares his philosophy on how to find value in today’s world. Filmed on May 30, 2018 in New York.</p>
+//                  </div>
+//                  <div class="buttons">
+//                      <button class="button secondary"><i aria-hidden="true" class="fa fa-plus"></i> MY LIST</button>
+//                  </div>
+//              </div>
+//          </div>
+//      </div>
+//  </div>
+//
+// Styleguide 5.30
+.hero--show-page {
+    padding: $baseline;
+    background: grey;
+
+    div.image {
+        img {
+            max-width: 200px;
+
+            @include tablet {
+                max-width: none;
+            }
+        }
+    }
+
+    div.text {
+        background: #f1cc00;
+        position: relative;
+        padding: 1.5rem;
+
+        &:after {
+            content: "";
+            background: #f6921e;
+            height: 3px;
+            position: absolute;
+            width: 105%;
+            bottom: 0;
+            left: 0;
+        }
+        h2 {
+            margin-top: 5px;
+            font-size: $size-4;
+            font-weight: 800;
+            text-transform: uppercase;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            margin-bottom: 0;
+
+            &:before {
+                display: none;
+            }
+        }
+        h3 {
+            font-size: $size-5;
+            text-transform: uppercase;
+            margin-top: $baseline/2;
+        }
+        p {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            font-size: $size-6;
+            line-height: 1.2;
+            margin-bottom: 0;
+
+            @include tablet {
+                -webkit-line-clamp: 5;
+            }
+        }
+    }
+    div.buttons {
+        background: white;
+        display: inline-flex;
+        padding: 0.75rem 1rem;
+        width: 100%;
+        @include tablet {
+            margin-left: $baseline;
+            width: auto;
+        }
+        @include desktop {
+            padding: 1rem 1.25rem;
+        }
+
+        .button {
+            display: flex;
+            font-size: 13px;
+            font-family: 'Proxima Nova';
+
+            @include desktop {
+                font-size: 16px;
+                line-height: 34px;
+            }
+
+            + .button {
+                margin-left: $baseline/2;
+            }
+
+            i {
+                margin-right: 10px;
+            }
+
+            &.secondary i {
+                font-size: 16px;
+            }
+        }
+    }
+
+    button.button {
+        background: #00BCD4;
+        border: 0;
+        border-radius: 8px;
+        box-shadow: 0 2px 0 0 darken(#00BCD4, 15%);
+        cursor: pointer;
+        color: white;
+        font-family: 'Proxima Nova', sans-serif;
+        padding: 5px 15px;
+        text-transform: none;
+        transition: all 0.2s ease;
+
+        &:hover,
+        &:focus {
+            background: #00BCD4;
+            color: white;
+            outline: none;
+            text-decoration: none;
+        }
+
+        &:active {
+            transform: translateY(3px);
+            box-shadow: none;
+        }
+
+        &.secondary {
+            background: white;
+            border: 3px solid #00BCD4;
+            box-shadow: none;
+            color: #00BCD4;
+            padding: 2px 10px;
+        }
+    }
+}
