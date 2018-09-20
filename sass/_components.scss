@@ -4369,7 +4369,7 @@ section.notification {
 // Show Page Hero
 //
 // markup:
-//  <div class="hero--show-page">
+//  <section class="hero--show-page">
 //      <div class="columns">
 //          <div class="column is-vertically-bottom is-narrow">
 //              <div class="image">
@@ -4389,7 +4389,7 @@ section.notification {
 //              </div>
 //          </div>
 //      </div>
-//  </div>
+//  </section>
 //
 // Styleguide 5.30
 .hero--show-page {
@@ -4404,6 +4404,10 @@ section.notification {
                 max-width: none;
             }
         }
+    }
+
+    div.content {
+        width: 100%;
     }
 
     div.text {
