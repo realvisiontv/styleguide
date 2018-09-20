@@ -997,11 +997,11 @@
 //         <div class="page-navigation-outer-container desktop-navigation is-hidden-mobile">
 //             <div class="page-navigation-container">
 //                 <ul class="top-navigation">
-//                     <li class="is-active"><a href="#">Home</a></li>
-//                     <li><a href="#">Shows</a></li>
-//                     <li><a href="#">Playlists</a></li>
-//                     <li><a href="#">All Videos</a></li>
-//                     <li><a href="#">Watchlist</a></li>
+//                     <li class="is-active"><a href="#"><span>Home</span></a></li>
+//                     <li><a href="#"><span>Shows</span></a></li>
+//                     <li><a href="#"><span>Playlists</span></a></li>
+//                     <li><a href="#"><span>All Videos</span></a></li>
+//                     <li><a href="#"><span>Watchlist</span></a></li>
 //                 </ul>
 //             </div>
 //         </div>
@@ -1149,7 +1149,9 @@
 
             &.is-active {
                 color: white;
-                border-bottom: 2px solid rgba(255,255,255,0.70);
+                span {
+                    border-bottom: 2px solid white;
+                }
             }
         }
     }
