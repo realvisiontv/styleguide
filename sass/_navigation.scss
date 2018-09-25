@@ -1052,9 +1052,17 @@
 //                  </div>
 //              </div>
 //          </div>
-//         <div class="column is-hidden-mobile search is-narrow">
-//            <a href="#" class="search-icon"><i class="fa fa-search"></i></a>
-//         </div>
+//          <div class="column is-hidden-mobile search has-text-right is-paddingless">
+//              <div class="search-form--container">
+//                  <div class="search-form--desktop">
+//                      <form method="GET" action="/search" class="search-form">
+//                          <input type="text" name="parameters_query" value="" placeholder="Assets, topics..." />
+//                          <button class="button is-primary" type="submit" name="search">Search</button>
+//                      </form>
+//                  </div>
+//                  <a class="search-icon"><i class="fa fa-search"></i></a>
+//              </div>
+//          </div>
 //         <div class="column is-hidden-mobile is-narrow desktop-link" data-toggle="additional-navigation--account">
 //             <div class="dropdown is-right">
 //                 <div class="dropdown-trigger">
@@ -1074,7 +1082,7 @@
 //         <div class="column">
 //             <form method="GET" action="" class="search-form">
 //                 <input type="text" name="parameters_query" value="" placeholder="Assets, topics..." />
-//                 <button type="submit" name="search"></button>
+//                 <button class="button is-primary" type="submit" name="search"></button>
 //             </form>
 //         </div>
 //         <ul class="page-navigation">
@@ -1194,6 +1202,42 @@
 
     .search-form button {
         color: white;
+    }
+
+    .search-form--container {
+        position: relative;
+
+        &.show {
+            .search-form--desktop {
+                z-index: 1;
+                transform: translateY(75%);
+                opacity: 1;
+            }
+        }
+
+        .search-form--desktop {
+            position: absolute;
+            transform: translateY(0);
+            z-index: -2;
+            right: 0;
+            opacity: 0;
+            padding: .25rem;
+            background: rgba(255,255,255,0.5);
+
+            .search-form {
+                input {
+                    border-radius: 5px;
+                }
+                button {
+                    margin-left: 5px;
+                    width: auto;
+
+                    &:before {
+                        content: none;
+                    }
+                }
+            }
+        }
     }
 
     .hamburger {
