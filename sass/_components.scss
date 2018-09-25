@@ -985,7 +985,7 @@
     }
 
     &.product-hero--3x1 {
-        
+
 
         h2 {
             margin-bottom: $baseline;
@@ -1836,7 +1836,7 @@
     padding: 0;
     color: white;
     overflow: hidden;
-    
+
     .product-cta--think-tank {
         strong {
             color: $color-poppy;
@@ -2142,7 +2142,7 @@
                 .link-block__content {
                     transform: translateY(-0.75rem);
                 }
-                
+
                 .link-block__bottom-arrow {
                     bottom: 7px;
                     opacity: 1;
@@ -2660,7 +2660,7 @@
             display: none;
         }
     }
- 
+
     &.error {
         .email-capture--error {
             display: block;
@@ -3720,16 +3720,16 @@
             }
         }
     }
-    
+
     .contributor-details {
         margin-top: -15%;
         position: relative;
         z-index: 1;
-        
+
         .de-emphasis {
             opacity: 0.5;
         }
-        
+
         .contributor-bio {
             ul {
                 list-style: none;
@@ -3742,7 +3742,7 @@
 
                     &:before {
                         content: "• ";
-                        color: $color-cyan; 
+                        color: $color-cyan;
                         margin-left: $baseline;
                         left: -2.5rem;
                         position: absolute;
@@ -3751,36 +3751,36 @@
             }
         }
     }
-    
+
     .is-padded {
         padding-left: $baseline;
         padding-right: $baseline;
     }
-    
+
     .top-border {
         border-top: 3px solid rgba(255, 255, 255, 0.2);
         padding-top: $baseline / 2;
     }
-    
+
     .contributor-links {
         margin-left: 0;
         list-style: none;
         margin-top: 10px;
-        
+
         a {
             color: #fff;
-          text-decoration: none;
+            text-decoration: none;
         }
-        
+
         i {
             padding-right: 10px;
-          vertical-align: bottom;
+            vertical-align: bottom;
         }
     }
 }
 
 // Countdown banner
-// 
+//
 // markup:
 // <div class="container countdown-banner prospect-component">
 //     <div class="columns is-marginless">
@@ -3829,7 +3829,7 @@
 //         </div>
 //     </div>
 // </div>
-// 
+//
 // Styleguide 5.24
 .countdown-banner {
     background-color: $color-poppy;
@@ -3963,7 +3963,7 @@
 //
 // default - Collapsed
 // .expanded - Expanded
-// 
+//
 // markup:
 // <div class="expandable-container prospect-component {$modifiers}">
 //     <div class="columns">
@@ -3981,8 +3981,8 @@
 //              </div>
 //          </div>
 //     </div>
-//  </div> 
-// 
+//  </div>
+//
 // Styleguide 5.25
 .expandable-container {
     padding: $baseline/3 $baseline;
@@ -4045,7 +4045,7 @@
 
         .dropdown-heading {
             border-radius: 3px 3px 0 0;
-            
+
             i {
                 transform: translateY(-50%) rotateZ(45deg);
             }
@@ -4054,7 +4054,7 @@
 }
 
 // Video Hero
-// 
+//
 // Video hero component that switches to a youtube video on click
 //
 // markup:
@@ -4063,7 +4063,7 @@
 //     <iframe src="https://www.youtube.com/embed/hv96S50QQEs"
 //             width="100%" frameborder="0" class="is-hidden" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 // </section>
-// 
+//
 // Styleguide 5.26
 .video-hero {
     position: relative;
@@ -4100,7 +4100,7 @@
 // Card List
 //
 // default
-// 
+//
 // markup:
 // <div class="card-list prospect-component">
 //     <div class="columns">
@@ -4162,8 +4162,8 @@
 //              </div>
 //          </div>
 //     </div>
-//  </div> 
-// 
+//  </div>
+//
 // Styleguide 5.27
 .card-list {
     padding: $baseline;
@@ -4217,7 +4217,7 @@
                 padding: 0;
                 height: auto;
             }
-            
+
             h2 {
                 color: $brand;
 
@@ -4234,7 +4234,7 @@
             }
         }
     }
-    
+
     a.card {
         text-decoration: none;
         transition: opacity 0.2s, transform 0.2s;
@@ -4253,7 +4253,7 @@
 }
 
 // Notification
-// 
+//
 // Notification with paper background and drop shadow.
 //
 // markup:
@@ -4265,7 +4265,7 @@
 //         </div>
 //     </div>
 // </section>
-// 
+//
 // Styleguide 5.28
 section.notification {
     background-color: transparent !important;
@@ -4364,4 +4364,183 @@ section.notification {
 }
 :host #cookie-consent {
     position: relative !important;
+}
+
+// Show Page Hero
+//
+// markup:
+//  <section class="hero--show-page">
+//      <div class="background"></div>
+//      <div class="columns">
+//          <div class="column is-vertically-bottom is-narrow">
+//              <div class="image">
+//                  <img src="https://ichef-dev.realvision.com/306x459/Show/poster/6b84fa60652049bf8ae04cf2083dc75e"/>
+//              </div>
+//          </div>
+//          <div class="column is-6 is-vertically-bottom">
+//              <div class="content">
+//                  <div class="text">
+//                      <h2>The Jim Grant Series</h2>
+//                      <h3>FEATURING: JIM GRANT</h3>
+//                      <p class="description">Dan Rasmussen joins legendary financial reporter Jim Grant to discuss the state of equity markets, discrepancies between practice and theory, and his chronic contrarianism. Listed on Forbes’ 2017 “30 under 30” list, Rasmussen also shares his philosophy on how to find value in today’s world. Filmed on May 30, 2018 in New York.</p>
+//                  </div>
+//                  <div class="buttons">
+//                      <button class="button secondary"><i aria-hidden="true" class="fa fa-plus"></i> MY LIST</button>
+//                  </div>
+//              </div>
+//          </div>
+//      </div>
+//  </section>
+//
+// Styleguide 5.30
+.hero--show-page {
+    padding: $baseline;
+    position: relative;
+
+    @include tablet {
+        padding-top: 80px;
+        margin-top: calc(-66px - #{$baseline}*2);
+    }
+
+    div.image {
+        img {
+            max-width: 250px;
+
+            @include tablet {
+                max-width: none;
+            }
+        }
+    }
+
+    div.content {
+        width: 100%;
+    }
+
+    div.background {
+        width: 100vw;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 100%;
+        background: url('#{$root}/images/overlays/stripe_clear.png'), $color-dark-gray;
+    }
+
+    div.text {
+        background: #f1cc00;
+        position: relative;
+        padding: 1.5rem;
+
+        &:after {
+            content: "";
+            background: #f6921e;
+            height: 3px;
+            position: absolute;
+            width: 105%;
+            bottom: 0;
+            left: 0;
+        }
+        h2 {
+            font-size: $size-3;
+            font-weight: 800;
+            text-transform: uppercase;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            margin-bottom: 0;
+
+            &:before {
+                display: none;
+            }
+        }
+        h3 {
+            font-size: $size-5;
+            text-transform: uppercase;
+            margin-top: $baseline/2;
+        }
+        p {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            font-size: $size-6;
+            line-height: 1.2;
+            margin-bottom: 0;
+
+            @include tablet {
+                -webkit-line-clamp: 5;
+            }
+        }
+    }
+    div.buttons {
+        position: relative;
+        background: white;
+        display: inline-flex;
+        padding: 0.75rem 1rem;
+        width: 100%;
+        @include tablet {
+            margin-left: $baseline;
+            width: auto;
+        }
+        @include desktop {
+            padding: 1rem 1.25rem;
+        }
+
+        .button {
+            display: flex;
+            font-size: 13px;
+            font-family: 'Proxima Nova';
+
+            @include desktop {
+                font-size: 16px;
+                line-height: 34px;
+            }
+
+            + .button {
+                margin-left: $baseline/2;
+            }
+
+            i {
+                margin-right: 10px;
+            }
+
+            &.secondary i {
+                font-size: 16px;
+            }
+        }
+    }
+
+    button.button {
+        background: #00BCD4;
+        border: 0;
+        border-radius: 8px;
+        box-shadow: 0 2px 0 0 darken(#00BCD4, 15%);
+        cursor: pointer;
+        color: white;
+        font-family: 'Proxima Nova', sans-serif;
+        padding: 5px 15px;
+        text-transform: none;
+        transition: all 0.2s ease;
+
+        &:hover,
+        &:focus {
+            background: #00BCD4;
+            color: white;
+            outline: none;
+            text-decoration: none;
+        }
+
+        &:active {
+            transform: translateY(3px);
+            box-shadow: none;
+        }
+
+        &.secondary {
+            background: white;
+            border: 3px solid #00BCD4;
+            box-shadow: none;
+            color: #00BCD4;
+            padding: 2px 10px;
+        }
+    }
 }
