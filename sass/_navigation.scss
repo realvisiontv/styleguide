@@ -1161,6 +1161,14 @@
                     border-bottom: 2px solid white;
                 }
             }
+
+            @include tablet {
+                padding: 10px 7px;
+            }
+
+            @include desktop {
+                padding: 10px;
+            }
         }
     }
 
@@ -1210,20 +1218,29 @@
         &.show {
             .search-form--desktop {
                 z-index: 1;
-                transform: translateY(75%);
+                transform: translate(50%, 75%);
                 opacity: 1;
+
+                @include desktop {
+                    transform: translate(0, 75%);
+                }
             }
         }
 
         .search-form--desktop {
             position: absolute;
-            transform: translateY(0);
+            transform: translate(50%, 0);
             transition: all 250ms ease-in-out;
             z-index: -2;
-            right: 0;
+            right: 50%;
             opacity: 0;
             padding: .25rem;
             background: rgba(255,255,255,0.5);
+
+            @include desktop {
+                right: 0;
+                transform: translate(0,0);
+            }
 
             .search-form {
                 input {
@@ -1237,6 +1254,16 @@
                         content: none;
                     }
                 }
+            }
+        }
+    }
+
+    &.navigation {
+        .search {
+            margin-right: 0;
+
+            @include desktop {
+                margin-right: 16px;
             }
         }
     }
@@ -1418,5 +1445,8 @@
 
     .avatar {
         background: #2bc7db;
+        height: 40px;
+        width: 40px;
+        line-height: 38px;
     }
 }
