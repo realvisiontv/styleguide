@@ -1057,7 +1057,7 @@
 //                  <div class="search-form--desktop">
 //                      <form method="GET" action="/search" class="search-form">
 //                          <input type="text" name="parameters_query" value="" placeholder="Assets, topics..." />
-//                          <button class="button is-primary" type="submit" name="search">Search</button>
+//                          <button class="button primary" type="submit" name="search">Search</button>
 //                      </form>
 //                  </div>
 //                  <a class="search-icon"><i class="fa fa-search"></i></a>
@@ -1127,7 +1127,7 @@
 // Styleguide 7.7
 .navigation--global {
     color: white;
-    background: rgba(35, 35, 35, 0.65);
+    background: $text;
     z-index: 10;
 
     @include tablet {
@@ -1165,23 +1165,35 @@
     }
 
     .hamburger-navigation {
-        background: white;
+        background: $text;
         z-index: 10;
         position: relative;
 
         a {
             transition: all 150ms ease-in-out;
-            color: $text;
+            color: white;
             border-radius: 0;
 
             &.is-active, &:hover {
-                color: white;
-                background: #232323;
+                color: $text;
+                background: white;
                 border-radius: 0;
+
+                .product-badge--unsubscribed {
+                    color: $text;
+                }
             }
             &.is-active {
                 border: none;
             }
+        }
+
+        hr {
+            margin: 0 0 $baseline / 3;
+        }
+
+        .product-badge--unsubscribed {
+            color: white;
         }
     }
 
@@ -1268,20 +1280,6 @@
         }
     }
 
-    .hamburger-navigation {
-        a {
-            &:hover {
-                .product-badge--unsubscribed {
-                    color: white;
-                }
-            }
-        }
-
-        hr {
-            margin: $baseline / 3 0;
-        }
-    }
-
     .logo--mobile {
         position: absolute;
         left: 50%;
@@ -1363,20 +1361,20 @@
     }
 
     .search-form {
-        margin-bottom: .25rem;
+        margin-bottom: .5rem;
         margin-top: 0;
 
         button {
-            background: $text;
-            color: white;
+            background: white;
+            color: $text;
         }
 
         input {
-            background: rgba(35, 35, 35, 0.65);
-            color: white;
+            background: rgba(255, 255, 255, 0.65);;
+            color: $text;
 
             &::placeholder {
-                color: rgba(255, 255, 255, 0.65);
+                color: rgba(35, 35, 35, 0.65);
             }
         }
 
@@ -1390,23 +1388,6 @@
                 background: white;
                 color: $text;
             }
-        }
-    }
-
-    .button.is-primary {
-        background: #2bc7db;
-        border-radius: 5px;
-        color: $text;
-        padding: 5px 10px;
-        display: inline-block;
-        font-weight: 800;
-        font-size: 13px;
-        font-family: 'Proxima Nova';
-        box-shadow: 0px 2px 5px rgba(0,0,0,0.25);
-        flex-grow: 1;
-
-        &:hover {
-            border-color: rgba(245,15,77,0.5);
         }
     }
 
