@@ -1161,14 +1161,6 @@
                     border-bottom: 2px solid white;
                 }
             }
-
-            @include tablet {
-                padding: 10px 7px;
-            }
-
-            @include desktop {
-                padding: 10px;
-            }
         }
     }
 
@@ -1254,16 +1246,6 @@
                         content: none;
                     }
                 }
-            }
-        }
-    }
-
-    &.navigation {
-        .search {
-            margin-right: 0;
-
-            @include desktop {
-                margin-right: 16px;
             }
         }
     }
@@ -1445,8 +1427,5 @@
 
     .avatar {
         background: #2bc7db;
-        height: 40px;
-        width: 40px;
-        line-height: 38px;
     }
 }
