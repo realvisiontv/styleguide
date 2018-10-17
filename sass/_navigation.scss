@@ -1166,6 +1166,10 @@
                     border-bottom: 2px solid white;
                 }
             }
+
+            @include mobile {
+                background-image: none;
+            }
         }
     }
 
@@ -1372,6 +1376,8 @@
         margin-right: 10px;
         display: block;
         color: white;
+        width: 21px;
+        float: right;
     }
 
     .search-form {
@@ -1381,6 +1387,7 @@
         button {
             background: white;
             color: $text;
+            cursor: pointer;
         }
 
         input {
