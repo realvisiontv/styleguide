@@ -1148,14 +1148,16 @@
             color: white;
             font-size: 1rem;
             font-weight: bold;
+            border-radius: 3px;
 
             &:hover {
                 color: white;
-                background: rgba(155, 155, 155, 0.5);
+                background: linear-gradient(to bottom, #79e4f3 0%, #00bcd4 100%);
                 border-radius: 3px;
             }
 
             &.is-active {
+                background: linear-gradient(to bottom, #79e4f3 0%, #00bcd4 100%);
                 color: white;
                 span {
                     border-bottom: 2px solid white;
