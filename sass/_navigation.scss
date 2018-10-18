@@ -181,8 +181,7 @@
     }
     ul {
         margin: 0;
-
-        @include tablet {
+        @include desktop {
             margin-left: 2.25rem;
         }
         ul {
@@ -1176,6 +1175,14 @@
 
     > .columns {
         border: none;
+    }
+    ul {
+        @include tablet {
+            margin-left: 0;
+        }
+        @include desktop {
+            margin-left: 2.25rem;
+        }
     }
 
     li {
