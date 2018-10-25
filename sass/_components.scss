@@ -603,13 +603,25 @@
             }
         }
         .badge {
-            background: transparent;
-            padding: 0;
-            span{
-                font-weight: 700;
-                background-color: $color-red-ribbon;
-                color: $color-dark-gray;
-                padding: 0 5px;
+            padding: 0 5px;
+            color: $color-dark-gray;
+            font-weight: 700;
+            border-radius: 2px;
+
+            i.fa {
+                margin-right: 3px;
+            }
+
+            &.badge--top {
+                background: #ecc844;
+            }
+
+            &.badge--hot {
+                background: #DA1C5C;
+            }
+
+            &.badge--controversial {
+                background: #F6921E;
             }
         }
     }
