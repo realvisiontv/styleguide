@@ -480,7 +480,7 @@
 //                     <div class="content">
 //                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sollicitudin viverra pellentesque. Morbi sed orci et turpis consectetur sodales id eget lectus. Curabitur ante arcu, ornare nec iaculis quis, luctus quis magna. Etiam lobortis placerat justo consequat bibendum. Nunc velit magna, ultrices vel mauris vitae, sollicitudin pulvinar turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed libero metus, ornare sit amet tincidunt eu, accumsan at purus.
 //                         <div>
-//                             <button class="button--reply is-link">Reply <i class="fa fa-reply" aria-hidden="true"></i></a>
+//                             <a class="button--reply is-link"><i class="fa fa-reply" aria-hidden="true"></i> Reply</a>
 //                         </div>
 //                     </div>
 //                 </div>
@@ -542,6 +542,16 @@
         ul {
             list-style: none;
         }
+    }
+
+    .button--reply {
+        i {
+            transform: rotateY(180deg);
+        }
+    }
+
+    a.button.button--reply, a.button.button--cancel {
+        padding: 5px 15px;
     }
 
     .comment {
@@ -727,7 +737,7 @@
 }
 
 // Product Hero
-// 
+//
 // Multiple variants available:
 // * `.product-hero--3x1`
 // * `.product-hero--3x2`
@@ -737,7 +747,7 @@
 // * `.hero--no-bg`
 // * `.post-hero`
 // * `.hero-bottom`
-// 
+//
 // default - Default
 // .hide-cta - Hero without CTA Button
 // .has-text-centered - Hero with center aligned content and CTA
