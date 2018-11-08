@@ -48,6 +48,18 @@
     font-size: 21px;
     font-weight: 400;
     font-family: 'Function Pro';
+
+    &.avatar--founder {
+        background: red;
+    }
+
+    &.avatar--contributor {
+        background: green;
+    }
+
+    &.avatar--staff {
+        background: #a822ef;
+    }
 }
 
 // Hero Image
