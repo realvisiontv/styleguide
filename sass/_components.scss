@@ -567,8 +567,33 @@
             word-wrap: break-word;
         }
     }
+    .details {
+        .details__name {
+            display: inline-block;
+            margin-bottom: 0;
+        }
+    }
     .avatar {
         line-height: 48px;
+    }
+    .user-badge {
+        display: inline-block;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-left: 10px;
+        font-size: .75rem;
+
+        &.avatar--rvfounder {
+            color: #ef0066;
+        }
+
+        &.avatar--contributor {
+            color: #9de100;
+        }
+
+        &.avatar--staff {
+            color: #a70069;
+        }
     }
     .name {
         font-weight: 700;
@@ -600,7 +625,7 @@
     }
     .meta .buttons {
         margin-top: 15px;
-        a:last-of-type {
+        a {
             margin-left: 1em;
             margin-right: .5em;
 
@@ -612,6 +637,10 @@
                 font-size: $size-7;
                 line-height: $size-5;
             }
+        }
+        a:last-of-type {
+            margin-left: 1em;
+            margin-right: .5em;
         }
         .badge {
             padding: 0 10px 0 15px;

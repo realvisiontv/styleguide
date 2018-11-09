@@ -39,9 +39,9 @@
     border: none;
     color: white;
     cursor: pointer;
-    display: inline-block;
     height: 46px;
     width: 46px;
+    display: block;
     line-height: 48px;
     text-align: center;
     text-transform: uppercase;
@@ -49,7 +49,7 @@
     font-weight: 400;
     font-family: 'Function Pro';
 
-    &.avatar--founder {
+    &.avatar--rvfounder {
         background-image: linear-gradient(to bottom, #ef0066 0%, #7e2444 100%);
     }
 
