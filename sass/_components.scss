@@ -568,7 +568,7 @@
         }
     }
     .avatar {
-        line-height: 44px;
+        line-height: 48px;
     }
     .name {
         font-weight: 700;
@@ -591,7 +591,7 @@
         .avatar {
             width: 32px;
             height: 32px;
-            line-height: 30px;
+            line-height: 32px;
             font-size: 13px;
         }
     }
@@ -600,8 +600,9 @@
     }
     .meta .buttons {
         margin-top: 15px;
-        a {
+        a:last-of-type {
             margin-left: 1em;
+            margin-right: .5em;
 
             &.inactive {
                 color: $color-red-ribbon;
