@@ -571,6 +571,7 @@
         .details__name {
             display: inline-block;
             margin-bottom: 0;
+            margin-right: 5px;
         }
     }
     .avatar {
@@ -580,7 +581,7 @@
         display: inline-block;
         font-weight: bold;
         text-transform: uppercase;
-        margin-left: 10px;
+        margin-left:5px;
         font-size: .75rem;
 
         &.avatar--rvfounder {
@@ -626,9 +627,6 @@
     .meta .buttons {
         margin-top: 15px;
         a {
-            margin-left: 1em;
-            margin-right: .5em;
-
             &.inactive {
                 color: $color-red-ribbon;
             }
