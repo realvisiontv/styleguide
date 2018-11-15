@@ -36,18 +36,30 @@
 .avatar {
     background: $brand;
     border-radius: 50%;
-    border: 2px solid transparent;
-    color: #000;
+    border: none;
+    color: white;
     cursor: pointer;
-    display: inline-block;
     height: 46px;
     width: 46px;
-    line-height: 44px;
+    display: block;
+    line-height: 48px;
     text-align: center;
     text-transform: uppercase;
     font-size: 21px;
     font-weight: 400;
     font-family: 'Function Pro';
+
+    &.avatar--rvfounder {
+        background-image: linear-gradient(to bottom, #ef0066 0%, #7e2444 100%);
+    }
+
+    &.avatar--contributor {
+        background-image: linear-gradient(to bottom, #8EC20A 0%, #547500 100%);
+    }
+
+    &.avatar--staff {
+        background-image: linear-gradient(to bottom, #a70069 0%, #6c1549 100%);
+    }
 }
 
 // Hero Image

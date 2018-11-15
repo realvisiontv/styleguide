@@ -567,8 +567,32 @@
             word-wrap: break-word;
         }
     }
+    .details {
+        .details__name {
+            display: inline-block;
+            margin-right: 5px;
+        }
+    }
     .avatar {
-        line-height: 44px;
+        line-height: 48px;
+    }
+    .user-badge {
+        display: inline-block;
+        text-transform: uppercase;
+        margin-left:5px;
+        font-size: .75rem;
+
+        &.avatar--rvfounder {
+            color: #ef0066;
+        }
+
+        &.avatar--contributor {
+            color: #8EC20A;
+        }
+
+        &.avatar--staff {
+            color: #a70069;
+        }
     }
     .name {
         font-weight: 700;
@@ -591,7 +615,7 @@
         .avatar {
             width: 32px;
             height: 32px;
-            line-height: 30px;
+            line-height: 32px;
             font-size: 13px;
         }
     }
@@ -601,8 +625,6 @@
     .meta .buttons {
         margin-top: 15px;
         a {
-            margin-left: 1em;
-
             &.inactive {
                 color: $color-red-ribbon;
             }
@@ -611,6 +633,10 @@
                 font-size: $size-7;
                 line-height: $size-5;
             }
+        }
+        a:last-of-type {
+            margin-left: 1em;
+            margin-right: .5em;
         }
         .badge {
             padding: 0 10px 0 15px;
