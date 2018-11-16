@@ -1213,10 +1213,6 @@
             color: white;
             font-size: 1rem;
             font-weight: bold;
-            border-radius: 3px;
-            background-size: auto 200%;
-            background-image: linear-gradient(to bottom, transparent 50%, #00bcd4 50%, #267eb1 100%);
-            background-position: top center;
 
             &:hover {
                 color: white;
@@ -1334,7 +1330,7 @@
     .hamburger {
         border: 2px solid rgba(255, 255, 255, 0.25);
         color: white;
-        margin-bottom: .65rem;
+        margin: .65rem 0;
     }
 
     .dropdown-content {
@@ -1363,7 +1359,7 @@
     .logo--mobile {
         position: absolute;
         left: 50%;
-        top: 55%;
+        top: 50%;
         transform: translate(-50%, -50%);
     }
 
