@@ -1553,6 +1553,7 @@
         pointer-events: none;
     }
 
+    &.navigation-global--black,
     &.navigation-global--white {
         color: white;
 
@@ -1564,7 +1565,7 @@
             margin-left: -50vw;
             left: 50%;
             position: absolute;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0));
+            background: #111;
             z-index: 0;
             pointer-events: none;
         }
@@ -1590,6 +1591,12 @@
                     stroke: #fff;
                 }
             }
+        }
+    }
+
+    &.navigation-global--white {
+        &:before {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0));
         }
     }
 }
