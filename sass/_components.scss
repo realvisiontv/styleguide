@@ -394,8 +394,6 @@
 //     <div class="columns is-mobile">
 //         <div class="column">
 //             <a class="like" href=""><i class="fa fa-thumbs-up"></i> <span>75</span></a>
-//         </div>
-//         <div class="column has-text-right">
 //             <a class="dislike inactive" href=""><span>25</span> <i class="fa fa-thumbs-down"></i></a>
 //         </div>
 //     </div>
@@ -409,41 +407,34 @@
         margin-bottom: 0;
     }
     .progress {
-        background: #dbdbdb;
+        background: #414141;
         height: 3px;
 
         div {
             width: 0;
-            background: #23d160;
+            background: $color-optimistic-sexual;
             height: 3px;
         }
     }
+    .like {
+        margin-right: 1em;
+    }
     a {
+        font-family: 'Function Pro';
+        font-weight: 800;
         &.inactive {
-            color: $color-red-ribbon;
+            color: #727272;
         }
 
         i {
+            color: $color-trustworthy-intuitive;
             font-size: $size-6;
             line-height: $size-4;
-        }
-    }
-
-    &.is-inverse {
-        .progress {
-            background: rgba(255, 255, 255, 0.2);
-
-            div {
-                background: $color-red-ribbon;
-            }
+            margin-right: 5px;
         }
 
-        a {
-            color: $brand;
-
-            &.inactive {
-                color: gray;
-            }
+        span {
+            color: #727272;
         }
     }
 }
