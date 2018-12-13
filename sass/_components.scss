@@ -541,6 +541,25 @@
         }
     }
 
+    .button {
+        &.secondary {
+            background: #dbdbdb;
+            i {
+                color: #00bed8;
+            }
+            span {
+                color: #727272;
+            }
+
+            &:hover {
+                background: #00bed8;
+                span {
+                    color: #00bed8;
+                }
+            }
+        }
+    }
+
     a.button.button--reply, a.button.button--cancel {
         padding: 5px 15px;
     }
