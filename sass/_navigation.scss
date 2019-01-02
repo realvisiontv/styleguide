@@ -1127,15 +1127,18 @@
 .navigation-global {
     color: black;
     position: relative;
-    z-index: 3;
+    z-index: 4;
     margin: 0;
 
     > .columns {
         margin: 0;
-        padding: 0 ($baseline/2);
+        padding: 0 $baseline;
         position: relative;
         z-index: 1;
         transition: opacity 0.5s;
+        @include tablet {
+            padding: 0 ($baseline/2);
+        }
     }
 
     .column {
@@ -1266,14 +1269,14 @@
     }
 
     .hamburger-navigation {
-        background: black;
+        background: #232323;
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
         overflow-y: scroll;
-        z-index: 1;
+        z-index: 1000;
         display: none;
 
         .hamburger svg {
@@ -1286,7 +1289,7 @@
 
         > .columns {
             margin: 0;
-            padding: 0 0.75rem;
+            padding: 0 $baseline;
         }
 
         &.show {
@@ -1565,7 +1568,7 @@
             margin-left: -50vw;
             left: 50%;
             position: absolute;
-            background: #111;
+            background: #232323;
             z-index: 0;
             pointer-events: none;
         }

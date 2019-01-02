@@ -560,6 +560,25 @@
         }
     }
 
+    .button {
+        &.secondary {
+            background: #dbdbdb;
+            i {
+                color: #00bed8;
+            }
+            span {
+                color: #727272;
+            }
+
+            &:hover {
+                background: #00bed8;
+                span {
+                    color: #00bed8;
+                }
+            }
+        }
+    }
+
     a.button.button--reply, a.button.button--cancel {
         padding: 5px 15px;
     }
@@ -3789,7 +3808,7 @@
             position: relative;
 
             &:after {
-                background: linear-gradient(to bottom, transparent 35%, rgba(17, 20, 25, 0.5) 60%, #111111 80%);
+                background: linear-gradient(to bottom, transparent 35%, rgba(#232323, 0.5) 60%, #232323 80%);
                 content: '';
                 position: absolute;
                 height: 100%;
