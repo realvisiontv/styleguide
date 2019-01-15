@@ -141,12 +141,12 @@
 .has-margin {
     margin: $baseline !important;
 }
-.has-margin--tablet {
+.has-margin-touch {
     @include until($desktop) {
         margin: $baseline !important;
     }
 }
-.has-padding--tablet {
+.has-padding-touch {
     @include until($desktop) {
         padding: $baseline !important;
     }
