@@ -141,6 +141,16 @@
 .has-margin {
     margin: $baseline !important;
 }
+.has-margin-touch {
+    @include until($desktop) {
+        margin: $baseline !important;
+    }
+}
+.has-padding-touch {
+    @include until($desktop) {
+        padding: $baseline !important;
+    }
+}
 
 // Vertical Rhythm
 //
