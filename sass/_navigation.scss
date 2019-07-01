@@ -979,7 +979,7 @@
 // default - Default
 //
 // markup:
-// <div class="container is-paddingless navigation navigation-global">
+// <section class="is-paddingless navigation-global">
 //      <div class="columns is-mobile">
 //        <h1 class="logo column is-narrow-tablet">
 //            <a href="/">
@@ -1121,7 +1121,7 @@
 //             </li>
 //         </ul>
 //     </div>
-// </div>
+// </section>
 //
 // Styleguide 7.7
 .navigation-global {
@@ -1552,7 +1552,8 @@
     }
 
     &.navigation-global--black,
-    &.navigation-global--white {
+    &.navigation-global--white,
+    &.navigation-global--transparent {
         color: white;
 
         &:before {
@@ -1595,6 +1596,12 @@
     &.navigation-global--white {
         &:before {
             background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0));
+        }
+    }
+
+    &.navigation-global--transparent {
+        &:before {
+            background: rgba(0,0,0,0.5);
         }
     }
 }
