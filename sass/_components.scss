@@ -394,8 +394,6 @@
 //     <div class="columns is-mobile">
 //         <div class="column">
 //             <a class="like" href=""><i class="fa fa-thumbs-up"></i> <span>75</span></a>
-//         </div>
-//         <div class="column has-text-right">
 //             <a class="dislike inactive" href=""><span>25</span> <i class="fa fa-thumbs-down"></i></a>
 //         </div>
 //     </div>
@@ -409,41 +407,34 @@
         margin-bottom: 0;
     }
     .progress {
-        background: #dbdbdb;
+        background: #414141;
         height: 3px;
 
         div {
             width: 0;
-            background: #23d160;
+            background: $color-optimistic-sexual;
             height: 3px;
         }
     }
+    .like {
+        margin-right: 1em;
+    }
     a {
+        font-family: 'Function Pro';
+        font-weight: 800;
         &.inactive {
-            color: $color-red-ribbon;
+            color: #727272;
         }
 
         i {
+            color: $color-trustworthy-intuitive;
             font-size: $size-6;
             line-height: $size-4;
-        }
-    }
-
-    &.is-inverse {
-        .progress {
-            background: rgba(255, 255, 255, 0.2);
-
-            div {
-                background: $color-red-ribbon;
-            }
+            margin-right: 5px;
         }
 
-        a {
-            color: $brand;
-
-            &.inactive {
-                color: gray;
-            }
+        span {
+            color: #727272;
         }
     }
 }
@@ -547,6 +538,44 @@
     .button--reply {
         i {
             transform: rotateY(180deg);
+        }
+    }
+
+    .button {
+        &.secondary {
+            background: #dbdbdb;
+            i {
+                color: #00bed8;
+            }
+            span {
+                color: #727272;
+            }
+
+            &:hover {
+                background: #00bed8;
+                span {
+                    color: #00bed8;
+                }
+            }
+        }
+    }
+
+    .button {
+        &.secondary {
+            background: #dbdbdb;
+            i {
+                color: #00bed8;
+            }
+            span {
+                color: #727272;
+            }
+
+            &:hover {
+                background: #00bed8;
+                span {
+                    color: #00bed8;
+                }
+            }
         }
     }
 
@@ -3779,7 +3808,7 @@
             position: relative;
 
             &:after {
-                background: linear-gradient(to bottom, transparent 35%, rgba(17, 20, 25, 0.5) 60%, #111111 80%);
+                background: linear-gradient(to bottom, transparent 35%, rgba(#232323, 0.5) 60%, #232323 80%);
                 content: '';
                 position: absolute;
                 height: 100%;
@@ -3845,186 +3874,6 @@
         i {
             padding-right: 10px;
             vertical-align: bottom;
-        }
-    }
-}
-
-// Countdown banner
-//
-// markup:
-// <div class="container countdown-banner prospect-component">
-//     <div class="columns is-marginless">
-//         <div class="column has-text-centered-mobile is-vertically-center">
-//             <div>
-//                 <h2>REAL VISION THINK TANK</h2>
-//                 <p>THE NEW AND IMPROVED REAL VISION PUBLICATIONS</p>
-//             </div>
-//         </div>
-//         <div class="column is-vertically-center has-text-centered">
-//             <a class="button is-black is-bold" href="#">Find out more</a>
-//         </div>
-//         <div class="column is-vertically-center">
-//             <div class="columns is-mobile is-paddingless is-marginless">
-//                 <div class="column countdown__time">
-//                     <div class="countdown__time-value countdown__time-days">4</div>
-//                     <div class="countdown__time-label">Days</div>
-//                 </div>
-//                 <div class="column countdown__time">
-//                     <div class="countdown__time-value countdown__time-hours">14</div>
-//                     <div class="countdown__time-label">Hours</div>
-//                 </div>
-//                 <div class="column countdown__time">
-//                     <div class="countdown__time-value countdown__time-mins">23</div>
-//                     <div class="countdown__time-label">Mins</div>
-//                 </div>
-//                 <div class="column countdown__time">
-//                     <div class="countdown__time-value countdown__time-secs">05</div>
-//                     <div class="countdown__time-label">Secs</div>
-//                 </div>
-//             </div>
-//         </div>
-//     </div>
-// </div>
-// <p></p>
-// <div class="container countdown-banner prospect-component">
-//     <div class="columns is-marginless">
-//         <div class="column has-text-centered-mobile is-vertically-center">
-//             <div>
-//                 <h2>REAL VISION THINK TANK</h2>
-//                 <p>THE NEW AND IMPROVED REAL VISION PUBLICATIONS</p>
-//             </div>
-//         </div>
-//         <div class="column is-vertically-center has-text-centered is-narrow">
-//             <a class="button is-black is-bold" href="#">Find out more</a>
-//         </div>
-//     </div>
-// </div>
-//
-// Styleguide 5.24
-.countdown-banner {
-    background-color: $color-poppy;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: white;
-    padding: 0 ($baseline / 2);
-
-    > .columns > .column:first-child {
-        flex-grow: 2;
-    }
-
-    .button {
-        font-size: $size-7;
-        padding: ($baseline / 2) 1rem;
-    }
-
-    h2 {
-        font-size: $size-4;
-        font-weight: 800;
-    }
-
-    p {
-        color: black;
-        font-family: 'Function Pro', sans-serif;
-        font-size: $size-5;
-        font-weight: 700;
-        margin: 0;
-    }
-
-    .hurry-text {
-        color: white;
-        font-family: 'Proxima Nova', sans-serif;
-        font-size: $size-6;
-    }
-
-    .countdown__time {
-        background: white;
-        padding: 0;
-        margin: 0 ($baseline / 4);
-
-        // IE Edge fix
-        @supports (-ms-ime-align: auto) {
-            flex-basis: auto;
-        }
-
-        &:first-child {
-            margin-left: 0;
-        }
-
-        &:last-child {
-            margin-right: 0;
-        }
-    }
-
-    .countdown__time-value {
-        color: black;
-        font-size: $size-4;
-        padding: ($baseline / 4) 0 0;
-        line-height: 1;
-        font-weight: 700;
-        text-align: center;
-    }
-
-    .countdown__time-label {
-        color: $color-poppy;
-        font-size: $size-7;
-        font-weight: 700;
-        text-align: center;
-        text-transform: uppercase;
-    }
-
-    @include mobile {
-        > .columns > .column {
-            padding: $baseline / 4;
-
-            &:first-child {
-                padding-top: $baseline / 2;
-            }
-
-            &:last-child {
-                padding-bottom: $baseline / 2;
-            }
-        }
-    }
-
-    @include tablet {
-        .countdown__time-value {
-            width: 2em;
-        }
-    }
-
-    @include desktop {
-        .button {
-            font-size: $size-5;
-        }
-    }
-
-    @include widescreen {
-        h2 {
-            font-size: $size-3;
-        }
-
-        p {
-            font-size: $size-3;
-        }
-
-        .countdown__time-value {
-            font-size: $size-3;
-        }
-    }
-
-    &.is-bottom {
-        width: 100%;
-        position: fixed;
-        bottom: 0;
-        z-index: 10;
-
-        @include from($desktop) {
-            max-width: 960px;
-            width: 960px;
-        }
-        @media screen and (min-width: 1260px) {
-            max-width: 1152px;
-            width: 1152px;
         }
     }
 }
